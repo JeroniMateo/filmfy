@@ -49,7 +49,7 @@
       </div>
     </div>
     <!--Card3-->
-    <div class="card mb-3">
+    <div class="card mb-3 justify-content-center">
       <div class="row g-0">
         <div class="col-md-4">
           <img
