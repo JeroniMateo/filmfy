@@ -1,13 +1,18 @@
 <template>
-  <div class="container">
-        <!--NavBar-->
+  <div class="container-fluid">
+    <!--NavBar-->
     <div id="navmenu">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <!--Filmfy Icon-->
           <div id="filmfyIcon">
             <router-link to="../../../views/welcome.vue">Filmfy</router-link>
-            <img src="../../../assets/img/LogoFilmfy.png" width="200px" height="200px" alt="" />
+            <img
+              src="../../../assets/img/LogoFilmfy.png"
+              width="200px"
+              height="200px"
+              alt=""
+            />
           </div>
 
           <button
@@ -27,7 +32,13 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Mi Espacio</a>
+                <a class="nav-link disabled" href="#">Mi Espacio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Forum</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -41,9 +52,22 @@
                   Contenido
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Peliculas</a></li>
-                  <li><a class="dropdown-item" href="#">Series</a></li>
-                  <li><a class="dropdown-item" href="#">Documentales</a></li>
+                  <li>
+                    <router-link to="../../../views/watchContent/Movies.vue"
+                      >Peliculas</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="../../../views/watchContent/Series.vue"
+                      >Series</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      to="../../../views/watchContent/Documentaries.vue"
+                      >Documentales</router-link
+                    >
+                  </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
                     <a class="dropdown-item" href="#">Otros</a>
@@ -56,17 +80,18 @@
               </li>
             </ul>
             <div id="searching">
-              <span>¿Qué vemos hoy?</span>
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <!--Search-->
-              <button class="btn btn-outline-success" type="submit">
-                Buscar
-              </button>
+              <label for="">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <!--Search-->
+                <button class="btn btn-outline-success" type="submit">
+                  Buscar
+                </button></label
+              >
             </div>
           </div>
         </div>
@@ -77,7 +102,7 @@
 
 <script>
 export default {
-    name: "Navbar",
+  name: "Navbar",
 };
 </script>
 
