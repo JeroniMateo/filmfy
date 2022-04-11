@@ -7,7 +7,7 @@
           <!--Filmfy Icon-->
           <div id="filmfyIcon">
             <router-link to="../../../views/welcome.vue">Filmfy</router-link>
-            <img src="../../../assets/img/LogoFilmfy.png" alt="" />
+            <img src="../../../assets/img/LogoFilmfy.png" width="200px" height="200px" alt="" />
           </div>
 
           <button
