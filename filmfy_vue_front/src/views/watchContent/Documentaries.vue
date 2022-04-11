@@ -71,6 +71,7 @@ import DocumentariesScienceFictionVue from "../../js/components/watchContentGenr
 import DocumentariesThrillerVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesThriller.vue";
 
 export default {
+  name: "Documentaries",
   components: {
     DocumenariesAction,
     DocumentariesHistoryVue,

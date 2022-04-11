@@ -1,5 +1,6 @@
 <template>
-  <div id="watchContentSeries">
+ <div class="container">
+    <div id="watchContentSeries">
     <div class="action">
       <h2>Action</h2>
       <SeriesAction />
@@ -49,6 +50,7 @@
       <SeriesThriller />
     </div>
   </div>
+ </div>
 </template>
 
 <script>
@@ -65,6 +67,7 @@ import SeriesScienceFictionVue from "../../js/components/watchContentGenres/Seri
 import SeriesTerrorVue from "../../js/components/watchContentGenres/Series/SeriesTerror.vue";
 import SeriesThrillerVue from "../../js/components/watchContentGenres/Series/SeriesThriller.vue";
 export default {
+  name: "Series",
   components: {
     SeriesAction,
     SeriesAdventureVue,

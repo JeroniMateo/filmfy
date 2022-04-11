@@ -8,11 +8,10 @@
 </template>
 
 <script>
-import Navbar from "./header/Navbar.vue";
-import User from "././header/User.vue";
+import Navbar from "../basics/header/Navbar.vue";
+import User from "../basics/header/User.vue";
 export default {
   name: "Header",
-  props: ["UserLog"],
   components: {
     Navbar,
     User,

@@ -29,16 +29,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="../../../views/main-pages/Home.vue">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="#">Mi Espacio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">News</a>
+                <a class="nav-link" href="../../../views/main-pages/News.vue">News</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Forum</a>
+                <a class="nav-link" href="../../../views/main-pages/Forum.vue">Forum</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -53,7 +53,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <router-link to="../../../views/watchContent/Movies.vue"
+                    <router-link to="/filmfy_vue_front/src/views/watchContent/Movies.vue"
                       >Peliculas</router-link
                     >
                   </li>
@@ -70,7 +70,7 @@
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="#">Otros</a>
+                    <a class="dropdown-item" href="">Otros</a>
                   </li>
                 </ul>
               </li>
