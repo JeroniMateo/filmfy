@@ -2,7 +2,6 @@
   <div class="container-fluid">
     <div class="card bg-dark text-white">
       <img
-      
         class="card-img"
         alt="..."
       />
