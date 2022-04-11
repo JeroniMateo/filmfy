@@ -28,6 +28,7 @@ import Header from "../js/components/basics/Header.vue";
 import FeaturedContent from "../js/components/Welcome/FeaturedContent.vue";
 import Footer from "../js/components/basics/Footer.vue";
 export default {
+    name: "App",
   components: {
     WelcomeCards,
     Header,

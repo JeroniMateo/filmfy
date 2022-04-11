@@ -5,7 +5,7 @@
       <div class="row g-0">
         <div class="col-md-4">
           <img
-            src="/filmfy_vue_front/src/assets/img/Welcome/Share all Lists.png"
+            src="../../assets/img/Welcome/Share_all_Lists.png"
             class="img-fluid rounded-start"
             alt="..."
           />
@@ -41,7 +41,7 @@
         </div>
         <div class="col-md-4">
           <img
-            src="/filmfy_vue_front/src/assets/img/Welcome/ReferenteDeCine.png"
+            src="../../assets/img/Welcome/ReferenteDeCine.png"
             class="img-fluid rounded-start"
             alt="..."
           />
@@ -53,7 +53,7 @@
       <div class="row g-0">
         <div class="col-md-4">
           <img
-            src="/filmfy_vue_front/src/assets/img/Welcome/Content News.png"
+            src="../../assets/img/Welcome/Content_News.png"
             class="img-fluid rounded-start"
             alt="..."
           />
