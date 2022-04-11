@@ -4,7 +4,7 @@
       <div class="card-deck">
         <!--Card1-->
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap" />
+          <img class="card-img-top"  alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -19,7 +19,7 @@
         </div>
         <!--Card2-->
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap" />
+          <img class="card-img-top"  alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -33,7 +33,7 @@
         </div>
         <!--Card3-->
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap" />
+          <img class="card-img-top" alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -48,7 +48,7 @@
         </div>
         <!--Card4-->
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap" />
+          <img class="card-img-top"  alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -63,7 +63,7 @@
         </div>
         <!--Card5-->
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap" />
+          <img class="card-img-top" alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -78,7 +78,7 @@
         </div>
         <!--Card6-->
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap" />
+          <img class="card-img-top"  alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">

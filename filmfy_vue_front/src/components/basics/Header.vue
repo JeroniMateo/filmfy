@@ -2,7 +2,7 @@
   <div class="container">
     <div id="header">
       <div id="filmfy">
-        <img src="../../../../public/img/LogoFilmfy.png" alt="" />
+        <img src="../../assets/img/LogoFilmfy.png" alt="" />
         <h2>FILMFY</h2>
       </div>
       <Navbar />

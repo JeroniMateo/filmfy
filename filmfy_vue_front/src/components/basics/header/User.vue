@@ -3,14 +3,14 @@
     <div onclick="login()" class="user">
       <!--If the user is not log -->
       <div id="UserNotLog" hidden>
-        <img src="../../../../public/img/UserPhoto.png" alt="" />
+        <img src="../../../assets/img/UserPhoto.png" alt="" />
         <p id="userProfile"></p>
       </div>
       <!--If the user is log -->
       <!--Inside this div will show the User Name when it's loged -->
       <div v-if="log" id="UserNotLog" hidden>
         <div class="userAcount">
-          <img src="../../../../public/img/UserPhoto.png" alt="" />
+          <img src="../../../assets/img/UserPhoto.png" alt="" />
           <li id="userProfile" class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"

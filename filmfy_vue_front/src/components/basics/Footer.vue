@@ -2,7 +2,7 @@
   <div class="container">
     <div id="footer">
       <div class="footerLogo">
-        <img src="../../../../public/img/LogoFilmfy.png" alt="" />
+        <img src="../../assets/img/LogoFilmfy.png" alt="" />
       </div>
       <small><i class="fa-solid fa-copyright"></i>2022 Filmfy</small>
       <Navbar />
