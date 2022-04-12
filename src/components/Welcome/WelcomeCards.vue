@@ -18,7 +18,6 @@
           Se el creador de tu propio repertorio <br />
           y comparte tus listas con tus amigos.
         </h5>
-        <p class="card-text">Last updated 3 mins ago</p>
       </div>
     </div>
     <!--Card2-->
@@ -39,7 +38,6 @@
           ¡Sé el referente de tu contenido favorito! <br />
           Estate en todo debate de este arte
         </h5>
-        <p class="card-text">Last updated 3 mins ago</p>
       </div>
     </div>
     <!--Card3-->
@@ -60,7 +58,6 @@
           TNo te pierdas ni un solo detalle y <br />
           novedad de ninuno de tus artistas y contenidos favoritos.
         </h5>
-        <p class="card-text">Last updated 3 mins ago</p>
       </div>
     </div>
   </div>
