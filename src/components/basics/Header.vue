@@ -25,7 +25,7 @@ h2 {
 }
 div#header {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   align-content: center;
