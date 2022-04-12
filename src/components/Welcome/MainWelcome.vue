@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <div class="card bg-dark text-white">
       <img id="MainContentImageWelcome"
         src="../../assets/img/Welcome/MainContentImageWelcome.jpg"
@@ -13,12 +13,13 @@
          <b> Encuentra variedad de conentido <br />
           y crea listas para compartirlas con tus amigos</b>
         </h4>
-        <p class="card-text">Disfruta de contenido exclusivo</p>
-        <div id="buscarContenido">
+        <br>
+       <div class="container">
+          <div id="buscarContenido">
           <label id="verHoy" class="d-flex"
             >Que vemos Hoy?
             <input
-              class="form-control me-2"
+              class="form-control me-6"
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -26,6 +27,7 @@
             <button class="btn btn-outline-danger" type="submit">Search</button>
           </label>
         </div>
+       </div>
       </div>
     </div>
   </div>
