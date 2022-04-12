@@ -4,6 +4,7 @@
     <div class="card bg-dark text-white">
       <img
         src="../../assets/img/Welcome/Share_all_Lists.png"
+        id="Welcomecard"
         class="card-img"
         alt="..."
         height="500px"
@@ -22,8 +23,9 @@
     </div>
     <!--Card2-->
     <div class="card bg-dark text-white">
-      <img
+      <img 
         src="../../assets/img/Welcome/ReferenteDeCine.png"
+        id="Welcomecard"
         class="card-img"
         alt="..."
         height="500px"
@@ -44,6 +46,7 @@
     <div class="card bg-dark text-white">
       <img
         src="../../assets/img/Welcome/Content_News.png"
+        id="Welcomecard"
         class="card-img"
         alt="..."
         height="500px"
@@ -78,7 +81,7 @@ h5 {
   color: red;
   font-size: 5vh;
 }
-img{
+img#Welcomecard{
   filter: blur(4px);
 }
 </style>
