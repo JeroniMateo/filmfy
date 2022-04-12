@@ -29,16 +29,28 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../../../views/main-pages/Home.vue">Home</a>
+                <router-link
+                  class="nav-link"
+                  to="../../../views/main-pages/Home.vue"
+                  >Home</router-link
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="#">Mi Espacio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../../views/main-pages/News.vue">News</a>
+                <router-link
+                  class="nav-link"
+                  to="../../../views/main-pages/Forum"
+                  >Forum</router-link
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../../views/main-pages/Forum.vue">Forum</a>
+                <router-link
+                  class="nav-link"
+                  to="../../../views/main-pages/News.vue"
+                  >News</router-link
+                >
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -53,8 +65,10 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <router-link to="/filmfy_vue_front/src/views/watchContent/Movies.vue"
-                      >Peliculas</router-link
+                    <router-link
+                      class="nav-link"
+                      to="../../../views/watchContent/Movies.vue"
+                      >Películas</router-link
                     >
                   </li>
                   <li>
@@ -80,17 +94,16 @@
               </li>
             </ul>
             <div id="searching">
-              
-                <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <!--Search-->
-                <button class="btn btn-outline-success" type="submit">
-                  Buscar
-                </button>
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <!--Search-->
+              <button class="btn btn-outline-success" type="submit">
+                Buscar
+              </button>
             </div>
           </div>
         </div>
@@ -106,7 +119,7 @@ export default {
 </script>
 
 <style>
-div#searching{
+div#searching {
   display: flex;
 }
 </style>

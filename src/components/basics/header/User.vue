@@ -2,8 +2,8 @@
   <div class="container">
     <div onclick="login()" class="user">
       <!--If the user is not log -->
-      <div id="UserNotLog" hidden>
-        <img src="../../../assets/img/UserPhoto.png" alt="" />
+      <div id="UserNotLog">
+        <img id="UserNotLogIMG" src="../../../assets/img/UserPhoto.png" alt=""  />
         <p id="userProfile"></p>
       </div>
       <!--If the user is log -->
@@ -45,4 +45,7 @@ export default {
 </script>
 
 <style>
+img#UserNotLogIMG{
+  width: 5vh;
+}
 </style>
