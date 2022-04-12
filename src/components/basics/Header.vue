@@ -23,4 +23,13 @@ export default {
 h2 {
   color: green;
 }
+div#header {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  background-color: white;
+}
 </style>
