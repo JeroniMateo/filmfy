@@ -1,7 +1,14 @@
 <template>
   <div onclick="login()" class="user">
-    <!--If the user is not log -->
-    <div id="UserNotLog" class="btn" onclick="">
+    <!--
+      v-if if log = false
+        div id="UserNotLog"
+
+      v-else if log = true 
+        div id="UserLog"
+
+      If the user is not log -->
+    <div v-if="log" id="UserNotLog" class="btn" onclick="">
       <router-link to="../../../views/user/Login.vue">
         <img
           id="UserNotLogIMG"
@@ -13,7 +20,7 @@
     </div>
     <!--If the user is log -->
     <!--Inside this div will show the User Name when it's loged -->
-    <div v-if="log" id="UserNotLog" hidden class="btn">
+    <div v-else id="UserLog" hidden class="btn">
       <div class="userAcount">
         <img src="../../../assets/img/UserPhoto.png" alt="" />
         <li id="userProfile" class="nav-item dropdown">
@@ -45,6 +52,12 @@
 <script>
 export default {
   name: "User",
+
+  data() {
+    return {
+      log: false,
+    };
+  },
 };
 </script>
 
