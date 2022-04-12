@@ -54,34 +54,34 @@
 </template>
 
 <script>
-import MoviesAction from "../../js/components/watchContentGenres/Movies/MoviesAction.vue";
-import MoviesAdventureVue from "../../js/components/watchContentGenres/Movies/MoviesAdventure.vue";
-import MoviesAnimeVue from "../../js/components/watchContentGenres/Movies/MoviesAnime.vue";
-import MoviesComedyVue from "../../js/components/watchContentGenres/Movies/MoviesComedy.vue";
-import MoviesKidsVue from "../../js/components/watchContentGenres/Movies/MoviesKids.vue";
-import MoviesPoliceVue from "../../js/components/watchContentGenres/Movies/MoviesPolice.vue";
-import MoviesPopularVue from "../../js/components/watchContentGenres/Movies/MoviesPopular.vue";
-import MoviesRecomendVue from "../../js/components/watchContentGenres/Movies/MoviesRecomend.vue";
-import MoviesRomanticVue from "../../js/components/watchContentGenres/Movies/MoviesRomantic.vue";
-import MoviesScienceFictionVue from "../../js/components/watchContentGenres/Movies/MoviesScienceFiction.vue";
-import MoviesTerrorVue from "../../js/components/watchContentGenres/Movies/MoviesTerror.vue";
-import MoviesThrillerVue from "../../js/components/watchContentGenres/Movies/MoviesThriller.vue";
+import MoviesAction from "../../components/Items/watchContentGenres/Movies/MoviesAction.vue";
+import MoviesAdventure from "../../components/Items/watchContentGenres/Movies/MoviesAdventure.vue";
+import MoviesAnime from "../../components/Items/watchContentGenres/Movies/MoviesAnime.vue";
+import MoviesComedy from "../../components/Items/watchContentGenres/Movies/MoviesComedy.vue";
+import MoviesKids from "../../components/Items/watchContentGenres/Movies/MoviesKids.vue";
+import MoviesPolice from "../../components/Items/watchContentGenres/Movies/MoviesPolice.vue";
+import MoviesPopular from "../../components/Items/watchContentGenres/Movies/MoviesPopular.vue";
+import MoviesRecomend from "../../components/Items/watchContentGenres/Movies/MoviesRecomend.vue";
+import MoviesRomantic from "../../components/Items/watchContentGenres/Movies/MoviesRomantic.vue";
+import MoviesScienceFiction from "../../components/Items/watchContentGenres/Movies/MoviesScienceFiction.vue";
+import MoviesTerror from "../../components/Items/watchContentGenres/Movies/MoviesTerror.vue";
+import MoviesThriller from "../../components/Items/watchContentGenres/Movies/MoviesThriller.vue";
 
 export default {
   name: "Movies",
   components: {
     MoviesAction,
-    MoviesAdventureVue,
-    MoviesAnimeVue,
-    MoviesComedyVue,
-    MoviesKidsVue,
-    MoviesPoliceVue,
-    MoviesPopularVue,
-    MoviesRecomendVue,
-    MoviesRomanticVue,
-    MoviesScienceFictionVue,
-    MoviesTerrorVue,
-    MoviesThrillerVue,
+    MoviesAdventure,
+    MoviesAnime,
+    MoviesComedy,
+    MoviesKids,
+    MoviesPolice,
+    MoviesPopular,
+    MoviesRecomend,
+    MoviesRomantic,
+    MoviesScienceFiction,
+    MoviesTerror,
+    MoviesThriller,
   },
 };
 </script>
