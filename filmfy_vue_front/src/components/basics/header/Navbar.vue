@@ -80,7 +80,7 @@
               </li>
             </ul>
             <div id="searching">
-              <label for="">
+              
                 <input
                   class="form-control me-2"
                   type="search"
@@ -90,8 +90,7 @@
                 <!--Search-->
                 <button class="btn btn-outline-success" type="submit">
                   Buscar
-                </button></label
-              >
+                </button>
             </div>
           </div>
         </div>
@@ -107,4 +106,7 @@ export default {
 </script>
 
 <style>
+div#searching{
+  display: flex;
+}
 </style>
