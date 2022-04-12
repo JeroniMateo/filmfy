@@ -1,4 +1,5 @@
 <template>
+<title>Filmfy Home</title>
 <div class="container-fluid">
      <div id="app" class="content">
     <Header />
@@ -42,6 +43,10 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
+}
+
+body{
+  background-color: #42b983;
 }
 
 nav a.router-link-exact-active {

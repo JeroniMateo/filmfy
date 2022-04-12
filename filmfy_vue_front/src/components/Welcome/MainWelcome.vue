@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="card bg-dark text-white">
-      <img
+      <img id="MainContentImageWelcome"
         src="../../assets/img/Welcome/MainContentImageWelcome.jpg"
         height="500px"
         class="card-img"
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style>
-/**Falta difuminar el fondo */
+
 h2 {
   color: green;
   font-size: 10vh;
@@ -54,5 +54,8 @@ div#buscarContenido {
 label#verHoy {
   margin-top: 20px;
   color: black;
+}
+img#MainContentImageWelcome{
+    filter: blur(3px);
 }
 </style>
