@@ -1,11 +1,9 @@
 <template>
-  <div class="container-fluid">
     <div id="footer">
-      <small><i class="fa-solid fa-copyright"></i>2022 Filmfy</small>
+      <p><i id="copyright" class="fa-solid fa-copyright"></i>2022 Filmfy</p>
       <Navbar />
       <small>Filfmy.es</small>
     </div>
-  </div>
 </template>
 
 <script>
@@ -27,5 +25,9 @@ div#footer {
   align-content: center;
   flex-wrap: nowrap;
   background-color: white;
+}
+i#copyright{
+  font-size: 1.5em;
+  color: #8c8c8c;
 }
 </style>
