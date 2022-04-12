@@ -56,36 +56,36 @@
 </template>
 
 <script>
-import DocumenariesAction from "../../js/components/watchContentGenres/Documentaries/DocumenariesAction.vue";
-import DocumentariesHistoryVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesHistory.vue";
-import DocumenariesRecomendVue from "../../js/components/watchContentGenres/Documentaries/DocumenariesRecomend.vue";
-import DocumentariesSportVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesSport.vue";
-import DocumenariesTerrorVue from "../../js/components/watchContentGenres/Documentaries/DocumenariesTerror.vue";
-import DocumentariesAnimeVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesAnime.vue";
-import DocumentariesComedyVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesComedy.vue";
-import DocumentariesKidsVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesKids.vue";
-import DocumentariesPoliceVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesPolice.vue";
-import DocumentariesPopularVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesPopular.vue";
-import DocumentariesRomanticVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesRomantic.vue";
-import DocumentariesScienceFictionVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesScienceFiction.vue";
-import DocumentariesThrillerVue from "../../js/components/watchContentGenres/Documentaries/DocumentariesThriller.vue";
+import DocumenariesHistory from "../../components/Items/watchContentGenres/Documentaries/DocumenariesHistory.vue";
+import DocumenariesAction from "../../components/Items/watchContentGenres/Documentaries/DocumenariesAction.vue";
+import DocumenariesRecomend from "../../components/Items/watchContentGenres/Documentaries/DocumenariesRecomend.vue";
+import DocumentariesSport from "../../components/Items/watchContentGenres/Documentaries/DocumenariesSports.vue";
+import DocumenariesTerror from "../../components/Items/watchContentGenres/Documentaries/DocumenariesTerror.vue";
+import DocumentariesAnime from "../../components/Items/watchContentGenres/Documentaries/DocumentariesAnime.vue";
+import DocumentariesComedy from "../../components/Items/watchContentGenres/Documentaries/DocumentariesComedy.vue";
+import DocumentariesKids from "../../components/Items/watchContentGenres/Documentaries/DocumentariesKids.vue";
+import DocumentariesPolice from "../../components/Items/watchContentGenres/Documentaries/DocumentariesPolice.vue";
+import DocumentariesPopular from "../../components/Items/watchContentGenres/Documentaries/DocumentariesPopular.vue";
+import DocumentariesRomantic from "../../components/Items/watchContentGenres/Documentaries/DocumentariesRomantic.vue";
+import DocumentariesScienceFiction from "../../components/Items/watchContentGenres/Documentaries/DocumentariesScienceFiction.vue";
+import DocumentariesThriller from "../../components/Items/watchContentGenres/Documentaries/DocumentariesThriller.vue";
 
 export default {
   name: "Documentaries",
   components: {
     DocumenariesAction,
-    DocumentariesHistoryVue,
-    DocumenariesRecomendVue,
-    DocumentariesSportVue,
-    DocumenariesTerrorVue,
-    DocumentariesAnimeVue,
-    DocumentariesComedyVue,
-    DocumentariesKidsVue,
-    DocumentariesPoliceVue,
-    DocumentariesPopularVue,
-    DocumentariesRomanticVue,
-    DocumentariesScienceFictionVue,
-    DocumentariesThrillerVue,
+    DocumentariesHistory,
+    DocumenariesRecomend,
+    DocumentariesSport,
+    DocumenariesTerror,
+    DocumentariesAnime,
+    DocumentariesComedy,
+    DocumentariesKids,
+    DocumentariesPolice,
+    DocumentariesPopular,
+    DocumentariesRomantic,
+    DocumentariesScienceFiction,
+    DocumentariesThriller,
   },
 };
 </script>
