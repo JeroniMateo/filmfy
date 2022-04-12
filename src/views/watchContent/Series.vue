@@ -54,33 +54,33 @@
 </template>
 
 <script>
-import SeriesAction from "../../js/components/watchContentGenres/Series/SeriesAction.vue";
-import SeriesAdventureVue from "../../js/components/watchContentGenres/Series/SeriesAdventure.vue";
-import SeriesAnimeVue from "../../js/components/watchContentGenres/Series/SeriesAnime.vue";
-import SeriesComedyVue from "../../js/components/watchContentGenres/Series/SeriesComedy.vue";
-import SeriesKidsVue from "../../js/components/watchContentGenres/Series/SeriesKids.vue";
-import SeriesPoliceVue from "../../js/components/watchContentGenres/Series/SeriesPolice.vue";
-import SeriesPopularVue from "../../js/components/watchContentGenres/Series/SeriesPopular.vue";
-import SeriesRecomendVue from "../../js/components/watchContentGenres/Series/SeriesRecomend.vue";
-import SeriesRomanticVue from "../../js/components/watchContentGenres/Series/SeriesRomantic.vue";
-import SeriesScienceFictionVue from "../../js/components/watchContentGenres/Series/SeriesScienceFiction.vue";
-import SeriesTerrorVue from "../../js/components/watchContentGenres/Series/SeriesTerror.vue";
-import SeriesThrillerVue from "../../js/components/watchContentGenres/Series/SeriesThriller.vue";
+import SeriesAction from "../../components/Items/watchContentGenres/Series/SeriesAction.vue";
+import SeriesAdventure from "../../components/Items/watchContentGenres/Series/SeriesAdventure.vue";
+import SeriesAnime from "../../components/Items/watchContentGenres/Series/SeriesAnime.vue";
+import SeriesComedy from "../../components/Items/watchContentGenres/Series/SeriesComedy.vue";
+import SeriesKids from "../../components/Items/watchContentGenres/Series/SeriesKids.vue";
+import SeriesPolice from "../../components/Items/watchContentGenres/Series/SeriesPolice.vue";
+import SeriesPopular from "../../components/Items/watchContentGenres/Series/SeriesPopular.vue";
+import SeriesRecomend from "../../components/Items/watchContentGenres/Series/SeriesRecomend.vue";
+import SeriesRomantic from "../../components/Items/watchContentGenres/Series/SeriesRomantic.vue";
+import SeriesScienceFiction from "../../components/Items/watchContentGenres/Series/SeriesScienceFiction.vue";
+import SeriesTerror from "../../components/Items/watchContentGenres/Series/SeriesTerror.vue";
+import SeriesThriller from "../../components/Items/watchContentGenres/Series/SeriesThriller.vue";
 export default {
   name: "Series",
   components: {
     SeriesAction,
-    SeriesAdventureVue,
-    SeriesAnimeVue,
-    SeriesComedyVue,
-    SeriesKidsVue,
-    SeriesPoliceVue,
-    SeriesPopularVue,
-    SeriesRecomendVue,
-    SeriesRomanticVue,
-    SeriesScienceFictionVue,
-    SeriesTerrorVue,
-    SeriesThrillerVue,
+    SeriesAdventure,
+    SeriesAnime,
+    SeriesComedy,
+    SeriesKids,
+    SeriesPolice,
+    SeriesPopular,
+    SeriesRecomend,
+    SeriesRomantic,
+    SeriesScienceFiction,
+    SeriesTerror,
+    SeriesThriller,
   },
 };
 </script>
