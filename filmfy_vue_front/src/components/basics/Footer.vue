@@ -1,9 +1,6 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div id="footer">
-      <div class="footerLogo">
-        <img src="../../assets/img/LogoFilmfy.png" width="200px" height="200px" alt="" />
-      </div>
       <small><i class="fa-solid fa-copyright"></i>2022 Filmfy</small>
       <Navbar />
       <small>Filfmy.es</small>
@@ -22,4 +19,13 @@ export default {
 </script>
 
 <style>
+div#footer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  background-color: white;
+}
 </style>
