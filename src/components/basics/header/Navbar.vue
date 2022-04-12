@@ -6,7 +6,7 @@
         <div class="container-fluid">
           <!--Filmfy Icon-->
           <div id="filmfyIcon">
-            <router-link to="../../../views/welcome.vue">Filmfy</router-link>
+            <router-link to="../../../views/Welcome.vue">Filmfy</router-link>
             <img
               src="../../../assets/img/LogoFilmfy.png"
               width="200px"

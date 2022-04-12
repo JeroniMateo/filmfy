@@ -1,43 +1,39 @@
 <template>
-  <div id="app" class="content">
+<title>Filmfy Home</title>
+<div class="container-fluid">
+     <div id="Welcome" class="content">
     <Header />
-    <div class="mastercard">
-      <div class="container">
-        <div class="card bg-dark text-white">
-          <img src="..." class="card-img" alt="..." />
-          <div class="card-img-overlay">
-            <h5 class="card-title">Filmfy</h5>
-            <p class="card-text">
-              Encuentra variedad de conentido <br />
-              y crea listas para compartirlas con tus amigos
-            </p>
-            <small class="card-text">Disfruta de contenido exclusivo</small>
-          </div>
-        </div>
-      </div>
-    </div>
+    <MainWelcome/>
     <WelcomeCards />
     <FeaturedContent />
     <Footer />
   </div>
+</div>
 </template>
-
 <script>
-import WelcomeCards from "../js/components/Welcome/WelcomeCards.vue";
-import Header from "../js/components/basics/Header.vue";
-import FeaturedContent from "../js/components/Welcome/FeaturedContent.vue";
-import Footer from "../js/components/basics/Footer.vue";
+import Header from "../components/basics/Header.vue";
+import MainWelcome from "../components/Welcome/MainWelcome.vue";
+import WelcomeCards from "../components/Welcome/WelcomeCards.vue";
+import FeaturedContent from "../components/Welcome/FeaturedContent.vue";
+import Footer from "../components/basics/Footer.vue";
 export default {
-    name: "App",
+  name: "WelcomeHome",
   components: {
-    WelcomeCards,
     Header,
+    MainWelcome,
+    WelcomeCards,
     FeaturedContent,
     Footer,
   },
 };
 </script>
-
 <style>
 
+body{
+  background-color: #42b983;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
