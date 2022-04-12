@@ -1,15 +1,14 @@
 <template>
-  <div class="container">
     <div onclick="login()" class="user">
       <!--If the user is not log -->
-      <div id="UserNotLog">
+      <div id="UserNotLog" class="btn" onclick="">
         <img id="UserNotLogIMG" src="../../../assets/img/UserPhoto.png" alt=""  />
         <p id="userProfile"></p>
       </div>
       <!--If the user is log -->
       <!--Inside this div will show the User Name when it's loged -->
-      <div v-if="log" id="UserNotLog" hidden>
-        <div class="userAcount">
+      <div v-if="log" id="UserNotLog" hidden class="btn">
+        <div class="userAcount" >
           <img src="../../../assets/img/UserPhoto.png" alt="" />
           <li id="userProfile" class="nav-item dropdown">
             <a
@@ -35,7 +34,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -47,5 +45,8 @@ export default {
 <style>
 img#UserNotLogIMG{
   width: 5vh;
+}
+div.user{
+  display: flex;
 }
 </style>
