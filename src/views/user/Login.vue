@@ -22,7 +22,7 @@
       <p id="errorPassword" class="error"><b></b></p>
       <span id="errorLogin" class="error"></span><br />
       <button
-        onclick="LoginAPI()"
+        @click="login"
         id="loginButton"
         class="button"
         aria-label="Inicia sesión"
@@ -42,6 +42,8 @@
 export default {
   name: "Login",
 };
+
+
 </script>
 
 <style>
