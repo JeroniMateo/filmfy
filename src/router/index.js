@@ -7,13 +7,14 @@ import Series from '../views/watchContent/Series.vue'
 import Documentaries from '../views/watchContent/Documentaries.vue'
 import Login from '../views/user/Login.vue'
 import Register from '../views/user/Register.vue'
+import WelcomeHome from "@/views/WelcomeHome";
 
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: WelcomeHome
   },
   {
     path: '/about',
@@ -27,7 +28,7 @@ const routes = [
   },
   {
     path: '/forum',
-    name: 'forum',
+    name: 'Forum',
     component: Forum
   },
   {
