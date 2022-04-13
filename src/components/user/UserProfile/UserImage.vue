@@ -1,5 +1,4 @@
 <template>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <div id="profile-container">
     <image id="profileImage" src="http://lorempixel.com/100/100" />
   </div>
@@ -18,9 +17,7 @@ export default {
     name: "UserProfile",
 
 };
-$("#profileImage").click(function (e) {
-  $("#imageUpload").click();
-});
+
 
 function fasterPreview(uploader) {
   if (uploader.files && uploader.files[0]) {

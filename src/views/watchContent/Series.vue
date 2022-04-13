@@ -85,7 +85,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 h2{
     color:rgb(29,168,226);
     background-color: rgb(15,23,30);
