@@ -1,91 +1,75 @@
 <template>
-  <div class="container-fluid p-3">
+  <div class="container-fluid ">
     <!--Card1-->
-    <div class="container-fluid p-3">
-      <div class="card bg-dark text-white p-3">
-        <img
-          src="../../assets/img/Welcome/Share_all_Lists.png"
-          id="Welcomecard"
-          class="card-img"
-          alt="..."
-          height="500px"
-        />
-        <div class="card-img-overlay">
-          <div class="cardTitle">
-            <h2 class="card-title">
-              Crea Listas <br />
-              y compártelas
-            </h2>
-          </div>
-
-          <div class="cardText">
-            <h5 class="card-text">
-              <b>
-                Se el creador de tu propio repertorio <br />
-                y comparte tus listas con tus amigos.</b
-              >
-            </h5>
+   <div class="container-fluid">
+      <div class="card mb-3" >
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="../../assets/img/Welcome/Share_all_Lists.png" class="img-fluid rounded-start" alt="..." />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
           </div>
         </div>
       </div>
     </div>
+   </div>
     <!--Card2-->
-    <div class="container-fluid p-3">
-      <div class="card bg-dark text-white p-3">
-        <img
-          src="../../assets/img/Welcome/ReferenteDeCine.png"
-          id="Welcomecard"
-          class="card-img"
-          alt="..."
-          height="500px"
-        />
-        <div class="card-img-overlay">
-          <div class="cardTitle">
-            <h5 class="card-text">
-              <b
-                >¡Sé el referente de tu contenido favorito! <br />
-                Estate en todo debate de este arte</b
-              >
-            </h5>
+    <div class="container-fluid">
+      <div class="card mb-3" >
+      <div class="row g-0">
+       
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
           </div>
-          <div class="cardText">
-            <h2 class="card-title">
-              Se un referente <br />
-              de Cine
-            </h2>
-          </div>
+        </div>
+         <div class="col-md-4">
+          <img src="../../assets/img/Welcome/ReferenteDeCine.png" class="img-fluid rounded-start" alt="..." />
         </div>
       </div>
     </div>
+   </div>
     <!--Card3-->
-    <div class="container-fluid p-3">
-      <div class="card bg-dark text-white p-3">
-        <img
-          src="../../assets/img/Welcome/Content_News.png"
-          id="Welcomecard"
-          class="card-img"
-          alt="..."
-          height="500px"
-        />
-        <div class="card-img-overlay">
-          <div class="cardTitle">
-            <h2 class="card-title">
-              Enterate de las ultimas <br />
-              novedades
-            </h2>
-          </div>
-
-          <div class="cardText">
-            <h5 class="card-text">
-              <b>
-                No te pierdas ni un solo detalle y <br />
-                novedad de ninuno de tus artistas y contenidos favoritos.</b
-              >
-            </h5>
+    <div class="container-fluid">
+      <div class="card mb-3" >
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="../../assets/img/Welcome/Content_News.png" class="img-fluid rounded-start" alt="..." />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
           </div>
         </div>
       </div>
     </div>
+   </div>
   </div>
 </template>
 
@@ -105,7 +89,6 @@ h5 {
   font-size: 5vh;
 }
 img#Welcomecard {
-
 }
 div.cardText {
   display: grid;
