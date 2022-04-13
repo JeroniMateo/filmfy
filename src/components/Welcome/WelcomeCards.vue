@@ -105,7 +105,7 @@ h5 {
   font-size: 5vh;
 }
 img#Welcomecard {
-  filter: blur(4px);
+
 }
 div.cardText {
   display: grid;

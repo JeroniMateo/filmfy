@@ -67,6 +67,6 @@ label#verHoy {
   color: black;
 }
 img#MainContentImageWelcome {
-  filter: blur(3px);
+  
 }
 </style>
