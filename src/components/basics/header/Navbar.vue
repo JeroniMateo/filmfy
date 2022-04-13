@@ -73,7 +73,7 @@
                   </li>
                   <li>
                     <router-link
-                      class="nav-link"
+                      class="nav-link"  
                       to="../../../views/watchContent/Series.vue"
                       >Series</router-link
                     >
