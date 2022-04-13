@@ -30,7 +30,7 @@
         Inicia sesión
       </button>
       <div><b>¿Eres nuevo en Filmfy?</b></div>
-      <button id="signUpButton" class="button" aria-label="Inicia sesión">
+      <button id="signUpButton" class="button" aria-label="Inicia sesión" @click="log">
         <router-link to="../../../src/views/user/Register.vue">Registrarse</router-link>
       </button>
       <div id="suscrito"></div>
@@ -41,9 +41,12 @@
 <script>
 export default {
   name: "Login",
+  data() {
+    return {
+      log: true,
+    };
+  },
 };
-
-
 </script>
 
 <style>
