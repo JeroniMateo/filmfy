@@ -5,7 +5,7 @@
         <!--Card1-->
         <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
+            <img   class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -19,7 +19,7 @@
         <!--Card2-->
         <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
+            <img   class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -33,7 +33,7 @@
         <!--Card3-->
         <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
+            <img   class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -46,7 +46,7 @@
         <!--Card4-->
         <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
+            <img   class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -60,7 +60,7 @@
         <!--Card5-->
         <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
+            <img   class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -74,7 +74,7 @@
         <!--Card6-->
         <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
+            <img   class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -88,7 +88,7 @@
         <!--Card7-->
         <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
+            <img   class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -102,7 +102,7 @@
         <!--Card8-->
         <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
+            <img   class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -116,7 +116,7 @@
         <!--Card9-->
         <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
+            <img   class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -130,7 +130,7 @@
         <!--Card10-->
         <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
+            <img   class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">

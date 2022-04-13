@@ -1,66 +1,66 @@
 <template>
   <div id="watchContentDocumentaries">
     <div class="action">
-    <h2>Action</h2>
-      <DocumenariesAction />
+      <h2>Action</h2>
+      <DocumentariesAction />
     </div>
     <div class="history">
       <h2>History</h2>
-      <DocumenariesHistory />
+      <DocumentariesHistory />
     </div>
     <div class="recomend">
       <h2>Recomend</h2>
-      <DocumenariesRecomend />
+      <DocumentariesRecomend />
     </div>
     <div class="sport">
       <h2>Sport</h2>
-      <DocumenariesSport />
+      <DocumentariesSport />
     </div>
     <div class="terror">
       <h2>Terror</h2>
-      <DocumenariesTerror />
+      <DocumentariesTerror />
     </div>
     <div class="anime">
       <h2>Anime</h2>
-      <DocumenariesAnime />
+      <DocumentariesAnime />
     </div>
     <div class="comedy">
       <h2>Comedy</h2>
-      <DocumenariesComedy />
+      <DocumentariesComedy />
     </div>
     <div class="kids">
       <h2>Kids</h2>
-      <DocumenariesKids />
+      <DocumentariesKids />
     </div>
     <div class="police">
       <h2>Police</h2>
-      <DocumenariesPolice />
+      <DocumentariesPolice />
     </div>
     <div class="popular">
       <h2>Popular</h2>
-      <DocumenariesPopular />
+      <DocumentariesPopular />
     </div>
     <div class="romantic">
       <h2>Romantic</h2>
-      <DocumenariesRomantic />
+      <DocumentariesRomantic />
     </div>
     <div class="scienceFiction">
       <h2>Science Fiction</h2>
-      <DocumenariesScienceFiction />
+      <DocumentariesScienceFiction />
     </div>
     <div class="thriller">
       <h2>Thriller</h2>
-      <DocumenariesThriller />
+      <DocumentariesThriller />
     </div>
   </div>
 </template>
 
 <script>
-import DocumenariesHistory from "../../components/Items/watchContentGenres/Documentaries/DocumenariesHistory.vue";
-import DocumenariesAction from "../../components/Items/watchContentGenres/Documentaries/DocumenariesAction.vue";
-import DocumenariesRecomend from "../../components/Items/watchContentGenres/Documentaries/DocumenariesRecomend.vue";
-import DocumentariesSport from "../../components/Items/watchContentGenres/Documentaries/DocumenariesSports.vue";
-import DocumenariesTerror from "../../components/Items/watchContentGenres/Documentaries/DocumenariesTerror.vue";
+import DocumentariesHistory from "../../components/Items/watchContentGenres/Documentaries/DocumentariesHistory.vue";
+import DocumentariesAction from "../../components/Items/watchContentGenres/Documentaries/DocumentariesAction.vue";
+import DocumentariesRecomend from "../../components/Items/watchContentGenres/Documentaries/DocumentariesRecomend.vue";
+import DocumentariesSport from "../../components/Items/watchContentGenres/Documentaries/DocumentariesSports.vue";
+import DocumentariesTerror from "../../components/Items/watchContentGenres/Documentaries/DocumentariesTerror.vue";
 import DocumentariesAnime from "../../components/Items/watchContentGenres/Documentaries/DocumentariesAnime.vue";
 import DocumentariesComedy from "../../components/Items/watchContentGenres/Documentaries/DocumentariesComedy.vue";
 import DocumentariesKids from "../../components/Items/watchContentGenres/Documentaries/DocumentariesKids.vue";
@@ -73,11 +73,11 @@ import DocumentariesThriller from "../../components/Items/watchContentGenres/Doc
 export default {
   name: "Documentaries",
   components: {
-    DocumenariesAction,
+    DocumentariesAction,
     DocumentariesHistory,
-    DocumenariesRecomend,
+    DocumentariesRecomend,
     DocumentariesSport,
-    DocumenariesTerror,
+    DocumentariesTerror,
     DocumentariesAnime,
     DocumentariesComedy,
     DocumentariesKids,
@@ -90,9 +90,9 @@ export default {
 };
 </script>
 
-<style>
-h2{
-    color:rgb(29,168,226);
-    background-color: rgb(15,23,30);
-  }
+<style scoped>
+h2 {
+  color: rgb(29, 168, 226);
+  background-color: rgb(15, 23, 30);
+}
 </style>

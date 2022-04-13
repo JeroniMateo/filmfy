@@ -72,12 +72,15 @@
                     >
                   </li>
                   <li>
-                    <router-link to="../../../views/watchContent/Series.vue"
+                    <router-link
+                      class="nav-link"
+                      to="../../../views/watchContent/Series.vue"
                       >Series</router-link
                     >
                   </li>
                   <li>
                     <router-link
+                      class="nav-link"
                       to="../../../views/watchContent/Documentaries.vue"
                       >Documentales</router-link
                     >
