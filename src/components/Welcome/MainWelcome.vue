@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid p-3">
     <div class="card bg-dark text-white">
       <img
         id="MainContentImageWelcome"

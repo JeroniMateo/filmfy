@@ -6,21 +6,11 @@
 
       v-else if log = true 
         div id="UserLog"
+      -->
 
-      If the user is not log -->
-    <div v-if="log" id="UserNotLog" class="btn" onclick="">
-      <router-link to="../../../views/user/Login.vue">
-        <img
-          id="UserNotLogIMG"
-          src="../../../assets/img/UserPhoto.png"
-          alt=""
-        />
-        <p id="userProfile">Login</p>
-      </router-link>
-    </div>
     <!--If the user is log -->
     <!--Inside this div will show the User Name when it's loged -->
-    <div v-else id="UserLog" hidden class="btn">
+    <div v-if="log" id="UserLog" hidden class="btn">
       <div class="userAcount">
         <img src="../../../assets/img/UserPhoto.png" alt="" />
         <li id="userProfile" class="nav-item dropdown">
@@ -45,6 +35,17 @@
           </ul>
         </li>
       </div>
+    </div>
+        <!-- If the user is not log -->
+    <div v-else id="UserNotLog" class="btn">
+      <router-link to="../../../views/user/Login.vue">
+        <img
+          id="UserNotLogIMG"
+          src="../../../assets/img/UserPhoto.png"
+          alt=""
+        />
+        <p id="userProfile">Login</p>
+      </router-link>
     </div>
   </div>
 </template>

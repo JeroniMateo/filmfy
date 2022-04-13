@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid p-1">
     <div id="header">
       <Navbar />
       <User />
