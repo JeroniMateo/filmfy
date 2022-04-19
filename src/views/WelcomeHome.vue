@@ -30,10 +30,10 @@ export default {
 <style>
 
 body{
-  background-color: #42b983;
+  background-color: #191A19;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #4E9F3D;
 }
 </style>
