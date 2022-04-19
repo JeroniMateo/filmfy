@@ -59,7 +59,7 @@
 import DocumentariesHistory from "../../components/Items/watchContentGenres/Documentaries/DocumentariesHistory.vue";
 import DocumentariesAction from "../../components/Items/watchContentGenres/Documentaries/DocumentariesAction.vue";
 import DocumentariesRecomend from "../../components/Items/watchContentGenres/Documentaries/DocumentariesRecomend.vue";
-import DocumentariesSport from "../../components/Items/watchContentGenres/Documentaries/DocumentariesSports.vue";
+import DocumentariesSports from "../../components/Items/watchContentGenres/Documentaries/DocumentariesSports.vue";
 import DocumentariesTerror from "../../components/Items/watchContentGenres/Documentaries/DocumentariesTerror.vue";
 import DocumentariesAnime from "../../components/Items/watchContentGenres/Documentaries/DocumentariesAnime.vue";
 import DocumentariesComedy from "../../components/Items/watchContentGenres/Documentaries/DocumentariesComedy.vue";
@@ -76,7 +76,7 @@ export default {
     DocumentariesAction,
     DocumentariesHistory,
     DocumentariesRecomend,
-    DocumentariesSport,
+    DocumentariesSports,
     DocumentariesTerror,
     DocumentariesAnime,
     DocumentariesComedy,

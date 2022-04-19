@@ -2,51 +2,51 @@
   <div class="container">
     <div id="watchContentMovies">
       <div class="action">
-        <h2>Action</h2>
+        <h3>Action</h3>
         <MoviesAction />
       </div>
       <div class="adventure">
-        <h2>Adventure</h2>
+        <h3>Adventure</h3>
         <MoviesAdventure />
       </div>
       <div class="anime">
-        <h2>Anime</h2>
+        <h3>Anime</h3>
         <MoviesAnime />
       </div>
       <div class="comedy">
-        <h2>Comedy</h2>
+        <h3>Comedy</h3>
         <MoviesComedy />
       </div>
       <div class="kids">
-        <h2>Kids</h2>
+        <h3>Kids</h3>
         <MoviesKids />
       </div>
       <div class="police">
-        <h2>Police</h2>
+        <h3>Police</h3>
         <MoviesPolice />
       </div>
       <div class="popular">
-        <h2>Popular</h2>
+        <h3>Popular</h3>
         <MoviesPopular />
       </div>
       <div class="recomend">
-        <h2>Recomend</h2>
+        <h3>Recomend</h3>
         <MoviesRecomend />
       </div>
       <div class="romantic">
-        <h2>Romantic</h2>
+        <h3>Romantic</h3>
         <MoviesRomantic />
       </div>
       <div class="scienceFiction">
-        <h2>Science Fiction</h2>
+        <h3>Science Fiction</h3>
         <MoviesScienceFiction />
       </div>
       <div class="terror">
-        <h2>Terror</h2>
+        <h3>Terror</h3>
         <MoviesTerror />
       </div>
       <div class="thriller">
-        <h2>Thriller</h2>
+        <h3>Thriller</h3>
         <MoviesThriller />
       </div>
     </div>
@@ -87,8 +87,10 @@ export default {
 </script>
 
 <style scoped>
-h2 {
+h3 {
   color: rgb(29, 168, 226);
+  width: 50vh;
   background-color: rgb(15, 23, 30);
+  font-size: 6vh;
 }
 </style>
