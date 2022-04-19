@@ -68,7 +68,7 @@ import DocumentariesPolice from "../../components/Items/watchContentGenres/Docum
 import DocumentariesPopular from "../../components/Items/watchContentGenres/Documentaries/DocumentariesPopular.vue";
 import DocumentariesRomantic from "../../components/Items/watchContentGenres/Documentaries/DocumentariesRomantic.vue";
 import DocumentariesScienceFiction from "../../components/Items/watchContentGenres/Documentaries/DocumentariesScienceFiction.vue";
-import DocumentariesThriller from "../../components/Items/watchContentGenres/Documentaries/DocumentariesThriller.vue";
+import documentariesThriller from "../../components/Items/watchContentGenres/Documentaries/DocumentariesThriller.vue";
 
 export default {
   name: "Documentaries",
@@ -85,7 +85,7 @@ export default {
     DocumentariesPopular,
     DocumentariesRomantic,
     DocumentariesScienceFiction,
-    DocumentariesThriller,
+    documentariesThriller,
   },
 };
 </script>

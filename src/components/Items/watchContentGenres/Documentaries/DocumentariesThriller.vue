@@ -148,7 +148,7 @@
 
 <script>
 export default {
-  name: "DocumentariesThriller",
+  name: "documentariesThriller",
 };
 </script>
 
