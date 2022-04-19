@@ -1,56 +1,58 @@
 <template>
-  <div id="watchContentDocumentaries">
-    <div class="action">
-      <h2>Action</h2>
-      <DocumentariesAction />
-    </div>
-    <div class="history">
-      <h2>History</h2>
-      <DocumentariesHistory />
-    </div>
-    <div class="recomend">
-      <h2>Recomend</h2>
-      <DocumentariesRecomend />
-    </div>
-    <div class="sport">
-      <h2>Sport</h2>
-      <DocumentariesSport />
-    </div>
-    <div class="terror">
-      <h2>Terror</h2>
-      <DocumentariesTerror />
-    </div>
-    <div class="anime">
-      <h2>Anime</h2>
-      <DocumentariesAnime />
-    </div>
-    <div class="comedy">
-      <h2>Comedy</h2>
-      <DocumentariesComedy />
-    </div>
-    <div class="kids">
-      <h2>Kids</h2>
-      <DocumentariesKids />
-    </div>
-    <div class="police">
-      <h2>Police</h2>
-      <DocumentariesPolice />
-    </div>
-    <div class="popular">
-      <h2>Popular</h2>
-      <DocumentariesPopular />
-    </div>
-    <div class="romantic">
-      <h2>Romantic</h2>
-      <DocumentariesRomantic />
-    </div>
-    <div class="scienceFiction">
-      <h2>Science Fiction</h2>
-      <DocumentariesScienceFiction />
-    </div>
-    <div class="thriller">
-      <h2>Thriller</h2>
-      <DocumentariesThriller />
+  <div class="container-fluid">
+    <div id="watchContentDocumentaries">
+      <div class="action">
+        <h3>Action</h3>
+        <DocumentariesAction />
+      </div>
+      <div class="history">
+        <h3>History</h3>
+        <DocumentariesHistory />
+      </div>
+      <div class="recomend">
+        <h3>Recomend</h3>
+        <DocumentariesRecomend />
+      </div>
+      <div class="sport">
+        <h3>Sport</h3>
+        <DocumentariesSport />
+      </div>
+      <div class="terror">
+        <h3>Terror</h3>
+        <DocumentariesTerror />
+      </div>
+      <div class="anime">
+        <h3>Anime</h3>
+        <DocumentariesAnime />
+      </div>
+      <div class="comedy">
+        <h3>Comedy</h3>
+        <DocumentariesComedy />
+      </div>
+      <div class="kids">
+        <h3>Kids</h3>
+        <DocumentariesKids />
+      </div>
+      <div class="police">
+        <h3>Police</h3>
+        <DocumentariesPolice />
+      </div>
+      <div class="popular">
+        <h3>Popular</h3>
+        <DocumentariesPopular />
+      </div>
+      <div class="romantic">
+        <h3>Romantic</h3>
+        <DocumentariesRomantic />
+      </div>
+      <div class="scienceFiction">
+        <h3>Science Fiction</h3>
+        <DocumentariesScienceFiction />
+      </div>
+      <div class="thriller">
+        <h3>Thriller</h3>
+        <DocumentariesThriller />
+      </div>
     </div>
   </div>
 </template>
@@ -91,8 +93,10 @@ export default {
 </script>
 
 <style scoped>
-h2 {
+h3 {
   color: rgb(29, 168, 226);
+  width: 50vh;
   background-color: rgb(15, 23, 30);
+  font-size: 6vh;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div id="watchContentMovies">
       <div class="action">
         <h3>Action</h3>
