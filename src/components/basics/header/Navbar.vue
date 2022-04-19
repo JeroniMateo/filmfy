@@ -125,4 +125,5 @@ export default {
 div#searching {
   display: flex;
 }
+
 </style>

@@ -96,8 +96,7 @@ h5 {
   color: rgb(30, 81, 40);
   font-size: 5vh;
 }
-img#Welcomecard {
-}
+
 div.cardText {
   display: grid;
   align-items: end;

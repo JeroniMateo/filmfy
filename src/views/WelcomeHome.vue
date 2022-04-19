@@ -29,7 +29,7 @@ export default {
 <style>
 
 body {
-  background-color: #42b983;
+  background-color: #191A19;
 }
 
 nav a.router-link-exact-active {
