@@ -1,52 +1,52 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div id="watchContentMovies">
       <div class="action">
-        <h2>Action</h2>
+        <h3>Action</h3>
         <MoviesAction />
       </div>
       <div class="adventure">
-        <h2>Adventure</h2>
+        <h3>Adventure</h3>
         <MoviesAdventure />
       </div>
       <div class="anime">
-        <h2>Anime</h2>
+        <h3>Anime</h3>
         <MoviesAnime />
       </div>
       <div class="comedy">
-        <h2>Comedy</h2>
+        <h3>Comedy</h3>
         <MoviesComedy />
       </div>
       <div class="kids">
-        <h2>Kids</h2>
+        <h3>Kids</h3>
         <MoviesKids />
       </div>
       <div class="police">
-        <h2>Police</h2>
+        <h3>Police</h3>
         <MoviesPolice />
       </div>
       <div class="popular">
-        <h2>Popular</h2>
+        <h3>Popular</h3>
         <MoviesPopular />
       </div>
       <div class="recomend">
-        <h2>Recomend</h2>
+        <h3>Recomend</h3>
         <MoviesRecomend />
       </div>
       <div class="romantic">
-        <h2>Romantic</h2>
+        <h3>Romantic</h3>
         <MoviesRomantic />
       </div>
       <div class="scienceFiction">
-        <h2>Science Fiction</h2>
+        <h3>Science Fiction</h3>
         <MoviesScienceFiction />
       </div>
       <div class="terror">
-        <h2>Terror</h2>
+        <h3>Terror</h3>
         <MoviesTerror />
       </div>
       <div class="thriller">
-        <h2>Thriller</h2>
+        <h3>Thriller</h3>
         <MoviesThriller />
       </div>
     </div>
@@ -54,41 +54,43 @@
 </template>
 
 <script>
-import MoviesAction from "../../js/components/watchContentGenres/Movies/MoviesAction.vue";
-import MoviesAdventureVue from "../../js/components/watchContentGenres/Movies/MoviesAdventure.vue";
-import MoviesAnimeVue from "../../js/components/watchContentGenres/Movies/MoviesAnime.vue";
-import MoviesComedyVue from "../../js/components/watchContentGenres/Movies/MoviesComedy.vue";
-import MoviesKidsVue from "../../js/components/watchContentGenres/Movies/MoviesKids.vue";
-import MoviesPoliceVue from "../../js/components/watchContentGenres/Movies/MoviesPolice.vue";
-import MoviesPopularVue from "../../js/components/watchContentGenres/Movies/MoviesPopular.vue";
-import MoviesRecomendVue from "../../js/components/watchContentGenres/Movies/MoviesRecomend.vue";
-import MoviesRomanticVue from "../../js/components/watchContentGenres/Movies/MoviesRomantic.vue";
-import MoviesScienceFictionVue from "../../js/components/watchContentGenres/Movies/MoviesScienceFiction.vue";
-import MoviesTerrorVue from "../../js/components/watchContentGenres/Movies/MoviesTerror.vue";
-import MoviesThrillerVue from "../../js/components/watchContentGenres/Movies/MoviesThriller.vue";
+import MoviesAction from "../../components/Items/watchContentGenres/Movies/MoviesAction.vue";
+import MoviesAdventure from "../../components/Items/watchContentGenres/Movies/MoviesAdventure.vue";
+import MoviesAnime from "../../components/Items/watchContentGenres/Movies/MoviesAnime.vue";
+import MoviesComedy from "../../components/Items/watchContentGenres/Movies/MoviesComedy.vue";
+import MoviesKids from "../../components/Items/watchContentGenres/Movies/MoviesKids.vue";
+import MoviesPolice from "../../components/Items/watchContentGenres/Movies/MoviesPolice.vue";
+import MoviesPopular from "../../components/Items/watchContentGenres/Movies/MoviesPopular.vue";
+import MoviesRecomend from "../../components/Items/watchContentGenres/Movies/MoviesRecomend.vue";
+import MoviesRomantic from "../../components/Items/watchContentGenres/Movies/MoviesRomantic.vue";
+import MoviesScienceFiction from "../../components/Items/watchContentGenres/Movies/MoviesScienceFiction.vue";
+import MoviesTerror from "../../components/Items/watchContentGenres/Movies/MoviesTerror.vue";
+import MoviesThriller from "../../components/Items/watchContentGenres/Movies/MoviesThriller.vue";
 
 export default {
   name: "Movies",
   components: {
     MoviesAction,
-    MoviesAdventureVue,
-    MoviesAnimeVue,
-    MoviesComedyVue,
-    MoviesKidsVue,
-    MoviesPoliceVue,
-    MoviesPopularVue,
-    MoviesRecomendVue,
-    MoviesRomanticVue,
-    MoviesScienceFictionVue,
-    MoviesTerrorVue,
-    MoviesThrillerVue,
+    MoviesAdventure,
+    MoviesAnime,
+    MoviesComedy,
+    MoviesKids,
+    MoviesPolice,
+    MoviesPopular,
+    MoviesRecomend,
+    MoviesRomantic,
+    MoviesScienceFiction,
+    MoviesTerror,
+    MoviesThriller,
   },
 };
 </script>
 
-<style>
-h2 {
+<style scoped>
+h3 {
   color: rgb(29, 168, 226);
+  width: 50vh;
   background-color: rgb(15, 23, 30);
+  font-size: 6vh;
 }
 </style>

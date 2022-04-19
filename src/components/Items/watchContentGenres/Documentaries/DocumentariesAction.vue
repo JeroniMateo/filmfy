@@ -1,5 +1,5 @@
 <template>
-  <div id="SeriesPopular">
+  <div id="DocumentariesAction">
     <div class="container-fluid">
       <div class="row row-cols-1 row-cols-md-6 g-6">
         <div class="col" id="ContenidoItemsCards">
@@ -87,7 +87,7 @@
 
 <script>
 export default {
-  name: "SeriesPopular",
+  name: "DocumentariesAction",
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid p-1">
     <div id="header">
       <Navbar />
       <User />
@@ -22,5 +22,14 @@ export default {
 <style>
 h2 {
   color: green;
+}
+div#header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  background-color: white;
 }
 </style>

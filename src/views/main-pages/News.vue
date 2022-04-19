@@ -1,13 +1,12 @@
 <template>
     <div class="container">
-        <Header />
-        <Footer />
+
     </div>
 </template>
 
 <script>
-import Header from "../../js/components/basics/Header.vue";
-import Footer from "../../js/components/basics/Footer.vue";
+import Header from "../../components/basics/Header.vue";
+import Footer from "../../components/basics/Footer.vue";
 export default {
   name: "Items",
     components: {

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
+    "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.1.3",
     "roboto-fontface": "*",
     "sass": "^1.50.0",
