@@ -31,7 +31,7 @@
               <li class="nav-item">
                 <router-link
                   class="nav-link"
-                  to="../../../views/main-pages/Home.vue"
+                  to="/"
                   >Home</router-link
                 >
               </li>
@@ -41,14 +41,14 @@
               <li class="nav-item">
                 <router-link
                   class="nav-link"
-                  to="../../../views/main-pages/Forum"
+                  :to="'/forum'"
                   >Forum</router-link
                 >
               </li>
               <li class="nav-item">
                 <router-link
                   class="nav-link"
-                  to="../../../views/main-pages/News.vue"
+                  to="/news"
                   >News</router-link
                 >
               </li>
@@ -67,21 +67,21 @@
                   <li>
                     <router-link
                       class="nav-link"
-                      to="../../../views/watchContent/Movies.vue"
+                      to="/movies"
                       >Películas</router-link
                     >
                   </li>
                   <li>
                     <router-link
                       class="nav-link"  
-                      to="../../../views/watchContent/Series.vue"
+                      to="/series"
                       >Series</router-link
                     >
                   </li>
                   <li>
                     <router-link
                       class="nav-link"
-                      to="../../../views/watchContent/Documentaries.vue"
+                      to="/documentaries"
                       >Documentales</router-link
                     >
                   </li>

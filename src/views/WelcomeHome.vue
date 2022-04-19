@@ -1,14 +1,12 @@
 <template>
-<title>Filmfy Home</title>
-<div class="container-fluid">
-     <div id="Welcome" class="content">
-    <Header />
-    <MainWelcome/>
-    <WelcomeCards />
-    <FeaturedContent />
-    <Footer />
+  <title>Filmfy Home</title>
+  <div class="container-fluid">
+    <div id="Welcome" class="content">
+      <MainWelcome/>
+      <WelcomeCards/>
+      <FeaturedContent/>
+    </div>
   </div>
-</div>
 </template>
 <script>
 import Header from "../components/basics/Header.vue";
@@ -16,6 +14,7 @@ import MainWelcome from "../components/Welcome/MainWelcome.vue";
 import WelcomeCards from "../components/Welcome/WelcomeCards.vue";
 import FeaturedContent from "../components/Welcome/FeaturedContent.vue";
 import Footer from "../components/basics/Footer.vue";
+
 export default {
   name: "WelcomeHome",
   components: {
@@ -29,7 +28,7 @@ export default {
 </script>
 <style>
 
-body{
+body {
   background-color: #42b983;
 }
 

@@ -1,19 +1,19 @@
 <template>
-<div class="container">
-    <Header />
-    <Footer />
-</div>
+  <div class="container">
+
+  </div>
 </template>
 
 <script>
 import Header from "../../components/basics/Header.vue";
 import Footer from "../../components/basics/Footer.vue";
+
 export default {
   name: "Forum",
-    components: {
-        Header,
-        Footer
-    },
+  components: {
+    Header,
+    Footer
+  },
 };
 </script>
 

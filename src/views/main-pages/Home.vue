@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <Header />
-    <Footer />
+
   </div>
 </template>
 

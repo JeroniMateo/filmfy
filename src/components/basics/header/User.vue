@@ -38,7 +38,7 @@
     </div>
         <!-- If the user is not log -->
     <div v-else id="UserNotLog" class="btn">
-      <router-link to="../../../views/user/Login.vue">
+      <router-link to="login">
         <img
           id="UserNotLogIMG"
           src="../../../assets/img/UserPhoto.png"

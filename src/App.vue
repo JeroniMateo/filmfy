@@ -1,12 +1,19 @@
 <template>
-  <WelcomeHome/>
+  <Header/>
+  <router-view/>
+  <Footer/>
 </template>
 <script>
 import WelcomeHome from "../src/views/WelcomeHome.vue"
+import Header from "@/components/basics/Header";
+import Footer from "@/components/basics/Footer";
+
 export default {
   name: "App",
   components: {
     WelcomeHome,
+    Header,
+    Footer
   },
 };
 </script>
