@@ -91,10 +91,12 @@ export default {
 h2 {
   color: #00fff2;
   font-size: 10vh;
+  font-weight: bold;
 }
 h5 {
   color: rgb(30, 81, 40);
   font-size: 5vh;
+  font-weight: bold;
 }
 
 div.cardText {
