@@ -23,8 +23,7 @@
 <script>
 import UserLog from "@/components/user/UserHeader/UserLog.vue";
 import UserNotLog from "@/components/user/UserHeader/UserNotLog.vue";
-import UserNotLog from "@/components/user/UserHeader/UserNotLog.vue";
-import UserLog from "@/components/user/UserHeader/UserLog.vue";
+
 export default {
   name: "User",
   components: {
