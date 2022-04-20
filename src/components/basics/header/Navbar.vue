@@ -36,7 +36,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Mi Espacio</a>
+                <a v-if="log" class="nav-link disabled" href="#">Mi Espacio</a>
               </li>
               <li class="nav-item">
                 <router-link
@@ -93,7 +93,7 @@
               </li>
               <li class="nav-item">
                 <!--This Navbar link will be enabled if the user is loged-->
-                <a class="nav-link disabled">Mis Listas</a>
+                <router-link v-if="log" class=" nav-link" to="/playlists">Mis Listas</router-link>
               </li>
             </ul>
             <div id="searching">
@@ -118,6 +118,13 @@
 <script>
 export default {
   name: "Navbar",
+
+
+  data() {
+    return {
+      log: true,
+    };
+  },
 };
 </script>
 
