@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import WelcomeHome from "@/views/WelcomeHome";
 import Forum from '../views/main-pages/Forum.vue'
 import News from '../views/main-pages/News.vue'
 import Movies from '../views/watchContent/Movies.vue'
@@ -7,8 +7,9 @@ import Series from '../views/watchContent/Series.vue'
 import Documentaries from '../views/watchContent/Documentaries.vue'
 import Login from '../views/user/Login.vue'
 import Register from '../views/user/Register.vue'
-import WelcomeHome from "@/views/WelcomeHome";
-
+import UserProfile from '../views/user/UserProfile.vue'
+import UserSettings from '../views/user/UserSettings.vue'
+import Playlists from '../views/mis-listas/Playlists.vue'
 
 const routes = [
   {
@@ -56,6 +57,20 @@ const routes = [
     name: 'register',
     component: Register
   },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: UserProfile,
+  },{
+    path: '/settings',
+    name: 'settings',
+    component: UserSettings,
+  },
+  {
+    path: '/playlists',
+    name: 'playlists',
+    component: Playlists,
+  }
 ]
 
 const router = createRouter({
