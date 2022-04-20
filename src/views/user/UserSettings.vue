@@ -1,5 +1,5 @@
 <template>
-  <div id="userSetings">
+  <div id="UserSettings">
     <div class="container-fluid">
       <UserImage />
       <UserItems />

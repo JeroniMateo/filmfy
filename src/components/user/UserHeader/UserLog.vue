@@ -14,8 +14,8 @@
         Username
       </a>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="#">Perfil</a></li>
-        <li><a class="dropdown-item" href="#">Ajustes</a></li>
+        <li><router-link class="dropdown-item" to="/profile">Perfil</router-link></li>
+        <li><router-link class="dropdown-item" to="/settings">Ajustes</router-link></li>
         <li><hr class="dropdown-divider" /></li>
         <li>
           <a class="dropdown-item" href="#">Log Out</a>
