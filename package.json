@@ -12,7 +12,8 @@
     "sass": "^1.50.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~5.0.0",
