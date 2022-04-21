@@ -15,7 +15,7 @@
       </div>
       <div class="sport">
         <h3>Sport</h3>
-        <DocumentariesSport />
+        <DocumentariesSports />
       </div>
       <div class="terror">
         <h3>Terror</h3>
@@ -70,7 +70,7 @@ import DocumentariesPolice from "../../components/Items/watchContentGenres/Docum
 import DocumentariesPopular from "../../components/Items/watchContentGenres/Documentaries/DocumentariesPopular.vue";
 import DocumentariesRomantic from "../../components/Items/watchContentGenres/Documentaries/DocumentariesRomantic.vue";
 import DocumentariesScienceFiction from "../../components/Items/watchContentGenres/Documentaries/DocumentariesScienceFiction.vue";
-import documentariesThriller from "../../components/Items/watchContentGenres/Documentaries/DocumentariesThriller.vue";
+import DocumentariesThriller from "../../components/Items/watchContentGenres/Documentaries/DocumentariesThriller.vue";
 
 export default {
   name: "Documentaries",
@@ -87,7 +87,7 @@ export default {
     DocumentariesPopular,
     DocumentariesRomantic,
     DocumentariesScienceFiction,
-    documentariesThriller,
+    DocumentariesThriller,
   },
 };
 </script>
