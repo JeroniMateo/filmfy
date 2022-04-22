@@ -16,8 +16,8 @@
 
   <body>
     <div class="wrapper">
-      <section id="section1DAnime">
-        <a href="#section3DAnime" class="arrow__btn">‹</a>
+      <section id="section1DAmine">
+        <a href="#section3DAmine" class="arrow__btn">‹</a>
         <div class="col" id="ContenidoItemsCards">
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
@@ -83,10 +83,10 @@
             </div>
           </div>
         </div>
-        <a href="#section2DAnime" class="arrow__btn">›</a>
+        <a href="#section2DAmine" class="arrow__btn">›</a>
       </section>
-      <section id="section2DAnime">
-        <a href="#section1DAnime" class="arrow__btn">‹</a>
+      <section id="section2DAmine">
+        <a href="#section1DAmine" class="arrow__btn">‹</a>
         <div class="col" id="ContenidoItemsCards">
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
@@ -153,10 +153,10 @@
           </div>
         </div>
 
-        <a href="#section3DAnime" class="arrow__btn">›</a>
+        <a href="#section3DAmine" class="arrow__btn">›</a>
       </section>
-      <section id="section3DAnime">
-        <a href="#section2DAnime" class="arrow__btn">‹</a>
+      <section id="section3DAmine">
+        <a href="#section2DAmine" class="arrow__btn">‹</a>
         <div class="col" id="ContenidoItemsCards">
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
@@ -222,7 +222,7 @@
             </div>
           </div>
         </div>
-        <a href="#section1DAnime" class="arrow__btn">›</a>
+        <a href="#section1DAmine" class="arrow__btn">›</a>
       </section>
     </div>
   </body>

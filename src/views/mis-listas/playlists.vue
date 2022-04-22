@@ -1,5 +1,5 @@
 <template>
-<div id="playlists"></div>  
+<div id="Playlists"></div>  
 </template>
 
 <script>
