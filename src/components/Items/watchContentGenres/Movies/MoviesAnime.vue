@@ -1,4 +1,5 @@
 <template>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -225,7 +226,7 @@
       </section>
     </div>
   </body>
-</html>
+  </html>
 </template>
 
 
