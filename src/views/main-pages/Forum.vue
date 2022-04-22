@@ -1,20 +1,29 @@
 <template>
   <div class="container">
-
+    <div class="DiscussArea">
+    <div id="AddDiscussion">
+      <button @click="addDiscuss">New Discuss</button>
+    </div>
+    <NewDiscuss/>
+    </div>
   </div>
 </template>
 
 <script>
-import Header from "../../components/basics/Header.vue";
-import Footer from "../../components/basics/Footer.vue";
+import NewDiscuss from "@/components/principal-views/Forum/NewDiscuss.vue"
 
 export default {
   name: "Forum",
   components: {
-    Header,
-    Footer
-  },
-};
+    NewDiscuss,
+    
+    methods: {
+      addDiscuss() {
+        this.$router.push("/new-discuss");
+      }
+    },
+  }
+  }
 </script>
 
 <style>
