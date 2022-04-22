@@ -8,6 +8,7 @@ import Documentaries from '../views/watchContent/Documentaries.vue'
 import Login from '../views/user/Login.vue'
 import Register from '../views/user/Register.vue'
 import UserProfile from '../views/user/UserProfile.vue'
+import UserSettings from '../views/user/UserSettings.vue'
 import Playlists from '../views/mis-listas/Playlists.vue'
 
 const routes = [
@@ -65,6 +66,10 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: UserProfile
+  },  {
+    path: '/settings',
+    name: 'settings',
+    component: UserSettings
   }, {
     path: '/playlists',
     name: 'playlists',
