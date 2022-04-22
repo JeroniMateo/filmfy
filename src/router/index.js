@@ -8,9 +8,7 @@ import Documentaries from '../views/watchContent/Documentaries.vue'
 import Login from '../views/user/Login.vue'
 import Register from '../views/user/Register.vue'
 import UserProfile from '../views/user/UserProfile.vue'
-
-
-import Playlists from '../views/mis-listas/playlists.vue'
+import Playlists from '../views/mis-listas/Playlists.vue'
 
 const routes = [
   {

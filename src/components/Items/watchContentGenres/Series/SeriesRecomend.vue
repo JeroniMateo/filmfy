@@ -228,6 +228,7 @@
   </body>
   </html>
 </template>
+
 <script>
 export default {
   name: "SeriesRecomend",
