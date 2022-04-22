@@ -10,20 +10,11 @@
 </template>
 
 <script>
-import NewDiscuss from "@/components/principal-views/Forum/NewDiscuss.vue"
+
 
 export default {
   name: "Forum",
-  components: {
-    NewDiscuss,
-    
-    methods: {
-      addDiscuss() {
-        this.$router.push("/new-discuss");
-      }
-    },
-  }
-  }
+}
 </script>
 
 <style>
