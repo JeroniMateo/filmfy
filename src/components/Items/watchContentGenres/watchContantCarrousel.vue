@@ -16,13 +16,13 @@
 
   <body>
     <div class="wrapper">
-      <section id="section1MScienceFiction">
-        <a href="#section3MScienceFiction" class="arrow__btn">‹</a>
+      <section id="section1DAction">
+        <a href="#section3DAction" class="arrow__btn">‹</a>
         <div class="col" id="ContenidoItemsCards">
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -35,7 +35,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -48,7 +48,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -61,7 +61,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -74,7 +74,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -83,15 +83,15 @@
             </div>
           </div>
         </div>
-        <a href="#section2MScienceFiction" class="arrow__btn">›</a>
+        <a href="#section2DAction" class="arrow__btn">›</a>
       </section>
-      <section id="section2MScienceFiction">
-        <a href="#section1MScienceFiction" class="arrow__btn">‹</a>
+      <section id="section2DAction">
+        <a href="#section1DAction" class="arrow__btn">‹</a>
         <div class="col" id="ContenidoItemsCards">
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -104,7 +104,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -117,7 +117,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -130,7 +130,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -143,7 +143,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -153,15 +153,15 @@
           </div>
         </div>
 
-        <a href="#section3MScienceFiction" class="arrow__btn">›</a>
+        <a href="#section3DAction" class="arrow__btn">›</a>
       </section>
-      <section id="section3MScienceFiction">
-        <a href="#section2MScienceFiction" class="arrow__btn">‹</a>
+      <section id="section3DAction">
+        <a href="#section2DAction" class="arrow__btn">‹</a>
         <div class="col" id="ContenidoItemsCards">
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -174,7 +174,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -187,7 +187,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -200,7 +200,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -213,7 +213,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -222,7 +222,7 @@
             </div>
           </div>
         </div>
-        <a href="#section1MScienceFiction" class="arrow__btn">›</a>
+        <a href="#section1DAction" class="arrow__btn">›</a>
       </section>
     </div>
   </body>
@@ -231,7 +231,7 @@
 
 <script>
 export default {
-  name: "MoviesScienceFiction",
+  name: "DocumentariesAction",
 };
 </script>
 
