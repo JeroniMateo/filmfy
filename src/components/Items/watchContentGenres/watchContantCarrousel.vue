@@ -213,7 +213,7 @@
           <div class="card h-200 w-90">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
-              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button class="FavWatch"></button></div>
+              <div class="CardHeader"><h5 class="card-title">Card title</h5> <button @click="addFavs" id="FavWatch"></button></div>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -232,10 +232,27 @@
 <script>
 export default {
   name: "DocumentariesAction",
+data() {
+        return {
+          favorites: true,
+        };
+      },
+
+   methods:{
+        addFavs(){
+          if(favorites){
+            console.log("Agregar a favoritos");
+            document.getElementById("FavWatch").innerHTML = '<img src="/src/assets/img/FavWatch/Fav.png" alt="">';
+          }else{
+            console.log("Quitar de favoritos");
+            document.getElementById("FavWatch").innerHTML = '<img src="/src/assets/img/FavWatch/NotFav.png" alt="">';
+          }
+        },
+      },
 };
 </script>
 
-<style>
+<style scoped>
 div#ContenidoItemsCards {
   display: flex;
   flex-wrap: wrap;

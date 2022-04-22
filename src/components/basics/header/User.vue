@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 img#UserNotLogIMG {
   width: 5vh;
 }

@@ -33,7 +33,7 @@ $("#imageUpload").change(function () {
 });
 </script>
 
-<style>
+<style scoped>
 #imageUpload {
   display: none;
 }

@@ -112,7 +112,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 div#FeaturedContent{
   background-color: #4E9F3D;
 }
