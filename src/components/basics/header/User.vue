@@ -29,8 +29,6 @@ export default {
   components: {
     UserLog,
     UserNotLog,
-    UserNotLog,
-    UserLog,
   },
   data() {
     return {
