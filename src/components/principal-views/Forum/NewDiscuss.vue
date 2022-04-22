@@ -33,6 +33,6 @@ export default {
 
 <style>
 div#discussion {
-  background-color: ;
+  background-color: #1E5128;
 }
 </style>
