@@ -112,11 +112,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 div#FeaturedContent{
   background-color: #4E9F3D;
 }
-div#MainCards{
-   
-}
+
 </style>

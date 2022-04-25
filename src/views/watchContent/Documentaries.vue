@@ -13,7 +13,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 h3 {
   color: rgb(29, 168, 226);
   width: 50vh;
