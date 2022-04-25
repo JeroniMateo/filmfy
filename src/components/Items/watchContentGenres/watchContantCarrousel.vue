@@ -24,7 +24,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -40,7 +40,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -56,7 +56,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -72,7 +72,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -88,7 +88,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -108,7 +108,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -124,7 +124,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -140,7 +140,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -156,7 +156,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -172,7 +172,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -193,7 +193,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -209,7 +209,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -225,7 +225,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -241,7 +241,7 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button class="FavWatch"></button>
+                  <button id="FavWatch"></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
