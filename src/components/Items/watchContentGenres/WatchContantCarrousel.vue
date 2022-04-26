@@ -15,7 +15,7 @@
     </head>
 
     <body>
-      <div class="wrapper">
+      <div class="wrapper" v-on:click.right="ItemOpctions">
         <section id="section1DAction">
           <a href="#section3DAction" class="arrow__btn">‹</a>
           <div class="col" id="ContenidoItemsCards">
@@ -275,8 +275,12 @@
 </template>
 
 <script>
+import WatchItemOptions from '../watchContentGenres/WatchItemOptions.vue'
 export default {
-  name: "DocumentariesAction",
+  name: "WatchContentCarrousel",
+  components:{
+    WatchItemOptions,
+  },
   data() {
     return {
       favorites: true,
@@ -295,6 +299,9 @@ export default {
           '<i class="fa-solid fa-circle-heart"></i>';
       }
     },
+    ItemOpctions(){
+      send
+    }
   },
 };
 </script>

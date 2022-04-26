@@ -1,14 +1,16 @@
 <template>
   <div class="container-fluid">
-
+    <WatchItemOptions />
   </div>
 </template>
 
 <script>
-
+import WatchItemOptions from "../../components/Items/watchContentGenres/WatchContantCarrousel.vue";
 export default {
   name: "Movies",
-
+  components: {
+    WatchItemOptions,
+  },
 };
 </script>
 
