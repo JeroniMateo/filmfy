@@ -6,13 +6,12 @@
         <div class="container-fluid">
           <!--Filmfy Icon-->
           <div id="filmfyIcon">
-            <router-link to="/">Filmfy</router-link>
-            <img
-              src="../../../assets/img/LogoFilmfy.png"
-              width="200px"
-              height="200px"
+            <router-link to="/">  <img
+              src="../../../assets/img/LogoImageFilmfy.png"
               alt=""
-            />
+              id="logoFilmfy"
+            /></router-link>
+          
           </div>
 
           <button
@@ -68,7 +67,7 @@
                       >Documentales</router-link
                     >
                   </li>
-                  <li><hr class="dropdown-divider" /></li>
+                  
                 </ul>
               </li>
               <li class="nav-item">
@@ -113,7 +112,14 @@ export default {
 </script>
 
 <style scoped>
+li{
+  font-size: 2.5vh;
+}
 div#searching {
   display: flex;
+}
+img#logoFilmfy{
+  width: 10vh;
+  height: 10vh;
 }
 </style>
