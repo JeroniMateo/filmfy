@@ -24,7 +24,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -40,7 +41,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -56,7 +58,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -72,7 +75,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -88,7 +92,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -108,7 +113,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -124,7 +130,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -140,7 +147,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -156,7 +164,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -172,7 +181,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -193,7 +203,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -209,7 +220,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -225,7 +237,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -241,7 +254,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -257,7 +271,8 @@
               <div class="card-body">
                 <div class="CardHeader">
                   <h5 class="card-title">Card title</h5>
-                  <button @click="addFavs" id="FavWatch"></button>
+                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
+                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
                 </div>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
@@ -307,6 +322,16 @@ export default {
 </script>
 
 <style scoped>
+#FavWatch{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgb(76, 116, 201);
+  border-radius: 50%;
+  border: 1px solid #000;
+  cursor: pointer;
+}
 div#ContenidoItemsCards {
   display: flex;
   flex-wrap: wrap;
