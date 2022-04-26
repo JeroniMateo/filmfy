@@ -15,6 +15,7 @@
     </head>
 
     <body>
+        <div class="title"><h2>Genres</h2></div>
       <div class="wrapper" v-on:click.right="ItemOpctions">
         <section id="section1DAction">
           <a href="#section3DAction" class="arrow__btn">‹</a>
@@ -410,5 +411,11 @@ h1 {
   a.arrow__btn {
     display: none;
   }
+}
+div.title{
+  display: flex;
+  font-size: 500em;
+  background-color: #2c3e50;
+  width: 15vh;
 }
 </style>
