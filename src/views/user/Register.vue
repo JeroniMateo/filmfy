@@ -1,120 +1,136 @@
 <template>
-  <div class="col-md-12">
-    <div class="card card-container">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="css/forms.css" />
+      <title>TimeInn - Regístrate</title>
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="images/Logo Music4Events.png"
       />
-      <Form @submit="handleRegister" :validation-schema="schema">
-        <div v-if="!successful">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <Field name="username" type="text" class="form-control" />
-            <ErrorMessage name="username" class="error-feedback" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+    <body>
+      <div id="layout">
+        <header>
+          <a href="Index.html"><img src="images/Logo Music4Events.png" /></a>
+        </header>
+        <section id="infoutil">
+          <h4>Reserva entrada en tu concierto favorito</h4>
+          <div>
+            <i class="fas fa-ticket-alt"></i>
+            <div>
+              En nuestra web te ofrecemos todas las facilidades para que puedas
+              conseguir entradas para ver a tus artistas favoritos.
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <Field name="email" type="email" class="form-control" />
-            <ErrorMessage name="email" class="error-feedback" />
+
+          <h4>Entérate de las últimas novedades</h4>
+          <div>
+            <i class="far fa-newspaper"></i>
+            <div>
+              Trabajamos día a día para mantenerte actualizado. En nuestro
+              portal de noticias podrás conocer de primera mano todo lo que
+              necesitas saber.
+            </div>
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <Field name="password" type="password" class="form-control" />
-            <ErrorMessage name="password" class="error-feedback" />
+
+          <h4>Participa en nuestros sorteos</h4>
+          <div>
+            <i class="far fa-star"></i>
+            <div>
+              Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
+              Formar parte de la comunidad de Music4Events te da la oportunidad
+              a participar en todos los sorteos.
+            </div>
           </div>
-          <div class="form-group">
-            <button class="btn btn-primary btn-block" :disabled="loading">
-              <span
-                v-show="loading"
-                class="spinner-border spinner-border-sm"
-              ></span>
-              Sign Up
+          <h3>¿A qué estás esperando?</h3>
+        </section>
+        <div id="formSignUp">
+          <h1>Registrarse</h1>
+          <form action="">
+            <input
+              id="emailR"
+              placeholder="Email*"
+              class="registro"
+              type="email"
+              name="email"
+            />
+            <p id="errorEmail" class="error"></p>
+            <input
+              id="passwordR"
+              placeholder="Password*"
+              class="registro"
+              type="password"
+              name="password"
+            />
+            <p id="errorPassword" class="error"></p>
+            <button
+              type="button"
+              @click="signUpAPI"
+              id="signUpButton"
+              class="button"
+              aria-label="Regístrate"
+            >
+              Regístrate
             </button>
-          </div>
+            <div>¿Ya tienes una cuenta?</div>
+            <button id="loginButton" class="button" aria-label="Inicia sesión">
+              <router-link to="/login">Inicia sesión</router-link>
+            </button>
+            <div id="signUpAlert"></div>
+          </form>
         </div>
-      </Form>
-      <div
-        v-if="message"
-        class="alert"
-        :class="successful ? 'alert-success' : 'alert-danger'"
-      >
-        {{ message }}
       </div>
-    </div>
-  </div>
+    </body>
+  </html>
 </template>
+
 <script>
-import { Form, Field, ErrorMessage } from "vee-validate";
-import * as yup from "yup";
 export default {
   name: "Register",
-  components: {
-    Form,
-    Field,
-    ErrorMessage,
-  },
-  data() {
-    const schema = yup.object().shape({
-      username: yup
-        .string()
-        .required("Username is required!")
-        .min(3, "Must be at least 3 characters!")
-        .max(20, "Must be maximum 20 characters!"),
-      email: yup
-        .string()
-        .required("Email is required!")
-        .email("Email is invalid!")
-        .max(50, "Must be maximum 50 characters!"),
-      password: yup
-        .string()
-        .required("Password is required!")
-        .min(6, "Must be at least 6 characters!")
-        .max(40, "Must be maximum 40 characters!"),
-    });
-    return {
-      successful: false,
-      loading: false,
-      message: "",
-      schema,
-    };
-  },
-  computed: {
-    loggedIn() {
-      return this.$store.state.auth.status.loggedIn;
-    },
-  },
-  mounted() {
-    if (this.loggedIn) {
-      this.$router.push("/profile");
-    }
-  },
+  data: {},
   methods: {
-    handleRegister(user) {
-      this.message = "";
-      this.successful = false;
-      this.loading = true;
-      this.$store.dispatch("auth/register", user).then(
-        (data) => {
-          this.message = data.message;
-          this.successful = true;
-          this.loading = false;
+    setCookie: function (cname, cvalue, exdays) {
+      const d = new Date();
+      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+      let expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    },
+    //El usuario introduce un email y una contraseña y lo añadimos a la api de users.json
+    signUpAPI: function () {
+      fetch("", {
+        method: "POST",
+        body: JSON.stringify({
+          email: document.getElementById("emailR").value,
+          password: document.getElementById("passwordR").value,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
         },
-        (error) => {
-          this.message =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-          this.successful = false;
-          this.loading = false;
-        }
-      );
+      })
+        .then((response) => response.json())
+        .then((token) => {
+          setCookie("tokenName", token.access_token, 365);
+          window.location.href = "";
+        })
+        .catch(function (error) {
+          console.log("Error en el fetch", error);
+        });
     },
   },
 };
 </script>
-<style scoped>
 
+<style>
 </style>

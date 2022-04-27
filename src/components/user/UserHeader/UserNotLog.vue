@@ -1,18 +1,21 @@
 <template>
-  <div class="container">
-      <router-link to="">
-          <img src="../../../assets/img/UserPhoto.png" alt="">
-          <small>Login</small>
-      </router-link>
-  </div>
+  <router-link to="login">
+    <img id="UserNotLogIMG" src="../../../assets/img/UserPhoto.png" alt="" />
+    <p id="userProfile">Login</p>
+  </router-link>
 </template>
 
 <script>
 export default {
+  name: "UserNotLog",
 
-}
+  data() {
+    return {
+      log: false,
+    };
+  },
+};
 </script>
 
-<style>
-
+<style scoped>
 </style>

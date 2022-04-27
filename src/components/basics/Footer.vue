@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 div#footer {
   display: flex;
   flex-direction: row-reverse;
