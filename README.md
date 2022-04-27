@@ -1,5 +1,11 @@
 # Filmfy
 
+## Main Idea
+1. Filmfy (red social de películas diferenciado por poder hacer listas de contenido, tener noticias y un foro de debate de usuarios)
+
+    - Technologies: Laravel, Vue.js, MySQL
+
+Wireframe with Balsamiq: https://balsamiq.cloud/swio5ls/pepq8ha/r2278
 
 ## Pallete Color
 
