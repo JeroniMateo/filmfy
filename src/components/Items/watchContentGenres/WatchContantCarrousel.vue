@@ -15,274 +15,35 @@
     </head>
 
     <body>
-        <div class="title"><h2>Genres</h2></div>
+      <div class="title"><h2>Genres</h2></div>
       <div class="wrapper" v-on:click.right="ItemOpctions">
         <section id="section1DAction">
           <a href="#section3DAction" class="arrow__btn">‹</a>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
+          <WatchItemCard />
+          <WatchItemCard/>
+          <WatchItemCard/>
+          <WatchItemCard/>
+          <WatchItemCard/>
           <a href="#section2DAction" class="arrow__btn">›</a>
         </section>
         <section id="section2DAction">
           <a href="#section1DAction" class="arrow__btn">‹</a>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-
+          <WatchItemCard />
+          <WatchItemCard />
+          <WatchItemCard />
+          <WatchItemCard />
+          <WatchItemCard />
+          <WatchItemCard />
           <a href="#section3DAction" class="arrow__btn">›</a>
         </section>
         <section id="section3DAction">
           <a href="#section2DAction" class="arrow__btn">‹</a>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col" id="ContenidoItemsCards">
-            <div class="card h-200 w-90">
-              <img class="card-img-top" alt="..." />
-              <div class="card-body">
-                <div class="CardHeader">
-                  <h5 class="card-title">Card title</h5>
-                  <button v-if="favorites" id="FavWatch"><i class="fa-solid fa-heart"></i></button>
-                  <button v-else id="FavWatch"><i class="fa-solid fa-circle-heart"></i></button>
-                </div>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
+          <WatchItemCard />
+          <WatchItemCard />
+          <WatchItemCard />
+          <WatchItemCard />
+          <WatchItemCard />
+          <WatchItemCard />
           <a href="#section1DAction" class="arrow__btn">›</a>
         </section>
       </div>
@@ -291,11 +52,15 @@
 </template>
 
 <script>
-import WatchItemOptions from '../watchContentGenres/WatchItemOptions.vue'
+import WatchItemOptions from "../watchContentGenres/WatchItemOptions.vue";
+import WatchItemCard from "../WatchItemCard.vue";
+import WatchItemCard from "../WatchItemCard.vue";
 export default {
   name: "WatchContentCarrousel",
-  components:{
+  components: {
     WatchItemOptions,
+    WatchItemCard,
+    WatchItemCard,
   },
   data() {
     return {
@@ -315,15 +80,15 @@ export default {
           '<i class="fa-solid fa-circle-heart"></i>';
       }
     },
-    ItemOpctions(){
-      send
-    }
+    ItemOpctions() {
+      send;
+    },
   },
 };
 </script>
 
 <style scoped>
-#FavWatch{
+#FavWatch {
   position: absolute;
   top: 0;
   right: 0;
@@ -412,7 +177,7 @@ h1 {
     display: none;
   }
 }
-div.title{
+div.title {
   display: flex;
   font-size: 500em;
   background-color: #2c3e50;
