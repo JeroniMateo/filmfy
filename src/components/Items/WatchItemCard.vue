@@ -1,28 +1,25 @@
 <template>
   <div id="WatchItemCard">
-    <div class="conatainer">
-      <div class="col" id="ContenidoItemsCards">
-        <div class="card h-200 w-90">
-          <img class="card-img-top" alt="..." />
-          <div class="card-body">
-            <div class="CardHeader">
-              <h5 class="card-title">Card title</h5>
-              <button v-if="favorites" id="FavWatch">
-                <i class="fa-solid fa-heart"></i>
-              </button>
-              <button v-else id="FavWatch">
-                <i class="fa-solid fa-circle-heart"></i>
-              </button>
-            </div>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
+    <div class="col" id="ContenidoItemsCards">
+      <div class="card h-200 w-90">
+        <img class="card-img-top" alt="..." />
+        <div class="card-body">
+          <div class="CardHeader">
+            <h5 class="card-title">Card title</h5>
+            <button v-if="favorites" id="FavWatch">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+            <button v-else id="FavWatch">
+              <i class="fa-solid fa-circle-heart"></i>
+            </button>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">ContentType</small>
-          </div>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">ContentType</small>
         </div>
       </div>
     </div>

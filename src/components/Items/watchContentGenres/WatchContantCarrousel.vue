@@ -33,12 +33,12 @@
           <WatchItemCard />
           <WatchItemCard />
           <WatchItemCard />
-          <WatchItemCard />
+          
           <a href="#section3DAction" class="arrow__btn">›</a>
         </section>
         <section id="section3DAction">
           <a href="#section2DAction" class="arrow__btn">‹</a>
-          <WatchItemCard />
+          
           <WatchItemCard />
           <WatchItemCard />
           <WatchItemCard />
@@ -54,13 +54,13 @@
 <script>
 import WatchItemOptions from "../watchContentGenres/WatchItemOptions.vue";
 import WatchItemCard from "../WatchItemCard.vue";
-import WatchItemCard from "../WatchItemCard.vue";
+
 export default {
   name: "WatchContentCarrousel",
   components: {
     WatchItemOptions,
     WatchItemCard,
-    WatchItemCard,
+    
   },
   data() {
     return {
@@ -100,7 +100,7 @@ export default {
 }
 div#ContenidoItemsCards {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   flex-direction: row;
   width: 40vh;
   justify-content: center;
