@@ -35,7 +35,7 @@
                 <a v-else class="nav-link disabled" href="#">Mi Espacio</a>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" :to="'/forum'">Forum</router-link>
+                <router-link class="nav-link" to="'/forum'">Forum</router-link>
               </li>
               <li class="nav-item">
                 <router-link class="nav-link" to="/news">News</router-link>
