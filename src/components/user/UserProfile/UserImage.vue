@@ -24,6 +24,7 @@ export default {
 <style scoped>
 #imageUpload {
   display: none;
+   border-radius: 50%;
 }
 
 #profileImage {
