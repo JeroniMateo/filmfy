@@ -1,8 +1,11 @@
 <template>
-  <router-link to="/login">
-    <img id="UserNotLogIMG" src="../../../assets/img/UserPhoto.png" alt="" />
-    <p id="userProfile">Login</p>
-  </router-link>
+  <div id="UserLogIn" type="submit">
+    
+      <router-link to="/login">
+      <i class="fa-solid fa-user"></i>
+        Iniciar Sesion
+      </router-link>
+  </div>
 </template>
 
 <script>
@@ -18,4 +21,14 @@ export default {
 </script>
 
 <style scoped>
+div#UserLogIn {
+  
+  background-color: #e59934;
+    display: flex;
+    width: 16vh;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5vh;
+}
 </style>
