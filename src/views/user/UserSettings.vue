@@ -1,5 +1,5 @@
 <template>
-  <div id="userSetings">
+  <div id="UserSettings">
     <div class="container-fluid">
       <UserImage />
       <UserItems />
@@ -19,5 +19,5 @@ export default {
 };
 </script>
 
-<style>
+<style >
 </style>

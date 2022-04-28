@@ -116,7 +116,5 @@ export default {
 div#FeaturedContent{
   background-color: #4E9F3D;
 }
-div#MainCards{
-   
-}
+
 </style>

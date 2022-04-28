@@ -9,9 +9,12 @@
   "dependencies": {
     "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.1.3",
+    "jpx": "0.0.1",
+    "jsx": "^0.9.89",
     "sass": "^1.50.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
+    "vue3-carousel": "^0.1.38",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
