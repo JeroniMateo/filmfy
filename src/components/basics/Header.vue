@@ -1,10 +1,8 @@
 <template>
-  <div class="container-fluid p-1">
-    <div id="header">
+    <div class="container-fluid p-1" id="header">
       <Navbar />
       <User />
     </div>
-  </div>
 </template>
 
 <script>
@@ -30,6 +28,6 @@ div#header {
   justify-content: center;
   align-content: center;
   flex-wrap: nowrap;
-  background-color: white;
+  background-color: #2c3e50;
 }
 </style>

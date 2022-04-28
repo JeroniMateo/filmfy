@@ -1,6 +1,6 @@
 <template>
   <div id="FeaturedContent">
-    <div class="container p-3">
+    <div class="container ">
       <h4><b>Top Popular Content</b></h4>
     </div>
     <div class="container">
@@ -113,8 +113,10 @@ export default {
 </script>
 
 <style>
-div#FeaturedContent{
+h4{
+  color: rgb(78, 159, 61);
+}
+div#FeaturedContent {
   background-color: #2c3e50;
 }
-
 </style>

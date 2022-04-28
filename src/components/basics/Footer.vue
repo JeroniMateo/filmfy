@@ -26,7 +26,7 @@ div#footer {
   justify-content: center;
   align-content: center;
   flex-wrap: nowrap;
-  background-color: white;
+  background-color: #2c3e50;
 }
 i#copyright {
   font-size: 1.5em;

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!--Card1-->
-    <div class="container-fluid">
+    <div class="container">
       <div class="card mb-3" id="welcomeCard">
         <div class="row g-0">
           <div class="col-md-4">
@@ -27,7 +27,7 @@
       </div>
     </div>
     <!--Card2-->
-    <div class="container-fluid">
+    <div class="container">
       <div class="card mb-3" id="welcomeCard">
         <div class="row g-0">
           <div class="col-md-8">
@@ -53,7 +53,7 @@
       </div>
     </div>
     <!--Card3-->
-    <div class="container-fluid">
+    <div class="container">
       <div class="card mb-3" id="welcomeCard">
         <div class="row g-0">
           <div class="col-md-4">

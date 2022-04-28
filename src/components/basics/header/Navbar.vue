@@ -2,16 +2,16 @@
   <div class="container-fluid">
     <!--NavBar-->
     <div id="navmenu">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg  ">
         <div class="container-fluid">
           <!--Filmfy Icon-->
           <div id="filmfyIcon">
-            <router-link to="/">  <img
-              src="../../../assets/img/LogoImageFilmfy.png"
-              alt=""
-              id="logoFilmfy"
+            <router-link to="/">
+              <img
+                src="../../../assets/img/LogoImageFilmfy.png"
+                alt=""
+                id="logoFilmfy"
             /></router-link>
-          
           </div>
 
           <button
@@ -31,7 +31,7 @@
                 <router-link class="nav-link" to="#">Home</router-link>
               </li>
               <li class="nav-item">
-                <a v-if="log" class="nav-link " href="#">Mi Espacio</a>
+                <a v-if="log" class="nav-link" href="#">Mi Espacio</a>
                 <a v-else class="nav-link disabled" href="#">Mi Espacio</a>
               </li>
               <li class="nav-item">
@@ -67,7 +67,6 @@
                       >Documentales</router-link
                     >
                   </li>
-                  
                 </ul>
               </li>
               <li class="nav-item">
@@ -112,13 +111,16 @@ export default {
 </script>
 
 <style scoped>
-li{
+.nav-link {
+  color: rgb(78, 159, 61);
+}
+li {
   font-size: 2.5vh;
 }
 div#searching {
   display: flex;
 }
-img#logoFilmfy{
+img#logoFilmfy {
   width: 10vh;
   height: 10vh;
 }
