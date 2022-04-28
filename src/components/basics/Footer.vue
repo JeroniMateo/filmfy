@@ -1,7 +1,11 @@
 <template>
   <div id="footer" class="container-fluid p-2">
       <p><i id="copyright" class="fa-solid fa-copyright"></i>2022 Filmfy</p>
-      <Navbar />
+      <div class="socials">
+        <font-awesome-icon icon="fa-brands fa-facebook" />
+        <font-awesome-icon icon="fa-brands fa-twitter" />
+        <font-awesome-icon icon="fa-brands fa-instagram" />
+      </div>
       <small>Filfmy.es</small>
     </div>
 </template>
