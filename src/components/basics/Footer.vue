@@ -1,11 +1,9 @@
 <template>
-  <div class="container-fluid p-2">
-    <div id="footer">
+  <div id="footer" class="container-fluid p-2">
       <p><i id="copyright" class="fa-solid fa-copyright"></i>2022 Filmfy</p>
       <Navbar />
       <small>Filfmy.es</small>
     </div>
-  </div>
 </template>
 
 <script>
