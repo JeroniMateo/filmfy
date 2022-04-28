@@ -93,7 +93,8 @@ h5 {
   font-weight: bold;
 }
 p {
-  color: rgb(216, 233, 168);
+  color: #ECDBBA;
+  font-size: 2vh;
 }
 div.cardText {
   display: grid;
