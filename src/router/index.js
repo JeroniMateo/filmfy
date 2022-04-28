@@ -3,8 +3,6 @@ import WelcomeHome from '@/views/WelcomeHome'
 import Forum from '../views/main-pages/Forum.vue'
 import News from '../views/main-pages/News.vue'
 import Movies from '../views/watchContent/Movies.vue'
-import Series from '../views/watchContent/Series.vue'
-import Documentaries from '../views/watchContent/Documentaries.vue'
 import Login from '../views/user/Login.vue'
 import Register from '../views/user/Register.vue'
 import UserProfile from '../views/user/UserProfile.vue'
@@ -41,16 +39,6 @@ const routes = [
     path: '/movies',
     name: 'movies',
     component: Movies
-  },
-  {
-    path: '/series',
-    name: 'series',
-    component: Series
-  },
-  {
-    path: '/documentaries',
-    name: 'documentaries',
-    component: Documentaries
   },
   {
     path: '/login',

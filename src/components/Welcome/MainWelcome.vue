@@ -66,7 +66,5 @@ label#verHoy {
   margin-top: 20px;
   color: black;
 }
-img#MainContentImageWelcome {
-  
-}
+
 </style>
