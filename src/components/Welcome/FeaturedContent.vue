@@ -3,7 +3,7 @@
     <div class="container p-3">
       <h4><b>Top Popular Content</b></h4>
     </div>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row row-cols-1 row-cols-md-6 g-6">
         <div class="col" id="MainCards">
           <div class="card h-100 w-70">
@@ -114,7 +114,7 @@ export default {
 
 <style>
 div#FeaturedContent{
-  background-color: #4E9F3D;
+  background-color: #2c3e50;
 }
 
 </style>

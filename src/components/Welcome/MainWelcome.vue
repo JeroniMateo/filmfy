@@ -51,16 +51,16 @@ export default {
 
 <style scoped>
 h2 {
-  color: green;
+  color: rgb(78, 159, 61);
   font-size: 10vh;
 }
 h4 {
-  color: red;
+  color:rgb(179, 48, 48);
   font-size: 5vh;
 }
 div#buscarContenido {
   margin-top: 20px;
-  background-color: greenyellow;
+  background-color: #2c3e50;
 }
 label#verHoy {
   margin-top: 20px;

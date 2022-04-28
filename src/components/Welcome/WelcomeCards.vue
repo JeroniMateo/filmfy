@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container">
     <!--Card1-->
     <div class="container-fluid">
       <div class="card mb-3" id="welcomeCard">
@@ -89,16 +89,18 @@ export default {
 
 <style scoped>
 h2 {
-  color: #00fff2;
+  color: rgb(78, 159, 61);
   font-size: 10vh;
   font-weight: bold;
 }
 h5 {
-  color: rgb(30, 81, 40);
+  color: rgb(78, 159, 61);
   font-size: 5vh;
   font-weight: bold;
 }
-
+p{
+  color: rgb(216, 233, 168);
+}
 div.cardText {
   display: grid;
   align-items: end;
@@ -123,6 +125,6 @@ div#welcomeCard {
     align-items: center;
     flex-direction: column;
     height: 40vh;
-    background-color: #4E9F3D;
+    background-color: #2c3e50;
 }
 </style>
