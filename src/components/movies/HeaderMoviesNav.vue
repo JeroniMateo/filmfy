@@ -2,7 +2,7 @@
   <div class="container">
     <ul class="nav nav-pills nav-fill">
       <li class="nav-item">
-        <router-link class="nav-link active" aria-current="page" to="#"
+        <router-link class="nav-link active" aria-current="page" to="/vmovies"
           >Peliculas</router-link
         >
       </li>
