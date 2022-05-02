@@ -1,67 +1,24 @@
 <template>
-    <div id="Cartelera" class="BillBoardMovies">
-        <h2>Cartelera </h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" id="CarteleraMovie">
-          <div class="card h-100">
-            <img class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted" id="MovieGenre">Genre</small>
-            </div>
-          </div>
-        </div>
-        <div class="col" id="CarteleraMovie">
-          <div class="card h-100">
-            <img class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This card has supporting text below as a natural lead-in to
-                additional content.
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted" id="MovieGenre">Genre</small>
-            </div>
-          </div>
-        </div>
-        <div class="col" id="CarteleraMovie">
-          <div class="card h-100">
-            <img class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted" id="MovieGenre">Genre</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div id="Cartelera" class="container">
+    <h1>Cartelera</h1>
+        <BillBoardMovie />
+  </div>
 </template>
 
 <script>
-import TopMoviesBillBoard from "@/components/movies/Cartelera/BillBoardMovie.vue";
+import BillBoardMovie from '../../components/movies/Cartelera/BillBoardMovie.vue'
 export default {
-  name: "BillBoard",
-  components:{
-      TopMoviesBillBoard,
+  name: 'BillBoard',
+  components: {
+    BillBoardMovie
   }
-};
+}
 </script>
 
-<style>
+<style scoped>
+h1{
+  color: rgb(29, 168, 226);
+  background-color: rgb(15, 23, 30);
+  font-size: 6vh;
+}
 </style>
