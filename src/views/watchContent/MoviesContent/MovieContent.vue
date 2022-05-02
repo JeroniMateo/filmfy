@@ -22,8 +22,6 @@
                   <li class="language"></li>
                   <li class="runtime"></li>
                   <li class="rating"></li>
-                  <li class="votes"></li>
-                  <li class="storyline"></li>
                 </ul>
               </div>
             </div>
@@ -32,15 +30,26 @@
       </div>
       <div class="Sinopsis"></div>
       <div class="Valoration"></div>
+      <div id="Opinions">
+        <div class="Opinion">
+          <div class="OpinionHeader">
+            <div class="OpinionUser">
+              <div class="OpinionUserImage"></div>
+              <div class="OpinionUserName"></div>
+            </div>
+            <div class="OpinionDate"></div>
+          </div>
+          <div class="OpinionText"></div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MovieContent",
-};
+  name: 'MovieContent'
+}
 </script>
 
-<style>
-</style>
+<style></style>

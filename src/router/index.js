@@ -6,6 +6,11 @@ import Register from '../views/user/Register.vue'
 import UserProfile from '../views/user/UserProfile.vue'
 import UserSettings from '../views/user/UserSettings.vue'
 import Playlists from '../views/my-lists/Playlists.vue'
+import BillBoard from '../views/movies-sections/BillBoard.vue'
+import Outstandings from '../views/movies-sections/Outstandings.vue'
+import Trailers from '../views/movies-sections/Trailers.vue'
+
+
 
 const routes = [
   {
@@ -50,7 +55,20 @@ const routes = [
     path: '/playlists',
     name: 'playlists',
     component: Playlists
-  }
+  }, {
+    path: '/billboard',
+    name: 'billboard',
+    component: BillBoard
+  }, {
+    path: '/trailers',
+    name: 'trailers',
+    component: Trailers
+  },{
+    path: '/outstandings',
+    name: 'outstandings',
+    component: Outstandings
+  },
+
 ]
 
 const router = createRouter({
