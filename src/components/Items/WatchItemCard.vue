@@ -1,6 +1,6 @@
 <template>
   <div id="WatchItemCard">
-    <div class="col" id="ContenidoItemsCards">
+    <div class="col p-5" id="ContenidoItemsCards">
       <div class="card h-200 w-90">
         <img class="card-img-top" alt="..." />
         <div class="card-body">
