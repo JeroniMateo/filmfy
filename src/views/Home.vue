@@ -1,5 +1,5 @@
 <template>
-  <div class="home container">
+  <div class="home container" style="background-color:#191A19">
     <div class="HomeDestacados">
       <h3>Destacados</h3>     
           <WatchItemCard />

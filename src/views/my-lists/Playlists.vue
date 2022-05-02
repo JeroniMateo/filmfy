@@ -1,5 +1,5 @@
 <template>
-  <div id="Playlists">
+  <div id="Playlists" class="container-fluid" style="background-color:#191A19">
     <ListProfile />
   </div>
 </template>

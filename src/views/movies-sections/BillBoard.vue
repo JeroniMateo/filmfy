@@ -1,5 +1,5 @@
 <template>
-  <div id="Cartelera" class="container">
+  <div id="Cartelera" class="container" style="background-color:#191A19">
     <h1>Cartelera</h1>
         <BillBoardMovie />
   </div>

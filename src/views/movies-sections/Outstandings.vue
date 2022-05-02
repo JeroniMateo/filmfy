@@ -1,6 +1,6 @@
 <template>
-  <div id="TOP10">
-    <div class="container-fluid">
+  <div id="TOP10" >
+    <div class="container-fluid" style="background-color:#191A19">
       <div class="row">
         <div class="col-md-12">
           <h3>TOP 10</h3>
