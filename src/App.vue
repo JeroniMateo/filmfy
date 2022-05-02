@@ -4,7 +4,7 @@
   <Footer />
 </template>
 <script>
-import WelcomeHome from '../src/views/WelcomeHome.vue'
+import WelcomeHome from './views/Welcome.vue'
 import Header from '../src/components/basics/Header.vue'
 import Footer from '../src/components/basics/Footer.vue'
 
