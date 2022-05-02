@@ -19,9 +19,12 @@
         <br />
         <div class="container">
           <div id="buscarContenido">
-            <label id="verHoy" class="d-flex"
+            <label id="verHoy" class="d-flex"></label>
+              <select
+                name="moviesSearchFilter"
+                id="moviesSearchFilter"
+                form="moviesSearchform"
               >
-              <select name="moviesSearchFilter" id="moviesSearchFilter" form="moviesSearchform">
                 <option value="volvo">Titulo</option>
                 <option value="saab">Genero</option>
                 <option value="opel">Actor</option>
@@ -33,10 +36,9 @@
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-danger" type="submit">
+              <button class="btn btn-outline-success" type="submit">
                 Search
               </button>
-            </label>
           </div>
         </div>
       </div>
@@ -46,8 +48,8 @@
 
 <script>
 export default {
-  name: "MainWelcome",
-};
+  name: 'MainWelcome'
+}
 </script>
 
 <style scoped>
@@ -56,7 +58,7 @@ h2 {
   font-size: 10vh;
 }
 h4 {
-  color:rgb(179, 48, 48);
+  color: rgb(179, 48, 48);
   font-size: 5vh;
 }
 div#buscarContenido {
@@ -67,5 +69,7 @@ label#verHoy {
   margin-top: 20px;
   color: black;
 }
-
+button {
+  background-color: #e59934;
+}
 </style>
