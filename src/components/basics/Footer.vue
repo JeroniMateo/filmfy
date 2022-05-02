@@ -1,37 +1,49 @@
 <template>
   <div id="footer" class="container-fluid p-2">
-      <p><i id="copyright" class="fa-solid fa-copyright"></i>2022 Filmfy</p>
-      <div class="socials">
-        <font-awesome-icon icon="fa-brands fa-facebook" />
-        <font-awesome-icon icon="fa-brands fa-twitter" />
-        <font-awesome-icon icon="fa-brands fa-instagram" />
-      </div>
+    <div class="filmfyFooter">
+      <img src="../../assets/img/cameraLogo.png" alt="" />
       <small>Filfmy.es</small>
     </div>
+    <div class="socials">
+      <font-awesome-icon icon="fa-brands fa-facebook" />
+      <font-awesome-icon icon="fa-brands fa-twitter" />
+      <font-awesome-icon icon="fa-brands fa-instagram" />
+      <font-awesome-icon icon="fa-brands fa-youtube" />
+    </div>
+    <div class="copyright">
+      <pre> © 2021 Copyright: Filmfy.es</pre>
+      <small>
+        Encuentra variedad de conentido y crea listas para compartirlas con tus
+        amigos</small
+      >
+    </div>
+  </div>
 </template>
 
 <script>
-import Navbar from "./header/Navbar.vue";
+import Navbar from './header/Navbar.vue'
 export default {
-  name: "Footer",
+  name: 'Footer',
   components: {
-    Navbar,
-  },
-};
+    Navbar
+  }
+}
 </script>
 
-<style >
+<style scoped>
 div#footer {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  align-content: center;
   flex-wrap: nowrap;
   background-color: #2c3e50;
+  color: #ecdbba;
+  justify-content: space-around;
 }
-i#copyright {
-  font-size: 1.5em;
-  color: #8c8c8c;
+pre {
+  color: #e59934;
+}
+img {
+  width: 30px;
 }
 </style>

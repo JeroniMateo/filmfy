@@ -4,18 +4,18 @@
   <Footer />
 </template>
 <script>
-import WelcomeHome from "../src/views/WelcomeHome.vue";
-import Header from "@/components/basics/Header";
-import Footer from "@/components/basics/Footer";
+import WelcomeHome from '../src/views/WelcomeHome.vue'
+import Header from '../src/components/basics/Header.vue'
+import Footer from '../src/components/basics/Footer.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     WelcomeHome,
     Header,
-    Footer,
-  },
-};
+    Footer
+  }
+}
 </script>
 <style>
 #app {
@@ -24,7 +24,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: #19282F;
+  background-color: #19282f;
 }
 
 nav {
