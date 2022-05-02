@@ -1,5 +1,5 @@
 <template>
-  <div id="TopMoviesBillBoard" class="container-fluid">
+  <div id="BillBoardMovie" class="container-fluid">
     <div class="card bg-dark text-white">
       <img class="card-img" alt="..." />
       <div class="card-img-overlay">

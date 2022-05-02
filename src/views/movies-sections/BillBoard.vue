@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import TopMoviesBillBoard from "@/components/movies/Cartelera/TopMoviesBillBoard.vue";
+import TopMoviesBillBoard from "@/components/movies/Cartelera/BillBoardMovie.vue";
 export default {
   name: "BillBoard",
   components:{
