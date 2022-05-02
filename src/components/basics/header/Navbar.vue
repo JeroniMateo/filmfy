@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!--NavBar-->
     <div id="navmenu">
-      <nav class="navbar navbar-expand-lg  ">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <!--Filmfy Icon-->
           <div id="filmfyIcon">
@@ -31,16 +31,19 @@
                 <router-link class="nav-link" to="#">Home</router-link>
               </li>
               <li class="nav-item">
-                <a v-if="log" class="nav-link" href="#">Mi Espacio</a>
-                <a v-else class="nav-link disabled" href="#">Mi Espacio</a>
+                <router-link class="nav-link" to="/movies"
+                  >Peliculas</router-link
+                >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="'/movies'">Peliculas</router-link>
+                <router-link class="nav-link" to="/trailers"
+                  >Trailers</router-link
+                >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/trailers">Trailers</router-link>
-              </li>              <li class="nav-item">
-                <router-link class="nav-link" to="/destacados">Destacados</router-link>
+                <router-link class="nav-link" to="/destacados"
+                  >Destacados</router-link
+                >
               </li>
 
               <li class="nav-item">
@@ -74,14 +77,14 @@
 
 <script>
 export default {
-  name: "Navbar",
+  name: 'Navbar',
 
   data() {
     return {
-      log: true,
-    };
-  },
-};
+      log: true
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -25,37 +25,6 @@
         <header>
           <a href="Index.html"><img src="images/Logo Music4Events.png" /></a>
         </header>
-        <section id="infoutil">
-          <h4>Reserva entrada en tu concierto favorito</h4>
-          <div>
-            <i class="fas fa-ticket-alt"></i>
-            <div>
-              En nuestra web te ofrecemos todas las facilidades para que puedas
-              conseguir entradas para ver a tus artistas favoritos.
-            </div>
-          </div>
-
-          <h4>Entérate de las últimas novedades</h4>
-          <div>
-            <i class="far fa-newspaper"></i>
-            <div>
-              Trabajamos día a día para mantenerte actualizado. En nuestro
-              portal de noticias podrás conocer de primera mano todo lo que
-              necesitas saber.
-            </div>
-          </div>
-
-          <h4>Participa en nuestros sorteos</h4>
-          <div>
-            <i class="far fa-star"></i>
-            <div>
-              Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
-              Formar parte de la comunidad de Music4Events te da la oportunidad
-              a participar en todos los sorteos.
-            </div>
-          </div>
-          <h3>¿A qué estás esperando?</h3>
-        </section>
         <div id="formSignUp">
           <h1>Registrarse</h1>
           <form action="">
