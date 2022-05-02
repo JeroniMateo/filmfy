@@ -21,10 +21,11 @@
           <div id="buscarContenido">
             <label id="verHoy" class="d-flex"
               >
-              <select name="cars" id="cars" form="carform">
-                <option value="volvo">Peliculas</option>
-                <option value="saab">Series</option>
-                <option value="opel">Documentales</option>
+              <select name="moviesSearchFilter" id="moviesSearchFilter" form="moviesSearchform">
+                <option value="volvo">Titulo</option>
+                <option value="saab">Genero</option>
+                <option value="opel">Actor</option>
+                <option value="opel">Director</option>
               </select>
               <input
                 class="form-control me-6"

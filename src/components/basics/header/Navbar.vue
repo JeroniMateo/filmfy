@@ -35,40 +35,14 @@
                 <a v-else class="nav-link disabled" href="#">Mi Espacio</a>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="'/forum'">Forum</router-link>
+                <router-link class="nav-link" to="'/movies'">Peliculas</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/news">News</router-link>
+                <router-link class="nav-link" to="/trailers">Trailers</router-link>
+              </li>              <li class="nav-item">
+                <router-link class="nav-link" to="/destacados">Destacados</router-link>
               </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Contenido
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <router-link class="nav-link" to="/movies"
-                      >Películas</router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link class="nav-link" to="/series"
-                      >Series</router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link class="nav-link" to="/documentaries"
-                      >Documentales</router-link
-                    >
-                  </li>
-                </ul>
-              </li>
+
               <li class="nav-item">
                 <!--This Navbar link will be enabled if the user is loged-->
                 <router-link v-if="log" class="nav-link" to="/playlists"

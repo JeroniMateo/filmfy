@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import WelcomeHome from '@/views/WelcomeHome'
-import Forum from '../views/main-pages/Forum.vue'
-import News from '../views/main-pages/News.vue'
 import Movies from '../views/watchContent/Movies.vue'
 import Login from '../views/user/Login.vue'
 import Register from '../views/user/Register.vue'
@@ -24,16 +22,6 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
     }
-  },
-  {
-    path: '/forum',
-    name: 'Forum',
-    component: Forum
-  },
-  {
-    path: '/news',
-    name: 'news',
-    component: News
   },
   {
     path: '/movies',
