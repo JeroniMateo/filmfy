@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 div#SearchingContent {
   margin-top: 20px;
   display: flex;

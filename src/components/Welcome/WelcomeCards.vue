@@ -118,7 +118,7 @@ div#welcomeCard {
   flex-wrap: nowrap;
   align-content: space-around;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   height: 40vh;
   background-color: #2c3e50;
 }
