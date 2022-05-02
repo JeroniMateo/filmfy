@@ -15,7 +15,7 @@
     </head>
 
     <body>
-      <div class="title"><h2>Genres</h2></div>
+      <h2>Genres</h2>
       <div class="wrapper" v-on:click.right="ItemOpctions">
         <section id="section1DAction">
           <a href="#section3DAction" class="arrow__btn">‹</a>
@@ -88,6 +88,12 @@ export default {
 </script>
 
 <style scoped>
+h2{
+  color: rgb(29, 168, 226);
+  width: 10vh;
+  background-color: rgb(15, 23, 30);
+  font-size: 5vh;
+}
 #FavWatch {
   position: absolute;
   top: 0;
