@@ -1,13 +1,44 @@
 <template>
-  
+  <div id="TOP10">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>TOP 10</h3>
+        </div>
+      </div>
+      <div class="col">
+        <div class="col-md-12">
+          <div class="container" id="topMovie">
+              <div class="TopMovieHead">
+                  <h3 id="topNum"><b>1.</b>El Padrino</h3>
+              </div>
+              <WatchItemCard/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import WatchItemCard from "@/components/Items/WatchItemCard.vue"
+
 export default {
     name: "Outstandings",
+    components: {
+    WatchItemCard,
+},
 }
 </script>
 
 <style>
-
+h3#topNum {
+    color:  #B33030;
+    width: 30vh;
+    background-color: #ECDBBA;
+    font-size: 4vh;
+}
+div.TopMovieHead{
+    display: flex;
+}
 </style>
