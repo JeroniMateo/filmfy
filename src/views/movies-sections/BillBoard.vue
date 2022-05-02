@@ -1,25 +1,8 @@
 <template>
-  <div id="Cartelera">
-    <div id="MainBillBoard">
-      <div class="wrapper" v-on:click.right="ItemOpctions">
-        <section id="section1TopMovies">
-          <a href="#section3TopMovies" class="arrow__btn">‹</a>
-          <a href="#section2TopMovies" class="arrow__btn">›</a>
-        </section>
-        <section id="section2TopMovies">
-          <a href="#section1TopMovies" class="arrow__btn">‹</a>
-          <a href="#section3TopMovies" class="arrow__btn">›</a>
-        </section>
-        <section id="section3DAction">
-          <a href="#section2TopMovies" class="arrow__btn">‹</a>
-
-          <a href="#section1TopMovies" class="arrow__btn">›</a>
-        </section>
-      </div>
-    </div>
-    <div class="BillBoardMovies">
+    <div id="Cartelera" class="BillBoardMovies">
+        <h2>Cartelera </h2>
       <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
+        <div class="col" id="CarteleraMovie">
           <div class="card h-100">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
@@ -35,7 +18,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col" id="CarteleraMovie">
           <div class="card h-100">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
@@ -50,7 +33,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col" id="CarteleraMovie">
           <div class="card h-100">
             <img class="card-img-top" alt="..." />
             <div class="card-body">
@@ -68,7 +51,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
