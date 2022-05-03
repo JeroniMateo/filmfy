@@ -1,5 +1,5 @@
 <template>
-  <div id="WatchItemCard" class="container-fluid">
+  <div id="WatchItemCard" class="container-fluid" @click="goMovieContentInfo">
     <div class="col" >
       <div class="card h-100 ">
         <img id="MovieImage" class="card-img-top" alt="..." />
@@ -41,6 +41,14 @@ export default {
       } else {
         return this.favorites = true;
       }
+    },
+    goMovieContentInfo() {
+      this.$router.push({
+        name: "MovieContent",
+        params: {
+          id: this.id,
+        },
+      });
     },
   },
 };

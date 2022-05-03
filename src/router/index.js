@@ -3,6 +3,7 @@ import Welcome from '../views/Welcome'
 import Home from '../views/Home.vue'
 
 import Movies from '../views/watchContent/Movies.vue'
+import MovieContent from '../views/watchContent/MoviesContent/MovieContent.vue'
 import BillBoard from '../views/movies-sections/BillBoard.vue'
 import Outstandings from '../views/movies-sections/Outstandings.vue'
 import Trailers from '../views/movies-sections/Trailers.vue'
@@ -33,6 +34,12 @@ const routes = [
     name: 'movies',
     component: Movies
   },
+  {
+    path: '/movies/:id',
+    name: 'movie-content',
+    component: MovieContent
+  },
+
   {
     path: '/billboard',
     name: 'billboard',
