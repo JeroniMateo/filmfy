@@ -15,67 +15,71 @@
     </head>
 
     <body>
-      <h2>Genres</h2>
-      <div class="wrapper" v-on:click.right="ItemOpctions">
-        <section id="section1DAction">
-          <a href="#section3DAction" class="arrow__btn">‹</a>
-          <WatchItemCard />
-          <WatchItemCard/>
-          <WatchItemCard/>
-          <WatchItemCard/>
-          <WatchItemCard/>
-          <a href="#section2DAction" class="arrow__btn">›</a>
-        </section>
-        <section id="section2DAction">
-          <a href="#section1DAction" class="arrow__btn">‹</a>
-          <WatchItemCard />
-          <WatchItemCard />
-          <WatchItemCard />
-          <WatchItemCard />
-          <WatchItemCard />
-          
-          <a href="#section3DAction" class="arrow__btn">›</a>
-        </section>
-        <section id="section3DAction">
-          <a href="#section2DAction" class="arrow__btn">‹</a>
-          
-          <WatchItemCard />
-          <WatchItemCard />
-          <WatchItemCard />
-          <WatchItemCard />
-          <WatchItemCard />
-          <a href="#section1DAction" class="arrow__btn">›</a>
-        </section>
+      <div
+        id="CarouselMovies"
+        class="container-fluid"
+        style="background-color: #191a19"
+      >
+        <h2>Genres</h2>
+        <div class="wrapper" v-on:click.right="ItemOpctions">
+          <section id="section1">
+            <a href="#section3" class="arrow__btn">‹</a>
+            <WatchItemCard />
+            <WatchItemCard />
+            <WatchItemCard />
+            <WatchItemCard />
+            <WatchItemCard />
+            <a href="#section2" class="arrow__btn">›</a>
+          </section>
+          <section id="section2">
+            <a href="#section1" class="arrow__btn">‹</a>
+            <WatchItemCard />
+            <WatchItemCard />
+            <WatchItemCard />
+            <WatchItemCard />
+            <WatchItemCard />
+            <a href="#section3" class="arrow__btn">›</a>
+          </section>
+          <section id="section3">
+            <a href="#section2" class="arrow__btn">‹</a>
+            <WatchItemCard />
+            <WatchItemCard />
+            <WatchItemCard />
+            <WatchItemCard />
+            <WatchItemCard />
+            <a href="#section1" class="arrow__btn">›</a>
+          </section>
+        </div>
       </div>
     </body>
   </html>
 </template>
 
 <script>
-import WatchItemOptions from "../watchContentGenres/WatchItemOptions.vue";
-import WatchItemCard from "../WatchItemCard.vue";
+import WatchItemOptions from '../watchContentGenres/WatchItemOptions.vue'
+import WatchItemCard from '../WatchItemCard.vue'
 
 export default {
-  name: "WatchContentCarrousel",
+  name: 'WatchContentCarrousel',
   components: {
     WatchItemOptions,
-    WatchItemCard,
-    
+    WatchItemCard
   },
   data() {
     return {
-      favorites: true,
-    };
-  },
-};
+      favorites: true
+    }
+  }
+}
 </script>
 
 <style scoped>
-h2{
+h2 {
   color: rgb(29, 168, 226);
   width: 10vh;
   background-color: rgb(15, 23, 30);
   font-size: 5vh;
+  float: left;
 }
 #FavWatch {
   position: absolute;
@@ -87,14 +91,17 @@ h2{
   border: 1px solid #000;
   cursor: pointer;
 }
-div#ContenidoItemsCards {
+div#CarouselMovies {
+  background-color: #0f171e;
+  color: #19282f;
+  font-family: Arial;
+  font-size: 2vh;
   display: flex;
-  flex-wrap: no-wrap;
-  flex-direction: row;
-  width: 40vh;
-  justify-content: center;
+  flex-direction: col;
+  flex-wrap: wrap;
   align-items: center;
-  padding: 1vh;
+  justify-content: center;
+  align-content: center;
 }
 
 html {
