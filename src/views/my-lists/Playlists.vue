@@ -1,6 +1,6 @@
 <template>
-  <div id="Playlists" class="container-fluid" style="background-color:#191A19">
-    <ListProfile />
+  <div id="Playlists" class="container-fluid" >
+      <ListProfile />
   </div>
 </template>
 
@@ -15,4 +15,7 @@ export default {
 </script>
 
 <style >
+#Playlists{
+  background-color:#191A19
+}
 </style>

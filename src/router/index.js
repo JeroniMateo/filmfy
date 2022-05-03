@@ -8,6 +8,7 @@ import Outstandings from '../views/movies-sections/Outstandings.vue'
 import Trailers from '../views/movies-sections/Trailers.vue'
 
 import Playlists from '../views/my-lists/Playlists.vue'
+import MoviesList from '../views/my-lists/MoviesList.vue'
 
 import UserProfile from '../views/user/UserProfile.vue'
 import UserSettings from '../views/user/UserSettings.vue'
@@ -52,6 +53,11 @@ const routes = [
     path: '/playlists',
     name: 'playlists',
     component: Playlists
+  },
+  {
+    path: '/moviesList',
+    name: 'MoviesList',
+    component: MoviesList
   },
 
   {
