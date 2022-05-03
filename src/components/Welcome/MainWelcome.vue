@@ -1,45 +1,34 @@
 <template>
-  <div class="container p-3">
-    <div class="card bg-dark text-white">
-      <img
-        id="MainContentImageWelcome"
-        src="../../assets/img/Welcome/MainContentImageWelcome.jpg"
-        height="500px"
-        class="card-img"
-        alt="..."
-      />
-      <div class="card-img-overlay">
-        <h2 class="card-title"><b>FILMFY</b></h2>
-        <h4 class="card-text">
-          <b>
-            Encuentra variedad de conentido <br />
-            y crea listas para compartirlas con tus amigos</b
+  <div id="Welcome" class="container-fluid p-3 card bg-dark text-white">
+    <div class="card-img-overlay">
+      <h2 class="card-title"><b>FILMFY</b></h2>
+      <h4 class="card-text">
+        <b>
+          Encuentra variedad de conentido <br />
+          y crea listas para compartirlas con tus amigos</b
+        >
+      </h4>
+      <br />
+      <div class="container">
+        <div id="buscarContenido">
+          <label id="verHoy" class="d-flex"></label>
+          <select
+            name="moviesSearchFilter"
+            id="moviesSearchFilter"
+            form="moviesSearchform"
           >
-        </h4>
-        <br />
-        <div class="container">
-          <div id="buscarContenido">
-            <label id="verHoy" class="d-flex"></label>
-              <select
-                name="moviesSearchFilter"
-                id="moviesSearchFilter"
-                form="moviesSearchform"
-              >
-                <option value="volvo">Titulo</option>
-                <option value="saab">Genero</option>
-                <option value="opel">Actor</option>
-                <option value="opel">Director</option>
-              </select>
-              <input
-                class="form-control me-6"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-          </div>
+            <option value="volvo">Titulo</option>
+            <option value="saab">Genero</option>
+            <option value="opel">Actor</option>
+            <option value="opel">Director</option>
+          </select>
+          <input
+            class="form-control me-6"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
         </div>
       </div>
     </div>
@@ -53,7 +42,37 @@ export default {
 </script>
 
 <style scoped>
-#buscarContenido{
+#Welcome {
+  background-image: url('../../assets/img/Welcome/MainContentImageWelcome.jpg');
+  padding: 400px 100px;
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+#Welcome:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#Welcome h1 {
+  font-size: 60px;
+  color: #fff;
+  position: relative;
+}
+#MainContentImageWelcome {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#buscarContenido {
   display: flex;
 }
 h2 {

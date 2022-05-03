@@ -69,7 +69,7 @@
                 aria-label="Search"
               />
               <!--Search-->
-              <button class="btn btn-outline-success" type="submit">
+              <button class="btn-success" type="submit">
                 Buscar
               </button>
             </div>
