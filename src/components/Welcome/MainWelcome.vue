@@ -53,6 +53,9 @@ export default {
 </script>
 
 <style scoped>
+#buscarContenido{
+  display: flex;
+}
 h2 {
   color: rgb(78, 159, 61);
   font-size: 10vh;
