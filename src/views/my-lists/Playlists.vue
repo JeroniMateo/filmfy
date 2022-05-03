@@ -12,9 +12,9 @@ export default {
     ListProfile,
   },
   methods:{
-    goToPlaylists(){
+    goToMoviesList(){
       this.$router.push({
-        name: "Playlists",
+        name: "MoviesList",
         params: {
           id: this.id,
         },

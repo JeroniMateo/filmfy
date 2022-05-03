@@ -67,12 +67,12 @@ const routes = [
   },
 
   {
-    path: '/playlists/:id',
+    path: '/playlists',
     name: 'playlists',
     component: Playlists
   },
   {
-    path: '/moviesList',
+    path: '/moviesList/:id',
     name: 'MoviesList',
     component: MoviesList
   },
