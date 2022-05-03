@@ -2,24 +2,25 @@
   <div id="WatchItemCard">
     <div class="col p-5" id="ContenidoItemsCards">
       <div class="card h-200 w-90">
-        <img class="card-img-top" alt="..." />
+        <img id="MovieImage" class="card-img-top" alt="..." />
         <div class="card-body">
           <div class="CardHeader">
-            <h5 class="card-title">Card title</h5>
-            <button v-if="favorites" id="FavWatch">
-              <i class="fa-solid fa-heart"></i>
-            </button>
-            <button v-else id="FavWatch">
-              <i class="fa-solid fa-circle-heart"></i>
-            </button>
+            <h5 class="card-title" id="MovieTitle" >Card title</h5>
           </div>
-          <p class="card-text">
+          <p class="card-text" id="MovieSinnopsis">
             This is a wider card with supporting text below as a natural lead-in
             to additional content. This content is a little bit longer.
           </p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">ContentType</small>
+          <small class="text-muted" id="MovieGenre">ContentType
+             <button v-if="favorites" id="FavWatch" @click="addFavs">
+              <img class="favIMG" src="../../assets/img/FavWatch/NotFav.png" alt="">
+            </button>
+            <button v-else id="FavWatch" @click="addFavs">
+              <img class="favIMG" src="../../assets/img/FavWatch/Fav.png" alt="">
+            </button>
+          </small>
         </div>
       </div>
     </div>
@@ -29,20 +30,30 @@
 <script>
 export default {
   name: "WatchItemCard",
+
+  data() {
+    return {
+      favorites: true,
+    };
+    },
+    methods: {
+      addFavs() {
+      if (favorites) {
+       return this.favorites = false;
+      } else {
+        return this.favorites = true;
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
-#FavWatch {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  background-color: rgb(76, 116, 201);
-  border-radius: 50%;
-  border: 1px solid #000;
-  cursor: pointer;
+.favIMG{
+  width: 30px;
+  height: 30px;
 }
+
 div#ContenidoItemsCards {
   display: flex;
   flex-wrap: wrap;
