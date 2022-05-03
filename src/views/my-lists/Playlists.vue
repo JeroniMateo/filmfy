@@ -1,5 +1,5 @@
 <template>
-  <div id="Playlists" class="container-fluid" >
+  <div id="Playlists" class="container-fluid" @click="goLists" >
       <ListProfile />
   </div>
 </template>
@@ -11,6 +11,11 @@ export default {
   components: {
     ListProfile,
   },
+  methods:{
+    goLists(){
+      this.$router.push("/movieslists");
+    }
+  }
 };
 </script>
 
