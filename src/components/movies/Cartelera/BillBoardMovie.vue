@@ -9,9 +9,10 @@
             This is a wider card with supporting text below as a natural lead-in
             to additional content. This content is a little bit longer.
           </p>
+          <small class="text-muted" id="BillBoardGenre">Genre</small>
         </div>
         <div class="card-footer">
-          <small class="text-muted" id="BillBoardGenre">Genre</small>
+          <small class="text-muted" id="ReleaseDate">Release Date</small>
         </div>
       </div>
     </div>
