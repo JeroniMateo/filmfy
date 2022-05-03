@@ -67,23 +67,6 @@ export default {
       favorites: true,
     };
   },
-
-  methods: {
-    addFavs() {
-      if (favorites) {
-        console.log("Agregar a favoritos");
-        document.getElementById("FavWatch").innerHTML =
-          '<i class="fa-solid fa-heart"></i>';
-      } else {
-        console.log("Quitar de favoritos");
-        document.getElementById("FavWatch").innerHTML =
-          '<i class="fa-solid fa-circle-heart"></i>';
-      }
-    },
-    ItemOpctions() {
-      send;
-    },
-  },
 };
 </script>
 
