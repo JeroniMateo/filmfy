@@ -1,7 +1,6 @@
 <template>
   <div id="Cartelera" class="container" style="background-color: #191a19">
     <h1>Cartelera</h1>
-    
       <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-3 g-4">
         <BillBoardMovie/>
         <BillBoardMovie/>
@@ -10,7 +9,6 @@
         <BillBoardMovie/>
         <BillBoardMovie/>
         <BillBoardMovie/>
-    
       </div>
   </div>
 </template>

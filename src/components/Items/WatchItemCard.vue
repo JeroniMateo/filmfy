@@ -1,12 +1,10 @@
 <template>
-  <div id="WatchItemCard">
-    <div class="col p-5" id="ContenidoItemsCards">
-      <div class="card h-200 w-90">
+  <div id="WatchItemCard" class="container-fluid">
+    <div class="col" >
+      <div class="card h-100 ">
         <img id="MovieImage" class="card-img-top" alt="..." />
         <div class="card-body">
-          <div class="CardHeader">
             <h5 class="card-title" id="MovieTitle" >Card title</h5>
-          </div>
           <p class="card-text" id="MovieSinnopsis">
             This is a wider card with supporting text below as a natural lead-in
             to additional content. This content is a little bit longer.
@@ -54,14 +52,12 @@ export default {
   height: 30px;
 }
 
-div#ContenidoItemsCards {
+div#WatchItemCard {
+ background-color: rgb(15, 23, 30);
+  color: #19282f;
+  font-family: Arial;
+  font-size: 2vh;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 40vh;
-  justify-content: center;
-  align-items: center;
-  padding: 1vh;
 }
 
 html {
