@@ -11,6 +11,7 @@ Wireframe with Balsamiq: https://balsamiq.cloud/swio5ls/pepq8ha/r2278
 
 - Primary: rgb(30, 81, 40)
 - Secondary: rgb(78, 159, 61)
+- Light: rgb(29, 168, 226)
 - Success: #E59934
 - Info: #2c3e50
 - Text: #19282F
