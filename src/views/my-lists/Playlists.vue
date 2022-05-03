@@ -1,6 +1,6 @@
 <template>
-  <div id="Playlists" class="container-fluid" @click="goLists" >
-      <ListProfile />
+  <div id="Playlists" class="container-fluid" @click="goMoviesLists">
+    <ListProfile />
   </div>
 </template>
 
@@ -12,15 +12,20 @@ export default {
     ListProfile,
   },
   methods:{
-    goLists(){
-      this.$router.push("/movieslists");
+    goToPlaylists(){
+      this.$router.push({
+        name: "Playlists",
+        params: {
+          id: this.id,
+        },
+      });
+    },
     }
-  }
 };
 </script>
 
-<style >
-#Playlists{
-  background-color:#191A19
+<style>
+#Playlists {
+  background-color: #191a19;
 }
 </style>
