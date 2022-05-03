@@ -1,5 +1,5 @@
 <template>
-  <div id="BillBoardMovie" class="container-fluid">
+  <div id="BillBoardMovie" class="container-fluid" @click="goToBillBoardContent">
     <div class="col">
       <div class="card h-100">
         <img id="BillBoardIMG" class="card-img-top" alt="..." />
@@ -21,7 +21,17 @@
 
 <script>
 export default {
-  name: 'BillBoardMovie'
+  name: 'BillBoardMovie',
+  methods: {
+    goToBillBoardContent() {
+      this.$router.push({
+        name: 'BillBoardContent',
+        params: {
+          id: this.id,
+        },
+      });
+    }
+  },
 }
 </script>
 
