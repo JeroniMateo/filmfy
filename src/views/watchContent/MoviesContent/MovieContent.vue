@@ -30,6 +30,8 @@
       </div>
       <div class="Sinopsis"></div>
       <div class="Valoration"></div>
+      <!--Trailer play automaticaly-->
+      <div class="Trailer"><TrailerVideo/></div>
       <div id="Opinions">
         <div class="Opinion">
           <div class="OpinionHeader">
@@ -47,8 +49,12 @@
 </template>
 
 <script>
+import TrailerVideo from "@/components/movies/Trailers/TrailerVideo.vue";
 export default {
-  name: 'MovieContent'
+  name: 'MovieContent',
+  components: {
+    TrailerVideo,
+}
 }
 </script>
 
