@@ -9,7 +9,6 @@ import BillBoard from '../views/movies-sections/BillBoard.vue'
 import BillBoardContent from '../views/watchContent/MoviesContent/BillBoardContent.vue'
 
 import Outstandings from '../views/movies-sections/Outstandings.vue'
-import Trailers from '../views/movies-sections/Trailers.vue'
 
 import Playlists from '../views/my-lists/Playlists.vue'
 import MoviesList from '../views/my-lists/MoviesList.vue'
@@ -55,11 +54,6 @@ const routes = [
   },
 
 
-  {
-    path: '/trailers',
-    name: 'trailers',
-    component: Trailers
-  },
   {
     path: '/outstandings',
     name: 'outstandings',

@@ -36,11 +36,6 @@
                 >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/trailers"
-                  >Trailers</router-link
-                >
-              </li>
-              <li class="nav-item">
                 <router-link class="nav-link" to="/outstandings"
                   >Destacados</router-link
                 >

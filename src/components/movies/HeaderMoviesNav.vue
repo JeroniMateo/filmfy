@@ -12,11 +12,6 @@
         >
       </li>
       <li class="nav-item">
-        <router-link class="nav-link" aria-current="page" to="#"
-          >Trailers</router-link
-        >
-      </li>
-      <li class="nav-item">
         <router-link class="nav-link" aria-current="page"
           >Destacados</router-link
         >
