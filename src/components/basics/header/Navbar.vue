@@ -5,14 +5,15 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <!--Filmfy Icon-->
-          <div id="filmfyIcon">
-            <router-link to="/">
+          <router-link to="/">
+            <div id="filmfyIcon">
               <img
                 src="../../../assets/img/LogoImageFilmfy.png"
                 alt=""
                 id="logoFilmfy"
-            /></router-link>
-          </div>
+              />
+            </div>
+          </router-link>
 
           <button
             class="navbar-toggler"
@@ -27,34 +28,48 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <router-link class="nav-link" to="/home">
               <li class="nav-item">
-                <router-link class="nav-link" to="/home">Home</router-link>
+                Home
               </li>
-              <li class="nav-item">
+                </router-link>
                 <router-link class="nav-link" to="/movies"
-                  >Peliculas</router-link
-                >
-              </li>
+                  >
               <li class="nav-item">
+                  Peliculas
+              </li>
+                  </router-link
+                >
                 <router-link class="nav-link" to="/outstandings"
-                  >Destacados</router-link
-                >
-              </li>
+                  >
               <li class="nav-item">
+                  Destacados
+              </li>
+                  </router-link
+                >
                 <router-link class="nav-link" to="/billboard"
-                  >Cartelera</router-link
-                >
-              </li>
-
+                  >
               <li class="nav-item">
+                  Cartelera
+              </li>
+                  </router-link
+                >
+
                 <!--This Navbar link will be enabled if the user is loged-->
                 <router-link v-if="log" class="nav-link" to="/playlists"
-                  >Mis Listas</router-link
+                  >
+              <li class="nav-item">
+                  Mis Listas
+              </li>
+                  </router-link
                 >
                 <router-link v-else class="nav-link disabled" to="/playlists"
-                  >Mis Listas</router-link
-                >
+                  >
+              <li class="nav-item">
+                  Mis Listas
               </li>
+                  </router-link
+                >
             </ul>
             <div id="searching">
               <input
@@ -64,9 +79,7 @@
                 aria-label="Search"
               />
               <!--Search-->
-              <button class="btn-success" type="submit">
-                Buscar
-              </button>
+              <button class="btn-success" type="submit">Buscar</button>
             </div>
           </div>
         </div>

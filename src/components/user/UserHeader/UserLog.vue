@@ -14,12 +14,16 @@
         Username
       </a>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><router-link class="dropdown-item" to="/profile">Perfil</router-link></li>
-        <li><router-link class="dropdown-item" to="/settings">Ajustes</router-link></li>
+        <router-link class="dropdown-item" to="/profile">
+          <li>Perfil</li>
+        </router-link>
+        <router-link class="dropdown-item" to="/settings">
+          <li>Ajustes</li>
+        </router-link>
         <li><hr class="dropdown-divider" /></li>
-        <li>
-          <a class="dropdown-item" href="#">Log Out</a>
-        </li>
+        <router-link class="dropdown-item" to="#">
+          <li>Log Out</li>
+        </router-link>
       </ul>
     </li>
   </div>
@@ -27,15 +31,14 @@
 
 <script>
 export default {
-  name: "UserLog",
+  name: 'UserLog',
 
   data() {
     return {
-      log: false,
-    };
-  },
-};
+      log: false
+    }
+  }
+}
 </script>
 
-<style >
-</style>
+<style></style>
