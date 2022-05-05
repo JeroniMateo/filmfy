@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div id="WatchingMovie" class="container">
     <div class="movieInfo">
       <h1 id="Movie Title"></h1>
@@ -12,16 +12,16 @@
           <div class="col-md-8">
             <div class="card-body">
               <div class="MainInfo">
-                <ul>
-                  <li class="title"></li>
-                  <li class="year"></li>
-                  <li class="genre"></li>
-                  <li class="director"></li>
-                  <li class="actors"></li>
-                  <li class="country"></li>
-                  <li class="language"></li>
-                  <li class="runtime"></li>
-                  <li class="rating"></li>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"  id="title"></li>
+                  <li class="list-group-item"  id="year"></li>
+                  <li class="list-group-item"  id="genre"></li>
+                  <li class="list-group-item"  id="director"></li>
+                  <li class="list-group-item"  id="actors"></li>
+                  <li class="list-group-item"  id="country"></li>
+                  <li class="list-group-item"  id="language"></li>
+                  <li class="list-group-item"  id="runtime"></li>
+                  <li class="list-group-item"  id="rating"></li>
                 </ul>
               </div>
             </div>
@@ -31,17 +31,17 @@
       <div class="Sinopsis"></div>
       <div class="Valoration"></div>
       <!--Trailer play automaticaly-->
-      <div class="Trailer"><TrailerVideo/></div>
+      <div  id="Trailer"><TrailerVideo/></div>
       <div id="Opinions">
-        <div class="Opinion">
-          <div class="OpinionHeader">
-            <div class="OpinionUser">
-              <div class="OpinionUserImage"></div>
-              <div class="OpinionUserName"></div>
+        <div id="Opinion">
+          <div id="OpinionHeader">
+            <div id="OpinionUser">
+              <div id="OpinionUserImage"></div>
+              <div id="OpinionUserName"></div>
             </div>
-            <div class="OpinionDate"></div>
+            <div id="OpinionDate"></div>
           </div>
-          <div class="OpinionText"></div>
+          <div id="OpinionText"></div>
         </div>
       </div>
     </div>
