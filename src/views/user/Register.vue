@@ -1,82 +1,91 @@
 <template>
-  <div id="layout" class="container">
     <h1>Registrarse</h1>
+  <div id="layoutRegister" class="container">
     <form id="Registrarse" action="">
-      <div class="mb-3">
-        <input
-          id="UserNameR"
-          placeholder="UserName*"
-          class="registro form-control-lg"
-          type="text"
-          name="UserName"
-        />
+      <div class="row g-3">
+        <div class="col-auto">
+          <input
+            id="UserNameR"
+            placeholder="UserName*"
+            class="registro form-control-lg"
+            type="text"
+            name="UserName"
+          />
+          <p id="errorUserName" class="error"></p>
+        </div>
+        <div class="col-auto">
+          <input
+            id="NameR"
+            placeholder="Name*"
+            class="registro form-control-lg"
+            type="text"
+            name="email"
+          />
+          <p id="errorName" class="error"></p>
+        </div>
+        <div class="col-auto">
+          <input
+            id="LastNameR"
+            placeholder="LastName*"
+            class="registro form-control-lg"
+            type="text"
+            name="LastName"
+          />
+          <p id="errorLastName" class="error"></p>
+        </div>
       </div>
-      <div class="mb-3">
-        <input
-          id="NameR"
-          placeholder="Name*"
-          class="registro form-control-lg"
-          type="text"
-          name="email"
-        />
+      <div class="row g-3">
+        <div class="col-auto">
+          <input
+            id="emailR"
+            placeholder="Email*"
+            class="registro form-control-lg"
+            type="email"
+            name="email"
+          />
+          <p id="errorEmail" class="error"></p>
+        </div>
+        <div class="col-auto">
+          <input
+            id="passwordR"
+            placeholder="Password*"
+            class="registro form-control-lg"
+            type="password"
+            name="password"
+          />
+          <p id="errorPassword" class="error"></p>
+        </div>
+        <div class="col-auto">
+          <input
+            id="passwordConfirmR"
+            placeholder="PasswordConfirm*"
+            class="registro form-control-lg"
+            type="password"
+            name="password"
+          />
+          <p id="errorPasswordConfirm" class="error"></p>
+        </div>
       </div>
-      <div class="mb-3">
-        <input
-          id="LastNameR"
-          placeholder="LastName*"
-          class="registro form-control-lg"
-          type="text"
-          name="LastName"
-        />
+      <div class="formConfirm">
+        <button
+          type="submit"
+          class="btn btn-primary mb-3"
+          @click="signUpAPI"
+          id="signUpButton"
+          aria-label="Regístrate"
+        >
+          Regístrate
+        </button>
+        <h1>¿Ya tienes una cuenta?</h1>
+        <button
+          type="submit"
+          class="btn btn-primary mb-3"
+          id="loginButton"
+          aria-label="Inicia sesión"
+        >
+          <router-link to="/login">Inicia sesión</router-link>
+        </button>
       </div>
-      <p id="errorEmail" class="error"></p>
-      <div class="mb-3">
-        <input
-          id="emailR"
-          placeholder="Email*"
-          class="registro form-control-lg"
-          type="email"
-          name="email"
-        />
-      </div>
-
-      <div class="mb-3">
-        <input
-          id="passwordR"
-          placeholder="Password*"
-          class="registro form-control-lg"
-          type="password"
-          name="password"
-        />
-      </div>      
-      <div class="mb-3">
-        <input
-          id="passwordConfirmR"
-          placeholder="PasswordConfirm*"
-          class="registro form-control-lg"
-          type="password"
-          name="password"
-        />
-      </div>
-      <p id="errorPassword" class="error"></p>
-      <button
-        type="submit"
-        class="btn btn-primary mb-3"
-        @click="signUpAPI"
-        id="signUpButton"
-        aria-label="Regístrate"
-      >
-        Regístrate
-      </button>
-      <h1>¿Ya tienes una cuenta?</h1>
-      <button
-        type="submit"
-        class="btn btn-primary mb-3"
-        id="loginButton"
-        aria-label="Inicia sesión"
-      >
-        <router-link to="/login">Inicia sesión</router-link>
-      </button>
       <div id="signUpAlert"></div>
     </form>
   </div>
@@ -98,7 +107,7 @@ export default {
       fetch('', {
         method: 'POST',
         body: JSON.stringify({
-          userName  : document.getElementById('UserNameR').value,
+          userName: document.getElementById('UserNameR').value,
           name: document.getElementById('NameR').value,
           lastName: document.getElementById('LastNameR').value,
           email: document.getElementById('emailR').value,
@@ -149,5 +158,25 @@ h1 {
   font-size: 1.5rem;
   font-weight: bold;
   color: rgb(78, 159, 61);
+}
+.formConfirm{
+  display: flex;
+    justify-content: space-around;
+    justify-items: stretch;
+    align-content: center;
+    align-items: center;
+}
+#layoutRegister{
+  display: flex;
+    justify-content: center;
+    justify-items: stretch;
+    align-content: center;
+    align-items: center;
+}
+input{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(29, 168, 226);
+  margin: 5%;
 }
 </style>
