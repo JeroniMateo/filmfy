@@ -1,49 +1,57 @@
 <template>
-  <div id="layout" class="container">
-    <h1>Iniciar sesión</h1>
-    <form id="InicioSesion">
-       <div class="mb-3">
-         <label for="emailL" class="form-label">Email address:</label>
-               <input
-               class="form-control-lg"
-        id="emailL"
-        aria-label="email"
-        placeholder="Email*"
-        type="text"
-        name="email"
-        aria-required="true"
-      />
-       </div>
-
-      <p id="errorName" class="error"></p>
-
-       <div class="mb-3">
-         <label for="passwordL" class="form-label">Password:</label>
-      <input
-      class="form-control-lg"
-        id="passwordL"
-        aria-label="password"
-        placeholder="Password*"
-        type="password"
-        name="password"
-        aria-required="true"
-      />
-
-       </div>
-      <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
-      <p id="errorPassword" class="error"></p>
+  <h1>Iniciar sesión</h1>
+  <div id="layoutLogin" class="container">
+    <form id="InicioSesion" action="">
+      <div class="row g-3">
+        <div class="col-auto">
+          <input
+            class="form-control-lg"
+            id="emailL"
+            aria-label="email"
+            placeholder="Email*"
+            type="text"
+            name="email"
+            aria-required="true"
+          />
+          <p id="errorEmail" class="error"></p>
+        </div>
+        <div class="col-auto">
+          <input
+            class="form-control-lg"
+            id="passwordL"
+            aria-label="password"
+            placeholder="Password*"
+            type="password"
+            name="password"
+            aria-required="true"
+          />
+          <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
+          <p id="errorPassword" class="error"></p>
+        </div>
+      </div>
       <span id="errorLogin" class="error"></span><br />
-      <button type="submit" class="btn btn-primary mb-3"
-        @click="LoginAPI"
-        id="loginButton"
-        aria-label="Inicia sesión"
-      >
-        Inicia sesión
-      </button>
-      <h1><b>¿Eres nuevo en Filmfy?</b></h1>
-      <button type="submit" class="btn btn-primary mb-3" id="signUpButton" aria-label="Inicia sesión">
-        <router-link  to="/register">Registrarse</router-link>
-      </button>
+      <div class="formConfirm">
+        <button
+          type="submit"
+          class="btn btn-primary mb-3"
+          @click="LoginAPI"
+          id="loginButton"
+          aria-label="Inicia sesión"
+        >
+          Inicia sesión
+        </button>
+        <h1><b>¿Eres nuevo en Filmfy?</b></h1>
+          <router-link to="/register">
+        <button
+          type="submit"
+          class="btn btn-primary mb-3"
+          id="signUpButton"
+          aria-label="Inicia sesión"
+        >
+          Registrarse
+        </button>
+          </router-link>
+      </div>
       <div id="suscrito"></div>
     </form>
   </div>
@@ -109,11 +117,11 @@ label {
   color: rgb(29, 168, 226);
 }
 .error {
-  color: #B33030;
+  color: #b33030;
   font-size: 1.5rem;
   font-weight: bold;
 }
-button{
+button {
   background-color: #e59934;
   border: none;
   color: white;
@@ -125,9 +133,42 @@ button{
   margin: 4px 2px;
   cursor: pointer;
 }
-h1{
+h1 {
   font-size: 1.5rem;
   font-weight: bold;
   color: rgb(78, 159, 61);
+}
+.formConfirm{
+  display: flex;
+    justify-content: space-around;
+    justify-items: stretch;
+    align-content: center;
+    align-items: center;
+}
+#layoutRegister{
+  display: flex;
+    justify-content: center;
+    justify-items: stretch;
+    align-content: center;
+    align-items: center;
+}
+input{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(29, 168, 226);
+  margin: 5%;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-around;
 }
 </style>

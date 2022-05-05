@@ -77,14 +77,16 @@
           Regístrate
         </button>
         <h1>¿Ya tienes una cuenta?</h1>
+          <router-link to="/login">
         <button
           type="submit"
           class="btn btn-primary mb-3"
           id="loginButton"
           aria-label="Inicia sesión"
         >
-          <router-link to="/login">Inicia sesión</router-link>
+          Inicia sesión
         </button>
+          </router-link>
       </div>
       <div id="signUpAlert"></div>
     </form>
