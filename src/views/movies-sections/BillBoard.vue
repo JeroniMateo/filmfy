@@ -1,15 +1,14 @@
 <template>
   <div id="Cartelera" class="container" style="background-color: #191a19">
-    <h1>Cartelera</h1>
-      <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-3 g-4">
-        <BillBoardMovie/>
-        <BillBoardMovie/>
-        <BillBoardMovie/>
-        <BillBoardMovie/>
-        <BillBoardMovie/>
-        <BillBoardMovie/>
-        <BillBoardMovie/>
-      </div>
+    <h3><b>Cartelera</b></h3>
+    <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-3 g-4">
+      <BillBoardMovie />
+      <BillBoardMovie />
+      <BillBoardMovie />
+      <BillBoardMovie />
+      <BillBoardMovie />
+      <BillBoardMovie />
+    </div>
   </div>
 </template>
 
@@ -18,17 +17,17 @@ import BillBoardMovie from '../../components/movies/Cartelera/BillBoardMovie.vue
 export default {
   name: 'BillBoard',
   components: {
-    BillBoardMovie,
-    
-}
+    BillBoardMovie
+  }
 }
 </script>
 
 <style scoped>
-h1 {
+h3 {
   color: rgb(29, 168, 226);
   background-color: rgb(15, 23, 30);
-  font-size: 4vh;
+  font-size: 6vh;
+  width: 100%;
 }
 div#BillBoardSection {
   background-color: #0f171e;

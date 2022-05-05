@@ -1,18 +1,18 @@
 <template>
   <div id="Home" class="container" style="background-color:#191A19">
-      <h3>Destacados</h3>     
+      <h3><b>Destacados</b></h3>     
     <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="HomeDestacados">
           <WatchItemCard />
           <WatchItemCard />
           <WatchItemCard />
     </div>
-      <h3>Cartelera</h3>
+      <h3><b>Cartelera</b></h3>
     <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="cartelera">
         <BillBoardMovie />
         <BillBoardMovie />
         <BillBoardMovie />
     </div>
-      <h3>Próximos Estrenos</h3>
+      <h3><b>Próximos Estrenos</b></h3>
     <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="UpcomingMovies">
       <BillBoardMovie />
       <BillBoardMovie />

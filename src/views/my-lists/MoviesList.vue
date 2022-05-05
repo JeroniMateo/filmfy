@@ -1,6 +1,6 @@
 <template>
   <div id="Lista" class="container" style="background-color: #191a19">
-    <h1>Cartelera</h1>
+    <h3><b>Cartelera</b></h3>
       <div id="MoviesList" class="row row-cols-1 p-5 row-cols-md-3 g-4">
         <WatchItemCard/>
       </div>
@@ -22,7 +22,8 @@ export default {
 h1 {
   color: rgb(29, 168, 226);
   background-color: rgb(15, 23, 30);
-  font-size: 4vh;
+  font-size: 6vh;
+  width: 100%;
 }
 div#BillBoardSection {
   background-color: #0f171e;

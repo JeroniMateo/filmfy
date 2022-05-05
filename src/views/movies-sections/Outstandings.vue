@@ -3,7 +3,7 @@
     <div class="container-fluid" style="background-color:#191A19">
       <div class="row">
         <div class="col-md-12">
-          <h3>TOP 10</h3>
+          <h3><b>TOP 10</b></h3>
         </div>
       </div>
       <div class="col">

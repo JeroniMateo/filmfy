@@ -20,7 +20,7 @@
         class="container-fluid"
         style="background-color: #191a19"
       >
-        <h2>Genres</h2>
+        <h2><b>Genres</b></h2>
         <div class="wrapper" v-on:click.right="ItemOpctions">
           <section id="section1">
             <a href="#section3" class="arrow__btn">‹</a>
@@ -75,11 +75,10 @@ export default {
 
 <style scoped>
 h2 {
-  color: rgb(29, 168, 226);
-  width: 10vh;
+ color: rgb(29, 168, 226);
   background-color: rgb(15, 23, 30);
-  font-size: 5vh;
-  float: left;
+  font-size: 6vh;
+  width: 100%;
 }
 #FavWatch {
   position: absolute;
