@@ -19,6 +19,8 @@ import UserSettings from '../views/user/UserSettings.vue'
 import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
 
+import Search from '../views/Searching/Search.vue'
+
 const routes = [
   {
     path: '/',
@@ -91,6 +93,12 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register
+  },
+
+  {
+    path: '/search/:query',
+    name: 'search',
+    component: Search
   }
 ]
 

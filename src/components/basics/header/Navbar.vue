@@ -79,7 +79,9 @@
                 aria-label="Search"
               />
               <!--Search-->
+              <router-link to="/search">
               <button class="btn-success" type="submit">Buscar</button>
+              </router-link>
             </div>
           </div>
         </div>
