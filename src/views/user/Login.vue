@@ -3,8 +3,9 @@
     <h1>Iniciar sesión</h1>
     <form id="InicioSesion">
        <div class="mb-3">
-         <label for="exampleFormControlInput1" class="form-label">Email address:</label>
+         <label for="emailL" class="form-label">Email address:</label>
                <input
+               class="form-control-lg"
         id="emailL"
         aria-label="email"
         placeholder="Email*"
@@ -12,12 +13,14 @@
         name="email"
         aria-required="true"
       />
-
        </div>
+
       <p id="errorName" class="error"></p>
+
        <div class="mb-3">
-         <label for="exampleFormControlInput1" class="form-label">Password:</label>
+         <label for="passwordL" class="form-label">Password:</label>
       <input
+      class="form-control-lg"
         id="passwordL"
         aria-label="password"
         placeholder="Password*"
@@ -100,8 +103,8 @@ export default {
 </script>
 
 <style scoped>
-label.form-label {
-  font-size: 1.5rem;
+label {
+  font-size: 5vh;
   font-weight: bold;
   color: rgb(29, 168, 226);
 }
