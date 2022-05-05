@@ -1,127 +1,130 @@
 <template>
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="css/forms.css" />
-      <title>TimeInn - Login</title>
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="images/Logo Music4Events.png"
+  <div id="layout" class="container">
+    <h1>Iniciar sesión</h1>
+    <form id="InicioSesion">
+       <div class="mb-3">
+         <label for="exampleFormControlInput1" class="form-label">Email address:</label>
+               <input
+        id="emailL"
+        aria-label="email"
+        placeholder="Email*"
+        type="text"
+        name="email"
+        aria-required="true"
       />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
-        rel="stylesheet"
+
+       </div>
+      <p id="errorName" class="error"></p>
+       <div class="mb-3">
+         <label for="exampleFormControlInput1" class="form-label">Password:</label>
+      <input
+        id="passwordL"
+        aria-label="password"
+        placeholder="Password*"
+        type="password"
+        name="password"
+        aria-required="true"
       />
-    </head>
-    <body>
-      <div id="layout">
-        <header>
-          <a href="Index.html"><img src="images/Logo Music4Events.png" /></a>
-        </header>
-        <section id="formlogin">
-          <h1>Iniciar sesión</h1>
-          <form id="InicioSesion" action="">
-            <input
-              id="emailL"
-              aria-label="email"
-              placeholder="Email*"
-              type="text"
-              name="email"
-              aria-required="true"
-            />
-            <p id="errorName" class="error"></p>
-            <input
-              id="passwordL"
-              aria-label="password"
-              placeholder="Password*"
-              type="password"
-              name="password"
-              aria-required="true"
-            />
-            <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
-            <p id="errorPassword" class="error"><b></b></p>
-            <span id="errorLogin" class="error"></span><br />
-            <button
-              @click="LoginAPI"
-              id="loginButton"
-              class="button"
-              aria-label="Inicia sesión"
-            >
-              Inicia sesión
-            </button>
-            <div><b>¿Eres nuevo en Music4Events?</b></div>
-            <button id="signUpButton" class="button" aria-label="Inicia sesión">
-              <router-link to="/register">Registrarse</router-link>
-            </button>
-            <div id="suscrito"></div>
-          </form>
-          <br />
-        </section>
-      </div>
-    </body>
-  </html>
+
+       </div>
+      <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
+      <p id="errorPassword" class="error"></p>
+      <span id="errorLogin" class="error"></span><br />
+      <button type="submit" class="btn btn-primary mb-3"
+        @click="LoginAPI"
+        id="loginButton"
+        aria-label="Inicia sesión"
+      >
+        Inicia sesión
+      </button>
+      <h1><b>¿Eres nuevo en Filmfy?</b></h1>
+      <button type="submit" class="btn btn-primary mb-3" id="signUpButton" aria-label="Inicia sesión">
+        <router-link  to="/register">Registrarse</router-link>
+      </button>
+      <div id="suscrito"></div>
+    </form>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Login",
+  name: 'Login',
 
-  data: {},
   methods: {
     LoginAPI: function () {
-      let email = document.getElementById("emailL").value;
-      let password = document.getElementById("passwordL").value;
-      let authString = `${email}:${password}`;
-      let headers = new Headers();
-      headers.set("Authorization", "Basic " + btoa(authString));
+      let email = document.getElementById('emailL').value
+      let password = document.getElementById('passwordL').value
+      let authString = `${email}:${password}`
+      let headers = new Headers()
+      headers.set('Authorization', 'Basic ' + btoa(authString))
 
-      fetch("", {
-        method: "GET",
-        headers: headers,
+      fetch('', {
+        method: 'GET',
+        headers: headers
       })
         .then((response) => response.json())
         .then((token) => {
-          console.log("hola");
-          setCookie("tokenName", token.access_token, 365);
-          window.location.href = "";
+          console.log('hola')
+          setCookie('tokenName', token.access_token, 365)
+          window.location.href = ''
         })
         .catch(function (error) {
-          console.log("Error en el fetch", error);
-        });
+          console.log('Error en el fetch', error)
+        })
     },
 
     setCookie: function (cname, cvalue, exdays) {
-      const d = new Date();
-      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-      let expires = "expires=" + d.toGMTString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      const d = new Date()
+      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
+      let expires = 'expires=' + d.toGMTString()
+      document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
     },
 
     getCookie: function (cname) {
-      let name = cname + "=";
-      let decodedCookie = decodeURIComponent(document.cookie);
-      let ca = decodedCookie.split(";");
+      let name = cname + '='
+      let decodedCookie = decodeURIComponent(document.cookie)
+      let ca = decodedCookie.split(';')
       for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == " ") {
-          c = c.substring(1);
+        let c = ca[i]
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1)
         }
         if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
+          return c.substring(name.length, c.length)
         }
       }
-      return "";
-    },
-  },
-};
+      return ''
+    }
+  }
+}
 </script>
-    
-    <style>
+
+<style scoped>
+label.form-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(29, 168, 226);
+}
+.error {
+  color: #B33030;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+button{
+  background-color: #e59934;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+h1{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(78, 159, 61);
+}
 </style>
