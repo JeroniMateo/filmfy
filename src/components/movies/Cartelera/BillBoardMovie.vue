@@ -25,8 +25,8 @@ export default {
   methods: {
     goToBillBoardContent() {
       this.$router.push({
-        name: 'BillBoardContent',
-        params: {
+        path: '/billboard/:id',
+        query: {
           id: this.id,
         },
       });

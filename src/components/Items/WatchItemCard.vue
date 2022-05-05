@@ -44,8 +44,8 @@ export default {
     },
     goMovieContentInfo() {
       this.$router.push({
-        name: "MovieContent",
-        params: {
+        path: "/movies/:id",
+        query: {
           id: this.id,
         },
       });
@@ -143,4 +143,4 @@ div.title {
   background-color: #2c3e50;
   width: 15vh;
 }
-</style>
+</style>  

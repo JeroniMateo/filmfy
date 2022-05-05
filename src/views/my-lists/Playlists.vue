@@ -20,8 +20,8 @@ export default {
   methods:{
     goToMoviesList(){
       this.$router.push({
-        name: "MoviesList",
-        params: {
+        path: "/moviesList/:id",
+        query: {
           id: this.id,
         },
       });
