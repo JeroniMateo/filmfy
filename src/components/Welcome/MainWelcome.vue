@@ -1,13 +1,15 @@
 <template>
   <div id="Welcome" class="container-fluid p-3 card bg-dark text-white">
-    <div class="card-img-overlay">
-      
-      <h4 class="card-text">
-        <b>
-          Encuentra variedad de conentido <br />
-          y crea listas para compartirlas con tus amigos</b
-        >
-      </h4>
+    <div id="MainWelcome" class="card-img-overlay">
+      <div class="FilmfyIs">
+        <h4 class="card-text">
+          <b>
+            Encuentra conentido ideal <br />
+            crea tus mejores listas de cine <br />
+            y compartirlas con tus amigos</b
+          >
+        </h4>
+      </div>
       <br />
       <div class="container">
         <div id="buscarContenido">
@@ -80,8 +82,9 @@ h2 {
   font-size: 10vh;
 }
 h4 {
-  color: rgb(179, 48, 48);
-  font-size: 5vh;
+  color: #fff;
+  font-size: 3.5vw;
+  float: left;
 }
 div#buscarContenido {
   margin-top: 20px;
@@ -93,5 +96,16 @@ label#verHoy {
 }
 button {
   background-color: #e59934;
+}
+div#MainWelcome {
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+div.FilmfyIs{
+  display: flex;
 }
 </style>
