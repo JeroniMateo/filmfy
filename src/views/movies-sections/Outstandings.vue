@@ -1,6 +1,6 @@
 <template>
   <div id="TOP10" >
-    <div class="container-fluid" style="background-color:#191A19">
+    <div class="container-fluid" style="background-color:#000">
       <div class="row">
         <div class="col-md-12">
           <h3><b>TOP 10</b></h3>
@@ -10,7 +10,7 @@
         <div class="col-md-12">
           <div class="container" id="topMovie">
               <div class="TopMovieHead">
-                  <h3 id="topNum"><b>1.</b>El Padrino</h3>
+                  <h3 id="topNum">1.<b>El Padrino</b></h3>
               </div>
               <WatchItemCard/>
           </div>
@@ -33,9 +33,9 @@ export default {
 
 <style>
 h3#topNum {
-    color:  #B33030;
+    color:  #c50909;
     width: 30vh;
-    background-color: #ECDBBA;
+    background-color: #232323;
     font-size: 4vh;
 }
 div.TopMovieHead{
