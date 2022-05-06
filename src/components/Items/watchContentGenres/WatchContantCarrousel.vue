@@ -24,29 +24,29 @@
         <div class="wrapper" v-on:click.right="ItemOpctions">
           <section id="section1">
             <a href="#section3" class="arrow__btn">‹</a>
-            <WatchItemCard />
-            <WatchItemCard />
-            <WatchItemCard />
-            <WatchItemCard />
-            <WatchItemCard />
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
             <a href="#section2" class="arrow__btn">›</a>
           </section>
           <section id="section2">
             <a href="#section1" class="arrow__btn">‹</a>
-            <WatchItemCard />
-            <WatchItemCard />
-            <WatchItemCard />
-            <WatchItemCard />
-            <WatchItemCard />
+<div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard /></div>
             <a href="#section3" class="arrow__btn">›</a>
           </section>
           <section id="section3">
             <a href="#section2" class="arrow__btn">‹</a>
-            <WatchItemCard />
-            <WatchItemCard />
-            <WatchItemCard />
-            <WatchItemCard />
-            <WatchItemCard />
+<div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard /></div>
             <a href="#section1" class="arrow__btn">›</a>
           </section>
         </div>
@@ -74,6 +74,13 @@ export default {
 </script>
 
 <style scoped>
+div.MovieInCarousel{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 h2 {
  color: rgb(29, 168, 226);
   background-color: rgb(15, 23, 30);
