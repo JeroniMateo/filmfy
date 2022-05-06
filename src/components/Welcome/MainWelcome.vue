@@ -1,7 +1,7 @@
 <template>
   <div id="Welcome" class="container-fluid p-3 card bg-dark text-white">
     <div class="card-img-overlay">
-      <h2 class="card-title"><b>FILMFY</b></h2>
+      
       <h4 class="card-text">
         <b>
           Encuentra variedad de conentido <br />

@@ -4,17 +4,6 @@
     <div id="navmenu">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <!--Filmfy Icon-->
-          <router-link to="/">
-            <div id="filmfyIcon">
-              <img
-                src="../../../assets/img/LogoImageFilmfy.png"
-                alt=""
-                id="logoFilmfy"
-              />
-            </div>
-          </router-link>
-
           <button
             class="navbar-toggler"
             type="button"
@@ -28,49 +17,44 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <router-link class="nav-link" to="/home">
-              <li class="nav-item">
-                Home
-              </li>
-                </router-link>
-                <router-link class="nav-link" to="/movies"
-                  >
-              <li class="nav-item">
-                  Peliculas
-              </li>
-                  </router-link
-                >
-                <router-link class="nav-link" to="/outstandings"
-                  >
-              <li class="nav-item">
-                  Destacados
-              </li>
-                  </router-link
-                >
-                <router-link class="nav-link" to="/billboard"
-                  >
-              <li class="nav-item">
-                  Cartelera
-              </li>
-                  </router-link
-                >
+              <router-link class="nav-link" to="/home">
+                <li class="nav-item">Home</li>
+              </router-link>
+              <router-link class="nav-link" to="/movies">
+                <li class="nav-item">Peliculas</li>
+              </router-link>
+              <router-link class="nav-link" to="/outstandings">
+                <li class="nav-item">Destacados</li>
+              </router-link>
+              <router-link class="nav-link" to="/billboard">
+                <li class="nav-item">Cartelera</li>
+              </router-link>
 
-                <!--This Navbar link will be enabled if the user is loged-->
-                <router-link v-if="log" class="nav-link" to="/playlists"
-                  >
-              <li class="nav-item">
-                  Mis Listas
-              </li>
-                  </router-link
-                >
-                <router-link v-else class="nav-link disabled" to="/playlists"
-                  >
-              <li class="nav-item">
-                  Mis Listas
-              </li>
-                  </router-link
-                >
+              <!--This Navbar link will be enabled if the user is loged-->
+              <router-link v-if="log" class="nav-link" to="/playlists">
+                <li class="nav-item">Mis Listas</li>
+              </router-link>
+              <router-link v-else class="nav-link disabled" to="/playlists">
+                <li class="nav-item">Mis Listas</li>
+              </router-link>
             </ul>
+            <div id="FILMFY">
+              <div class="FILMFY">
+                <!--Filmfy Icon-->
+                <router-link to="/">
+                  <div id="filmfyIcon">
+                    <img
+                      src="../../../assets/img/LogoImageFilmfy.png"
+                      alt=""
+                      id="logoFilmfy"
+                    />
+                  </div>
+                </router-link>
+              </div>
+              <div class="FILMFY">
+                <h1 class="card-title"><b>FILMFY</b></h1>
+              </div>
+            </div>
             <div id="searching">
               <input
                 class="form-control me-2"
@@ -80,7 +64,7 @@
               />
               <!--Search-->
               <router-link to="/search">
-              <button class="btn-success" type="submit">Buscar</button>
+                <button class="btn-success" type="submit">Buscar</button>
               </router-link>
             </div>
           </div>
@@ -115,5 +99,15 @@ div#searching {
 img#logoFilmfy {
   width: 10vh;
   height: 10vh;
+}
+div#FILMFY {
+  display: flex;
+  justify-content: center;
+  margin-right: 5vw;
+}
+h1 {
+  font-size: 5vw;
+  color: aquamarine;
+  margin-left: 2vw  ;
 }
 </style>
