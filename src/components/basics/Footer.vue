@@ -38,7 +38,7 @@ div#footer {
   flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
-  background-color: #2c3e50;
+  background-color: #000;
   color: #ecdbba;
   justify-content: space-around;
 }
@@ -47,5 +47,6 @@ pre {
 }
 img {
   width: 30px;
+  margin: 1%;
 }
 </style>
