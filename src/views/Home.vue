@@ -36,12 +36,14 @@ export default {
 <style scoped>
 h3{
   color: rgb(29, 168, 226);
-  background-color: rgb(15, 23, 30);
   font-size: 6vh;
   width: 100%;
+  height: 8vh;
+  background-color: #000;
+  text-align: center;
 }
 .HomeSection{
-  background-color: #0f171e;
+  background-color: #161414;
   color: #19282f;
   font-family: Arial;
   font-size: 2vh;
