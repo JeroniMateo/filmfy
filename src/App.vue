@@ -19,28 +19,35 @@ export default {
 </script>
 <style>
 body {
-  background-color: #191A19;
+  background-color: #000;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background-color: #19282f;
+  color: #ffff;
+  background-color: #242424;
 }
 
 nav {
   padding: 30px;
 }
-
+.card-text {
+  font-size: 1.2rem;
+  color: #000;
+}
+.card-title {
+  font-size: 1.5rem;
+  color: #000;
+}
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #0000;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #ffff  ;
 }
 
 </style>

@@ -117,6 +117,10 @@ h4{
   color: rgb(78, 159, 61);
 }
 div#FeaturedContent {
-  background-color: #2c3e50;
+  background-color: #000;
+}
+#MainCards {
+  padding: 1%;
+  color: #000;
 }
 </style>

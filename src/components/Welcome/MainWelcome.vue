@@ -50,7 +50,7 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  width: 100%;
+  width: 99%;
   height: 50vh;
 }
 #Welcome:before {

@@ -100,6 +100,9 @@ div.cardText {
   display: grid;
   align-items: end;
 }
+.card-text{
+  color: #ffff;
+}
 
 .card-img-overlay {
   display: grid;
@@ -120,6 +123,6 @@ div#welcomeCard {
   align-items: center;
   flex-direction: row;
   height: 40vh;
-  background-color: #2c3e50;
+  background-color: #000;
 }
 </style>

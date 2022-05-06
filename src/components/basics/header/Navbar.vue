@@ -104,7 +104,7 @@ export default {
 
 <style scoped>
 .nav-link {
-  color: rgb(78, 159, 61);
+  color: #ffff;
 }
 li {
   font-size: 2.5vh;

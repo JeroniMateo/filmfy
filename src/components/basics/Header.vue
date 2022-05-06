@@ -28,6 +28,6 @@ div#header {
   justify-content: center;
   align-content: center;
   flex-wrap: nowrap;
-  background-color: #2c3e50;
+  background-color: #000;
 }
 </style>

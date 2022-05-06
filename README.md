@@ -9,12 +9,12 @@ Wireframe with Balsamiq: https://balsamiq.cloud/swio5ls/pepq8ha/r2278
 
 ## Pallete Color
 
-- Primary: rgb(30, 81, 40)
-- Secondary: rgb(78, 159, 61)
+- Primary: #000
+- Secondary: #ffff
+- Info: #42b983
+- Dark: #242424
 - Light: rgb(29, 168, 226)
-- Success: #E59934
-- Info: #2c3e50
-- Text: #19282F
+- Success: #2ecc71
 - Warning: #ECDBBA
 - Error: #B33030
 
