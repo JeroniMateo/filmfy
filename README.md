@@ -11,12 +11,10 @@ Wireframe with Balsamiq: https://balsamiq.cloud/swio5ls/pepq8ha/r2278
 
 - Primary: #000
 - Secondary: #ffff
-- Info: #42b983
+- Info: #4E9F3D
 - Dark: #242424
-- Light: rgb(29, 168, 226)
 - Success: #2ecc71
-- Warning: #ECDBBA
-- Error: #B33030
+- Error: #c50909
 
 
 ## Project setup

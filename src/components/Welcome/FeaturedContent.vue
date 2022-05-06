@@ -1,7 +1,7 @@
 <template>
   <div id="FeaturedContent">
     <div class="container ">
-      <h4><b>Top Popular Content</b></h4>
+      <h1><b>Top Popular Content</b></h1>
     </div>
     <div class="container">
       <div class="row row-cols-1 row-cols-md-6 g-6">
@@ -113,8 +113,9 @@ export default {
 </script>
 
 <style scoped>
-h4{
-  color: rgb(78, 159, 61);
+h1{
+  color: #4E9F3D;
+  padding: 1%;
 }
 div#FeaturedContent {
   background-color: #000;
