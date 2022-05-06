@@ -1,5 +1,6 @@
 <template>
-  <div id="footer" class="container-fluid p-2">
+ <footer>
+    <div id="footer" class="container-fluid p-2">
     <div class="filmfyFooter">
       <img src="../../assets/img/cameraLogo.png" alt="" />
       <small>Filfmy.es</small>
@@ -18,6 +19,7 @@
       >
     </div>
   </div>
+ </footer>
 </template>
 
 <script>

@@ -24,12 +24,12 @@ export default {
 h3 {
   color: rgb(29, 168, 226);
   width: 50vh;
-  background-color: rgb(15, 23, 30);
+  background-color: #242424;
   font-size: 6vh;
 }
 div#CineCarrousel {
-  background-color: #0f171e;
-  color: #19282f;
+  background-color: #000;
+  color: #242424;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
@@ -37,6 +37,6 @@ div#CineCarrousel {
   align-items: center;
   justify-content: center;
   align-content: center;
-  
+  width: 100%;
 }
 </style>

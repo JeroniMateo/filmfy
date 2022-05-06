@@ -1,7 +1,9 @@
 <template>
   <Header />
   <router-view />
-  <Footer />
+  <footer>
+    <Footer />
+  </footer>
 </template>
 <script>
 import WelcomeHome from './views/Welcome.vue'
