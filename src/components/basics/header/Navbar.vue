@@ -4,6 +4,23 @@
     <div id="navmenu">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
+                      <div id="FILMFY">
+              <div class="FILMFY">
+                <!--Filmfy Icon-->
+                <router-link to="/">
+                  <div id="filmfyIcon">
+                    <img
+                      src="../../../assets/img/LogoImageFilmfy.png"
+                      alt=""
+                      id="logoFilmfy"
+                    />
+                  </div>
+                </router-link>
+              </div>
+              <div class="FILMFY">
+                <h1 class="card-title"><b>FILMFY</b></h1>
+              </div>
+            </div>
           <button
             class="navbar-toggler"
             type="button"
@@ -38,23 +55,7 @@
                 <li class="nav-item">Mis Listas</li>
               </router-link>
             </ul>
-            <div id="FILMFY">
-              <div class="FILMFY">
-                <!--Filmfy Icon-->
-                <router-link to="/">
-                  <div id="filmfyIcon">
-                    <img
-                      src="../../../assets/img/LogoImageFilmfy.png"
-                      alt=""
-                      id="logoFilmfy"
-                    />
-                  </div>
-                </router-link>
-              </div>
-              <div class="FILMFY">
-                <h1 class="card-title"><b>FILMFY</b></h1>
-              </div>
-            </div>
+
             <div id="searching">
               <input
                 class="form-control me-2"
@@ -64,7 +65,7 @@
               />
               <!--Search-->
               <router-link to="/search">
-                <button class="btn-success" type="submit">Buscar</button>
+                <button id="buscarButton" class="btn-success" type="submit">Buscar</button>
               </router-link>
             </div>
           </div>
@@ -91,7 +92,7 @@ export default {
   color: #ffff;
 }
 li {
-  font-size: 2.5vh;
+  font-size: 3vh;
 }
 div#searching {
   display: flex;
@@ -103,11 +104,19 @@ img#logoFilmfy {
 div#FILMFY {
   display: flex;
   justify-content: center;
-  margin-right: 5vw;
+  margin-right: 2vw;
 }
 h1 {
   font-size: 5vw;
   color: aquamarine;
   margin-left: 2vw  ;
+}
+#buscarButton{
+  background-color: aquamarine;
+  border-color: aquamarine;
+  color: #ffff;
+  font-family: Arial;
+  font-size: 2.2vh;
+  margin-left: -2vw; ;
 }
 </style>
