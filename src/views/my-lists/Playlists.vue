@@ -32,11 +32,11 @@ export default {
 
 <style>
 #Playlists {
-  background-color: #191a19;
+  background-color: #000;
 }
 h3 {
   color: rgb(29, 168, 226);
-  background-color: rgb(15, 23, 30);
+  background-color: #242424;
   font-size: 6vh;
   width: 100%;
 }
