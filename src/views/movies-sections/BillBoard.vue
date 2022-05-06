@@ -25,13 +25,13 @@ export default {
 <style scoped>
 h3 {
   color: rgb(29, 168, 226);
-  background-color: rgb(15, 23, 30);
   font-size: 6vh;
   width: 100%;
+  background-color: #000;
 }
 div#BillBoardSection {
-  background-color: #0f171e;
-  color: #19282f;
+  background-color: #0b120b;
+  color: #000;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
