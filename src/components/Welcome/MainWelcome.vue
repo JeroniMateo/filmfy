@@ -19,10 +19,10 @@
             id="moviesSearchFilter"
             form="moviesSearchform"
           >
-            <option value="volvo">Titulo</option>
-            <option value="saab">Genero</option>
-            <option value="opel">Actor</option>
-            <option value="opel">Director</option>
+            <option value="Titulo">Titulo</option>
+            <option value="Genero">Genero</option>
+            <option value="Actor">Actor</option>
+            <option value="Director">Director</option>
           </select>
           <input
             class="form-control me-6"
@@ -30,7 +30,7 @@
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn" type="submit">Search</button>
         </div>
       </div>
     </div>
@@ -95,7 +95,9 @@ label#verHoy {
   color: black;
 }
 button {
-  background-color: #e59934;
+  
+  color: #fff;
+  background-color: #2ecc71;
 }
 div#MainWelcome {
   display: flex;
@@ -107,5 +109,8 @@ div#MainWelcome {
 }
 div.FilmfyIs{
   display: flex;
+}
+select{
+  border-radius: 10%;
 }
 </style>

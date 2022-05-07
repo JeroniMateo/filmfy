@@ -23,12 +23,18 @@ export default {
 <style scoped>
 div#UserLogIn {
   
-  background-color: #e59934;
+  background-color: #2ecc71;
     display: flex;
     width: 16vh;
     height: 5vh;
     align-items: center;
     justify-content: center;
     font-size: 2.5vh;
+    border-radius: 5%;
+    
+}
+a{
+  text-decoration: none;
+  color: #fff;
 }
 </style>
