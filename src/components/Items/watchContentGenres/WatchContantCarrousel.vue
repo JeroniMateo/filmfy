@@ -33,20 +33,20 @@
           </section>
           <section id="section2">
             <a href="#section1" class="arrow__btn">‹</a>
-<div class="MovieInCarousel"><WatchItemCard /></div>
-<div class="MovieInCarousel"><WatchItemCard /></div>
-<div class="MovieInCarousel"><WatchItemCard /></div>
-<div class="MovieInCarousel"><WatchItemCard /></div>
-<div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
             <a href="#section3" class="arrow__btn">›</a>
           </section>
           <section id="section3">
             <a href="#section2" class="arrow__btn">‹</a>
-<div class="MovieInCarousel"><WatchItemCard /></div>
-<div class="MovieInCarousel"><WatchItemCard /></div>
-<div class="MovieInCarousel"><WatchItemCard /></div>
-<div class="MovieInCarousel"><WatchItemCard /></div>
-<div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard /></div>
             <a href="#section1" class="arrow__btn">›</a>
           </section>
         </div>
@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style scoped>
-div.MovieInCarousel{
+div.MovieInCarousel {
   width: 100%;
   height: 100%;
   display: flex;
@@ -82,7 +82,7 @@ div.MovieInCarousel{
   align-items: center;
 }
 h2 {
- color: rgb(29, 168, 226);
+  color: rgb(29, 168, 226);
   background-color: rgb(15, 23, 30);
   font-size: 6vh;
   width: 100%;
