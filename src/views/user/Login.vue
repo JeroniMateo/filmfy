@@ -4,6 +4,7 @@
     <form id="InicioSesion" action="">
       <div class="row g-3">
         <div class="col-auto">
+          <label class="form-label" for="emailL">Email</label>
           <input
             class="form-control-lg"
             id="emailL"
@@ -12,10 +13,13 @@
             type="text"
             name="email"
             aria-required="true"
+            v-model="email"
+            required
           />
           <p id="errorEmail" class="error"></p>
         </div>
         <div class="col-auto">
+          <label class="form-label" for="passwordL">Password</label>
           <input
             class="form-control-lg"
             id="passwordL"
@@ -24,6 +28,8 @@
             type="password"
             name="password"
             aria-required="true"
+            v-model="password"
+            required
           />
           <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
           <p id="errorPassword" class="error"></p>
@@ -40,7 +46,7 @@
         >
           Iniciar sesión
         </button>
-        <h1><b>¿Eres nuevo en Filmfy?</b></h1>
+        <small>¿Eres nuevo en Filmfy?</small>
         <router-link to="/register">
           <button
             type="submit"
@@ -71,9 +77,7 @@ export default {
 
   methods: {
     LoginAPI: function () {
-      let email = document.getElementById('emailL').value
-      let password = document.getElementById('passwordL').value
-      let authString = `${email}:${password}`
+      let authString = `${this.email}:${this.password}`
       let headers = new Headers()
       headers.set('Authorization', 'Basic ' + btoa(authString))
 
@@ -119,10 +123,9 @@ export default {
 </script>
 
 <style scoped>
-label {
-  font-size: 5vh;
-  font-weight: bold;
-  color: #1da8e2;
+label.form-label {
+  font-size: 3vh;
+  color: #fff;
 }
 .error {
   color: #b33030;
@@ -142,7 +145,7 @@ button {
   cursor: pointer;
 }
 h1 {
-  font-size: 1.5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: rgb(78, 159, 61);
 }
@@ -178,5 +181,9 @@ input {
   justify-content: center;
   flex-direction: column;
   align-content: space-around;
+}
+#layoutLogin {
+  margin: auto;
+  width: 70%;
 }
 </style>

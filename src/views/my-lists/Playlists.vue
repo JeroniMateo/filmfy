@@ -40,4 +40,8 @@ h3 {
   font-size: 6vh;
   width: 100%;
 }
+#Playlists {
+  margin: auto;
+  width: 70%;
+}
 </style>
