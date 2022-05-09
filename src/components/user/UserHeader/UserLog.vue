@@ -2,17 +2,9 @@
   <div class="userAcount">
     <img src="../../../assets/img/UserPhoto.png" alt="" />
     <li id="userProfile" class="nav-item dropdown">
-      <a
-        class="nav-link dropdown-toggle"
-        href="#"
-        id="navbarDropdown"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
+      <img id="UserLogIMG" alt="">
         <!--Username log-->
-        Username
-      </a>
+        <p>Username</p>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         <router-link class="dropdown-item" to="/profile">
           <li>Perfil</li>
@@ -22,7 +14,7 @@
         </router-link>
         <li><hr class="dropdown-divider" /></li>
         <router-link class="dropdown-item" to="#">
-          <li>Log Out</li>
+          <li @click="logOut" >Log Out</li>
         </router-link>
       </ul>
     </li>
@@ -35,9 +27,15 @@ export default {
 
   data() {
     return {
-      log: false
+      log: true
     }
-  }
+  },
+  methods: {
+    logOut() {
+      this.log = false
+      this.$router.push('/')
+    }
+    }
 }
 </script>
 
