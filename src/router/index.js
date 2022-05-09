@@ -19,7 +19,7 @@ import UserSettings from '../views/user/UserSettings.vue'
 import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
 
-import Search from '../views/Searching/Search.vue'
+import Search from '../views/Searching/SearchResults.vue'
 
 const routes = [
   {
