@@ -2,24 +2,28 @@
   <div id="Home" class="container" style="background-color: #191a19">
     <h3><b>Destacados</b></h3>
     <div
-      class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4"
+      class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="HomeDestacados"
     >
-      <WatchItemCard v-for="movie in 3" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4 " :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4 " :movie="movie" :key="movie.id" />
+      
     </div>
     <h3><b>Cartelera</b></h3>
     <div
-      class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4"
+      class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="cartelera"
     >
-      <WatchItemCard v-for="movie in 3" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
     </div>
     <h3><b>Próximos Estrenos</b></h3>
     <div
-      class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4"
+      class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="UpcomingMovies"
     >
-      <WatchItemCard v-for="movie in 3" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
     </div>
   </div>
 </template>
