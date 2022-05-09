@@ -20,7 +20,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 h3 {
   color: #1da8e2;
   width: 50vh;

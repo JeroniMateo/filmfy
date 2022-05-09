@@ -1,5 +1,5 @@
 <template>
-  <div id="Home" class="container" style="background-color:#191A19">
+  <div id="Home" class="container-fluid" style="background-color:#191A19">
       <h3><b>Destacados</b></h3>     
     <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="HomeDestacados">
           <WatchItemCard />
@@ -8,15 +8,15 @@
     </div>
       <h3><b>Cartelera</b></h3>
     <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="cartelera">
-        <BillBoardCard />
-        <BillBoardCard />
-        <BillBoardCard />
+         <WatchItemCard />
+         <WatchItemCard />
+         <WatchItemCard />
     </div>
       <h3><b>Próximos Estrenos</b></h3>
     <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="UpcomingMovies">
-      <BillBoardCard />
-      <BillBoardCard />
-      <BillBoardCard />
+    <WatchItemCard />
+    <WatchItemCard />
+    <WatchItemCard />
     </div>
   </div>
 </template>

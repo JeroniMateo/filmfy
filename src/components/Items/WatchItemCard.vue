@@ -99,8 +99,8 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 20vh;
-  height: 30vh;
+  width: 30vh;
+  height: 50vh;
 }
 
 </style>
