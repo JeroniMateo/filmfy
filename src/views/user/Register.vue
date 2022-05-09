@@ -219,4 +219,8 @@ input {
   color: #1da8e2;
   margin: 5%;
 }
+#layoutRegister {
+  margin: auto;
+  width: 70%;
+}
 </style>

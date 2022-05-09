@@ -54,34 +54,31 @@
       </div>
       <div class="MovieContentValoration">
         <div class="valoracion">
+          <!-- Estrella 1 -->
+          <button>
+            <i class="fas fa-star"></i>
+          </button>
 
-    <!-- Estrella 1 -->
-    <button>
-        <i class="fas fa-star"></i>
-    </button>
+          <!-- Estrella 2 -->
+          <button>
+            <i class="fas fa-star"></i>
+          </button>
 
-    <!-- Estrella 2 -->
-    <button>
-        <i class="fas fa-star"></i>
-    </button>
+          <!-- Estrella 3 -->
+          <button>
+            <i class="fas fa-star"></i>
+          </button>
 
-    <!-- Estrella 3 -->
-    <button>
-        <i class="fas fa-star"></i>
-    </button>
+          <!-- Estrella 4 -->
+          <button>
+            <i class="fas fa-star"></i>
+          </button>
 
-    <!-- Estrella 4 -->
-    <button>
-        <i class="fas fa-star"></i>
-    </button>
-
-    <!-- Estrella 5 -->
-    <button>
-        <i class="fas fa-star"></i>
-    </button>
-
-</div>
-
+          <!-- Estrella 5 -->
+          <button>
+            <i class="fas fa-star"></i>
+          </button>
+        </div>
       </div>
       <!--Trailer play automaticaly-->
       <div id="Trailer"><TrailerVideo /></div>
@@ -123,43 +120,46 @@ export default {
 
 <style>
 :root {
-    --color-inactivo: #5f5050;
-    --color-hover: #ffa400;
+  --color-inactivo: #5f5050;
+  --color-hover: #ffa400;
 }
 .valoracion {
-    display: flex;
-    flex-direction: row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
 }
 .valoracion button {
-    background-color: initial;
-    border: 0;
-    color: var(--color-inactivo);
-    transition: 1s all;
+  background-color: initial;
+  border: 0;
+  color: var(--color-inactivo);
+  transition: 1s all;
 }
 .valoracion button:hover {
-    cursor: pointer;
-    color: var(--color-hover);
-    transform: rotate(360deg);
+  cursor: pointer;
+  color: var(--color-hover);
+  transform: rotate(360deg);
 }
 button:nth-child(1):hover ~ button {
-    color: var(--color-hover);
-    transform: rotate(360deg);
+  color: var(--color-hover);
+  transform: rotate(360deg);
 }
 button:nth-child(2):hover ~ button {
-    color: var(--color-hover);
-    transform: rotate(360deg);
+  color: var(--color-hover);
+  transform: rotate(360deg);
 }
 button:nth-child(3):hover ~ button {
-    color: var(--color-hover);
-    transform: rotate(360deg);
+  color: var(--color-hover);
+  transform: rotate(360deg);
 }
 button:nth-child(4):hover ~ button {
-    color: var(--color-hover);
-    transform: rotate(360deg);
+  color: var(--color-hover);
+  transform: rotate(360deg);
 }
 button:nth-child(5):hover ~ button {
-    color: var(--color-hover);
-    transform: rotate(360deg);
+  color: var(--color-hover);
+  transform: rotate(360deg);
 }
-
+#WatchingMovie {
+  margin: auto;
+  width: 70%;
+}
 </style>

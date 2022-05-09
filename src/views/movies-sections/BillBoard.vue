@@ -36,4 +36,8 @@ div#BillBoardSection {
   justify-content: center;
   align-content: center;
 }
+#Cartelera {
+  margin: auto;
+  width: 70%;
+}
 </style>
