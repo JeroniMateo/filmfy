@@ -7,15 +7,14 @@
           <router-link to="/home">
           <div id="FILMFY">
               <!--Filmfy Icon-->
-                <img
-                  src="../../../assets/img/cameraLogo.png"
-                  alt=""
-                  id="logoFilmfy"
-                />
-                <h1 class="card-title"><b>FILMFY</b></h1>
-              </div>
-              
-            </router-link>
+              <img
+                src="../../../assets/img/cameraLogo.png"
+                alt=""
+                id="logoFilmfy"
+              />
+              <h1 class="card-title"><b>FILMFY</b></h1>
+            </div>
+          </router-link>
           <button
             class="navbar-toggler"
             type="button"
@@ -54,11 +53,17 @@
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                v-model="search"
               />
               <!--Search-->
-              <router-link to="/search">
-                <button class="btn-success" id="buscar" type="submit">Buscar</button>
-              </router-link>
+              <button
+                class="btn-success"
+                id="buscar"
+                type="submit"
+                @click="searchContent"
+              >
+                Buscar
+              </button>
             </div>
           </div>
         </div>
@@ -73,7 +78,13 @@ export default {
 
   data() {
     return {
-      log: true
+      log: true,
+      search: ''
+    }
+  },
+  methods: {
+    searchContent() {
+      this.$router.push('/search/' + this.search)
     }
   }
 }
@@ -112,7 +123,7 @@ h1 {
   color: aquamarine;
   margin-left: 2vw;
 }
-a{
+a {
   text-decoration: none;
   color: #fff;
 }

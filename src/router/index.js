@@ -6,7 +6,7 @@ import Movies from '../views/watchContent/Movies.vue'
 import MovieContent from '../views/watchContent/MoviesContent/MovieContent.vue'
 
 import BillBoard from '../views/movies-sections/BillBoard.vue'
-import BillBoardContent from '../views/watchContent/MoviesContent/BillBoardContent.vue'
+
 
 import Outstandings from '../views/movies-sections/Outstandings.vue'
 
@@ -19,7 +19,7 @@ import UserSettings from '../views/user/UserSettings.vue'
 import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
 
-import Search from '../views/Searching/Search.vue'
+import Search from '../views/Searching/SearchResults.vue'
 
 const routes = [
   {
@@ -49,12 +49,6 @@ const routes = [
     name: 'billboard',
     component: BillBoard
   },
-  {
-    path: '/billboard/:id',
-    name: 'billboard-content',
-    component: BillBoardContent
-  },
-
 
   {
     path: '/outstandings',
