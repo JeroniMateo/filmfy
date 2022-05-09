@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid">
-    <!--Card1-->
+  <div id="WelcomeCards" class="container-fluid">
+    
     <div class="card mb-3 container-fluid" id="welcomeCard">
       <div class="row g-0">
         <div class="col-md-4">
@@ -48,27 +48,28 @@
         </div>
       </div>
     </div>
-  </div>
-  <!--Card3-->
-  <div class="card mb-3 container-fluid" id="welcomeCard">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img
-          src="../../assets/img/Welcome/Content_News.png"
-          class="img-fluid rounded-start"
-          alt="..."
-        />
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">
-            Enterate de las últimas <br />
-            novedades
-          </h5>
-          <p class="card-text">
-            Estate a la ultima i enterate de todo lo que te interesa <br />
-            de este arte y cultura digital
-          </p>
+
+    <!--Card3-->
+    <div class="card mb-3 container-fluid" id="welcomeCard">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="../../assets/img/Welcome/Content_News.png"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">
+              Enterate de las últimas <br />
+              novedades
+            </h5>
+            <p class="card-text">
+              Estate a la ultima i enterate de todo lo que te interesa <br />
+              de este arte y cultura digital
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -77,8 +78,8 @@
 
 <script>
 export default {
-  name: "WelcomeCards",
-};
+  name: 'WelcomeCards'
+}
 </script>
 
 <style scoped>
@@ -93,14 +94,14 @@ h5 {
   font-weight: bold;
 }
 p {
-  color: #ECDBBA;
+  color: #ecdbba;
   font-size: 2vh;
 }
 div.cardText {
   display: grid;
   align-items: end;
 }
-.card-text{
+.card-text {
   color: #ffff;
 }
 
@@ -124,5 +125,9 @@ div#welcomeCard {
   flex-direction: row;
   height: 40vh;
   background-color: #000;
+}
+#WelcomeCards {
+  margin: auto;
+  width: 70%;
 }
 </style>
