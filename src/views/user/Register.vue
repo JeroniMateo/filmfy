@@ -1,67 +1,83 @@
 <template>
-    <h1>Registrarse</h1>
+  <h1>Registrarse</h1>
   <div id="layoutRegister" class="container">
     <form id="Registrarse" action="">
-      <div class="row g-3">
-        <div class="col-auto">
+      <div class="row g-5 p-5">
+        <div id="RegisterFormInput" class="col-auto">
+          <label class="form-label" for="userNameR">User Name</label>
           <input
-            id="UserNameR"
+            id="userNameR"
             placeholder="UserName*"
             class="registro form-control-lg"
             type="text"
             name="UserName"
+            required
           />
           <p id="errorUserName" class="error"></p>
         </div>
-        <div class="col-auto">
+        <div id="RegisterFormInput" class="col-auto">
+          <label class="form-label" for="nameR">Name</label>
           <input
-            id="NameR"
+            id="nameR"
             placeholder="Name*"
             class="registro form-control-lg"
             type="text"
             name="email"
+            required
           />
           <p id="errorName" class="error"></p>
         </div>
-        <div class="col-auto">
+      </div>
+      <div class="row g-5 p-5">
+        <div id="RegisterFormInput" class="col-auto">
+          <label class="form-label" for="lastNameR">Last Name</label>
           <input
-            id="LastNameR"
+            id="lastNameR"
             placeholder="LastName*"
             class="registro form-control-lg"
             type="text"
             name="LastName"
+            required
           />
           <p id="errorLastName" class="error"></p>
         </div>
-      </div>
-      <div class="row g-3">
-        <div class="col-auto">
+        <div id="RegisterFormInput" class="col-auto">
+          <label class="form-label" for="emailR">Email</label>
           <input
             id="emailR"
             placeholder="Email*"
             class="registro form-control-lg"
             type="email"
             name="email"
+            required
           />
           <p id="errorEmail" class="error"></p>
         </div>
-        <div class="col-auto">
+      </div>
+      <div class="row g-5 p-5">
+        <div id="RegisterFormInput" class="col-auto">
+          <label class="form-label" for="passwordR">Password</label>
           <input
             id="passwordR"
             placeholder="Password*"
             class="registro form-control-lg"
             type="password"
             name="password"
+            required
           />
           <p id="errorPassword" class="error"></p>
         </div>
-        <div class="col-auto">
+        <div id="RegisterFormInput" class="col-auto">
+          <label class="form-label" for="passwordConfirmR"
+            >Password Confirm</label
+          >
           <input
             id="passwordConfirmR"
             placeholder="PasswordConfirm*"
             class="registro form-control-lg"
             type="password"
             name="password"
+            required
           />
           <p id="errorPasswordConfirm" class="error"></p>
         </div>
@@ -76,17 +92,17 @@
         >
           Regístrate
         </button>
-        <h1>¿Ya tienes una cuenta?</h1>
-          <router-link to="/login">
-        <button
-          type="submit"
-          class="btn btn-primary mb-3"
-          id="loginButton"
-          aria-label="Inicia sesión"
-        >
-          Inicia sesión
-        </button>
-          </router-link>
+        <small>¿Ya tienes una cuenta en Filmfy?</small>
+        <router-link to="/login">
+          <button
+            type="submit"
+            class="btn btn-primary mb-3"
+            id="loginButton"
+            aria-label="Inicia sesión"
+          >
+            Inicia sesión
+          </button>
+        </router-link>
       </div>
       <div id="signUpAlert"></div>
     </form>
@@ -97,8 +113,18 @@
 export default {
   name: 'Register',
 
+  data() {
+    return {
+      userName: '',
+      name: '',
+      lastName: '',
+      email: '',
+      password: '',
+      passwordConfirm: '',
+      log: false
+    }
+  },
   methods: {
-    //El usuario introduce un email y una contraseña y lo añadimos a la api de users.json
     setCookie: function (cname, cvalue, exdays) {
       const d = new Date()
       d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
@@ -111,7 +137,7 @@ export default {
         body: JSON.stringify({
           userName: document.getElementById('UserNameR').value,
           name: document.getElementById('NameR').value,
-          lastName: document.getElementById('LastNameR').value,
+          lastName: document.getElementById('lastNameR').value,
           email: document.getElementById('emailR').value,
           password: document.getElementById('passwordR').value,
           passwordConfirm: document.getElementById('passwordConfirmR').value
@@ -123,7 +149,8 @@ export default {
         .then((response) => response.json())
         .then((token) => {
           setCookie('tokenName', token.access_token, 365)
-          window.location.href = ''
+          this.log = true
+          this.$router.push('/')
         })
         .catch(function (error) {
           console.log('Error en el fetch', error)
@@ -135,50 +162,55 @@ export default {
 
 <style scoped>
 label.form-label {
-  font-size: 3.5vh;
-  font-weight: bold;
-  color: rgb(29, 168, 226);
+  font-size: 3vh;
+
+  color: #fff;
+}
+div#RegisterFormInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .error {
-  color: #b33030;
+  color: #c50909;
   font-size: 1.5rem;
   font-weight: bold;
 }
 button {
-  background-color: #e59934;
+  background-color: #4e9f3d;
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 2vh;
   margin: 4px 2px;
   cursor: pointer;
 }
 h1 {
-  font-size: 1.5rem;
+  font-size: 5rem;
   font-weight: bold;
   color: rgb(78, 159, 61);
 }
-.formConfirm{
+.formConfirm {
   display: flex;
-    justify-content: space-around;
-    justify-items: stretch;
-    align-content: center;
-    align-items: center;
+  justify-content: space-around;
+  justify-items: stretch;
+  align-content: center;
+  align-items: center;
 }
-#layoutRegister{
+#layoutRegister {
   display: flex;
-    justify-content: center;
-    justify-items: stretch;
-    align-content: center;
-    align-items: center;
+  justify-content: center;
+  justify-items: stretch;
+  align-content: center;
+  align-items: center;
 }
-input{
+input {
   font-size: 1.5rem;
   font-weight: bold;
-  color: rgb(29, 168, 226);
+  color: #1da8e2;
   margin: 5%;
 }
 </style>

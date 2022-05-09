@@ -4,6 +4,18 @@
     <div id="navmenu">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
+          <router-link to="/">
+          <div id="FILMFY">
+              <!--Filmfy Icon-->
+                <img
+                  src="../../../assets/img/cameraLogo.png"
+                  alt=""
+                  id="logoFilmfy"
+                />
+                <h1 class="card-title"><b>FILMFY</b></h1>
+              </div>
+              
+            </router-link>
           <button
             class="navbar-toggler"
             type="button"
@@ -38,23 +50,7 @@
                 <li class="nav-item">Mis Listas</li>
               </router-link>
             </ul>
-            <div id="FILMFY">
-              <div class="FILMFY">
-                <!--Filmfy Icon-->
-                <router-link to="/">
-                  <div id="filmfyIcon">
-                    <img
-                      src="../../../assets/img/LogoImageFilmfy.png"
-                      alt=""
-                      id="logoFilmfy"
-                    />
-                  </div>
-                </router-link>
-              </div>
-              <div class="FILMFY">
-                <h1 class="card-title"><b>FILMFY</b></h1>
-              </div>
-            </div>
+
             <div id="searching">
               <input
                 class="form-control me-2"
@@ -64,7 +60,7 @@
               />
               <!--Search-->
               <router-link to="/search">
-                <button class="btn-success" type="submit">Buscar</button>
+                <button class="btn-success" id="buscar" type="submit">Buscar</button>
               </router-link>
             </div>
           </div>
@@ -87,6 +83,13 @@ export default {
 </script>
 
 <style scoped>
+button#buscar {
+  margin-left: -3vw;
+  border-radius: 10%;
+  height: 5.6vh;
+  background-color: #2ecc71;
+}
+
 .nav-link {
   color: #ffff;
 }
@@ -97,8 +100,8 @@ div#searching {
   display: flex;
 }
 img#logoFilmfy {
-  width: 10vh;
-  height: 10vh;
+  width: 3vw;
+  height: 3vw;
 }
 div#FILMFY {
   display: flex;
@@ -106,8 +109,12 @@ div#FILMFY {
   margin-right: 5vw;
 }
 h1 {
-  font-size: 5vw;
+  font-size: 3vw;
   color: aquamarine;
-  margin-left: 2vw  ;
+  margin-left: 2vw;
+}
+a{
+  text-decoration: none;
+  color: #fff;
 }
 </style>

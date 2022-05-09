@@ -35,7 +35,7 @@ export default {
   background-color: #000;
 }
 h3 {
-  color: rgb(29, 168, 226);
+  color: #1da8e2;
   background-color: #242424;
   font-size: 6vh;
   width: 100%;

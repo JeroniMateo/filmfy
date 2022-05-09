@@ -8,26 +8,26 @@
     </div>
       <h3><b>Cartelera</b></h3>
     <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="cartelera">
-        <BillBoardMovie />
-        <BillBoardMovie />
-        <BillBoardMovie />
+        <BillBoardCard />
+        <BillBoardCard />
+        <BillBoardCard />
     </div>
       <h3><b>Próximos Estrenos</b></h3>
     <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="UpcomingMovies">
-      <BillBoardMovie />
-      <BillBoardMovie />
-      <BillBoardMovie />
+      <BillBoardCard />
+      <BillBoardCard />
+      <BillBoardCard />
     </div>
   </div>
 </template>
 
 <script>
-import BillBoardMovie from "@/components/movies/Cartelera/BillBoardMovie.vue"
+import BillBoardCard from "@/components/movies/Cartelera/BillBoardCard.vue"
 import WatchItemCard from "@/components/Items/WatchItemCard.vue"
 export default {
   name: 'HomeView',
   components: {
-    BillBoardMovie,
+    BillBoardCard,
     WatchItemCard,
     
   }
@@ -35,7 +35,7 @@ export default {
 </script>
 <style scoped>
 h3{
-  color: rgb(29, 168, 226);
+  color: #1da8e2;
   font-size: 6vh;
   width: 100%;
   height: 8vh;

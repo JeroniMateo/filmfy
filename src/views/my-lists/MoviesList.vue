@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 h1 {
-  color: rgb(29, 168, 226);
+  color: #1da8e2;
   background-color: rgb(15, 23, 30);
   font-size: 6vh;
   width: 100%;
