@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div id="WatchItemCardING" v-on:mouseover="mouseover" v-on:mouseleave="mouseleave">
+    <div id="WatchItemCardIMG" v-on:mouseover="mouseover" v-on:mouseleave="mouseleave">
       <img src="../../assets/img/LogoImageFilmfy.png" alt="" class="IMGMovie" >
     </div>
   </div>
@@ -68,11 +68,11 @@ export default {
     },
     mouseover: function () {
       document.getElementById('WatchItemCardINFO').style.display = 'block'
-      document.getElementById('WatchItemCardING').style.display = 'none'
+      document.getElementById('WatchItemCardIMG').style.display = 'none'
     },
     mouseleave: function () {
       document.getElementById('WatchItemCardINFO').style.display = 'none'
-      document.getElementById('WatchItemCardING').style.display = 'block'
+      document.getElementById('WatchItemCardIMG').style.display = 'block'
     }
   }
 }
@@ -83,8 +83,19 @@ export default {
   width: 30px;
   height: 30px;
 }
-
+#WatchItemCard{
+  height: 60vh;
+}
 #WatchItemCardINFO {
+  background-color: rgb(15, 23, 30);
+  color: #19282f;
+  font-family: Arial;
+  font-size: 2vh;
+  display: flex;
+  width: 30vh;
+  height: 50vh;
+
+}#WatchItemCardIMG {
   background-color: rgb(15, 23, 30);
   color: #19282f;
   font-family: Arial;
@@ -99,8 +110,8 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 20vh;
-  height: 30vh;
+  width: 30vh;
+  height: 50vh;
 }
 
 </style>
