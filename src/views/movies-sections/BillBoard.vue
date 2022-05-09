@@ -2,18 +2,17 @@
   <div id="Cartelera" class="container" style="background-color: #191a19">
     <h3><b>Cartelera</b></h3>
     <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-3 g-4">
-      <BillBoardCard v-for="movie in movies" :movie="movie" :key="movie.id" />
-
+      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.id" />
     </div>
   </div>
 </template>
 
 <script>
-import BillBoardCard from "@/components/movies/Cartelera/BillBoardCard.vue"
+  import WatchItemCard from "@/components/Items/WatchItemCard.vue";
 export default {
   name: 'BillBoard',
   components: {
-    BillBoardCard
+    WatchItemCard
   }
 }
 </script>
