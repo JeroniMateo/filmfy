@@ -36,9 +36,9 @@
           class="btn btn-primary mb-3"
           @click="LoginAPI"
           id="loginButton"
-          aria-label="Inicia sesión"
+          aria-label="Iniciar sesión"
         >
-          Inicia sesión
+          Iniciar sesión
         </button>
         <h1><b>¿Eres nuevo en Filmfy?</b></h1>
           <router-link to="/register">
@@ -46,7 +46,7 @@
           type="submit"
           class="btn btn-primary mb-3"
           id="signUpButton"
-          aria-label="Inicia sesión"
+          aria-label="Iniciar sesión"
         >
           Registrarse
         </button>
@@ -114,7 +114,7 @@ export default {
 label {
   font-size: 5vh;
   font-weight: bold;
-  color: rgb(29, 168, 226);
+  color: #1da8e2;
 }
 .error {
   color: #b33030;
@@ -122,7 +122,7 @@ label {
   font-weight: bold;
 }
 button {
-  background-color: #e59934;
+  background-color: #4E9F3D;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -155,7 +155,7 @@ h1 {
 input{
   font-size: 1.5rem;
   font-weight: bold;
-  color: rgb(29, 168, 226);
+  color: #1da8e2;
   margin: 5%;
 }
 .row {
