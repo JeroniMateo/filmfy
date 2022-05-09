@@ -6,7 +6,7 @@ import Movies from '../views/watchContent/Movies.vue'
 import MovieContent from '../views/watchContent/MoviesContent/MovieContent.vue'
 
 import BillBoard from '../views/movies-sections/BillBoard.vue'
-import BillBoardContent from '../views/watchContent/MoviesContent/BillBoardContent.vue'
+
 
 import Outstandings from '../views/movies-sections/Outstandings.vue'
 
@@ -49,12 +49,6 @@ const routes = [
     name: 'billboard',
     component: BillBoard
   },
-  {
-    path: '/billboard/:id',
-    name: 'billboard-content',
-    component: BillBoardContent
-  },
-
 
   {
     path: '/outstandings',

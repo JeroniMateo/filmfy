@@ -1,34 +1,40 @@
 <template>
-  <div id="Home" class="container" style="background-color:#191A19">
-      <h3><b>Destacados</b></h3>     
-    <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="HomeDestacados">
-          <WatchItemCard v-for="movie in 3" :movie="movie" :key="movie.id" />
-          
+  <div id="Home" class="container" style="background-color: #191a19">
+    <h3><b>Destacados</b></h3>
+    <div
+      class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4"
+      id="HomeDestacados"
+    >
+      <WatchItemCard v-for="movie in 3" :movie="movie" :key="movie.id" />
     </div>
-      <h3><b>Cartelera</b></h3>
-    <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="cartelera">
-    <WatchItemCard v-for="movie in 3" :movie="movie" :key="movie.id" />
+    <h3><b>Cartelera</b></h3>
+    <div
+      class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4"
+      id="cartelera"
+    >
+      <WatchItemCard v-for="movie in 3" :movie="movie" :key="movie.id" />
     </div>
-      <h3><b>Próximos Estrenos</b></h3>
-    <div class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4" id="UpcomingMovies">
-<WatchItemCard v-for="movie in 3" :movie="movie" :key="movie.id" />
+    <h3><b>Próximos Estrenos</b></h3>
+    <div
+      class="HomeSection row row-cols-1 p-5 row-cols-md-3 g-4"
+      id="UpcomingMovies"
+    >
+      <WatchItemCard v-for="movie in 3" :movie="movie" :key="movie.id" />
     </div>
   </div>
 </template>
 
 <script>
-
-import WatchItemCard from "@/components/Items/WatchItemCard.vue"
+import WatchItemCard from '@/components/Items/WatchItemCard.vue'
 export default {
   name: 'HomeView',
   components: {
-    WatchItemCard,
-    
+    WatchItemCard
   }
 }
 </script>
 <style scoped>
-h3{
+h3 {
   color: #1da8e2;
   font-size: 6vh;
   width: 100%;
@@ -36,7 +42,7 @@ h3{
   background-color: #000;
   text-align: center;
 }
-.HomeSection{
+.HomeSection {
   background-color: #161414;
   color: #19282f;
   font-family: Arial;
