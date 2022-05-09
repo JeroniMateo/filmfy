@@ -24,29 +24,17 @@
         <div class="wrapper" v-on:click.right="ItemOpctions">
           <section id="section1">
             <a href="#section3" class="arrow__btn">‹</a>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard v-for="movie in 5" :movie="movie" :key="movie.id" /></div>
             <a href="#section2" class="arrow__btn">›</a>
           </section>
           <section id="section2">
             <a href="#section1" class="arrow__btn">‹</a>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard v-for="movie in 5" :movie="movie" :key="movie.id" /></div>
             <a href="#section3" class="arrow__btn">›</a>
           </section>
           <section id="section3">
             <a href="#section2" class="arrow__btn">‹</a>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard v-for="movie in 5" :movie="movie" :key="movie.id" /></div>
             <a href="#section1" class="arrow__btn">›</a>
           </section>
         </div>
@@ -82,7 +70,7 @@ div.MovieInCarousel {
   align-items: center;
 }
 h2 {
-  color: rgb(29, 168, 226);
+  color: #1da8e2;
   background-color: rgb(15, 23, 30);
   font-size: 6vh;
   width: 100%;

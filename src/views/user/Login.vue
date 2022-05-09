@@ -4,6 +4,7 @@
     <form id="InicioSesion" action="">
       <div class="row g-3">
         <div class="col-auto">
+          <label class="form-label" for="emailL">Email</label>
           <input
             class="form-control-lg"
             id="emailL"
@@ -12,10 +13,13 @@
             type="text"
             name="email"
             aria-required="true"
+            v-model="email"
+            required
           />
           <p id="errorEmail" class="error"></p>
         </div>
         <div class="col-auto">
+          <label class="form-label" for="passwordL">Password</label>
           <input
             class="form-control-lg"
             id="passwordL"
@@ -24,6 +28,8 @@
             type="password"
             name="password"
             aria-required="true"
+            v-model="password"
+            required
           />
           <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
           <p id="errorPassword" class="error"></p>
@@ -36,17 +42,17 @@
           class="btn btn-primary mb-3"
           @click="LoginAPI"
           id="loginButton"
-          aria-label="Inicia sesión"
+          aria-label="Iniciar sesión"
         >
-          Inicia sesión
+          Iniciar sesión
         </button>
-        <h1><b>¿Eres nuevo en Filmfy?</b></h1>
+        <small>¿Eres nuevo en Filmfy?</small>
           <router-link to="/register">
         <button
           type="submit"
           class="btn btn-primary mb-3"
           id="signUpButton"
-          aria-label="Inicia sesión"
+          aria-label="Iniciar sesión"
         >
           Registrarse
         </button>
@@ -61,11 +67,17 @@
 export default {
   name: 'Login',
 
+  data() {
+    return {
+      email: '',
+      password: '',
+      log: false
+    }
+  },
+
   methods: {
     LoginAPI: function () {
-      let email = document.getElementById('emailL').value
-      let password = document.getElementById('passwordL').value
-      let authString = `${email}:${password}`
+      let authString = `${this.email}:${this.password}`
       let headers = new Headers()
       headers.set('Authorization', 'Basic ' + btoa(authString))
 
@@ -75,9 +87,9 @@ export default {
       })
         .then((response) => response.json())
         .then((token) => {
-          console.log('hola')
           setCookie('tokenName', token.access_token, 365)
-          window.location.href = ''
+          this.log = true
+          this.$router.push('/')
         })
         .catch(function (error) {
           console.log('Error en el fetch', error)
@@ -111,10 +123,9 @@ export default {
 </script>
 
 <style scoped>
-label {
-  font-size: 5vh;
-  font-weight: bold;
-  color: rgb(29, 168, 226);
+label.form-label {
+  font-size: 3vh;
+  color: #fff;
 }
 .error {
   color: #b33030;
@@ -122,7 +133,7 @@ label {
   font-weight: bold;
 }
 button {
-  background-color: #e59934;
+  background-color: #4e9f3d;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -134,41 +145,41 @@ button {
   cursor: pointer;
 }
 h1 {
-  font-size: 1.5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: rgb(78, 159, 61);
 }
-.formConfirm{
+.formConfirm {
   display: flex;
-    justify-content: space-around;
-    justify-items: stretch;
-    align-content: center;
-    align-items: center;
+  justify-content: space-around;
+  justify-items: stretch;
+  align-content: center;
+  align-items: center;
 }
-#layoutRegister{
+#layoutRegister {
   display: flex;
-    justify-content: center;
-    justify-items: stretch;
-    align-content: center;
-    align-items: center;
+  justify-content: center;
+  justify-items: stretch;
+  align-content: center;
+  align-items: center;
 }
-input{
+input {
   font-size: 1.5rem;
   font-weight: bold;
-  color: rgb(29, 168, 226);
+  color: #1da8e2;
   margin: 5%;
 }
 .row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    align-content: space-around;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-content: space-around;
 }
 </style>

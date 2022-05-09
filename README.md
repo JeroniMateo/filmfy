@@ -12,6 +12,7 @@ Wireframe with Balsamiq: https://balsamiq.cloud/swio5ls/pepq8ha/r2278
 - Primary: #000
 - Secondary: #ffff
 - Info: #4E9F3D
+- Light: #1da8e2
 - Dark: #242424
 - Success: #2ecc71
 - Error: #c50909

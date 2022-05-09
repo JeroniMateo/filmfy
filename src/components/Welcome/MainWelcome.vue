@@ -1,7 +1,7 @@
 <template>
   <div id="Welcome" class="container-fluid p-3 card bg-dark text-white">
     <div id="MainWelcome" class="card-img-overlay">
-      <div class="FilmfyIs">
+      <div class="FilmfyIs card-img-overlay">
         <h4 class="card-text">
           <b>
             Encuentra conentido ideal <br />
@@ -9,29 +9,10 @@
             y compartirlas con tus amigos</b
           >
         </h4>
-      </div>
-      <br />
-      <div class="container">
-        <div id="buscarContenido">
-          <label id="verHoy" class="d-flex"></label>
-          <select
-            name="moviesSearchFilter"
-            id="moviesSearchFilter"
-            form="moviesSearchform"
-          >
-            <option value="Titulo">Titulo</option>
-            <option value="Genero">Genero</option>
-            <option value="Actor">Actor</option>
-            <option value="Director">Director</option>
-          </select>
-          <input
-            class="form-control me-6"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn" type="submit">Search</button>
-        </div>
+        <br />
+        <p class="card-text" >
+          Tu sitio para disfrutar del contenido digital ideal
+        </p>
       </div>
     </div>
   </div>
@@ -55,6 +36,7 @@ export default {
   width: 99%;
   height: 50vh;
 }
+
 #Welcome:before {
   content: '';
   position: absolute;
@@ -95,7 +77,6 @@ label#verHoy {
   color: black;
 }
 button {
-  
   color: #fff;
   background-color: #2ecc71;
 }
@@ -107,10 +88,19 @@ div#MainWelcome {
   justify-content: space-evenly;
   flex-wrap: nowrap;
 }
-div.FilmfyIs{
+div.FilmfyIs {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
 }
-select{
-  border-radius: 10%;
+
+p {
+  color: #2ecc71;
+  font-size: 2rem;
+  padding: 1%;
+  
 }
 </style>
