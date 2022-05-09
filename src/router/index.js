@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Welcome from '../views/Welcome'
+import Welcome from '../views/Welcome.vue'
 import Home from '../views/Home.vue'
 
 import Movies from '../views/watchContent/Movies.vue'
@@ -19,7 +19,7 @@ import UserSettings from '../views/user/UserSettings.vue'
 import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
 
-import Search from '../views/Searching/Search.vue'
+import Search from '../views/Searching/SearchResults.vue'
 
 const routes = [
   {

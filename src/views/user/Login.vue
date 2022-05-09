@@ -13,6 +13,8 @@
             type="text"
             name="email"
             aria-required="true"
+            v-model="email"
+            required
           />
           <p id="errorEmail" class="error"></p>
         </div>
@@ -26,6 +28,8 @@
             type="password"
             name="password"
             aria-required="true"
+            v-model="password"
+            required
           />
           <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
           <p id="errorPassword" class="error"></p>
@@ -63,11 +67,17 @@
 export default {
   name: 'Login',
 
+  data() {
+    return {
+      email: '',
+      password: '',
+      log: false
+    }
+  },
+
   methods: {
     LoginAPI: function () {
-      let email = document.getElementById('emailL').value
-      let password = document.getElementById('passwordL').value
-      let authString = `${email}:${password}`
+      let authString = `${this.email}:${this.password}`
       let headers = new Headers()
       headers.set('Authorization', 'Basic ' + btoa(authString))
 
@@ -77,9 +87,9 @@ export default {
       })
         .then((response) => response.json())
         .then((token) => {
-          console.log('hola')
           setCookie('tokenName', token.access_token, 365)
-          window.location.href = ''
+          this.log = true
+          this.$router.push('/')
         })
         .catch(function (error) {
           console.log('Error en el fetch', error)
@@ -123,7 +133,7 @@ label.form-label {
   font-weight: bold;
 }
 button {
-  background-color: #4E9F3D;
+  background-color: #4e9f3d;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -139,37 +149,37 @@ h1 {
   font-weight: bold;
   color: rgb(78, 159, 61);
 }
-.formConfirm{
+.formConfirm {
   display: flex;
-    justify-content: space-around;
-    justify-items: stretch;
-    align-content: center;
-    align-items: center;
+  justify-content: space-around;
+  justify-items: stretch;
+  align-content: center;
+  align-items: center;
 }
-#layoutRegister{
+#layoutRegister {
   display: flex;
-    justify-content: center;
-    justify-items: stretch;
-    align-content: center;
-    align-items: center;
+  justify-content: center;
+  justify-items: stretch;
+  align-content: center;
+  align-items: center;
 }
-input{
+input {
   font-size: 1.5rem;
   font-weight: bold;
   color: #1da8e2;
   margin: 5%;
 }
 .row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    align-content: space-around;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-content: space-around;
 }
 </style>

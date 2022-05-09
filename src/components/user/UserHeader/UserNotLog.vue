@@ -2,7 +2,6 @@
   <div id="UserLogIn" type="submit">
     
       <router-link to="/login">
-      <i class="fa-solid fa-user"></i>
         Iniciar Sesion
       </router-link>
   </div>
@@ -17,6 +16,7 @@ export default {
       log: false,
     };
   },
+
 };
 </script>
 

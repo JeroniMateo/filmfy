@@ -11,6 +11,7 @@
             class="registro form-control-lg"
             type="text"
             name="UserName"
+            v-model="userName"
             required
           />
           <p id="errorUserName" class="error"></p>
@@ -23,6 +24,7 @@
             class="registro form-control-lg"
             type="text"
             name="email"
+            v-model="name"
             required
           />
           <p id="errorName" class="error"></p>
@@ -37,6 +39,7 @@
             class="registro form-control-lg"
             type="text"
             name="LastName"
+            v-model="lastName"
             required
           />
           <p id="errorLastName" class="error"></p>
@@ -49,6 +52,7 @@
             class="registro form-control-lg"
             type="email"
             name="email"
+            v-model="email"
             required
           />
           <p id="errorEmail" class="error"></p>
@@ -63,6 +67,7 @@
             class="registro form-control-lg"
             type="password"
             name="password"
+            v-model="password"
             required
           />
           <p id="errorPassword" class="error"></p>
@@ -77,6 +82,7 @@
             class="registro form-control-lg"
             type="password"
             name="password"
+            v-model="passwordConfirm"
             required
           />
           <p id="errorPasswordConfirm" class="error"></p>
@@ -92,7 +98,7 @@
         >
           Regístrate
         </button>
-        <small>¿Ya tienes una cuenta?</small>
+        <small>¿Ya tienes una cuenta en Filmfy?</small>
         <router-link to="/login">
           <button
             type="submit"
@@ -113,8 +119,18 @@
 export default {
   name: 'Register',
 
+  data() {
+    return {
+      userName: '',
+      name: '',
+      lastName: '',
+      email: '',
+      password: '',
+      passwordConfirm: '',
+      log: false
+    }
+  },
   methods: {
-    //El usuario introduce un email y una contraseña y lo añadimos a la api de users.json
     setCookie: function (cname, cvalue, exdays) {
       const d = new Date()
       d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
@@ -125,12 +141,12 @@ export default {
       fetch('', {
         method: 'POST',
         body: JSON.stringify({
-          userName: document.getElementById('UserNameR').value,
-          name: document.getElementById('NameR').value,
-          lastName: document.getElementById('LastNameR').value,
-          email: document.getElementById('emailR').value,
-          password: document.getElementById('passwordR').value,
-          passwordConfirm: document.getElementById('passwordConfirmR').value
+          userName: this.userName,
+          name: this.name,
+          lastName: this.lastName,
+          email: this.email,
+          password: this.password,
+          passwordConfirm: this.passwordConfirm
         }),
         headers: {
           'Content-type': 'application/json; charset=UTF-8'
@@ -139,7 +155,8 @@ export default {
         .then((response) => response.json())
         .then((token) => {
           setCookie('tokenName', token.access_token, 365)
-          window.location.href = ''
+          this.log = true
+          this.$router.push('/')
         })
         .catch(function (error) {
           console.log('Error en el fetch', error)
