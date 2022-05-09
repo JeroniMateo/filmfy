@@ -11,6 +11,7 @@
             class="registro form-control-lg"
             type="text"
             name="UserName"
+            v-model="userName"
             required
           />
           <p id="errorUserName" class="error"></p>
@@ -23,6 +24,7 @@
             class="registro form-control-lg"
             type="text"
             name="email"
+            v-model="name"
             required
           />
           <p id="errorName" class="error"></p>
@@ -37,6 +39,7 @@
             class="registro form-control-lg"
             type="text"
             name="LastName"
+            v-model="lastName"
             required
           />
           <p id="errorLastName" class="error"></p>
@@ -49,6 +52,7 @@
             class="registro form-control-lg"
             type="email"
             name="email"
+            v-model="email"
             required
           />
           <p id="errorEmail" class="error"></p>
@@ -63,6 +67,7 @@
             class="registro form-control-lg"
             type="password"
             name="password"
+            v-model="password"
             required
           />
           <p id="errorPassword" class="error"></p>
@@ -77,6 +82,7 @@
             class="registro form-control-lg"
             type="password"
             name="password"
+            v-model="passwordConfirm"
             required
           />
           <p id="errorPasswordConfirm" class="error"></p>
@@ -135,12 +141,12 @@ export default {
       fetch('', {
         method: 'POST',
         body: JSON.stringify({
-          userName: document.getElementById('UserNameR').value,
-          name: document.getElementById('NameR').value,
-          lastName: document.getElementById('lastNameR').value,
-          email: document.getElementById('emailR').value,
-          password: document.getElementById('passwordR').value,
-          passwordConfirm: document.getElementById('passwordConfirmR').value
+          userName: this.userName,
+          name: this.name,
+          lastName: this.lastName,
+          email: this.email,
+          password: this.password,
+          passwordConfirm: this.passwordConfirm
         }),
         headers: {
           'Content-type': 'application/json; charset=UTF-8'

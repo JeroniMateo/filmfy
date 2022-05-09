@@ -12,6 +12,8 @@
             type="text"
             name="email"
             aria-required="true"
+            v-model="email"
+            required
           />
           <p id="errorEmail" class="error"></p>
         </div>
@@ -24,6 +26,8 @@
             type="password"
             name="password"
             aria-required="true"
+            v-model="password"
+            required
           />
           <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
           <p id="errorPassword" class="error"></p>
@@ -71,9 +75,7 @@ export default {
 
   methods: {
     LoginAPI: function () {
-      let email = document.getElementById('emailL').value
-      let password = document.getElementById('passwordL').value
-      let authString = `${email}:${password}`
+      let authString = `${this.email}:${this.password}`
       let headers = new Headers()
       headers.set('Authorization', 'Basic ' + btoa(authString))
 
