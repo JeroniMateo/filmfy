@@ -12,7 +12,7 @@
               <div class="TopMovieHead">
                   <h3 id="topNum">1.<b>El Padrino</b></h3>
               </div>
-              <WatchItemCard/>
+              <WatchItemCard :movie="movie" :key="movie.id" />
           </div>
         </div>
       </div>

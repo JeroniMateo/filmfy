@@ -24,29 +24,17 @@
         <div class="wrapper" v-on:click.right="ItemOpctions">
           <section id="section1">
             <a href="#section3" class="arrow__btn">‹</a>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
+            <div class="MovieInCarousel"><WatchItemCard v-for="movie in 5" :movie="movie" :key="movie.id" /></div>
             <a href="#section2" class="arrow__btn">›</a>
           </section>
           <section id="section2">
             <a href="#section1" class="arrow__btn">‹</a>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard v-for="movie in 5" :movie="movie" :key="movie.id" /></div>
             <a href="#section3" class="arrow__btn">›</a>
           </section>
           <section id="section3">
             <a href="#section2" class="arrow__btn">‹</a>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
-            <div class="MovieInCarousel"><WatchItemCard /></div>
+<div class="MovieInCarousel"><WatchItemCard v-for="movie in 5" :movie="movie" :key="movie.id" /></div>
             <a href="#section1" class="arrow__btn">›</a>
           </section>
         </div>

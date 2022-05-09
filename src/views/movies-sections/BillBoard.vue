@@ -2,12 +2,8 @@
   <div id="Cartelera" class="container" style="background-color: #191a19">
     <h3><b>Cartelera</b></h3>
     <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-3 g-4">
-      <BillBoardCard />
-      <BillBoardCard />
-      <BillBoardCard />
-      <BillBoardCard />
-      <BillBoardCard />
-      <BillBoardCard />
+      <BillBoardCard v-for="movie in movies" :movie="movie" :key="movie.id" />
+
     </div>
   </div>
 </template>
