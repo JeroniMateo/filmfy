@@ -117,14 +117,15 @@ div.cardText {
 }
 
 div#welcomeCard {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  align-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  height: 40vh;
-  background-color: #000;
+ display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    flex-direction: row;
+    height: 40vh;
+    background-color: #000;
+    align-items: center;
+    padding: 3%;
 }
 #WelcomeCards {
   margin: auto;
