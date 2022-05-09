@@ -178,7 +178,7 @@ button {
   cursor: pointer;
 }
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: rgb(78, 159, 61);
 }

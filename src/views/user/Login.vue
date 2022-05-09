@@ -4,6 +4,7 @@
     <form id="InicioSesion" action="">
       <div class="row g-3">
         <div class="col-auto">
+          <label class="form-label" for="emailL">Email</label>
           <input
             class="form-control-lg"
             id="emailL"
@@ -16,6 +17,7 @@
           <p id="errorEmail" class="error"></p>
         </div>
         <div class="col-auto">
+          <label class="form-label" for="passwordL">Password</label>
           <input
             class="form-control-lg"
             id="passwordL"
@@ -40,7 +42,7 @@
         >
           Iniciar sesión
         </button>
-        <h1><b>¿Eres nuevo en Filmfy?</b></h1>
+        <small>¿Eres nuevo en Filmfy?</small>
           <router-link to="/register">
         <button
           type="submit"
@@ -111,10 +113,9 @@ export default {
 </script>
 
 <style scoped>
-label {
-  font-size: 5vh;
-  font-weight: bold;
-  color: #1da8e2;
+label.form-label {
+  font-size: 3vh;
+  color: #fff;
 }
 .error {
   color: #b33030;
@@ -134,7 +135,7 @@ button {
   cursor: pointer;
 }
 h1 {
-  font-size: 1.5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: rgb(78, 159, 61);
 }
