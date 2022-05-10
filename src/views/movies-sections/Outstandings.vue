@@ -1,46 +1,32 @@
 <template>
-  <div id="TOP10">
-    <div class="container-fluid" style="background-color: #000">
-      <div class="row">
-        <div class="col-md-12">
-          <h3><b>TOP 10</b></h3>
-        </div>
+  <div  id="TOP10">
+    <div id="topNum" class="col-md-12">
+        <h1><b>TOP 10</b></h1>
       </div>
-      <div class="col">
-        <div class="col-md-12">
-          <div class="container" id="topMovie">
-            <div class="TopMovieHead">
-              <h3 id="topNum">1.<b>El Padrino</b></h3>
-            </div>
-            <WatchItemCard
-              v-for="movie in movies"
-              :movie="movie"
-              :key="movie.id"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <TopMovie v-for="top in 10" :top="top" :key="top"/>
   </div>
 </template>
 
 <script>
-import WatchItemCard from '@/components/Items/WatchItemCard.vue'
+
+import TopMovie from '../../components/movies/Outstanding/TopMovie.vue'
 
 export default {
   name: 'Outstandings',
   components: {
-    WatchItemCard
-  }
+
+    TopMovie
+}
 }
 </script>
 
-<style>
-h3#topNum {
-  color: #c50909;
-  width: 30vh;
-  background-color: #232323;
-  font-size: 4vh;
+<style scoped>
+h1{
+  color: #4E9F3D;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #000;
+  font-size: 8vh;
+  padding: 1%;
 }
 div.TopMovieHead {
   display: flex;
@@ -48,5 +34,9 @@ div.TopMovieHead {
 #TOP10 {
   margin: auto;
   width: 70%;
+}
+img{
+  width: 100%;
+  height: 50vh;
 }
 </style>
