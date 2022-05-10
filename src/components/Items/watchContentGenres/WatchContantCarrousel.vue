@@ -103,7 +103,7 @@ export default {
   },
   methods: {
     verMas() {
-      this.$route.push('/movies')
+      this.$router.push('/movies/:genre/:id')
     }
 }
 }
