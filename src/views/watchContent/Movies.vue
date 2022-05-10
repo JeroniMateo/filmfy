@@ -1,6 +1,6 @@
 <template>
   <div id="CinePeliculas" class="container-fluid">
-    <div id="CineCarrousel" class="row row-cols-1 p-5 row-cols-md-1 g-4 container-fluid">
+    <div id="CineCarrousel" class="row row-cols-1 p-6 row-cols-md-1 g-4 container-fluid">
     <WatchContentCarrousel />
     </div>
   </div>

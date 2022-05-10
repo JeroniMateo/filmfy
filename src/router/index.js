@@ -7,12 +7,11 @@ import MovieContent from '../views/watchContent/MoviesContent/MovieContent.vue'
 
 import BillBoard from '../views/movies-sections/BillBoard.vue'
 
-
 import Outstandings from '../views/movies-sections/Outstandings.vue'
 
 import Playlists from '../views/my-lists/Playlists.vue'
 import MoviesList from '../views/my-lists/MoviesList.vue'
-
+import VerMasGenres from '../views/watchContent/VerMasGenres.vue'
 import UserProfile from '../views/user/UserProfile.vue'
 import UserSettings from '../views/user/UserSettings.vue'
 
@@ -43,7 +42,11 @@ const routes = [
     name: 'movie-content',
     component: MovieContent
   },
-
+  {
+    path:'/movies/:genre/:id',
+    name: 'movie-content-genre',
+    component: VerMasGenres
+  },
   {
     path: '/billboard',
     name: 'billboard',

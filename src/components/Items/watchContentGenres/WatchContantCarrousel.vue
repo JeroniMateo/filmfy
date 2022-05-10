@@ -23,12 +23,12 @@
         <h2><b>Genres</b></h2>
         <div class="wrapper" v-on:click.right="ItemOpctions">
           <section id="section1">
-            <a href="#section3" class="arrow__btn">‹</a>
+            <a href="#section5" class="arrow__btn">‹</a>
             <div class="MovieInCarousel">
               <WatchItemCard
                 v-for="movie in 5"
                 :movie="movie"
-                :key="movie.id"
+                :key="movie.Genre"
               />
             </div>
             <a href="#section2" class="arrow__btn">›</a>
@@ -39,7 +39,7 @@
               <WatchItemCard
                 v-for="movie in 5"
                 :movie="movie"
-                :key="movie.id"
+                :key="movie.Genre"
               />
             </div>
             <a href="#section3" class="arrow__btn">›</a>
@@ -50,8 +50,33 @@
               <WatchItemCard
                 v-for="movie in 5"
                 :movie="movie"
-                :key="movie.id"
+                :key="movie.Genre"
               />
+            </div>
+            <a href="#section4" class="arrow__btn">›</a>
+          </section>
+          <section id="section4">
+            <a href="#section3" class="arrow__btn">‹</a>
+            <div class="MovieInCarousel">
+              <WatchItemCard
+                v-for="movie in 5"
+                :movie="movie"
+                :key="movie.Genre"
+              />
+            </div>
+            <a href="#section5" class="arrow__btn">›</a>
+          </section>
+          <section id="section5">
+            <a href="#section4" class="arrow__btn">‹</a>
+            <div class="MovieInCarousel">
+              <WatchItemCard
+                v-for="movie in 4"
+                :movie="movie"
+                :key="movie.Genre"
+              />
+            </div>
+            <div @click="verMas" class="MovieInCarousel" id="VerMas">
+              <h2 class="card-title"><b>Ver Mas</b></h2>
             </div>
             <a href="#section1" class="arrow__btn">›</a>
           </section>
@@ -75,11 +100,25 @@ export default {
     return {
       favorites: true
     }
-  }
+  },
+  methods: {
+    verMas() {
+      this.$router.push('/movies/:genre/:id')
+    }
+}
 }
 </script>
 
 <style scoped>
+#VerMas {
+  background-color: rgb(15, 23, 30);
+  color: #fff;
+  font-family: Arial;
+  font-size: 2vh;
+  display: flex;
+  width: 30vh;
+  height: 50vh;
+}
 div.MovieInCarousel {
   width: 100%;
   height: 100%;
@@ -130,7 +169,7 @@ h1 {
 }
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 100%);
+  grid-template-columns: repeat(5, 100%);
   overflow: hidden;
   scroll-behavior: smooth;
 }
