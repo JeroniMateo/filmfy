@@ -6,7 +6,7 @@
         <WatchItemCard
           :movie="movie"
           v-for="movie in movies"
-          :key="movie.id"
+          :key="movie.UpcomingMovies"
         />
       </div>
     </div>

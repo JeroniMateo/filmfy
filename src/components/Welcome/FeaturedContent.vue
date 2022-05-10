@@ -8,7 +8,7 @@
           <WatchItemCard
                 v-for="movie in 4"
                 :movie="movie"
-                :key="movie.id"
+                :key="movie.PopularContent"
               />
       </div>
     </div>

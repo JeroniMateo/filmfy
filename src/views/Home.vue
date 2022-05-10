@@ -5,8 +5,8 @@
       class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="HomeDestacados"
     >
-      <WatchItemCard v-for="movie in 4 " :movie="movie" :key="movie.id" />
-      <WatchItemCard v-for="movie in 4 " :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4 " :movie="movie" :key="movie.Outstanding" />
+      <WatchItemCard v-for="movie in 4 " :movie="movie" :key="movie.Outstanding" />
       
     </div>
     <h3><b>Cartelera</b></h3>
@@ -14,16 +14,16 @@
       class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="cartelera"
     >
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Billboard" />
+      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Billboard" />
     </div>
     <h3><b>Próximos Estrenos</b></h3>
     <div
       class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="UpcomingMovies"
     >
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Upcoming" />
+      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Upcoming" />
     </div>
   </div>
 </template>
