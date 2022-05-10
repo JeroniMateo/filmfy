@@ -19,8 +19,8 @@ export default {
 
 <style scoped>
 h3 {
-  color: #1da8e2;
-  font-size: 6vh;
+  color: #4E9F3D;
+  font-size: 8vh;
   width: 100%;
   background-color: #000;
 }

@@ -39,7 +39,7 @@ export default {
 </script>
 <style scoped>
 h3 {
-  color: #1da8e2;
+  color: #4E9F3D;
   font-size: 6vh;
   width: 100%;
   height: 8vh;

@@ -127,9 +127,9 @@ div.MovieInCarousel {
   align-items: center;
 }
 h2 {
-  color: #1da8e2;
+  color: #4E9F3D;
   background-color: rgb(15, 23, 30);
-  font-size: 6vh;
+  font-size: 8vh;
   width: 100%;
 }
 #FavWatch {
