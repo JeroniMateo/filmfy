@@ -1,40 +1,28 @@
 <template>
-  <div id="Home" class="container" style="background-color: #191a19">
-    <h3><b>Destacados</b></h3>
-    <div
-      class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
-      id="HomeDestacados"
-    >
-      <WatchItemCard v-for="movie in 4 " :movie="movie" :key="movie.Outstanding" />
-      <WatchItemCard v-for="movie in 4 " :movie="movie" :key="movie.Outstanding" />
-      
+  <div id="Home">
+    <div v-if="log" id="HomeUserLog">
+      <HomeLog />
     </div>
-    <h3><b>Cartelera</b></h3>
-    <div
-      class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
-      id="cartelera"
-    >
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Billboard" />
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Billboard" />
-    </div>
-    <h3><b>Próximos Estrenos</b></h3>
-    <div
-      class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
-      id="UpcomingMovies"
-    >
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Upcoming" />
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Upcoming" />
+    <div v-else id="HomeNotUserLog">
+      <HomeNotLog/>
     </div>
   </div>
 </template>
 
 <script>
-import WatchItemCard from '@/components/Items/WatchItemCard.vue'
+import HomeNotLog from '@/components/Home/HomeNotLog.vue'
+import HomeLog from '@/components/Home/HomeLog.vue'
 export default {
   name: 'HomeView',
   components: {
-    WatchItemCard
-  }
+    HomeNotLog,
+    HomeLog
+},
+  data() {
+    return {
+      log: true
+    }
+  },
 }
 </script>
 <style scoped>

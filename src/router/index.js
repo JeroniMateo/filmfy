@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Welcome from '../views/Welcome.vue'
+
 import Home from '../views/Home.vue'
 
 import Movies from '../views/watchContent/Movies.vue'
@@ -23,11 +23,6 @@ import Search from '../views/Searching/SearchResults.vue'
 const routes = [
   {
     path: '/',
-    name: 'welcome',
-    component: Welcome
-  },
-  {
-    path: '/home',
     name: 'home',
     component: Home
   },

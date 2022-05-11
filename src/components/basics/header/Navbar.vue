@@ -4,7 +4,7 @@
     <div id="navmenu">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <router-link to="/home">
+          <router-link to="/">
           <div id="FILMFY">
               <!--Filmfy Icon-->
               <img

@@ -6,14 +6,14 @@
   </footer>
 </template>
 <script>
-import WelcomeHome from './views/Welcome.vue'
+import Home from '../src/views/Home.vue'
 import Header from '../src/components/basics/Header.vue'
 import Footer from '../src/components/basics/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    WelcomeHome,
+    Home,
     Header,
     Footer
   }
