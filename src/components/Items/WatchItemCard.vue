@@ -8,15 +8,15 @@
       <div class="card h-100">
         <img id="MovieImage" class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title" id="MovieTitle">Card title</h5>
-          <p class="card-text" id="MovieSinnopsis">
+          <h5 class="card-title" id="Title">Card title</h5>
+          <p class="card-text" id="Sinnopsis">
             This is a wider card with supporting text below as a natural lead-in
             to additional content. This content is a little bit longer.
           </p>
         </div>
         <div class="card-footer">
-          <small class="text-muted" id="MovieGenre"
-            >ContentType
+          <small class="text-muted" id="Genre"
+            >Genre
             <button v-if="favorites" id="FavWatch" @click="addFavs">
               <img
                 class="favIMG"

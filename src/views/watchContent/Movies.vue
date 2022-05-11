@@ -1,6 +1,6 @@
 <template>
-  <div id="CinePeliculas" class="container-fluid" style="background-color: #191a19">
-    <div id="CineCarrousel" class="row row-cols-1 p-5 row-cols-md-1 g-4 container-fluid">
+  <div id="CinePeliculas" class="container-fluid">
+    <div id="CineCarrousel" class="row row-cols-1 p-6 row-cols-md-1 g-4 container-fluid">
     <WatchContentCarrousel />
     </div>
   </div>
@@ -20,7 +20,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 h3 {
   color: #1da8e2;
   width: 50vh;
@@ -39,4 +39,5 @@ div#CineCarrousel {
   align-content: center;
   width: 100%;
 }
+
 </style>

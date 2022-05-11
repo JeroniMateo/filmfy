@@ -4,8 +4,8 @@
     <div id="navmenu">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <router-link to="/">
-            <div id="FILMFY">
+          <router-link to="/home">
+          <div id="FILMFY">
               <!--Filmfy Icon-->
               <img
                 src="../../../assets/img/cameraLogo.png"
@@ -28,9 +28,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <router-link class="nav-link" to="/home">
-                <li class="nav-item">Home</li>
-              </router-link>
               <router-link class="nav-link" to="/movies">
                 <li class="nav-item">Peliculas</li>
               </router-link>
@@ -105,7 +102,9 @@ button#buscar {
   color: #ffff;
 }
 li {
-  font-size: 2.5vh;
+  font-size: 3vh;
+  margin-left: 3vh;
+  margin-right: 3vh;
 }
 div#searching {
   display: flex;

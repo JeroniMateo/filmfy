@@ -33,7 +33,8 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  width: 99%;
+  width: 70%;
+  margin: auto;
   height: 50vh;
 }
 
@@ -101,6 +102,6 @@ p {
   color: #2ecc71;
   font-size: 2rem;
   padding: 1%;
-  
 }
+
 </style>

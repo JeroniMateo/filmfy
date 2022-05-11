@@ -240,5 +240,8 @@ div#OpinionContent {
   align-items: center;
   justify-content: center;
 }
-
+#WatchingMovie {
+  margin: auto;
+  width: 70%;
+}
 </style>

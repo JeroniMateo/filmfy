@@ -47,16 +47,16 @@
           Iniciar sesión
         </button>
         <small>¿Eres nuevo en Filmfy?</small>
-          <router-link to="/register">
-        <button
-          type="submit"
-          class="btn btn-primary mb-3"
-          id="signUpButton"
-          aria-label="Iniciar sesión"
-        >
-          Registrarse
-        </button>
-          </router-link>
+        <router-link to="/register">
+          <button
+            type="submit"
+            class="btn btn-primary mb-3"
+            id="signUpButton"
+            aria-label="Iniciar sesión"
+          >
+            Registrarse
+          </button>
+        </router-link>
       </div>
       <div id="suscrito"></div>
     </form>
@@ -181,5 +181,9 @@ input {
   justify-content: center;
   flex-direction: column;
   align-content: space-around;
+}
+#layoutLogin {
+  margin: auto;
+  width: 70%;
 }
 </style>

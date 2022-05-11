@@ -3,10 +3,10 @@
     <h3>Próximas Películas</h3>
     <div class="row">
       <div class="col-md-3">
-        <BillBoardCard
+        <WatchItemCard
           :movie="movie"
           v-for="movie in movies"
-          :key="movie.id"
+          :key="movie.UpcomingMovies"
         />
       </div>
     </div>
@@ -14,12 +14,13 @@
 </template>
 
 <script>
-  import BillBoardCard from "./BillBoardCard.vue";
+  
+import WatchItemCard from "@/components/Items/WatchItemCard.vue";
 export default {
   name: "UpcomingMovies",
   components: {
-    BillBoardCard,
-  },
+    WatchItemCard
+},
 };
 </script>
 
