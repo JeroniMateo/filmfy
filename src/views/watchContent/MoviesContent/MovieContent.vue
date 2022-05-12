@@ -102,17 +102,43 @@
       </div>
       <!--Trailer play automaticaly-->
       <div id="Trailer"><TrailerVideo /></div>
-
       <div id="Opinions">
         <h2 class="OpnionTitle"><b>Comentarios y Valoraciones</b></h2>
         <div id="MovieContentOpinion">
           <div id="MovieContentOpinionUser">
             <div id="MovieContentOpinionHeader">
-              <button class="Rating" @click="añadirComentario;">
+              <button id="añadirComentario" @click="añadirComentario">
                 Añadir Comentario
               </button>
             </div>
-            <div id="Comments"></div>
+            <div id="AddComment"></div>
+            <div id="CommentArea" style="display: none">
+              <textarea
+                name="Comentario"
+                id="CommentTextArea"
+                cols="90"
+                rows="10"
+              ></textarea>
+              <button id="btnComentar" @click="comentar">Comentar</button>
+            </div>
+            <div id="Comments" style="display: none">
+              <div id="UserComent">
+                <div id="MovieContentOpinionUser">
+                  <div class="OpinionUserImage">
+                    <img src="../../../assets/img/cameraLogo.png" alt="" />
+                  </div>
+                  <div class="OpinionUserName">
+                    <h4>Mattius DT</h4>
+                  </div>
+                </div>
+                <div id="CommentText"><p>{{ comentarios }}</p></div>
+                <div id="OpinionContent">
+                  <div id="MovieContentOpinionDate">
+                    <small>2022/05/07</small>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -127,35 +153,28 @@ export default {
   components: {
     TrailerVideo
   },
+  data() {
+    return {
+      comentario: '',
+      comentarios: []
+    }
+  },
   methods: {
     añadirComentario() {
-      document.getElementById(
-        'CommentText'
-      ).innerHTML = `<textarea name="Comentario" id="CommentTextArea" cols="90" rows="10"></textarea><button id="btnComentar" @click="comentar">Comentar</button>`
+      document.getElementById('CommentArea').style.display = 'block'
+      document.getElementById('btnComentar').style.display = 'block'
+      document.getElementById('añadirComentario').style.display = 'none'
     },
     comentar() {
-      document.getElementById(
-        'Comments'
-      ).innerHTML += `            <div id="UserComent">
-              <div id="MovieContentOpinionUser">
-                <div class="OpinionUserImage">
-                  <img src="../../../assets/img/cameraLogo.png" alt="" />
-                </div>
-                <div class="OpinionUserName">
-                  <h4>Mattius DT</h4>
-                </div>
-              </div>
-              <div id="CommentText"><p>I love this movie</p></div>
-              <div id="OpinionContent">
-                <div id="MovieContentOpinionDate">
-                  <small>2022/05/07</small>
-                </div>
-              </div>
-            </div>`
+      document.getElementById('Comments').style.display = 'block'
       var comentario = document.getElementById('CommentTextArea').value
-      document.getElementById('CommentText').innerHTML = `<p>${comentario}</p>`
-      document.getElementById('CommentTextArea').style.display = 'none'
+      document.getElementById(
+        'CommentText'
+      ).innerHTML = `<p id="Pcomentario">${comentario}</p>`
+      document.getElementById('CommentArea').style.display = 'none'
       document.getElementById('btnComentar').style.display = 'none'
+      document.getElementById('añadirComentario').style.display = 'block'
+      this.comentarios.push(comentario)
     }
   }
 }
@@ -283,13 +302,21 @@ label {
 li {
   font-size: 1vw;
 }
-button.Rating {
+button#añadirComentario {
   font-size: 2vh;
 }
 button#btnComentar {
   font-size: 2vh;
-  margin-top: -4vh;
+  margin-top: -6vh;
   font-size: 2vh;
-  margin-left: 77vh;
+  margin-left: 79vh;
+  z-index: 1;
+  padding: 1%;
+  border-block-color: #000;
+}
+p#Pcomentario {
+  color: #000;
+  background-color: #fff;
+  border-radius: 10%;
 }
 </style>
