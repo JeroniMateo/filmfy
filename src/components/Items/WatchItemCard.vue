@@ -7,7 +7,7 @@
       v-on:mouseover="mouseover"
       style="display: none"
     >
-      <div class="card h-100" >
+      <div class="card h-100">
         <div id="GoMovieContent" @click="goMovieContentInfo">
           <img
             src="../../assets/img/MoviesIMG/el-padrino.jpg"
@@ -16,12 +16,13 @@
             alt="..."
           />
           <div class="card-body">
-            <h5 class="card-title" id="Title">Card title</h5>
+            <h5 class="card-title" id="Title">El Padrino</h5>
             <p class="card-text" id="Sinnopsis">
               This is a wider card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
-              longer.This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
+              longer.This is a wider card with supporting text below as a
+              natural lead-in to additional content. This content is a little
+              bit
             </p>
           </div>
         </div>
@@ -95,6 +96,10 @@ export default {
 </script>
 
 <style scoped>
+.card {
+  background-color: #242424;
+  color: #fff;
+}
 .favIMG {
   width: 30px;
   height: 30px;
@@ -104,25 +109,25 @@ export default {
 }
 #WatchItemCardINFO {
   background-color: rgb(15, 23, 30);
-  color: #19282f;
+  color: #fff;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 35vh;
+  width: 30vh;
   height: 63vh;
 }
 #WatchItemCardIMG {
   background-color: rgb(15, 23, 30);
-  color: #19282f;
+  color: #fff;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
   width: 35vh;
-  height: 63vh;
+  height: 60vh;
 }
 .IMGMovie {
   background-color: rgb(15, 23, 30);
-  color: #19282f;
+  color: #fff;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
@@ -131,17 +136,23 @@ export default {
 }
 #MovieIMGInfo {
   background-color: rgb(15, 23, 30);
-  color: #19282f;
+  color: #fff;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 35vh;
-  height: 40vh;
+  width: 30vh;
+  height: 35vh;
 }
-p{
+p {
   font-size: 1.5vh;
+  color: #fff;
 }
-h5{
+#Genre {
+  font-size: 1.5vh;
+  color: #fff;
+}
+h5 {
+  color: #4E9F3D;
   font-size: 2vh;
 }
 </style>
