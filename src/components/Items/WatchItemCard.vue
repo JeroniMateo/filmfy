@@ -7,14 +7,23 @@
       v-on:mouseover="mouseover"
       style="display: none"
     >
-      <div class="card h-100">
-        <div class="card-body" @click="goMovieContentInfo">
-          <img id="MovieImage" class="card-img-top" alt="..." />
-          <h5 class="card-title" id="Title">Card title</h5>
-          <p class="card-text" id="Sinnopsis">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
+      <div class="card h-100" >
+        <div id="GoMovieContent" @click="goMovieContentInfo">
+          <img
+            src="../../assets/img/MoviesIMG/el-padrino.jpg"
+            id="MovieIMGInfo"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title" id="Title">Card title</h5>
+            <p class="card-text" id="Sinnopsis">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+            </p>
+          </div>
         </div>
         <div class="card-footer">
           <small class="text-muted" id="Genre"
@@ -35,7 +44,11 @@
       v-on:mouseover="mouseover"
       v-on:mouseleave="mouseleave"
     >
-      <img src="../../assets/img/LogoImageFilmfy.png" alt="" class="IMGMovie" />
+      <img
+        src="../../assets/img/MoviesIMG/el-padrino.jpg"
+        alt=""
+        class="IMGMovie"
+      />
     </div>
   </div>
 </template>
@@ -87,7 +100,7 @@ export default {
   height: 30px;
 }
 #WatchItemCard {
-  height: 60vh;
+  height: 70vh;
 }
 #WatchItemCardINFO {
   background-color: rgb(15, 23, 30);
@@ -95,8 +108,8 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 30vh;
-  height: 50vh;
+  width: 35vh;
+  height: 63vh;
 }
 #WatchItemCardIMG {
   background-color: rgb(15, 23, 30);
@@ -104,8 +117,8 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 30vh;
-  height: 50vh;
+  width: 35vh;
+  height: 63vh;
 }
 .IMGMovie {
   background-color: rgb(15, 23, 30);
@@ -113,7 +126,22 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 30vh;
-  height: 50vh;
+  width: 35vh;
+  height: 63vh;
+}
+#MovieIMGInfo {
+  background-color: rgb(15, 23, 30);
+  color: #19282f;
+  font-family: Arial;
+  font-size: 2vh;
+  display: flex;
+  width: 35vh;
+  height: 40vh;
+}
+p{
+  font-size: 1.5vh;
+}
+h5{
+  font-size: 2vh;
 }
 </style>
