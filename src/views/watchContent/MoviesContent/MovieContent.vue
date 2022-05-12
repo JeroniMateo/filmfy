@@ -1,5 +1,5 @@
 <template>
-  <div id="WatchingMovie" >
+  <div id="WatchingMovie">
     <div class="movieInfo">
       <h1 id="Movie Title"></h1>
     </div>
@@ -9,7 +9,7 @@
           <div id="MovieContentImage" class="col-md-4">
             <img
               id="MovieContentImage"
-              src="../../../assets/img/LogoImageFilmfy.png"
+              src="../../../assets/img/MoviesIMG/el-padrino.jpg"
               class="img-fluid rounded-start"
               alt="..."
             />
@@ -35,7 +35,13 @@
                     Carrie Fisher
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Duración:</label> 2h 01min
+                    <label for="">Valoracíon:</label> 2h 01min
+                  </li>
+                  <li class="list-group-item" id="MovieContentRuntime">
+                    <label for="">Vista <button></button></label>
+                  </li>
+                  <li class="list-group-item" id="MovieContentRuntime">
+                    <label for="">Favoritos <button></button></label>
                   </li>
                 </ul>
               </div>
@@ -64,7 +70,8 @@
         </p>
       </div>
       <div id="MovieContentValoration">
-        <h2>Valora esta pelicula:</h2>
+        <button class="Rating">Valorar</button>
+        <h2>Valoración</h2>
         <br />
         <div class="valoracion">
           <!-- Estrella 1 -->
@@ -97,25 +104,15 @@
       <div id="Trailer"><TrailerVideo /></div>
 
       <div id="Opinions">
-        <h2><b>Comentarios y Valoraciones</b></h2>
+        <h2 class="OpnionTitle"><b>Comentarios y Valoraciones</b></h2>
         <div id="MovieContentOpinion">
           <div id="MovieContentOpinionUser">
-            <div id="MovieContentOpinionUserImage">
-              <img src="../../../assets/img/cameraLogo.png" alt="" />
-            </div>
-            <br />
-            <div id="MovieContentOpinionUserName">
-              <h4>Mattius DT</h4>
-            </div>
-          </div>
-          <div id="OpinionContent">
-            <div id="MovieContentOpinionDate">
-              <small>2022/05/07</small>
-            </div>
             <div id="MovieContentOpinionHeader">
-              <h2>Mi Opinion</h2>
+              <button class="Rating" @click="añadirComentario;">
+                Añadir Comentario
+              </button>
             </div>
-            <div id="OpinionText"><p>I love this movie</p></div>
+            <div id="Comments"></div>
           </div>
         </div>
       </div>
@@ -129,6 +126,37 @@ export default {
   name: 'MovieContent',
   components: {
     TrailerVideo
+  },
+  methods: {
+    añadirComentario() {
+      document.getElementById(
+        'CommentText'
+      ).innerHTML = `<textarea name="Comentario" id="CommentTextArea" cols="90" rows="10"></textarea><button id="btnComentar" @click="comentar">Comentar</button>`
+    },
+    comentar() {
+      document.getElementById(
+        'Comments'
+      ).innerHTML += `            <div id="UserComent">
+              <div id="MovieContentOpinionUser">
+                <div class="OpinionUserImage">
+                  <img src="../../../assets/img/cameraLogo.png" alt="" />
+                </div>
+                <div class="OpinionUserName">
+                  <h4>Mattius DT</h4>
+                </div>
+              </div>
+              <div id="CommentText"><p>I love this movie</p></div>
+              <div id="OpinionContent">
+                <div id="MovieContentOpinionDate">
+                  <small>2022/05/07</small>
+                </div>
+              </div>
+            </div>`
+      var comentario = document.getElementById('CommentTextArea').value
+      document.getElementById('CommentText').innerHTML = `<p>${comentario}</p>`
+      document.getElementById('CommentTextArea').style.display = 'none'
+      document.getElementById('btnComentar').style.display = 'none'
+    }
   }
 }
 </script>
@@ -176,8 +204,8 @@ button:nth-child(5):hover ~ button {
 
 div#MovieContentImage {
   background-color: #000;
-  height: 40vh;
-  width: 20vw;
+  height: 45vh;
+  width: 18vw;
 }
 img#MovieContentImage {
   height: 40vh;
@@ -189,11 +217,16 @@ div#MovieContentSinopsis {
 }
 p#SinopsisText {
   padding: 2%;
+  font-size: 1.2rem;
 }
 h2.SinopsisHeader {
   color: #4e9f3d;
   font-size: 3.5vw;
   margin: 1%;
+}
+h2 {
+  color: #4e9f3d;
+  font-size: 3vw;
 }
 div#SinopsisTitle {
   background-color: #000;
@@ -243,5 +276,20 @@ div#OpinionContent {
 #WatchingMovie {
   margin: auto;
   width: 70%;
+}
+label {
+  font-size: 1.2vw;
+}
+li {
+  font-size: 1vw;
+}
+button.Rating {
+  font-size: 2vh;
+}
+button#btnComentar {
+  font-size: 2vh;
+  margin-top: -4vh;
+  font-size: 2vh;
+  margin-left: 77vh;
 }
 </style>
