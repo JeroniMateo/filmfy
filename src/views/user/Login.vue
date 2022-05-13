@@ -178,7 +178,7 @@ input {
 }
 #layoutLogin {
   margin: auto;
-  width: 80%;
+  width: 70%;
   background-color: #000;
   display: flex;
   flex-direction: column;

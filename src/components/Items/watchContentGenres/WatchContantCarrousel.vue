@@ -26,7 +26,7 @@
             <a href="#section5" class="arrow__btn">‹</a>
             <div class="MovieInCarousel">
               <WatchItemCard
-                v-for="movie in 5"
+                v-for="movie in 4"
                 :movie="movie"
                 :key="movie.Genre"
               />
@@ -105,7 +105,7 @@ export default {
     verMas() {
       this.$router.push('/movies/:genre/:id')
     }
-}
+  }
 }
 </script>
 
@@ -125,10 +125,9 @@ div.MovieInCarousel {
   display: flex;
   justify-content: center;
   align-items: center;
- 
 }
 h2 {
-  color: #4E9F3D;
+  color: #4e9f3d;
   background-color: rgb(15, 23, 30);
   font-size: 8vh;
   width: 100%;
@@ -173,13 +172,16 @@ h1 {
   grid-template-columns: repeat(5, 100%);
   overflow: hidden;
   scroll-behavior: smooth;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
 }
 .wrapper section {
   width: 100%;
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, auto);
-  margin: 20px 0;
+  margin: 50px 0;
 }
 .wrapper section .item {
   padding: 0 2px;
