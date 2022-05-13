@@ -113,8 +113,9 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 30vh;
-  height: 63vh;
+  width: 40vh;
+  height: 60vh;
+
 }
 #WatchItemCardIMG {
   background-color: rgb(15, 23, 30);
@@ -122,8 +123,9 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 35vh;
+  width: 40vh;
   height: 60vh;
+  
 }
 .IMGMovie {
   background-color: rgb(15, 23, 30);
@@ -131,8 +133,8 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 35vh;
-  height: 63vh;
+  width: 40vh;
+  height: 60vh;
 }
 #MovieIMGInfo {
   background-color: rgb(15, 23, 30);
@@ -140,8 +142,8 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 30vh;
-  height: 35vh;
+  width: 40vh;
+  height: 36vh;
 }
 p {
   font-size: 1.5vh;
