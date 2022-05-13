@@ -105,7 +105,7 @@ export default {
   height: 30px;
 }
 #WatchItemCard {
-  height: 70vh;
+  height: 55vh;
 }
 #WatchItemCardINFO {
   background-color: rgb(15, 23, 30);
