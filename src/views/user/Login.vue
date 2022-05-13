@@ -1,6 +1,6 @@
 <template>
-  <h1>Iniciar sesión</h1>
   <div id="layoutLogin" class="container">
+    <h1>Iniciar sesión</h1>
     <form id="InicioSesion" action="">
       <div class="row g-3">
         <div class="col-auto">
@@ -156,17 +156,11 @@ h1 {
   align-content: center;
   align-items: center;
 }
-#layoutRegister {
-  display: flex;
-  justify-content: center;
-  justify-items: stretch;
-  align-content: center;
-  align-items: center;
-}
+
 input {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #1da8e2;
+  color: #000;
   margin: 5%;
 }
 .row {
@@ -185,5 +179,8 @@ input {
 #layoutLogin {
   margin: auto;
   width: 80%;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
 }
 </style>

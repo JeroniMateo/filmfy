@@ -1,6 +1,6 @@
 <template>
-  <h1>Registrarse</h1>
   <div id="layoutRegister" class="container">
+  <h1>Registrarse</h1>
     <form id="Registrarse" action="">
       <div class="row g-5 p-5">
         <div id="RegisterFormInput" class="col-auto">
@@ -216,11 +216,14 @@ h1 {
 input {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #1da8e2;
+  color: #000;
   margin: 5%;
 }
 #layoutRegister {
   margin: auto;
   width: 80%;
+  background-color:#000 ;
+  display: flex;
+  flex-direction: column;
 }
 </style>
