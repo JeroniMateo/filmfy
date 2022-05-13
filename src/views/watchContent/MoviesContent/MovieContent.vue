@@ -131,10 +131,12 @@
                     <h4>Mattius DT</h4>
                   </div>
                 </div>
-                <div id="CommentText"><p>{{ comentarios }}</p></div>
+                <div id="CommentText">
+                  <p>{{ comentarios }}</p>
+                </div>
                 <div id="OpinionContent">
                   <div id="MovieContentOpinionDate">
-                    <small>2022/05/07</small>
+                    <p id="DateComment">2022/05/07</p>
                   </div>
                 </div>
               </div>
@@ -166,21 +168,21 @@ export default {
       document.getElementById('añadirComentario').style.display = 'none'
     },
     comentar() {
-      document.getElementById('Comments').style.display = 'block'
+      document.getElementById('Comments').style.display = 'flex'
       var comentario = document.getElementById('CommentTextArea').value
       document.getElementById(
         'CommentText'
       ).innerHTML = `<p id="Pcomentario">${comentario}</p>`
       document.getElementById('CommentArea').style.display = 'none'
       document.getElementById('btnComentar').style.display = 'none'
-      document.getElementById('añadirComentario').style.display = 'block'
+      document.getElementById('añadirComentario').style.display = 'flex'
       this.comentarios.push(comentario)
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 :root {
   --color-inactivo: #5f5050;
   --color-hover: #ffa400;
@@ -224,11 +226,11 @@ button:nth-child(5):hover ~ button {
 div#MovieContentImage {
   background-color: #000;
   height: 45vh;
-  width: 18vw;
+  width: 25vw;
 }
 img#MovieContentImage {
-  height: 40vh;
-  width: 20vw;
+  height: 50vh;
+  width: 25vw;
 }
 div#MovieContentSinopsis {
   background-color: #000;
@@ -284,7 +286,7 @@ div#MovieContentOpinionUser {
   display: flex;
 }
 div#OpinionContent {
-  background-color: #000;
+  background-color: #fff;
   border-radius: 3%;
   display: flex;
   flex-direction: column;
@@ -294,13 +296,13 @@ div#OpinionContent {
 }
 #WatchingMovie {
   margin: auto;
-  width: 70%;
+  width: 80%;
 }
 label {
-  font-size: 1.2vw;
+  font-size: 2vw;
 }
 li {
-  font-size: 1vw;
+  font-size: 1.5vw;
 }
 button#añadirComentario {
   font-size: 2vh;
@@ -312,11 +314,27 @@ button#btnComentar {
   margin-left: 79vh;
   z-index: 1;
   padding: 1%;
-  border-block-color: #000;
+  color: #000;
 }
+p#DateComment {
+  font-size: 1.2vw;
+  color: #000;
+  background-color: #fff;
+}
+
 p#Pcomentario {
   color: #000;
   background-color: #fff;
   border-radius: 10%;
+}
+div#UserComent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  background-color: #fff;
+  color: #000;
+  width: 74vh;
 }
 </style>
