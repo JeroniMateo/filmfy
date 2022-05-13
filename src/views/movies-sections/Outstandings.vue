@@ -33,7 +33,7 @@ div.TopMovieHead {
 }
 #TOP10 {
   margin: auto;
-  width: 70%;
+  width: 80%;
 }
 img{
   width: 100%;

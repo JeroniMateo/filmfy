@@ -38,6 +38,6 @@ div#BillBoardSection {
 }
 #Cartelera {
   margin: auto;
-  width: 70%;
+  width: 80%;
 }
 </style>

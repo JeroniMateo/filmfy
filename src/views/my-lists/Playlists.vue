@@ -42,6 +42,6 @@ h3 {
 }
 #Playlists {
   margin: auto;
-  width: 70%;
+  width: 80%;
 }
 </style>
