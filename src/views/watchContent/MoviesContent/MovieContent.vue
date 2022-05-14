@@ -19,23 +19,22 @@
               <div class="MainInfo">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" id="MovieContentTitle">
-                    STAR WARS: EPISODIO IV
+                    <label for="">Titulo:</label>
                   </li>
                   <li class="list-group-item" id="MovieContentYear">
-                    <label for="">Date:</label> 7 de noviembre de 1977
+                    <label for="">Fecha:</label>
                   </li>
                   <li class="list-group-item" id="MovieContentGenre">
-                    <label for="">Genero:</label> Ciencia ficción, Aventura
+                    <label for="">Genero:</label> 
                   </li>
                   <li class="list-group-item" id="MovieContentDirectors">
-                    <label for="">Directores:</label> George Lucas
+                    <label for="">Directores:</label> 
                   </li>
                   <li class="list-group-item" id="MovieContentActors">
-                    <label for="">Actores:</label> Mark Hamill, Harrison Ford,
-                    Carrie Fisher
+                    <label for="">Actores:</label> 
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Valoracíon:</label> 2h 01min
+                    <label for="">Valoracíon:</label>
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
                     <label for="">Vista <button></button></label>
@@ -51,27 +50,15 @@
       </div>
       <div id="MovieContentSinopsis">
         <div id="SinopsisTitle">
-          <h2 class="SinopsisHeader"><b>SINOPSIS</b></h2>
+          <h2 class="SinopsisHeader">Sinopsis</h2>
         </div>
         <p id="SinopsisText">
-          Los gobernantes del Imperio Galáctico, la fuerza del mal que domina el
-          universo, capturan a la princesa Leia, quien posee datos
-          confidenciales sobre su centro de operaciones militares, denominado
-          "Estrella de la Muerte". Antes de su secuestro, la Princesa transfiere
-          la información ultrasecreta a la base de datos del robot R2-D2.
-          Catalogado como un material inservible, R2-D2, junto con su compañ ero
-          C3PO, son deportados a un planeta remoto, siendo comprados por el
-          joven Luke Skywalker en el mercado negro. Debido a un hecho fortuito,
-          Luke accede al mensaje de la princesa Leia, quien solicita el auxilio
-          del veterano Caballero Jedi Obi-Wan Kenobi. Luke, Obi-Wan, los robots,
-          el piloto Han Solo y el gigantesco wookiee Chewbacca conforman la
-          tripulación que intentará liberar a la princesa Leia de los dominios
-          de Darth Vader, la autoridad suprema del Imperio Galáctico.
+     
         </p>
       </div>
       <div id="MovieContentValoration">
+        <h2>Valoración:</h2>
         <button class="Rating">Valorar</button>
-        <h2>Valoración</h2>
         <br />
         <div class="valoracion">
           <!-- Estrella 1 -->
@@ -103,7 +90,7 @@
       <!--Trailer play automaticaly-->
       <div id="Trailer"><TrailerVideo /></div>
       <div id="Opinions">
-        <h2 class="OpnionTitle"><b>Comentarios y Valoraciones</b></h2>
+        <h2 class="OpnionTitle">Comentarios y Valoraciones</h2>
         <div id="MovieContentOpinion">
           <div id="MovieContentOpinionUser">
             <div id="MovieContentOpinionHeader">
@@ -224,12 +211,11 @@ button:nth-child(5):hover ~ button {
 }
 
 div#MovieContentImage {
-  background-color: #000;
   height: 45vh;
   width: 25vw;
 }
 img#MovieContentImage {
-  height: 50vh;
+  height: 74vh;
   width: 25vw;
 }
 div#MovieContentSinopsis {
