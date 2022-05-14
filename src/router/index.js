@@ -38,8 +38,8 @@ const routes = [
     component: MovieContent
   },
   {
-    path:'/movies/:genre/:id',
-    name: 'movie-content-genre',
+    path:'/movies/:category/:id',
+    name: 'movie-content-category',
     component: VerMasGenres
   },
   {

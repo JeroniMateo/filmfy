@@ -19,22 +19,22 @@
               <div class="MainInfo">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" id="MovieContentTitle">
-                    <label for="">Titulo:</label>
+                    <label for="">Titulo:</label> <p id="title"></p>
                   </li>
                   <li class="list-group-item" id="MovieContentYear">
-                    <label for="">Fecha:</label>
+                    <label for="">Fecha:</label> <p id="date"></p>
                   </li>
                   <li class="list-group-item" id="MovieContentGenre">
-                    <label for="">Genero:</label> 
+                    <label for="">Genero:</label> <p id="Category"></p>
                   </li>
                   <li class="list-group-item" id="MovieContentDirectors">
-                    <label for="">Directores:</label> 
+                    <label for="">Directores:</label> <p id="directos"></p>
                   </li>
                   <li class="list-group-item" id="MovieContentActors">
-                    <label for="">Actores:</label> 
+                    <label for="">Actores:</label> <p id="actors"></p>
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Valoracíon:</label>
+                    <label for="">Valoracíon:</label> <p id="rating"></p>
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
                     <label for="">Vista <button></button></label>
@@ -52,7 +52,7 @@
         <div id="SinopsisTitle">
           <h2 class="SinopsisHeader">Sinopsis</h2>
         </div>
-        <p id="SinopsisText">
+        <p id="sinopsis">
      
         </p>
       </div>
@@ -115,11 +115,11 @@
                     <img src="../../../assets/img/cameraLogo.png" alt="" />
                   </div>
                   <div class="OpinionUserName">
-                    <h4>{{ UserName }}</h4>
+                    <h4 id="username">{{ UserName }}</h4>
                   </div>
                 </div>
                 <div id="CommentText">
-                  <p>{{ comentarios }}</p>
+                  <p id="comentaries">{{ comentarios }}</p>
                 </div>
                 <div id="OpinionContent">
                   <div id="MovieContentOpinionDate">

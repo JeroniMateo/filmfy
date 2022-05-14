@@ -23,8 +23,8 @@
           </div>
         </div>
         <div class="card-footer">
-          <h5 class="text-muted" id="Genre"
-            >Genre
+          <h5 class="text-muted" id="category"
+            >Category
             <button id="FavWatch" @click="addFavs">
               <img
                 class="favIMG"
