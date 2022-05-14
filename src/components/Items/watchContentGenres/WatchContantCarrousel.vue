@@ -26,7 +26,7 @@
             <a href="#section5" class="arrow__btn">‹</a>
             <div class="MovieInCarousel">
               <WatchItemCard
-                v-for="movie in 5"
+                v-for="movie in 4"
                 :movie="movie"
                 :key="movie.Genre"
               />
@@ -37,7 +37,7 @@
             <a href="#section1" class="arrow__btn">‹</a>
             <div class="MovieInCarousel">
               <WatchItemCard
-                v-for="movie in 5"
+                v-for="movie in 4"
                 :movie="movie"
                 :key="movie.Genre"
               />
@@ -48,7 +48,7 @@
             <a href="#section2" class="arrow__btn">‹</a>
             <div class="MovieInCarousel">
               <WatchItemCard
-                v-for="movie in 5"
+                v-for="movie in 4"
                 :movie="movie"
                 :key="movie.Genre"
               />
@@ -59,7 +59,7 @@
             <a href="#section3" class="arrow__btn">‹</a>
             <div class="MovieInCarousel">
               <WatchItemCard
-                v-for="movie in 5"
+                v-for="movie in 4"
                 :movie="movie"
                 :key="movie.Genre"
               />
@@ -70,7 +70,7 @@
             <a href="#section4" class="arrow__btn">‹</a>
             <div class="MovieInCarousel">
               <WatchItemCard
-                v-for="movie in 4"
+                v-for="movie in 3"
                 :movie="movie"
                 :key="movie.Genre"
               />
@@ -229,5 +229,9 @@ div.title {
   font-size: 500em;
   background-color: #2c3e50;
   width: 15vh;
+}
+#CarouselMovies{
+  margin:auto;
+  width:85%;
 }
 </style>
