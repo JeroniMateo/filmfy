@@ -28,7 +28,7 @@
               <WatchItemCard
                 v-for="movie in 4"
                 :movie="movie"
-                :key="movie.Genre"
+                :key="movie.category"
               />
             </div>
             <a href="#section2" class="arrow__btn">›</a>
@@ -39,7 +39,7 @@
               <WatchItemCard
                 v-for="movie in 4"
                 :movie="movie"
-                :key="movie.Genre"
+                :key="movie.category"
               />
             </div>
             <a href="#section3" class="arrow__btn">›</a>
@@ -50,7 +50,7 @@
               <WatchItemCard
                 v-for="movie in 4"
                 :movie="movie"
-                :key="movie.Genre"
+                :key="movie.category"
               />
             </div>
             <a href="#section4" class="arrow__btn">›</a>
@@ -61,7 +61,7 @@
               <WatchItemCard
                 v-for="movie in 4"
                 :movie="movie"
-                :key="movie.Genre"
+                :key="movie.category"
               />
             </div>
             <a href="#section5" class="arrow__btn">›</a>
@@ -72,7 +72,7 @@
               <WatchItemCard
                 v-for="movie in 3"
                 :movie="movie"
-                :key="movie.Genre"
+                :key="movie.category"
               />
             </div>
             <div @click="verMas" class="MovieInCarousel" id="VerMas">

@@ -94,7 +94,7 @@ export default {
 button#buscar {
   margin-left: -3vw;
   border-radius: 10%;
-  height: 4vh;
+  height: 5.2vh;
   background-color: #2ecc71;
 }
 

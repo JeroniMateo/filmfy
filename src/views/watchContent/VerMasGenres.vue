@@ -1,9 +1,9 @@
 <template>
 <div id="VerMasGenres" class="row row-cols-1 p-2 row-cols-md-5 g-2">
          <WatchItemCard
-                v-for="movie in 10"
+                v-for="movie in movies"
                 :movie="movie"
-                :key="movie.Genre"
+                :key="movie.category"
               />
 </div>
 </template>
