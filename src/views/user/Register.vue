@@ -1,5 +1,5 @@
 <template>
-  <h1>Registrarse</h1>
+  <h2>Registrarse</h2>
   <div id="layoutRegister" class="container">
     <form id="Registrarse" action="">
       <div class="row g-5 p-5">
@@ -194,10 +194,9 @@ button {
   margin: 4px 2px;
   cursor: pointer;
 }
-h1 {
+h2 {
   font-size: 4rem;
-  font-weight: bold;
-  color: rgb(78, 159, 61);
+  color: #fff;
 }
 .formConfirm {
   display: flex;

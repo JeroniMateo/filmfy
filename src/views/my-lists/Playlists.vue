@@ -1,6 +1,6 @@
 <template>
   <div id="Playlists" class="container-fluid" @click="goMoviesLists">
-    <h3><b>{{ username }} Playlists</b> </h3>
+    <h2><b>{{ username }} Playlists</b> </h2>
     <ListProfile />
   </div>
 </template>
@@ -34,9 +34,9 @@ export default {
 #Playlists {
   background-color: #000;
 }
-h3 {
-  color: #1da8e2;
-  background-color: #242424;
+h2 {
+  color: #fff;
+  background-color: #000;
   font-size: 6vh;
   width: 100%;
 }

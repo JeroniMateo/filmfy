@@ -127,7 +127,7 @@ div.MovieInCarousel {
   align-items: center;
 }
 h2 {
-  color: #4E9F3D;
+  color: #fff;
   background-color: rgb(15, 23, 30);
   font-size: 8vh;
   width: 100%;

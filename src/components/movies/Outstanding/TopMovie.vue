@@ -35,20 +35,15 @@ h3 {
   font-size: 8vh;
   width: 100%;
   height: 10vh;
-      background-color: #000;
-
+  background-color: #000;
   text-align: center;
-  
 }
-#TopMovie
-{
+#TopMovie {
   margin: auto;
-      width: 100%;
-      padding: 3%;
-    background-color: #000;
+  width: 100%;
+  background-color: #000;
 }
-.TopMovieHead{
-  
+.TopMovieHead {
   display: flex;
 }
 </style>
