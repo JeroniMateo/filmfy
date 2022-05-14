@@ -16,18 +16,14 @@
             alt="..."
           />
           <div class="card-body">
-            <h5 class="card-title" id="Title">El Padrino</h5>
-            <p class="card-text" id="Sinnopsis">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.This is a wider card with supporting text below as a
-              natural lead-in to additional content. This content is a little
-              bit
-            </p>
+            <h2 class="card-title" id="Title">El Padrino</h2>
+            <h5 class="card-text" id="Rating">
+            5/5
+            </h5>
           </div>
         </div>
         <div class="card-footer">
-          <small class="text-muted" id="Genre"
+          <h5 class="text-muted" id="Genre"
             >Genre
             <button id="FavWatch" @click="addFavs">
               <img
@@ -36,7 +32,7 @@
                 alt=""
               />
             </button>
-          </small>
+          </h5>
         </div>
       </div>
     </div>
@@ -148,11 +144,15 @@ p {
   color: #fff;
 }
 #Genre {
-  font-size: 1.5vh;
+  font-size: 5vh;
   color: #fff;
 }
-h5 {
+h2 {
   color: #4E9F3D;
-  font-size: 2vh;
+  font-size: 5vh;
+}
+h5 {
+  color: #fff;
+  font-size: 5vh;
 }
 </style>
