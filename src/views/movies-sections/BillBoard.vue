@@ -1,6 +1,6 @@
 <template>
   <div id="Cartelera" class="container" style="background-color: #191a19">
-    <h3><b>Cartelera</b></h3>
+    <h2><b>Cartelera</b></h2>
     <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-4 g-4">
       <WatchItemCard v-for="movie in 8" :movie="movie" :key="movie.id" />
     </div>
@@ -18,14 +18,14 @@ export default {
 </script>
 
 <style scoped>
-h3 {
-  color: #4E9F3D;
+h2 {
+  color: #fff;
   font-size: 8vh;
   width: 100%;
   background-color: #000;
 }
 div#BillBoardSection {
-  background-color: #0b120b;
+  background-color: #000;
   color: #000;
   font-family: Arial;
   font-size: 2vh;

@@ -127,7 +127,7 @@ div.MovieInCarousel {
   align-items: center;
 }
 h2 {
-  color: #4e9f3d;
+  color: #fff;
   background-color: rgb(15, 23, 30);
   font-size: 8vh;
   width: 100%;
@@ -232,5 +232,9 @@ div.title {
   font-size: 500em;
   background-color: #2c3e50;
   width: 15vh;
+}
+#CarouselMovies{
+  margin:auto;
+  width:85%;
 }
 </style>

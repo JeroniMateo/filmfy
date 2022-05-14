@@ -1,6 +1,6 @@
 <template>
   <div id="layoutLogin" class="container">
-    <h1>Iniciar sesión</h1>
+    <h2>Iniciar sesión</h2>
     <form id="InicioSesion" action="">
       <div class="row g-3">
         <div class="col-auto">
@@ -144,10 +144,9 @@ button {
   margin: 4px 2px;
   cursor: pointer;
 }
-h1 {
+h2 {
   font-size: 4rem;
-  font-weight: bold;
-  color: rgb(78, 159, 61);
+  color: #fff;
 }
 .formConfirm {
   display: flex;

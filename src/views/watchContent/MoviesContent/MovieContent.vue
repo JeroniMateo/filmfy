@@ -115,7 +115,7 @@
                     <img src="../../../assets/img/cameraLogo.png" alt="" />
                   </div>
                   <div class="OpinionUserName">
-                    <h4>Mattius DT</h4>
+                    <h4>{{ UserName }}</h4>
                   </div>
                 </div>
                 <div id="CommentText">
@@ -123,7 +123,7 @@
                 </div>
                 <div id="OpinionContent">
                   <div id="MovieContentOpinionDate">
-                    <p id="DateComment">2022/05/07</p>
+                    <p id="DateComment">{{DateComment}}</p>
                   </div>
                 </div>
               </div>
@@ -145,7 +145,9 @@ export default {
   data() {
     return {
       comentario: '',
-      comentarios: []
+      comentarios: [],
+      DateComment: '',
+      UserName: '',
     }
   },
   methods: {
