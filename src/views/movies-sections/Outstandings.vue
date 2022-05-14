@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 h1{
-  color: #4E9F3D;
+  color: #fff;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: #000;
   font-size: 8vh;
@@ -33,7 +33,7 @@ div.TopMovieHead {
 }
 #TOP10 {
   margin: auto;
-  width: 70%;
+  width: 80%;
 }
 img{
   width: 100%;

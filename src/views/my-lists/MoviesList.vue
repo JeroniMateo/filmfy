@@ -38,6 +38,6 @@ div#BillBoardSection {
 }
 #Lista {
   margin: auto;
-  width: 70%;
+  width: 85%;
 }
 </style>

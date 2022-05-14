@@ -296,7 +296,7 @@ div#OpinionContent {
 }
 #WatchingMovie {
   margin: auto;
-  width: 70%;
+  width: 85%;
 }
 label {
   font-size: 2vw;

@@ -129,6 +129,6 @@ div#welcomeCard {
 }
 #WelcomeCards {
   margin: auto;
-  width: 70%;
+  width: 85%;
 }
 </style>

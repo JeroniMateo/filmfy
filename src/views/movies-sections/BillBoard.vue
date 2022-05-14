@@ -2,13 +2,14 @@
   <div id="Cartelera" class="container" style="background-color: #191a19">
     <h3><b>Cartelera</b></h3>
     <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-4 g-4">
-      <WatchItemCard v-for="movie in 8" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
     </div>
   </div>
 </template>
 
 <script>
-  import WatchItemCard from "@/components/Items/WatchItemCard.vue";
+import WatchItemCard from '@/components/Items/WatchItemCard.vue'
 export default {
   name: 'BillBoard',
   components: {
@@ -19,7 +20,7 @@ export default {
 
 <style scoped>
 h3 {
-  color: #4E9F3D;
+  color: #4e9f3d;
   font-size: 8vh;
   width: 100%;
   background-color: #000;
@@ -38,6 +39,6 @@ div#BillBoardSection {
 }
 #Cartelera {
   margin: auto;
-  width: 70%;
+  width: 85%;
 }
 </style>

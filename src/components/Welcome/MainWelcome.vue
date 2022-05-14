@@ -33,7 +33,7 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  width: 70%;
+  width: 85%;
   margin: auto;
   height: 50vh;
 }

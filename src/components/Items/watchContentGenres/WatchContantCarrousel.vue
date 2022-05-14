@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import WatchItemOptions from '../watchContentGenres/WatchItemOptions.vue'
+import WatchItemOptions from './MoviesOptions/WatchItemOptions.vue'
 import WatchItemCard from '../WatchItemCard.vue'
 
 export default {
@@ -127,7 +127,7 @@ div.MovieInCarousel {
   align-items: center;
 }
 h2 {
-  color: #4e9f3d;
+  color: #fff;
   background-color: rgb(15, 23, 30);
   font-size: 8vh;
   width: 100%;

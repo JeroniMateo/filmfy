@@ -33,7 +33,7 @@ h1{
 div#FeaturedContent {
   background-color: #000;
   margin: auto;
-  width: 70%;
+  width: 85%;
 }
 #MainCards {
   padding: 1%;

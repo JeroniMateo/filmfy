@@ -32,6 +32,6 @@ export default {
 <style>
 #UserProfile {
   margin: auto;
-  width: 70%;
+  width: 85%;
 }
 </style>

@@ -1,13 +1,20 @@
 <template>
-    <div id="HomeLog" class="container" style="background-color: #191a19">
+  <div id="HomeLog" class="container" style="background-color: #191a19">
     <h3>Destacados</h3>
     <div
       class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="HomeDestacados"
     >
-      <WatchItemCard v-for="movie in 4 " :movie="movie" :key="movie.Outstanding" />
-      <WatchItemCard v-for="movie in 4 " :movie="movie" :key="movie.Outstanding" />
-      
+      <WatchItemCard
+        v-for="movie in 4"
+        :movie="movie"
+        :key="movie.Outstanding"
+      />
+      <WatchItemCard
+        v-for="movie in 4"
+        :movie="movie"
+        :key="movie.Outstanding"
+      />
     </div>
     <h3>Cartelera</h3>
     <div
@@ -31,10 +38,10 @@
 <script>
 import WatchItemCard from '../Items/WatchItemCard.vue'
 export default {
-    name: 'HomeLog',
-    components:{
-        WatchItemCard
-    }
+  name: 'HomeLog',
+  components: {
+    WatchItemCard
+  }
 }
 </script>
 
@@ -43,11 +50,10 @@ h3 {
   color: #fff;
   font-size: 8vh;
   width: 100%;
-  height: 10vh;
-      background-color: #000;
+  height: 12vh;
+  background-color: #000;
 
   text-align: center;
-  
 }
 .HomeSection {
   background-color: #161414;
