@@ -282,7 +282,7 @@ div#OpinionContent {
 }
 #WatchingMovie {
   margin: auto;
-  width: 70%;
+  width: 80%;
 }
 label {
   font-size: 2vw;
