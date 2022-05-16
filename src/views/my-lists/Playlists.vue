@@ -4,6 +4,7 @@
    <div id="Listas">
       <div class="playlist"><FavsLists /></div>
     <div class="playlist"><WatchList /></div>
+    <div class="playlist"><UserLists v-for="list in 2" :movie="list" :key="list.name" /></div>
    </div>
   </div>
 </template>
@@ -12,12 +13,14 @@
 import ListProfile from '../../components/myPlaylists/FavsLists.vue'
 import FavsLists from '../../components/myPlaylists/FavsLists.vue'
 import WatchList from '../../components/myPlaylists/WatchList.vue'
+import UserLists from '../../components/myPlaylists/UserLists.vue'
 export default {
   name: 'Playlists',
   components: {
     WatchList,
     ListProfile,
-    FavsLists
+    FavsLists,
+    UserLists
   },
   data() {
     return {
@@ -40,6 +43,8 @@ export default {
 <style>
 #Playlists {
   background-color: #000;
+  margin: auto;
+  width: 70%;
 }
 h2 {
   color: #fff;
@@ -47,6 +52,18 @@ h2 {
   font-size: 6vh;
 
 }
-
+div#Listas {
+  background-color: #000;
+  color: #000;
+  font-family: Arial;
+  font-size: 2vh;
+  display: flex;
+  flex-direction: col;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
 
 </style>

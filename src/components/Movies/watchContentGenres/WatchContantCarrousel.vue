@@ -88,7 +88,7 @@
 
 <script>
 import WatchItemOptions from '../watchContentGenres/WatchItemOptions.vue'
-import WatchItemCard from '../WatchItemCard.vue'
+import WatchItemCard from '../../Movies/WatchItemCard.vue'
 
 export default {
   name: 'WatchContentCarrousel',
