@@ -12,6 +12,16 @@ import WatchItemOptions from "../components/Movies/watchContentGenres/WatchItemO
 import WatchItemCard from "../components/Movies/WatchItemCard.vue";
 export default {
   name: "Movies",
+  data() {
+    return {
+      movies: [],
+      moviesGenres: [],
+      movie: "",
+      loading: true,
+      error: false,
+      errorMessage: "",
+    };
+  },
   components: {
     WatchItemOptions,
     WatchContentCarrousel,

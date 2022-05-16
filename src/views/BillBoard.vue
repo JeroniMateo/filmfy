@@ -14,6 +14,15 @@
   import WatchItemCard from "../components/Movies/WatchItemCard.vue";
 export default {
   name: 'BillBoard',
+  data() {
+    return {
+      movies: [],
+      upcoming: [],
+      loading: true,
+      error: false,
+      errorMessage: "",
+    };
+  },
   components: {
     WatchItemCard
   }

@@ -20,6 +20,11 @@
 <script>
 export default {
   name: 'WatchList',
+  data() {
+    return {
+      watchList: [],
+    }
+  },
   props: {
     playlist: {
       type: Object,

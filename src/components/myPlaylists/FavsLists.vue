@@ -20,6 +20,11 @@
 <script>
 export default {
   name: 'FavsList',
+  data() {
+    return {
+      favsList: [],
+    }
+  },
   props: {
     playlist: {
       type: Object,

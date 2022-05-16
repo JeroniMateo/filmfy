@@ -37,6 +37,7 @@ export default {
     return {
       favs: false,
       watch: false,
+      
     };
   },
   methods: {
