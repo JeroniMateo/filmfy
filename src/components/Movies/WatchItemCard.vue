@@ -11,7 +11,7 @@
         <div id="GoMovieContent" @click="goMovieContentInfo">
           <img
             src="../../assets/img/MoviesIMG/el-padrino.jpg"
-            id="MovieIMGInfo"
+            id="img_movie_info"
             class="card-img-top"
             alt="..."
           />
@@ -44,7 +44,7 @@
       <img
         src="../../assets/img/MoviesIMG/el-padrino.jpg"
         alt=""
-        class="IMGMovie"
+        id="img_movie_img"
       />
     </div>
   </div>
@@ -60,8 +60,8 @@ export default {
       title_movie: "",
       rating_movie: "",
       category_movie: "",
-      IMGMovie: "",
-      
+      img_movie_img: "",
+      img_movie_info: "",      
     }
   },
   methods: {
@@ -119,7 +119,7 @@ export default {
   height: 60vh;
 }
 
-#MovieIMGInfo {
+#img_movie_info {
   background-color: rgb(15, 23, 30);
   color: #fff;
   font-family: Arial;
