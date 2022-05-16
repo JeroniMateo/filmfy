@@ -87,8 +87,13 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import WatchItemOptions from './MoviesOptions/WatchItemOptions.vue'
 import WatchItemCard from '../WatchItemCard.vue'
+=======
+import WatchItemOptions from '../watchContentGenres/WatchItemOptions.vue'
+import WatchItemCard from '../../Movies/WatchItemCard.vue'
+>>>>>>> searching
 
 export default {
   name: 'WatchContentCarrousel',

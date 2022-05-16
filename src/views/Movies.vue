@@ -18,6 +18,16 @@ import WatchItemCard from "../../components/Items/WatchItemCard.vue";
 >>>>>>> bae820daa6ca56bf33e32be981576257a0fc38a6:src/views/watchContent/Movies.vue
 export default {
   name: "Movies",
+  data() {
+    return {
+      movies: [],
+      moviesGenres: [],
+      movie: "",
+      loading: true,
+      error: false,
+      errorMessage: "",
+    };
+  },
   components: {
     WatchItemOptions,
     WatchContentCarrousel,

@@ -1,16 +1,16 @@
 <template>
-  <div class="UserList container-fluid"> 
-      <div class="col UserList">
-        <div class="card h-100" @click="goIntoList">
+  <div class="FavsList container-fluid"> 
+      <div class="col FavsList">
+        <div class="card h-100" @click="goIntoFavsList">
           <img class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title" id="titleList">Mattius</h5>
-            <p class="card-text" id="descriptionList">
+            <h5 class="card-title" id="titleList">Favorites Movies</h5>
+            <small class="card-text" id="descriptionList">
               Playlist with all the movies you have watched
-            </p>
+            </small>
           </div>
           <div class="card-footer">
-            <small class="text-muted" id="userList">by Mattius</small>
+            <small class="text-muted" id="userList">by Filmfy</small>
           </div>
       </div>
     </div>
@@ -19,7 +19,12 @@
 
 <script>
 export default {
-  name: 'UserList',
+  name: 'FavsList',
+  data() {
+    return {
+      favsList: [],
+    }
+  },
   props: {
     playlist: {
       type: Object,
@@ -27,15 +32,16 @@ export default {
     }
   },
   methods: {
-    goIntoList() {
+    goIntoFavsList() {
       this.$router.push('/moviesList/')
     }
   },
+
 }
 </script>
 
 <style>
-#UserList {
+#FavsList {
   background-color: rgb(15, 23, 30);
   color: #fff;
   font-family: Arial;

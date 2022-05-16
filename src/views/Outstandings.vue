@@ -12,6 +12,16 @@ import TopMovie from '../components/Outstanding/TopMovie.vue'
 
 export default {
   name: 'Outstandings',
+  data() {
+    return {
+      movies: [],
+      outstandings: [],
+      loading: true,
+      error: false,
+      errorMessage: "",
+      outstanding:""
+    };
+  },
   components: {
     TopMovie
   }

@@ -10,7 +10,9 @@ import BillBoard from '../views/BillBoard.vue'
 import Outstandings from '../views/Outstandings.vue'
 
 import Playlists from '../views/my-lists/Playlists.vue'
-import MoviesList from '../views/my-lists/MoviesList.vue'
+import ListContent from '../views/my-lists/ListContent.vue'
+
+
 import VerMasGenres from '../views/watchContent/VerMasGenres.vue'
 import UserProfile from '../views/user/UserProfile.vue'
 import UserSettings from '../views/user/UserSettings.vue'
@@ -60,9 +62,9 @@ const routes = [
     component: Playlists
   },
   {
-    path: '/moviesList/:id',
-    name: 'MoviesList',
-    component: MoviesList
+    path: '/listContent/:id',
+    name: 'ListContent',
+    component: ListContent
   },
 
   {
