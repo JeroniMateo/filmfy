@@ -1,16 +1,16 @@
 <template>
   <div class="FavsList container-fluid"> 
       <div class="col FavsList">
-        <div class="card ">
+        <div class="card h-100" @click="goIntoFavsList">
           <img class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">Favorites Movies</h5>
-            <small class="card-text">
+            <h5 class="card-title" id="titleList">Favorites Movies</h5>
+            <small class="card-text" id="descriptionList">
               Playlist with all the movies you have watched
             </small>
           </div>
           <div class="card-footer">
-            <small class="text-muted">by Filmfy</small>
+            <small class="text-muted" id="userList">by Filmfy</small>
           </div>
       </div>
     </div>
@@ -25,7 +25,13 @@ export default {
       type: Object,
       required: true
     }
-  }
+  },
+  methods: {
+    goIntoFavsList() {
+      this.$router.push('/moviesList/')
+    }
+  },
+
 }
 </script>
 

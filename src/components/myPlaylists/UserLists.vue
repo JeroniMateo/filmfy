@@ -1,7 +1,7 @@
 <template>
   <div class="UserList container-fluid"> 
-      <div class="col FavsList">
-        <div class="card " @click="goIntoList">
+      <div class="col UserList">
+        <div class="card h-100" @click="goIntoList">
           <img class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title" id="titleList">Mattius</h5>
