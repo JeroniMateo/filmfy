@@ -4,6 +4,9 @@
     <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-4 g-4">
       <WatchItemCard v-for="movie in 8" :movie="movie" :key="movie.id" />
     </div>
+    <div id="UpcomingCartelera">
+      
+    </div>
   </div>
 </template>
 

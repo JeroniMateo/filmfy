@@ -5,7 +5,7 @@
       <div class="col-md-3">
         <WatchItemCard
           :movie="movie"
-          v-for="movie in movies"
+          v-for="movie in 5"
           :key="movie.UpcomingMovies"
         />
       </div>

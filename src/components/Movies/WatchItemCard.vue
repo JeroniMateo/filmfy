@@ -16,14 +16,14 @@
             alt="..."
           />
           <div class="card-body">
-            <h2 class="card-title" id="Title">El Padrino</h2>
-            <h5 class="card-text" id="Rating">
+            <h2 class="card-title" id="title_movie">El Padrino</h2>
+            <h5 class="card-text" id="rating_movie">
             5/5
             </h5>
           </div>
         </div>
         <div class="card-footer">
-          <h5 class="text-muted" id="category"
+          <h5 class="text-muted" id="category_movie"
             >Category
             <button id="FavWatch" @click="addFavs">
               <img
