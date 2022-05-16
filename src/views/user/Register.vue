@@ -220,8 +220,13 @@ input {
 }
 #layoutRegister {
   margin: auto;
+<<<<<<< HEAD
   width: 70%;
   background-color: #000;
+=======
+  width: 85%;
+  background-color:#000 ;
+>>>>>>> bae820daa6ca56bf33e32be981576257a0fc38a6
   display: flex;
   flex-direction: column;
 }

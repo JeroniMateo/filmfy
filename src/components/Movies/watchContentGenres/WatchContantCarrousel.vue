@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import WatchItemOptions from '../watchContentGenres/WatchItemOptions.vue'
+import WatchItemOptions from './MoviesOptions/WatchItemOptions.vue'
 import WatchItemCard from '../WatchItemCard.vue'
 
 export default {

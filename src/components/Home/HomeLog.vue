@@ -52,8 +52,13 @@ h3 {
   width: 100%;
   height: 12vh;
   background-color: #000;
+<<<<<<< HEAD
   text-align: center;
   font-weight:bold;
+=======
+
+  text-align: center;
+>>>>>>> bae820daa6ca56bf33e32be981576257a0fc38a6
 }
 .HomeSection {
   background-color: #161414;
