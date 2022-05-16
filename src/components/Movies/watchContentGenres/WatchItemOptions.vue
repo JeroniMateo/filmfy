@@ -1,11 +1,11 @@
 <template>
   <div id="WatchItemConfig">
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li v-if="favs"><button @click="addFavs">Add Favs</button></li>
-      <li v-else><a class="dropdown-item" href="#"><button @click="removeFavs">Remove Favs</button></a></li>
+      <li id="favMovie" v-if="favs"><button @click="addFavs">Add Favs</button></li>
+      <li id="notFavMovie" v-else><a class="dropdown-item" href="#"><button @click="removeFavs">Remove Favs</button></a></li>
       <li><hr class="dropdown-divider" /></li>
-      <li v-if="watch"><button @click="addWatched">Watched</button></li>
-      <li v-else><button @click="removeWatched">Watched</button></li>
+      <li id="watchMovie" v-if="watch"><button @click="addWatched">Watched</button></li>
+      <li id="notWatchMovie" v-else><button @click="removeWatched">Watched</button></li>
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
@@ -37,6 +37,10 @@ export default {
     return {
       favs: false,
       watch: false,
+      favMovie: "",
+      notFavMovie: "",
+      watchMovie: "",
+      notWatchMovie: "",
       
     };
   },

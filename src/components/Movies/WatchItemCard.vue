@@ -56,7 +56,12 @@ export default {
 
   data() {
     return {
-      favorites: true
+      favorites: true,
+      title_movie: "",
+      rating_movie: "",
+      category_movie: "",
+      IMGMovie: "",
+      
     }
   },
   methods: {
