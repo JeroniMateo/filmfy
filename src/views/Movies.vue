@@ -7,15 +7,9 @@
 </template>
 
 <script>
-<<<<<<< HEAD:src/views/Movies.vue
 import WatchContentCarrousel from "../components/Movies/watchContentGenres/WatchContantCarrousel.vue";
 import WatchItemOptions from "../components/Movies/watchContentGenres/WatchItemOptions.vue";
 import WatchItemCard from "../components/Movies/WatchItemCard.vue";
-=======
-import WatchContentCarrousel from "../../components/Items/watchContentGenres/WatchContantCarrousel.vue";
-import WatchItemOptions from "../../components/Items/watchContentGenres/MoviesOptions/WatchItemOptions.vue";
-import WatchItemCard from "../../components/Items/WatchItemCard.vue";
->>>>>>> bae820daa6ca56bf33e32be981576257a0fc38a6:src/views/watchContent/Movies.vue
 export default {
   name: "Movies",
   data() {

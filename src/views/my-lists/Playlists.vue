@@ -52,11 +52,10 @@ h2 {
   font-size: 6vh;
 
 }
-<<<<<<< HEAD
 #Playlists {
   margin: auto;
   width: 85%;
-=======
+}
 div#Listas {
   background-color: #000;
   color: #000;
@@ -69,7 +68,6 @@ div#Listas {
   justify-content: center;
   align-content: center;
   width: 100%;
->>>>>>> searching
 }
 
 </style>

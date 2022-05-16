@@ -284,11 +284,7 @@ div#OpinionContent {
 }
 #WatchingMovie {
   margin: auto;
-<<<<<<< HEAD:src/views/watchContent/MovieContent.vue
-  width: 80%;
-=======
   width: 85%;
->>>>>>> bae820daa6ca56bf33e32be981576257a0fc38a6:src/views/watchContent/MoviesContent/MovieContent.vue
 }
 label {
   font-size: 2vw;

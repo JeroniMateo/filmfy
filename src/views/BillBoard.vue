@@ -12,11 +12,7 @@
 </template>
 
 <script>
-<<<<<<< HEAD:src/views/BillBoard.vue
   import WatchItemCard from "../components/Movies/WatchItemCard.vue";
-=======
-import WatchItemCard from '@/components/Items/WatchItemCard.vue'
->>>>>>> bae820daa6ca56bf33e32be981576257a0fc38a6:src/views/movies-sections/BillBoard.vue
 export default {
   name: 'BillBoard',
   data() {
@@ -35,13 +31,8 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD:src/views/BillBoard.vue
 h2 {
   color: #fff;
-=======
-h3 {
-  color: #4e9f3d;
->>>>>>> bae820daa6ca56bf33e32be981576257a0fc38a6:src/views/movies-sections/BillBoard.vue
   font-size: 8vh;
   width: 100%;
   background-color: #000;
