@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import WatchContentCarrousel from "../../components/Items/watchContentGenres/WatchContantCarrousel.vue";
-import WatchItemOptions from "../../components/Items/watchContentGenres/WatchItemOptions.vue";
-import WatchItemCard from "../../components/Items/WatchItemCard.vue";
+import WatchContentCarrousel from "../components/Movies/watchContentGenres/WatchContantCarrousel.vue";
+import WatchItemOptions from "../components/Movies/watchContentGenres/WatchItemOptions.vue";
+import WatchItemCard from "../components/Movies/WatchItemCard.vue";
 export default {
   name: "Movies",
   components: {

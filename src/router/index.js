@@ -2,12 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
 
-import Movies from '../views/watchContent/Movies.vue'
-import MovieContent from '../views/watchContent/MoviesContent/MovieContent.vue'
+import Movies from '../views/Movies.vue'
+import MovieContent from '../views/watchContent/MovieContent.vue'
 
-import BillBoard from '../views/movies-sections/BillBoard.vue'
+import BillBoard from '../views/BillBoard.vue'
 
-import Outstandings from '../views/movies-sections/Outstandings.vue'
+import Outstandings from '../views/Outstandings.vue'
 
 import Playlists from '../views/my-lists/Playlists.vue'
 import MoviesList from '../views/my-lists/MoviesList.vue'
@@ -18,7 +18,7 @@ import UserSettings from '../views/user/UserSettings.vue'
 import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
 
-import Search from '../views/Searching/SearchResults.vue'
+import Search from '../views/SearchResults.vue'
 
 const routes = [
   {

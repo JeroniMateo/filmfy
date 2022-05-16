@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import TopMovie from '../../components/movies/Outstanding/TopMovie.vue'
+import TopMovie from '../components/Outstanding/TopMovie.vue'
 
 export default {
   name: 'Outstandings',

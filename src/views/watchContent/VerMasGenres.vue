@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import WatchItemCard from '../../components/Items/WatchItemCard.vue'
+import WatchItemCard from '../../components/Movies/WatchItemCard.vue'
 export default{
     name: 'VerMasGenres',
     components: {

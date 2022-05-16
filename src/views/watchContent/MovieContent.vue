@@ -9,7 +9,7 @@
           <div id="MovieContentImage" class="col-md-4">
             <img
               id="MovieContentImage"
-              src="../../../assets/img/MoviesIMG/el-padrino.jpg"
+              src="../../assets/img/MoviesIMG/el-padrino.jpg"
               class="img-fluid rounded-start"
               alt="..."
             />
@@ -88,7 +88,7 @@
         </div>
       </div>
       <!--Trailer play automaticaly-->
-      <div id="Trailer"><TrailerVideo /></div>
+      <div id="Trailer"></div>
       <div id="Opinions">
         <h2 class="OpnionTitle">Comentarios y Valoraciones</h2>
         <div id="MovieContentOpinion">
@@ -112,7 +112,7 @@
               <div id="UserComent">
                 <div id="MovieContentOpinionUser">
                   <div class="OpinionUserImage">
-                    <img src="../../../assets/img/cameraLogo.png" alt="" />
+                    <img src="../../assets/img/cameraLogo.png" alt="" />
                   </div>
                   <div class="OpinionUserName">
                     <h4 id="username">{{ UserName }}</h4>
@@ -136,11 +136,11 @@
 </template>
 
 <script>
-import TrailerVideo from '@/components/movies/Trailers/TrailerVideo.vue'
+
 export default {
   name: 'MovieContent',
   components: {
-    TrailerVideo
+    
   },
   data() {
     return {

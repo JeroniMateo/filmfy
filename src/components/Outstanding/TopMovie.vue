@@ -11,7 +11,7 @@
             <div class="card bg-dark text-white" id="TopMovieContent">
               <img
                 id="topMovieIMG"
-                src="../../../assets/img/TopMovieIMG/Top-El-Padrino.jpeg"
+                src="../../assets/img/TopMovieIMG/Top-El-Padrino.jpeg"
                 alt=""
               />
               <div class="card-img-overlay"></div>
