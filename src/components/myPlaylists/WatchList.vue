@@ -2,15 +2,15 @@
   <div class="WatchList container-fluid "> 
       <div class="col">
         <div class="card h-100" @click="goIntoWatchList">
-          <img class="card-img-top" alt="..." />
+          <img class="card-img-top" alt="..." id="img_list" />
           <div class="card-body">
-            <h5 class="card-title" id="titleList">Watched Movies</h5>
-            <small class="card-text" id="descriptionList">
+            <h5 class="card-title" id="title_list">Watched Movies</h5>
+            <small class="card-text" id="description_list">
               Playlist with all the movies you have watched
             </small>
           </div>
           <div class="card-footer">
-            <small class="text-muted" id="userList">by Filmfy</small>
+            <small class="text-muted" id="user_list">by Filmfy</small>
           </div>
       </div>
     </div>
@@ -23,6 +23,10 @@ export default {
   data() {
     return {
       watchList: [],
+      img_list: '',
+      title_list: '',
+      description_list: '',
+      user_list: '',
     }
   },
   props: {
