@@ -1,9 +1,11 @@
 <template>
   <div id="WatchItemConfig">
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li v-if="favs">Add Favs</li>
-      <li v-else><a class="dropdown-item" href="#">Remove Favs</a></li>
+      <li v-if="favs"><button @click="addFavs">Add Favs</button></li>
+      <li v-else><a class="dropdown-item" href="#"><button @click="removeFavs">Remove Favs</button></a></li>
       <li><hr class="dropdown-divider" /></li>
+      <li v-if="watch"><button @click="addWatched">Watched</button></li>
+      <li v-else><button @click="removeWatched">Watched</button></li>
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
@@ -19,7 +21,7 @@
         
         </ul>
       </li>
-      <li>Share</li>
+      <li><button>Share</button></li>
     </ul>
   </div>
 </template>
@@ -33,8 +35,23 @@ export default {
   },
   data() {
     return {
-      favs: true,
+      favs: false,
+      watch: false,
     };
+  },
+  methods: {
+    addFavs() {
+      this.favs = true;
+    },
+    removeFavs() {
+      this.favs = false;
+    },
+    addWatched() {
+      this.watch = true;
+    },
+    removeWatched() {
+      this.watch = false;
+    },
   },
 };
 </script>
