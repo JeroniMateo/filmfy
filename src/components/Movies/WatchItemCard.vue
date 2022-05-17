@@ -24,8 +24,9 @@
         </div>
         <div class="card-footer">
           <h5 class="text-muted" id="category_movie">
-            Category {{ categories_movie }}
-            <button id="FavWatch" @click="addFavs">
+            Category {{ categories_movie }} <div id="watch_movie"><button id=""></button></div>
+
+            <button type="button" class="favButton" id="FavWatch" @click="addFavs">
               <img
                 class="favIMG"
                 src="../../assets/img/FavWatch/NotFav.png"
@@ -104,9 +105,17 @@ export default {
   background-color: #242424;
   color: #fff;
 }
-.favIMG {
-  width: 2vh;
-  height: 2vh;
+#FavWatch{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3vw;
+  height: 5vh;
+}
+#img_fav {
+  margin-top: -2.5vh;
+  width: 2vw;
+  height: 3.5vh;
 }
 #WatchItemCard {
   height: 55vh;
