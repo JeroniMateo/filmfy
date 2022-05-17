@@ -8,7 +8,7 @@
         <div class="row g-0">
           <div id="MovieContentImage" class="col-md-4">
             <img
-              id="MovieContentImage"
+              id="MovieContentImage img_movie"
               src="../../assets/img/MoviesIMG/el-padrino.jpg"
               class="img-fluid rounded-start"
               alt="..."
@@ -19,22 +19,22 @@
               <div class="MainInfo">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" id="MovieContentTitle">
-                    <label for="">Titulo:</label> <p id="title"></p>
+                    <label for="">Titulo:</label> <p id="title_movie">{{ title_movie }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentYear">
-                    <label for="">Fecha:</label> <p id="date"></p>
+                    <label for="">Fecha:</label> <p id="date_movie"> {{ date_movie }} </p>
                   </li>
                   <li class="list-group-item" id="MovieContentGenre">
-                    <label for="">Genero:</label> <p id="Category"></p>
+                    <label for="">Genero:</label> <p id="category_movie"> {{ category_movie }} </p>
                   </li>
                   <li class="list-group-item" id="MovieContentDirectors">
-                    <label for="">Directores:</label> <p id="directos"></p>
+                    <label for="">Directores:</label> <p id="directors_movie"> {{ directors_movie }} </p>
                   </li>
                   <li class="list-group-item" id="MovieContentActors">
-                    <label for="">Actores:</label> <p id="actors"></p>
+                    <label for="">Actores:</label> <p id="actors_movie"> {{ actors_movie }} </p>
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Valoracíon:</label> <p id="rating"></p>
+                    <label for="">Valoracíon:</label> <p id="rating_movie"> {{ rating_movie }} </p>
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
                     <label for="">Vista <button></button></label>
@@ -50,10 +50,10 @@
       </div>
       <div id="MovieContentSinopsis">
         <div id="SinopsisTitle">
-          <h2 class="SinopsisHeader">Sinopsis</h2>
+          <h2 class="SinopsisHeader" id="sinopsis_movie">Sinopsis</h2>
         </div>
         <p id="sinopsis">
-     
+          {{ sinopsis_movie }}
         </p>
       </div>
       <div id="MovieContentValoration">
@@ -88,7 +88,16 @@
         </div>
       </div>
       <!--Trailer play automaticaly-->
-      <div id="Trailer"></div>
+      <div id="Trailer trailer_movie"  >
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/{{ trailer_movie }}"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
       <div id="Opinions">
         <h2 class="OpnionTitle">Comentarios y Valoraciones</h2>
         <div id="MovieContentOpinion">
@@ -112,18 +121,18 @@
               <div id="UserComent">
                 <div id="MovieContentOpinionUser">
                   <div class="OpinionUserImage">
-                    <img src="../../assets/img/cameraLogo.png" alt="" />
+                    <img id="img_user" src="../../assets/img/cameraLogo.png" alt="" />
                   </div>
                   <div class="OpinionUserName">
-                    <h4 id="username">{{ UserName }}</h4>
+                    <h4 id="username">{{ username }}</h4>
                   </div>
                 </div>
                 <div id="CommentText">
-                  <p id="comentaries">{{ comentarios }}</p>
+                  <p id="comentaries">{{ comentaries }}</p>
                 </div>
                 <div id="OpinionContent">
                   <div id="MovieContentOpinionDate">
-                    <p id="DateComment">{{DateComment}}</p>
+                    <p id="DateComment">{{ date_comment }}</p>
                   </div>
                 </div>
               </div>
@@ -144,10 +153,21 @@ export default {
   },
   data() {
     return {
-      comentario: '',
-      comentarios: [],
-      DateComment: '',
-      UserName: '',
+      img_movie: '',
+      title_movie: '',
+      date_movie: '',
+      category_movie: [],
+      directors_movie: [],
+      actors_movie: [],
+      rating_movie: '',
+      sinopsis_movie: '',
+      trailer_movie: '',
+
+      img_user: '',
+      username: '',
+      commentaries: [],
+      comment: '',
+      date_comment: '',
     }
   },
   methods: {
