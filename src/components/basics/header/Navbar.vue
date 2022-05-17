@@ -54,6 +54,7 @@
                 placeholder="Search"
                 aria-label="Search"
                 v-model="search"
+                id="searchingInput"
               />
               <!--Search-->
               <button
@@ -79,11 +80,12 @@ export default {
   data() {
     return {
       log: true,
-      search: ''
+      search_result: '',
     }
   },
   methods: {
     searchContent() {
+      this.search_result = document.getElementById('searchingInput').value
       this.$router.push('/search/' + this.search)
     }
   }

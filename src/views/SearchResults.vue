@@ -14,6 +14,7 @@ export default {
     return {
       movie: "",
       movies: [],
+      search_result: "",
       loading: true,
       error: false,
       errorMessage: "",
