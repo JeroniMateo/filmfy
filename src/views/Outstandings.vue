@@ -2,7 +2,7 @@
   <div id="TOP10">
     <div id="topNum" class="col-md-12">
       <h1><b>TOP 10</b></h1>
-      <TopMovie v-for="top in 10" :top="top" :key="top" />
+      <TopMovie v-for="movie in 10" :movie="movie" :key="movie.top" />
     </div>
   </div>
 </template>
@@ -14,12 +14,13 @@ export default {
   name: 'Outstandings',
   data() {
     return {
+      movie:'',
       movies: [],
+      outstanding:"",
       outstandings: [],
       loading: true,
       error: false,
-      errorMessage: "",
-      outstanding:""
+      errorMessage:"",
     };
   },
   components: {

@@ -6,11 +6,11 @@
         <div class="col-md-12">
           <div class="container">
             <div class="TopMovieHead">
-              <h3 id="topMovieNum">1.El Padrino</h3>
+              <h3 id="topMovieNum">{{ title_movie }} </h3>
             </div>
             <div class="card bg-dark text-white" id="TopMovieContent">
               <img
-                id="topMovieIMG"
+                id="img_movie"
                 src="../../assets/img/TopMovieIMG/Top-El-Padrino.jpeg"
                 alt=""
               />
@@ -25,7 +25,13 @@
 
 <script>
 export default {
-  name: 'TopMovie'
+  name: 'TopMovie',
+  data() {
+    return {
+      title_movie: '',
+      img_movie: '',
+    }
+  },
 }
 </script>
 
