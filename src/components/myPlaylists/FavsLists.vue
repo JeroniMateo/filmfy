@@ -22,11 +22,15 @@ export default {
   name: 'FavsList',
   data() {
     return {
+      movie:'',
+      movies: [],
+      favs_movie:'',
       favsList: [],
       img_list: '',
       title_list: '',
       description_list: '',
       user_list: '',
+      user_lists:[],
     }
   },
   props: {

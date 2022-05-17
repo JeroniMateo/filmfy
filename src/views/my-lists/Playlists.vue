@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ListProfile from '../../components/myPlaylists/FavsLists.vue'
+
 import FavsLists from '../../components/myPlaylists/FavsLists.vue'
 import WatchList from '../../components/myPlaylists/WatchList.vue'
 import UserLists from '../../components/myPlaylists/UserLists.vue'
@@ -18,13 +18,14 @@ export default {
   name: 'Playlists',
   components: {
     WatchList,
-    ListProfile,
     FavsLists,
     UserLists
   },
   data() {
     return {
-      username: ''
+      username: '',
+      user_list: '',
+      user_lists: [],
     }
   },
   methods: {
