@@ -13,7 +13,7 @@ import Playlists from '../views/my-lists/Playlists.vue'
 import ListContent from '../views/my-lists/ListContent.vue'
 
 
-import VerMasGenres from '../views/watchContent/VerMasGenres.vue'
+import VerMasCateogries from '../views/watchContent/VerMasCategories.vue'
 import UserProfile from '../views/user/UserProfile.vue'
 import UserSettings from '../views/user/UserSettings.vue'
 
@@ -42,7 +42,7 @@ const routes = [
   {
     path:'/movies/:category/:id',
     name: 'movie-content-category',
-    component: VerMasGenres
+    component: VerMasCateogries
   },
   {
     path: '/billboard',

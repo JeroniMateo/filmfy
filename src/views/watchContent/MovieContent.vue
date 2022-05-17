@@ -24,7 +24,7 @@
                   <li class="list-group-item" id="MovieContentYear">
                     <label for="">Fecha:</label> <p id="date_movie"> {{ date_movie }} </p>
                   </li>
-                  <li class="list-group-item" id="MovieContentGenre">
+                  <li class="list-group-item" id="MovieContentCategory">
                     <label for="">Genero:</label> <p id="category_movie"> {{ category_movie }} </p>
                   </li>
                   <li class="list-group-item" id="MovieContentDirectors">

@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import WatchItemOptions from '../watchContentGenres/WatchItemOptions.vue'
+import WatchItemOptions from '../watchContentCategories/WatchItemOptions.vue'
 import WatchItemCard from '../WatchItemCard.vue'
 
 export default {
@@ -98,7 +98,13 @@ export default {
   },
   data() {
     return {
-      favorites: true
+      favorites: true,
+      movie: "",
+      movies: [],
+      movies_categories: [],
+      loading: true,
+      error: false,
+      errorMessage: "Category not found",
     }
   },
   methods: {
@@ -231,7 +237,7 @@ div.title {
   width: 15vh;
 }
 #CarouselMovies{
-  margin:auto;
-  width:85%;
+  margin: auto;
+  width: 95%;
 }
 </style>

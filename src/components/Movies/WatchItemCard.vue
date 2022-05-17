@@ -16,15 +16,15 @@
             alt="..."
           />
           <div class="card-body">
-            <h2 class="card-title" id="title_movie">El Padrino {{ title_movie }} </h2>
-            <h5 class="card-text" id="rating_movie">
-            5/5  {{ rating_movie }} 
-            </h5>
+            <h2 class="card-title" id="title_movie">
+              El Padrino {{ title_movie }}
+            </h2>
+            <h5 class="card-text" id="rating_movie">5/5 {{ rating_movie }}</h5>
           </div>
         </div>
         <div class="card-footer">
-          <h5 class="text-muted" id="category_movie"
-            >Category
+          <h5 class="text-muted" id="category_movie">
+            Category {{ categories_movie }}
             <button id="FavWatch" @click="addFavs">
               <img
                 class="favIMG"
@@ -58,12 +58,13 @@ export default {
   data() {
     return {
       favorites: true,
-      title_movie: "",
-      rating_movie: "",
-      category_movie: "",
-      img_movie_img: "",
-      img_movie_info: "",  
-      img_fav: "",    
+      title_movie: '',
+      rating_movie: '',
+      category_movie: '',
+      categories_movie: [],
+      img_movie_img: '',
+      img_movie_info: '',
+      img_fav: ''
     }
   },
   methods: {
@@ -104,12 +105,11 @@ export default {
   color: #fff;
 }
 .favIMG {
-  width: 30px;
-  height: 30px;
+  width: 2vh;
+  height: 2vh;
 }
 #WatchItemCard {
   height: 55vh;
-  
 }
 #WatchItemCardINFO {
   background-color: rgb(15, 23, 30);
@@ -127,19 +127,18 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-width: 35vh;
+  width: 35vh;
   height: 30vh;
 }
 
-#WatchItemCardIMG {
+#img_movie_img {
   background-color: rgb(15, 23, 30);
   color: #fff;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-width: 35vh;
+  width: 35vh;
   height: 60vh;
-  
 }
 .IMGMovie {
   background-color: rgb(15, 23, 30);
@@ -147,7 +146,7 @@ width: 35vh;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-width: 35vh;
+  width: 35vh;
   height: 60vh;
 }
 
@@ -155,12 +154,12 @@ p {
   font-size: 1.5vh;
   color: #fff;
 }
-#Genre {
+#category_movie {
   font-size: 5vh;
   color: #fff;
 }
 h2 {
-  color: #4E9F3D;
+  color: #4e9f3d;
   font-size: 5vh;
 }
 h5 {
