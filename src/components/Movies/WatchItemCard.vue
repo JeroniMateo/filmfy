@@ -109,16 +109,17 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  width: 3vw;
-  height: 5vh;
+  width: 2vw;
+  height: 4vh;
 }
 #img_fav {
-  margin-top: -2.5vh;
+  margin-top: -1.5vh;
+  margin-left: -0.5vw;
   width: 2vw;
-  height: 3.5vh;
+  height: 4vh;
 }
 #WatchItemCard {
-  height: 55vh;
+  height: 60vh;
 }
 #WatchItemCardINFO {
   background-color: rgb(15, 23, 30);
@@ -126,8 +127,8 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 35vh;
-  height: 60vh;
+  width: 30vh;
+  height: 50vh;
 }
 
 #img_movie_info {
@@ -136,8 +137,8 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 35vh;
-  height: 30vh;
+  width: 30vh;
+  height: 28vh;
 }
 
 #img_movie_img {
@@ -146,8 +147,8 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 35vh;
-  height: 60vh;
+  width: 30vh;
+  height: 50vh;
 }
 .IMGMovie {
   background-color: rgb(15, 23, 30);
@@ -155,16 +156,12 @@ export default {
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 35vh;
-  height: 60vh;
+  width: 30vh;
+  height: 50vh;
 }
 
 p {
   font-size: 1.5vh;
-  color: #fff;
-}
-#category_movie {
-  font-size: 5vh;
   color: #fff;
 }
 h2 {
@@ -173,6 +170,6 @@ h2 {
 }
 h5 {
   color: #fff;
-  font-size: 5vh;
+  font-size: 3vh;
 }
 </style>
