@@ -5,10 +5,10 @@
     </div>
     <div class="container-fluid">
       <div class="card mb-3">
-        <div class="row g-0">
+        <div class="row g-0" id="MovieCardInfo">
           <div id="MovieContentImage" class="col-md-4">
             <img
-              id="MovieContentImage img_movie"
+              id="img_movie"
               src="../../assets/img/MoviesIMG/el-padrino.jpg"
               class="img-fluid rounded-start"
               alt="..."
@@ -19,22 +19,28 @@
               <div class="MainInfo">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" id="MovieContentTitle">
-                    <label for="">Titulo:</label> <p id="title_movie">{{ title_movie }}</p>
+                    <label for="">Titulo:</label>
+                    <p id="title_movie">{{ title_movie }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentYear">
-                    <label for="">Fecha:</label> <p id="date_movie"> {{ date_movie }} </p>
+                    <label for="">Fecha:</label>
+                    <p id="date_movie">{{ date_movie }}</p>
                   </li>
-                  <li class="list-group-item" id="MovieContentCategory">
-                    <label for="">Genero:</label> <p id="category_movie"> {{ category_movie }} </p>
+                  <li class="list-group-item" id="MovieContentGenre">
+                    <label for="">Genero:</label>
+                    <p id="category_movie">{{ category_movie }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentDirectors">
-                    <label for="">Directores:</label> <p id="directors_movie"> {{ directors_movie }} </p>
+                    <label for="">Directores:</label>
+                    <p id="directors_movie">{{ directors_movie }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentActors">
-                    <label for="">Actores:</label> <p id="actors_movie"> {{ actors_movie }} </p>
+                    <label for="">Actores:</label>
+                    <p id="actors_movie">{{ actors_movie }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Valoracíon:</label> <p id="rating_movie"> {{ rating_movie }} </p>
+                    <label for="">Valoracíon:</label>
+                    <p id="rating_movie">{{ rating_movie }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
                     <label for="">Vista <button></button></label>
@@ -88,7 +94,7 @@
         </div>
       </div>
       <!--Trailer play automaticaly-->
-      <div id="Trailer trailer_movie"  >
+      <div id="Trailer trailer_movie">
         <iframe
           width="560"
           height="315"
@@ -103,7 +109,7 @@
         <div id="MovieContentOpinion">
           <div id="MovieContentOpinionUser">
             <div id="MovieContentOpinionHeader">
-              <button id="añadirComentario" @click="añadirComentario">
+              <button id="añadirComentario" @click="añadirComentario;">
                 Añadir Comentario
               </button>
             </div>
@@ -121,7 +127,11 @@
               <div id="UserComent">
                 <div id="MovieContentOpinionUser">
                   <div class="OpinionUserImage">
-                    <img id="img_user" src="../../assets/img/cameraLogo.png" alt="" />
+                    <img
+                      id="img_user"
+                      src="../../assets/img/cameraLogo.png"
+                      alt=""
+                    />
                   </div>
                   <div class="OpinionUserName">
                     <h4 id="username">{{ username }}</h4>
@@ -145,12 +155,9 @@
 </template>
 
 <script>
-
 export default {
   name: 'MovieContent',
-  components: {
-    
-  },
+  components: {},
   data() {
     return {
       img_movie: '',
@@ -167,7 +174,7 @@ export default {
       username: '',
       commentaries: [],
       comment: '',
-      date_comment: '',
+      date_comment: ''
     }
   },
   methods: {
@@ -233,11 +240,11 @@ button:nth-child(5):hover ~ button {
 }
 
 div#MovieContentImage {
-  height: 45vh;
+  height: 70vh;
   width: 25vw;
 }
-img#MovieContentImage {
-  height: 74vh;
+img#img_movie {
+  height: 71vh;
   width: 25vw;
 }
 div#MovieContentSinopsis {
@@ -246,16 +253,16 @@ div#MovieContentSinopsis {
 }
 p#SinopsisText {
   padding: 2%;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 h2.SinopsisHeader {
   color: #4e9f3d;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   margin: 1%;
 }
 h2 {
   color: #4e9f3d;
-  font-size: 3vw;
+  font-size: 2vw;
 }
 div#SinopsisTitle {
   background-color: #000;
@@ -280,7 +287,7 @@ div.valoracion {
   align-items: center;
   background-color: #242424;
   margin: 1%;
-  height: 6vh;
+  height: 5vh;
 }
 div#Opinions {
   padding: 1%;
@@ -304,28 +311,28 @@ div#OpinionContent {
 }
 #WatchingMovie {
   margin: auto;
-  width: 85%;
+  width: 80%;
 }
 label {
-  font-size: 2vw;
-}
-li {
   font-size: 1.5vw;
 }
+li {
+  font-size: 1vw;
+}
 button#añadirComentario {
-  font-size: 2vh;
+  font-size: 1.5vh;
 }
 button#btnComentar {
-  font-size: 2vh;
+  font-size: 1.5vh;
   margin-top: -6vh;
-  font-size: 2vh;
-  margin-left: 79vh;
+  font-size: 1.5vh;
+  margin-left: 75vh;
   z-index: 1;
   padding: 1%;
   color: #000;
 }
 p#DateComment {
-  font-size: 1.2vw;
+  font-size: 1vw;
   color: #000;
   background-color: #fff;
 }
@@ -343,6 +350,7 @@ div#UserComent {
   justify-content: center;
   background-color: #fff;
   color: #000;
-  width: 74vh;
+  width: 70vh;
 }
+
 </style>
