@@ -16,9 +16,9 @@
             alt="..."
           />
           <div class="card-body">
-            <h2 class="card-title" id="title_movie">El Padrino</h2>
+            <h2 class="card-title" id="title_movie">El Padrino {{ title_movie }} </h2>
             <h5 class="card-text" id="rating_movie">
-            5/5
+            5/5  {{ rating_movie }} 
             </h5>
           </div>
         </div>
@@ -30,6 +30,7 @@
                 class="favIMG"
                 src="../../assets/img/FavWatch/NotFav.png"
                 alt=""
+                id="img_fav"
               />
             </button>
           </h5>
@@ -61,17 +62,18 @@ export default {
       rating_movie: "",
       category_movie: "",
       img_movie_img: "",
-      img_movie_info: "",      
+      img_movie_info: "",  
+      img_fav: "",    
     }
   },
   methods: {
     addFavs() {
       if (favorites) {
-        document.getElementsByClassName('favIMG')[0].src =
+        document.getElementById('img_fav')[0].src =
           '../../assets/img/FavWatch/Fav.png'
         return (this.favorites = false)
       } else {
-        document.getElementsByClassName('favIMG')[0].src =
+        document.getElementById('img_fav')[0].src =
           '../../assets/img/FavWatch/NotFav.png'
         return (this.favorites = true)
       }
