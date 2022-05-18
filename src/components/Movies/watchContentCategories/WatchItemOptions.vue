@@ -28,11 +28,17 @@
         >
           Añadir a Playlist
         </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbar_lists">
-          <li v-for="list in lists" :list="list" :key="list.name">{{ list.name }}</li>
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          id="navbar_lists"
+        >
+          <li v-for="list in lists" :list="list" :key="list.name">
+            {{ list.name }}
+          </li>
         </ul>
       </li>
-      <li><button>Share</button></li>
+      <li><button class="share" @click="getlink">Share</button></li>
     </ul>
   </div>
 </template>
@@ -53,8 +59,8 @@ export default {
       favs_list: [],
       watch_list: [],
       user_lists: [],
-      user_list:[],
-      list: [],
+      user_list: [],
+      list: []
     }
   },
   methods: {
@@ -75,13 +81,46 @@ export default {
       this.watchList.pop(this.movie)
     },
     addToList() {
-      this.user_list = this.user_lists.filter(list => list.name == this.user_list_name)
+      this.user_list = this.user_lists.filter(
+        (list) => list.name == this.user_list_name
+      )
       this.user_list[0].movies.push(this.movie)
       this.user_list[0].movies.push(this.movie)
+    },
+    getlink() {
+      var aux = document.createElement('input')
+      aux.setAttribute('value', window.location.href)
+      document.body.appendChild(aux)
+      aux.select()
+      document.execCommand('copy')
+      document.body.removeChild(aux)
 
+    //Aqui se puede añadir una alerta de que se ha copiado el link
+      var css = document.createElement('style')
+      var estilo = document.createTextNode(
+        '#aviso {position:fixed; z-index: 9999999; widht: 120px; top:30%;left:50%;margin-left: -60px;padding: 20px; background: gold;border-radius: 8px;font-size: 14px;font-family: sans-serif;}'
+      )
+      css.appendChild(estilo)
+      document.head.appendChild(css)
+      var aviso = document.createElement('div')
+      aviso.setAttribute('id', 'aviso')
+      var contenido = document.createTextNode('URL copiada')
+      aviso.appendChild(contenido)
+      document.body.appendChild(aviso)
+      window.load = setTimeout('document.body.removeChild(aviso)', 2000)
     }
   }
 }
 </script>
 
-<style></style>
+<style scoped>
+.share {
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+  padding: 10px;
+  color: #ffffff;
+  background: #990000;
+  text-align: center;
+}
+</style>
