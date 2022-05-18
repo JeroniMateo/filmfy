@@ -48,12 +48,9 @@
 </template>
 
 <script>
-import UserItems from '../UserProfile/UserImage.vue'
+
 export default {
-  name: 'UserItems',
-  components: {
-    UserItems
-  }
+  name: 'UserItems'
 }
 </script>
 
