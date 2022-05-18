@@ -24,13 +24,11 @@ export default {
     return {
       movie:'',
       movies: [],
-      watch_movie:'',
       watchList: [],
       img_list: '',
       title_list: '',
       description_list: '',
-      user_list: '',
-      user_lists:[],
+      
     }
   },
   props: {

@@ -4,7 +4,7 @@
       <div class="card h-100" @click="goIntoList">
         <img class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title" id="title_list"> {{ title_list }} </h5>
+          <h5 class="card-title" id="title_list">{{ title_list }}</h5>
           <p class="card-text" id="description_list">
             {{ description_list }}
           </p>
@@ -20,14 +20,15 @@
 <script>
 export default {
   name: 'UserLists',
-  data: {
-    movie: '',
-    movies: [],
-    user_list: '',
-    user_lists: [],
-    img_list: '',
-    title_list: '',
-    description_list: ''
+  data() {
+    return {
+      movie: '',
+      movies: [],
+      user_lists: [],
+      img_list: '',
+      title_list: '',
+      description_list: ''
+    }
   },
   props: {
     playlist: {
