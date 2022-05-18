@@ -119,7 +119,7 @@
 export default {
   name: 'Register',
 
-  data() {
+  data () {
     return {
       userName: '',
       name: '',
@@ -134,7 +134,7 @@ export default {
     setCookie: function (cname, cvalue, exdays) {
       const d = new Date()
       d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
-      let expires = 'expires=' + d.toGMTString()
+      const expires = 'expires=' + d.toGMTString()
       document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
     },
     signUpAPI: function () {
@@ -221,7 +221,7 @@ input {
 #layoutRegister {
   margin: auto;
   width: 85%;
-  background-color:#000 ;
+  background-color: #000;
   display: flex;
   flex-direction: column;
 }

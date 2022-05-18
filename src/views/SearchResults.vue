@@ -10,7 +10,7 @@
 import WatchItemCard from '../components/Movies/WatchItemCard.vue'
 export default {
   name: 'SearchResults',
-  data() {
+  data () {
     return {
       search: {
         query: '',
@@ -23,15 +23,15 @@ export default {
           movie: '',
           movies: []
         }
-      },
+      }
     }
   },
   components: {
     WatchItemCard
   },
   methods: {
-    searchResult() {
-      if (this.movies.length == 0) {
+    searchResult () {
+      if (this.movies.length === 0) {
         document.getElementById('SearchResultsContent').innerHTML =
           '<h1>{{No se encontraron resultados}}</h1>'
       }

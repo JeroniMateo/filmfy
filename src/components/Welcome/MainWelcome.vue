@@ -10,7 +10,7 @@
           >
         </h4>
         <br />
-        <p class="card-text" >
+        <p class="card-text">
           Tu sitio para disfrutar del contenido digital ideal
         </p>
       </div>
@@ -103,5 +103,4 @@ p {
   font-size: 2rem;
   padding: 1%;
 }
-
 </style>

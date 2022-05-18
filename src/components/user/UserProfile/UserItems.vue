@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <form action="" method="post">
       <div class="ImageProfile">
-        <UserItems/>
+        <UserItems />
       </div>
       <div class="mb-3 row">
         <label for="inputUsername" class="col-sm-2 col-form-label"
@@ -48,14 +48,13 @@
 </template>
 
 <script>
-import UserItems from '../UserProfile/UserImage.vue';
+import UserItems from '../UserProfile/UserImage.vue'
 export default {
-  name: "UserItems",
-  components:{
+  name: 'UserItems',
+  components: {
     UserItems
   }
-};
+}
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

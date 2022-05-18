@@ -11,7 +11,6 @@ import MainWelcome from '../Welcome/MainWelcome.vue'
 import WelcomeCards from '../Welcome/WelcomeCards.vue'
 import FeaturedContent from '../Welcome/FeaturedContent.vue'
 export default {
-
   name: 'HomeNotLog',
   components: {
     MainWelcome,

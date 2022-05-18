@@ -4,10 +4,8 @@
       <b>{{ username }} Playlists</b>
     </h2>
     <div id="Listas">
-      <div class="lista"><FavsLists/></div>
-      <div class="lista"><WatchList/></div>
-      
-      
+      <div class="lista"><FavsLists /></div>
+      <div class="lista"><WatchList /></div>
     </div>
   </div>
 </template>
@@ -21,17 +19,17 @@ export default {
   components: {
     WatchList,
     FavsLists,
-    UserLists,
+    UserLists
   },
-  data() {
+  data () {
     return {
       username: '',
       user_list: '',
-      user_lists: [],
+      user_lists: []
     }
   },
   methods: {
-    goToMoviesList() {
+    goToMoviesList () {
       this.$router.push({
         path: '/moviesList/:id',
         query: {

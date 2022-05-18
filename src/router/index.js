@@ -12,7 +12,6 @@ import Outstandings from '../views/Outstandings.vue'
 import Playlists from '../views/my-lists/Playlists.vue'
 import ListContent from '../views/my-lists/ListContent.vue'
 
-
 import VerMasCateogries from '../views/watchContent/VerMasCategories.vue'
 import UserProfile from '../views/user/UserProfile.vue'
 import UserSettings from '../views/user/UserSettings.vue'
@@ -40,7 +39,7 @@ const routes = [
     component: MovieContent
   },
   {
-    path:'/movies/:category/:id',
+    path: '/movies/:category/:id',
     name: 'movie-content-category',
     component: VerMasCateogries
   },

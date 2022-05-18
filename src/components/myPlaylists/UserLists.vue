@@ -20,7 +20,7 @@
 <script>
 export default {
   name: 'UserLists',
-  data() {
+  data () {
     return {
       movie: '',
       movies: [],
@@ -37,7 +37,7 @@ export default {
     }
   },
   methods: {
-    goIntoList() {
+    goIntoList () {
       this.$router.push('/moviesList/')
     }
   }

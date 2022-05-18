@@ -24,9 +24,15 @@
         </div>
         <div class="card-footer">
           <h5 class="text-muted" id="category_movie">
-            Category {{ categories_movie }} <div id="watch_movie"><button id=""></button></div>
+            Category {{ categories_movie }}
+            <div id="watch_movie"><button id=""></button></div>
 
-            <button type="button" class="favButton" id="FavWatch" @click="addFavs">
+            <button
+              type="button"
+              class="favButton"
+              id="FavWatch"
+              @click="addFavs"
+            >
               <img
                 class="favIMG"
                 src="../../assets/img/FavWatch/NotFav.png"
@@ -56,16 +62,16 @@
 export default {
   name: 'WatchItemCard',
 
-  data() {
+  data () {
     return {
       movie_info: {
         title_movie: 'El Padrino',
         rating_movie: '5/5',
         categories_movie: 'Drama',
-        img_movie_img: '../../assets/img/MoviesIMG/el-padrino.jpg',
+        img_movie_img: '../../assets/img/MoviesIMG/el-padrino.jpg'
       },
-      movie_img:{
-        img_movie_img: '../../assets/img/MoviesIMG/el-padrino.jpg',
+      movie_img: {
+        img_movie_img: '../../assets/img/MoviesIMG/el-padrino.jpg'
       },
       favorites: true,
       title_movie: '',
@@ -78,8 +84,8 @@ export default {
     }
   },
   methods: {
-    addFavs() {
-      if (favorites) {
+    addFavs () {
+      if (this.favorites) {
         document.getElementById('img_fav')[0].src =
           '../../assets/img/FavWatch/Fav.png'
         return (this.favorites = false)
@@ -89,7 +95,7 @@ export default {
         return (this.favorites = true)
       }
     },
-    goMovieContentInfo() {
+    goMovieContentInfo () {
       this.$router.push({
         path: '/movies/:id',
         query: {
@@ -114,7 +120,7 @@ export default {
   background-color: #242424;
   color: #fff;
 }
-#FavWatch{
+#FavWatch {
   position: absolute;
   top: 0;
   right: 0;

@@ -1,17 +1,17 @@
 <template>
-  <div class="WatchList container-fluid "> 
-      <div class="col">
-        <div class="card h-100" @click="goIntoWatchList">
-          <img id="img_list" class="card-img-top" alt="..."  />
-          <div class="card-body">
-            <h5 class="card-title" id="title_list">Watched Movies</h5>
-            <small class="card-text" id="description_list">
-              Playlist with all the movies you have watched
-            </small>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted" id="user_list">by Filmfy</small>
-          </div>
+  <div class="WatchList container-fluid">
+    <div class="col">
+      <div class="card h-100" @click="goIntoWatchList">
+        <img id="img_list" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title" id="title_list">Watched Movies</h5>
+          <small class="card-text" id="description_list">
+            Playlist with all the movies you have watched
+          </small>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted" id="user_list">by Filmfy</small>
+        </div>
       </div>
     </div>
   </div>
@@ -20,15 +20,14 @@
 <script>
 export default {
   name: 'WatchList',
-  data() {
+  data () {
     return {
-      movie:'',
+      movie: '',
       movies: [],
       watchList: [],
       img_list: '',
       title_list: '',
-      description_list: '',
-      
+      description_list: ''
     }
   },
   props: {
@@ -38,10 +37,10 @@ export default {
     }
   },
   methods: {
-    goIntoWatchList(){
+    goIntoWatchList () {
       this.$router.push('/moviesList/')
     }
-  },
+  }
 }
 </script>
 

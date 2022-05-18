@@ -5,7 +5,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <router-link to="/">
-          <div id="FILMFY">
+            <div id="FILMFY">
               <!--Filmfy Icon-->
               <img
                 src="../../../assets/img/cameraLogo.png"
@@ -77,14 +77,14 @@
 export default {
   name: 'Navbar',
 
-  data() {
+  data () {
     return {
       log: true,
-      search_result: '',
+      search_result: ''
     }
   },
   methods: {
-    searchContent() {
+    searchContent () {
       this.search_result = document.getElementById('searchingInput').value
       this.$router.push('/search/' + this.search)
     }

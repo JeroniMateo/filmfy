@@ -87,31 +87,29 @@
 </template>
 
 <script>
-import WatchItemOptions from '../watchContentCategories/WatchItemOptions.vue'
 import WatchItemCard from '../WatchItemCard.vue'
 
 export default {
   name: 'WatchContentCarrousel',
   components: {
-    WatchItemOptions,
     WatchItemCard
   },
-  data() {
+  data () {
     return {
       favorites: true,
-      movie: "",
+      movie: '',
       movies: [],
       movies_categories: [],
       loading: true,
       error: false,
-      errorMessage: "Category not found",
+      errorMessage: 'Category not found'
     }
   },
   methods: {
-    verMas() {
+    verMas () {
       this.$router.push('/movies/:category/:id')
     }
-}
+  }
 }
 </script>
 
@@ -236,7 +234,7 @@ div.title {
   background-color: #2c3e50;
   width: 15vh;
 }
-#CarouselMovies{
+#CarouselMovies {
   margin: auto;
   width: 95%;
 }

@@ -1,34 +1,31 @@
 <template>
- <footer>
+  <footer>
     <div id="footer" class="container-fluid p-2">
-    <div class="filmfyFooter">
-      <img src="../../assets/img/cameraLogo.png" alt="" />
-      <small>Filfmy.es</small>
+      <div class="filmfyFooter">
+        <img src="../../assets/img/cameraLogo.png" alt="" />
+        <small>Filfmy.es</small>
+      </div>
+      <div class="socials">
+        <font-awesome-icon icon="fa-brands fa-facebook" />
+        <font-awesome-icon icon="fa-brands fa-twitter" />
+        <font-awesome-icon icon="fa-brands fa-instagram" />
+        <font-awesome-icon icon="fa-brands fa-youtube" />
+      </div>
+      <div class="copyright">
+        <pre> © 2021 Copyright: Filmfy.es</pre>
+        <small>
+          Encuentra variedad de conentido y crea listas para compartirlas con
+          tus amigos</small
+        >
+      </div>
     </div>
-    <div class="socials">
-      <font-awesome-icon icon="fa-brands fa-facebook" />
-      <font-awesome-icon icon="fa-brands fa-twitter" />
-      <font-awesome-icon icon="fa-brands fa-instagram" />
-      <font-awesome-icon icon="fa-brands fa-youtube" />
-    </div>
-    <div class="copyright">
-      <pre> © 2021 Copyright: Filmfy.es</pre>
-      <small>
-        Encuentra variedad de conentido y crea listas para compartirlas con tus
-        amigos</small
-      >
-    </div>
-  </div>
- </footer>
+  </footer>
 </template>
 
 <script>
 import Navbar from './header/Navbar.vue'
 export default {
-  name: 'Footer',
-  components: {
-    Navbar
-  }
+  name: 'Footer'
 }
 </script>
 

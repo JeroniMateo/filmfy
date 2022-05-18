@@ -67,7 +67,7 @@
 export default {
   name: 'Login',
 
-  data() {
+  data () {
     return {
       email: '',
       password: '',
@@ -77,8 +77,8 @@ export default {
 
   methods: {
     LoginAPI: function () {
-      let authString = `${this.email}:${this.password}`
-      let headers = new Headers()
+      const authString = `${this.email}:${this.password}`
+      const headers = new Headers()
       headers.set('Authorization', 'Basic ' + btoa(authString))
 
       fetch('', {
@@ -99,20 +99,20 @@ export default {
     setCookie: function (cname, cvalue, exdays) {
       const d = new Date()
       d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
-      let expires = 'expires=' + d.toGMTString()
+      const expires = 'expires=' + d.toGMTString()
       document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
     },
 
     getCookie: function (cname) {
-      let name = cname + '='
-      let decodedCookie = decodeURIComponent(document.cookie)
-      let ca = decodedCookie.split(';')
+      const name = cname + '='
+      const decodedCookie = decodeURIComponent(document.cookie)
+      const ca = decodedCookie.split(';')
       for (let i = 0; i < ca.length; i++) {
         let c = ca[i]
-        while (c.charAt(0) == ' ') {
+        while (c.charAt(0) === ' ') {
           c = c.substring(1)
         }
-        if (c.indexOf(name) == 0) {
+        if (c.indexOf(name) === 0) {
           return c.substring(name.length, c.length)
         }
       }

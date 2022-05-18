@@ -6,7 +6,7 @@
         <div class="col-md-12">
           <div class="container">
             <div class="TopMovieHead">
-              <h3 id="topMovieNum">{{ title_movie }} </h3>
+              <h3 id="topMovieNum">{{ title_movie }}</h3>
             </div>
             <div class="card bg-dark text-white" id="TopMovieContent">
               <img
@@ -26,12 +26,12 @@
 <script>
 export default {
   name: 'TopMovie',
-  data() {
+  data () {
     return {
       title_movie: '',
-      img_movie: '',
+      img_movie: ''
     }
-  },
+  }
 }
 </script>
 

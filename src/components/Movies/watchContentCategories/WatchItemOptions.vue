@@ -44,13 +44,10 @@
 </template>
 
 <script>
-import UserLists from '../../myPlaylists/UserLists.vue'
 export default {
   name: 'WatchItemConfig',
-  components: {
-    UserLists
-  },
-  data() {
+
+  data () {
     return {
       favs: false,
       watch: false,
@@ -64,47 +61,47 @@ export default {
     }
   },
   methods: {
-    addFavs() {
+    addFavs () {
       this.favs = true
       this.favsList.push(this.movie)
     },
-    removeFavs() {
+    removeFavs () {
       this.favs = false
       this.favsList.pop(this.movie)
     },
-    addWatched() {
+    addWatched () {
       this.watch = true
       this.watchList.push(this.movie)
     },
-    removeWatched() {
+    removeWatched () {
       this.watch = false
       this.watchList.pop(this.movie)
     },
-    addToList() {
+    addToList () {
       this.user_list = this.user_lists.filter(
-        (list) => list.name == this.user_list_name
+        (list) => list.name === this.user_list_name
       )
       this.user_list[0].movies.push(this.movie)
       this.user_list[0].movies.push(this.movie)
     },
-    getlink() {
-      var aux = document.createElement('input')
+    getlink () {
+      const aux = document.createElement('input')
       aux.setAttribute('value', window.location.href)
       document.body.appendChild(aux)
       aux.select()
       document.execCommand('copy')
       document.body.removeChild(aux)
 
-    //Aqui se puede añadir una alerta de que se ha copiado el link
-      var css = document.createElement('style')
-      var estilo = document.createTextNode(
+      // Aqui se puede añadir una alerta de que se ha copiado el link
+      const css = document.createElement('style')
+      const estilo = document.createTextNode(
         '#aviso {position:fixed; z-index: 9999999; widht: 120px; top:30%;left:50%;margin-left: -60px;padding: 20px; background: gold;border-radius: 8px;font-size: 14px;font-family: sans-serif;}'
       )
       css.appendChild(estilo)
       document.head.appendChild(css)
-      var aviso = document.createElement('div')
+      const aviso = document.createElement('div')
       aviso.setAttribute('id', 'aviso')
-      var contenido = document.createTextNode('URL copiada')
+      const contenido = document.createTextNode('URL copiada')
       aviso.appendChild(contenido)
       document.body.appendChild(aviso)
       window.load = setTimeout('document.body.removeChild(aviso)', 2000)

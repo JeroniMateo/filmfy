@@ -1,6 +1,5 @@
 <template>
   <div id="WelcomeCards" class="container-fluid">
-    
     <div class="card mb-3 container-fluid" id="welcomeCard">
       <div class="row g-0">
         <div class="col-md-4">
@@ -117,15 +116,15 @@ div.cardText {
 }
 
 div#welcomeCard {
- display: flex;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    align-content: space-around;
-    flex-direction: row;
-    height: 40vh;
-    background-color: #000;
-    align-items: center;
-    padding: 3%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  flex-direction: row;
+  height: 40vh;
+  background-color: #000;
+  align-items: center;
+  padding: 3%;
 }
 #WelcomeCards {
   margin: auto;

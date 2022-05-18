@@ -5,24 +5,22 @@
       <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
       <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
     </div>
-    <div id="UpcomingCartelera">
-      
-    </div>
+    <div id="UpcomingCartelera"></div>
   </div>
 </template>
 
 <script>
-  import WatchItemCard from "../components/Movies/WatchItemCard.vue";
+import WatchItemCard from '../components/Movies/WatchItemCard.vue'
 export default {
   name: 'BillBoard',
-  data() {
+  data () {
     return {
       movies: [],
       upcoming: [],
       loading: true,
       error: false,
-      errorMessage: "",
-    };
+      errorMessage: ''
+    }
   },
   components: {
     WatchItemCard

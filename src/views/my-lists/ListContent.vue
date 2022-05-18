@@ -1,11 +1,17 @@
 <template>
   <div id="ListContent" class="container" style="background-color: #191a19">
     <div id="headerList">
-      <h3 id="title_list"><b> {{ title_list }} </b></h3>
-      <img id="img_list" alt="">
+      <h3 id="title_list">
+        <b> {{ title_list }} </b>
+      </h3>
+      <img id="img_list" alt="" />
     </div>
     <div id="MovieList" class="row row-cols-1 p-5 row-cols-md-3 g-4">
-      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.playlist" />
+      <WatchItemCard
+        v-for="movie in movies"
+        :movie="movie"
+        :key="movie.playlist"
+      />
     </div>
   </div>
 </template>
@@ -17,16 +23,16 @@ export default {
   components: {
     WatchItemCard
   },
-  data() {
+  data () {
     return {
       movie: '',
       movies: [],
       user_list: '',
       user_lists: [],
       img_list: '',
-      title_list: '',
+      title_list: ''
     }
-  },
+  }
 }
 </script>
 

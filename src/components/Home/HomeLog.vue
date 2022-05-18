@@ -53,7 +53,7 @@ h3 {
   height: 12vh;
   background-color: #000;
   text-align: center;
-  font-weight:bold;
+  font-weight: bold;
 }
 .HomeSection {
   background-color: #161414;

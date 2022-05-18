@@ -11,11 +11,9 @@
 
 <script>
 import WatchContentCarrousel from '../components/Movies/watchContentCategories/WatchContantCarrousel.vue'
-import WatchItemOptions from '../components/Movies/watchContentCategories/WatchItemOptions.vue'
-import WatchItemCard from '../components/Movies/WatchItemCard.vue'
 export default {
   name: 'Movies',
-  data() {
+  data () {
     return {
       movies: [],
       movies_cateogories: [],
@@ -26,9 +24,7 @@ export default {
     }
   },
   components: {
-    WatchItemOptions,
-    WatchContentCarrousel,
-    WatchItemCard
+    WatchContentCarrousel
   }
 }
 </script>

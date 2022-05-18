@@ -2,7 +2,12 @@
   <div id="UserProfile" class="container">
     <div class="mb-3">
       <label for="userNameUP">User Name</label>
-      <input type="text" name="userName" id="userNameUP" value="{{ userName }}" />
+      <input
+        type="text"
+        name="userName"
+        id="userNameUP"
+        value="{{ userName }}"
+      />
     </div>
     <div class="mb-3">
       <label for="nameUP">Name</label>
@@ -10,7 +15,12 @@
     </div>
     <div class="mb-3">
       <label for="lastNameUP">Last Name</label>
-      <input type="text" name="lastName" id="lastNameUP" value="{{ lastName }}" />
+      <input
+        type="text"
+        name="lastName"
+        id="lastNameUP"
+        value="{{ lastName }}"
+      />
     </div>
     <div class="mb-3">
       <label for="emailUP">Email</label>
@@ -39,7 +49,7 @@
 <script>
 export default {
   name: 'UserProfile',
-  data() {
+  data () {
     return {
       userName: '',
       name: '',

@@ -4,7 +4,7 @@
       <HomeLog />
     </div>
     <div v-else id="HomeNotUserLog">
-      <HomeNotLog/>
+      <HomeNotLog />
     </div>
   </div>
 </template>
@@ -17,17 +17,17 @@ export default {
   components: {
     HomeNotLog,
     HomeLog
-},
-  data() {
+  },
+  data () {
     return {
       log: true
     }
-  },
+  }
 }
 </script>
 <style scoped>
 h3 {
-  color: #4E9F3D;
+  color: #4e9f3d;
   font-size: 6vh;
   width: 100%;
   height: 8vh;

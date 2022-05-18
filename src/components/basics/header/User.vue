@@ -4,7 +4,7 @@
       v-if if log = false
         div id="UserNotLog"
 
-      v-else if log = true 
+      v-else if log = true
         div id="UserLog"
       -->
 
@@ -21,21 +21,21 @@
 </template>
 
 <script>
-import UserLog from "@/components/user/UserHeader/UserLog.vue";
-import UserNotLog from "@/components/user/UserHeader/UserNotLog.vue";
+import UserLog from '@/components/user/UserHeader/UserLog.vue'
+import UserNotLog from '@/components/user/UserHeader/UserNotLog.vue'
 
 export default {
-  name: "User",
+  name: 'User',
   components: {
     UserLog,
-    UserNotLog,
+    UserNotLog
   },
-  data() {
+  data () {
     return {
-      log: false,
-    };
-  },
-};
+      log: false
+    }
+  }
+}
 </script>
 
 <style scoped>

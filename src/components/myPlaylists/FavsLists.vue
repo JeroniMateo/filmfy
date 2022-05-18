@@ -1,17 +1,17 @@
 <template>
-  <div class="FavsList container-fluid"> 
-      <div class="col FavsList">
-        <div class="card h-100" @click="goIntoFavsList">
-          <img class="card-img-top" alt="..."  id="img_list"/>
-          <div class="card-body">
-            <h5 class="card-title" id="title_list">Favorites Movies</h5>
-            <small class="card-text" id="description_list">
-              Playlist with all the movies you have watched
-            </small>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted" id="user_list">by Filmfy</small>
-          </div>
+  <div class="FavsList container-fluid">
+    <div class="col FavsList">
+      <div class="card h-100" @click="goIntoFavsList">
+        <img class="card-img-top" alt="..." id="img_list" />
+        <div class="card-body">
+          <h5 class="card-title" id="title_list">Favorites Movies</h5>
+          <small class="card-text" id="description_list">
+            Playlist with all the movies you have watched
+          </small>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted" id="user_list">by Filmfy</small>
+        </div>
       </div>
     </div>
   </div>
@@ -20,14 +20,14 @@
 <script>
 export default {
   name: 'FavsList',
-  data() {
+  data () {
     return {
-      movie:'',
+      movie: '',
       movies: [],
       favsList: [],
       img_list: '',
       title_list: '',
-      description_list: '',
+      description_list: ''
     }
   },
   props: {
@@ -37,11 +37,10 @@ export default {
     }
   },
   methods: {
-    goIntoFavsList() {
+    goIntoFavsList () {
       this.$router.push('/moviesList/')
     }
-  },
-
+  }
 }
 </script>
 

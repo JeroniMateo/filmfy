@@ -1,20 +1,20 @@
 <template>
-    <div class="container-fluid p-1" id="header">
-      <Navbar />
-      <User />
-    </div>
+  <div class="container-fluid p-1" id="header">
+    <Navbar />
+    <User />
+  </div>
 </template>
 
 <script>
-import Navbar from "../basics/header/Navbar.vue";
-import User from "../basics/header/User.vue";
+import Navbar from '../basics/header/Navbar.vue'
+import User from '../basics/header/User.vue'
 export default {
-  name: "Header",
+  name: 'Header',
   components: {
     Navbar,
-    User,
-  },
-};
+    User
+  }
+}
 </script>
 
 <style scoped>
