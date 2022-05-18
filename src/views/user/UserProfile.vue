@@ -1,32 +1,55 @@
 <template>
   <div id="UserProfile" class="container">
-    <header class="jumbotron">
-      <h3>
-        <strong>{{ currentUser.username }}</strong> Profile
-      </h3>
-    </header>
-    <p>
-      <strong>Token:</strong>
-      {{ currentUser.accessToken.substring(0, 20) }} ...
-      {{ currentUser.accessToken.substr(currentUser.accessToken.length - 20) }}
-    </p>
-    <p>
-      <strong>Id:</strong>
-      {{ currentUser.id }}
-    </p>
-    <p>
-      <strong>Email:</strong>
-      {{ currentUser.email }}
-    </p>
-    <strong>Authorities:</strong>
-    <ul>
-      <li v-for="role in currentUser.roles" :key="role">{{ role }}</li>
-    </ul>
+    <div class="mb-3">
+      <label for="userNameUP">User Name</label>
+      <input type="text" name="userName" id="userNameUP" value="{{ userName }}" />
+    </div>
+    <div class="mb-3">
+      <label for="nameUP">Name</label>
+      <input type="text" name="name" id="nameUP" value="{{ name }}" />
+    </div>
+    <div class="mb-3">
+      <label for="lastNameUP">Last Name</label>
+      <input type="text" name="lastName" id="lastNameUP" value="{{ lastName }}" />
+    </div>
+    <div class="mb-3">
+      <label for="emailUP">Email</label>
+      <input type="email" name="email" id="emailUP" value="{{ email }}" />
+    </div>
+    <div class="mb-3">
+      <label for="passwordUP">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="passwordUP"
+        value="{{ password }}"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="passwordConfirmUP">Password Confirm</label>
+      <input
+        type="password"
+        name="passwordConfirm"
+        id="passwordConfirmUP"
+        value="{{ passwordConfirm }}"
+      />
+    </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'UserProfile'
+  name: 'UserProfile',
+  data() {
+    return {
+      userName: '',
+      name: '',
+      lastName: '',
+      email: '',
+      password: '',
+      passwordConfirm: '',
+      log: true
+    }
+  }
 }
 </script>
 <style>

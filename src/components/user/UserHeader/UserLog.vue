@@ -2,11 +2,10 @@
   <div class="userAcount">
     <img src="../../../assets/img/UserPhoto.png" alt="" />
     <li id="userProfile" class="nav-item dropdown">
-      <img id="UserLogIMG" alt="">
-        <!--Username log-->
-        <p>Username</p>
+      <img id="img_user" alt="">
+        <p id="userName">{{ userName }}</p>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <router-link class="dropdown-item" to="/profile">
+        <router-link class="dropdown-item" to="/userProfile">
           <li>Perfil</li>
         </router-link>
         <router-link class="dropdown-item" to="/settings">
@@ -27,7 +26,9 @@ export default {
 
   data() {
     return {
-      log: true
+      log: true,
+      userName: '',
+      img_user: '',
     }
   },
   methods: {
