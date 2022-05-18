@@ -1,8 +1,6 @@
 <template>
   <div id="WatchingMovie">
-    <div class="movieInfo">
-      <h1 id="Movie Title"></h1>
-    </div>
+    <h1 id="Movie Title"></h1>
     <div class="container-fluid">
       <div class="card mb-3">
         <div class="row g-0" id="MovieCardInfo">
@@ -15,41 +13,39 @@
             />
           </div>
           <div class="col-md-8">
-            <div class="card-body">
-              <div class="MainInfo">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item" id="MovieContentTitle">
-                    <label for="">Titulo:</label>
-                    <p id="title_movie">{{ title_movie }}</p>
-                  </li>
-                  <li class="list-group-item" id="MovieContentYear">
-                    <label for="">Fecha:</label>
-                    <p id="date_movie">{{ date_movie }}</p>
-                  </li>
-                  <li class="list-group-item" id="MovieContentGenre">
-                    <label for="">Genero:</label>
-                    <p id="category_movie">{{ category_movie }}</p>
-                  </li>
-                  <li class="list-group-item" id="MovieContentDirectors">
-                    <label for="">Directores:</label>
-                    <p id="directors_movie">{{ directors_movie }}</p>
-                  </li>
-                  <li class="list-group-item" id="MovieContentActors">
-                    <label for="">Actores:</label>
-                    <p id="actors_movie">{{ actors_movie }}</p>
-                  </li>
-                  <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Valoracíon:</label>
-                    <p id="rating_movie">{{ rating_movie }}</p>
-                  </li>
-                  <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Vista <button></button></label>
-                  </li>
-                  <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Favoritos <button></button></label>
-                  </li>
-                </ul>
-              </div>
+            <div class="MainInfo card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="MovieContentTitle">
+                  <label for="">Titulo:</label>
+                  <p id="title_movie">{{ title_movie }}</p>
+                </li>
+                <li class="list-group-item" id="MovieContentYear">
+                  <label for="">Fecha:</label>
+                  <p id="date_movie">{{ date_movie }}</p>
+                </li>
+                <li class="list-group-item" id="MovieContentGenre">
+                  <label for="">Genero:</label>
+                  <p id="category_movie">{{ category_movie }}</p>
+                </li>
+                <li class="list-group-item" id="MovieContentDirectors">
+                  <label for="">Directores:</label>
+                  <p id="directors_movie">{{ directors_movie }}</p>
+                </li>
+                <li class="list-group-item" id="MovieContentActors">
+                  <label for="">Actores:</label>
+                  <p id="actors_movie">{{ actors_movie }}</p>
+                </li>
+                <li class="list-group-item" id="MovieContentRuntime">
+                  <label for="">Valoracíon:</label>
+                  <p id="rating_movie">{{ rating_movie }}</p>
+                </li>
+                <li class="list-group-item" id="MovieContentRuntime">
+                  <label for="">Vista <button></button></label>
+                </li>
+                <li class="list-group-item" id="MovieContentRuntime">
+                  <label for="">Favoritos <button></button></label>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -107,45 +103,39 @@
       <div id="Opinions">
         <h2 class="OpnionTitle">Comentarios y Valoraciones</h2>
         <div id="MovieContentOpinion">
-          <div id="MovieContentOpinionUser">
-            <div id="MovieContentOpinionHeader">
-              <button id="añadirComentario" @click="añadirComentario;">
-                Añadir Comentario
-              </button>
-            </div>
-            <div id="AddComment"></div>
-            <div id="CommentArea" style="display: none">
-              <textarea
-                name="Comentario"
-                id="CommentTextArea"
-                cols="90"
-                rows="10"
-              ></textarea>
-              <button id="btnComentar" @click="comentar">Comentar</button>
-            </div>
-            <div id="Comments" style="display: none">
-              <div id="UserComent">
-                <div id="MovieContentOpinionUser">
-                  <div class="OpinionUserImage">
-                    <img
-                      id="img_user"
-                      src="../../assets/img/cameraLogo.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="OpinionUserName">
-                    <h4 id="username">{{ username }}</h4>
-                  </div>
-                </div>
-                <div id="CommentText">
-                  <p id="comentaries">{{ comentaries }}</p>
-                </div>
-                <div id="OpinionContent">
-                  <div id="MovieContentOpinionDate">
-                    <p id="DateComment">{{ date_comment }}</p>
-                  </div>
-                </div>
+          <div id="MovieContentOpinionHeader">
+            <button id="añadirComentario" @click="añadirComentario;">
+              Añadir Comentario
+            </button>
+          </div>
+          <div id="AddComment"></div>
+          <div id="CommentArea" style="display: none">
+            <textarea
+              name="comment"
+              id="CommentTextArea comment"
+              cols="90"
+              rows="10"
+            ></textarea>
+            <button id="btnComentar" @click="comentar">Comentar</button>
+          </div>
+          <div id="Comments" style="display: none">
+            <div id="UserArea">
+              <div class="img_user_area">
+                <img
+                  id="img_user"
+                  src="../../assets/img/cameraLogo.png"
+                  alt=""
+                />
               </div>
+              <div class="username_area">
+                <h4 id="username">{{ username }}</h4>
+              </div>
+            </div>
+            <div id="user_comment_area">
+              <p id="user_comment">{{ user_comment }}</p>
+            </div>
+            <div id="date_comment_area">
+              <p id="date_comment">{{ date_comment }}</p>
             </div>
           </div>
         </div>
@@ -173,7 +163,7 @@ export default {
       img_user: '',
       username: '',
       commentaries: [],
-      comment: '',
+      user_comment: '',
       date_comment: ''
     }
   },
@@ -185,14 +175,16 @@ export default {
     },
     comentar() {
       document.getElementById('Comments').style.display = 'flex'
-      var comentario = document.getElementById('CommentTextArea').value
+      user_comment = document.getElementById('CommentTextArea').value
+
       document.getElementById(
-        'CommentText'
-      ).innerHTML = `<p id="Pcomentario">${comentario}</p>`
+        'user_comment_area'
+      ).innerHTML = `<p id="Pcomentario">${user_comment}</p>`
+      this.commentaries.push(user_comment)
+
       document.getElementById('CommentArea').style.display = 'none'
       document.getElementById('btnComentar').style.display = 'none'
       document.getElementById('añadirComentario').style.display = 'flex'
-      this.comentarios.push(comentario)
     }
   }
 }
@@ -297,10 +289,10 @@ div#Opinions {
   flex-direction: column;
   align-items: flex-start;
 }
-div#MovieContentOpinionUser {
+div#MovieContentOpinion {
   display: flex;
 }
-div#OpinionContent {
+div#date_comment_area {
   background-color: #fff;
   border-radius: 3%;
   display: flex;
@@ -331,7 +323,7 @@ button#btnComentar {
   padding: 1%;
   color: #000;
 }
-p#DateComment {
+p#date_comment {
   font-size: 1vw;
   color: #000;
   background-color: #fff;
@@ -342,7 +334,7 @@ p#Pcomentario {
   background-color: #fff;
   border-radius: 10%;
 }
-div#UserComent {
+div#Comments {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -352,5 +344,4 @@ div#UserComent {
   color: #000;
   width: 70vh;
 }
-
 </style>
