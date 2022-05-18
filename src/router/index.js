@@ -68,12 +68,12 @@ const routes = [
   },
 
   {
-    path: '/profile',
+    path: '/userProfile',
     name: 'profile',
     component: UserProfile
   },
   {
-    path: '/settings',
+    path: '/userSettings',
     name: 'settings',
     component: UserSettings
   },
