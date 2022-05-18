@@ -35,3 +35,59 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+
+## Filmfy App
+
+### The application is divided into:
+    - **Frontend**: The frontend is developed with 'Vue.js' & 'Bootstrap'.
+    - **Backend**: The backend is developed with 'Laravel'.
+    - **Database**: The database is developed with 'MySQL'.
+    - **Deployment**: The application is deployed on '...'
+    - **Hosting**: The application is hosted on ''.
+    - **GitHub**: The application is hosted on 'GitHub'.
+    - **Documentation**: The documentation is generated with 'Markdown'.
+    - **API**: The API is developed with '' & 'Laravel'.
+    - **Domain**: The domain is developed with ''.
+    - **SSL**: The SSL is developed with ''.
+    - **DNS**: The DNS is developed with ''.
+
+## What is Filmfy?
+
+    Fimfy is a social network for movies.
+    Filmfy App is a web application that allows users to create lists of movies.
+    Our Users can create lists of movies, add movies to the list, edit the list, delete the list, and share the list with other users.
+
+    Users can also create posts and comments on the posts.
+    Users can also create comments and votes on the list.
+    - Our Lists can be created by users, and can be shared with other users.
+    - Our Lists can be voted by users.
+    - Our Movies can be rated by users.
+    - Our Users can create comments and votes on the movies.
+
+  
+    In our app we have a Billboard where see which movies have recent premieres.
+    And they can see the movies that are in the cinema.
+    We have a list of movies that we have in our database.
+    A part of that users can see the top 10 movies.
+    Also they can see the upcoming movies.
+
+    
+### Features
+    - **App
+    - **Lists**: The application allows users to create lists of movies.
+    - **Comments**: The application allows users to create comments.
+    - **Create lists**: Users can create lists of movies.
+    - **Add movies**: Users can add movies to the list.
+    - **Edit lists**: Users can edit the list.
+    - **Delete lists**: Users can delete the list.
+    - **Share lists**: Users can share the list with other users.
+    - **Search movies**: Users can search movies.
+    - **See the list of comments**: Users can see the list of comments.
+    - **See the list of reports**: Users can see the list of reports.
+    - **See the list of posts**: Users can see the list of posts.
+    - **See the list of comments**: Users can see the list of comments.
+    - **See the list of votes**: Users can see the list of votes.
+
