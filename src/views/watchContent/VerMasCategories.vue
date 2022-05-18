@@ -1,5 +1,5 @@
 <template>
-<div id="VerMasGenres" class="row row-cols-1 p-2 row-cols-md-5 g-2">
+<div id="VerMasCateogires" class="row row-cols-1 p-2 row-cols-md-5 g-2">
          <WatchItemCard
                 v-for="movie in movies"
                 :movie="movie"
@@ -11,7 +11,7 @@
 <script>
 import WatchItemCard from '../../components/Movies/WatchItemCard.vue'
 export default{
-    name: 'VerMasGenres',
+    name: 'VerMasCateogires',
     components: {
         WatchItemCard
         }
@@ -19,7 +19,7 @@ export default{
 </script>
 
 <style scoped>
-div#VerMasGenres {
+div#VerMasCateogires {
   background-color: #0b120b;
   color: #000;
   font-family: Arial;

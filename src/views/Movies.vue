@@ -1,33 +1,36 @@
 <template>
   <div id="CinePeliculas" class="container-fluid">
-    <div id="CineCarrousel" class="row row-cols-1 p-6 row-cols-md-1 g-4 container-fluid">
-    <WatchContentCarrousel />
+    <div
+      id="CineCarrousel"
+      class="row row-cols-1 p-6 row-cols-md-1 g-4 container-fluid"
+    >
+      <WatchContentCarrousel />
     </div>
   </div>
 </template>
 
 <script>
-import WatchContentCarrousel from "../components/Movies/watchContentGenres/WatchContantCarrousel.vue";
-import WatchItemOptions from "../components/Movies/watchContentGenres/WatchItemOptions.vue";
-import WatchItemCard from "../components/Movies/WatchItemCard.vue";
+import WatchContentCarrousel from '../components/Movies/watchContentCategories/WatchContantCarrousel.vue'
+import WatchItemOptions from '../components/Movies/watchContentCategories/WatchItemOptions.vue'
+import WatchItemCard from '../components/Movies/WatchItemCard.vue'
 export default {
-  name: "Movies",
+  name: 'Movies',
   data() {
     return {
       movies: [],
-      moviesGenres: [],
-      movie: "",
+      movies_cateogories: [],
+      movie: '',
       loading: true,
       error: false,
-      errorMessage: "",
-    };
+      errorMessage: ''
+    }
   },
   components: {
     WatchItemOptions,
     WatchContentCarrousel,
-    WatchItemCard,
-  },
-};
+    WatchItemCard
+  }
+}
 </script>
 
 <style scoped>
@@ -49,5 +52,4 @@ div#CineCarrousel {
   align-content: center;
   width: 100%;
 }
-
 </style>

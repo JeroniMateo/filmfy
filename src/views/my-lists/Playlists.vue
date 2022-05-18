@@ -1,16 +1,18 @@
 <template>
   <div id="Playlists" class="container-fluid" @click="goMoviesLists">
-    <h2><b>{{ username }} Playlists</b></h2>
-   <div id="Listas">
-      <div class="playlist"><FavsLists /></div>
-    <div class="playlist"><WatchList /></div>
-    <div class="playlist"><UserLists v-for="list in 2" :movie="list" :key="list.name" /></div>
-   </div>
+    <h2>
+      <b>{{ username }} Playlists</b>
+    </h2>
+    <div id="Listas">
+      <div class="lista"><FavsLists/></div>
+      <div class="lista"><WatchList/></div>
+      
+      
+    </div>
   </div>
 </template>
 
 <script>
-import ListProfile from '../../components/myPlaylists/FavsLists.vue'
 import FavsLists from '../../components/myPlaylists/FavsLists.vue'
 import WatchList from '../../components/myPlaylists/WatchList.vue'
 import UserLists from '../../components/myPlaylists/UserLists.vue'
@@ -18,13 +20,14 @@ export default {
   name: 'Playlists',
   components: {
     WatchList,
-    ListProfile,
     FavsLists,
-    UserLists
+    UserLists,
   },
   data() {
     return {
-      username: ''
+      username: '',
+      user_list: '',
+      user_lists: [],
     }
   },
   methods: {
@@ -50,7 +53,6 @@ h2 {
   color: #fff;
   background-color: #000;
   font-size: 6vh;
-
 }
 #Playlists {
   margin: auto;
@@ -58,7 +60,7 @@ h2 {
 }
 div#Listas {
   background-color: #000;
-  color: #000;
+  color: #fff;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
@@ -69,5 +71,4 @@ div#Listas {
   align-content: center;
   width: 100%;
 }
-
 </style>
