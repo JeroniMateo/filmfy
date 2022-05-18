@@ -2,7 +2,7 @@
   <div id="WatchItemCard" class="container-fluid">
     <div
       class="col WatchItemCard"
-      id="WatchItemCardINFO"
+      id="WatchItemCardINFO movie_info"
       v-on:mouseleave="mouseleave"
       v-on:mouseover="mouseover"
       style="display: none"
@@ -39,7 +39,7 @@
       </div>
     </div>
     <div
-      id="WatchItemCardIMG"
+      id="WatchItemCardIMG movie_img"
       v-on:mouseover="mouseover"
       v-on:mouseleave="mouseleave"
     >
@@ -58,6 +58,15 @@ export default {
 
   data() {
     return {
+      movie_info: {
+        title_movie: 'El Padrino',
+        rating_movie: '5/5',
+        categories_movie: 'Drama',
+        img_movie_img: '../../assets/img/MoviesIMG/el-padrino.jpg',
+      },
+      movie_img:{
+        img_movie_img: '../../assets/img/MoviesIMG/el-padrino.jpg',
+      },
       favorites: true,
       title_movie: '',
       rating_movie: '',
