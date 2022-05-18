@@ -1,5 +1,5 @@
 <template>
-  <div id="SearchResults" class="contianer-fluid" >
+  <div id="SearchResults" class="contianer-fluid">
     <div id="SearchResultsContent" @load="searchResult">
       <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.id" />
     </div>
@@ -12,21 +12,28 @@ export default {
   name: 'SearchResults',
   data() {
     return {
-      movie: "",
-      movies: [],
-      search_result: "",
-      loading: true,
-      error: false,
-      errorMessage: "",
-    };
+      search: {
+        query: '',
+        page: 1,
+        total_pages: 1,
+        total_results: 0
+      },
+      search_result: {
+        results: {
+          movie: '',
+          movies: []
+        }
+      },
+    }
   },
   components: {
     WatchItemCard
   },
-  methods:{
-    searchResult(){
-      if(this.movies.length == 0){
-        document.getElementById("SearchResultsContent").innerHTML = "<h1>No se encontraron resultados</h1>";
+  methods: {
+    searchResult() {
+      if (this.movies.length == 0) {
+        document.getElementById('SearchResultsContent').innerHTML =
+          '<h1>{{No se encontraron resultados}}</h1>'
       }
     }
   }
