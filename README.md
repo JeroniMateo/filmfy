@@ -7,7 +7,8 @@
 
 Wireframe with Balsamiq: https://balsamiq.cloud/swio5ls/pepq8ha/r2278
 
-## Pallete Color
+
+## 1.Pallete Color
 
 - Primary: #000
 - Secondary: #ffff
@@ -39,22 +40,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 
-## Filmfy App
+## 2. Filmfy App
 
-### The application is divided into:
-    - **Frontend**: The frontend is developed with 'Vue.js' & 'Bootstrap'.
-    - **Backend**: The backend is developed with 'Laravel'.
-    - **Database**: The database is developed with 'MySQL'.
-    - **Deployment**: The application is deployed on '...'
-    - **Hosting**: The application is hosted on ''.
-    - **GitHub**: The application is hosted on 'GitHub'.
-    - **Documentation**: The documentation is generated with 'Markdown'.
-    - **API**: The API is developed with '' & 'Laravel'.
-    - **Domain**: The domain is developed with ''.
-    - **SSL**: The SSL is developed with ''.
-    - **DNS**: The DNS is developed with ''.
 
-## What is Filmfy?
+
+## 2.1. What is Filmfy?
 
     Fimfy is a social network for movies.
     Filmfy App is a web application that allows users to create lists of movies.
@@ -69,14 +59,29 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
   
     In our app we have a Billboard where see which movies have recent premieres.
-    And they can see the movies that are in the cinema.
+    - Usersthe movies that are in the cinema.
+    - Users can create lists of movies.
+    - Users can create comments and votes on the movies.
+    
     We have a list of movies that we have in our database.
     A part of that users can see the top 10 movies.
     Also they can see the upcoming movies.
 
     
-### Features
-    - **App
+### 2.2. The application is divided into:
+    - **Frontend**: The frontend is developed with 'Vue.js' & 'Bootstrap'.
+    - **Backend**: The backend is developed with 'Laravel'.
+    - **Database**: The database is developed with 'MySQL'.
+    - **Deployment**: The application is deployed on '...'
+    - **Hosting**: The application is hosted on ''.
+    - **GitHub**: The application is hosted on 'GitHub'.
+    - **Documentation**: The documentation is generated with 'Markdown'.
+    - **API**: The API is developed with '' & 'Laravel'.
+    - **Domain**: The domain is developed with ''.
+    - **SSL**: The SSL is developed with ''.
+    - **DNS**: The DNS is developed with ''.
+
+## 3 Features
     - **Lists**: The application allows users to create lists of movies.
     - **Comments**: The application allows users to create comments.
     - **Create lists**: Users can create lists of movies.
