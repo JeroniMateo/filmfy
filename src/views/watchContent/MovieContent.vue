@@ -106,7 +106,7 @@
         <h2 class="OpnionTitle">Comentarios y Valoraciones</h2>
         <div id="MovieContentOpinion">
           <div id="MovieContentOpinionHeader">
-            <button id="añadirComentario" @click="añadirComentario;">
+            <button id="añadirComentario" @click="añadirComentario">
               Añadir Comentario
             </button>
           </div>
@@ -114,7 +114,7 @@
           <div id="CommentArea" style="display: none">
             <textarea
               name="comment"
-              id="CommentTextArea comment"
+              id="user_comment"
               cols="90"
               rows="10"
             ></textarea>
@@ -134,7 +134,6 @@
               </div>
             </div>
             <div id="user_comment_area">
-              <p id="user_comment">{{ user_comment }}</p>
             </div>
             <div id="date_comment_area">
               <p id="date_comment">{{ date_comment }}</p>
@@ -150,7 +149,7 @@
 export default {
   name: 'MovieContent',
   components: {},
-  data() {
+  data () {
     return {
       movie: {
         img_movie: '',
@@ -174,19 +173,19 @@ export default {
     }
   },
   methods: {
-    añadirComentario() {
+    añadirComentario () {
       document.getElementById('CommentArea').style.display = 'block'
       document.getElementById('btnComentar').style.display = 'block'
       document.getElementById('añadirComentario').style.display = 'none'
     },
-    comentar() {
+    comentar () {
       document.getElementById('Comments').style.display = 'flex'
-      user_comment = document.getElementById('CommentTextArea').value
+      this.user_comment = document.getElementById('user_comment').value
 
       document.getElementById(
         'user_comment_area'
-      ).innerHTML = `<p id="Pcomentario">${user_comment}</p>`
-      this.commentaries.push(user_comment)
+      ).innerHTML = `<p id="Pcomentario">${this.user_comment}</p>`
+      this.commentaries.push(this.user_comment)
 
       document.getElementById('CommentArea').style.display = 'none'
       document.getElementById('btnComentar').style.display = 'none'
