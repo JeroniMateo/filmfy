@@ -102,10 +102,7 @@ export default {
     },
     goMovieContentInfo () {
       this.$router.push({
-        path: '/movies/:id',
-        query: {
-          id: this.id
-        }
+        path: '/movies/:id'
       })
     },
     mouseover: function () {

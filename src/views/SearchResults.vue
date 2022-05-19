@@ -1,7 +1,7 @@
 <template>
   <div id="SearchResults" class="contianer-fluid">
     <div id="SearchResultsContent" @load="searchResult">
-      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.query" />
+      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.id" />
     </div>
   </div>
 </template>
