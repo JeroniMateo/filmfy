@@ -1,7 +1,7 @@
 <template>
   <div id="SearchResults" class="contianer-fluid">
     <div id="SearchResultsContent" @load="searchResult">
-      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.query" />
     </div>
   </div>
 </template>
@@ -33,11 +33,17 @@ export default {
     searchResult () {
       if (this.movies.length === 0) {
         document.getElementById('SearchResultsContent').innerHTML =
-          '<h1>{{No se encontraron resultados}}</h1>'
+          '<h1 class="error">{{No se encontraron resultados}}</h1>'
       }
     }
   }
 }
 </script>
 
-<style></style>
+<style scopedº>
+.error {
+  color: #b33030;
+  font-size: 1rem;
+  font-weight: bold;
+}
+</style>

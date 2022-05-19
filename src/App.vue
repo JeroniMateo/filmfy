@@ -19,6 +19,7 @@ export default {
 body {
   background-color: #000;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,7 +28,11 @@ body {
   color: #ffff;
   background-color: #242424;
 }
-
+.error {
+  color: #b33030;
+  font-size: 1rem;
+  font-weight: bold;
+}
 nav {
   padding: 30px;
 }
