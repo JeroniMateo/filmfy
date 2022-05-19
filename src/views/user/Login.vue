@@ -65,14 +65,16 @@
 export default {
   name: 'Login',
 
-  data () {
+  data() {
     return {
       email_user: '',
-      email: false,
-      password_user: '',
-      password: false,
       error_email_user: '',
+      email: false,
+
+      password_user: '',
       error_password_user: '',
+      password: false,
+
       error_log: '',
       log: false
     }
@@ -94,6 +96,8 @@ export default {
       }
       if (this.email && this.password) {
         this.LoginAPI()
+      } else {
+        this.error_log = 'Por favor, complete todos los campos'
       }
     },
 

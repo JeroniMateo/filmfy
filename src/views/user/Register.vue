@@ -32,34 +32,6 @@
       </div>
       <div class="row g-5 p-5">
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="lastNameR">Last Name</label>
-          <input
-            id="lastNameR"
-            placeholder="LastName*"
-            class="registro form-control-lg"
-            type="text"
-            name="LastName"
-            v-model="lastName"
-            required
-          />
-          <p id="errorLastName" class="error"></p>
-        </div>
-        <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="email_user">Email</label>
-          <input
-            id="email_user"
-            placeholder="Email*"
-            class="registro form-control-lg"
-            type="email"
-            name="email"
-            v-model="email_user"
-            required
-          />
-          <p id="error_email_user" class="error"></p>
-        </div>
-      </div>
-      <div class="row g-5 p-5">
-        <div id="RegisterFormInput" class="col-auto">
           <label class="form-label" for="password_user">Password</label>
           <input
             id="password_user"
@@ -70,7 +42,7 @@
             v-model="password_user"
             required
           />
-          <p id="errorPassword" class="error"></p>
+          <p id="error_password_user" class="error"></p>
         </div>
         <div id="RegisterFormInput" class="col-auto">
           <label class="form-label" for="password_confirm_user"
@@ -85,14 +57,15 @@
             v-model="password_confirm_user"
             required
           />
-          <p id="errorPasswordConfirm" class="error"></p>
+          <p id="error_password_confirm_user" class="error"></p>
         </div>
       </div>
+      <span id="error_register" class="error"></span><br />
       <div class="formConfirm">
         <button
           type="submit"
           class="btn btn-primary mb-3"
-          @click="signUpAPI"
+          @click="registerValidation"
           id="signUpButton"
           aria-label="Regístrate"
         >
@@ -119,23 +92,71 @@
 export default {
   name: 'Register',
 
-  data () {
+  data() {
     return {
       username_user: '',
+      username: false,
+
       name_user: '',
-      lastName_user: '',
+      name: false,
+
       email_user: '',
+      email: false,
+
       password_user: '',
+      password: false,
+
       password_confirm_user: '',
+      passwordConfirm: false,
+
+      error_register: '',
       log: false
     }
   },
   methods: {
-    setCookie: function (cname, cvalue, exdays) {
-      const d = new Date()
-      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
-      const expires = 'expires=' + d.toGMTString()
-      document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
+    registerValidation: function () {
+      if (this.username_user === '') {
+        this.error_username_user = 'El nombre de usuario es obligatorio'
+      } else {
+        this.error_username_user = ''
+        this.username = true
+      }
+      if (this.name_user === '') {
+        this.error_name_user = 'El nombre es obligatorio'
+      } else {
+        this.error_name_user = ''
+        this.name = true
+      }
+      if (this.email_user === '') {
+        this.error_email_user = 'El email es obligatorio'
+      } else {
+        this.error_email_user = ''
+        this.email = true
+      }
+      if (this.password_user === '') {
+        this.error_password_user = 'La contraseña es obligatoria'
+      } else {
+        this.error_password_user = ''
+        this.password = true
+      }
+      if (this.password_confirm_user === '') {
+        this.error_password_confirm_user =
+          'La confirmación de contraseña es obligatoria'
+      } else {
+        this.error_password_confirm_user = ''
+        this.passwordConfirm = true
+      }
+      if (
+        this.username &&
+        this.name &&
+        this.email &&
+        this.password &&
+        this.passwordConfirm
+      ) {
+        this.signUpAPI()
+      } else {
+        this.error_register = 'Por favor, revisa los campos'
+      }
     },
     signUpAPI: function () {
       fetch('', {
@@ -160,6 +181,12 @@ export default {
         .catch(function (error) {
           console.log('Error en el fetch', error)
         })
+    },
+    setCookie: function (cname, cvalue, exdays) {
+      const d = new Date()
+      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
+      const expires = 'expires=' + d.toGMTString()
+      document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
     }
   }
 }
