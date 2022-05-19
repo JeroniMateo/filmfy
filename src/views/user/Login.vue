@@ -65,7 +65,7 @@
 export default {
   name: 'Login',
 
-  data() {
+  data () {
     return {
       email_user: '',
       error_email_user: '',
@@ -82,22 +82,13 @@ export default {
 
   methods: {
     loginValidation: function () {
-      if (this.email_user === '') {
-        this.error_email_user = 'El email es obligatorio'
+      if (
+        this.email_user === this.email_userR &&
+        this.password_user === this.password_userR
+      ) {
+        this.log = true
       } else {
-        this.error_email_user = ''
-        this.email = true
-      }
-      if (this.password_user === '') {
-        this.error_password_user = 'La contraseña es obligatoria'
-      } else {
-        this.error_password_user = ''
-        this.password = true
-      }
-      if (this.email && this.password) {
-        this.LoginAPI()
-      } else {
-        this.error_log = 'Por favor, complete todos los campos'
+        this.error_log = 'El email o la contraseña son incorrectos'
       }
     },
 

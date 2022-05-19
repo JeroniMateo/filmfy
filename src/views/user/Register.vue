@@ -4,60 +4,60 @@
     <form id="Registrarse" action="">
       <div class="row g-5 p-5">
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="username_user">User Name</label>
+          <label class="form-label" for="username_userRR">User Name</label>
           <input
-            id="username_user"
+            id="username_userRR"
             placeholder="UserName*"
             class="registro form-control-lg"
             type="text"
             name="UserName"
-            v-model="username_user"
+            v-model="username_userRR"
             required
           />
-          <p id="error_username_user" class="error"></p>
+          <p id="error_username_userRR" class="error"></p>
         </div>
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="name_user"></label>
+          <label class="form-label" for="name_userR"></label>
           <input
-            id="name_user"
+            id="name_userR"
             placeholder="Name*"
             class="registro form-control-lg"
             type="text"
             name="email"
-            v-model="name_user"
+            v-model="name_userR"
             required
           />
-          <p id="error_name_user" class="error"></p>
+          <p id="error_name_userR" class="error"></p>
         </div>
       </div>
       <div class="row g-5 p-5">
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="password_user">Password</label>
+          <label class="form-label" for="password_userR">Password</label>
           <input
-            id="password_user"
+            id="password_userR"
             placeholder="Password*"
             class="registro form-control-lg"
             type="password"
-            name="password_user"
-            v-model="password_user"
+            name="password_userR"
+            v-model="password_userR"
             required
           />
-          <p id="error_password_user" class="error"></p>
+          <p id="error_password_userR" class="error"></p>
         </div>
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="password_confirm_user"
+          <label class="form-label" for="password_confirm_userR"
             >Password Confirm</label
           >
           <input
-            id="password_confirm_user"
+            id="password_confirm_userR"
             placeholder="PasswordConfirm*"
             class="registro form-control-lg"
             type="password"
             name="password"
-            v-model="password_confirm_user"
+            v-model="password_confirm_userR"
             required
           />
-          <p id="error_password_confirm_user" class="error"></p>
+          <p id="error_password_confirm_userR" class="error"></p>
         </div>
       </div>
       <span id="error_register" class="error"></span><br />
@@ -92,21 +92,21 @@
 export default {
   name: 'Register',
 
-  data() {
+  data () {
     return {
-      username_user: '',
+      username_userRR: '',
       username: false,
 
-      name_user: '',
+      name_userRR: '',
       name: false,
 
-      email_user: '',
+      email_userR: '',
       email: false,
 
-      password_user: '',
+      password_userR: '',
       password: false,
 
-      password_confirm_user: '',
+      password_confirm_userR: '',
       passwordConfirm: false,
 
       error_register: '',
@@ -116,113 +116,113 @@ export default {
   methods: {
     registerValidation: function () {
       // UserName
-      if (this.username_user === '') {
-        this.error_username_user = 'El nombre de usuario es obligatorio'
+      if (this.username_userRR === '') {
+        this.error_username_userRR = 'El nombre de usuario es obligatorio'
       }
-      if (this.username_user.length < 3) {
-        this.error_username_user =
+      if (this.username_userRR.length < 3) {
+        this.error_username_userRR =
           'El nombre de usuario debe tener al menos 3 caracteres'
       }
-      if (this.username_user.length > 15) {
-        this.error_username_user =
+      if (this.username_userRR.length > 15) {
+        this.error_username_userRR =
           'El nombre de usuario no puede tener más de 15 caracteres'
       }
-      if (/^[a-zA-Z0-9]+$/.test(this.username_user) === false) {
-        this.error_username_user =
+      if (/^[a-zA-Z0-9]+$/.test(this.username_userRR) === false) {
+        this.error_username_userRR =
           'El nombre de usuario solo puede contener letras y números'
       }
       if (
-        this.username_user.length !== '' &&
-        this.username_user.length >= 3 &&
-        this.username_user.length <= 15 &&
-        /^[a-zA-Z0-9]+$/.test(this.username_user) === true
+        this.username_userRR.length !== '' &&
+        this.username_userRR.length >= 3 &&
+        this.username_userRR.length <= 15 &&
+        /^[a-zA-Z0-9]+$/.test(this.username_userRR) === true
       ) {
         this.username = true
       }
 
       // Name
-      if (this.name_user === '') {
-        this.error_name_user = 'El nombre es obligatorio'
+      if (this.name_userR === '') {
+        this.error_name_userR = 'El nombre es obligatorio'
       }
-      if (this.name_user.length < 6) {
-        this.error_name_user = 'El nombre debe tener al menos 6 caracteres'
+      if (this.name_userR.length < 6) {
+        this.error_name_userR = 'El nombre debe tener al menos 6 caracteres'
       }
-      if (this.name_user.length > 15) {
-        this.error_name_user = 'El nombre no puede tener más de 15 caracteres'
+      if (this.name_userR.length > 15) {
+        this.error_name_userR = 'El nombre no puede tener más de 15 caracteres'
       }
-      if (/^[a-zA-Z]+$/.test(this.name_user) === false) {
-        this.error_name_user = 'El nombre solo puede contener letras'
+      if (/^[a-zA-Z]+$/.test(this.name_userR) === false) {
+        this.error_name_userR = 'El nombre solo puede contener letras'
       }
       if (
         this.name.user !== '' &&
-        this.name_user.length >= 6 &&
-        this.name_user.length <= 15 &&
-        /^[a-zA-Z]+$/.test(this.name_user) === true
+        this.name_userR.length >= 6 &&
+        this.name_userR.length <= 15 &&
+        /^[a-zA-Z]+$/.test(this.name_userR) === true
       ) {
         this.name = true
       }
 
       // Email
-      if (this.email_user === '') {
-        this.error_email_user = 'El email es obligatorio'
+      if (this.email_userR === '') {
+        this.error_email_userR = 'El email es obligatorio'
       }
       if (
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          this.email_user
+          this.email_userR
         ) === false
       ) {
-        this.error_email_user = 'El email no es válido'
+        this.error_email_userR = 'El email no es válido'
         this.email = false
       }
       if (
-        this.email_user !== '' &&
+        this.email_userR !== '' &&
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          this.email_user
+          this.email_userR
         ) === true
       ) {
         this.email = true
       }
       // Password
-      if (this.password_user === '') {
-        this.error_password_user = 'La contraseña es obligatoria'
+      if (this.password_userR === '') {
+        this.error_password_userR = 'La contraseña es obligatoria'
       }
       if (
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/.test(
-          this.password_user
+          this.password_userR
         ) === false
       ) {
-        this.error_password_user =
+        this.error_password_userR =
           'La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracter especial'
       }
       if (
-        this.password_user !== '' &&
+        this.password_userR !== '' &&
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/.test(
-          this.password_user
+          this.password_userR
         ) === true
       ) {
         this.password = true
       }
       // Password Confirm
-      if (this.password_confirm_user === '') {
-        this.error_password_confirm_user =
+      if (this.password_confirm_userR === '') {
+        this.error_password_confirm_userR =
           'La confirmación de contraseña es obligatoria'
       }
-      if (this.password_confirm_user !== this.password_user) {
-        this.error_password_confirm_user = 'Las contraseñas no coinciden'
+      if (this.password_confirm_userR !== this.password_userR) {
+        this.error_password_confirm_userR = 'Las contraseñas no coinciden'
       }
       if (
-        this.error_password_confirm_user !== '' &&
-        this.password_confirm_user === this.password_user
+        this.error_password_confirm_userR !== '' &&
+        this.password_confirm_userR === this.password_userR
       ) {
         this.passwordConfirm = true
       }
       // Register
       if (
-        this.username_user &&
-        this.name_user &&
-        this.email_user &&
-        this.password_user &&
-        this.password_confirm_user
+        this.username_userRR &&
+        this.name_userR &&
+        this.email_userR &&
+        this.password_userR &&
+        this.password_confirm_userR
       ) {
         this.signUpAPI()
       } else {
@@ -233,11 +233,11 @@ export default {
       fetch('', {
         method: 'POST',
         body: JSON.stringify({
-          username_user: this.username_user,
-          name_user: this.name_user,
-          email_user: this.email_user,
-          password_user: this.password_user,
-          password_confirm_user: this.password_confirm_user
+          username_userRR: this.username_userRR,
+          name_userR: this.name_userR,
+          email_userR: this.email_userR,
+          password_userR: this.password_userR,
+          password_confirm_userR: this.password_confirm_userR
         }),
         headers: {
           'Content-type': 'application/json; charset=UTF-8'
