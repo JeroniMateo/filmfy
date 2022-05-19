@@ -14,7 +14,6 @@ import ListContent from '../views/my-lists/ListContent.vue'
 
 import VerMasCateogries from '../views/watchContent/VerMasCategories.vue'
 import UserProfile from '../views/user/UserProfile.vue'
-import UserSettings from '../views/user/UserSettings.vue'
 
 import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
@@ -70,11 +69,6 @@ const routes = [
     path: '/userProfile',
     name: 'profile',
     component: UserProfile
-  },
-  {
-    path: '/userSettings',
-    name: 'settings',
-    component: UserSettings
   },
 
   {
