@@ -2,7 +2,7 @@
   <div id="WatchItemCard" class="container-fluid">
     <div
       class="col WatchItemCard"
-      id="WatchItemCardINFO movie_info"
+      id="movie_info"
       v-on:mouseleave="mouseleave"
       v-on:mouseover="mouseover"
       style="display: none"
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div
-      id="WatchItemCardIMG movie_img"
+      id="movie_img"
       v-on:mouseover="mouseover"
       v-on:mouseleave="mouseleave"
     >
@@ -104,12 +104,12 @@ export default {
       })
     },
     mouseover: function () {
-      document.getElementById('WatchItemCardINFO').style.display = 'block'
-      document.getElementById('WatchItemCardIMG').style.display = 'none'
+      document.getElementById('movie_info').style.display = 'block'
+      document.getElementById('movie_img').style.display = 'none'
     },
     mouseleave: function () {
-      document.getElementById('WatchItemCardINFO').style.display = 'none'
-      document.getElementById('WatchItemCardIMG').style.display = 'block'
+      document.getElementById('movie_info').style.display = 'none'
+      document.getElementById('movie_img').style.display = 'block'
     }
   }
 }
@@ -136,7 +136,7 @@ export default {
 #WatchItemCard {
   height: 60vh;
 }
-#WatchItemCardINFO {
+#movie_info {
   background-color: rgb(15, 23, 30);
   color: #fff;
   font-family: Arial;
