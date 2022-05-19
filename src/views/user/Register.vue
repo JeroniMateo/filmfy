@@ -115,14 +115,23 @@ export default {
   },
   methods: {
     registerValidation: function () {
+      // UserName
       if (this.username_user === '') {
         this.error_username_user = 'El nombre de usuario es obligatorio'
+      }
+      if (this.username_user.length < 6) {
+        this.error_username_user =
+          'El nombre de usuario debe tener al menos 6 caracteres'
       } else {
         this.error_username_user = ''
         this.username = true
       }
+      // Name
       if (this.name_user === '') {
         this.error_name_user = 'El nombre es obligatorio'
+      }
+      if (this.name_user.length < 6) {
+        this.error_name_user = 'El nombre debe tener al menos 6 caracteres'
       } else {
         this.error_name_user = ''
         this.name = true
@@ -133,25 +142,35 @@ export default {
         this.error_email_user = ''
         this.email = true
       }
+      // Password
       if (this.password_user === '') {
         this.error_password_user = 'La contraseña es obligatoria'
+      }
+      if (this.password_user.length < 8) {
+        this.error_password_user =
+          'La contraseña debe tener al menos 8 caracteres'
       } else {
         this.error_password_user = ''
         this.password = true
       }
+      // Password Confirm
       if (this.password_confirm_user === '') {
         this.error_password_confirm_user =
           'La confirmación de contraseña es obligatoria'
+      }
+      if (this.password_confirm_user !== this.password_user) {
+        this.error_password_confirm_user = 'Las contraseñas no coinciden'
       } else {
         this.error_password_confirm_user = ''
         this.passwordConfirm = true
       }
+      // Register
       if (
-        this.username &&
-        this.name &&
-        this.email &&
-        this.password &&
-        this.passwordConfirm
+        this.username_user &&
+        this.name_user &&
+        this.email_user &&
+        this.password_user &&
+        this.password_confirm_user
       ) {
         this.signUpAPI()
       } else {
