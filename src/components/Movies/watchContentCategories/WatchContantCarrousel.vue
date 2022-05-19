@@ -116,7 +116,7 @@ export default {
     }
   },
   methods: {
-    verMas() {
+    verMas () {
       this.$router.push('/movies/:category/:id')
     }
   }

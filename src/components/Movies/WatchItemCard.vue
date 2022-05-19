@@ -3,8 +3,9 @@
     <div
       class="col WatchItemCard"
       id="WatchItemCardINFO movie_info"
-      v-on:mouseleave="mouseleave"
-      v-on:mouseover="mouseover"
+      @mouseleave="hoverButtonId = movie_info.id"
+      @mouseover="hoverButtonId = null"
+      :class="getButtonComputedClass(movie_info.id)"
       style="display: none"
     >
       <div class="card h-100">
@@ -46,8 +47,8 @@
     </div>
     <div
       id="WatchItemCardIMG movie_img"
-      v-on:mouseover="mouseover"
-      v-on:mouseleave="mouseleave"
+      @mouseleave="hoverButtonId =  null"
+      @mouseover="hoverButtonId = null"
     >
       <img
         src="../../assets/img/MoviesIMG/el-padrino.jpg"
@@ -64,13 +65,17 @@ export default {
 
   data () {
     return {
+      hoverButtonId: null,
+
       movie_info: {
+        movie_id: '',
         title_movie: 'El Padrino',
         rating_movie: '5/5',
         categories_movie: 'Drama',
         img_movie_img: '../../assets/img/MoviesIMG/el-padrino.jpg'
       },
       movie_img: {
+        img_movie_id: '',
         img_movie_img: '../../assets/img/MoviesIMG/el-padrino.jpg'
       },
       favorites: true,
@@ -110,6 +115,9 @@ export default {
     mouseleave: function () {
       document.getElementById('WatchItemCardINFO').style.display = 'none'
       document.getElementById('WatchItemCardIMG').style.display = 'block'
+    },
+    getButtonComputedClass (movieId) {
+      return `btn btn-block btn-${this.hoverButtonId === movieId ? 'info' : 'primary'}`
     }
   }
 }
