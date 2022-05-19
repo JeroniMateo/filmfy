@@ -4,30 +4,30 @@
     <form id="Registrarse" action="">
       <div class="row g-5 p-5">
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="userNameR">User Name</label>
+          <label class="form-label" for="username_user">User Name</label>
           <input
-            id="userNameR"
+            id="username_user"
             placeholder="UserName*"
             class="registro form-control-lg"
             type="text"
             name="UserName"
-            v-model="userName"
+            v-model="username_user"
             required
           />
-          <p id="errorUserName" class="error"></p>
+          <p id="error_username_user" class="error"></p>
         </div>
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="nameR">Name</label>
+          <label class="form-label" for="name_user"></label>
           <input
-            id="nameR"
+            id="name_user"
             placeholder="Name*"
             class="registro form-control-lg"
             type="text"
             name="email"
-            v-model="name"
+            v-model="name_user"
             required
           />
-          <p id="errorName" class="error"></p>
+          <p id="error_name_user" class="error"></p>
         </div>
       </div>
       <div class="row g-5 p-5">
@@ -45,44 +45,44 @@
           <p id="errorLastName" class="error"></p>
         </div>
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="emailR">Email</label>
+          <label class="form-label" for="email_user">Email</label>
           <input
-            id="emailR"
+            id="email_user"
             placeholder="Email*"
             class="registro form-control-lg"
             type="email"
             name="email"
-            v-model="email"
+            v-model="email_user"
             required
           />
-          <p id="errorEmail" class="error"></p>
+          <p id="error_email_user" class="error"></p>
         </div>
       </div>
       <div class="row g-5 p-5">
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="passwordR">Password</label>
+          <label class="form-label" for="password_user">Password</label>
           <input
-            id="passwordR"
+            id="password_user"
             placeholder="Password*"
             class="registro form-control-lg"
             type="password"
-            name="password"
-            v-model="password"
+            name="password_user"
+            v-model="password_user"
             required
           />
           <p id="errorPassword" class="error"></p>
         </div>
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="passwordConfirmR"
+          <label class="form-label" for="password_confirm_user"
             >Password Confirm</label
           >
           <input
-            id="passwordConfirmR"
+            id="password_confirm_user"
             placeholder="PasswordConfirm*"
             class="registro form-control-lg"
             type="password"
             name="password"
-            v-model="passwordConfirm"
+            v-model="password_confirm_user"
             required
           />
           <p id="errorPasswordConfirm" class="error"></p>
@@ -121,12 +121,12 @@ export default {
 
   data () {
     return {
-      userName: '',
-      name: '',
-      lastName: '',
-      email: '',
-      password: '',
-      passwordConfirm: '',
+      username_user: '',
+      name_user: '',
+      lastName_user: '',
+      email_user: '',
+      password_user: '',
+      password_confirm_user: '',
       log: false
     }
   },
@@ -141,12 +141,11 @@ export default {
       fetch('', {
         method: 'POST',
         body: JSON.stringify({
-          userName: this.userName,
-          name: this.name,
-          lastName: this.lastName,
-          email: this.email,
-          password: this.password,
-          passwordConfirm: this.passwordConfirm
+          username_user: this.username_user,
+          name_user: this.name_user,
+          email_user: this.email_user,
+          password_user: this.password_user,
+          password_confirm_user: this.password_confirm_user
         }),
         headers: {
           'Content-type': 'application/json; charset=UTF-8'

@@ -1,70 +1,93 @@
 <template>
-  <div id="UserProfile" class="container">
-    <div class="mb-3">
-      <label for="userNameUP">User Name</label>
-      <input
-        type="text"
-        name="userName"
-        id="userNameUP"
-        value="{{ userName }}"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="nameUP">Name</label>
-      <input type="text" name="name" id="nameUP" value="{{ name }}" />
-    </div>
-    <div class="mb-3">
-      <label for="lastNameUP">Last Name</label>
-      <input
-        type="text"
-        name="lastName"
-        id="lastNameUP"
-        value="{{ lastName }}"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="emailUP">Email</label>
-      <input type="email" name="email" id="emailUP" value="{{ email }}" />
-    </div>
-    <div class="mb-3">
-      <label for="passwordUP">Password</label>
-      <input
-        type="password"
-        name="password"
-        id="passwordUP"
-        value="{{ password }}"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="passwordConfirmUP">Password Confirm</label>
-      <input
-        type="password"
-        name="passwordConfirm"
-        id="passwordConfirmUP"
-        value="{{ passwordConfirm }}"
-      />
-    </div>
+  <div id="UserProfile" class="container-fluid">
+    <form action="" method="post">
+      <div class="ImageProfile">
+        <button @click="cambiarPerfilIMG">
+          <img id="user_img" src="" alt="" />
+        </button>
+      </div>
+      <div class="mb-3 row">
+        <label for="input_username_user" class="col-sm-2 col-form-label">{{
+          username_user
+        }}</label>
+        <input
+          v-model="username_user"
+          type="text"
+          name="input_username_user"
+          id="input_username_user"
+        />
+      </div>
+      <div class="mb-3 row">
+        <label for="inputFullName" class="col-sm-2 col-form-label">{{
+          name_user
+        }}</label>
+        <input
+          v-model="name_user"
+          type="text"
+          class="form-control"
+          id="inputFullName"
+        />
+      </div>
+      <div class="mb-3 row">
+        <label for="inputEmail" class="col-sm-2 col-form-label">
+          {{ email_user }}
+        </label>
+        <input
+          v-model="email_user"
+          type="email"
+          class="form-control"
+          id="inputEmail"
+        />
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">
+          {{ password_user }}
+        </label>
+        <input
+          v-model="password_user"
+          type="password"
+          class="form-control"
+          id="inputPassword"
+        />
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPhone" class="col-sm-2 col-form-label">
+          {{ phone_user }}
+        </label>
+        <input
+          v-model="phone_user"
+          type="number"
+          class="form-control"
+          id="inputPhone"
+        />
+      </div>
+      <button @click="SaveProfileUser">Save</button>
+    </form>
   </div>
 </template>
+
 <script>
 export default {
   name: 'UserProfile',
   data () {
     return {
-      userName: '',
-      name: '',
-      lastName: '',
-      email: '',
-      password: '',
-      passwordConfirm: '',
-      log: true
+      username_user: '',
+      name_user: '',
+      email_user: '',
+      password_user: '',
+      phone_user: ''
+    }
+  },
+
+  methods: {
+    cambiarPerfilIMG () {
+      const x = document.createElement('INPUT')
+      x.setAttribute('type', 'file')
+      document.body.appendChild(x)
+      document.getElementById('user_img').src = URL.createObjectURL(x.files[0])
     }
   }
 }
 </script>
-<style>
-#UserProfile {
-  margin: auto;
-  width: 85%;
-}
-</style>
+
+<style scoped></style>

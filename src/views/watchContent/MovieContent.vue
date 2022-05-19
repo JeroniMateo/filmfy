@@ -130,7 +130,7 @@
                 />
               </div>
               <div class="username_area">
-                <h4 id="username">{{ username }}</h4>
+                <h4 id="username_user">{{ username_user }}</h4>
               </div>
             </div>
             <div id="user_comment_area">
@@ -166,7 +166,7 @@ export default {
 
       user: {
         img_user: '',
-        username: '',
+        username_user: '',
         commentaries: [],
         user_comment: '',
         date_comment: ''

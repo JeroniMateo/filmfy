@@ -4,35 +4,33 @@
     <form id="InicioSesion" action="">
       <div class="row g-3">
         <div class="col-auto">
-          <label class="form-label" for="emailL">Email</label>
+          <label class="form-label" for="email_user">Email</label>
           <input
             class="form-control-lg"
-            id="emailL"
+            id="email_user"
             aria-label="email"
             placeholder="Email*"
             type="text"
-            name="email"
-            aria-required="true"
-            v-model="email"
+            name="email_user"
+            v-model="email_user"
             required
           />
-          <p id="errorEmail" class="error"></p>
+          <p id="error_email_user" class="error"></p>
         </div>
         <div class="col-auto">
-          <label class="form-label" for="passwordL">Password</label>
+          <label class="form-label" for="password_user">Password</label>
           <input
             class="form-control-lg"
-            id="passwordL"
+            id="password_user"
             aria-label="password"
             placeholder="Password*"
             type="password"
             name="password"
-            aria-required="true"
-            v-model="password"
+            v-model="password_user"
             required
           />
           <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
-          <p id="errorPassword" class="error"></p>
+          <p id="error_password_user" class="error"></p>
         </div>
       </div>
       <span id="errorLogin" class="error"></span><br />
@@ -69,8 +67,8 @@ export default {
 
   data () {
     return {
-      email: '',
-      password: '',
+      email_user: '',
+      password_user: '',
       log: false
     }
   },
@@ -78,12 +76,12 @@ export default {
   methods: {
     LoginAPI: function () {
       const authString = `${this.email}:${this.password}`
-      const headers = new Headers()
-      headers.set('Authorization', 'Basic ' + btoa(authString))
+      const header = new Headers()
+      header.set('Authorization', 'Basic ' + btoa(authString))
 
       fetch('', {
         method: 'GET',
-        headers: headers
+        headers: header
       })
         .then((response) => response.json())
         .then((token) => {

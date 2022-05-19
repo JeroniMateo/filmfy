@@ -1,9 +1,7 @@
 <template>
   <Header />
   <router-view />
-  <footer>
     <Footer />
-  </footer>
 </template>
 <script>
 import Header from '../src/components/basics/Header.vue'
