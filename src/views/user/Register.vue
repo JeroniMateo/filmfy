@@ -119,38 +119,87 @@ export default {
       if (this.username_user === '') {
         this.error_username_user = 'El nombre de usuario es obligatorio'
       }
-      if (this.username_user.length < 6) {
+      if (this.username_user.length < 3) {
         this.error_username_user =
-          'El nombre de usuario debe tener al menos 6 caracteres'
-      } else {
-        this.error_username_user = ''
+          'El nombre de usuario debe tener al menos 3 caracteres'
+      }
+      if (this.username_user.length > 15) {
+        this.error_username_user =
+          'El nombre de usuario no puede tener más de 15 caracteres'
+      }
+      if (/^[a-zA-Z0-9]+$/.test(this.username_user) === false) {
+        this.error_username_user =
+          'El nombre de usuario solo puede contener letras y números'
+      }
+      if (
+        this.username_user.length !== '' &&
+        this.username_user.length >= 3 &&
+        this.username_user.length <= 15 &&
+        /^[a-zA-Z0-9]+$/.test(this.username_user) === true
+      ) {
         this.username = true
       }
+
       // Name
       if (this.name_user === '') {
         this.error_name_user = 'El nombre es obligatorio'
       }
       if (this.name_user.length < 6) {
         this.error_name_user = 'El nombre debe tener al menos 6 caracteres'
-      } else {
-        this.error_name_user = ''
+      }
+      if (this.name_user.length > 15) {
+        this.error_name_user = 'El nombre no puede tener más de 15 caracteres'
+      }
+      if (/^[a-zA-Z]+$/.test(this.name_user) === false) {
+        this.error_name_user = 'El nombre solo puede contener letras'
+      }
+      if (
+        this.name.user !== '' &&
+        this.name_user.length >= 6 &&
+        this.name_user.length <= 15 &&
+        /^[a-zA-Z]+$/.test(this.name_user) === true
+      ) {
         this.name = true
       }
+
+      // Email
       if (this.email_user === '') {
         this.error_email_user = 'El email es obligatorio'
-      } else {
-        this.error_email_user = ''
+      }
+      if (
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+          this.email_user
+        ) === false
+      ) {
+        this.error_email_user = 'El email no es válido'
+        this.email = false
+      }
+      if (
+        this.email_user !== '' &&
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+          this.email_user
+        ) === true
+      ) {
         this.email = true
       }
       // Password
       if (this.password_user === '') {
         this.error_password_user = 'La contraseña es obligatoria'
       }
-      if (this.password_user.length < 8) {
+      if (
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/.test(
+          this.password_user
+        ) === false
+      ) {
         this.error_password_user =
-          'La contraseña debe tener al menos 8 caracteres'
-      } else {
-        this.error_password_user = ''
+          'La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracter especial'
+      }
+      if (
+        this.password_user !== '' &&
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/.test(
+          this.password_user
+        ) === true
+      ) {
         this.password = true
       }
       // Password Confirm
@@ -160,8 +209,11 @@ export default {
       }
       if (this.password_confirm_user !== this.password_user) {
         this.error_password_confirm_user = 'Las contraseñas no coinciden'
-      } else {
-        this.error_password_confirm_user = ''
+      }
+      if (
+        this.error_password_confirm_user !== '' &&
+        this.password_confirm_user === this.password_user
+      ) {
         this.passwordConfirm = true
       }
       // Register
