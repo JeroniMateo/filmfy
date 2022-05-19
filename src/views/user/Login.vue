@@ -33,12 +33,12 @@
           <p id="error_password_user" class="error"></p>
         </div>
       </div>
-      <span id="errorLogin" class="error"></span><br />
+      <span id="error_log" class="error"></span><br />
       <div class="formConfirm">
         <button
           type="submit"
           class="btn btn-primary mb-3"
-          @click="LoginAPI"
+          @click="loginValidation"
           id="loginButton"
           aria-label="Iniciar sesión"
         >
@@ -68,12 +68,35 @@ export default {
   data () {
     return {
       email_user: '',
+      email: false,
       password_user: '',
+      password: false,
+      error_email_user: '',
+      error_password_user: '',
+      error_log: '',
       log: false
     }
   },
 
   methods: {
+    loginValidation: function () {
+      if (this.email_user === '') {
+        this.error_email_user = 'El email es obligatorio'
+      } else {
+        this.error_email_user = ''
+        this.email = true
+      }
+      if (this.password_user === '') {
+        this.error_password_user = 'La contraseña es obligatoria'
+      } else {
+        this.error_password_user = ''
+        this.password = true
+      }
+      if (this.email && this.password) {
+        this.LoginAPI()
+      }
+    },
+
     LoginAPI: function () {
       const authString = `${this.email}:${this.password}`
       const header = new Headers()

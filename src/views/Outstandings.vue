@@ -20,7 +20,7 @@ export default {
       outstandings: [],
       loading: true,
       error: false,
-      errorMessage: ''
+      errorMessage: 'No hay peliculas destacadas'
     }
   },
   components: {

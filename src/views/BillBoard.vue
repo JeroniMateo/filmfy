@@ -19,7 +19,7 @@ export default {
       upcoming: [],
       loading: true,
       error: false,
-      errorMessage: ''
+      errorMessage: 'No se encontraron peliculas en cartelera'
     }
   },
   components: {
