@@ -8,11 +8,9 @@
 </template>
 
 <script>
-import TopMovie from '../components/Outstanding/TopMovie.vue'
-
 export default {
   name: 'Outstandings',
-  data () {
+  data() {
     return {
       movie: '',
       movies: [],

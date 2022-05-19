@@ -2,7 +2,7 @@
   <div class="FavsList container-fluid">
     <div class="col FavsList">
       <div class="card h-100" @click="goIntoFavsList">
-        <img class="card-img-top" alt="..." id="img_list" />
+        <img id="img_list" class="card-img-top" alt="..."  />
         <div class="card-body">
           <h5 class="card-title" id="title_list">Favorites Movies</h5>
           <small class="card-text" id="description_list">

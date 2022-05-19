@@ -1,15 +1,12 @@
 <template>
   <div class="userAcount">
-    <img src="../../../assets/img/UserPhoto.png" alt="" />
+    <img src="../../assets/img/UserPhoto.png" alt="" />
     <li id="userProfile" class="nav-item dropdown">
       <img id="img_user" alt="" />
       <p id="username_user">{{ username_user }}</p>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         <router-link class="dropdown-item" to="/userProfile">
           <li>Perfil</li>
-        </router-link>
-        <router-link class="dropdown-item" to="/settings">
-          <li>Ajustes</li>
         </router-link>
         <li><hr class="dropdown-divider" /></li>
         <router-link class="dropdown-item" to="#">
@@ -27,7 +24,7 @@ export default {
   data () {
     return {
       log: true,
-      userName: '',
+      username_user: '',
       img_user: ''
     }
   },

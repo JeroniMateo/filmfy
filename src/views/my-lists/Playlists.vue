@@ -1,7 +1,7 @@
 <template>
   <div id="Playlists" class="container-fluid" @click="goMoviesLists">
     <h2>
-      <b>{{ username_user }} Playlists</b>
+      <b>{{ username_user }} Playlist</b>
     </h2>
     <div id="Listas">
       <div class="lista"><FavsLists /></div>

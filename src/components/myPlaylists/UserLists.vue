@@ -2,7 +2,7 @@
   <div class="UserLists container-fluid">
     <div class="col UserList">
       <div class="card h-100" @click="goIntoList">
-        <img class="card-img-top" alt="..." />
+        <img id="img_list" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title" id="title_list">{{ title_list }}</h5>
           <p class="card-text" id="description_list">

@@ -2,7 +2,7 @@
   <div id="ListContent" class="container" style="background-color: #191a19">
     <div id="headerList">
       <h3 id="title_list">
-        <b> {{ title_list }} </b>
+         {{ title_list }} <small>by {{ username_user }}</small>
       </h3>
       <img id="img_list" alt="" />
     </div>

@@ -91,10 +91,20 @@ import WatchItemCard from '../WatchItemCard.vue'
 
 export default {
   name: 'WatchContentCarrousel',
+  data() {
+    return {
+      movies: [],
+      movies_cateogories: [],
+      movie: '',
+      loading: true,
+      error: false,
+      errorMessage: 'No se encontraron peliculas'
+    }
+  },
   components: {
     WatchItemCard
   },
-  data () {
+  data() {
     return {
       favorites: true,
       movie: '',
@@ -106,7 +116,7 @@ export default {
     }
   },
   methods: {
-    verMas () {
+    verMas() {
       this.$router.push('/movies/:category/:id')
     }
   }

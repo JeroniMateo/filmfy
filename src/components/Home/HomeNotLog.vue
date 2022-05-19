@@ -12,6 +12,16 @@ import WelcomeCards from '../Welcome/WelcomeCards.vue'
 import FeaturedContent from '../Welcome/FeaturedContent.vue'
 export default {
   name: 'HomeNotLog',
+  data() {
+    return {
+      movies: [],
+      movies_cateogories: [],
+      movie: '',
+      loading: true,
+      error: false,
+      errorMessage: 'No se encontraron peliculas'
+    }
+  },
   components: {
     MainWelcome,
     WelcomeCards,

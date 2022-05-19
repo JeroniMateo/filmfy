@@ -129,7 +129,7 @@
                   alt=""
                 />
               </div>
-              <div class="username_area">
+              <div class="username_user_area">
                 <h4 id="username_user">{{ username_user }}</h4>
               </div>
             </div>

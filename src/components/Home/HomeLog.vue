@@ -39,6 +39,14 @@
 import WatchItemCard from '../Movies/WatchItemCard.vue'
 export default {
   name: 'HomeLog',
+  data () {
+    return {
+      movies: [],
+      movies_cartelera: [],
+      movies_upcoming: [],
+      movies_destacados: []
+    }
+  },
   components: {
     WatchItemCard
   }

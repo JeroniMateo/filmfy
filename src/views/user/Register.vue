@@ -4,17 +4,17 @@
     <form id="Registrarse" action="">
       <div class="row g-5 p-5">
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="username_userRR">User Name</label>
+          <label class="form-label" for="username_userR">User Name</label>
           <input
-            id="username_userRR"
-            placeholder="UserName*"
+            id="username_userR"
+            placeholder="username_user*"
             class="registro form-control-lg"
             type="text"
-            name="UserName"
-            v-model="username_userRR"
+            name="username_user"
+            v-model="username_userR"
             required
           />
-          <p id="error_username_userRR" class="error"></p>
+          <p id="error_username_userR" class="error"></p>
         </div>
         <div id="RegisterFormInput" class="col-auto">
           <label class="form-label" for="name_userR"></label>
@@ -94,7 +94,7 @@ export default {
 
   data () {
     return {
-      username_userRR: '',
+      username_userR: '',
       username: false,
 
       name_userRR: '',
@@ -115,29 +115,29 @@ export default {
   },
   methods: {
     registerValidation: function () {
-      // UserName
-      if (this.username_userRR === '') {
-        this.error_username_userRR = 'El nombre de usuario es obligatorio'
+      // username_user
+      if (this.username_userR === '') {
+        this.error_username_userR = 'El nombre de usuario es obligatorio'
       }
-      if (this.username_userRR.length < 3) {
-        this.error_username_userRR =
+      if (this.username_userR.length < 3) {
+        this.error_username_userR =
           'El nombre de usuario debe tener al menos 3 caracteres'
       }
-      if (this.username_userRR.length > 15) {
-        this.error_username_userRR =
+      if (this.username_userR.length > 15) {
+        this.error_username_userR =
           'El nombre de usuario no puede tener más de 15 caracteres'
       }
-      if (/^[a-zA-Z0-9]+$/.test(this.username_userRR) === false) {
-        this.error_username_userRR =
+      if (/^[a-zA-Z0-9]+$/.test(this.username_userR) === false) {
+        this.error_username_userR =
           'El nombre de usuario solo puede contener letras y números'
       }
       if (
-        this.username_userRR.length !== '' &&
-        this.username_userRR.length >= 3 &&
-        this.username_userRR.length <= 15 &&
-        /^[a-zA-Z0-9]+$/.test(this.username_userRR) === true
+        this.username_userR.length !== '' &&
+        this.username_userR.length >= 3 &&
+        this.username_userR.length <= 15 &&
+        /^[a-zA-Z0-9]+$/.test(this.username_userR) === true
       ) {
-        this.username = true
+        this.username_user = true
       }
 
       // Name
@@ -218,7 +218,7 @@ export default {
       }
       // Register
       if (
-        this.username_userRR &&
+        this.username_userR &&
         this.name_userR &&
         this.email_userR &&
         this.password_userR &&
@@ -233,7 +233,7 @@ export default {
       fetch('', {
         method: 'POST',
         body: JSON.stringify({
-          username_userRR: this.username_userRR,
+          username_userR: this.username_userR,
           name_userR: this.name_userR,
           email_userR: this.email_userR,
           password_userR: this.password_userR,
