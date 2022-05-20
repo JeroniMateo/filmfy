@@ -17,14 +17,14 @@
           <p id="error_username_userRR" class="error"></p>
         </div>
         <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="name">Name</label>
+          <label class="form-label" for="name_userR">Name</label>
           <input
             id="name_userR"
             placeholder="Name*"
             class="registro form-control-lg"
             type="text"
-            name="email"
-            v-model="name"
+            name="name_userR"
+            v-model="name_userR"
             required
           />
           <p id="error_name_userR" class="error"></p>
