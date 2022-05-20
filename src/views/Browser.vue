@@ -1,9 +1,9 @@
 <template>
-  <div id="HomeLog" class="container" style="background-color: #191a19">
+  <div id="Browser" class="container" >
     <h3>Destacados</h3>
     <div
-      class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
-      id="HomeDestacados"
+      class="BrowserSection row row-cols-1 p-5 row-cols-md-4 g-4"
+      id="BrowserDestacados"
     >
       <WatchItemCard
         v-for="movie in 4"
@@ -18,7 +18,7 @@
     </div>
     <h3>Cartelera</h3>
     <div
-      class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
+      class="BrowserSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="cartelera"
     >
       <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Billboard" />
@@ -26,7 +26,7 @@
     </div>
     <h3>Próximos Estrenos</h3>
     <div
-      class="HomeSection row row-cols-1 p-5 row-cols-md-4 g-4"
+      class="BrowserSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="UpcomingMovies"
     >
       <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Upcoming" />
@@ -38,7 +38,7 @@
 <script>
 import WatchItemCard from '../Movies/WatchItemCard.vue'
 export default {
-  name: 'HomeLog',
+  name: 'Browser',
   components: {
     WatchItemCard
   }
@@ -55,7 +55,7 @@ h3 {
   text-align: center;
   font-weight: bold;
 }
-.HomeSection {
+.BrowserSection {
   background-color: #161414;
   color: #19282f;
   font-family: Arial;
