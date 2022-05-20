@@ -1,19 +1,8 @@
 <template>
-  <div @click="login()" class="user">
-    <!--
-      v-if if log = false
-        div id="UserNotLog"
-
-      v-else if log = true
-        div id="UserLog"
-      -->
-
-    <!--If the user is log -->
-    <!--Inside this div will show the User Name when it's loged -->
+  <div class="user">
     <div v-if="log" id="UserLog" hidden class="btn">
       <UserLog />
     </div>
-    <!-- If the user is not log -->
     <div v-else id="UserNotLog" class="btn">
       <UserNotLog />
     </div>
@@ -29,11 +18,6 @@ export default {
   components: {
     UserLog,
     UserNotLog
-  },
-  data () {
-    return {
-      log: false
-    }
   }
 }
 </script>
