@@ -42,7 +42,7 @@
               <router-link v-if="log" class="nav-link" to="/playlists">
                 <li class="nav-item">Mis Listas</li>
               </router-link>
-              <router-link v-else class="nav-link disabled" to="/playlists">
+              <router-link v-else class="nav-link disabled" to="/playlists" style="display:none">
                 <li class="nav-item">Mis Listas</li>
               </router-link>
             </ul>
@@ -79,7 +79,7 @@ export default {
 
   data () {
     return {
-      log: true,
+      log: false,
       search_result: ''
     }
   },
