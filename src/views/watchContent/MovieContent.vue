@@ -106,7 +106,7 @@
         <h2 class="OpnionTitle">Comentarios y Valoraciones</h2>
         <div id="MovieContentOpinion">
           <div id="MovieContentOpinionHeader">
-            <button id="añadirComentario" @click="añadirComentario;">
+            <button id="añadir_comentario" @click="añadir_comentario">
               Añadir Comentario
             </button>
           </div>
@@ -173,13 +173,13 @@ export default {
     }
   },
   methods: {
-    añadirComentario () {
+    añadir_comentario () {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder comentar')
       } else if (this.log === true) {
         document.getElementById('AddComment').style.display = 'block'
         document.getElementById('CommentArea').style.display = 'block'
-        document.getElementById('añadirComentario').style.display = 'none'
+        document.getElementById('añadir_comentario').style.display = 'none'
       }
     },
     comentar () {
@@ -196,7 +196,7 @@ export default {
 
         document.getElementById('CommentArea').style.display = 'none'
         document.getElementById('btnComentar').style.display = 'none'
-        document.getElementById('añadirComentario').style.display = 'flex'
+        document.getElementById('añadir_comentario').style.display = 'flex'
       }
     },
     valorar () {
@@ -331,7 +331,7 @@ label {
 li {
   font-size: 1vw;
 }
-button#añadirComentario {
+button#añadir_comentario {
   font-size: 1.5vh;
 }
 button#btnComentar {
