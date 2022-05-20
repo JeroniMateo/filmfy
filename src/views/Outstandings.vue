@@ -2,14 +2,13 @@
   <div id="TOP10">
     <div id="topNum" class="col-md-12">
       <h1><b>TOP 10</b></h1>
-      <TopMovie v-for="movie in 10" :movie="movie" :key="movie.top" />
+      <WatchItemCard v-for="movie in 10" :movie="movie" :key="movie.top" />
     </div>
   </div>
 </template>
 
 <script>
-import TopMovie from '../components/Outstanding/TopMovie.vue'
-
+import WatchItemCard from '@/components/Movies/WatchItemCard.vue'
 export default {
   name: 'Outstandings',
   data () {
@@ -24,7 +23,7 @@ export default {
     }
   },
   components: {
-    TopMovie
+    WatchItemCard
   }
 }
 </script>
