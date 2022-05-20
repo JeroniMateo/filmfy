@@ -1,5 +1,5 @@
 <template>
-  <div id="Browser" class="container" >
+  <div id="Browser" class="container">
     <h3>Destacados</h3>
     <div
       class="BrowserSection row row-cols-1 p-5 row-cols-md-4 g-4"
@@ -36,9 +36,19 @@
 </template>
 
 <script>
-import WatchItemCard from '../Movies/WatchItemCard.vue'
+import WatchItemCard from '../components/Movies/WatchItemCard.vue'
 export default {
   name: 'Browser',
+  data () {
+    return {
+      log: true,
+      movies: [],
+      watchList: [],
+      img_list: '',
+      title_list: '',
+      description_list: ''
+    }
+  },
   components: {
     WatchItemCard
   }
