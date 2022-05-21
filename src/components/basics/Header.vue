@@ -28,7 +28,7 @@
       <div id="hamburgerMenu">
         <a href="" style="text-decoration: none;">
           <div style="display: flex; align-items: center;">
-            <img class="logo" src="../../assets/img/cameraLogo.png" alt="logo">
+            <img class="logo" src="../../assets/img/cameraLogo.png" width="30" height="30" alt="logo">
             <p class="brand-name">Filmfy</p>
             <span class="close-hamburger">&times;</span>
           </div>
@@ -62,7 +62,6 @@ export default {
   },
   methods: {
     hamburgerIconHandling() {
-      console.log('hi');
       let openHamburger = document.getElementById("hamburger");
       document.getElementsByClassName("hamburger-container")[0].style.display = "flex";
 
