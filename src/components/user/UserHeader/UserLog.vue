@@ -8,9 +8,6 @@
         <router-link class="dropdown-item" to="/userProfile">
           <li>Perfil</li>
         </router-link>
-        <router-link class="dropdown-item" to="/settings">
-          <li>Ajustes</li>
-        </router-link>
         <li><hr class="dropdown-divider" /></li>
         <router-link class="dropdown-item" to="#">
           <li @click="logOut">Log Out</li>

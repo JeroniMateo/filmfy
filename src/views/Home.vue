@@ -1,49 +1,35 @@
 <template>
-  <div id="Home">
-    <div v-if="log" id="HomeUserLog">
-      <HomeLog />
-    </div>
-    <div v-else id="HomeNotUserLog">
-      <HomeNotLog />
-    </div>
+  <div id="Home" class="content container-fluid">
+    <MainWelcome />
+    <WelcomeCards />
+    <FeaturedContent />
   </div>
 </template>
 
 <script>
-import HomeNotLog from '@/components/Home/HomeNotLog.vue'
-import HomeLog from '@/components/Home/HomeLog.vue'
+import MainWelcome from '../components/Welcome/MainWelcome.vue'
+import WelcomeCards from '../components/Welcome/WelcomeCards.vue'
+import FeaturedContent from '../components/Welcome/FeaturedContent.vue'
 export default {
-  name: 'HomeView',
+  name: 'Home',
   components: {
-    HomeNotLog,
-    HomeLog
-  },
-  data () {
-    return {
-      log: true
-    }
+    MainWelcome,
+    WelcomeCards,
+    FeaturedContent
   }
 }
 </script>
+
 <style scoped>
-h3 {
-  color: #4e9f3d;
-  font-size: 6vh;
-  width: 100%;
-  height: 8vh;
+body {
   background-color: #000;
-  text-align: center;
 }
-.HomeSection {
-  background-color: #161414;
-  color: #19282f;
-  font-family: Arial;
-  font-size: 2vh;
-  display: flex;
-  flex-direction: col;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
+
+nav a.router-link-exact-active {
+  color: #4e9f3d;
+}
+div#HomeNotLog {
+  margin: auto;
+  width: 100%;
 }
 </style>

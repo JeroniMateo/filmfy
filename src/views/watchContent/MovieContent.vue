@@ -61,9 +61,9 @@
         </div>
         <div id="MovieContentValoration">
           <h2>Valoración:</h2>
-          <button class="Rating">Valorar</button>
+          <button class="Rating" @click="valorar" >Valorar</button>
           <br />
-          <div class="valoracion">
+          <div class="valoracion" id="starsValoration" style="display:none">
             <!-- Estrella 1 -->
             <button>
               <i class="fas fa-star"></i>
@@ -106,7 +106,7 @@
         <h2 class="OpnionTitle">Comentarios y Valoraciones</h2>
         <div id="MovieContentOpinion">
           <div id="MovieContentOpinionHeader">
-            <button id="añadirComentario" @click="añadirComentario">
+            <button id="añadir_comentario" @click="añadir_comentario">
               Añadir Comentario
             </button>
           </div>
@@ -133,8 +133,7 @@
                 <h4 id="username_user">{{ username_user }}</h4>
               </div>
             </div>
-            <div id="user_comment_area">
-            </div>
+            <div id="user_comment_area"></div>
             <div id="date_comment_area">
               <p id="date_comment">{{ date_comment }}</p>
             </div>
@@ -169,27 +168,43 @@ export default {
         commentaries: [],
         user_comment: '',
         date_comment: ''
-      }
+      },
+      log: false
     }
   },
   methods: {
-    añadirComentario () {
-      document.getElementById('CommentArea').style.display = 'block'
-      document.getElementById('btnComentar').style.display = 'block'
-      document.getElementById('añadirComentario').style.display = 'none'
+    añadir_comentario () {
+      if (this.log === false) {
+        alert('Debes iniciar sesión para poder comentar')
+      } else if (this.log === true) {
+        document.getElementById('AddComment').style.display = 'block'
+        document.getElementById('CommentArea').style.display = 'block'
+        document.getElementById('añadir_comentario').style.display = 'none'
+      }
     },
     comentar () {
-      document.getElementById('Comments').style.display = 'flex'
-      this.user_comment = document.getElementById('user_comment').value
+      if (this.log === false) {
+        alert('Debes iniciar sesión para poder comentar')
+      } else if (this.log === true) {
+        document.getElementById('Comments').style.display = 'flex'
+        this.user_comment = document.getElementById('user_comment').value
 
-      document.getElementById(
-        'user_comment_area'
-      ).innerHTML = `<p id="Pcomentario">${this.user_comment}</p>`
-      this.commentaries.push(this.user_comment)
+        document.getElementById(
+          'user_comment_area'
+        ).innerHTML = `<p id="Pcomentario">${this.user_comment}</p>`
+        this.commentaries.push(this.user_comment)
 
-      document.getElementById('CommentArea').style.display = 'none'
-      document.getElementById('btnComentar').style.display = 'none'
-      document.getElementById('añadirComentario').style.display = 'flex'
+        document.getElementById('CommentArea').style.display = 'none'
+        document.getElementById('btnComentar').style.display = 'none'
+        document.getElementById('añadir_comentario').style.display = 'flex'
+      }
+    },
+    valorar () {
+      if (this.log === false) {
+        alert('Debes iniciar sesión para poder valorar')
+      } else if (this.log === true) {
+        document.getElementById('starsValoration').style.display = 'flex'
+      }
     }
   }
 }
@@ -316,7 +331,7 @@ label {
 li {
   font-size: 1vw;
 }
-button#añadirComentario {
+button#añadir_comentario {
   font-size: 1.5vh;
 }
 button#btnComentar {

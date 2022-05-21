@@ -44,11 +44,7 @@
         </div>
       </div>
     </div>
-    <div
-      id="movie_img"
-      v-on:mouseover="mouseover"
-      v-on:mouseleave="mouseleave"
-    >
+    <div id="movie_img" v-on:mouseover="mouseover" v-on:mouseleave="mouseleave">
       <img
         src="../../assets/img/MoviesIMG/el-padrino.jpg"
         alt=""
@@ -80,19 +76,24 @@ export default {
       categories_movie: [],
       img_movie_img: '',
       img_movie_info: '',
-      img_fav: ''
+      img_fav: '',
+      log: false
     }
   },
   methods: {
     addFavs () {
-      if (this.favorites) {
-        document.getElementById('img_fav')[0].src =
-          '../../assets/img/FavWatch/Fav.png'
-        return (this.favorites = false)
-      } else {
-        document.getElementById('img_fav')[0].src =
-          '../../assets/img/FavWatch/NotFav.png'
-        return (this.favorites = true)
+      if (this.log === false) {
+        alert('Debes iniciar sesion para poder agregar a favoritos')
+      } else if (this.log === true) {
+        if (this.favorites) {
+          document.getElementById('img_fav')[0].src =
+            '../../assets/img/FavWatch/Fav.png'
+          return (this.favorites = false)
+        } else {
+          document.getElementById('img_fav')[0].src =
+            '../../assets/img/FavWatch/NotFav.png'
+          return (this.favorites = true)
+        }
       }
     },
     goMovieContentInfo () {
