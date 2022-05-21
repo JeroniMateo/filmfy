@@ -11,7 +11,7 @@
 import WatchItemCard from '@/components/movies/WatchItemCard.vue'
 export default {
   name: 'Outstandings',
-  data () {
+  data() {
     return {
       movie: '',
       movies: [],
