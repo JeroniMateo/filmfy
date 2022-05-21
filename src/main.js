@@ -10,7 +10,8 @@ import store from './store'
 import 'bootstrap/dist/js/bootstrap.min'
 import './css/styles.css'
 
-//Fontawesome icons import
+// Fontawesome icons import
+// Install with: npm install --save-dev @fortawesome/fontawesome-free
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 
