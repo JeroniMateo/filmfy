@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import WatchItemCard from '../../components/Movies/WatchItemCard.vue'
+import WatchItemCard from '../movies/WatchItemCard.vue'
 export default {
   name: 'UpcomingMovies',
   components: {

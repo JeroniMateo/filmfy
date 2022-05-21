@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import WatchItemCard from '../movies/WatchItemCard.vue'
+import WatchItemCard from './/WatchItemCard.vue'
 
 export default {
   name: 'WatchContentCarrousel',
