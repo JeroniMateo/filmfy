@@ -1,8 +1,8 @@
 <template>
   <footer>
     <div id="footer" class="container-fluid p-2">
-      <div class="filmfyFooter">
-        <img src="../../assets/img/cameraLogo.png" alt="" />
+      <div class="">
+        <img src="../../assets/img/cameraLogo.png" alt="logo" />
         <small>Filfmy.es</small>
       </div>
       <div class="socials">
@@ -12,18 +12,17 @@
         <font-awesome-icon icon="fa-brands fa-youtube" />
       </div>
       <div class="copyright">
-        <pre> © 2021 Copyright: Filmfy.es</pre>
+        <pre> © 2022 Copyright: Filmfy.es</pre>
         <small>
           Encuentra variedad de conentido y crea listas para compartirlas con
-          tus amigos</small
-        >
+          tus amigos
+        </small>
       </div>
     </div>
   </footer>
 </template>
 
 <script>
-import Navbar from './Navbar.vue'
 export default {
   name: 'Footer'
 }
