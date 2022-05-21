@@ -39,12 +39,8 @@
               </router-link>
 
               <!--This Navbar link will be enabled if the user is loged-->
-              <router-link v-if="log" class="nav-link" to="/playlists">
-                <li class="nav-item">Mis Listas</li>
-              </router-link>
-              <router-link v-else class="nav-link disabled" to="/playlists" style="display:none">
-                <li class="nav-item">Mis Listas</li>
-              </router-link>
+
+              <li class="nav-item" @click="goMyLists" >Mis Listas</li>
             </ul>
 
             <div id="searching">
@@ -77,7 +73,7 @@
 export default {
   name: 'Navbar',
 
-  data () {
+  data() {
     return {
       log: false,
       search_result: ''
@@ -87,6 +83,13 @@ export default {
     searchContent () {
       this.search_result = document.getElementById('searchingInput').value
       this.$router.push('/search/' + this.search)
+    },
+    goMyLists () {
+      if (this.log) {
+        this.$router.push('/mylists')
+      } else {
+        alert('Debes iniciar sesión para acceder a esta sección')
+      }
     }
   }
 }
