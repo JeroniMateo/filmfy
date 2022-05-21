@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Navbar from '../basics/header/Navbar.vue'
-import User from '../basics/header/User.vue'
+import Navbar from './Navbar.vue'
+import User from './User.vue'
 export default {
   name: 'Header',
   components: {

@@ -25,21 +25,6 @@
         <div class="card-footer">
           <h5 class="text-muted" id="category_movie">
             Category {{ categories_movie }}
-            <div id="watch_movie"><button id=""></button></div>
-
-            <button
-              type="button"
-              class="favButton"
-              id="FavWatch"
-              @click="addFavs"
-            >
-              <img
-                class="favIMG"
-                src="../../assets/img/FavWatch/NotFav.png"
-                alt=""
-                id="img_fav"
-              />
-            </button>
           </h5>
         </div>
       </div>
@@ -58,7 +43,7 @@
 export default {
   name: 'WatchItemCard',
 
-  data () {
+  data() {
     return {
       movie_info: {
         title_movie: 'El Padrino',
@@ -81,22 +66,18 @@ export default {
     }
   },
   methods: {
-    addFavs () {
+    addFavs() {
       if (this.log === false) {
         alert('Debes iniciar sesion para poder agregar a favoritos')
       } else if (this.log === true) {
         if (this.favorites) {
-          document.getElementById('img_fav')[0].src =
-            '../../assets/img/FavWatch/Fav.png'
           return (this.favorites = false)
         } else {
-          document.getElementById('img_fav')[0].src =
-            '../../assets/img/FavWatch/NotFav.png'
           return (this.favorites = true)
         }
       }
     },
-    goMovieContentInfo () {
+    goMovieContentInfo() {
       this.$router.push({
         path: '/movies/:id',
         query: {

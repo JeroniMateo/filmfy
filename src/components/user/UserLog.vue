@@ -1,6 +1,6 @@
 <template>
   <div class="userAcount">
-    <img src="../../../assets/img/UserPhoto.png" alt="" />
+    <img src="../../assets/img/UserPhoto.png" alt="" />
     <li id="userProfile" class="nav-item dropdown">
       <img id="img_user" alt="" />
       <p id="username_user">{{ username_user }}</p>

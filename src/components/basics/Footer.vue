@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Navbar from './header/Navbar.vue'
+import Navbar from './Navbar.vue'
 export default {
   name: 'Footer'
 }

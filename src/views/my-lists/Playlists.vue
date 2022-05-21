@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import FavsLists from '../../components/myPlaylists/FavsLists.vue'
-import WatchList from '../../components/myPlaylists/WatchList.vue'
-import UserLists from '../../components/myPlaylists/UserLists.vue'
+import FavsLists from '../../components/my-playlists/FavsLists.vue'
+import WatchList from '../../components/my-playlists/WatchList.vue'
+import UserLists from '../../components/my-playlists/UserLists.vue'
 export default {
   name: 'Playlists',
   components: {

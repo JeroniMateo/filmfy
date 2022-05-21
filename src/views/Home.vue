@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import MainWelcome from '../components/Welcome/MainWelcome.vue'
-import WelcomeCards from '../components/Welcome/WelcomeCards.vue'
-import FeaturedContent from '../components/Welcome/FeaturedContent.vue'
+import MainWelcome from '../components/welcome/MainWelcome.vue'
+import WelcomeCards from '../components/welcome/WelcomeCards.vue'
+import FeaturedContent from '../components/welcome/FeaturedContent.vue'
 export default {
   name: 'Home',
   components: {

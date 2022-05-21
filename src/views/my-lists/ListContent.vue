@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import WatchItemCard from '../../components/Movies/WatchItemCard.vue'
+import WatchItemCard from '../../components/movies/WatchItemCard.vue'
 export default {
   name: 'ListContent',
   components: {

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import WatchContentCarrousel from '../components/Movies/watchContentCategories/WatchContantCarrousel.vue'
+import WatchContentCarrousel from '../components/movies/WatchContantCarrousel.vue'
 export default {
   name: 'Movies',
   data () {

@@ -8,7 +8,7 @@
             <div id="FILMFY">
               <!--Filmfy Icon-->
               <img
-                src="../../../assets/img/cameraLogo.png"
+                src="../../assets/img/cameraLogo.png"
                 alt=""
                 id="logoFilmfy"
               />
