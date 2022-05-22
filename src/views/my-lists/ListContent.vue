@@ -7,21 +7,14 @@
       <img id="img_list" alt="" />
     </div>
     <div id="MovieList" class="row row-cols-1 p-5 row-cols-md-3 g-4">
-      <WatchItemCard
-        v-for="movie in movies"
-        :movie="movie"
-        :key="movie.playlist"
-      />
     </div>
   </div>
 </template>
 
 <script>
-import WatchItemCard from '../../components/movies/WatchItemCard.vue'
 export default {
   name: 'ListContent',
   components: {
-    WatchItemCard
   },
   data () {
     return {

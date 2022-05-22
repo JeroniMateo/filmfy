@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import WatchItemCard from '../components/movies/WatchItemCard.vue'
+import WatchItemCard from '../components/movies-old/WatchItemCard.vue'
 export default {
   name: 'BillBoard',
   data () {

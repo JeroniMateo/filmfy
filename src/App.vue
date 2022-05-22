@@ -1,7 +1,7 @@
 <template>
-  <Header />
-  <router-view />
-    <Footer />
+  <Header/>
+  <router-view/>
+  <Footer/>
 </template>
 <script>
 import Header from '../src/components/basics/Header.vue'
@@ -19,6 +19,7 @@ export default {
 body {
   background-color: #000;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,14 +32,17 @@ body {
 nav {
   padding: 30px;
 }
+
 .card-text {
   font-size: 1.2rem;
   color: #000;
 }
+
 .card-title {
   font-size: 1.5rem;
   color: #000;
 }
+
 nav a {
   font-weight: bold;
   color: #0000;
