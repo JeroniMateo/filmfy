@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="d-flex flex-column align-items-center flex-nowrap container-fluid p-2">
+    <div class="d-flex flex-column align-items-center flex-nowrap container-fluid p-5">
       <div class="">
         <img src="../../assets/img/cameraLogo.png" alt="logo" />
         <span class="brand-size">Filfmy</span>
