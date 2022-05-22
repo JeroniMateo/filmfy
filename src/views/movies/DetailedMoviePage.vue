@@ -1,24 +1,28 @@
 <template>
+  <div class="general">
 
-  <div class="container my-5">
-    <h1 class="title">{{ this.movie.title }}</h1>
-  </div>
-
-  <div class="container d-flex">
-    <MovieDetailedCard :movieID="movieID"/>
-
-    <div class="d-flex justify-content-center contentData">
-      <Tabs :movie="this.movie"/>
-
+    <div class="container">
+      <h2 class="title">{{ this.movie.title }} ({{this.date.getFullYear()}})</h2>
     </div>
-  </div>
 
-  <div class="container my-4">
-    <div class="section-heading">
-      <h2 class="sinopsis mb-0">Sinopsis</h2>
+    <div class="container d-flex">
+      <MovieDetailedCard :movieID="movieID"/>
+
+      <div class="d-flex flex-column align-items-center contentData">
+        <Tabs :movie="this.movie"/>
+        <div >
+          <p></p>
+        </div>
+      </div>
     </div>
-    <div class="description-div">
-      <span class="description">{{ this.movie.description }}</span>
+
+    <div class="container my-4">
+      <div class="section-heading">
+        <h2 class="sinopsis mb-0">Sinopsis</h2>
+      </div>
+      <div class="description-div">
+        <span class="description">{{ this.movie.description }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -64,6 +68,7 @@ export default {
   font-family: Graphik-Regular-Web, sans-serif;
   font-weight: 400;
   letter-spacing: .065em;
+  margin-bottom: 3rem;
 }
 
 .description-div {
@@ -96,6 +101,11 @@ export default {
 
 .contentData {
   width: inherit;
+}
+
+.general {
+  background-color: black;
+  padding-top: 4rem;
 }
 
 </style>

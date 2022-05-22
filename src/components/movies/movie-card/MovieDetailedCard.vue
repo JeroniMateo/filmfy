@@ -41,7 +41,7 @@ export default {
 <style scoped>
 
 .card-movie {
-  width: 290px;
+  width: 340px;
   margin-top: 0px;
 }
 

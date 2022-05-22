@@ -436,7 +436,7 @@ main {
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 100)
-  ), url("../assets/img/MoviesIMG/doctor-strange-3-cover-page.png") center;
+  ), url("@/assets/img/MoviesIMG/doctor-strange-3-cover-page.png") center;
 }
 
 .heading {

@@ -29,7 +29,7 @@ export default {
 
   props : ["movie"],
 
-  mounted() {
+  updated() {
     this.infoOutput()
   },
 
@@ -37,6 +37,7 @@ export default {
     async infoOutput() {
 
       let directors = document.getElementById("directors")
+      directors.innerHTML = ""
       this.movie.directors.forEach((director, index) => {
         if (this.movie.directors.length === 1) {
           directors.innerHTML = director
@@ -50,6 +51,7 @@ export default {
       })
 
       let writters = document.getElementById("writters")
+      writters.innerHTML = ""
       this.movie.writters.forEach((writter, index) => {
         if (this.movie.writters.length === 1) {
           writters.innerHTML = writter
@@ -63,6 +65,7 @@ export default {
       })
 
       let actors = document.getElementById("actors")
+      actors.innerHTML = ""
       this.movie.actors.forEach((actor, index) => {
         if (this.movie.actors.length === 1) {
           actors.innerHTML = actor
@@ -98,9 +101,8 @@ export default {
   color: #fff;
 }
 
-.panels[data-v-72140086] {
+.panels {
   width: 100%;
-  max-width: 500px;
   border-radius: 3px;
   overflow: hidden;
   padding: 20px;
@@ -136,9 +138,5 @@ export default {
 #three:checked ~ .tabs #three-tab {
   background: green;
 
-}
-
-.contentData {
-  width: inherit;
 }
 </style>
