@@ -6,16 +6,10 @@
 
   <div class="container d-flex">
     <MovieDetailedCard :movieID="movieID"/>
-    <div>
-      <div>
-        <p >Directores <span class="" v-for="director of this.movie.directors" :key="director">{{director + " · "}}</span></p>
-      </div>
-      <div>
-        <p>Escritores <span class="" v-for="writter of this.movie.writters" :key="writter">{{writter + " · "}}</span></p>
-      </div>
-      <div>
-        <p>Actores <span class="" v-for="actor of this.movie.actors" :key="actor">{{actor + " · "}}</span></p>
-      </div>
+
+    <div class="d-flex justify-content-center contentData">
+      <Tabs :movie="this.movie"/>
+
     </div>
   </div>
 
@@ -31,15 +25,20 @@
 
 <script>
 import MovieDetailedCard from "@/components/movies/movie-card/MovieDetailedCard";
+import Tabs from "@/components/movies/detailed-movie-page/Tabs";
 
 export default {
   name: "DetailedMoviePage",
-  components: {MovieDetailedCard},
+  components: {Tabs, MovieDetailedCard},
+
   data() {
     return {
       movieID: this.$route.params.movie,
       movie: [],
-      date: ""
+      date: "",
+      directors: "Directores : ",
+      writters: "Escritores : ",
+      actors: "Actores : ",
     }
   },
 
@@ -54,6 +53,7 @@ export default {
       this.movie = moviesData
       this.date = new Date(moviesData.release_date)
     },
+
   }
 }
 </script>
@@ -73,6 +73,7 @@ export default {
 
 .description {
   color: #c9c9c9;
+  line-height: 25px;
 }
 
 .sinopsis {
@@ -91,6 +92,10 @@ export default {
   margin-top: 0;
   padding-bottom: 5px;
   text-transform: uppercase;
+}
+
+.contentData {
+  width: inherit;
 }
 
 </style>
