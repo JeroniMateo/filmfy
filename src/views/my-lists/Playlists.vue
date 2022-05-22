@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #Playlists {
   background-color: #000;
   margin: auto;

@@ -1,6 +1,6 @@
 <template>
 
-  <div class="ballon d-flex flex-column align-items-center mx-1 my-3">
+  <div class="card-movie d-flex flex-column align-items-center mx-1 my-3">
     <div v-bind:id="movie.id" class="d-flex flex-column align-items-center" style="visibility: hidden">
       <span class="frame-title">{{ movie.title }}</span>
       <span class="frame-title-description"></span>
@@ -15,10 +15,8 @@
 </template>
 
 <script>
-import {onMounted} from "vue";
-
 export default {
-  name: "MovieCardSmall",
+  name: "MovieCardCategories",
   props: ["movie"],
 
   data() {
@@ -28,16 +26,13 @@ export default {
     }
   },
 
-  mounted () {
-    this.accesProps()
+  mounted() {
+    this.url = "http://filmfy-api.ddns.net" + this.movie.image
+    this.href = window.origin + "/movies/" + this.movie.id
+    this.displayTitle()
   },
 
   methods: {
-
-    accesProps() {
-      this.url = this.movie.title
-    },
-
     displayTitle() {
       let element = document.getElementsByClassName("movie-card")
       for (let i = 0; i < element.length; i++) {
@@ -71,9 +66,9 @@ export default {
   border: 3px solid green;
 }
 
-.ballon {
+.card-movie {
   width: 230px;
-  height: 345px
+  margin-top: 0px;
 }
 
 .frame-title {

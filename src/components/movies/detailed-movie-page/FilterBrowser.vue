@@ -60,7 +60,7 @@ export default {
         let slugEl = this.string_to_slug(el.name)
 
         categoriesFilter.innerHTML += `
-          <li><a style="font-size: 12px" class="dropdown-item" href="category/${slugEl}">${el.name}</a></li>
+          <li><a style="font-size: 12px" class="dropdown-item" href="/movies/category/${slugEl}">${el.name}</a></li>
         `
       })
     },
@@ -94,17 +94,17 @@ export default {
 }
 
 .bar-nav {
-  background: #1b2127;
-  border: 1px solid #303840;
+  background: transparent;
+  border: 1px solid white;
   border-radius: 4px;
-  color: #9ab;
+  color: white;
   display: inline-block;
   padding: 0 2px;
   white-space: nowrap;
 }
 
 .bar-nav > div {
-  border-right: 1px solid #293037;
+  border-right: 1px solid white;
   float: left;
   font-size: .92307692rem;
   letter-spacing: .075em;
