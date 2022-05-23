@@ -71,12 +71,16 @@
           </div>
         </a>
         <div class="menu-links">
-          <a href="">Películas</a>
-          <a href="">Listas</a>
+          <a href="/movies">Películas</a>
+          <a href="/playlists">Listas</a>
           <a href="">Usuarios</a>
         </div>
         <div class="login-content-hamburger">
-          <button type="button" class="btn btn-outline-primary me-2">
+          <button
+            type="button"
+            class="btn btn-outline-primary me-2"
+            @click="login"
+          >
             Accede
           </button>
         </div>
@@ -94,20 +98,24 @@ export default {
     // Navbar,
     // User
   },
+  data: () => ({
+    openHamburger: '',
+    closeHamburger: ''
+  }),
   methods: {
-    hamburgerIconHandling() {
-      let openHamburger = document.getElementById('hamburger')
+    hamburgerIconHandling () {
+      this.openHamburger = document.getElementById('hamburger')
       document.getElementsByClassName('hamburger-container')[0].style.display =
         'flex'
 
-      let closeHamburger = document.getElementsByClassName('close-hamburger')[0]
-      closeHamburger.addEventListener('click', function () {
+      this.closeHamburger = document.getElementsByClassName('close-hamburger')[0]
+      this.closeHamburger.addEventListener('click', function () {
         document.getElementsByClassName(
           'hamburger-container'
         )[0].style.display = 'none'
       })
     },
-    login() {
+    login () {
       this.$router.push('/login')
     }
   }
