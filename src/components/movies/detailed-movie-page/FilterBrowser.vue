@@ -13,7 +13,7 @@
 
           </ul>
         </div>
-        <div class="dropdown">
+        <div class="dropdown yes">
           <label class="button-filter dropdown-toggle" type="" id="dropdownMenuButton2" data-bs-toggle="dropdown">
             Year
           </label>
@@ -24,18 +24,15 @@
       </div>
     </div>
 
-    <div class="searcher">
-      <span class="section-heading">Buscar: </span>
-      <input type="text" class="field field-large ac_input" id="frm-film-search" data-url="/s/autocompletefilm"
-             autocomplete="off">
-    </div>
+    <Searcher/>
   </section>
 </template>
 
 <script>
+import Searcher from "@/components/movies/movies-page/Searcher";
 export default {
   name: "FilterBrowser",
-
+  components: {Searcher},
   data() {
     return {
       categories: [],
@@ -160,6 +157,10 @@ span:last-child {
 
 label {
   cursor: pointer;
+}
+
+.yes {
+  top: auto; bottom: 100%
 }
 
 </style>

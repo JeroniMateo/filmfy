@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="container my-4">
+    <div class="container py-4">
       <div class="section-heading">
         <h2 class="sinopsis mb-0">Sinopsis</h2>
       </div>

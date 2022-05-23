@@ -38,7 +38,7 @@ export default {
   rgba(0, 0, 0, 100)), url("https://wallpapercave.com/wp/sepNm9t.jpg");;
   box-sizing: border-box;
   background-size: cover;
-  background-position: 0% 40%;
+  background-position: 50% 40%;
   width: 100%;
   height: 60vh;
 }
