@@ -64,7 +64,9 @@
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <li><a class="dropdown-item" href="/userProfile">Mi Perfil</a></li>
           <li><a class="dropdown-item" href="/playlists">Mis Listas</a></li>
-          <li @click="logout"><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+          <li @click="logout">
+            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+          </li>
         </ul>
       </button>
       <button
@@ -110,12 +112,17 @@
               <i class="fa-solid fa-user"></i> {{ user_name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="/userProfile">Mi Perfil</a></li>
+              <li>
+                <a class="dropdown-item" href="/userProfile">Mi Perfil</a>
+              </li>
               <li><a class="dropdown-item" href="/playlists">Mis Listas</a></li>
-              <li @click="logout"><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+              <li @click="logout">
+                <a class="dropdown-item" href="#">Cerrar Sesión</a>
+              </li>
             </ul>
           </button>
-          <button v-else
+          <button
+            v-else
             type="button"
             class="btn btn-outline-primary me-2"
             @click="login"
