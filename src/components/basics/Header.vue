@@ -50,7 +50,29 @@
     </ul>
 
     <div class="main main-menu col-md-3 text-end">
-      <button type="button" class="btn btn-outline-primary me-2" @click="login">
+      <button v-if="log" type="button" class="btn btn-outline-primary me-2">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-user"></i> {{ user_name }}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="/userProfile">Mi Perfil</a></li>
+          <li><a class="dropdown-item" href="/playlists">Mis Listas</a></li>
+          <li @click="logout"><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+        </ul>
+      </button>
+      <button
+        v-else
+        type="button"
+        class="btn btn-outline-primary me-2"
+        @click="login"
+      >
         Accede
       </button>
     </div>
@@ -76,7 +98,24 @@
           <a href="">Usuarios</a>
         </div>
         <div class="login-content-hamburger">
-          <button
+          <button v-if="log" type="button" class="btn btn-outline-primary me-2">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-user"></i> {{ user_name }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/userProfile">Mi Perfil</a></li>
+              <li><a class="dropdown-item" href="/playlists">Mis Listas</a></li>
+              <li @click="logout"><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+            </ul>
+          </button>
+          <button v-else
             type="button"
             class="btn btn-outline-primary me-2"
             @click="login"
@@ -100,23 +139,31 @@ export default {
   },
   data: () => ({
     openHamburger: '',
-    closeHamburger: ''
+    closeHamburger: '',
+    user_name: '',
+    log: true
   }),
   methods: {
-    hamburgerIconHandling () {
+    hamburgerIconHandling() {
       this.openHamburger = document.getElementById('hamburger')
       document.getElementsByClassName('hamburger-container')[0].style.display =
         'flex'
 
-      this.closeHamburger = document.getElementsByClassName('close-hamburger')[0]
+      this.closeHamburger =
+        document.getElementsByClassName('close-hamburger')[0]
       this.closeHamburger.addEventListener('click', function () {
         document.getElementsByClassName(
           'hamburger-container'
         )[0].style.display = 'none'
       })
     },
-    login () {
+    login() {
       this.$router.push('/login')
+    },
+    logout() {
+      localStorage.removeItem('token')
+      this.log = false
+      this.$router.push('/')
     }
   }
 }
