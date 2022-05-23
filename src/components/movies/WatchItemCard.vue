@@ -16,10 +16,8 @@
             alt="..."
           />
           <div class="card-body">
-            <h2 class="card-title" id="title_movie">
-              El Padrino {{ title_movie }}
-            </h2>
-            <h5 class="card-text" id="rating_movie">5/5 {{ rating_movie }}</h5>
+            <h2 class="card-title" id="title_movie">El Padrino {{ title }}</h2>
+            <h5 class="card-text" id="rating_movie">5/5 {{ rating }}</h5>
           </div>
         </div>
         <div class="card-footer">
@@ -30,7 +28,7 @@
             <button v-else><i class="far fa-heart"></i></button>
           </div>
           <h5 class="text-muted" id="category_movie">
-            Category {{ categories_movie }}
+            Category {{ categories }}
           </h5>
         </div>
       </div>
@@ -49,23 +47,21 @@
 export default {
   name: 'WatchItemCard',
 
-  data() {
+  data () {
     return {
-      movie_info: {
-        title_movie: 'El Padrino',
-        rating_movie: '5/5',
-        categories_movie: 'Drama',
-        img_movie_img: '../../assets/img/MoviesIMG/el-padrino.jpg'
+      movies: {
+        title: 'El Padrino',
+        rating: '5/5',
+        categories: 'Drama',
+        img: '../../assets/img/MoviesIMG/el-padrino.jpg'
       },
       movie_img: {
-        img_movie_img: '../../assets/img/MoviesIMG/el-padrino.jpg'
+        img: '../../assets/img/MoviesIMG/el-padrino.jpg'
       },
-      favorites: true,
-      title_movie: '',
-      rating_movie: '',
-      category_movie: '',
-      categories_movie: [],
-      img_movie_img: '',
+      favorites: false,
+      categoriesMovie: [],
+      favMovies: [],
+      img_movie: '',
       img_movie_info: '',
       img_fav: '',
       log: false
@@ -76,10 +72,11 @@ export default {
       if (this.favorites) {
         this.favorites = false
       } else {
+        this.favMovies.push(this.movies)
         this.favorites = true
       }
     },
-    goMovieContentInfo() {
+    goMovieContentInfo () {
       this.$router.push({
         path: '/movies/:id',
         query: {
