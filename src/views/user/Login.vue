@@ -149,7 +149,7 @@ label.form-label {
   font-weight: bold;
 }
 button {
-  background-color: #4e9f3d;
+  background-color: #00c740;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -175,7 +175,7 @@ h2 {
 input {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #000;
+  color: #0f0505;
   margin: 5%;
 }
 .row {
@@ -194,7 +194,7 @@ input {
 #layoutLogin {
   margin: auto;
   width: 85%;
-  background-color: #000;
+  background-color: #0f0505;
   display: flex;
   flex-direction: column;
 }

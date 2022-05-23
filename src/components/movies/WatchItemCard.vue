@@ -23,7 +23,7 @@
         <div class="card-footer">
           <div id="FavWatch" @click="addFavs">
             <button v-if="favorites">
-              <i class="fas fa-heart" style="color: red"></i>
+              <i class="fas fa-heart" style="color: #00c740"></i>
             </button>
             <button v-else><i class="far fa-heart"></i></button>
           </div>
@@ -161,7 +161,7 @@ p {
   color: #fff;
 }
 h2 {
-  color: #4e9f3d;
+  color: #00c740;
   font-size: 5vh;
 }
 h5 {

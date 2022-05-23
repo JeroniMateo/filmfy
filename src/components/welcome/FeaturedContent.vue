@@ -27,16 +27,16 @@ export default {
 
 <style scoped>
 h1 {
-  color: #4e9f3d;
+  color: #00c740;
   padding: 1%;
 }
 div#FeaturedContent {
-  background-color: #000;
+  background-color: #0f0505;
   margin: auto;
   width: 85%;
 }
 #MainCards {
   padding: 1%;
-  color: #000;
+  color: #0f0505;
 }
 </style>

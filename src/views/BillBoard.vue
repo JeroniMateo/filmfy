@@ -33,11 +33,11 @@ h2 {
   color: #fff;
   font-size: 8vh;
   width: 100%;
-  background-color: #000;
+  background-color: #0f0505;
 }
 div#BillBoardSection {
-  background-color: #000;
-  color: #000;
+  background-color: #0f0505;
+  color: #0f0505;
   font-family: Arial;
   font-size: 2vh;
   display: flex;

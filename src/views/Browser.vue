@@ -61,7 +61,7 @@ h3 {
   font-size: 8vh;
   width: 100%;
   height: 12vh;
-  background-color: #000;
+  background-color: #0f0505;
   text-align: center;
   font-weight: bold;
 }

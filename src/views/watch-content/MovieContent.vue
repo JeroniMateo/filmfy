@@ -260,7 +260,7 @@ img#img_movie {
   width: 25vw;
 }
 div#MovieContentSinopsis {
-  background-color: #000;
+  background-color: #0f0505;
   border-radius: 5%;
 }
 p#SinopsisText {
@@ -268,21 +268,21 @@ p#SinopsisText {
   font-size: 1rem;
 }
 h2.SinopsisHeader {
-  color: #4e9f3d;
+  color: #00c740;
   font-size: 2.5vw;
   margin: 1%;
 }
 h2 {
-  color: #4e9f3d;
+  color: #00c740;
   font-size: 2vw;
 }
 div#SinopsisTitle {
-  background-color: #000;
+  background-color: #0f0505;
   border-radius: 5%;
   display: flex;
 }
 div#MovieContentValoration {
-  background-color: #000;
+  background-color: #0f0505;
   color: #fff;
   border-radius: 5%;
   display: flex;
@@ -303,7 +303,7 @@ div.valoracion {
 }
 div#Opinions {
   padding: 1%;
-  background-color: #000;
+  background-color: #0f0505;
   border-radius: 3%;
   display: flex;
   flex-direction: column;
@@ -341,16 +341,16 @@ button#btnComentar {
   margin-left: 75vh;
   z-index: 1;
   padding: 1%;
-  color: #000;
+  color: #0f0505;
 }
 p#date_comment {
   font-size: 1vw;
-  color: #000;
+  color: #0f0505;
   background-color: #fff;
 }
 
 p#Pcomentario {
-  color: #000;
+  color: #0f0505;
   background-color: #fff;
   border-radius: 10%;
 }
@@ -361,7 +361,7 @@ div#Comments {
   align-content: flex-start;
   justify-content: center;
   background-color: #fff;
-  color: #000;
+  color: #0f0505;
   width: 70vh;
 }
 </style>

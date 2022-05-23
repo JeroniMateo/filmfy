@@ -639,7 +639,7 @@ export default {
 
 <style scoped>
 main {
-  background-color: #000;
+  background-color: #0f0505;
 }
 
 #cover {
@@ -743,7 +743,7 @@ div > svg {
 
 .poster-list.-overlapped.-p70 .poster,
 .poster-list.-overlapped.-p150 .poster {
-  box-shadow: 2px 0 7px #000;
+  box-shadow: 2px 0 7px #0f0505;
   margin-right: -25px;
 }
 

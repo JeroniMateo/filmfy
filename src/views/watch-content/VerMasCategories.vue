@@ -21,7 +21,7 @@ export default {
 <style scoped>
 div#VerMasCateogires {
   background-color: #0b120b;
-  color: #000;
+  color: #0f0505;
   font-family: Arial;
   font-size: 2vh;
   display: flex;

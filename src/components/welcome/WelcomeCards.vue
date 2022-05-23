@@ -122,7 +122,7 @@ div#welcomeCard {
   align-content: space-around;
   flex-direction: row;
   height: 40vh;
-  background-color: #000;
+  background-color: #0f0505;
   align-items: center;
   padding: 3%;
 }

@@ -143,7 +143,7 @@ h2 {
   padding: 10px;
   background-color: rgb(76, 116, 201);
   border-radius: 50%;
-  border: 1px solid #000;
+  border: 1px solid #0f0505;
   cursor: pointer;
 }
 div#CarouselMovies {
@@ -164,7 +164,7 @@ html {
 }
 body {
   margin: 0;
-  background-color: #000;
+  background-color: #0f0505;
 }
 h1 {
   font-family: Arial;
@@ -197,7 +197,7 @@ h1 {
   color: #fff;
   text-decoration: none;
   font-size: 6em;
-  background: #000;
+  background: #0f0505;
   width: 80px;
   padding: 20px;
   text-align: center;

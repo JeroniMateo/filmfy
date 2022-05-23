@@ -43,13 +43,13 @@ export default {
 
 <style>
 #Playlists {
-  background-color: #000;
+  background-color: #0f0505;
   margin: auto;
   width: 70%;
 }
 h2 {
   color: #fff;
-  background-color: #000;
+  background-color: #0f0505;
   font-size: 6vh;
 }
 #Playlists {
@@ -57,7 +57,7 @@ h2 {
   width: 85%;
 }
 div#Listas {
-  background-color: #000;
+  background-color: #0f0505;
   color: #fff;
   font-family: Arial;
   font-size: 2vh;

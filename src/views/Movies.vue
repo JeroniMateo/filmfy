@@ -31,13 +31,13 @@ export default {
 
 <style scoped>
 h3 {
-  color: #1da8e2;
+  color: #00c740;
   width: 50vh;
   background-color: #242424;
   font-size: 6vh;
 }
 div#CineCarrousel {
-  background-color: #000;
+  background-color: #0f0505;
   color: #242424;
   font-family: Arial;
   font-size: 2vh;

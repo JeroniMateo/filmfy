@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 footer > div {
-  background-color: #000;
+  background-color: #0f0505;
   color: #ecdbba;
 }
 

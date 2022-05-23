@@ -17,7 +17,7 @@ export default {
 </script>
 <style>
 body {
-  background-color: #000;
+  background-color: #0f0505;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -33,15 +33,15 @@ nav {
 }
 .card-text {
   font-size: 1.2rem;
-  color: #000;
+  color: #0f0505;
 }
 .card-title {
   font-size: 1.5rem;
-  color: #000;
+  color: #0f0505;
 }
 nav a {
   font-weight: bold;
-  color: #0000;
+  color: #0f05050;
 }
 
 nav a.router-link-exact-active {

@@ -33,7 +33,7 @@ h1 {
   color: #fff;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: #000;
+  background-color: #0f0505;
   font-size: 8vh;
 }
 div.TopMovieHead {
