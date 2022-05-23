@@ -23,6 +23,12 @@
           </div>
         </div>
         <div class="card-footer">
+          <div id="FavWatch" @click="addFavs">
+            <button v-if="favorites">
+              <i class="fas fa-heart" style="color: red"></i>
+            </button>
+            <button v-else><i class="far fa-heart"></i></button>
+          </div>
           <h5 class="text-muted" id="category_movie">
             Category {{ categories_movie }}
           </h5>
@@ -67,14 +73,10 @@ export default {
   },
   methods: {
     addFavs() {
-      if (this.log === false) {
-        alert('Debes iniciar sesion para poder agregar a favoritos')
-      } else if (this.log === true) {
-        if (this.favorites) {
-          return (this.favorites = false)
-        } else {
-          return (this.favorites = true)
-        }
+      if (this.favorites) {
+        this.favorites = false
+      } else {
+        this.favorites = true
       }
     },
     goMovieContentInfo() {
