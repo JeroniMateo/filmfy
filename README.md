@@ -10,14 +10,18 @@ Wireframe with Balsamiq: https://balsamiq.cloud/swio5ls/pepq8ha/r2278
 
 ## 1.Pallete Color
 
-- Primary: #000
-- Secondary: #ffff
-- Info: #4E9F3D
-- Light: #1da8e2
-- Dark: #242424
+- Primary: ##00c740
+- Secondary: #f7f7f5
+- Background: #242424
+- Light: #e49e06
+- Info: ##0f0505;
 - Success: #2ecc71
 - Error: #c50909
+- Warning:#f1c40f
+- Cyan: #5bdee6;
+- Gray: #787b66;
 
+  
 
 ## Project setup
 ```
