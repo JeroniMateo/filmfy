@@ -1,33 +1,33 @@
 <template>
-  <section class="container d-flex justify-content-md-between">
-    <div class="filters d-flex align-items-center bar-nav">
-      <div class="dropdown">
-        <label class="button-filter dropdown-toggle" type="" id="dropdownMenuButton2" data-bs-toggle="dropdown">
-          Category
-        </label>
-        <ul id="categoriesFilter" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 
-        </ul>
-      </div>
-      <div class="dropdown">
-        <label class="button-filter dropdown-toggle" type="" id="dropdownMenuButton2" data-bs-toggle="dropdown">
-          Year
-        </label>
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-          <li><a class="dropdown-item active" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
+  <section class="container d-flex justify-content-md-between my-3">
+
+    <div class="d-flex align-items-center ">
+      <span>Filtrar por :</span>
+      <div class="filters d-flex align-items-center bar-nav">
+        <div class="dropdown">
+          <label class="button-filter dropdown-toggle" type="" id="dropdownMenuButton2" data-bs-toggle="dropdown">
+            Category
+          </label>
+          <ul id="categoriesFilter" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+
+          </ul>
+        </div>
+        <div class="dropdown">
+          <label class="button-filter dropdown-toggle" type="" id="dropdownMenuButton2" data-bs-toggle="dropdown">
+            Year
+          </label>
+          <ul id="yearsFilter" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+
+          </ul>
+        </div>
       </div>
     </div>
 
-
     <div class="searcher">
-
+      <span class="section-heading">Buscar: </span>
+      <input type="text" class="field field-large ac_input" id="frm-film-search" data-url="/s/autocompletefilm"
+             autocomplete="off">
     </div>
   </section>
 </template>
@@ -48,10 +48,11 @@ export default {
 
   methods: {
     async fetchCategories() {
-      const categoryPromise = await fetch("http://127.0.0.1:8000/api/categories")
+      const categoryPromise = await fetch("http://filmfy-api.ddns.net/api/categories")
       const categoriesData = await categoryPromise.json()
       this.categories = categoriesData
       this.printCategories()
+      this.printYears()
     },
 
     printCategories() {
@@ -63,6 +64,19 @@ export default {
           <li><a style="font-size: 12px" class="dropdown-item" href="/movies/category/${slugEl}">${el.name}</a></li>
         `
       })
+    },
+
+    printYears() {
+      let yearsFilter = document.getElementById("yearsFilter")
+      let baseYear = 1920
+      let getCurrentYear = new Date().getFullYear()
+
+      for (let i = baseYear; i < getCurrentYear; i = i+10) {
+        yearsFilter.innerHTML += `
+          <li><a style="font-size: 12px; text-transform: capitalize" class="dropdown-item" href="/movies/years/${i}">${i}s</a></li>
+        `
+      }
+
     },
 
     string_to_slug(str) {
@@ -88,23 +102,50 @@ export default {
 
 <style scoped>
 
+span {
+  font-size: 1rem;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+span:last-child {
+  width: fit-content;
+}
+
 .button-filter {
   padding: 10px;
   margin: 0;
 }
 
-.bar-nav {
-  background: transparent;
-  border: 1px solid white;
-  border-radius: 4px;
+.field {
+  background-color: #2c3440;
+  border: 1px solid #303840;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #456;
+  box-sizing: border-box;
   color: white;
+  font-size: 1.07692308rem;
+  line-height: 1;
+  margin: 0;
+  padding: 9px 9px 8px;
+  width: 100%;
+}
+
+.searcher{
+  display: flex;
+  align-items: center;
+}
+
+.bar-nav {
+  background: #1b2127;
+  border: 1px solid #303840;
+  border-radius: 4px;
   display: inline-block;
   padding: 0 2px;
   white-space: nowrap;
 }
 
 .bar-nav > div {
-  border-right: 1px solid white;
   float: left;
   font-size: .92307692rem;
   letter-spacing: .075em;

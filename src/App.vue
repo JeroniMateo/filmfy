@@ -16,9 +16,7 @@ export default {
 }
 </script>
 <style>
-body {
-  background-color: #000;
-}
+
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,7 +24,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #ffff;
-  background-color: #242424;
 }
 
 nav {

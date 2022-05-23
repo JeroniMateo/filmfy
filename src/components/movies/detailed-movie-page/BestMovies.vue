@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="section-heading mt-5">
-      <span>Películas más recientes</span>
+      <span>Películas mejor valoradas</span>
     </div>
     <div class="container d-flex flex-wrap justify-content-between overflow-hidden">
       <MovieCardCategories v-for="movie of this.movies" :key="movie" :movie="movie" class="card-movie"/>
@@ -14,7 +14,7 @@
 import MovieCardCategories from "@/components/movies/movie-card/MovieCardCategories";
 
 export default {
-  name: "RecentMovies",
+  name: "BestMovies",
   components: {MovieCardCategories},
   data() {
     return {

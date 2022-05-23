@@ -1,6 +1,6 @@
 <template>
 
-  <div class="bg-black">
+  <div class="content-movie-year">
     <div class="container py-5">
       <span>{{ title }}</span>
     </div>
@@ -12,7 +12,6 @@
     </div>
   </div>
 
-
 </template>
 
 <script>
@@ -23,7 +22,7 @@ export default {
   components: {MovieCardCategories},
   data() {
     return {
-      category: this.$route.params.category,
+      category: this.$route.params.year,
       moviesCategory: [],
       title: ""
     }
@@ -36,14 +35,15 @@ export default {
 
   methods: {
     async fetchMoviesCategory() {
-      const promiseMovies = await fetch(`http://filmfy-api.ddns.net/api/movies-categories/${this.category}`)
+      const promiseMovies = await fetch(`http://filmfy-api.ddns.net/api/movies-year/${this.category}`)
       const moviesCategoryData = await promiseMovies.json()
       this.moviesCategory = moviesCategoryData
+      console.log(moviesCategoryData)
       this.printTitle()
     },
 
     printTitle() {
-      this.title = `Se encontraron ${this.moviesCategory.length} películas de ${this.category}`
+      this.title = `Se encontraron ${this.moviesCategory.length} películas de los ${this.category}s`
     }
   }
 
@@ -51,5 +51,10 @@ export default {
 </script>
 
 <style scoped>
+
+.content-movie-year {
+  background-color: black;
+}
+
 
 </style>

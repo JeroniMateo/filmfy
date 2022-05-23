@@ -19,6 +19,7 @@ import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
 import Search from '../views/SearchResults.vue'
 import MovieCategories from "@/components/movies/movies-page/MovieCategories";
+import MovieYear from "@/components/movies/movies-page/MovieYear";
 
 const routes = [
   {
@@ -45,6 +46,11 @@ const routes = [
     path: '/movies/category/:category',
     name: 'movie-category',
     component: MovieCategories
+  },
+  {
+    path: '/movies/years/:year',
+    name: 'movie-year',
+    component: MovieYear
   },
   {
     path: '/billboard',
