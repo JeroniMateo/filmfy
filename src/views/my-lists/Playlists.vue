@@ -1,43 +1,72 @@
 <template>
   <div id="Playlists" class="container-fluid" @click="goMoviesLists">
-    <h3><b>{{ username }} Playlists</b> </h3>
-    <ListProfile />
+    <h2>
+      <b>{{ username_user }} Playlists</b>
+    </h2>
+    <div id="Listas">
+      <div class="lista"><FavsLists /></div>
+      <div class="lista"><WatchList /></div>
+    </div>
   </div>
 </template>
 
 <script>
-import ListProfile from "../../components/myPlaylists/ListProfile.vue";
+import FavsLists from '../../components/my-playlists/FavsLists.vue'
+import WatchList from '../../components/my-playlists/WatchList.vue'
+import UserLists from '../../components/my-playlists/UserLists.vue'
 export default {
-  name: "Playlists",
+  name: 'Playlists',
   components: {
-    ListProfile,
+    WatchList,
+    FavsLists,
+    UserLists
   },
-  data() {
+  data () {
     return {
-      username: "",
-    };
-  },
-  methods:{
-    goToMoviesList(){
-      this.$router.push({
-        path: "/moviesList/:id",
-        query: {
-          id: this.id,
-        },
-      });
-    },
+      username_user: '',
+      user_list: '',
+      user_lists: []
     }
-};
+  },
+  methods: {
+    goToMoviesList () {
+      this.$router.push({
+        path: '/moviesList/:id',
+        query: {
+          id: this.id
+        }
+      })
+    }
+  }
+}
 </script>
 
 <style>
 #Playlists {
   background-color: #000;
+  margin: auto;
+  width: 70%;
 }
-h3 {
-  color: rgb(29, 168, 226);
-  background-color: #242424;
+h2 {
+  color: #fff;
+  background-color: #000;
   font-size: 6vh;
+}
+#Playlists {
+  margin: auto;
+  width: 85%;
+}
+div#Listas {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial;
+  font-size: 2vh;
+  display: flex;
+  flex-direction: col;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
   width: 100%;
 }
 </style>

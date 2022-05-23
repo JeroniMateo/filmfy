@@ -1,49 +1,53 @@
 <template>
- <footer>
-    <div id="footer" class="container-fluid p-2">
-    <div class="filmfyFooter">
-      <img src="../../assets/img/cameraLogo.png" alt="" />
-      <small>Filfmy.es</small>
+  <footer>
+    <div class="d-flex flex-column align-items-center flex-nowrap container-fluid p-5">
+      <div class="">
+        <img src="../../assets/img/cameraLogo.png" alt="logo" />
+        <span class="brand-size">Filfmy</span>
+      </div>
+      <div class="social">
+        <i class="fa-brands fa-facebook-square fa-2x"></i>
+        <i class="fa-brands fa-twitter fa-2x"></i>
+        <i class="fa-brands fa-instagram fa-2x"></i>
+        <i class="fa-brands fa-youtube fa-2x"></i>
+      </div>
+      <div class="copyright">
+        <small>
+          Encuentra variedad de conentido y crea listas para compartirlas con
+          tus amigos
+        </small>
+        <pre> © 2022 Copyright: Filmfy</pre>
+      </div>
     </div>
-    <div class="socials">
-      <font-awesome-icon icon="fa-brands fa-facebook" />
-      <font-awesome-icon icon="fa-brands fa-twitter" />
-      <font-awesome-icon icon="fa-brands fa-instagram" />
-      <font-awesome-icon icon="fa-brands fa-youtube" />
-    </div>
-    <div class="copyright">
-      <pre> © 2021 Copyright: Filmfy.es</pre>
-      <small>
-        Encuentra variedad de conentido y crea listas para compartirlas con tus
-        amigos</small
-      >
-    </div>
-  </div>
- </footer>
+  </footer>
 </template>
 
 <script>
-import Navbar from './header/Navbar.vue'
 export default {
-  name: 'Footer',
-  components: {
-    Navbar
-  }
+  name: 'Footer'
 }
 </script>
 
 <style scoped>
-div#footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: nowrap;
+footer > div {
   background-color: #000;
   color: #ecdbba;
-  justify-content: space-around;
 }
+
+.brand-size {
+  font-size: 125%;;
+}
+
+.social {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 1rem;
+  padding: 1rem;
+}
+
 pre {
   color: #e59934;
+  padding: 1rem;
 }
 img {
   width: 30px;

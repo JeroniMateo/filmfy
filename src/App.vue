@@ -1,19 +1,15 @@
 <template>
   <Header />
   <router-view />
-  <footer>
     <Footer />
-  </footer>
 </template>
 <script>
-import WelcomeHome from './views/Welcome.vue'
 import Header from '../src/components/basics/Header.vue'
 import Footer from '../src/components/basics/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    WelcomeHome,
     Header,
     Footer
   }
@@ -49,7 +45,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #ffff  ;
+  color: #ffff;
 }
-
 </style>

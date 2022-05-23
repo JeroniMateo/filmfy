@@ -1,38 +1,37 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Welcome from '../views/Welcome'
+
 import Home from '../views/Home.vue'
+import Browser from '../views/Browser.vue'
 
-import Movies from '../views/watchContent/Movies.vue'
-import MovieContent from '../views/watchContent/MoviesContent/MovieContent.vue'
+import Movies from '../views/Movies.vue'
+import MovieContent from '../views/watch-content/MovieContent.vue'
 
-import BillBoard from '../views/movies-sections/BillBoard.vue'
-import BillBoardContent from '../views/watchContent/MoviesContent/BillBoardContent.vue'
+import BillBoard from '../views/BillBoard.vue'
 
-import Outstandings from '../views/movies-sections/Outstandings.vue'
+import Outstandings from '../views/Outstandings.vue'
 
 import Playlists from '../views/my-lists/Playlists.vue'
-import MoviesList from '../views/my-lists/MoviesList.vue'
+import ListContent from '../views/my-lists/ListContent.vue'
 
+import VerMasCateogries from '../views/watch-content/VerMasCategories.vue'
 import UserProfile from '../views/user/UserProfile.vue'
-import UserSettings from '../views/user/UserSettings.vue'
 
 import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
 
-import Search from '../views/Searching/Search.vue'
+import Search from '../views/SearchResults.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'welcome',
-    component: Welcome
-  },
-  {
-    path: '/home',
     name: 'home',
     component: Home
   },
-
+  {
+    path: '/browser',
+    name: 'browser',
+    component: Browser
+  },
   {
     path: '/movies',
     name: 'movies',
@@ -43,18 +42,16 @@ const routes = [
     name: 'movie-content',
     component: MovieContent
   },
-
+  {
+    path: '/movies/:category/:id',
+    name: 'movie-content-category',
+    component: VerMasCateogries
+  },
   {
     path: '/billboard',
     name: 'billboard',
     component: BillBoard
   },
-  {
-    path: '/billboard/:id',
-    name: 'billboard-content',
-    component: BillBoardContent
-  },
-
 
   {
     path: '/outstandings',
@@ -68,20 +65,15 @@ const routes = [
     component: Playlists
   },
   {
-    path: '/moviesList/:id',
-    name: 'MoviesList',
-    component: MoviesList
+    path: '/listContent/:id',
+    name: 'ListContent',
+    component: ListContent
   },
 
   {
-    path: '/profile',
+    path: '/userProfile',
     name: 'profile',
     component: UserProfile
-  },
-  {
-    path: '/settings',
-    name: 'settings',
-    component: UserSettings
   },
 
   {
