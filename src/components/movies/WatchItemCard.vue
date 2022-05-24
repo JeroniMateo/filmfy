@@ -50,10 +50,10 @@ export default {
   data () {
     return {
       movies: {
+        img: '../../assets/img/MoviesIMG/el-padrino.jpg',
         title: 'El Padrino',
         rating: '5/5',
-        categories: 'Drama',
-        img: '../../assets/img/MoviesIMG/el-padrino.jpg'
+        categories: 'Drama'
       },
       movie_img: {
         img: '../../assets/img/MoviesIMG/el-padrino.jpg'

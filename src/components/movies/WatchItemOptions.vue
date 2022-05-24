@@ -1,21 +1,24 @@
 <template>
   <div id="WatchItemConfig">
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li id="favMovie" v-if="favs">
-        <button @click="addFavs">Add Favs</button>
-      </li>
-      <li id="notFavMovie" v-else>
+      //Favs
+      <li id="notFavMovie" v-if="favs">
         <a class="dropdown-item" href="#"
           ><button @click="removeFavs">Remove Favs</button></a
         >
       </li>
-      <li><hr class="dropdown-divider" /></li>
-      <li id="watchMovie" v-if="watch">
-        <button @click="addWatched">Watched</button>
+      <li id="favMovie" v-else>
+        <button @click="addFavs">Add Favs</button>
       </li>
-      <li id="notWatchMovie" v-else>
+      //Watch
+      <li><hr class="dropdown-divider" /></li>
+      <li id="notWatchMovie" v-if="watch">
         <button @click="removeWatched">Unwatched</button>
       </li>
+      <li id="watchMovie" v-else>
+        <button @click="addWatched">Watched</button>
+      </li>
+      //Playlist
       <li class="nav-item dropdown">
         <a
           @click="addToList"
