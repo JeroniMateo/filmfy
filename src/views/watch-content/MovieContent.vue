@@ -18,27 +18,27 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" id="MovieContentTitle">
                     <label for="">Titulo:</label>
-                    <p id="title_movie">{{ title_movie }}</p>
+                    <p id="title_movie">{{ title }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentYear">
                     <label for="">Fecha:</label>
-                    <p id="date_movie">{{ date_movie }}</p>
+                    <p id="date_movie">{{ date }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentGenre">
                     <label for="">Genero:</label>
-                    <p id="category_movie">{{ category_movie }}</p>
+                    <p id="category_movie">{{ category }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentDirectors">
                     <label for="">Directores:</label>
-                    <p id="directors_movie">{{ directors_movie }}</p>
+                    <p id="directors_movie">{{ directors }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentActors">
                     <label for="">Actores:</label>
-                    <p id="actors_movie">{{ actors_movie }}</p>
+                    <p id="actors_movie">{{ actors }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
                     <label for="">Valoracíon:</label>
-                    <p id="rating_movie">{{ rating_movie }}</p>
+                    <p id="rating_movie">{{ rating }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentRuntime">
                     <label for="">Vista <button></button></label>
@@ -56,7 +56,7 @@
             <h2 class="SinopsisHeader" id="sinopsis_movie">Sinopsis</h2>
           </div>
           <p id="sinopsis">
-            {{ sinopsis_movie }}
+            {{ sinopsis }}
           </p>
         </div>
         <div id="MovieContentValoration">
@@ -95,7 +95,7 @@
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/{{ trailer_movie }}"
+            src="https://www.youtube.com/embed/{{ trailer }}"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -130,7 +130,7 @@
                 />
               </div>
               <div class="username_area">
-                <h4 id="username_user">{{ username_user }}</h4>
+                <h4 id="username_user">{{ username }}</h4>
               </div>
             </div>
             <div id="user_comment_area"></div>
@@ -151,20 +151,20 @@ export default {
   data () {
     return {
       movie: {
-        img_movie: '',
-        title_movie: '',
-        date_movie: '',
-        category_movie: [],
-        directors_movie: [],
-        actors_movie: [],
-        rating_movie: '',
-        sinopsis_movie: '',
-        trailer_movie: ''
+        img: '',
+        title: '',
+        date: '',
+        category: [],
+        directors: [],
+        actors: [],
+        rating: '',
+        sinopsis: '',
+        trailer: ''
       },
 
       user: {
         img_user: '',
-        username_user: '',
+        username: '',
         commentaries: [],
         user_comment: '',
         date_comment: ''
