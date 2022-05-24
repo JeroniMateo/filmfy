@@ -97,11 +97,11 @@ button#buscar {
   margin-left: -3vw;
   border-radius: 10%;
   height: 5.2vh;
-  background-color: #2ecc71;
+  background-color: #00c740;
 }
 
 .nav-link {
-  color: #ffff;
+  color: #f7f7f5;
 }
 li {
   font-size: 3vh;
@@ -122,17 +122,17 @@ div#FILMFY {
 }
 h1 {
   font-size: 3vw;
-  color: aquamarine;
+  color: #5bdee6;
   margin-left: 2vw;
 }
 a {
   text-decoration: none;
-  color: #fff;
+  color: #f7f7f5;
 }
 #buscarButton{
-  background-color: aquamarine;
-  border-color: aquamarine;
-  color: #ffff;
+  background-color: #5bdee6;
+  border-color: #5bdee6;
+  color: #f7f7f5;
   font-family: Arial;
   font-size: 2.2vh;
   margin-left: -2vw; ;

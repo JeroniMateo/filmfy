@@ -20,7 +20,7 @@
 <script>
 export default {
   name: 'FavsList',
-  data () {
+  data() {
     return {
       movie: '',
       movies: [],
@@ -37,7 +37,7 @@ export default {
     }
   },
   methods: {
-    goIntoFavsList () {
+    goIntoFavsList() {
       this.$router.push('/moviesList/')
     }
   }
@@ -46,8 +46,8 @@ export default {
 
 <style>
 #FavsList {
-  background-color: rgb(15, 23, 30);
-  color: #fff;
+  background-color: #0f0505;
+  color: #f7f7f5;
   font-family: Arial;
   font-size: 2vh;
   display: flex;

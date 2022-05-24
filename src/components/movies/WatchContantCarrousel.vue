@@ -18,7 +18,7 @@
       <div
         id="CarouselMovies"
         class="container-fluid"
-        style="background-color: #191a19"
+        style="background-color: #242424"
       >
         <h2><b>Category</b></h2>
         <div class="wrapper" v-on:click.right="ItemOpctions">
@@ -115,8 +115,8 @@ export default {
 
 <style scoped>
 #VerMas {
-  background-color: rgb(15, 23, 30);
-  color: #fff;
+  background-color: #0f0505;
+  color: #f7f7f5;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
@@ -131,8 +131,8 @@ div.MovieInCarousel {
   align-items: center;
 }
 h2 {
-  color: #fff;
-  background-color: rgb(15, 23, 30);
+  color: #f7f7f5;
+  background-color:#0f0505;
   font-size: 8vh;
   width: 100%;
 }
@@ -141,7 +141,7 @@ h2 {
   top: 0;
   right: 0;
   padding: 10px;
-  background-color: rgb(76, 116, 201);
+  background-color: ##5bdee6;
   border-radius: 50%;
   border: 1px solid #0f0505;
   cursor: pointer;
@@ -168,7 +168,7 @@ body {
 }
 h1 {
   font-family: Arial;
-  color: red;
+  color: #c50909;
   text-align: center;
 }
 .wrapper {
@@ -194,7 +194,7 @@ h1 {
 }
 .wrapper section a {
   position: absolute;
-  color: #fff;
+  color: #f7f7f5;
   text-decoration: none;
   font-size: 6em;
   background: #0f0505;
@@ -231,7 +231,7 @@ h1 {
 div.title {
   display: flex;
   font-size: 500em;
-  background-color: #2c3e50;
+  background-color: #787b66;
   width: 15vh;
 }
 #CarouselMovies {

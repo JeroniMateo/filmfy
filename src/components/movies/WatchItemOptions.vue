@@ -119,8 +119,8 @@ export default {
   width: 120px;
   margin: 0 auto;
   padding: 10px;
-  color: #ffffff;
-  background: #c50909;
+  color: #f7f7f5;
+  background-color: #787b66;
   text-align: center;
 }
 </style>

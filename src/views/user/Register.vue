@@ -267,7 +267,7 @@ export default {
 label.form-label {
   font-size: 3vh;
 
-  color: #fff;
+  color: #f7f7f5;
 }
 div#RegisterFormInput {
   display: flex;
@@ -282,7 +282,7 @@ div#RegisterFormInput {
 button {
   background-color: #00c740;
   border: none;
-  color: white;
+  color: f7f7f5;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -293,7 +293,7 @@ button {
 }
 h2 {
   font-size: 4rem;
-  color: #fff;
+  color: #f7f7f5;
 }
 .formConfirm {
   display: flex;

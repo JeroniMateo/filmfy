@@ -680,15 +680,15 @@ main {
 }
 
 .promopanel {
-  background: #456;
+  background-color: #242424;
   padding: 16px 20px 18px;
 }
 
 .panel {
-  background: #2c3440;
-  border: 1px solid #456;
+  background-color: #242424;
+  border: 1px solid #787b66;
   border-radius: 3px;
-  color: #fff;
+  color: #f7f7f5;
   margin-bottom: 20px;
   padding: 10px;
   position: relative;
@@ -732,7 +732,7 @@ div > svg {
   display: flex;
   align-items: center;
   font-size: 0.8rem;
-  color: lightgrey;
+  color: #242424;
 }
 
 .comment-text {
@@ -772,7 +772,7 @@ div > svg {
 }
 .poster {
   background: #161718;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 35%);
+  box-shadow: 0 1px 3px #242424;
 }
 .poster,
 .poster-container {

@@ -31,7 +31,7 @@ export default {
 <style scoped>
 footer > div {
   background-color: #0f0505;
-  color: #ecdbba;
+  color: #f1c40f;
 }
 
 .brand-size {
@@ -46,7 +46,7 @@ footer > div {
 }
 
 pre {
-  color: #e59934;
+  color: #e49e06;
   padding: 1rem;
 }
 img {

@@ -24,7 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #ffff;
+  color: #f7f7f5;
   background-color: #242424;
 }
 
@@ -41,10 +41,10 @@ nav {
 }
 nav a {
   font-weight: bold;
-  color: #0f05050;
+  color: #0f0505;
 }
 
 nav a.router-link-exact-active {
-  color: #ffff;
+  color: #f7f7f5;
 }
 </style>

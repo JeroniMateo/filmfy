@@ -83,17 +83,17 @@ export default {
 
 <style scoped>
 h2 {
-  color: rgb(78, 159, 61);
+  color: #00c740;
   font-size: 10vh;
   font-weight: bold;
 }
 h5 {
-  color: rgb(78, 159, 61);
+  color: #00c740;
   font-size: 5vh;
   font-weight: bold;
 }
 p {
-  color: #ecdbba;
+  color: #f1c40f;
   font-size: 2vh;
 }
 div.cardText {
@@ -101,7 +101,7 @@ div.cardText {
   align-items: end;
 }
 .card-text {
-  color: #ffff;
+  color: #f7f7f5;
 }
 
 .card-img-overlay {

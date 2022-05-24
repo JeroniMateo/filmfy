@@ -141,10 +141,10 @@ export default {
 <style scoped>
 label.form-label {
   font-size: 3vh;
-  color: #fff;
+  color: #f7f7f5;
 }
 .error {
-  color: #b33030;
+  color: #c50909;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -162,7 +162,7 @@ button {
 }
 h2 {
   font-size: 4rem;
-  color: #fff;
+  color: #f7f7f5;
 }
 .formConfirm {
   display: flex;

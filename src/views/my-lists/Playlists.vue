@@ -48,7 +48,7 @@ export default {
   width: 70%;
 }
 h2 {
-  color: #fff;
+  color: #f7f7f5;
   background-color: #0f0505;
   font-size: 6vh;
 }
@@ -58,7 +58,7 @@ h2 {
 }
 div#Listas {
   background-color: #0f0505;
-  color: #fff;
+  color: #f7f7f5;
   font-family: Arial;
   font-size: 2vh;
   display: flex;

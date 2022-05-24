@@ -45,11 +45,11 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #0f0505;
 }
 #Welcome h1 {
   font-size: 60px;
-  color: #fff;
+  color: #f7f7f5;
   position: relative;
 }
 #MainContentImageWelcome {
@@ -61,24 +61,24 @@ export default {
   display: flex;
 }
 h2 {
-  color: rgb(78, 159, 61);
+  color: #00c740;
   font-size: 10vh;
 }
 h4 {
-  color: #fff;
+  color: ##f7f7f5;
   font-size: 3.5vw;
   float: left;
 }
 div#buscarContenido {
   margin-top: 20px;
-  background-color: #2c3e50;
+  background-color: #242424;
 }
 label#verHoy {
   margin-top: 20px;
-  color: black;
+  color: #0f0505;
 }
 button {
-  color: #fff;
+  color: #f7f7f5;
   background-color: #2ecc71;
 }
 div#MainWelcome {

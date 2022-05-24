@@ -212,8 +212,8 @@ export default {
 
 <style scoped>
 :root {
-  --color-inactivo: #5f5050;
-  --color-hover: #ffa400;
+  --color-inactivo: #787b66;
+  --color-hover: #e49e06;
 }
 .valoracion {
   display: flex;
@@ -283,7 +283,7 @@ div#SinopsisTitle {
 }
 div#MovieContentValoration {
   background-color: #0f0505;
-  color: #fff;
+  color: #f7f7f5;
   border-radius: 5%;
   display: flex;
   width: 100%;
@@ -313,7 +313,7 @@ div#MovieContentOpinion {
   display: flex;
 }
 div#date_comment_area {
-  background-color: #fff;
+  background-color: #f7f7f5;
   border-radius: 3%;
   display: flex;
   flex-direction: column;
@@ -346,12 +346,12 @@ button#btnComentar {
 p#date_comment {
   font-size: 1vw;
   color: #0f0505;
-  background-color: #fff;
+  background-color: #f7f7f5;
 }
 
 p#Pcomentario {
   color: #0f0505;
-  background-color: #fff;
+  background-color: #f7f7f5;
   border-radius: 10%;
 }
 div#Comments {
@@ -360,7 +360,7 @@ div#Comments {
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
-  background-color: #fff;
+  background-color: #f7f7f5;
   color: #0f0505;
   width: 70vh;
 }

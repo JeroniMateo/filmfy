@@ -10,7 +10,7 @@ Wireframe with Balsamiq: https://balsamiq.cloud/swio5ls/pepq8ha/r2278
 
 ## 1.Pallete Color
 
-- Primary: ##00c740
+- Primary: #00c740
 - Secondary: #f7f7f5
 - Background: #242424
 - Light: #e49e06

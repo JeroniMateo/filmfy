@@ -57,7 +57,7 @@ export default {
 
 <style scoped>
 h3 {
-  color: #fff;
+  color: #f7f7f5;
   font-size: 8vh;
   width: 100%;
   height: 12vh;
@@ -66,8 +66,8 @@ h3 {
   font-weight: bold;
 }
 .BrowserSection {
-  background-color: #161414;
-  color: #19282f;
+  background-color: #0f0505;
+  color: #787b66;
   font-family: Arial;
   font-size: 2vh;
   display: flex;

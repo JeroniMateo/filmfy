@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 h1 {
-  color: #fff;
+  color: #f7f7f5;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: #0f0505;
