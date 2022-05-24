@@ -2,7 +2,7 @@
   <div class="searcher">
     <span class="section-heading">Buscar : </span>
     <div>
-      <input id="searcher" type="text" @focusout="expect" @keyup="searchMovies"
+      <input id="searcher" type="text" @change="" @keyup="searchMovies"
              class="field field-large ac_input"
              data-url="/s/autocompletefilm"
              autocomplete="off">
@@ -72,7 +72,6 @@ export default {
     },
 
     removeElements() {
-      console.log("hola")
       this.moviesSearch = []
     }
   }

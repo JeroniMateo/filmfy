@@ -3,7 +3,7 @@
     <div class="section-heading mt-5">
       <span>Películas más recientes</span>
     </div>
-    <div class="container d-flex flex-wrap justify-content-between overflow-hidden">
+    <div class="container d-flex flex-wrap justify-content-between row">
       <MovieCardCategories v-for="movie of this.movies" :key="movie" :movie="movie" class="card-movie"/>
     </div>
   </div>
