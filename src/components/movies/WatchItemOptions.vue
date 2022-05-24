@@ -50,7 +50,7 @@
 export default {
   name: 'WatchItemConfig',
 
-  data () {
+  data() {
     return {
       favs: false,
       watch: false,
@@ -120,7 +120,7 @@ export default {
   margin: 0 auto;
   padding: 10px;
   color: #ffffff;
-  background: #990000;
+  background: #c50909;
   text-align: center;
 }
 </style>
