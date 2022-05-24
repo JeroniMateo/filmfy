@@ -8,8 +8,6 @@ import MovieContent from '../views/watch-content/MovieContent.vue'
 
 import BillBoard from '../views/BillBoard.vue'
 
-import Outstandings from '../views/Outstandings.vue'
-
 import Playlists from '../views/my-lists/Playlists.vue'
 import ListContent from '../views/my-lists/ListContent.vue'
 
@@ -51,12 +49,6 @@ const routes = [
     path: '/billboard',
     name: 'billboard',
     component: BillBoard
-  },
-
-  {
-    path: '/outstandings',
-    name: 'outstandings',
-    component: Outstandings
   },
 
   {

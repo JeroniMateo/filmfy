@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row row-cols-1 row-cols-md-6 g-6">
         <WatchItemCard
-          v-for="movie in 4"
+          v-for="movie in movies"
           :movie="movie"
           :key="movie.PopularContent"
         />
