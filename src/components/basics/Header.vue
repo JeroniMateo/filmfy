@@ -59,7 +59,7 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          <i class="fa-solid fa-user"></i> {{ user_name }}
+          <i class="fa-solid fa-user"></i> {{ username }}
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <li><a class="dropdown-item" href="/userProfile">Mi Perfil</a></li>
@@ -109,7 +109,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="fa-solid fa-user"></i> {{ user_name }}
+              <i class="fa-solid fa-user"></i> {{ username }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li>
@@ -147,7 +147,7 @@ export default {
   data: () => ({
     openHamburger: '',
     closeHamburger: '',
-    user_name: '',
+    username: '',
     log: true
   }),
   methods: {

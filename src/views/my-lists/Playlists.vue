@@ -1,7 +1,7 @@
 <template>
   <div id="Playlists" class="container-fluid" @click="goMoviesLists">
     <h2>
-      <b>{{ username_user }} Playlists</b>
+      <b>{{ username }} Playlists</b>
     </h2>
     <div id="Listas">
       <div class="lista"><FavsLists /></div>
@@ -23,9 +23,9 @@ export default {
   },
   data () {
     return {
-      username_user: '',
-      user_list: '',
-      user_lists: []
+      username: '',
+      list: '',
+      lists: []
     }
   },
   methods: {

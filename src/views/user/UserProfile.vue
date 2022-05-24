@@ -11,7 +11,7 @@
           username_user
         }}</label>
         <input
-          v-model="username_user"
+          v-model="username"
           type="text"
           name="input_username_user"
           id="input_username_user"
@@ -22,7 +22,7 @@
           name_user
         }}</label>
         <input
-          v-model="name_user"
+          v-model="name"
           type="text"
           class="form-control"
           id="inputFullName"
@@ -30,10 +30,10 @@
       </div>
       <div class="mb-3 row">
         <label for="inputEmail" class="col-sm-2 col-form-label">
-          {{ email_user }}
+          {{ email }}
         </label>
         <input
-          v-model="email_user"
+          v-model="email"
           type="email"
           class="form-control"
           id="inputEmail"
@@ -41,10 +41,10 @@
       </div>
       <div class="mb-3 row">
         <label for="inputPassword" class="col-sm-2 col-form-label">
-          {{ password_user }}
+          {{ password }}
         </label>
         <input
-          v-model="password_user"
+          v-model="password"
           type="password"
           class="form-control"
           id="inputPassword"
@@ -52,10 +52,10 @@
       </div>
       <div class="mb-3 row">
         <label for="inputPhone" class="col-sm-2 col-form-label">
-          {{ phone_user }}
+          {{ phone }}
         </label>
         <input
-          v-model="phone_user"
+          v-model="phone"
           type="number"
           class="form-control"
           id="inputPhone"
@@ -71,11 +71,11 @@ export default {
   name: 'UserProfile',
   data () {
     return {
-      username_user: '',
-      name_user: '',
-      email_user: '',
-      password_user: '',
-      phone_user: ''
+      username: '',
+      name: '',
+      email: '',
+      password: '',
+      phone: ''
     }
   },
 
