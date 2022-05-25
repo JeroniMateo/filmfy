@@ -3,9 +3,10 @@
     <h2>
       <b>{{ username }} Playlists</b>
     </h2>
-    <div id="Listas">
+    <div id="Listas" class="row row-cols-1 p-5 row-cols-md-4 g-4" >
       <div class="lista"><FavsLists /></div>
       <div class="lista"><WatchList /></div>
+      <UserLists v-for="list in lists" :list="list" :key="list" />
     </div>
   </div>
 </template>

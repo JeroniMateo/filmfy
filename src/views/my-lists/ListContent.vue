@@ -2,7 +2,7 @@
   <div id="ListContent" class="container" style="background-color: #0f0505">
     <div id="headerList">
       <h3 id="title_list">
-        <b> {{ title_list }} </b>
+        <b> {{ title_list }}  </b>
       </h3>
       <img id="img_list" alt="" />
     </div>
@@ -10,7 +10,7 @@
       <WatchItemCard
         v-for="movie in movies"
         :movie="movie"
-        :key="movie.playlist"
+        :key="movie.id"
       />
     </div>
   </div>
