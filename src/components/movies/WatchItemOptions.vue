@@ -4,19 +4,19 @@
       //Favs
       <li id="notFavMovie" v-if="favs">
         <a class="dropdown-item" href="#"
-          ><button @click="removeFavs">Remove Favs</button></a
+          ><button @click="removeFavs">Remove Favs <i class="fa-solid fa-heart"></i></button></a
         >
       </li>
       <li id="favMovie" v-else>
-        <button @click="addFavs">Add Favs</button>
+        <button @click="addFavs">Add Favs <i class="fa-solid fa-heart"></i></button>
       </li>
       //Watch
       <li><hr class="dropdown-divider" /></li>
       <li id="notWatchMovie" v-if="watch">
-        <button @click="removeWatched">Unwatched</button>
+        <button @click="removeWatched">Unwatched <i class="fa-solid fa-eye-slash"></i></button>
       </li>
       <li id="watchMovie" v-else>
-        <button @click="addWatched">Watched</button>
+        <button @click="addWatched">Watched <i class="fa-solid fa-eye"></i></button>
       </li>
       //Playlist
       <li class="nav-item dropdown">
@@ -41,7 +41,7 @@
           </li>
         </ul>
       </li>
-      <li><button class="share" @click="getlink">Share</button></li>
+      <li><button class="share" @click="getlink">Share <i class="fa-solid fa-share-nodes"></i></button></li>
     </ul>
   </div>
 </template>
