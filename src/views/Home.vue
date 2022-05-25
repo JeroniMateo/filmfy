@@ -34,7 +34,7 @@
     <section id="popular-content" class="mt-5 d-flex justify-content-start">
       <div class="container-md">
         <div class="row">
-          <div class="comments col-7" >
+          <div class="comments col-12 col-xxl-7" >
             <span class="section-heading d-flex my-4">Últimos comentarios</span>
             <ul>
 
@@ -84,7 +84,7 @@
 
 
 
-          <section class="lists col-4 mx-5">
+          <section class="lists col-12 col-xxl-4 mx-5">
             <span class="section-heading d-flex my-4">Listas populares</span>
 
             <hr>
@@ -95,7 +95,7 @@
                   <ul class="poster-list -overlapped -p70" v-for="movie_img in list.m_imgs.slice(0,5)">
                     <li class="react-component poster film-poster listitem">
                       <div><img :src="'http://filmfy-api.ddns.net' + movie_img"
-                          width="80" height="130" alt="Donnie Darko"
+                          width="80" height="130" alt="list movie img"
                           class="image">
                       </div>
                     </li>
