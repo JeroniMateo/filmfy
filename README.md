@@ -96,3 +96,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     - **See the list of comments**: Users can see the list of comments.
     - **See the list of votes**: Users can see the list of votes.
 
+
+## Libraries
+
+Star ratings
+https://openbase.com/js/vue-star-rating
+
