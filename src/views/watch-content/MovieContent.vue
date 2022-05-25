@@ -14,30 +14,43 @@
               />
             </div>
             <div class="col-md-8">
+              // Main Info
               <div class="MainInfo card-body">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" id="MovieContentTitle">
+                    // Title
                     <label for="">Titulo:</label>
                     <p id="title_movie">{{ title }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentYear">
+                    // Year
                     <label for="">Fecha:</label>
                     <p id="date_movie">{{ date }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentGenre">
-                    <label for="">Genero:</label>
+                    // Category
+                    <label for="">Categoria:</label>
                     <p id="category_movie">{{ category }}</p>
                   </li>
+                  <li class="list-group-item" id="MovieContentGenre">
+                    // Runtime
+                    <label for="">Duración:</label>
+                    <p id="category_movie">{{ runtime }}</p>
+                  </li>
                   <li class="list-group-item" id="MovieContentDirectors">
+                    // Directors
                     <label for="">Directores:</label>
                     <p id="directors_movie">{{ directors }}</p>
                   </li>
                   <li class="list-group-item" id="MovieContentActors">
+                    // Actors
                     <label for="">Actores:</label>
                     <p id="actors_movie">{{ actors }}</p>
                   </li>
+                  // Valoración, Favoritos y Vista
                   <div id="FavWatchRate">
                     <li class="list-group-item" id="MovieContentRuntime">
+                      // Valoration
                       <label for="">Valoracíon:</label>
                       <p id="rating_movie">{{ rating }}</p>
                     </li>
@@ -79,14 +92,13 @@
             </div>
           </div>
         </div>
+        // sinopsis
         <div id="MovieContentSinopsis">
-          <div id="SinopsisTitle">
-            <h2 class="SinopsisHeader" id="sinopsis_movie">Sinopsis</h2>
-          </div>
           <p id="sinopsis">
             {{ sinopsis }}
           </p>
         </div>
+        // Valoración
         <div id="MovieContentValoration">
           <h2>Valoración:</h2>
           <button class="Rating" @click="valorar">
@@ -120,6 +132,7 @@
             </button>
           </div>
         </div>
+        // Trailer
         <!--Trailer play automaticaly-->
         <div id="Trailer trailer_movie">
           <iframe
@@ -136,11 +149,13 @@
         <h2 class="OpnionTitle">Comentarios y Valoraciones</h2>
         <div id="MovieContentOpinion">
           <div id="MovieContentOpinionHeader">
+          // Añadir Comentario
             <button id="añadir_comentario" @click="añadir_comentario;">
               Añadir Comentario
             </button>
           </div>
           <div id="AddComment"></div>
+          // Text Area Comentario
           <div id="CommentArea" style="display: none">
             <textarea
               name="comment"
@@ -166,6 +181,11 @@
             <div id="user_comment_area"></div>
             <div id="date_comment_area">
               <p id="date_comment">{{ date_comment }}</p>
+              <div id="CommentRating">
+                <small class="like"><i class="fa-solid fa-thumbs-up"></i></small>
+                <small class="dislike"><i class="fa-solid fa-thumbs-down"></i></small>
+                <button @click="responder">Responder</button>
+              </div>
             </div>
           </div>
         </div>
@@ -189,7 +209,8 @@ export default {
         actors: [],
         rating: '',
         sinopsis: '',
-        trailer: ''
+        trailer: '',
+        runtime: ''
       },
       fav: false,
       watch: false,
@@ -214,7 +235,7 @@ export default {
         document.getElementById('añadir_comentario').style.display = 'none'
       }
     },
-    comentar() {
+    comentar () {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder comentar')
       } else if (this.log === true) {
@@ -238,7 +259,7 @@ export default {
         document.getElementById('starsValoration').style.display = 'flex'
       }
     },
-    addFav () {
+    addFav() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder añadir a favoritos')
       } else if (this.log === true) {
@@ -249,7 +270,7 @@ export default {
         }
       }
     },
-    addWatch () {
+    addWatch() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder añadir a la lista de ver')
       } else if (this.log === true) {
@@ -259,7 +280,7 @@ export default {
           this.watch = false
         }
       }
-    }
+    },
   }
 }
 </script>
