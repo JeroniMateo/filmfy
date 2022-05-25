@@ -4,7 +4,16 @@
       <div class="card h-100" @click="goIntoList">
         <img class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title" id="title_list">{{ title_list }}</h5>
+          <div class="userPlaylist">
+            <h5 class="card-title" id="title_list">{{ title_list }}</h5>
+            <small class="card-text" id="username_list">{{ username }}</small>
+            <div id="FavWatch" @click="addFavs">
+              <button v-if="favorites">
+                <i class="fas fa-heart" style="color: #00c740"></i>
+              </button>
+              <button v-else><i class="far fa-heart"></i></button>
+            </div>
+          </div>
           <p class="card-text" id="description_list">
             {{ description_list }}
           </p>
@@ -20,14 +29,15 @@
 <script>
 export default {
   name: 'UserLists',
-  data () {
+  data() {
     return {
       movie: '',
       movies: [],
       user_lists: [],
       img_list: '',
       title_list: '',
-      description_list: ''
+      description_list: '',
+      username: ''
     }
   },
   props: {
@@ -39,6 +49,14 @@ export default {
   methods: {
     goIntoList () {
       this.$router.push('/moviesList/')
+    },
+    addFavs () {
+      if (this.favorites) {
+        this.favorites = false
+      } else {
+        this.favMovies.push(this.movies)
+        this.favorites = true
+      }
     }
   }
 }

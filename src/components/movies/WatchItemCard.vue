@@ -68,7 +68,7 @@ export default {
     }
   },
   methods: {
-    addFavs() {
+    addFavs () {
       if (this.favorites) {
         this.favorites = false
       } else {
