@@ -14,7 +14,7 @@
             v-model="usernameR"
             required
           />
-          <p id="error_usernameR" class="error"></p>
+          <p id="error_username" class="error"></p>
         </div>
         <div id="RegisterFormInput" class="col-auto">
           <label class="form-label" for="name_userR">Name</label>
@@ -27,7 +27,7 @@
             v-model="name_userR"
             required
           />
-          <p id="error_name_userR" class="error"></p>
+          <p id="error_name" class="error"></p>
         </div>
       </div>
       <div class="row g-5 p-5">
@@ -42,7 +42,7 @@
             v-model="password_userR"
             required
           />
-          <p id="error_password_userR" class="error"></p>
+          <p id="error_password" class="error"></p>
         </div>
         <div id="RegisterFormInput" class="col-auto">
           <label class="form-label" for="password_confirm_userR"
@@ -57,7 +57,7 @@
             v-model="password_confirm_userR"
             required
           />
-          <p id="error_password_confirm_userR" class="error"></p>
+          <p id="error_password_confirm" class="error"></p>
         </div>
       </div>
       <span id="error_register" class="error"></span><br />
@@ -95,18 +95,23 @@ export default {
   data () {
     return {
       usernameR: '',
+      error_username: '',
       username_validation: false,
 
       nameR: '',
+      error_name: '',
       name_validation: false,
 
       emailR: '',
+      error_email: '',
       email_validation: false,
 
       passwordR: '',
+      error_password: '',
       password_validation: false,
 
       password_confirmR: '',
+      error_password_confirm: '',
       passwordConfirm_validation: false,
 
       error_register: '',
@@ -117,18 +122,18 @@ export default {
     registerValidation: function () {
       // UserName
       if (this.usernameR === '') {
-        this.error_usernameR = 'El nombre de usuario es obligatorio'
+        this.error_username = 'El nombre de usuario es obligatorio'
       }
       if (this.usernameR.length < 3) {
-        this.error_usernameR =
+        this.error_username =
           'El nombre de usuario debe tener al menos 3 caracteres'
       }
       if (this.usernameR.length > 15) {
-        this.error_usernameR =
+        this.error_username =
           'El nombre de usuario no puede tener más de 15 caracteres'
       }
       if (/^[a-zA-Z0-9]+$/.test(this.usernameR) === false) {
-        this.error_usernameR =
+        this.error_username =
           'El nombre de usuario solo puede contener letras y números'
       }
       if (
@@ -142,16 +147,16 @@ export default {
 
       // Name
       if (this.nameR === '') {
-        this.error_nameR = 'El nombre es obligatorio'
+        this.error_name = 'El nombre es obligatorio'
       }
       if (this.nameR.length < 6) {
-        this.error_nameR = 'El nombre debe tener al menos 6 caracteres'
+        this.error_name = 'El nombre debe tener al menos 6 caracteres'
       }
       if (this.nameR.length > 15) {
-        this.error_nameR = 'El nombre no puede tener más de 15 caracteres'
+        this.error_name = 'El nombre no puede tener más de 15 caracteres'
       }
       if (/^[a-zA-Z]+$/.test(this.nameR) === false) {
-        this.error_nameR = 'El nombre solo puede contener letras'
+        this.error_name = 'El nombre solo puede contener letras'
       }
       if (
         this.name.user !== '' &&
@@ -164,14 +169,14 @@ export default {
 
       // Email
       if (this.emailR === '') {
-        this.error_emailR = 'El email es obligatorio'
+        this.error_email = 'El email es obligatorio'
       }
       if (
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
           this.emailR
         ) === false
       ) {
-        this.error_emailR = 'El email no es válido'
+        this.error_email = 'El email no es válido'
         this.email = false
       }
       if (
@@ -184,14 +189,14 @@ export default {
       }
       // Password
       if (this.passwordR === '') {
-        this.error_passwordR = 'La contraseña es obligatoria'
+        this.error_password = 'La contraseña es obligatoria'
       }
       if (
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/.test(
           this.passwordR
         ) === false
       ) {
-        this.error_passwordR =
+        this.error_password =
           'La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracter especial'
       }
       if (
@@ -204,14 +209,14 @@ export default {
       }
       // Password Confirm
       if (this.password_confirmR === '') {
-        this.error_password_confirmR =
+        this.error_password_confirm =
           'La confirmación de contraseña es obligatoria'
       }
       if (this.password_confirmR !== this.passwordR) {
-        this.error_password_confirmR = 'Las contraseñas no coinciden'
+        this.error_password_confirm = 'Las contraseñas no coinciden'
       }
       if (
-        this.error_password_confirmR !== '' &&
+        this.error_password_confirm !== '' &&
         this.password_confirmR === this.passwordR
       ) {
         this.passwordConfirm = true
