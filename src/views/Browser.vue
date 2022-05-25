@@ -2,28 +2,28 @@
   <div id="Browser" class="container">
     <h3>Destacados</h3>
     <div
-      class="BrowserSection row row-cols-1 p-5 row-cols-md-4 g-4"
+      class="BrowserSection row row-cols-1 p-5 row-cols-md-5 g-4"
       id="BrowserDestacados"
     >
       <WatchItemCard
-        v-for="movie in movies"
+        v-for="movie in 10"
         :movie="movie"
-        :key="movie.Outstanding"
+        :key="movie.rating"
       />
     </div>
     <h3>Cartelera</h3>
     <div
-      class="BrowserSection row row-cols-1 p-5 row-cols-md-4 g-4"
+      class="BrowserSection row row-cols-1 p-5 row-cols-md-5 g-4"
       id="cartelera"
     >
-      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.Billboard" />
+      <WatchItemCard v-for="movie in 5" :movie="movie" :key="movie.Billboard" />
     </div>
     <h3>Próximos Estrenos</h3>
     <div
-      class="BrowserSection row row-cols-1 p-5 row-cols-md-4 g-4"
+      class="BrowserSection row row-cols-1 p-5 row-cols-md-5 g-4"
       id="UpcomingMovies"
     >
-      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.Upcoming" />
+      <WatchItemCard v-for="movie in 5" :movie="movie" :key="movie.Upcoming" />
     </div>
   </div>
 </template>

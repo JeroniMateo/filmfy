@@ -1,10 +1,19 @@
 <template>
   <div id="Cartelera" class="container" style="background-color: #0f0505">
     <h2><b>Cartelera</b></h2>
-    <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-4 g-4">
-      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.id" />
+    <div class="row">
+      <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-5 g-4">
+        <WatchItemCard v-for="movie in 10" :movie="movie" :key="movie.id" />
+      </div>
     </div>
-    <div id="UpcomingCartelera"></div>
+    <div id="UpcomingCartelera">
+      <h3>Próximos Estrenos</h3>
+      <div class="row">
+        <div class="row row-cols-1 p-5 row-cols-md-5 g-4">
+          <WatchItemCard v-for="movie in 10" :movie="movie" :key="movie.id" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,7 +21,7 @@
 import WatchItemCard from '../components/movies/WatchItemCard.vue'
 export default {
   name: 'BillBoard',
-  data () {
+  data() {
     return {
       movies: [],
       upcoming: [],
