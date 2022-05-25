@@ -37,9 +37,9 @@
           <div class="comments col-12 col-xxl-7" >
             <span class="section-heading d-flex my-4">Últimos comentarios</span>
             <ul>
-
               <hr>
               <div v-for="comment in latestComments">
+
                 <li class="comment d-flex flex-row" >
                   <div class="comment-movie-image">
                     <img :src="'http://filmfy-api.ddns.net' + comment.m_image" width="115" height="170" alt=""/>
@@ -60,10 +60,10 @@
                                      v-bind:max-rating="5"
                                      v-bind:read-only="true"
                                      v-bind:show-rating="false"
-                                     inactive-color="#000"
                                      active-color="#00c740"
+                                     inactive-color="#fff"
                                      v-bind:star-size="20"
-                        />
+                        /> <!-- Lightgreen: #00c740 -->
                       </div>
                     </div>
                     <div class="comment-content d-flex mt-2">
@@ -78,27 +78,26 @@
 
                 <hr>
               </div>
-
             </ul>
           </div>
 
-
-
           <section class="lists col-12 col-xxl-4 mx-5">
             <span class="section-heading d-flex my-4">Listas populares</span>
-
             <hr>
             <div v-for="list in latestLists">
+
             <div class="list -overlapped -stacked d-flex flex-column">
               <a class="list-link">
                 <div class="list-link-stacked clear">
                   <ul class="poster-list -overlapped -p70" v-for="movie_img in list.m_imgs.slice(0,5)">
+
                     <li class="react-component poster film-poster listitem">
                       <div><img :src="'http://filmfy-api.ddns.net' + movie_img"
                           width="80" height="130" alt="list movie img"
                           class="image">
                       </div>
                     </li>
+
                   </ul>
                 </div>
               </a>
