@@ -202,35 +202,33 @@
 export default {
   name: 'MovieContent',
   components: {},
-  data() {
+  data () {
     return {
-      movie: {
-        img: '',
-        title: '',
-        date: '',
-        category: [],
-        directors: [],
-        actors: [],
-        rating: '',
-        sinopsis: '',
-        trailer: '',
-        runtime: ''
-      },
+      img: '',
+      title: '',
+      date: '',
+      category: [],
+      directors: [],
+      actors: [],
+      rating: '',
+      sinopsis: '',
+      trailer: '',
+      runtime: '',
+
       fav: false,
       watch: false,
 
-      user: {
-        img_user: '',
-        username: '',
-        commentaries: [],
-        user_comment: '',
-        date_comment: ''
-      },
+      img_user: '',
+      username: '',
+      commentaries: [],
+      user_comment: '',
+      date_comment: '',
+
       log: false
     }
   },
   methods: {
-    añadir_comentario() {
+    añadir_comentario () {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder comentar')
       } else if (this.log === true) {
@@ -239,7 +237,7 @@ export default {
         document.getElementById('añadir_comentario').style.display = 'none'
       }
     },
-    comentar() {
+    comentar () {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder comentar')
       } else if (this.log === true) {
@@ -256,14 +254,14 @@ export default {
         document.getElementById('añadir_comentario').style.display = 'flex'
       }
     },
-    valorar() {
+    valorar () {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder valorar')
       } else if (this.log === true) {
         document.getElementById('starsValoration').style.display = 'flex'
       }
     },
-    addFav() {
+    addFav () {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder añadir a favoritos')
       } else if (this.log === true) {
@@ -274,7 +272,7 @@ export default {
         }
       }
     },
-    addWatch() {
+    addWatch () {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder añadir a la lista de ver')
       } else if (this.log === true) {
@@ -285,7 +283,7 @@ export default {
         }
       }
     },
-    responder() {
+    responder () {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder responder')
       } else if (this.log === true) {

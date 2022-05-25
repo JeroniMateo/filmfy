@@ -132,7 +132,7 @@ div.MovieInCarousel {
 }
 h2 {
   color: #f7f7f5;
-  background-color:#0f0505;
+  background-color: #0f0505;
   font-size: 8vh;
   width: 100%;
 }
@@ -141,7 +141,7 @@ h2 {
   top: 0;
   right: 0;
   padding: 10px;
-  background-color: ##5bdee6;
+  background-color: #5bdee6;
   border-radius: 50%;
   border: 1px solid #0f0505;
   cursor: pointer;
