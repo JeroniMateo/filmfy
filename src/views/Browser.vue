@@ -1,29 +1,39 @@
 <template>
   <div id="Browser" class="container">
-    <h3>Destacados</h3>
-    <div
-      class="BrowserSection row row-cols-1 p-5 row-cols-md-5 g-4"
-      id="BrowserDestacados"
-    >
-      <WatchItemCard
-        v-for="movie in 10"
-        :movie="movie"
-        :key="movie.rating"
-      />
+    <div id="Destacados">
+      <h3>Destacados</h3>
+      <div
+        class="BrowserSection row row-cols-1 p-5 row-cols-md-5 g-4"
+        id="BrowserDestacados"
+      >
+        <WatchItemCard v-for="movie in 10" :movie="movie" :key="movie.rating" />
+      </div>
     </div>
-    <h3>Cartelera</h3>
-    <div
-      class="BrowserSection row row-cols-1 p-5 row-cols-md-5 g-4"
-      id="cartelera"
-    >
-      <WatchItemCard v-for="movie in 5" :movie="movie" :key="movie.Billboard" />
+    <div id="Cartelera">
+      <h3>Cartelera</h3>
+      <div
+        class="BrowserSection row row-cols-1 p-5 row-cols-md-5 g-4"
+        id="cartelera"
+      >
+        <WatchItemCard
+          v-for="movie in 5"
+          :movie="movie"
+          :key="movie.Billboard"
+        />
+      </div>
     </div>
-    <h3>Próximos Estrenos</h3>
-    <div
-      class="BrowserSection row row-cols-1 p-5 row-cols-md-5 g-4"
-      id="UpcomingMovies"
-    >
-      <WatchItemCard v-for="movie in 5" :movie="movie" :key="movie.Upcoming" />
+    <div id="Upcoming">
+      <h3>Próximos Estrenos</h3>
+      <div
+        class="BrowserSection row row-cols-1 p-5 row-cols-md-5 g-4"
+        id="UpcomingMovies"
+      >
+        <WatchItemCard
+          v-for="movie in 5"
+          :movie="movie"
+          :key="movie.Upcoming"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +42,7 @@
 import WatchItemCard from '../components/movies/WatchItemCard.vue'
 export default {
   name: 'Browser',
-  data () {
+  data() {
     return {
       log: true,
       movies: [],
