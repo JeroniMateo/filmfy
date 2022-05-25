@@ -188,7 +188,7 @@
                 <small class="dislike"
                   ><i class="fa-solid fa-thumbs-down"></i
                 ></small>
-                <button @click="responder">Responder</button>
+                <button @click="responder">Responder<i class="fa-solid fa-share-nodes"></i> </button>
               </div>
             </div>
           </div>
