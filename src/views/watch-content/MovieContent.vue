@@ -149,7 +149,7 @@
         <h2 class="OpnionTitle">Comentarios y Valoraciones</h2>
         <div id="MovieContentOpinion">
           <div id="MovieContentOpinionHeader">
-          // Añadir Comentario
+            // Añadir Comentario
             <button id="añadir_comentario" @click="añadir_comentario;">
               Añadir Comentario
             </button>
@@ -182,8 +182,12 @@
             <div id="date_comment_area">
               <p id="date_comment">{{ date_comment }}</p>
               <div id="CommentRating">
-                <small class="like"><i class="fa-solid fa-thumbs-up"></i></small>
-                <small class="dislike"><i class="fa-solid fa-thumbs-down"></i></small>
+                <small class="like"
+                  ><i class="fa-solid fa-thumbs-up"></i
+                ></small>
+                <small class="dislike"
+                  ><i class="fa-solid fa-thumbs-down"></i
+                ></small>
                 <button @click="responder">Responder</button>
               </div>
             </div>
@@ -235,7 +239,7 @@ export default {
         document.getElementById('añadir_comentario').style.display = 'none'
       }
     },
-    comentar () {
+    comentar() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder comentar')
       } else if (this.log === true) {
@@ -281,6 +285,19 @@ export default {
         }
       }
     },
+    responder() {
+      if (this.log === false) {
+        alert('Debes iniciar sesión para poder responder')
+      } else if (this.log === true) {
+        document.getElementById('Comments').style.display = 'flex'
+        document.getElementById(
+          'user_comment_area'
+        ).innerHTML = `<p id="Pcomentario">${this.user_comment}</p>`
+        document.getElementById('CommentArea').style.display = 'none'
+        document.getElementById('btnComentar').style.display = 'none'
+        document.getElementById('añadir_comentario').style.display = 'flex'
+      }
+    }
   }
 }
 </script>
