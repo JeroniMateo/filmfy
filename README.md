@@ -3,10 +3,10 @@
 ## Main Idea
 1. Filmfy (red social de películas diferenciado por poder hacer listas de contenido, tener noticias y un foro de debate de usuarios)
 
-    - Technologies: Laravel, Vue.js, MySQL
-
-Wireframe with Balsamiq: https://balsamiq.cloud/swio5ls/pepq8ha/r2278
-
+    - Technologies: 
+      - Front: Vue.js & Bootstrap
+      - Back: Laravel  & Python
+      - Database: MySQL
 
 ## 1.Pallete Color
 
@@ -23,29 +23,7 @@ Wireframe with Balsamiq: https://balsamiq.cloud/swio5ls/pepq8ha/r2278
 
   
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
-
-
 ## 2. Filmfy App
-
 
 
 ## 2.1. What is Filmfy?
@@ -98,5 +76,68 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     - **See the list of reports**: Users can see the list of reports.
     - **See the list of posts**: Users can see the list of posts.
     - **See the list of comments**: Users can see the list of comments.
+
+    ### 3.1. The list of movies
+    - **See the list of movies**: Users can see the list of movies.
+    
+    
+    ### 3.2. The list of comments
+    - **See the list of comments**: Users can see the list of comments.
+    - **Create comments**: Users can create comments.
+    - **Edit comments**: Users can edit comments.
+    - **Delete comments**: Users can delete comments.
+    - **Report comments**: Users can report comments.
+    - **Report a comment**: Users can report a comment.
+    - **Report a list**: Users can report a list.
+    - **Report a movie**: Users can report a movie.
+    - **Report a user**: Users can report a user.
+    - **Report a vote**: Users can report a vote.
+    - **Report a comment**: Users can report a comment.
+    - **Vote comments**: Users can vote comments.
+    - **Vote lists**: Users can vote lists.
+    - **Vote movies**: Users can vote movies.
+    - **Vote users**: Users can vote users.
+    - **Report lists**: Users can report lists.
+    - **Report movies**: Users can report movies.
+    - **Report users**: Users can report users.
+    - **Report posts**: Users can report posts.
+    - **Report comments**: Users can report comments.
+    - **Report votes**: Users can report votes.
+    - **Report reports**: Users can report reports.
+
+    
+
+
+    ### 3.3. The list of posts & comments
+    - **See the list of reports**: Users can see the list of reports
+    - **See the list of posts**: Users can see the list of posts.
+    - **See the list of comments**: Users can see the list of comments.
+    - **Create comments**: Users can create comments.
+    - **Create votes**: Users can create votes.
+    - **See the list of comments**: Users can see the list of comments.
     - **See the list of votes**: Users can see the list of votes.
+    - **See the list of reports**: Users can see the list of reports.
+    - **See the list of posts**: Users can see the list of posts.
+    - **See the list of comments**: Users can see the list of comments.   
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
 
