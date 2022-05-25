@@ -2,8 +2,7 @@
   <div id="Cartelera" class="container" style="background-color: #0f0505">
     <h2><b>Cartelera</b></h2>
     <div id="BillBoardSection" class="row row-cols-1 p-5 row-cols-md-4 g-4">
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.id" />
+      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.id" />
     </div>
     <div id="UpcomingCartelera"></div>
   </div>

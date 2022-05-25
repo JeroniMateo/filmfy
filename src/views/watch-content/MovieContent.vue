@@ -36,16 +36,44 @@
                     <label for="">Actores:</label>
                     <p id="actors_movie">{{ actors }}</p>
                   </li>
-                  <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Valoracíon:</label>
-                    <p id="rating_movie">{{ rating }}</p>
-                  </li>
-                  <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Vista <button></button></label>
-                  </li>
-                  <li class="list-group-item" id="MovieContentRuntime">
-                    <label for="">Favoritos <button></button></label>
-                  </li>
+                  <div id="FavWatchRate">
+                    <li class="list-group-item" id="MovieContentRuntime">
+                      <label for="">Valoracíon:</label>
+                      <p id="rating_movie">{{ rating }}</p>
+                    </li>
+                    <li
+                      v-if="fav"
+                      class="list-group-item"
+                      id="MovieContentRuntime"
+                    >
+                      <label for="Fav"
+                        ><button @click="addFav">
+                          <i class="fa-solid fa-heart"></i></button
+                      ></label>
+                    </li>
+                    <li v-else class="list-group-item" id="MovieContentRuntime">
+                      <label for="notFav"
+                        ><button @click="addFav">
+                          <i class="fa-solid fa-heart"></i></button
+                      ></label>
+                    </li>
+                    <li
+                      v-if="watch"
+                      class="list-group-item"
+                      id="MovieContentRuntime"
+                    >
+                      <label for="Watch">
+                        <button @click="addWatch">
+                          <i class="fa-solid fa-eye"></i></button
+                      ></label>
+                    </li>
+                    <li v-else class="list-group-item" id="MovieContentRuntime">
+                      <label for="notWatch">
+                        <button @click="addWatch">
+                          <i class="fa-solid fa-eye-slash"></i></button
+                      ></label>
+                    </li>
+                  </div>
                 </ul>
               </div>
             </div>
@@ -61,9 +89,11 @@
         </div>
         <div id="MovieContentValoration">
           <h2>Valoración:</h2>
-          <button class="Rating" @click="valorar" >Valorar</button>
+          <button class="Rating" @click="valorar">
+            <i class="fa-solid fa-star"></i>
+          </button>
           <br />
-          <div class="valoracion" id="starsValoration" style="display:none">
+          <div class="valoracion" id="starsValoration" style="display: none">
             <!-- Estrella 1 -->
             <button>
               <i class="fas fa-star"></i>
@@ -106,7 +136,7 @@
         <h2 class="OpnionTitle">Comentarios y Valoraciones</h2>
         <div id="MovieContentOpinion">
           <div id="MovieContentOpinionHeader">
-            <button id="añadir_comentario" @click="añadir_comentario">
+            <button id="añadir_comentario" @click="añadir_comentario;">
               Añadir Comentario
             </button>
           </div>
@@ -148,7 +178,7 @@
 export default {
   name: 'MovieContent',
   components: {},
-  data () {
+  data() {
     return {
       movie: {
         img: '',
@@ -161,6 +191,8 @@ export default {
         sinopsis: '',
         trailer: ''
       },
+      fav: false,
+      watch: false,
 
       user: {
         img_user: '',
@@ -173,7 +205,7 @@ export default {
     }
   },
   methods: {
-    añadir_comentario () {
+    añadir_comentario() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder comentar')
       } else if (this.log === true) {
@@ -182,7 +214,7 @@ export default {
         document.getElementById('añadir_comentario').style.display = 'none'
       }
     },
-    comentar () {
+    comentar() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder comentar')
       } else if (this.log === true) {
@@ -199,11 +231,33 @@ export default {
         document.getElementById('añadir_comentario').style.display = 'flex'
       }
     },
-    valorar () {
+    valorar() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder valorar')
       } else if (this.log === true) {
         document.getElementById('starsValoration').style.display = 'flex'
+      }
+    },
+    addFav () {
+      if (this.log === false) {
+        alert('Debes iniciar sesión para poder añadir a favoritos')
+      } else if (this.log === true) {
+        if (this.fav === false) {
+          this.fav = true
+        } else if (this.fav === true) {
+          this.fav = false
+        }
+      }
+    },
+    addWatch () {
+      if (this.log === false) {
+        alert('Debes iniciar sesión para poder añadir a la lista de ver')
+      } else if (this.log === true) {
+        if (this.watch === false) {
+          this.watch = true
+        } else if (this.watch === true) {
+          this.watch = false
+        }
       }
     }
   }

@@ -6,12 +6,7 @@
       id="BrowserDestacados"
     >
       <WatchItemCard
-        v-for="movie in 4"
-        :movie="movie"
-        :key="movie.Outstanding"
-      />
-      <WatchItemCard
-        v-for="movie in 4"
+        v-for="movie in movies"
         :movie="movie"
         :key="movie.Outstanding"
       />
@@ -21,16 +16,14 @@
       class="BrowserSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="cartelera"
     >
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Billboard" />
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Billboard" />
+      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.Billboard" />
     </div>
     <h3>Próximos Estrenos</h3>
     <div
       class="BrowserSection row row-cols-1 p-5 row-cols-md-4 g-4"
       id="UpcomingMovies"
     >
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Upcoming" />
-      <WatchItemCard v-for="movie in 4" :movie="movie" :key="movie.Upcoming" />
+      <WatchItemCard v-for="movie in movies" :movie="movie" :key="movie.Upcoming" />
     </div>
   </div>
 </template>
