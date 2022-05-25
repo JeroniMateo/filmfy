@@ -69,9 +69,9 @@ export default {
   box-sizing: border-box;
 }
 
-.card-movie :hover {
+.movie-card :hover {
   border-radius: 5px;
-  border: 1px solid green;
+  border: 2px solid green;
 }
 
 .card-movie {
