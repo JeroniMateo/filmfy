@@ -4,18 +4,18 @@
       <span>Películas mejor valoradas</span>
     </div>
     <div class="container d-flex flex-wrap justify-content-between overflow-hidden">
-      <MovieCardCategories v-for="movie of this.movies" :key="movie" :movie="movie" class="card-movie"/>
+      <MovieCardGeneral v-for="movie of this.movies" :key="movie" :movie="movie" class="card-movie"/>
     </div>
   </div>
 
 </template>
 
 <script>
-import MovieCardCategories from "@/components/movies/movie-card/MovieCardCategories";
+import MovieCardGeneral from "@/components/movies/movie-card/MovieCardGeneral";
 
 export default {
   name: "BestMovies",
-  components: {MovieCardCategories},
+  components: {MovieCardGeneral},
   data() {
     return {
       movies: [],

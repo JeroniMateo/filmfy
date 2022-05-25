@@ -1,24 +1,24 @@
 <template>
-  <div class="warpper">
-    <input class="radio" id="one" name="group" type="radio" checked>
-    <input class="radio" id="two" name="group" type="radio">
-    <input class="radio" id="three" name="group" type="radio">
-    <div class="tabs">
-      <label class="tab" id="one-tab" for="one">Directores</label>
-      <label class="tab" id="two-tab" for="two">Escritores</label>
-      <label class="tab" id="three-tab" for="three">Actores</label>
+
+  <div class="">
+    <div class="">
+      <div class="panel">
+        <p id="directors"><span>Dirección : </span></p>
+      </div>
+      <div class="panel">
+        <p id="writters"><span>Guión : </span></p>
+      </div>
+      <div class="panel">
+        <p id="actors"><span>Reparto : </span></p>
+      </div>
+      <div class="panel">
+        <p id="runtime"><span>Duracion : </span></p>
+      </div>
+      <div class="panel">
+        <p id="release_date"><span>Fecha de lanzamiento : </span></p>
+      </div>
     </div>
-    <div class="panels">
-      <div class="panel" id="one-panel">
-        <p id="directors"></p>
-      </div>
-      <div class="panel" id="two-panel">
-        <p id="writters"></p>
-      </div>
-      <div class="panel" id="three-panel">
-        <p id="actors"></p>
-      </div>
-    </div>
+
   </div>
 </template>
 
@@ -27,20 +27,19 @@
 export default {
   name: "Tabs",
 
-  props : ["movie"],
+  props: ["movie"],
 
   updated() {
     this.infoOutput()
   },
 
-  methods : {
+  methods: {
     async infoOutput() {
 
       let directors = document.getElementById("directors")
-      directors.innerHTML = ""
       this.movie.directors.forEach((director, index) => {
         if (this.movie.directors.length === 1) {
-          directors.innerHTML = director
+          directors.innerHTML += director
         } else {
           if ((index + 1) !== this.movie.directors.length) {
             directors.innerHTML += director + " · "
@@ -51,10 +50,9 @@ export default {
       })
 
       let writters = document.getElementById("writters")
-      writters.innerHTML = ""
       this.movie.writters.forEach((writter, index) => {
         if (this.movie.writters.length === 1) {
-          writters.innerHTML = writter
+          writters.innerHTML += writter
         } else {
           if ((index + 1) !== this.movie.writters.length) {
             writters.innerHTML += writter + " · "
@@ -65,18 +63,30 @@ export default {
       })
 
       let actors = document.getElementById("actors")
-      actors.innerHTML = ""
       this.movie.actors.forEach((actor, index) => {
         if (this.movie.actors.length === 1) {
-          actors.innerHTML = actor
+          actors.innerHTML += actor
         } else {
           if ((index + 1) !== this.movie.actors.length) {
             actors.innerHTML += actor + " · "
           } else {
-            actors.innerHTML +=  actor
+            actors.innerHTML += actor
           }
         }
       })
+
+      let runtime = document.getElementById("runtime").innerHTML += this.movie.runtime + " minutos";
+
+      let date = new Date(this.movie.release_date)
+      function toMonthName(monthNumber) {
+        const date = new Date();
+        date.setMonth(monthNumber - 1);
+
+        return date.toLocaleString('es-ES', {
+          month: 'long',
+        });
+      }
+      let release_date = document.getElementById("release_date").innerHTML += `${toMonthName(date.getMonth())} de ${date.getFullYear()} `
 
     }
   }
@@ -84,59 +94,24 @@ export default {
 </script>
 
 <style scoped>
-.warpper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.tabs {
-  border-bottom: 2px solid green;
-}
-
-.tab {
-  cursor: pointer;
-  padding: 10px 20px;
-  display: inline-block;
-  color: #fff;
-}
-
-.panels {
-  width: 100%;
-  border-radius: 3px;
-  overflow: hidden;
+p {
+  margin: 0;
   padding: 20px;
+  text-align: left;
 }
 
 .panel {
-  display: none;
-  animation: fadein .8s;
-  padding: 15px;
+  border-bottom: 1px solid #456;
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.panel:first-child {
+  border-top: 1px solid #456;
 }
 
-.radio {
-  display: none;
+span {
+  color: #00c740;
 }
 
-#one:checked ~ .panels #one-panel,
-#two:checked ~ .panels #two-panel,
-#three:checked ~ .panels #three-panel {
-  display: block
-}
 
-#one:checked ~ .tabs #one-tab,
-#two:checked ~ .tabs #two-tab,
-#three:checked ~ .tabs #three-tab {
-  background: green;
-
-}
 </style>

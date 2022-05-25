@@ -5,10 +5,16 @@
       <span class="frame-title">{{ movie.title }}</span>
       <span class="frame-title-description"></span>
     </div>
+
     <div class="movie-card">
       <a v-bind:href="this.href" class="frame">
         <img v-bind:src="this.url" alt="" class="image">
       </a>
+    </div>
+
+    <div class="d-flex align-items-center mt-2" v-bind:id="this.movie.title + '-' + this.movie.id">
+      <div class="d-flex align-items-center"><i style="color: orange " class="fa-solid fa-heart me-1"></i>
+        <span class="text-white m-0 extra-info">{{this.movie.likes}}</span></div>
     </div>
   </div>
 
@@ -16,7 +22,7 @@
 
 <script>
 export default {
-  name: "MovieCardCategories",
+  name: "MovieCardGeneral",
   props: ["movie"],
 
   data() {
@@ -32,6 +38,7 @@ export default {
     this.displayTitle()
   },
 
+
   methods: {
     displayTitle() {
       let element = document.getElementsByClassName("movie-card")
@@ -44,7 +51,7 @@ export default {
           element[i].previousSibling.style.visibility = "hidden"
         })
       }
-    }
+    },
   }
 }
 </script>
@@ -87,4 +94,7 @@ export default {
   border-right: 11px solid transparent;
 }
 
+.extra-info {
+  font-size: 12px;
+}
 </style>

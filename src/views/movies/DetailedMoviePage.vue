@@ -5,15 +5,21 @@
       <h2 class="title">{{ this.movie.title }} ({{this.date.getFullYear()}})</h2>
     </div>
 
-    <div class="container d-flex">
-      <MovieDetailedCard :movieID="movieID"/>
+    <div class="container d-flex justify-content-between">
 
-      <div class="d-flex flex-column align-items-center contentData">
-        <Tabs :movie="this.movie"/>
-        <div >
-          <p></p>
+      <div class="row big-width">
+        <MovieDetailedCard :movieID="movieID" class="col-3"/>
+
+        <div class="d-flex flex-column align-items-start justify-content-center contentData col-6 ps-5">
+          <Tabs :movie="this.movie"/>
+        </div>
+
+        <div class="col-3 d-flex align-items-center flex-column p-0">
+          <AsideDetailedMovie/>
         </div>
       </div>
+
+
     </div>
 
     <div class="container py-4">
@@ -30,10 +36,11 @@
 <script>
 import MovieDetailedCard from "@/components/movies/movie-card/MovieDetailedCard";
 import Tabs from "@/components/movies/detailed-movie-page/Tabs";
+import AsideDetailedMovie from "@/components/movies/detailed-movie-page/AsideDetailedMovie";
 
 export default {
   name: "DetailedMoviePage",
-  components: {Tabs, MovieDetailedCard},
+  components: {AsideDetailedMovie, Tabs, MovieDetailedCard},
 
   data() {
     return {
@@ -63,6 +70,10 @@ export default {
 </script>
 
 <style scoped>
+
+.big-width {
+  width: inherit;
+}
 
 .title {
   font-family: Graphik-Regular-Web, sans-serif;
@@ -97,10 +108,6 @@ export default {
   margin-top: 0;
   padding-bottom: 5px;
   text-transform: uppercase;
-}
-
-.contentData {
-  width: inherit;
 }
 
 .general {

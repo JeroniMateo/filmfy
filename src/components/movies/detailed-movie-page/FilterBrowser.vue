@@ -65,7 +65,7 @@ export default {
 
     printYears() {
       let yearsFilter = document.getElementById("yearsFilter")
-      let baseYear = 1920
+      let baseYear = 1950
       let getCurrentYear = new Date().getFullYear()
 
       for (let i = baseYear; i < getCurrentYear; i = i+10) {

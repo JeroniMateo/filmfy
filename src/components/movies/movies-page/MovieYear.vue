@@ -6,7 +6,7 @@
     </div>
 
     <div class="container justify-content-between d-flex flex-wrap">
-      <MovieCardCategories
+      <MovieCardGeneral
           v-for="movie of this.moviesCategory" :key="movie" :movie="movie"
       />
     </div>
@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import MovieCardCategories from "@/components/movies/movie-card/MovieCardCategories";
+import MovieCardGeneral from "@/components/movies/movie-card/MovieCardGeneral";
 
 export default {
   name: "MovieCategories",
-  components: {MovieCardCategories},
+  components: {MovieCardGeneral},
   data() {
     return {
       category: this.$route.params.year,

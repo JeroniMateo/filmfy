@@ -1,9 +1,12 @@
 <template>
-  <div class="card-movie d-flex flex-column align-items-center mx-1 my-3">
-    <div class="movie-card">
-      <a v-bind:href="this.href" class="frame">
-        <img v-bind:src="this.url" alt="" class="image">
-      </a>
+  <div class="card-movie d-flex flex-column align-items-center">
+    <a v-bind:href="this.href" class="frame">
+      <img v-bind:src="this.url" alt="" class="image">
+    </a>
+
+    <div class="d-flex align-items-center mt-2" v-bind:id="this.movie.title + '-' + this.movie.id">
+      <div class="d-flex align-items-center"><i style="color: orange " class="fa-solid fa-heart me-1"></i>
+        <span class="text-white m-0 extra-info">{{ this.movie.likes }}</span></div>
     </div>
   </div>
 </template>
@@ -16,7 +19,7 @@ export default {
 
   data() {
     return {
-      movie : [],
+      movie: [],
       url: "",
       href: "",
     }
@@ -41,7 +44,6 @@ export default {
 <style scoped>
 
 .card-movie {
-  width: 340px;
   margin-top: 0px;
 }
 
@@ -54,7 +56,6 @@ export default {
 .movie-card {
   box-sizing: border-box;
 }
-
 
 
 </style>
