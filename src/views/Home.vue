@@ -1,7 +1,7 @@
 <Header/>
 <template>
   <main>
-      <section id="cover" class="d-flex align-content-end justify-content-center">
+      <section id="cover" class="container d-flex align-content-end justify-content-center">
         <div class="d-flex flex-column justify-content-center align-content-end mt-auto mx-auto">
           <div class="d-flex flex-column">
             <span class="heading"><strong>Sigue las mejores películas.</strong></span>
@@ -39,7 +39,7 @@
             <ul>
 
               <hr>
-              <div v-for="comment in lastestComments">
+              <div v-for="comment in latestComments">
                 <li class="comment d-flex flex-row" >
                   <div class="comment-movie-image">
                     <img :src="'http://filmfy-api.ddns.net' + comment.m_image" width="115" height="170" alt=""/>
@@ -47,7 +47,7 @@
                   <div class="comment-details p-3">
                     <div class="comment-movie-details d-flex">
                       <span class="comment-movie-title"><strong>{{ comment.m_title }}</strong></span>
-                      <span class="comment-movie-year mx-2">{{ (comment.m_release).slice(0,4) }}</span>
+                      <span class="comment-movie-year mx-2">{{ (comment.m_release) }}</span>
                     </div>
                     <div class="comment-user-details d-flex flex-row mt-2">
                       <img :src="'http://filmfy-api.ddns.net' + comment.u_image" width="30" height="30" alt=""/>
@@ -79,8 +79,6 @@
                 <hr>
               </div>
 
-
-
             </ul>
           </div>
 
@@ -90,197 +88,31 @@
             <span class="section-heading d-flex my-4">Listas populares</span>
 
             <hr>
-
+            <div v-for="list in latestLists">
             <div class="list -overlapped -stacked d-flex flex-column">
               <a class="list-link">
                 <div class="list-link-stacked clear">
-                  <ul class="poster-list -overlapped -p70">
+                  <ul class="poster-list -overlapped -p70" v-for="movie_img in list.m_imgs.slice(0,5)">
                     <li class="react-component poster film-poster listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
+                      <div><img :src="'http://filmfy-api.ddns.net' + movie_img"
                           width="80" height="130" alt="Donnie Darko"
                           class="image">
                       </div>
                     </li>
-                    <li class="react-component poster film-poster film-poster-51618 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                          width="80" height="130" alt="Being John Malkovich"
-                          class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51871 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                          width="80" height="130" alt="Minority Report"
-                          class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-50662 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                          width="80" height="130" alt="eXistenZ"
-                          class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51480 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                          width="80" height="130" alt="A.I. Artificial Intelligence"
-                          class="image">
-                      </div>
-                    </li>
                   </ul>
                 </div>
               </a>
               <div class="list-content d-flex flex-row mt-2">
-                  <p class="list-title d-flex align-content-center"><strong>Lista de películas</strong></p>
+                  <p class="list-title d-flex align-content-center"><strong>{{ list.l_title }}</strong></p>
                   <div class="mx-4">
                     <img class="user-img" src="#" width="30" height="30" alt=""/>
-                    <small class="comment-user-name mx-2">Toni García</small>
+                    <small class="comment-user-name mx-2">{{ list.u_name }}</small>
                       <span><i class="fa-solid fa-thumbs-up"></i></span>
-                      <span class="mx-1">253</span>
+                      <span class="mx-1">{{ list.l_likes }}</span>
                   </div>
               </div>
             </div>
 
-            <div class="list -overlapped -stacked d-flex flex-column">
-              <a class="list-link">
-                <div class="list-link-stacked clear">
-                  <ul class="poster-list -overlapped -p70">
-                    <li class="react-component poster film-poster listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="Donnie Darko"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51618 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="Being John Malkovich"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51871 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="Minority Report"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-50662 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="eXistenZ"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51480 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="A.I. Artificial Intelligence"
-                                class="image">
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </a>
-              <div class="list-content d-flex flex-row mt-2">
-                <p class="list-title d-flex align-content-center"><strong>Lista de películas</strong></p>
-                <div class="mx-4">
-                  <img class="user-img" src="#" width="30" height="30" alt=""/>
-                  <small class="comment-user-name mx-2">Toni García</small>
-                  <span><i class="fa-solid fa-thumbs-up"></i></span>
-                  <span class="mx-1">253</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="list -overlapped -stacked d-flex flex-column">
-              <a class="list-link">
-                <div class="list-link-stacked clear">
-                  <ul class="poster-list -overlapped -p70">
-                    <li class="react-component poster film-poster listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="Donnie Darko"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51618 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="Being John Malkovich"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51871 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="Minority Report"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-50662 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="eXistenZ"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51480 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="A.I. Artificial Intelligence"
-                                class="image">
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </a>
-              <div class="list-content d-flex flex-row mt-2">
-                <p class="list-title d-flex align-content-center"><strong>Lista de películas</strong></p>
-                <div class="mx-4">
-                  <img class="user-img" src="#" width="30" height="30" alt=""/>
-                  <small class="comment-user-name mx-2">Toni García</small>
-                  <span><i class="fa-solid fa-thumbs-up"></i></span>
-                  <span class="mx-1">253</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="list -overlapped -stacked d-flex flex-column">
-              <a class="list-link">
-                <div class="list-link-stacked clear">
-                  <ul class="poster-list -overlapped -p70">
-                    <li class="react-component poster film-poster listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="Donnie Darko"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51618 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="Being John Malkovich"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51871 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="Minority Report"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-50662 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="eXistenZ"
-                                class="image">
-                      </div>
-                    </li>
-                    <li class="react-component poster film-poster film-poster-51480 listitem">
-                      <div><img src="http://filmfy-api.ddns.net/movie_images/el-padrino.jpg"
-                                width="80" height="130" alt="A.I. Artificial Intelligence"
-                                class="image">
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </a>
-              <div class="list-content d-flex flex-row mt-2">
-                <p class="list-title d-flex align-content-center"><strong>Lista de películas</strong></p>
-                <div class="mx-4">
-                  <img class="user-img" src="#" width="30" height="30" alt=""/>
-                  <small class="comment-user-name mx-2">Toni García</small>
-                  <span><i class="fa-solid fa-thumbs-up"></i></span>
-                  <span class="mx-1">253</span>
-                </div>
-              </div>
             </div>
           </section>
         </div>
@@ -305,7 +137,8 @@ export default {
   },
   data () {
     return {
-      lastestComments: '',
+      latestComments: '',
+      latestLists: '',
       topMoviesImages: [],
       topMoviesId: [4, 33, 53, 183, 229, 44],
     }
@@ -343,14 +176,32 @@ export default {
           })
           .then(response => response.json())
           .then(data => {
-            this.lastestComments = data
-            console.log(this.lastestComments)
+            this.latestComments = data
+            console.log(this.latestComments)
+          })
+    },
+    getLatestLists() {
+      fetch("http://filmfy-api.ddns.net/api/lists-recent",
+          {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json',
+              'Content-type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
+              "Access-Control-Allow-Credentials" : true
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            this.latestLists = data
+            console.log(this.latestLists)
           })
     },
   },
   beforeMount() {
     this.getTopMovies()
     this.getLatestComments()
+    this.getLatestLists()
   },
 }
 </script>
@@ -362,14 +213,17 @@ main {
 }
 
 #cover {
-  width: 100%;
-  height: 45vh;
+  width: 100vw;
+  height: 50vh;
   background-repeat: no-repeat;
   background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 100)
-  ), url("../assets/img/MoviesIMG/doctor-strange-3-cover-page.png") center;
+  ), url("../assets/img/home/cover-img2.jpg") center;
+  background-size: cover;
+
+
 }
 
 .heading {
@@ -393,12 +247,12 @@ main {
 }
 
 .highlights a.panel {
-  border: none;
   box-shadow: inset 0 1px 0 hsl(0deg 0% 100% / 10%);
   box-sizing: border-box;
   display: block;
   margin-bottom: 10px;
   width: 310px;
+  height: 6rem;
 }
 
 .promopanel {
