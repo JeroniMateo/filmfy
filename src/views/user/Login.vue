@@ -67,13 +67,13 @@ export default {
 
   data () {
     return {
-      email_user: '',
-      error_email_user: '',
-      email: false,
+      email: '',
+      error_email: '',
+      email_validation: false,
 
-      password_user: '',
-      error_password_user: '',
-      password: false,
+      password: '',
+      error_password: '',
+      password_validation: false,
 
       error_log: '',
       log: false

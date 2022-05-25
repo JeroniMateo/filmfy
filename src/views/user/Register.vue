@@ -95,19 +95,19 @@ export default {
   data () {
     return {
       usernameR: '',
-      username: false,
+      username_validation: false,
 
       nameR: '',
-      name: false,
+      name_validation: false,
 
       emailR: '',
-      email: false,
+      email_validation: false,
 
       passwordR: '',
-      password: false,
+      password_validation: false,
 
       password_confirmR: '',
-      passwordConfirm: false,
+      passwordConfirm_validation: false,
 
       error_register: '',
       log: false
