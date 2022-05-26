@@ -15,9 +15,16 @@ export default {
   name: 'Movies',
   data() {
     return {
+      movie: {
+        id: '',
+        title: '',
+        description: '',
+        image: '',
+        url: '',
+        rating: '',
+        category: []
+      },
       movies: [],
-      movies_cateogories: [],
-      movie: '',
       loading: true,
       error: false,
       errorMessage: 'No se encontraron peliculas'
@@ -40,7 +47,10 @@ export default {
         })
           .then((response) => response.json())
           .then((data) => {
-            this.movies_cateogories.push(data)
+            this.movies.push(data.image)
+            this.movies.push(data.title)
+            this.movies.push(data.rating)
+            this.movies.push(data.category)
           })
       })
     }
