@@ -35,8 +35,11 @@
       <div class="section-heading">
         <h2 class="sinopsis mb-0">Comentarios</h2>
       </div>
-      <div class="description-div py-3">
-        <CommentsMovie v-for="comment of this.comments" :key="comment" :comment="comment"/>
+      <div v-if="this.contentComment" class="description-div py-3">
+        <CommentsMovie v-for="comment of this.comments" :key="comment" :comment="comment" />
+      </div>
+      <div v-else class="pt-5">
+        <p style="font-size: 25px; color: #00c740" class="text-center">Nadie ha comentado todavía esta película, sé tu el primero!</p>
       </div>
     </div>
 
@@ -62,12 +65,12 @@ export default {
       directors: "Directores : ",
       writters: "Escritores : ",
       actors: "Actores : ",
+      contentComment: true
     }
   },
 
   async beforeMount() {
     this.fetchMovie()
-    this.fetchComments()
   },
 
   methods: {
@@ -76,13 +79,23 @@ export default {
       const moviesData = await promiseMovie.json()
       this.movie = moviesData
       this.date = new Date(moviesData.release_date)
+      await this.fetchComments()
     },
 
     async fetchComments() {
-      const promise = await fetch(`http://127.0.0.1:8000/api/comments-movie/${this.movieID}`)
+      const promise = await fetch(`http://filmfy-api.ddns.net/api/comments-movie/${this.movieID}`)
       const commentsData = await promise.json()
       this.comments = commentsData
-    }
+      await this.checkData()
+    },
+
+    async checkData() {
+      if (this.comments.length === 0){
+        this.contentComment = false
+      }else {
+        this.contentComment = true
+      }
+    },
 
   }
 }

@@ -23,10 +23,11 @@ export default {
   components: {FormModal},
   methods: {
     async sendLike() {
-      await fetch("http://127.0.0.1:8000/api/movies-likes/", {
+      await fetch("http://filmfy-api.ddns.net/api/movies-likes/", {
         method: "POST",
         headers: {
-          "Content-type": "application/json; charset=UTF-8"
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
           "movies_id": this.$route.params.movie,

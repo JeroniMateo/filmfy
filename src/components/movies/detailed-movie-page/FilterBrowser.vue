@@ -36,6 +36,7 @@ export default {
   data() {
     return {
       categories: [],
+      baseUrl : window.origin
     }
   },
 
@@ -58,7 +59,7 @@ export default {
         let slugEl = this.string_to_slug(el.name)
 
         categoriesFilter.innerHTML += `
-          <li><a style="font-size: 12px" class="dropdown-item" href="/movies/category/${slugEl}">${el.name}</a></li>
+          <li><a style="font-size: 12px" class="dropdown-item" href="${this.baseUrl}/movies/category/${slugEl}">${el.name}</a></li>
         `
       })
     },
@@ -70,7 +71,7 @@ export default {
 
       for (let i = baseYear; i < getCurrentYear; i = i+10) {
         yearsFilter.innerHTML += `
-          <li><a style="font-size: 12px; text-transform: capitalize" class="dropdown-item" href="/movies/years/${i}">${i}s</a></li>
+          <li><a style="font-size: 12px; text-transform: capitalize" class="dropdown-item" href="${this.baseUrl}/movies/years/${i}">${i}s</a></li>
         `
       }
 

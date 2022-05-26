@@ -20,12 +20,18 @@
               <label for="" class="form-label">Puntuación</label>
               <input id="rating" type="text" name="rating" class="form-control rating">
             </div>
-<!--            TODO: Change when login-->
-            <input type="hidden" name="users_id" value="2">
-            <input type="button" @click="postComment" value="Enviar">
+            <!--            TODO: Change when login-->
+            <input type="hidden" id="users_id" name="users_id" value="2">
+            <div class="d-flex justify-content-end">
+              <input class="button-send-form" type="button" @click="postComment" value="Enviar">
+            </div>
           </form>
         </div>
+        <div class="col-1">
+          <span @click="hideForm" style="cursor: pointer ">x</span>
+        </div>
       </div>
+
 
     </div>
   </div>
@@ -34,35 +40,43 @@
 <script>
 export default {
   name: "FormModal",
-  props:["movie"],
+  props: ["movie"],
 
   methods: {
-    async postComment(){
-      await fetch(`http://127.0.0.1:8000/api/comments-store/${this.movie.id}`, {
+    async postComment() {
+      await fetch(`http://filmfy-api.ddns.net/api/comments-store/${this.movie.id}`, {
         method: "POST",
+        mode: 'cors',
         headers: {
-          "Content-type": "application/json; charset=UTF-8"
+          'Accept': 'application/json',
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
-          "title" : document.getElementById("title").value,
-          "body" : document.getElementById("body").value,
-          "rating" : document.getElementById("rating").value,
-          "users_id": "2"
+          "title": document.getElementById("title").value,
+          "body": document.getElementById("body").value,
+          "rating": document.getElementById("rating").value,
+          "users_id": document.getElementById("users_id").value,
         })
       })
       await location.reload()
+    },
+
+    hideForm() {
+      let formModal = document.getElementById("modal")
+      formModal.style.display = "none"
     }
   }
 }
 </script>
 
 <style scoped>
-.form-sended-content{
+.form-sended-content {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 60vw;
+  width: 55vw;
   height: auto;
   background-color: #2C3440;
   margin: 50px auto;
@@ -85,11 +99,22 @@ export default {
 }
 
 .body {
-  height: 400px;
-  background-color: rgb(204,221,238);
+  height: 300px;
+  background-color: rgb(204, 221, 238);
 }
 
 .title {
-  background-color: rgb(204,221,238);
+  background-color: rgb(204, 221, 238);
+}
+
+.rating {
+  background-color: rgb(204, 221, 238);
+}
+.button-send-form {
+  background-color: #00c740;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 7px;
 }
 </style>

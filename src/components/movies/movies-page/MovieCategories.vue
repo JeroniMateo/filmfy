@@ -5,6 +5,8 @@
       <span>{{ title }}</span>
     </div>
 
+    <FilterBrowser/>
+
     <div class="container justify-content-between d-flex flex-wrap">
       <MovieCardGeneral
           v-for="movie of this.moviesCategory" :key="movie" :movie="movie"
@@ -17,10 +19,11 @@
 
 <script>
 import MovieCardGeneral from "@/components/movies/movie-card/MovieCardGeneral";
+import FilterBrowser from "@/components/movies/detailed-movie-page/FilterBrowser";
 
 export default {
   name: "MovieCategories",
-  components: {MovieCardGeneral},
+  components: {FilterBrowser, MovieCardGeneral},
   data() {
     return {
       category: this.$route.params.category,

@@ -12,7 +12,7 @@
                :key="movies">
             <img class="col-5" v-bind:src="'http://filmfy-api.ddns.net/' + movies.image">
             <div class="d-flex flex-column align-items-start col-7 justify-content-between content-text-year">
-              <a class="text-start" v-bind:href="'movies/' + movies.id">{{ movies.title }}</a>
+              <a class="text-start" v-bind:href="this.baseUrl + '/movies/' + movies.id">{{ movies.title }}</a>
               <span>{{ movies.release_date }}</span>
             </div>
           </div>
@@ -29,6 +29,7 @@ export default {
   data() {
     return {
       moviesSearch: [],
+      baseUrl : window.origin
     }
   },
 
@@ -40,8 +41,11 @@ export default {
       if (inputSearch.value !== "") {
         let promise = await fetch("http://filmfy-api.ddns.net/api/find-movies", {
           method: 'POST',
+          mode: 'cors',
           headers: {
-            "Content-type": "application/json; charset=UTF-8"
+            'Accept': 'application/json',
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
           },
           body: JSON.stringify({
             "parameter": inputSearch.value

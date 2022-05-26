@@ -2,7 +2,7 @@
 
   <li class="comment d-flex flex-row">
     <div>
-      <img src="#" width="30" height="30" alt=""/>
+      <img v-bind:src="this.icon" width="55" height="55" style="border-radius: 100px" alt=""/>
     </div>
     <div>
     <div class="comment-details px-3">
@@ -43,7 +43,25 @@ export default {
 
   props: ["comment"],
 
-  methods: {}
+  data() {
+    return {
+      icon: "",
+    }
+  },
+
+  beforeMount() {
+    this.loadUserIcon()
+  },
+
+  methods: {
+    async loadUserIcon(){
+      let promise = await fetch("https://randomuser.me/api/")
+      let userIcon = await promise.json()
+
+      this.icon = userIcon.results[0].picture.large
+
+    }
+  }
 }
 </script>
 

@@ -17,6 +17,9 @@
       <div class="panel">
         <p id="release_date"><span>Fecha de lanzamiento : </span></p>
       </div>
+      <div class="p-3 d-flex align-items-center" id="categories">
+
+      </div>
     </div>
 
   </div>
@@ -75,6 +78,12 @@ export default {
         }
       })
 
+      let categories = document.getElementById("categories")
+      this.movie.categories.forEach((category, index) => {
+          categories.innerHTML += `<p style="border: 1px solid white; border-radius: 20px; padding: 4px 12px 4px 12px; margin-bottom: 0px; margin-right: 10px">${category}</p>`
+
+      })
+
       let date = new Date(this.movie.release_date)
 
       function toMonthName(monthNumber) {
@@ -99,6 +108,12 @@ p {
   margin: 0;
   padding: 20px;
   text-align: left;
+}
+
+.category {
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid white;
 }
 
 .panel {
