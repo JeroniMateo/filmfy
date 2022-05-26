@@ -188,7 +188,9 @@
                 <small class="dislike"
                   ><i class="fa-solid fa-thumbs-down"></i
                 ></small>
-                <button @click="responder">Responder<i class="fa-solid fa-share-nodes"></i> </button>
+                <button @click="responder">
+                  Responder<i class="fa-solid fa-share-nodes"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -202,19 +204,21 @@
 export default {
   name: 'MovieContent',
   components: {},
-  data () {
+  data() {
     return {
-      img: '',
-      title: '',
-      date: '',
-      category: [],
-      directors: [],
-      actors: [],
-      rating: '',
-      sinopsis: '',
-      trailer: '',
-      runtime: '',
-
+      movie: {
+        img: '',
+        title: '',
+        date: '',
+        category: [],
+        directors: [],
+        actors: [],
+        rating: '',
+        sinopsis: '',
+        trailer: '',
+        runtime: ''
+      },
+      movies: [],
       fav: false,
       watch: false,
 
@@ -254,14 +258,14 @@ export default {
         document.getElementById('añadir_comentario').style.display = 'flex'
       }
     },
-    valorar () {
+    valorar() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder valorar')
       } else if (this.log === true) {
         document.getElementById('starsValoration').style.display = 'flex'
       }
     },
-    addFav () {
+    addFav() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder añadir a favoritos')
       } else if (this.log === true) {
@@ -272,7 +276,7 @@ export default {
         }
       }
     },
-    addWatch () {
+    addWatch() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder añadir a la lista de ver')
       } else if (this.log === true) {
@@ -283,7 +287,7 @@ export default {
         }
       }
     },
-    responder () {
+    responder() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder responder')
       } else if (this.log === true) {
@@ -295,7 +299,35 @@ export default {
         document.getElementById('btnComentar').style.display = 'none'
         document.getElementById('añadir_comentario').style.display = 'flex'
       }
+    },
+    getMovieContent () {
+      fetch(`http://filmfy-api.ddns.net/api/movies/${movie.id}`, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          Accept: 'application/json',
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          this.img = data.image
+          this.title = data.title
+          this.date = data.date
+          this.category = data.category
+          this.directors = data.directors
+          this.actors = data.actors
+          this.rating = data.rating
+          this.sinopsis = data.sinopsis
+          this.trailer = data.trailer
+          this.runtime = data.runtime
+        })
+        .catch(error => console.log(error))
     }
+  },
+  beforeMount() {
+    this.getMovieContent()
   }
 }
 </script>
