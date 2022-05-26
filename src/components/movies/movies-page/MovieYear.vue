@@ -7,7 +7,7 @@
 
     <div class="container justify-content-between d-flex flex-wrap">
       <MovieCardGeneral
-          v-for="movie of this.moviesCategory" :key="movie" :movie="movie"
+          v-for="movie of this.moviesYear" :key="movie" :movie="movie"
       />
     </div>
   </div>
@@ -22,8 +22,8 @@ export default {
   components: {MovieCardGeneral},
   data() {
     return {
-      category: this.$route.params.year,
-      moviesCategory: [],
+      year: this.$route.params.year,
+      moviesYear: [],
       title: ""
     }
 
@@ -35,15 +35,15 @@ export default {
 
   methods: {
     async fetchMoviesCategory() {
-      const promiseMovies = await fetch(`http://filmfy-api.ddns.net/api/movies-year/${this.category}`)
+      const promiseMovies = await fetch(`http://filmfy-api.ddns.net/api/movies-year/${this.year}`)
       const moviesCategoryData = await promiseMovies.json()
-      this.moviesCategory = moviesCategoryData
+      this.moviesYear = moviesCategoryData
       console.log(moviesCategoryData)
       this.printTitle()
     },
 
     printTitle() {
-      this.title = `Se encontraron ${this.moviesCategory.length} películas de los ${this.category}s`
+      this.title = `Se encontraron ${this.moviesYear.length} películas de los ${this.year}s`
     }
   }
 

@@ -12,7 +12,7 @@
         <p id="actors"><span>Reparto : </span></p>
       </div>
       <div class="panel">
-        <p id="runtime"><span>Duracion : </span></p>
+        <p id="runtime"><span>Duracion :  </span>{{this.movie.runtime}}</p>
       </div>
       <div class="panel">
         <p id="release_date"><span>Fecha de lanzamiento : </span></p>
@@ -29,12 +29,12 @@ export default {
 
   props: ["movie"],
 
-  updated() {
-    this.infoOutput()
+  async mounted() {
+    await this.infoOutput()
   },
 
   methods: {
-    async infoOutput() {
+    infoOutput() {
 
       let directors = document.getElementById("directors")
       this.movie.directors.forEach((director, index) => {
@@ -75,17 +75,17 @@ export default {
         }
       })
 
-      let runtime = document.getElementById("runtime").innerHTML += this.movie.runtime + " minutos";
-
       let date = new Date(this.movie.release_date)
+
       function toMonthName(monthNumber) {
         const date = new Date();
-        date.setMonth(monthNumber - 1);
+        date.setMonth(monthNumber);
 
         return date.toLocaleString('es-ES', {
           month: 'long',
         });
       }
+
       let release_date = document.getElementById("release_date").innerHTML += `${toMonthName(date.getMonth())} de ${date.getFullYear()} `
 
     }

@@ -35,7 +35,7 @@ export default {
 .image {
   background-image: linear-gradient(to bottom,
   rgba(0, 0, 0, 0),
-  rgba(0, 0, 0, 100)), url("https://wallpapercave.com/wp/sepNm9t.jpg");;
+  rgba(0, 0, 0, 100)), url("https://wallpapercave.com/wp/sepNm9t.jpg");
   box-sizing: border-box;
   background-size: cover;
   background-position: 50% 40%;

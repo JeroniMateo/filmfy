@@ -32,6 +32,7 @@ export default {
       const recentMoviesData = await promiseMovies.json()
       this.movies = recentMoviesData
     },
+
   }
 }
 </script>
