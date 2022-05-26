@@ -13,7 +13,7 @@
 import WatchContentCarrousel from '../components/movies/WatchContantCarrousel.vue'
 export default {
   name: 'Movies',
-  data() {
+  data () {
     return {
       movie: {
         id: '',
@@ -45,10 +45,10 @@ export default {
         })
           .then((response) => response.json())
           .then((data) => {
-            this.movies.push(data.image)
-            this.movies.push(data.title)
-            this.movies.push(data.rating)
-            this.movies.push(data.category)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.image}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.title}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.rating}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.cateogry}`)
           })
       })
     }

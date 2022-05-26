@@ -25,7 +25,7 @@
 <script>
 export default {
   name: 'WatchList',
-  data() {
+  data () {
     return {
       movie: {
         id: '',
@@ -47,10 +47,10 @@ export default {
     }
   },
   methods: {
-    goIntoWatchList() {
+    goIntoWatchList () {
       this.$router.push('/moviesList/')
     },
-    getWatchMovies() {
+    getWatchMovies () {
       this.movies.forEach((movie) => {
         fetch(`http://filmfy-api.ddns.net/api/movies/${movie.watch}`, {
           method: 'GET',
@@ -63,15 +63,15 @@ export default {
         })
           .then((response) => response.json())
           .then((data) => {
-            this.movies.push(data.image)
-            this.movies.push(data.title)
-            this.movies.push(data.rating)
-            this.movies.push(data.category)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.image}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.title}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.rating}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.cateogry}`)
           })
       })
     }
   },
-  beforeMount() {
+  beforeMount () {
     this.getWatchMovies()
   }
 }

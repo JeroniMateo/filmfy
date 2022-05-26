@@ -56,13 +56,12 @@ export default {
         categories: 'Drama'
       },
       movie_img: {
-        img: '../../assets/img/MoviesIMG/el-padrino.jpg'
+        image: '../../assets/img/MoviesIMG/el-padrino.jpg'
       },
       favorites: false,
       categoriesMovie: [],
       favMovies: [],
-      img_movie: '',
-      img_movie_info: '',
+      image: '../../assets/img/MoviesIMG/el-padrino.jpg',
       img_fav: '',
       log: false
     }
@@ -91,7 +90,48 @@ export default {
     mouseleave: function () {
       document.getElementById('movie_info').style.display = 'none'
       document.getElementById('movie_img').style.display = 'block'
+    },
+    getMovieIMG () {
+      this.movie_img.forEach((item) => {
+        fetch('http://filmfy-api.ddns.net/api/movies/' + item, {
+          method: 'GET',
+          mode: 'cors',
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            this.img = `http://filmfy-api.ddns.net/${data.image}`
+          })
+      })
+    },
+    getMovieInfo () {
+      this.movies.forEach((movie) => {
+        fetch(`http://filmfy-api.ddns.net/api/movies/${movie.id}`, {
+          method: 'GET',
+          mode: 'cors',
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            this.movies.push(`http://filmfy-api.ddns.net/${data.image}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.title}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.rating}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.cateogry}`)
+          })
+      })
     }
+  },
+  beforeMount () {
+    this.getMovieInfo()
+    this.getMovieIMG()
   }
 }
 </script>

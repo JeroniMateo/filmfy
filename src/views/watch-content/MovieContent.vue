@@ -232,7 +232,7 @@ export default {
     }
   },
   methods: {
-    añadir_comentario () {
+    añadir_comentario() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder comentar')
       } else if (this.log === true) {
@@ -241,7 +241,7 @@ export default {
         document.getElementById('añadir_comentario').style.display = 'none'
       }
     },
-    comentar () {
+    comentar() {
       if (this.log === false) {
         alert('Debes iniciar sesión para poder comentar')
       } else if (this.log === true) {
@@ -300,30 +300,31 @@ export default {
         document.getElementById('añadir_comentario').style.display = 'flex'
       }
     },
-    getMovieContent () {
-      fetch(`http://filmfy-api.ddns.net/api/movies/${movie.id}`, {
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-          Accept: 'application/json',
-          'Content-type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        }
-      })
-        .then(response => response.json())
-        .then(data => {
-          this.img = data.image
-          this.title = data.title
-          this.date = data.date
-          this.category = data.category
-          this.directors = data.directors
-          this.actors = data.actors
-          this.rating = data.rating
-          this.sinopsis = data.sinopsis
-          this.trailer = data.trailer
-          this.runtime = data.runtime
+    getMovieContent() {
+      this.movies.forEach((movie) => {
+        fetch(`http://filmfy-api.ddns.net/api/movies/${movie.id}`, {
+          method: 'GET',
+          mode: 'cors',
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
         })
-        .catch(error => console.log(error))
+          .then((response) => response.json())
+          .then((data) => {
+            this.img = `http://filmfy-api.ddns.net/${data.image}`
+            this.title = `http://filmfy-api.ddns.net/${data.title}`
+            this.date = `http://filmfy-api.ddns.net/${data.date}`
+            this.category = `http://filmfy-api.ddns.net/${data.category}`
+            this.directors = `http://filmfy-api.ddns.net/${data.directors}`
+            this.actors = `http://filmfy-api.ddns.net/${data.actors}`
+            this.rating = `http://filmfy-api.ddns.net/${data.rating}`
+            this.sinopsis = `http://filmfy-api.ddns.net/${data.sinopsis}`
+            this.trailer = `http://filmfy-api.ddns.net/${data.trailer}`
+            this.runtime = `http://filmfy-api.ddns.net/${data.runtime}`
+          })
+      })
     }
   },
   beforeMount() {
