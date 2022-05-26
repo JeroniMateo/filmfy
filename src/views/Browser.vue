@@ -44,7 +44,7 @@ export default {
   name: 'Browser',
   data() {
     return {
-      log: true,
+      log: false,
       movies: [],
       watchList: [],
       img_list: '',

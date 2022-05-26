@@ -97,7 +97,7 @@ export default {
       const header = new Headers()
       header.set('Authorization', 'Basic ' + btoa(authString))
 
-      fetch('', {
+      fetch('http://filmfy-api.ddns.net/api/login/', {
         method: 'GET',
         headers: header
       })

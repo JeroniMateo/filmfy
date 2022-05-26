@@ -235,7 +235,7 @@ export default {
       }
     },
     signUpAPI: function () {
-      fetch('', {
+      fetch('http://filmfy-api.ddns.net/api/register/', {
         method: 'POST',
         body: JSON.stringify({
           usernameR: this.usernameR,
