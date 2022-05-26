@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-3 d-flex align-items-center flex-column p-0">
-          <AsideDetailedMovie/>
+          <AsideDetailedMovie :movie="this.movie"/>
         </div>
       </div>
 
@@ -30,6 +30,16 @@
         <span class="description">{{ this.movie.description }}</span>
       </div>
     </div>
+
+    <div class="container py-4">
+      <div class="section-heading">
+        <h2 class="sinopsis mb-0">Comentarios</h2>
+      </div>
+      <div class="description-div py-3">
+        <CommentsMovie v-for="comment of this.comments" :key="comment" :comment="comment"/>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -37,15 +47,17 @@
 import MovieDetailedCard from "@/components/movies/movie-card/MovieDetailedCard";
 import Tabs from "@/components/movies/detailed-movie-page/Tabs";
 import AsideDetailedMovie from "@/components/movies/detailed-movie-page/AsideDetailedMovie";
+import CommentsMovie from "@/components/movies/detailed-movie-page/CommentsMovie";
 
 export default {
   name: "DetailedMoviePage",
-  components: {AsideDetailedMovie, Tabs, MovieDetailedCard},
+  components: {CommentsMovie, AsideDetailedMovie, Tabs, MovieDetailedCard},
 
   data() {
     return {
       movieID: this.$route.params.movie,
       movie: [],
+      comments: [],
       date: "",
       directors: "Directores : ",
       writters: "Escritores : ",
@@ -53,8 +65,9 @@ export default {
     }
   },
 
-  beforeMount() {
+  async beforeMount() {
     this.fetchMovie()
+    this.fetchComments()
   },
 
   methods: {
@@ -64,6 +77,12 @@ export default {
       this.movie = moviesData
       this.date = new Date(moviesData.release_date)
     },
+
+    async fetchComments() {
+      const promise = await fetch(`http://127.0.0.1:8000/api/comments-movie/${this.movieID}`)
+      const commentsData = await promise.json()
+      this.comments = commentsData
+    }
 
   }
 }

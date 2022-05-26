@@ -20,6 +20,7 @@ import Login from '../views/user/Login.vue'
 import Search from '../views/SearchResults.vue'
 import MovieCategories from "@/components/movies/movies-page/MovieCategories";
 import MovieYear from "@/components/movies/movies-page/MovieYear";
+import CommentMovie from "@/views/comments/CommentMovie";
 
 const routes = [
   {
@@ -51,6 +52,11 @@ const routes = [
     path: '/movies/years/:year',
     name: 'movie-year',
     component: MovieYear
+  },
+  {
+    path: '/comments/:movie',
+    name: 'movie-comments',
+    component: CommentMovie
   },
   {
     path: '/billboard',

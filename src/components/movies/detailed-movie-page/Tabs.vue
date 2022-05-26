@@ -12,7 +12,7 @@
         <p id="actors"><span>Reparto : </span></p>
       </div>
       <div class="panel">
-        <p id="runtime"><span>Duracion :  </span>{{this.movie.runtime}}</p>
+        <p id="runtime"><span>Duracion :  </span>{{this.movie.runtime}} minutos</p>
       </div>
       <div class="panel">
         <p id="release_date"><span>Fecha de lanzamiento : </span></p>
@@ -105,8 +105,8 @@ p {
   border-bottom: 1px solid #456;
 }
 
-.panel:first-child {
-  border-top: 1px solid #456;
+.panel:last-child {
+  border-bottom: none;
 }
 
 span {

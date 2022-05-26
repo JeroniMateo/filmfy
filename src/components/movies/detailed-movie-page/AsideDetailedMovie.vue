@@ -8,20 +8,22 @@
       <span>Añadir a lista</span>
     </div>
     <div class="text-center p-3">
-      <span>Añadir un comentario</span>
+      <a @click="displayModalForm" class="text-decoration-none"><span>Añadir un comentario</span></a>
     </div>
   </aside>
+  <FormModal id="modal" :movie="this.movie"/>
 
 </template>
 
 <script>
+import FormModal from "@/components/movies/detailed-movie-page/FormModal";
 export default {
+  props:["movie"],
   name: "AsideDetailedMovie",
-
+  components: {FormModal},
   methods: {
     async sendLike() {
-      console.log()
-      await fetch("http://filmfy-api.ddns.net/api/movies-likes/", {
+      await fetch("http://127.0.0.1:8000/api/movies-likes/", {
         method: "POST",
         headers: {
           "Content-type": "application/json; charset=UTF-8"
@@ -34,6 +36,11 @@ export default {
 
       await location.reload()
 
+    },
+
+    displayModalForm(){
+      let formModal = document.getElementById("modal")
+      formModal.style.display="block"
     }
   }
 }
