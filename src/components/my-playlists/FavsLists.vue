@@ -25,11 +25,16 @@
 <script>
 export default {
   name: 'FavsList',
-  data () {
+  data() {
     return {
-      movie: '',
+      movie: {
+        id: '',
+        image: '',
+        title: '',
+        rating: '',
+        category: []
+      },
       movies: [],
-      favsList: [],
       img_list: '',
       title_list: '',
       description_list: ''
@@ -42,9 +47,32 @@ export default {
     }
   },
   methods: {
-    goIntoFavsList () {
+    goIntoFavsList() {
       this.$router.push('/moviesList/')
+    },
+    getFavMovies() {
+      this.movies.forEach((movie) => {
+        fetch(`http://filmfy-api.ddns.net/api/movies/${movie.fav}`, {
+          method: 'GET',
+          mode: 'cors',
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            this.movies.push(data.image)
+            this.movies.push(data.title)
+            this.movies.push(data.rating)
+            this.movies.push(data.category)
+          })
+      })
     }
+  },
+  beforeMount() {
+    this.getFavMovies()
   }
 }
 </script>

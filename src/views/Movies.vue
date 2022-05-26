@@ -17,10 +17,8 @@ export default {
     return {
       movie: {
         id: '',
-        title: '',
-        description: '',
         image: '',
-        url: '',
+        title: '',
         rating: '',
         category: []
       },
