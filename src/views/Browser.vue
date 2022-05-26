@@ -1,5 +1,7 @@
 <template>
   <div id="Browser" class="container">
+    <div id="BrowserHeader">
+    </div>
     <div id="Destacados">
       <h3>Destacados</h3>
       <div
@@ -44,7 +46,7 @@ export default {
   name: 'Browser',
   data() {
     return {
-      log: false,
+      log: true,
       movies: [],
       watchList: [],
       img_list: '',

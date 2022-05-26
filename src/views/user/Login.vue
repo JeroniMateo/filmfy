@@ -76,7 +76,7 @@ export default {
       password_validation: false,
 
       error_log: '',
-      log: false
+      log: true
     }
   },
 

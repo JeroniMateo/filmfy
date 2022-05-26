@@ -63,7 +63,7 @@ export default {
       favMovies: [],
       image: '../../assets/img/MoviesIMG/el-padrino.jpg',
       img_fav: '',
-      log: false
+      log: true
     }
   },
   methods: {

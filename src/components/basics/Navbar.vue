@@ -79,7 +79,7 @@ export default {
 
   data () {
     return {
-      log: false,
+      log: true,
       search_result: ''
     }
   },

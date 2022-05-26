@@ -115,7 +115,7 @@ export default {
       passwordConfirm_validation: false,
 
       error_register: '',
-      log: false
+      log: true
     }
   },
   methods: {

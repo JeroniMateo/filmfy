@@ -228,7 +228,7 @@ export default {
       user_comment: '',
       date_comment: '',
 
-      log: false
+      log: true
     }
   },
   methods: {

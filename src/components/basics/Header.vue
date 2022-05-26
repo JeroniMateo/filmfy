@@ -148,7 +148,7 @@ export default {
     openHamburger: '',
     closeHamburger: '',
     username: '',
-    log: false
+    log: true
   }),
   methods: {
     hamburgerIconHandling() {
