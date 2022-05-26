@@ -13,7 +13,7 @@
 import WatchContentCarrousel from '../components/movies/WatchContantCarrousel.vue'
 export default {
   name: 'Movies',
-  data () {
+  data() {
     return {
       movies: [],
       movies_cateogories: [],
@@ -25,6 +25,28 @@ export default {
   },
   components: {
     WatchContentCarrousel
+  },
+  methods: {
+    getMovies () {
+      this.movies.forEach((movie) => {
+        fetch(`http://filmfy-api.ddns.net/api/movies/${movie.id}`, {
+          method: 'GET',
+          mode: 'cors',
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            this.movies_cateogories.push(data)
+          })
+      })
+    }
+  },
+  beforeMount () {
+    this.getMovies()
   }
 }
 </script>
