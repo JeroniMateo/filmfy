@@ -23,7 +23,7 @@
     </section>
 
     <section class="d-flex justify-content-center">
-      <div class="container-md highlights row row-cols-sm-1 row-cols-lg-2 row-cols-xl-4 row-cols-xxl-4 d-flex justify-content-center">
+      <div class="container-md highlights row row-cols-1 row-cols-sm-1 row-cols-lg-2 row-cols-xl-4 row-cols-xxl-4 d-flex justify-content-center">
         <a class="col panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-heart"></i></span><p>No te pierdas ninguna de las películas que te gustan. ¡Las podrás guardar!</p></a>
         <a class="col panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-thumbs-up"></i></span><p>Da likes, guarda listas y organiza tus películas favoritas como prefieras.</p></a>
         <a class="col panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-film"></i></span><p>Escribe comentarios, puntúa y debate con otros usuarios. Conviértete en crítico.</p></a>
