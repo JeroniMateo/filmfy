@@ -131,7 +131,7 @@
 export default {
   name: 'Register',
 
-  data () {
+  data() {
     return {
       usernameR: '',
       error_username: '',
@@ -300,6 +300,34 @@ export default {
       d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
       const expires = 'expires=' + d.toGMTString()
       document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
+    }
+  },
+
+  mostrarPassword: function () {
+    this.passwordR = document.getElementById('password')
+    if (this.passwordR.type === 'text') {
+      this.passwordR.type = 'password'
+    } else {
+      this.passwordR.type = 'text'
+    }
+  },
+
+  mostrarPasswordConf: function () {
+    this.password_confirmR = document.getElementById('confirmP')
+    if (this.password_confirmR.type === 'text') {
+      this.password_confirmR.type = 'password'
+    } else {
+      this.password_confirmR.type = 'text'
+    }
+  },
+
+  ocultarPassword: function () {
+    this.password_confirmR = document.getElementById('confirmP')
+    this.passwordR = document.getElementById('password')
+    if (this.password_confirmR.type == 'text') {
+      this.password_confirmR.type = 'password'
+    } else if (this.passwordR.type == 'text') {
+      this.passwordR.type = 'password'
     }
   }
 }

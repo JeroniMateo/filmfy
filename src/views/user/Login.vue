@@ -84,7 +84,7 @@
               aria-required="true"
               required
             />
-            <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
+            <span @mouseover="verPassword" @mouseleave="ocultarPassword" class="ver" id="verPassword"><i class="far fa-eye"></i></span>
             <p id="error_password" class="error"><b></b></p>
             <span id="errorLogin" class="error"></span><br />
             <button
@@ -181,6 +181,12 @@ export default {
         }
       }
       return ''
+    }
+  },
+  ocultarPassword: function () {
+    this.password = document.getElementById('password')
+    if (this.password.type === 'text') {
+      this.password.type = 'password'
     }
   }
 }
