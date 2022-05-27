@@ -84,7 +84,13 @@
               aria-required="true"
               required
             />
-            <span @mouseover="verPassword" @mouseleave="ocultarPassword" class="ver" id="verPassword"><i class="far fa-eye"></i></span>
+            <span
+              @mouseover="mostrarPassword"
+              @mouseleave="ocultarPassword"
+              class="ver"
+              id="verPassword"
+              ><i class="far fa-eye"></i
+            ></span>
             <p id="error_password" class="error"><b></b></p>
             <span id="errorLogin" class="error"></span><br />
             <button
@@ -112,7 +118,7 @@
 export default {
   name: 'Login',
 
-  data () {
+  data() {
     return {
       email: '',
       error_email: '',
@@ -183,10 +189,21 @@ export default {
       return ''
     }
   },
+  mostrarPassword: function () {
+    this.passwordR = document.getElementById('password')
+    if (this.passwordR.type === 'text') {
+      this.passwordR.type = 'password'
+    } else {
+      this.passwordR.type = 'text'
+    }
+  },
   ocultarPassword: function () {
-    this.password = document.getElementById('password')
-    if (this.password.type === 'text') {
-      this.password.type = 'password'
+    this.password_confirmR = document.getElementById('confirmP')
+    this.passwordR = document.getElementById('password')
+    if (this.password_confirmR.type === 'text') {
+      this.password_confirmR.type = 'password'
+    } else if (this.passwordR.type === 'text') {
+      this.passwordR.type = 'password'
     }
   }
 }

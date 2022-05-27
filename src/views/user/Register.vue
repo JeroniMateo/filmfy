@@ -96,6 +96,13 @@
               name="password"
               required
             />
+            <span
+              @mouseover="mostrarPassword"
+              @mouseleave="ocultarPassword"
+              class="ver"
+              id="verPassword"
+              ><i class="far fa-eye"></i
+            ></span>
             <p id="error_password" class="error"></p>
             <input
               id="password_confirmR"
@@ -105,6 +112,13 @@
               name="password_confirm"
               required
             />
+            <span
+              @mouseover="mostrarPassword"
+              @mouseleave="ocultarPassword"
+              class="ver"
+              id="verPassword"
+              ><i class="far fa-eye"></i
+            ></span>
             <p id="error_password_confirm" class="error"></p>
             <button
               type="button"
@@ -312,21 +326,12 @@ export default {
     }
   },
 
-  mostrarPasswordConf: function () {
-    this.password_confirmR = document.getElementById('confirmP')
-    if (this.password_confirmR.type === 'text') {
-      this.password_confirmR.type = 'password'
-    } else {
-      this.password_confirmR.type = 'text'
-    }
-  },
-
   ocultarPassword: function () {
     this.password_confirmR = document.getElementById('confirmP')
     this.passwordR = document.getElementById('password')
-    if (this.password_confirmR.type == 'text') {
+    if (this.password_confirmR.type === 'text') {
       this.password_confirmR.type = 'password'
-    } else if (this.passwordR.type == 'text') {
+    } else if (this.passwordR.type === 'text') {
       this.passwordR.type = 'password'
     }
   }
