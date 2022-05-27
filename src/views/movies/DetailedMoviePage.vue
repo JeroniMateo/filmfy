@@ -83,7 +83,7 @@ export default {
     },
 
     async fetchComments() {
-      const promise = await fetch(`http://127.0.0.1:8000/api/comments-movie/${this.movieID}`)
+      const promise = await fetch(`http://filmfy-api.ddns.net/api/comments-movie/${this.movieID}`)
       const commentsData = await promise.json()
       this.comments = commentsData
       await this.checkData()
