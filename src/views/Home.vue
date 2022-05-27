@@ -47,7 +47,7 @@
                   <div class="comment-details p-3">
                     <div class="comment-movie-details d-flex">
                       <span class="comment-movie-title"><strong>{{ comment.m_title }}</strong></span>
-                      <span class="comment-movie-year mx-2">{{ (comment.m_release) }}</span>
+                      <span class="comment-movie-year mx-2">{{ comment.m_release.split('-')[0] }}</span>
                     </div>
                     <div class="comment-user-details d-flex flex-row mt-2">
                       <img :src="'http://filmfy-api.ddns.net' + comment.u_image" width="30" height="30" alt=""/>
