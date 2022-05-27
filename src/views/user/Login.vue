@@ -72,6 +72,7 @@
               type="text"
               name="email"
               aria-required="true"
+              required
             />
             <p id="error_email" class="error"></p>
             <input
@@ -81,12 +82,13 @@
               type="password"
               name="password"
               aria-required="true"
+              required
             />
             <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
             <p id="error_password" class="error"><b></b></p>
             <span id="errorLogin" class="error"></span><br />
             <button
-              onclick="LoginAPI()"
+              @click="loginValidation"
               id="loginButton"
               class="button"
               aria-label="Inicia sesión"

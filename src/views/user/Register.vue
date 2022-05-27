@@ -67,6 +67,7 @@
               class="registro"
               type="test"
               name="username"
+              required
             />
             <p id="error_username" class="error"></p>
             <input
@@ -75,6 +76,7 @@
               class="registro"
               type="text"
               name="name"
+              required
             />
             <p id="error_name" class="error"></p>
             <input
@@ -83,6 +85,7 @@
               class="registro"
               type="email"
               name="email"
+              required
             />
             <p id="error_email" class="error"></p>
             <input
@@ -91,6 +94,7 @@
               class="registro"
               type="password"
               name="password"
+              required
             />
             <p id="error_password" class="error"></p>
             <input
@@ -99,11 +103,12 @@
               class="registro"
               type="password"
               name="password_confirm"
+              required
             />
             <p id="error_password_confirm" class="error"></p>
             <button
               type="button"
-              onclick="signUpAPI()"
+              @click="registerValidation"
               id="signUpButton"
               class="button"
               aria-label="Regístrate"
@@ -126,7 +131,7 @@
 export default {
   name: 'Register',
 
-  data() {
+  data () {
     return {
       usernameR: '',
       error_username: '',
@@ -282,7 +287,7 @@ export default {
       })
         .then((response) => response.json())
         .then((token) => {
-          setCookie('tokenName', token.access_token, 365)
+          this.setCookie('tokenName', token.access_token, 365)
           this.log = true
           this.$router.push('/')
         })
