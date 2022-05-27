@@ -141,3 +141,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 
+
+## Libraries
+
+Star ratings
+https://openbase.com/js/vue-star-rating
+

@@ -1,7 +1,7 @@
 <template>
   <header
-    @load="hamburgerIconHandling"
-    class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+      @load="hamburgerIconHandling"
+      class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
   >
     <div id="hamburger" @click="hamburgerIconHandling">
       <div class="bar1"></div>
@@ -11,17 +11,17 @@
 
     <div class="main-menu d-flex col-md-3 mx-3">
       <a
-        href="/"
-        class="d-flex align-items-center mb-md-0 text-dark text-decoration-none"
+          href="/"
+          class="d-flex align-items-center mb-md-0 text-dark text-decoration-none"
       >
         <img
-          src="../../assets/img/cameraLogo.png"
-          class="bi me-2"
-          width="30"
-          height="30"
-          role="img"
-          aria-label="Bootstrap"
-          alt="logo"
+            src="../../assets/img/cameraLogo.png"
+            class="bi me-2"
+            width="30"
+            height="30"
+            role="img"
+            aria-label="Bootstrap"
+            alt="logo"
         />
         <span class="brand-name"><strong>Filmfy</strong></span>
       </a>
@@ -30,51 +30,27 @@
     <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
       <li>
         <a
-          href="/movies"
-          class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
-          >Películas</a
+            href="/movies"
+            class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+        >Películas</a
         >
       </li>
       <li>
         <a
-          href="/playlists"
-          class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
-          >Listas</a
+            href="/playlists"
+            class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+        >Listas</a
         >
       </li>
       <li>
         <a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
-          >Usuarios</a
+        >Usuarios</a
         >
       </li>
     </ul>
 
     <div class="main main-menu col-md-3 text-end">
-      <button v-if="log" type="button" class="btn btn-outline-primary me-2">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i class="fa-solid fa-user"></i> {{ username }}
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="/userProfile">Mi Perfil</a></li>
-          <li><a class="dropdown-item" href="/playlists">Mis Listas</a></li>
-          <li @click="logout">
-            <a class="dropdown-item" href="#">Cerrar Sesión</a>
-          </li>
-        </ul>
-      </button>
-      <button
-        v-else
-        type="button"
-        class="btn btn-outline-primary me-2"
-        @click="login"
-      >
+      <button type="button" class="btn btn-outline-primary me-2" @click="login">
         Accede
       </button>
     </div>
@@ -84,11 +60,11 @@
         <a href="" style="text-decoration: none">
           <div style="display: flex; align-items: center">
             <img
-              class="logo"
-              src="../../assets/img/cameraLogo.png"
-              width="30"
-              height="30"
-              alt="logo"
+                class="logo"
+                src="../../assets/img/cameraLogo.png"
+                width="30"
+                height="30"
+                alt="logo"
             />
             <p class="brand-name">Filmfy</p>
             <span class="close-hamburger">&times;</span>
@@ -100,32 +76,10 @@
           <a href="">Usuarios</a>
         </div>
         <div class="login-content-hamburger">
-          <button v-if="log" type="button" class="btn btn-outline-primary me-2">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i class="fa-solid fa-user"></i> {{ username }}
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li>
-                <a class="dropdown-item" href="/userProfile">Mi Perfil</a>
-              </li>
-              <li><a class="dropdown-item" href="/playlists">Mis Listas</a></li>
-              <li @click="logout">
-                <a class="dropdown-item" href="#">Cerrar Sesión</a>
-              </li>
-            </ul>
-          </button>
           <button
-            v-else
-            type="button"
-            class="btn btn-outline-primary me-2"
-            @click="login"
+              type="button"
+              class="btn btn-outline-primary me-2"
+              @click="login"
           >
             Accede
           </button>
@@ -146,31 +100,22 @@ export default {
   },
   data: () => ({
     openHamburger: '',
-    closeHamburger: '',
-    username: '',
-    log: true
+    closeHamburger: ''
   }),
   methods: {
-    hamburgerIconHandling() {
+    hamburgerIconHandling () {
       this.openHamburger = document.getElementById('hamburger')
       document.getElementsByClassName('hamburger-container')[0].style.display =
-        'flex'
-
-      this.closeHamburger =
-        document.getElementsByClassName('close-hamburger')[0]
+          'flex'
+      this.closeHamburger = document.getElementsByClassName('close-hamburger')[0]
       this.closeHamburger.addEventListener('click', function () {
         document.getElementsByClassName(
-          'hamburger-container'
+            'hamburger-container'
         )[0].style.display = 'none'
       })
     },
-    login() {
+    login () {
       this.$router.push('/login')
-    },
-    logout() {
-      localStorage.removeItem('token')
-      this.log = false
-      this.$router.push('/')
     }
   }
 }
@@ -179,32 +124,28 @@ export default {
 <style scoped>
 .brand-name {
   font-size: 175%;
-  color: #f7f7f5;
+  color: #ffff;
 }
-
 .text-large {
   font-size: 1rem;
 }
-
 .link-custom {
-  color: #787b66;
+  color: #c9c9c9;
   font-weight: bold;
 }
 .link-custom:hover,
 .link-custom:focus {
-  color: #f7f7f5;
+  color: #ffffff;
 }
-
 .bar1,
 .bar2,
 .bar3 {
   width: 35px;
   height: 5px;
-  background-color: #f7f7f5;
+  background-color: white;
   margin: 6px 0;
   transition: 0.4s;
 }
-
 .hamburger-container {
   display: none;
   align-items: center;
@@ -217,53 +158,48 @@ export default {
   overflow: auto;
   backdrop-filter: blur(6px);
 }
-
 #hamburger {
   display: none;
 }
-
 #hamburgerMenu {
   display: flex;
   flex-direction: column;
   justify-content: start;
   width: 55%;
   height: 100%;
-  background-color: #0f0505;
-  border-right: 3px solid #00c740;
+  background-color: black;
+  border-right: 3px solid green;
   padding: 20px;
   text-align: left;
   margin-top: auto;
 }
-
 #hamburgerMenu > a > div > .brand-name {
-  color: #f7f7f5;
+  color: white;
   font-size: 25px;
   font-weight: 900;
+  margin-top: 8px;
+  margin-left: 5px;
 }
-
 .close-hamburger {
   display: flex;
   font-size: 45px;
-  color: #f7f7f5;
+  color: white;
   font-weight: bold;
   margin-left: auto;
 }
-
 .menu-links {
   display: flex;
   margin-top: 25px;
   flex-direction: column;
   justify-content: space-between;
 }
-
 #hamburgerMenu > div > a {
-  color: #f7f7f5;
+  color: white;
   font-size: 20px;
   font-weight: 900;
   text-decoration: none;
   padding: 8px 14px 13px;
 }
-
 .login-content-hamburger {
   display: flex;
   flex-direction: row;
@@ -273,18 +209,15 @@ export default {
   margin-left: 10px;
   align-items: center;
 }
-
 .login-content-hamburger > img {
   height: 20px;
 }
-
 .login-content-hamburger > p {
-  color: #f7f7f5;
+  color: white;
   margin-right: 30px;
   font-size: 20px;
   margin-left: 5px;
 }
-
 @media only screen and (max-width: 767px) {
   .main-menu {
     display: none;
@@ -300,13 +233,11 @@ export default {
     height: 1.5rem;
   }
 }
-
 @media only screen and (max-width: 600px) {
   .main-nav > a {
     padding: 7px 10px 10px;
     font-size: 18px;
   }
-
   #hamburger {
     display: inline-block;
     margin-left: 10px;
