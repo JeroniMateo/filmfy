@@ -23,7 +23,7 @@ export default {
   components: {FormModal},
   methods: {
     async sendLike() {
-      await fetch("http://filmfy-api.ddns.net/api/movies-likes/", {
+      await fetch("http://filmfy-api.ddns.net/api/movies-likes", {
         method: "POST",
         headers: {
           'Content-type': 'application/json',

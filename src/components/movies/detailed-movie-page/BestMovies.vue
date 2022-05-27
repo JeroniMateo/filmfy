@@ -23,12 +23,13 @@ export default {
   },
 
   beforeMount() {
-    this.fetchRecentMovies()
+    this.fetchBestMovies()
   },
 
   methods: {
-    async fetchRecentMovies() {
-      const promiseMovies = await fetch(`http://filmfy-api.ddns.net/api/best-movies/`)
+    async fetchBestMovies() {
+      const promiseMovies = await fetch(`http://filmfy-api.ddns.net/api/best-movies`, {
+      })
       const recentMoviesData = await promiseMovies.json()
       this.limitData(recentMoviesData)
     },

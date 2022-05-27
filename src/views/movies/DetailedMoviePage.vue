@@ -26,8 +26,8 @@
       <div class="section-heading">
         <h2 class="sinopsis mb-0">Sinopsis</h2>
       </div>
-      <div class="description-div">
-        <span class="description">{{ this.movie.description }}</span>
+      <div class="description-div pt-3">
+        <span class="description ">{{ this.movie.description }}</span>
       </div>
     </div>
 
@@ -35,7 +35,7 @@
       <div class="section-heading">
         <h2 class="sinopsis mb-0">Comentarios</h2>
       </div>
-      <div v-if="this.contentComment" class="description-div py-3">
+      <div v-if="this.contentComment" class="description-div-comments py-3">
         <CommentsMovie v-for="comment of this.comments" :key="comment" :comment="comment" />
       </div>
       <div v-else class="pt-5">
@@ -83,7 +83,7 @@ export default {
     },
 
     async fetchComments() {
-      const promise = await fetch(`http://filmfy-api.ddns.net/api/comments-movie/${this.movieID}`)
+      const promise = await fetch(`http://127.0.0.1:8000/api/comments-movie/${this.movieID}`)
       const commentsData = await promise.json()
       this.comments = commentsData
       await this.checkData()
@@ -114,6 +114,10 @@ export default {
   margin-bottom: 3rem;
 }
 
+.description-div-comments {
+  text-align: left;
+  width: 40rem;
+}
 .description-div {
   text-align: left;
   margin-right: 10vw;

@@ -6,7 +6,7 @@
       <span class="frame-title-description"></span>
     </div>
 
-    <div class="movie-card">
+    <div class="movie-card" @mouseout="hideTitle(this.movie.id)" @mouseover="displayTitle(this.movie.id)" v-bind:id="this.movie.id">
       <a v-bind:href="this.href" class="frame">
         <img v-bind:src="this.url" alt="" class="image">
       </a>
@@ -14,7 +14,7 @@
 
     <div class="d-flex align-items-center mt-2" v-bind:id="this.movie.title + '-' + this.movie.id">
       <div class="d-flex align-items-center"><i style="color: orange " class="fa-solid fa-heart me-1"></i>
-        <span class="text-white m-0 extra-info">{{this.movie.likes}}</span></div>
+        <span class="text-white m-0 extra-info">{{ this.movie.likes }}</span></div>
     </div>
   </div>
 
@@ -35,23 +35,20 @@ export default {
   mounted() {
     this.url = "http://filmfy-api.ddns.net" + this.movie.image
     this.href = window.origin + "/movies/" + this.movie.id
-    this.displayTitle()
   },
 
 
   methods: {
-    displayTitle() {
-      let element = document.getElementsByClassName("movie-card")
-      for (let i = 0; i < element.length; i++) {
-        element[i].addEventListener("mouseover", () => {
-          element[i].previousSibling.style.visibility = "visible"
-        })
+    displayTitle(id) {
+      let element = document.getElementById(id)
+      element.style.visibility = "visible"
 
-        element[i].addEventListener("mouseout", () => {
-          element[i].previousSibling.style.visibility = "hidden"
-        })
-      }
     },
+
+    hideTitle(id) {
+      let element = document.getElementById(id)
+      element.style.visibility = "hidden"
+    }
   }
 }
 </script>
@@ -71,7 +68,7 @@ export default {
 
 .movie-card :hover {
   border-radius: 5px;
-  border: 2px solid green;
+  border: 1.5px solid green;
 }
 
 .card-movie {

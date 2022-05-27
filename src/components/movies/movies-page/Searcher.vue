@@ -7,15 +7,9 @@
              data-url="/s/autocompletefilm"
              autocomplete="off">
       <div class="content-searched bg-light d-flex flex-column align-items-center justify-content-between wrapper">
-        <div class="div-movie-searcher">
-          <div class="row pt-4 ms-1 me-1 pb-4 d-flex align-items-start div-movie-searched" v-for="movies of this.moviesSearch"
-               :key="movies">
-            <img class="col-5" v-bind:src="'http://filmfy-api.ddns.net/' + movies.image">
-            <div class="d-flex flex-column align-items-start col-7 justify-content-between content-text-year">
-              <a class="text-start" v-bind:href="this.baseUrl + '/movies/' + movies.id">{{ movies.title }}</a>
-              <span>{{ movies.release_date }}</span>
-            </div>
-          </div>
+        <div class="div-movie-searcher ">
+          <ItemSearched v-for="movies of this.moviesSearch"
+                        :key="movies" :movies="movies"/>
         </div>
       </div>
     </div>
@@ -23,13 +17,15 @@
 </template>
 
 <script>
+import ItemSearched from "@/components/movies/movies-page/ItemSearched";
+
 export default {
   name: "Searcher",
-
+  components: {ItemSearched},
   data() {
     return {
       moviesSearch: [],
-      baseUrl : window.origin
+      baseUrl: window.origin
     }
   },
 
