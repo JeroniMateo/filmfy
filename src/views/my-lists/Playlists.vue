@@ -1,9 +1,7 @@
 <template>
   <div id="Playlists" class="container-fluid" @click="goMoviesLists">
     <div id="UserPlaylists">
-      <h2>
-        <b>{{ username }} Playlists</b>
-      </h2>
+      <h2>{{ username }} Playlists</h2>
       <button @click="createPlaylist"><i class="fa-solid fa-plus"></i></button>
     </div>
     <div id="Listas" class="row row-cols-1 p-5 row-cols-md-4 g-4">
@@ -12,7 +10,7 @@
       <div id="listasUser">
         <div id="CrearPlaylist" style="display: none">
           <form action="">
-            <input type="image" src="" alt="">
+            <input type="image" src="" alt="" />
             <label for="">List Name</label>
             <input
               type="text"
@@ -32,7 +30,8 @@
               type="text"
               name="username"
               id="username"
-              placeholder="Username">
+              placeholder="Username"
+            />
             <button type="submit" @click="create">Create</button>
           </form>
         </div>
@@ -76,14 +75,14 @@ export default {
         }
       })
     },
-    createPlaylist () {
+    createPlaylist() {
       document.getElementById('CrearPlaylist').style.display = 'block'
       document.getElementById('listname').value = this.title_list
       document.getElementById('description').value = this.description_list
       document.getElementById('username').value = this.username
       document.getElementById('img_list').value = this.img_list
     },
-    create () {
+    create() {
       document.getElementById('CrearPlaylist').style.display = 'none'
       document.getElementById('listasUser').innerHTML =
         ' <div class="lista"><UserLists /></div>'
@@ -99,7 +98,7 @@ export default {
   width: 70%;
 }
 h2 {
-  color: #f7f7f5;
+  color: #00c740;
   background-color: #0f0505;
   font-size: 6vh;
 }

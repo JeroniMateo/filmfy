@@ -2,7 +2,7 @@
   <div class="WatchList container-fluid">
     <div class="col">
       <div class="card h-100" @click="goIntoWatchList">
-        <img id="img_list" class="card-img-top" alt="..." />
+        <img src="../../assets/img/cameraLogo.png" alt="" />
         <div class="card-body">
           <h5 class="card-title" id="title_list">
             Watched Movies <i class="fa-solid fa-eye"></i>
@@ -12,10 +12,7 @@
           </small>
         </div>
         <div class="card-footer">
-          <small class="text-muted" id="user_list"
-            >by Filmfy
-            <img src="../../assets/img/cameraLogo.png" alt="" />
-          </small>
+          <small class="text-muted" id="user_list">by Filmfy </small>
         </div>
       </div>
     </div>
@@ -25,7 +22,7 @@
 <script>
 export default {
   name: 'WatchList',
-  data () {
+  data() {
     return {
       movie: {
         id: '',
@@ -47,10 +44,10 @@ export default {
     }
   },
   methods: {
-    goIntoWatchList () {
+    goIntoWatchList() {
       this.$router.push('/moviesList/')
     },
-    getWatchMovies () {
+    getWatchMovies() {
       this.movies.forEach((movie) => {
         fetch(`http://filmfy-api.ddns.net/api/movies/${movie.watch}`, {
           method: 'GET',
@@ -71,7 +68,7 @@ export default {
       })
     }
   },
-  beforeMount () {
+  beforeMount() {
     this.getWatchMovies()
   }
 }

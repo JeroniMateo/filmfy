@@ -2,7 +2,7 @@
   <div class="FavsList container-fluid">
     <div class="col FavsList">
       <div class="card h-100" @click="goIntoFavsList">
-        <img class="card-img-top" alt="..." id="img_list" />
+        <img src="../../assets/img/cameraLogo.png" alt="" />
         <div class="card-body">
           <h5 class="card-title" id="title_list">
             Favorites Movies<i class="fa-solid fa-star"></i>
@@ -14,7 +14,6 @@
         <div class="card-footer">
           <small class="text-muted" id="user_list"
             >by Filmfy
-            <img src="../../assets/img/cameraLogo.png" alt="" />
           </small>
         </div>
       </div>
@@ -77,14 +76,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #FavsList {
   background-color: #0f0505;
   color: #f7f7f5;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
-  width: 20vh;
-  height: 30vh;
+  width: 15vh;
+  height: 20vh;
 }
+
 </style>
