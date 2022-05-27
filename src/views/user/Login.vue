@@ -67,7 +67,7 @@
               name="email"
               aria-required="true"
             />
-            <p id="errorName" class="error"></p>
+            <p id="error_email" class="error"></p>
             <input
               id="passwordL"
               aria-label="password"
@@ -77,7 +77,7 @@
               aria-required="true"
             />
             <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
-            <p id="errorPassword" class="error"><b></b></p>
+            <p id="error_password" class="error"><b></b></p>
             <span id="errorLogin" class="error"></span><br />
             <button
               onclick="LoginAPI()"
