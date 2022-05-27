@@ -312,6 +312,10 @@ div > svg {
   font-size: 0.9rem;
 }
 
+.list-title {
+  width: 10rem;
+}
+
 /** **/
 
 
