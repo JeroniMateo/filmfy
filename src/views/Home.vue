@@ -22,19 +22,19 @@
       </div>
     </section>
 
-    <section class="">
-      <div class="container-md highlights col-lg-6 col-xl-6 col-xxl-12 d-flex justify-content-center">
-        <a class="panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-heart"></i></span><p>No te pierdas ninguna de las películas que te gustan. ¡Las podrás guardar!</p></a>
-        <a class="panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-thumbs-up"></i></span><p>Da likes, guarda listas y organiza tus películas favoritas como prefieras.</p></a>
-        <a class="panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-film"></i></span><p>Escribe comentarios, puntúa y debate con otros usuarios. Conviértete en crítico.</p></a>
-        <a class="panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-address-book"></i></span><p>Comparte tus listas, opiniones y películas con quien quieras, cuando sea.</p></a>
+    <section class="d-flex justify-content-center">
+      <div class="container-md highlights row row-cols-sm-1 row-cols-lg-2 row-cols-xl-4 row-cols-xxl-4 d-flex justify-content-center">
+        <a class="col panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-heart"></i></span><p>No te pierdas ninguna de las películas que te gustan. ¡Las podrás guardar!</p></a>
+        <a class="col panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-thumbs-up"></i></span><p>Da likes, guarda listas y organiza tus películas favoritas como prefieras.</p></a>
+        <a class="col panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-film"></i></span><p>Escribe comentarios, puntúa y debate con otros usuarios. Conviértete en crítico.</p></a>
+        <a class="col panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-address-book"></i></span><p>Comparte tus listas, opiniones y películas con quien quieras, cuando sea.</p></a>
       </div>
     </section>
 
     <section id="popular-content" class="mt-5 d-flex justify-content-start">
       <div class="container-md">
         <div class="row d-flex justify-content-center">
-          <div class="comments col-12 col-xxl-7 d-flex flex-column">
+          <div class="comments col-12 col-xxl-7 col-xl-5 d-flex flex-column">
             <span class="section-heading d-flex my-4">Últimos comentarios</span>
             <ul>
               <hr>
@@ -81,9 +81,10 @@
             </ul>
           </div>
 
-          <div class="lists col-12 col-xxl-4 mx-5 d-flex flex-column">
+          <div class="lists col-12 col-xxl-4 col-xl-4 mx-5 d-flex flex-column">
             <span class="section-heading d-flex my-4">Listas populares</span>
             <hr>
+            <div class="d-flex flex-column justify-content-center align-items-center">
             <div v-for="list in latestLists">
 
             <div class="list -overlapped -stacked d-flex flex-column">
@@ -113,6 +114,7 @@
             </div>
 
             </div>
+          </div>
           </div>
         </div>
       </div>
