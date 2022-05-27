@@ -116,7 +116,7 @@ export default {
 
 .description-div-comments {
   text-align: left;
-  width: 40rem;
+  width: 45rem;
 }
 .description-div {
   text-align: left;

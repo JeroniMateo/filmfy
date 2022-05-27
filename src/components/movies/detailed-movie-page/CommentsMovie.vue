@@ -6,13 +6,13 @@
     </div>
     <div class="comment-details col-8">
 
-      <div class="comment-movie-details d-flex align-items-center">
+      <div class="comment-movie-details d-flex flex-column align-items-start">
         <span class="comment-movie-title"><strong>{{ this.comment.title }}</strong></span>
-        <small class="comment-user-name mx-2">review escrita por {{ this.comment.user }}</small>
+        <small class="comment-user-name my-2">review escrita por {{ this.comment.user }}</small>
       </div>
 
       <div class="comment-user-details d-flex flex-row mt-2">
-        <div class="comment-rating mx-2">
+        <div class="comment-rating">
           <i class="fa-solid fa-star stars"></i>
           <i class="fa-solid fa-star stars"></i>
           <i class="fa-solid fa-star stars"></i>

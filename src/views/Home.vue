@@ -425,7 +425,7 @@ export default {
 <style scoped>
 
 main {
-  background-color: #2f2c2c;
+  background-color: black;
 }
 
 #cover {
