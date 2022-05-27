@@ -1,54 +1,92 @@
 <template>
+  <header
+    @load="hamburgerIconHandling"
+    class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+  >
+    <div id="hamburger" @click="hamburgerIconHandling">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
 
-  <div class="all">
-    <header @load="hamburgerIconHandling" class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-
-      <div id="hamburger" @click="hamburgerIconHandling">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
-
-      <div class="main-menu d-flex col-md-3 mx-3">
-        <a href="/" class="d-flex align-items-center mb-md-0 text-dark text-decoration-none">
-          <img src="../../assets/img/cameraLogo.png" class="bi me-2" width="30" height="30" role="img" aria-label="Bootstrap" alt="logo"/>
-        </a>
+    <div class="main-menu d-flex col-md-3 mx-3">
+      <a
+        href="/"
+        class="d-flex align-items-center mb-md-0 text-dark text-decoration-none"
+      >
+        <img
+          src="../../assets/img/cameraLogo.png"
+          class="bi me-2"
+          width="30"
+          height="30"
+          role="img"
+          aria-label="Bootstrap"
+          alt="logo"
+        />
         <span class="brand-name"><strong>Filmfy</strong></span>
-      </div>
+      </a>
+    </div>
 
-      <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
-        <li><a href="/movies" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Películas</a></li>
-        <li><a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Listas</a></li>
-        <li><a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Usuarios</a></li>
-      </ul>
+    <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
+      <li>
+        <a
+          href="/movies"
+          class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+          >Películas</a
+        >
+      </li>
+      <li>
+        <a
+          href="/playlists"
+          class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+          >Listas</a
+        >
+      </li>
+      <li>
+        <a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+          >Usuarios</a
+        >
+      </li>
+    </ul>
 
-      <div class="main main-menu col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Accede</button>
-      </div>
+    <div class="main main-menu col-md-3 text-end">
+      <button type="button" class="btn btn-outline-primary me-2" @click="login">
+        Accede
+      </button>
+    </div>
 
-      <div class="hamburger-container">
-        <div id="hamburgerMenu">
-          <a href="" style="text-decoration: none;">
-            <div style="display: flex; align-items: center;">
-              <img class="logo" src="../../assets/img/cameraLogo.png" width="30" height="30" alt="logo">
-              <p class="brand-name">Filmfy</p>
-              <span class="close-hamburger">&times;</span>
-            </div>
-          </a>
-          <div class="menu-links">
-            <a href="">Películas</a>
-            <a href="">Listas</a>
-            <a href="">Usuarios</a>
+    <div class="hamburger-container">
+      <div id="hamburgerMenu">
+        <a href="" style="text-decoration: none">
+          <div style="display: flex; align-items: center">
+            <img
+              class="logo"
+              src="../../assets/img/cameraLogo.png"
+              width="30"
+              height="30"
+              alt="logo"
+            />
+            <p class="brand-name">Filmfy</p>
+            <span class="close-hamburger">&times;</span>
           </div>
-          <div class="login-content-hamburger">
-            <button type="button" class="btn btn-outline-primary me-2">Accede</button>
-          </div>
+        </a>
+        <div class="menu-links">
+          <a href="/movies">Películas</a>
+          <a href="/playlists">Listas</a>
+          <a href="">Usuarios</a>
+        </div>
+        <div class="login-content-hamburger">
+          <button
+            type="button"
+            class="btn btn-outline-primary me-2"
+            @click="login"
+          >
+            Accede
+          </button>
         </div>
       </div>
-
-    </header>
-  </div>
-
+    </div>
+  </header>
 </template>
 
 <script>
@@ -60,30 +98,34 @@ export default {
     // Navbar,
     // User
   },
+  data: () => ({
+    openHamburger: '',
+    closeHamburger: ''
+  }),
   methods: {
-    hamburgerIconHandling() {
-      let openHamburger = document.getElementById("hamburger");
-      document.getElementsByClassName("hamburger-container")[0].style.display = "flex";
+    hamburgerIconHandling () {
+      this.openHamburger = document.getElementById('hamburger')
+      document.getElementsByClassName('hamburger-container')[0].style.display =
+        'flex'
 
-        let closeHamburger = document.getElementsByClassName("close-hamburger")[0];
-        closeHamburger.addEventListener("click", function () {
-          document.getElementsByClassName("hamburger-container")[0].style.display = "none";
-        });
+      this.closeHamburger = document.getElementsByClassName('close-hamburger')[0]
+      this.closeHamburger.addEventListener('click', function () {
+        document.getElementsByClassName(
+          'hamburger-container'
+        )[0].style.display = 'none'
+      })
     },
+    login () {
+      this.$router.push('/login')
+    }
   }
 }
 </script>
 
 <style scoped>
-
-.all {
-  background-color: #242424;
-  padding-bottom: 10px;
-}
-
-
 .brand-name {
   font-size: 175%;
+  color: #ffff;
 }
 
 .text-large {
@@ -94,11 +136,14 @@ export default {
   color: #c9c9c9;
   font-weight: bold;
 }
-.link-custom:hover, .link-custom:focus {
+.link-custom:hover,
+.link-custom:focus {
   color: #ffffff;
 }
 
-.bar1, .bar2, .bar3 {
+.bar1,
+.bar2,
+.bar3 {
   width: 35px;
   height: 5px;
   background-color: white;
@@ -119,7 +164,9 @@ export default {
   backdrop-filter: blur(6px);
 }
 
-#hamburger { display: none; }
+#hamburger {
+  display: none;
+}
 
 #hamburgerMenu {
   display: flex;
@@ -138,6 +185,8 @@ export default {
   color: white;
   font-size: 25px;
   font-weight: 900;
+  margin-top: 8px;
+  margin-left: 5px;
 }
 
 .close-hamburger {
@@ -156,7 +205,7 @@ export default {
 }
 
 #hamburgerMenu > div > a {
-  color:white;
+  color: white;
   font-size: 20px;
   font-weight: 900;
   text-decoration: none;
@@ -184,18 +233,23 @@ export default {
   margin-left: 5px;
 }
 
-
 @media only screen and (max-width: 767px) {
-
-  .main-menu { display: none }
-  #hamburger { display: inline-block; }
-  .login-content-hamburger { flex-direction: column; align-items: flex-start; }
-  .login-content-hamburger > img { height: 1.5rem; }
-
+  .main-menu {
+    display: none;
+  }
+  #hamburger {
+    display: inline-block;
+  }
+  .login-content-hamburger {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .login-content-hamburger > img {
+    height: 1.5rem;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-
   .main-nav > a {
     padding: 7px 10px 10px;
     font-size: 18px;
@@ -205,7 +259,5 @@ export default {
     display: inline-block;
     margin-left: 10px;
   }
-
 }
-
 </style>

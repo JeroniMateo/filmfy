@@ -118,7 +118,7 @@ img#logoFilmfy {
 div#FILMFY {
   display: flex;
   justify-content: center;
-  margin-right: 5vw;
+  margin-right: 2vw;
 }
 h1 {
   font-size: 3vw;
@@ -128,5 +128,13 @@ h1 {
 a {
   text-decoration: none;
   color: #fff;
+}
+#buscarButton{
+  background-color: aquamarine;
+  border-color: aquamarine;
+  color: #ffff;
+  font-family: Arial;
+  font-size: 2.2vh;
+  margin-left: -2vw; ;
 }
 </style>
