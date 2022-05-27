@@ -16,14 +16,14 @@
 
     <section class="d-flex justify-content-center">
       <div id="top-movies" class="container-md row justify-content-between p-5">
-        <div class="movie col-xl-2 col-lg-4 col-md-6 col-12" v-for="movie in topMoviesImages">
+        <div class="movie col-xl-2 col-md-4 col-sm-6 col-12 p-2" v-for="movie in topMoviesImages">
           <a href="#"><img :src="movie" class="rounded" alt="top-movie"/></a>
         </div>
       </div>
     </section>
 
-    <section class="d-flex justify-content-center">
-      <div class="container-md highlights">
+    <section class="">
+      <div class="container-md highlights col-lg-6 col-xl-6 col-xxl-12 d-flex justify-content-center">
         <a class="panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-heart"></i></span><p>No te pierdas ninguna de las películas que te gustan. ¡Las podrás guardar!</p></a>
         <a class="panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-thumbs-up"></i></span><p>Da likes, guarda listas y organiza tus películas favoritas como prefieras.</p></a>
         <a class="panel promopanel has-icon" href=""><span class="icon"><i class="fa-solid fa-film"></i></span><p>Escribe comentarios, puntúa y debate con otros usuarios. Conviértete en crítico.</p></a>
@@ -33,8 +33,8 @@
 
     <section id="popular-content" class="mt-5 d-flex justify-content-start">
       <div class="container-md">
-        <div class="row">
-          <div class="comments col-12 col-xxl-7" >
+        <div class="row d-flex justify-content-center">
+          <div class="comments col-12 col-xxl-7 d-flex flex-column">
             <span class="section-heading d-flex my-4">Últimos comentarios</span>
             <ul>
               <hr>
@@ -81,7 +81,7 @@
             </ul>
           </div>
 
-          <section class="lists col-12 col-xxl-4 mx-5">
+          <div class="lists col-12 col-xxl-4 mx-5 d-flex flex-column">
             <span class="section-heading d-flex my-4">Listas populares</span>
             <hr>
             <div v-for="list in latestLists">
@@ -113,7 +113,7 @@
             </div>
 
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </section>
@@ -139,7 +139,7 @@ export default {
       latestComments: '',
       latestLists: '',
       topMoviesImages: [],
-      topMoviesId: [4, 33, 53, 183, 229, 44],
+      topMoviesId: [22, 33, 53, 183, 229, 44],
     }
   },
   methods: {

@@ -185,6 +185,8 @@ export default {
   color: white;
   font-size: 25px;
   font-weight: 900;
+  margin-top: 8px;
+  margin-left: 5px;
 }
 
 .close-hamburger {
