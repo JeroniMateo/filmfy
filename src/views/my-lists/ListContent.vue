@@ -1,8 +1,8 @@
 <template>
-  <div id="ListContent" class="container" style="background-color: #191a19">
+  <div id="ListContent" class="container" style="background-color: #0f0505">
     <div id="headerList">
       <h3 id="title_list">
-        <b> {{ title_list }} </b>
+        <b> {{ title_list }}  </b>
       </h3>
       <img id="img_list" alt="" />
     </div>
@@ -10,14 +10,14 @@
       <WatchItemCard
         v-for="movie in movies"
         :movie="movie"
-        :key="movie.playlist"
+        :key="movie.id"
       />
     </div>
   </div>
 </template>
 
 <script>
-import WatchItemCard from '../../components/Movies/WatchItemCard.vue'
+import WatchItemCard from '../../components/movies/WatchItemCard.vue'
 export default {
   name: 'ListContent',
   components: {
@@ -38,14 +38,14 @@ export default {
 
 <style scoped>
 h1 {
-  color: #1da8e2;
-  background-color: rgb(15, 23, 30);
+  color: #5bdee6;
+  background-color: #0f0505;
   font-size: 6vh;
   width: 100%;
 }
 div#MovieList {
-  background-color: rgb(15, 23, 30);
-  color: #fff;
+  background-color: #0f0505;
+  color: #f7f7f5;
   font-family: Arial;
   font-size: 2vh;
   display: flex;

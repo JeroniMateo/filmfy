@@ -1,18 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
+import Browser from '../views/Browser.vue'
 
 import Movies from '../views/Movies.vue'
-import MovieContent from '../views/watchContent/MovieContent.vue'
+import MovieContent from '../views/watch-content/MovieContent.vue'
 
 import BillBoard from '../views/BillBoard.vue'
-
-import Outstandings from '../views/Outstandings.vue'
 
 import Playlists from '../views/my-lists/Playlists.vue'
 import ListContent from '../views/my-lists/ListContent.vue'
 
-import VerMasCateogries from '../views/watchContent/VerMasCategories.vue'
+import VerMasCateogries from '../views/watch-content/VerMasCategories.vue'
 import UserProfile from '../views/user/UserProfile.vue'
 
 import Register from '../views/user/Register.vue'
@@ -26,7 +25,11 @@ const routes = [
     name: 'home',
     component: Home
   },
-
+  {
+    path: '/browser',
+    name: 'browser',
+    component: Browser
+  },
   {
     path: '/movies',
     name: 'movies',
@@ -46,12 +49,6 @@ const routes = [
     path: '/billboard',
     name: 'billboard',
     component: BillBoard
-  },
-
-  {
-    path: '/outstandings',
-    name: 'outstandings',
-    component: Outstandings
   },
 
   {

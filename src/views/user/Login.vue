@@ -106,16 +106,16 @@ export default {
 
   data() {
     return {
-      email_user: '',
-      error_email_user: '',
-      email: false,
+      email: '',
+      error_email: '',
+      email_validation: false,
 
-      password_user: '',
-      error_password_user: '',
-      password: false,
+      password: '',
+      error_password: '',
+      password_validation: false,
 
       error_log: '',
-      log: false
+      log: true
     }
   },
 
@@ -136,7 +136,7 @@ export default {
       const header = new Headers()
       header.set('Authorization', 'Basic ' + btoa(authString))
 
-      fetch('', {
+      fetch('http://filmfy-api.ddns.net/api/login/', {
         method: 'GET',
         headers: header
       })
@@ -330,6 +330,7 @@ header a img {
 }
 
 input {
+<<<<<<< HEAD
   outline-color: var(--rgba-primary-2);
   height: 3em;
   width: 70%;
@@ -345,6 +346,16 @@ input:focus {
 }
 
 .button {
+=======
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0f0505;
+  margin: 5%;
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+>>>>>>> browser
   display: flex;
   justify-content: center;
   align-items: center;

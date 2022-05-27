@@ -10,14 +10,19 @@
 </template>
 
 <script>
-import WatchContentCarrousel from '../components/Movies/watchContentCategories/WatchContantCarrousel.vue'
+import WatchContentCarrousel from '../components/movies/WatchContantCarrousel.vue'
 export default {
   name: 'Movies',
   data () {
     return {
+      movie: {
+        id: '',
+        image: '',
+        title: '',
+        rating: '',
+        category: []
+      },
       movies: [],
-      movies_cateogories: [],
-      movie: '',
       loading: true,
       error: false,
       errorMessage: 'No se encontraron peliculas'
@@ -25,19 +30,44 @@ export default {
   },
   components: {
     WatchContentCarrousel
+  },
+  methods: {
+    getMovies () {
+      this.movies.forEach((movie) => {
+        fetch(`http://filmfy-api.ddns.net/api/movies/${movie.id}`, {
+          method: 'GET',
+          mode: 'cors',
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            this.movies.push(`http://filmfy-api.ddns.net/${data.image}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.title}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.rating}`)
+            this.movies.push(`http://filmfy-api.ddns.net/${data.cateogry}`)
+          })
+      })
+    }
+  },
+  beforeMount () {
+    this.getMovies()
   }
 }
 </script>
 
 <style scoped>
 h3 {
-  color: #1da8e2;
+  color: #00c740;
   width: 50vh;
   background-color: #242424;
   font-size: 6vh;
 }
 div#CineCarrousel {
-  background-color: #000;
+  background-color: #0f0505;
   color: #242424;
   font-family: Arial;
   font-size: 2vh;

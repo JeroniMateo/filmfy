@@ -102,135 +102,140 @@ export default {
 
   data() {
     return {
-      username_userRR: '',
-      username: false,
+      usernameR: '',
+      error_username: '',
+      username_validation: false,
 
-      name_userRR: '',
-      name: false,
+      nameR: '',
+      error_name: '',
+      name_validation: false,
 
-      email_userR: '',
-      email: false,
+      emailR: '',
+      error_email: '',
+      email_validation: false,
 
-      password_userR: '',
-      password: false,
+      passwordR: '',
+      error_password: '',
+      password_validation: false,
 
-      password_confirm_userR: '',
-      passwordConfirm: false,
+      password_confirmR: '',
+      error_password_confirm: '',
+      passwordConfirm_validation: false,
 
       error_register: '',
-      log: false
+      log: true
     }
   },
   methods: {
     registerValidation: function () {
       // UserName
-      if (this.username_userRR === '') {
-        this.error_username_userRR = 'El nombre de usuario es obligatorio'
+      if (this.usernameR === '') {
+        this.error_username = 'El nombre de usuario es obligatorio'
       }
-      if (this.username_userRR.length < 3) {
-        this.error_username_userRR =
+      if (this.usernameR.length < 3) {
+        this.error_username =
           'El nombre de usuario debe tener al menos 3 caracteres'
       }
-      if (this.username_userRR.length > 15) {
-        this.error_username_userRR =
+      if (this.usernameR.length > 15) {
+        this.error_username =
           'El nombre de usuario no puede tener más de 15 caracteres'
       }
-      if (/^[a-zA-Z0-9]+$/.test(this.username_userRR) === false) {
-        this.error_username_userRR =
+      if (/^[a-zA-Z0-9]+$/.test(this.usernameR) === false) {
+        this.error_username =
           'El nombre de usuario solo puede contener letras y números'
       }
       if (
-        this.username_userRR.length !== '' &&
-        this.username_userRR.length >= 3 &&
-        this.username_userRR.length <= 15 &&
+        this.usernameR.length !== '' &&
+        this.usernameR.length >= 3 &&
+        this.usernameR.length <= 15 &&
         /^[a-zA-Z0-9]+$/.test(this.username_userRR) === true
       ) {
         this.username = true
       }
 
       // Name
-      if (this.name_userR === '') {
-        this.error_name_userR = 'El nombre es obligatorio'
+      if (this.nameR === '') {
+        this.error_name = 'El nombre es obligatorio'
       }
-      if (this.name_userR.length < 6) {
-        this.error_name_userR = 'El nombre debe tener al menos 6 caracteres'
+      if (this.nameR.length < 6) {
+        this.error_name = 'El nombre debe tener al menos 6 caracteres'
       }
-      if (this.name_userR.length > 15) {
-        this.error_name_userR = 'El nombre no puede tener más de 15 caracteres'
+      if (this.nameR.length > 15) {
+        this.error_name = 'El nombre no puede tener más de 15 caracteres'
       }
-      if (/^[a-zA-Z]+$/.test(this.name_userR) === false) {
-        this.error_name_userR = 'El nombre solo puede contener letras'
+      if (/^[a-zA-Z]+$/.test(this.nameR) === false) {
+        this.error_name = 'El nombre solo puede contener letras'
       }
       if (
         this.name.user !== '' &&
-        this.name_userR.length >= 6 &&
-        this.name_userR.length <= 15 &&
-        /^[a-zA-Z]+$/.test(this.name_userR) === true
+        this.nameR.length >= 6 &&
+        this.nameR.length <= 15 &&
+        /^[a-zA-Z]+$/.test(this.nameR) === true
       ) {
         this.name = true
       }
 
       // Email
-      if (this.email_userR === '') {
-        this.error_email_userR = 'El email es obligatorio'
+      if (this.emailR === '') {
+        this.error_email = 'El email es obligatorio'
       }
       if (
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          this.email_userR
+          this.emailR
         ) === false
       ) {
-        this.error_email_userR = 'El email no es válido'
+        this.error_email = 'El email no es válido'
         this.email = false
       }
       if (
-        this.email_userR !== '' &&
+        this.emailR !== '' &&
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          this.email_userR
+          this.emailR
         ) === true
       ) {
         this.email = true
       }
       // Password
-      if (this.password_userR === '') {
-        this.error_password_userR = 'La contraseña es obligatoria'
+      if (this.passwordR === '') {
+        this.error_password = 'La contraseña es obligatoria'
       }
       if (
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/.test(
-          this.password_userR
+          this.passwordR
         ) === false
       ) {
-        this.error_password_userR =
+        this.error_password =
           'La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracter especial'
       }
       if (
-        this.password_userR !== '' &&
+        this.passwordR !== '' &&
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/.test(
-          this.password_userR
+          this.passwordR
         ) === true
       ) {
         this.password = true
       }
       // Password Confirm
-      if (this.password_confirm_userR === '') {
-        this.error_password_confirm_userR =
+      if (this.password_confirmR === '') {
+        this.error_password_confirm =
           'La confirmación de contraseña es obligatoria'
       }
-      if (this.password_confirm_userR !== this.password_userR) {
-        this.error_password_confirm_userR = 'Las contraseñas no coinciden'
+      if (this.password_confirmR !== this.passwordR) {
+        this.error_password_confirm = 'Las contraseñas no coinciden'
       }
       if (
-        this.error_password_confirm_userR !== '' &&
-        this.password_confirm_userR === this.password_userR
+        this.error_password_confirm !== '' &&
+        this.password_confirmR === this.passwordR
       ) {
         this.passwordConfirm = true
       }
       // Register
       if (
-        this.username_userRR &&
-        this.name_userR &&
-        this.email_userR &&
-        this.password_userR &&
-        this.password_confirm_userR
+        this.usernameR &&
+        this.nameR &&
+        this.emailR &&
+        this.passwordR &&
+        this.password_confirmR
       ) {
         this.signUpAPI()
       } else {
@@ -238,14 +243,14 @@ export default {
       }
     },
     signUpAPI: function () {
-      fetch('', {
+      fetch('http://filmfy-api.ddns.net/api/register/', {
         method: 'POST',
         body: JSON.stringify({
-          username_userRR: this.username_userRR,
-          name_userR: this.name_userR,
-          email_userR: this.email_userR,
-          password_userR: this.password_userR,
-          password_confirm_userR: this.password_confirm_userR
+          usernameR: this.usernameR,
+          nameR: this.nameR,
+          emailR: this.emailR,
+          passwordR: this.passwordR,
+          password_confirmR: this.password_confirmR
         }),
         headers: {
           'Content-type': 'application/json; charset=UTF-8'
