@@ -1,98 +1,106 @@
 <template>
-  <div id="layoutRegister" class="container">
-    <h2>Registrarse</h2>
-    <form id="Registrarse" action="">
-      <div class="row g-5 p-5">
-        <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="username_userRR">User Name</label>
-          <input
-            id="username_userRR"
-            placeholder="UserName*"
-            class="registro form-control-lg"
-            type="text"
-            name="UserName"
-            v-model="username_userRR"
-            required
-          />
-          <p id="error_username_userRR" class="error"></p>
-        </div>
-        <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="name">Name</label>
-          <input
-            id="name_userR"
-            placeholder="Name*"
-            class="registro form-control-lg"
-            type="text"
-            name="email"
-            v-model="name"
-            required
-          />
-          <p id="error_name_userR" class="error"></p>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="css/forms.css" />
+      <title>TimeInn - Regístrate</title>
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="images/Logo Music4Events.png"
+      />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+    <body>
+      <div id="layout">
+        <header>
+          <a href="Index.html"><img src="images/Logo Music4Events.png" /></a>
+        </header>
+        <section id="infoutil">
+          <h4>Reserva entrada en tu concierto favorito</h4>
+          <div>
+            <i class="fas fa-ticket-alt"></i>
+            <div>
+              En nuestra web te ofrecemos todas las facilidades para que puedas
+              conseguir entradas para ver a tus artistas favoritos.
+            </div>
+          </div>
+
+          <h4>Entérate de las últimas novedades</h4>
+          <div>
+            <i class="far fa-newspaper"></i>
+            <div>
+              Trabajamos día a día para mantenerte actualizado. En nuestro
+              portal de noticias podrás conocer de primera mano todo lo que
+              necesitas saber.
+            </div>
+          </div>
+
+          <h4>Participa en nuestros sorteos</h4>
+          <div>
+            <i class="far fa-star"></i>
+            <div>
+              Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
+              Formar parte de la comunidad de Music4Events te da la oportunidad
+              a participar en todos los sorteos.
+            </div>
+          </div>
+          <h3>¿A qué estás esperando?</h3>
+        </section>
+        <div id="formSignUp">
+          <h1>Registrarse</h1>
+          <form action="">
+            <input
+              id="emailR"
+              placeholder="Email*"
+              class="registro"
+              type="email"
+              name="email"
+            />
+            <p id="errorEmail" class="error"></p>
+            <input
+              id="passwordR"
+              placeholder="Password*"
+              class="registro"
+              type="password"
+              name="password"
+            />
+            <p id="errorPassword" class="error"></p>
+            <button
+              type="button"
+              onclick="signUpAPI()"
+              id="signUpButton"
+              class="button"
+              aria-label="Regístrate"
+            >
+              Regístrate
+            </button>
+            <div>¿Ya tienes una cuenta?</div>
+            <button id="loginButton" class="button" aria-label="Inicia sesión">
+              <a href="Login.html">Inicia sesión</a>
+            </button>
+            <div id="signUpAlert"></div>
+          </form>
         </div>
       </div>
-      <div class="row g-5 p-5">
-        <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="password_userR">Password</label>
-          <input
-            id="password_userR"
-            placeholder="Password*"
-            class="registro form-control-lg"
-            type="password"
-            name="password_userR"
-            v-model="password_userR"
-            required
-          />
-          <p id="error_password_userR" class="error"></p>
-        </div>
-        <div id="RegisterFormInput" class="col-auto">
-          <label class="form-label" for="password_confirm_userR"
-            >Password Confirm</label
-          >
-          <input
-            id="password_confirm_userR"
-            placeholder="PasswordConfirm*"
-            class="registro form-control-lg"
-            type="password"
-            name="password"
-            v-model="password_confirm_userR"
-            required
-          />
-          <p id="error_password_confirm_userR" class="error"></p>
-        </div>
-      </div>
-      <span id="error_register" class="error"></span><br />
-      <div class="formConfirm">
-        <button
-          type="submit"
-          class="btn btn-primary mb-3"
-          @click="registerValidation"
-          id="signUpButton"
-          aria-label="Regístrate"
-        >
-          Regístrate
-        </button>
-        <small>¿Ya tienes una cuenta en Filmfy?</small>
-        <router-link to="/login">
-          <button
-            type="submit"
-            class="btn btn-primary mb-3"
-            id="loginButton"
-            aria-label="Inicia sesión"
-          >
-            Inicia sesión
-          </button>
-        </router-link>
-      </div>
-      <div id="signUpAlert"></div>
-    </form>
-  </div>
+    </body>
+  </html>
 </template>
 
 <script>
 export default {
   name: 'Register',
 
-  data () {
+  data() {
     return {
       username_userRR: '',
       username: false,
@@ -322,4 +330,5 @@ input {
   display: flex;
   flex-direction: column;
 }
+
 </style>
