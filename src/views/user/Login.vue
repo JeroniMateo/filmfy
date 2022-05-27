@@ -30,8 +30,10 @@
           <div>
             <i class="fas fa-ticket-alt"></i>
             <div>
-             <p> En nuestra web te ofrecemos todas las facilidades para que puedas
-              disfrutar de tus peliculas favoritas.</p>
+              <p>
+                En nuestra web te ofrecemos todas las facilidades para que
+                puedas disfrutar de tus peliculas favoritas.
+              </p>
             </div>
           </div>
 
@@ -39,9 +41,11 @@
           <div>
             <i class="far fa-newspaper"></i>
             <div>
-              <p>Trabajamos día a día para mantenerte actualizado. En nuestro
-              portal de cartelera podrás conocer de primera mano todo lo que
-              necesitas saber de estrenos.</p>
+              <p>
+                Trabajamos día a día para mantenerte actualizado. En nuestro
+                portal de cartelera podrás conocer de primera mano todo lo que
+                necesitas saber de estrenos.
+              </p>
             </div>
           </div>
 
@@ -49,9 +53,11 @@
           <div>
             <i class="far fa-star"></i>
             <div>
-              <p>Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
-              Formar parte de la comunidad de Music4Events te da la posibilidad
-              de participar en todos los sorteos.</p>
+              <p>
+                Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
+                Formar parte de la comunidad de Music4Events te da la
+                posibilidad de participar en todos los sorteos.
+              </p>
             </div>
           </div>
           <h3>¿A qué estás esperando?</h3>
@@ -104,7 +110,7 @@
 export default {
   name: 'Login',
 
-  data() {
+  data () {
     return {
       email: '',
       error_email: '',
@@ -126,12 +132,13 @@ export default {
         this.password_user === this.password_userR
       ) {
         this.log = true
+        this.loginAPI()
       } else {
         this.error_log = 'El email o la contraseña son incorrectos'
       }
     },
 
-    LoginAPI: function () {
+    loginAPI: function () {
       const authString = `${this.email}:${this.password}`
       const header = new Headers()
       header.set('Authorization', 'Basic ' + btoa(authString))
@@ -142,7 +149,7 @@ export default {
       })
         .then((response) => response.json())
         .then((token) => {
-          setCookie('tokenName', token.access_token, 365)
+          this.setCookie('tokenName', token.access_token, 365)
           this.log = true
           this.$router.push('/')
         })
@@ -178,26 +185,29 @@ export default {
 </script>
 
 <style scoped>
-h1,h2,h3,h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
-  color:#2ecc71;
+  color: #2ecc71;
   background-color: #242424;
 }
-p{
+p {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;
-  color:#f7f7f5;
+  color: #f7f7f5;
   background-color: #242424;
 }
-button{
+button {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   background-color: #00c740;
 }
 body {
   margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: #242424;
 }
 
@@ -209,8 +219,8 @@ body {
     gap: 5% 0%;
     grid-auto-flow: row;
     grid-template-areas:
-      "header header"
-      "formresp formresp";
+      'header header'
+      'formresp formresp';
     width: 100%;
     height: 110vh;
   }
@@ -224,8 +234,8 @@ body {
     gap: 5% 0%;
     grid-auto-flow: row;
     grid-template-areas:
-      "header header"
-      "infoutil form";
+      'header header'
+      'infoutil form';
     width: 100%;
     height: 110vh;
   }
