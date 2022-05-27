@@ -22,7 +22,7 @@
 <script>
 export default {
   name: 'WatchList',
-  data() {
+  data () {
     return {
       movie: {
         id: '',
@@ -44,10 +44,10 @@ export default {
     }
   },
   methods: {
-    goIntoWatchList() {
+    goIntoWatchList () {
       this.$router.push('/moviesList/')
     },
-    getWatchMovies() {
+    getWatchMovies () {
       this.movies.forEach((movie) => {
         fetch(`http://filmfy-api.ddns.net/api/movies/${movie.watch}`, {
           method: 'GET',
@@ -68,7 +68,7 @@ export default {
       })
     }
   },
-  beforeMount() {
+  beforeMount () {
     this.getWatchMovies()
   }
 }

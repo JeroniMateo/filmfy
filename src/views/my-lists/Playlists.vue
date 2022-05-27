@@ -32,7 +32,7 @@
               id="username"
               placeholder="Username"
             />
-            <button type="submit" @click="create">Create</button>
+            <button type="submit" class="btn-success create" @click="create">Create</button>
           </form>
         </div>
         <div class="lista">
@@ -54,7 +54,7 @@ export default {
     FavsLists,
     UserLists
   },
-  data() {
+  data () {
     return {
       username: '',
       list: '',
@@ -67,7 +67,7 @@ export default {
     }
   },
   methods: {
-    goToMoviesList() {
+    goToMoviesList () {
       this.$router.push({
         path: '/moviesList/:id',
         query: {
@@ -75,14 +75,14 @@ export default {
         }
       })
     },
-    createPlaylist() {
+    createPlaylist () {
       document.getElementById('CrearPlaylist').style.display = 'block'
       document.getElementById('listname').value = this.title_list
       document.getElementById('description').value = this.description_list
       document.getElementById('username').value = this.username
       document.getElementById('img_list').value = this.img_list
     },
-    create() {
+    create () {
       document.getElementById('CrearPlaylist').style.display = 'none'
       document.getElementById('listasUser').innerHTML =
         ' <div class="lista"><UserLists /></div>'
@@ -131,5 +131,8 @@ div#UserPlaylists {
   justify-content: center;
   align-content: center;
   width: 100%;
+}
+button.create{
+  border-radius: 15%;
 }
 </style>
