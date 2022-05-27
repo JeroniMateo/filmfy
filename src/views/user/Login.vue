@@ -178,64 +178,238 @@ export default {
 </script>
 
 <style scoped>
-label.form-label {
-  font-size: 3vh;
-  color: #fff;
+:root {
+  /* Voy a aprovechar las variables de css y el root para determinar una paleta de colores.
+    El 2 es el tono principal de cada uno */
+
+  /* Color primario */
+
+  --rgba-primary-0: rgba(0, 0, 0, 1);
+  --rgba-primary-1: rgba(1, 45, 62, 1);
+  --rgba-primary-2: rgba(4, 74, 100, 1);
+  --rgba-primary-3: rgba(35, 98, 121, 1);
+  --rgba-primary-4: rgba(78, 86, 88, 1);
+  --rgba-primary-4-transpar: rgba(78, 86, 88, 0.8);
+  --rgba-primary-4-transpar2: rgba(78, 86, 88, 0.3);
+
+  /* Color secundario 1 */
+
+  --rgba-secondary-1-0: rgba(0, 0, 0, 1);
+  --rgba-secondary-1-1: rgba(99, 73, 0, 1);
+  --rgba-secondary-1-2: rgba(160, 118, 0, 1);
+  --rgba-secondary-1-3: rgba(194, 156, 49, 1);
+  --rgba-secondary-1-4: rgba(141, 136, 124, 1);
+
+  /* Color secundario 2 */
+
+  --rgba-secondary-2-0: rgba(0, 0, 0, 1);
+  --rgba-secondary-2-1: rgba(99, 7, 0, 1);
+  --rgba-secondary-2-2: rgba(160, 12, 0, 1);
+  --rgba-secondary-2-3: rgba(194, 60, 49, 1);
+  --rgba-secondary-2-4: rgba(141, 125, 124, 1);
 }
-.error {
-  color: #b33030;
-  font-size: 1.5rem;
-  font-weight: bold;
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
 }
-button {
-  background-color: #4e9f3d;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+
+@media screen and (max-width: 850px) {
+  #layout {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 15% 80%;
+    gap: 5% 0%;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "header header"
+      "formresp formresp";
+    width: 100%;
+    height: 110vh;
+  }
 }
-h2 {
-  font-size: 4rem;
-  color: #fff;
+
+@media screen and (min-width: 850px) {
+  #layout {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 15% 80%;
+    gap: 5% 0%;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "header header"
+      "infoutil form";
+    width: 100%;
+    height: 110vh;
+  }
 }
-.formConfirm {
+
+/* El truco para centrar el contenido después de haber hecho un grid consiste en entender estos conceptos:
+  - Los contenedores principales (los padres) los distribuimos con grid para hacer el layout principal de la página.
+  - Podemos centrar los contenedores principales del grid, pero eso no centra el contenido que tienen como hijo.
+  - Para centrar el contenido que tienen los hijos en sí, hay que usar flex dentro de ellos, y allí ya se puede
+  hacer un justify-content o align-items. */
+
+@media screen and (max-width: 849px) {
+  #infoutil {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  #infoutil {
+    grid-area: infoutil;
+    border-right: solid 1px lightgray;
+    margin-left: 15%;
+  }
+}
+
+#infoutil div {
   display: flex;
-  justify-content: space-around;
-  justify-items: stretch;
-  align-content: center;
   align-items: center;
+  margin-bottom: 7%;
+}
+
+#infoutil div div {
+  margin: 0% 5% 0% 3%;
+}
+
+#infoutil i {
+  font-size: 3.5em;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20em;
+}
+
+header a img {
+  width: 6em;
+  height: 6em;
+  margin-top: 20vh;
+}
+
+/* Formulario */
+
+@media screen and (max-width: 850px) {
+  #formlogin,
+  #formSignUp {
+    grid-area: formresp;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  #formlogin,
+  #formSignUp {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin-right: 15%;
+    margin-left: 5%;
+  }
+}
+
+.valido {
+  border-color: green;
+}
+
+.novalido {
+  border-color: var(--rgba-secondary-2-2);
+}
+
+.error {
+  color: var(--rgba-secondary-2-2);
 }
 
 input {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #000;
-  margin: 5%;
-}
-.row {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  align-content: space-around;
-}
-#layoutLogin {
-  margin: auto;
-  width: 85%;
-  background-color: #000;
-  display: flex;
-  flex-direction: column;
+  outline-color: var(--rgba-primary-2);
+  height: 3em;
+  width: 70%;
+  transition: all 0.5s ease-in-out;
 }
 
+input:hover {
+  width: 80%;
+}
+
+input:focus {
+  box-shadow: 2px 2px 2px var(--rgba-primary-2);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 2.2em;
+  width: 70%;
+  font-size: 1.2em;
+  border-radius: 8px;
+  padding: 1%;
+}
+
+#formlogin div,
+#formSignUp div {
+  margin: 2%;
+}
+
+#loginButton {
+  background-color: var(--rgba-primary-2);
+  transition: background-color 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+#signUpButton {
+  background-color: var(--rgba-secondary-1-2);
+  transition: background-color 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+#loginButton:hover {
+  background-color: var(--rgba-primary-1);
+}
+
+#signUpButton:hover {
+  background-color: var(--rgba-secondary-1-1);
+}
+
+a:any-link {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ver {
+  position: relative;
+  z-index: 1;
+  bottom: 2.6em;
+  left: 30%;
+  transition: background-color 0.4s ease-in-out;
+  cursor: pointer;
+  padding: 0.5em;
+  margin-bottom: -2em;
+}
+
+.ver:hover {
+  background-color: var(--rgba-primary-4-transpar2);
+}
 </style>
