@@ -30,8 +30,10 @@
           <div>
             <i class="fas fa-ticket-alt"></i>
             <div>
-             <p> En nuestra web te ofrecemos todas las facilidades para que puedas
-              disfrutar de tus peliculas favoritas.</p>
+              <p>
+                En nuestra web te ofrecemos todas las facilidades para que
+                puedas disfrutar de tus peliculas favoritas.
+              </p>
             </div>
           </div>
 
@@ -47,9 +49,11 @@
           <div>
             <i class="far fa-star"></i>
             <div>
-              <p>Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
-              Formar parte de la comunidad de Music4Events te da la posibilidad
-              de participar en todos los sorteos.</p>
+              <p>
+                Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
+                Formar parte de la comunidad de Music4Events te da la
+                posibilidad de participar en todos los sorteos.
+              </p>
             </div>
           </div>
           <h3>¿A qué estás esperando?</h3>
@@ -58,13 +62,29 @@
           <h1>Registrarse</h1>
           <form action="">
             <input
+              id="usernameR"
+              placeholder="Username*"
+              class="registro"
+              type="test"
+              name="username"
+            />
+            <p id="error_username" class="error"></p>
+            <input
+              id="nameR"
+              placeholder="Name*"
+              class="registro"
+              type="text"
+              name="name"
+            />
+            <p id="error_name" class="error"></p>
+            <input
               id="emailR"
               placeholder="Email*"
               class="registro"
               type="email"
               name="email"
             />
-            <p id="errorEmail" class="error"></p>
+            <p id="error_email" class="error"></p>
             <input
               id="passwordR"
               placeholder="Password*"
@@ -72,7 +92,15 @@
               type="password"
               name="password"
             />
-            <p id="errorPassword" class="error"></p>
+            <p id="error_password" class="error"></p>
+            <input
+              id="password_confirmR"
+              placeholder="Password Confirm*"
+              class="registro"
+              type="password"
+              name="password_confirm"
+            />
+            <p id="error_password_confirm" class="error"></p>
             <button
               type="button"
               onclick="signUpAPI()"
@@ -98,7 +126,7 @@
 export default {
   name: 'Register',
 
-  data () {
+  data() {
     return {
       usernameR: '',
       error_username: '',
