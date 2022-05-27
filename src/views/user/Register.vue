@@ -23,25 +23,23 @@
     <body>
       <div id="layout">
         <header>
-          <a href="Index.html"><img src="images/Logo Music4Events.png" /></a>
+          <a href="/"><img src="../../assets/img/cameraLogo.png" /></a>
         </header>
         <section id="infoutil">
-          <h4>Reserva entrada en tu concierto favorito</h4>
+          <h4>Disfruta de este arte llamado Cine</h4>
           <div>
             <i class="fas fa-ticket-alt"></i>
             <div>
-              En nuestra web te ofrecemos todas las facilidades para que puedas
-              conseguir entradas para ver a tus artistas favoritos.
+             <p> En nuestra web te ofrecemos todas las facilidades para que puedas
+              disfrutar de tus peliculas favoritas.</p>
             </div>
           </div>
 
-          <h4>Entérate de las últimas novedades</h4>
+          <h4>Entérate de los ultimos estrenos</h4>
           <div>
             <i class="far fa-newspaper"></i>
             <div>
-              Trabajamos día a día para mantenerte actualizado. En nuestro
-              portal de noticias podrás conocer de primera mano todo lo que
-              necesitas saber.
+              <p></p>
             </div>
           </div>
 
@@ -49,9 +47,9 @@
           <div>
             <i class="far fa-star"></i>
             <div>
-              Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
-              Formar parte de la comunidad de Music4Events te da la oportunidad
-              a participar en todos los sorteos.
+              <p>Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
+              Formar parte de la comunidad de Music4Events te da la posibilidad
+              de participar en todos los sorteos.</p>
             </div>
           </div>
           <h3>¿A qué estás esperando?</h3>
@@ -86,7 +84,7 @@
             </button>
             <div>¿Ya tienes una cuenta?</div>
             <button id="loginButton" class="button" aria-label="Inicia sesión">
-              <a href="Login.html">Inicia sesión</a>
+              <a href="/login">Inicia sesión</a>
             </button>
             <div id="signUpAlert"></div>
           </form>
@@ -100,7 +98,7 @@
 export default {
   name: 'Register',
 
-  data() {
+  data () {
     return {
       usernameR: '',
       error_username: '',
@@ -180,18 +178,16 @@ export default {
         this.error_email = 'El email es obligatorio'
       }
       if (
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          this.emailR
-        ) === false
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.emailR) ===
+        false
       ) {
         this.error_email = 'El email no es válido'
         this.email = false
       }
       if (
         this.emailR !== '' &&
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          this.emailR
-        ) === true
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.emailR) ===
+          true
       ) {
         this.email = true
       }
@@ -277,40 +273,30 @@ export default {
 </script>
 
 <style scoped>
-:root {
-  /* Voy a aprovechar las variables de css y el root para determinar una paleta de colores.
-    El 2 es el tono principal de cada uno */
-
-  /* Color primario */
-
-  --rgba-primary-0: rgba(0, 0, 0, 1);
-  --rgba-primary-1: rgba(1, 45, 62, 1);
-  --rgba-primary-2: rgba(4, 74, 100, 1);
-  --rgba-primary-3: rgba(35, 98, 121, 1);
-  --rgba-primary-4: rgba(78, 86, 88, 1);
-  --rgba-primary-4-transpar: rgba(78, 86, 88, 0.8);
-  --rgba-primary-4-transpar2: rgba(78, 86, 88, 0.3);
-
-  /* Color secundario 1 */
-
-  --rgba-secondary-1-0: rgba(0, 0, 0, 1);
-  --rgba-secondary-1-1: rgba(99, 73, 0, 1);
-  --rgba-secondary-1-2: rgba(160, 118, 0, 1);
-  --rgba-secondary-1-3: rgba(194, 156, 49, 1);
-  --rgba-secondary-1-4: rgba(141, 136, 124, 1);
-
-  /* Color secundario 2 */
-
-  --rgba-secondary-2-0: rgba(0, 0, 0, 1);
-  --rgba-secondary-2-1: rgba(99, 7, 0, 1);
-  --rgba-secondary-2-2: rgba(160, 12, 0, 1);
-  --rgba-secondary-2-3: rgba(194, 60, 49, 1);
-  --rgba-secondary-2-4: rgba(141, 125, 124, 1);
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  color: #2ecc71;
+  background-color: #242424;
 }
-
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+  color: #f7f7f5;
+  background-color: #242424;
+}
+button {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  background-color: #00c740;
+}
 body {
   margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #242424;
 }
 
 @media screen and (max-width: 850px) {
@@ -321,8 +307,8 @@ body {
     gap: 5% 0%;
     grid-auto-flow: row;
     grid-template-areas:
-      "header header"
-      "formresp formresp";
+      'header header'
+      'formresp formresp';
     width: 100%;
     height: 110vh;
   }
@@ -336,18 +322,12 @@ body {
     gap: 5% 0%;
     grid-auto-flow: row;
     grid-template-areas:
-      "header header"
-      "infoutil form";
+      'header header'
+      'infoutil form';
     width: 100%;
     height: 110vh;
   }
 }
-
-/* El truco para centrar el contenido después de haber hecho un grid consiste en entender estos conceptos:
-  - Los contenedores principales (los padres) los distribuimos con grid para hacer el layout principal de la página.
-  - Podemos centrar los contenedores principales del grid, pero eso no centra el contenido que tienen como hijo.
-  - Para centrar el contenido que tienen los hijos en sí, hay que usar flex dentro de ellos, y allí ya se puede
-  hacer un justify-content o align-items. */
 
 @media screen and (max-width: 849px) {
   #infoutil {

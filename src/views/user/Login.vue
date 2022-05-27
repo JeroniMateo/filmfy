@@ -23,10 +23,10 @@
     <body>
       <div id="layout">
         <header>
-          <a href="Index.html"><img src="../../assets/img/cameraLogo.png" /></a>
+          <a href="/"><img src="../../assets/img/cameraLogo.png" /></a>
         </header>
         <section id="infoutil">
-          <h4>Reserva entrada en tu concierto favorito</h4>
+          <h4>Disfruta de este arte llamado Cine</h4>
           <div>
             <i class="fas fa-ticket-alt"></i>
             <div>
@@ -35,7 +35,7 @@
             </div>
           </div>
 
-          <h4>Entérate de las últimas novedades</h4>
+          <h4>Entérate de los ultimos estrenos</h4>
           <div>
             <i class="far fa-newspaper"></i>
             <div>
