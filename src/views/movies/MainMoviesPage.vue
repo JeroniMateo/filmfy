@@ -17,8 +17,8 @@
 
 <script>
 import FilterBrowser from "@/components/movies/detailed-movie-page/FilterBrowser";
-import RecentMovies from "@/components/movies/detailed-movie-page/RecentMovies";
-import BestMovies from "@/components/movies/detailed-movie-page/BestMovies";
+import RecentMovies from "@/components/movies/movies-page/RecentMovies";
+import BestMovies from "@/components/movies/movies-page/BestMovies";
 
 export default {
   name: "MainMoviesPage",

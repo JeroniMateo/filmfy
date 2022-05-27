@@ -18,8 +18,8 @@ import Register from '../views/user/Register.vue'
 
 import Login from '../views/user/Login.vue'
 import Search from '../views/SearchResults.vue'
-import MovieCategories from "@/components/movies/movies-page/MovieCategories";
-import MovieYear from "@/components/movies/movies-page/MovieYear";
+import MovieCategories from "@/views/movies/MovieCategories";
+import MovieYear from "@/views/movies/MovieYear";
 import CommentMovie from "@/views/comments/CommentMovie";
 
 const routes = [
