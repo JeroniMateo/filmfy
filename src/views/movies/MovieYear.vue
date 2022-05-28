@@ -49,7 +49,6 @@ export default {
       const promiseMovies = await fetch(`http://filmfy-api.ddns.net/api/movies-year/${this.year}`)
       const moviesCategoryData = await promiseMovies.json()
       this.moviesYear = moviesCategoryData
-      console.log(moviesCategoryData)
       this.printTitle()
     },
 

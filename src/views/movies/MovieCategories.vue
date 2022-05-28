@@ -52,6 +52,7 @@ export default {
     },
 
     printTitle() {
+      this.category = this.category.replace("-", " ")
       this.title = `Se encontraron ${this.moviesCategory.length} películas de genero ${this.category}`
     }
   }
