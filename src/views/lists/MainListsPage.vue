@@ -1,7 +1,7 @@
 <Header/>
 <template>
 
-  <main>
+  <main class="bg-bgmain">
 
     <div class="container-md">
       <div class="heading image d-flex justify-content-end flex-column">
@@ -569,7 +569,6 @@ export default {
 <style scoped>
 
 main {
-  background-color: #000;
   width: 100%;
   height: 100%;
 }

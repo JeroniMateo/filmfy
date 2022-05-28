@@ -1,9 +1,9 @@
 $primary: #00c740;
-$secondary: #f7f7f5;
+$secondary: #FFFFFFFF;
 $tertiary: #abc;
 $quaternary: #5bdee6;
 
-$bg-main: #000000;
+$bgmain: #000001;
 
 $primary-icon: #0a53be;
 $secondary-icon: #e49e06;
@@ -13,6 +13,21 @@ $error:#c50909;
 $warning:#f1c40f;
 
 
+$theme-colors: (
+        primary: $primary,
+        secondary: $secondary,
+        tertiary: $tertiary,
+        quaternary: $quaternary,
+
+        bgmain: $bgmain,
+
+        primary-icon: $primary-icon,
+        secondary-icon: $secondary-icon,
+
+        success: $success,
+        error: $error,
+        warning: $warning,
+);
 
 /**
 * Importing all bootstrap

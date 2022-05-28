@@ -127,7 +127,7 @@ export default {
 
 <style scoped>
 .all {
-  background-color: #242424;
+  background-color: var(--bs-bgmain);
   padding-bottom: 10px;
 }
 .brand-name {
@@ -181,8 +181,8 @@ export default {
   justify-content: start;
   width: 55%;
   height: 100%;
-  background-color: black;
-  border-right: 3px solid green;
+  background-color: var(--bs-bgmain);
+  border-right: 3px solid #00c740;
   padding: 20px;
   text-align: left;
   margin-top: auto;
