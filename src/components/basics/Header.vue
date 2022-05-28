@@ -127,7 +127,7 @@ export default {
 
 <style scoped>
 .all {
-  background-color: black;
+  background-color: #242424;
   padding-bottom: 10px;
 }
 .brand-name {

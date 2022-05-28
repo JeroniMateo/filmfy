@@ -54,11 +54,6 @@ const routes = [
     component: MovieYear
   },
   {
-    path: '/comments/:movie',
-    name: 'movie-comments',
-    component: CommentMovie
-  },
-  {
     path: '/billboard',
     name: 'billboard',
     component: BillBoard
