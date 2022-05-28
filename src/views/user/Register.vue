@@ -71,7 +71,7 @@
           <form action="" method="POST">
             <input
               id="usernameR"
-              placeholder="Username*"
+              placeholder="Nombre de Usuario*"
               class="registro"
               type="test"
               name="username"
@@ -79,7 +79,7 @@
             <p id="error_username" class="error"></p>
             <input
               id="nameR"
-              placeholder="Name*"
+              placeholder="Nombre*"
               class="registro"
               type="text"
               name="name"
@@ -95,7 +95,7 @@
             <p id="error_email" class="error"></p>
             <input
               id="passwordR"
-              placeholder="Password*"
+              placeholder="Contraseña*"
               class="registro"
               type="password"
               name="password"
@@ -103,7 +103,7 @@
             <p id="error_password" class="error"></p>
             <input
               id="password_confirmR"
-              placeholder="Password Confirm*"
+              placeholder="Confirmar Contraseña*"
               class="registro"
               type="password"
               name="password_confirm"

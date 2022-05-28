@@ -36,7 +36,7 @@
           <input
             id="passwordL"
             aria-label="password"
-            placeholder="Password*"
+            placeholder="Contraseña*"
             type="password"
             name="password"
             aria-required="true"
@@ -255,8 +255,6 @@ header a img {
     display: flex;
     flex-direction: column;
     align-content: space-between;
-    margin-right: 15%;
-    margin-left: 5%;
   }
 }
 
@@ -275,7 +273,7 @@ header a img {
 input {
   outline-color: var(--rgba-primary-2);
   height: 3em;
-  width: 40%;
+  width: 35%;
   transition: border-width 0.6s linear;
 }
 
@@ -285,7 +283,7 @@ input {
   align-items: center;
   color: white;
   height: 2.2em;
-  width: 40%;
+  width: 35%;
   font-size: 1.2em;
   border-radius: 8px;
   padding: 1%;
