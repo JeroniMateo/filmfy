@@ -11126,4 +11126,62 @@ textarea.form-control-lg {
   }
 }
 
+.cust-col-xs-5,
+
+.cust-col-sm-5,
+
+.cust-col-md-5,
+
+.cust-col-lg-5 {
+
+  min-height: 1px;
+
+  position: relative;
+
+}
+
+.cust-col-xs-5 {
+
+  float: left;
+
+  width: 20%;
+
+}
+
+@media (min-width: 768px) {
+
+  .cust-col-sm-5 {
+
+    float: left;
+
+    width: 20%;
+
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  .cust-col-md-5 {
+
+    float: left;
+
+    width: 20%;
+
+  }
+
+}
+
+@media (min-width: 1400px) {
+
+  .cust-col-lg-5 {
+
+    float: left;
+
+    width: 20%;
+
+  }
+
+}
+
 /*# sourceMappingURL=styles.css.map */

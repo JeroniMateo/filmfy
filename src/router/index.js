@@ -3,21 +3,24 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Browser from '../views/Browser.vue'
 
-import Movies from '../views/Movies.vue'
-import MovieContent from '../views/watch-content/MovieContent.vue'
+import DetailedMoviePage from "@/views/movies/DetailedMoviePage";
+import MainMoviesPage from "@/views/movies/MainMoviesPage";
 
 import BillBoard from '../views/BillBoard.vue'
 
+import Outstandings from '../views/Outstandings.vue'
 import Playlists from '../views/my-lists/Playlists.vue'
+
 import ListContent from '../views/my-lists/ListContent.vue'
 
-import VerMasCateogries from '../views/watch-content/VerMasCategories.vue'
 import UserProfile from '../views/user/UserProfile.vue'
-
 import Register from '../views/user/Register.vue'
-import Login from '../views/user/Login.vue'
 
+import Login from '../views/user/Login.vue'
 import Search from '../views/SearchResults.vue'
+import MovieCategories from "@/views/movies/MovieCategories";
+import MovieYear from "@/views/movies/MovieYear";
+import CommentMovie from "@/views/comments/CommentMovie";
 
 const routes = [
   {
@@ -33,22 +36,33 @@ const routes = [
   {
     path: '/movies',
     name: 'movies',
-    component: Movies
+    component: MainMoviesPage
   },
   {
-    path: '/movies/:id',
+    path: '/movies/:movie',
     name: 'movie-content',
-    component: MovieContent
+    component: DetailedMoviePage
   },
   {
-    path: '/movies/:category/:id',
-    name: 'movie-content-category',
-    component: VerMasCateogries
+    path: '/movies/category/:category',
+    name: 'movie-category',
+    component: MovieCategories
+  },
+  {
+    path: '/movies/years/:year',
+    name: 'movie-year',
+    component: MovieYear
   },
   {
     path: '/billboard',
     name: 'billboard',
     component: BillBoard
+  },
+
+  {
+    path: '/outstandings',
+    name: 'outstandings',
+    component: Outstandings
   },
 
   {

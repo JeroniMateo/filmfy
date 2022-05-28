@@ -16,8 +16,8 @@
 
     <section class="d-flex justify-content-center">
       <div id="top-movies" class="container-md row justify-content-between p-5">
-        <div class="movie col-xl-2 col-md-4 col-sm-6 col-12 p-2" v-for="movie in topMoviesImages">
-          <a href="#"><img :src="movie" class="rounded" alt="top-movie"/></a>
+        <div class="movie col-xl-2 col-md-4 col-sm-6 col-12 p-2" v-for="movie in topMovies">
+          <a :href="baseURL + '/movies/' + movie.id"><img :src="'http://filmfy-api.ddns.net' + movie.image" class="rounded" alt="top-movie"/></a>
         </div>
       </div>
     </section>
@@ -58,7 +58,8 @@
                                      v-bind:round-start-rating="false"
                                      v-bind:rating="(comment.rating / 2)"
                                      v-bind:max-rating="5"
-                                     v-bind:read-only="true"
+                                     v-bind:increment="0.5"
+                                     v-bind:read-only="false"
                                      v-bind:show-rating="false"
                                      active-color="#00c740"
                                      inactive-color="#fff"
@@ -138,9 +139,10 @@ export default {
   },
   data () {
     return {
+      baseURL: window.origin,
       latestComments: '',
       latestLists: '',
-      topMoviesImages: [],
+      topMovies: [],
       topMoviesId: [22, 33, 53, 183, 229, 44],
     }
   },
@@ -159,7 +161,7 @@ export default {
               })
             .then(response => response.json())
             .then(data => {
-              this.topMoviesImages.push('http://filmfy-api.ddns.net' + data.image)
+              this.topMovies.push(data)
             })
          }
       )
