@@ -1,92 +1,95 @@
 <template>
-  <header
-    @load="hamburgerIconHandling"
-    class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
-  >
-    <div id="hamburger" @click="hamburgerIconHandling">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
+  <div class="all">
+    <header
+        @load="hamburgerIconHandling"
+        class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+    >
+      <div id="hamburger" @click="hamburgerIconHandling">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
 
-    <div class="main-menu d-flex col-md-3 mx-3">
-      <a
-        href="/"
-        class="d-flex align-items-center mb-md-0 text-dark text-decoration-none"
-      >
-        <img
-          src="../../assets/img/cameraLogo.png"
-          class="bi me-2"
-          width="30"
-          height="30"
-          role="img"
-          aria-label="Bootstrap"
-          alt="logo"
-        />
-        <span class="brand-name"><strong>Filmfy</strong></span>
-      </a>
-    </div>
-
-    <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
-      <li>
+      <div class="main-menu d-flex col-md-3 mx-3">
         <a
-          href="/movies"
-          class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
-          >Películas</a
+            href="/"
+            class="d-flex align-items-center mb-md-0 text-dark text-decoration-none"
         >
-      </li>
-      <li>
-        <a
-          href="/playlists"
-          class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
-          >Listas</a
-        >
-      </li>
-      <li>
-        <a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
-          >Usuarios</a
-        >
-      </li>
-    </ul>
-
-    <div class="main main-menu col-md-3 text-end">
-      <button type="button" class="btn btn-outline-primary me-2" @click="login">
-        Accede
-      </button>
-    </div>
-
-    <div class="hamburger-container">
-      <div id="hamburgerMenu">
-        <a href="" style="text-decoration: none">
-          <div style="display: flex; align-items: center">
-            <img
-              class="logo"
+          <img
               src="../../assets/img/cameraLogo.png"
+              class="bi me-2"
               width="30"
               height="30"
+              role="img"
+              aria-label="Bootstrap"
               alt="logo"
-            />
-            <p class="brand-name">Filmfy</p>
-            <span class="close-hamburger">&times;</span>
-          </div>
+          />
+          <span class="brand-name"><strong>Filmfy</strong></span>
         </a>
-        <div class="menu-links">
-          <a href="/movies">Películas</a>
-          <a href="/playlists">Listas</a>
-          <a href="">Usuarios</a>
-        </div>
-        <div class="login-content-hamburger">
-          <button
-            type="button"
-            class="btn btn-outline-primary me-2"
-            @click="login"
+      </div>
+
+      <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
+        <li>
+          <a
+              href="/movies"
+              class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+          >Películas</a
           >
-            Accede
-          </button>
+        </li>
+        <li>
+          <a
+              href="/playlists"
+              class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+          >Listas</a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+          >Usuarios</a
+          >
+        </li>
+      </ul>
+
+      <div class="main main-menu col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-2" @click="login">
+          Accede
+        </button>
+      </div>
+
+      <div class="hamburger-container">
+        <div id="hamburgerMenu">
+          <a href="" style="text-decoration: none">
+            <div style="display: flex; align-items: center">
+              <img
+                  class="logo"
+                  src="../../assets/img/cameraLogo.png"
+                  width="30"
+                  height="30"
+                  alt="logo"
+              />
+              <p class="brand-name">Filmfy</p>
+              <span class="close-hamburger">&times;</span>
+            </div>
+          </a>
+          <div class="menu-links">
+            <a href="/movies">Películas</a>
+            <a href="/playlists">Listas</a>
+            <a href="">Usuarios</a>
+          </div>
+          <div class="login-content-hamburger">
+            <button
+                type="button"
+                class="btn btn-outline-primary me-2"
+                @click="login"
+            >
+              Accede
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
+
 </template>
 
 <script>
@@ -123,6 +126,10 @@ export default {
 </script>
 
 <style scoped>
+.all {
+  background-color: black;
+  padding-bottom: 10px;
+}
 .brand-name {
   font-size: 175%;
   color: #ffff;

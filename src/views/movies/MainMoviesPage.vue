@@ -8,7 +8,12 @@
       </div>
     </div>
 
-    <FilterBrowser/>
+    <div class="container">
+      <div class="row flex-column flex-lg-row align-items-center">
+        <Filter class="col-12 col-lg-6 my-2 justify-content-center justify-content-lg-start"/>
+        <Searcher class="col-12 col-lg-6 my-2 justify-content-center justify-content-lg-end"/>
+      </div>
+    </div>
     <RecentMovies/>
     <BestMovies/>
   </div>
@@ -16,13 +21,14 @@
 </template>
 
 <script>
-import FilterBrowser from "@/components/movies/detailed-movie-page/FilterBrowser";
 import RecentMovies from "@/components/movies/movies-page/RecentMovies";
 import BestMovies from "@/components/movies/movies-page/BestMovies";
+import Filter from "@/components/movies/detailed-movie-page/Filter";
+import Searcher from "@/components/movies/movies-page/Searcher";
 
 export default {
   name: "MainMoviesPage",
-  components: {BestMovies, RecentMovies, FilterBrowser,}
+  components: {Searcher, Filter, BestMovies, RecentMovies}
 }
 </script>
 

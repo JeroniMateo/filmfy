@@ -2,15 +2,11 @@
   <div class="searcher">
     <span class="section-heading">Buscar : </span>
     <div>
-      <input id="searcher" type="text" @change="" @keyup="searchMovies"
-             class="field field-large ac_input"
-             data-url="/s/autocompletefilm"
-             autocomplete="off">
+      <div class="search-wrapper ">
+        <input class="field field-large ac_input" @mouseup="removeElements" @keyup="filteredList" type="text" v-model="search" />
+      </div>
       <div class="content-searched bg-light d-flex flex-column align-items-center justify-content-between wrapper">
-        <div class="div-movie-searcher ">
-          <ItemSearched v-for="movies of this.moviesSearch"
-                        :key="movies" :movies="movies"/>
-        </div>
+        <ItemSearched v-for="movies in this.moviesSearch" :key="movies" :movies="movies"/>
       </div>
     </div>
   </div>
@@ -24,12 +20,32 @@ export default {
   components: {ItemSearched},
   data() {
     return {
+      moviesAll : [],
+      search: "",
       moviesSearch: [],
       baseUrl: window.origin
     }
   },
 
+  beforeMount() {
+    this.movies()
+  },
+
   methods: {
+
+    filteredList() {
+      console.log("hi")
+      this.moviesSearch = this.moviesAll.filter(movie => {
+        return movie.title.toLowerCase().includes(this.search)
+      })
+      this.limitData(this.moviesSearch)
+    },
+
+    async movies() {
+      let promise = await fetch("http://filmfy-api.ddns.net/api/movies")
+      let moviesData = await promise.json()
+      this.moviesAll = moviesData
+    },
 
     async searchMovies() {
       let inputSearch = document.getElementById("searcher")
@@ -79,6 +95,7 @@ export default {
 </script>
 
 <style scoped>
+
 .searcher {
   display: flex;
   align-items: center;
@@ -87,8 +104,7 @@ export default {
 .field {
   background-color: #2c3440;
   border: 1px solid #303840;
-  border-radius: 3px;
-  box-shadow: inset 0 -1px 0 #456;
+  border-radius: 5px 5px 0px 0px;
   box-sizing: border-box;
   color: white;
   font-size: 1.07692308rem;
@@ -104,19 +120,25 @@ span {
   text-transform: uppercase;
 }
 
+@media (max-width: 600px) {
+  span {
+    display: none;
+  }
+}
+
 .content-searched {
   width: 20rem;
   position: absolute;
 }
 
 .div-movie-searcher {
-  background-color: #445566;
+  z-index: 1;
+  background-color: rgb(68,85,102);
 }
 
-.div-movie-searched {
-  box-sizing: border-box;
-  border-top: 1px solid #242424;
-  border-bottom: 1px solid #242424;
+.searcher{
+  display: flex;
+  align-items: center;
 }
 
 a {

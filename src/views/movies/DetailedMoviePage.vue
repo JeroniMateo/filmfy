@@ -5,16 +5,16 @@
       <h2 class="title">{{ this.movie.title }} ({{this.date.getFullYear()}})</h2>
     </div>
 
-    <div class="container d-flex justify-content-between">
+    <div class="container d-flex justify-content-between align-items-center flex-column">
 
       <div class="row big-width">
-        <MovieDetailedCard :movieID="movieID" class="col-3"/>
+        <MovieDetailedCard :movieID="movieID" class="col-12 col-md-6 col-lg-3 my-3"/>
 
-        <div class="d-flex flex-column align-items-start justify-content-center contentData col-6 ps-5">
+        <div class="d-flex flex-column align-items-center justify-content-center contentData col-12 order-md-last col-lg-7 my-3">
           <Tabs :movie="this.movie"/>
         </div>
 
-        <div class="col-3 d-flex align-items-center flex-column p-0">
+        <div class="col-12 col-md-6 col-lg-2 d-flex align-items-center justify-content-center justify-content-lg-start order-lg-last flex-column p-0 my-3">
           <AsideDetailedMovie :movie="this.movie"/>
         </div>
       </div>
@@ -23,24 +23,24 @@
     </div>
 
     <div class="container py-4">
-      <div class="section-heading">
-        <h2 class="sinopsis mb-0">Sinopsis</h2>
+      <div class="section-heading justify-content-center justify-content-lg-start">
+        <h2 class="sinopsis mb-0 ">Sinopsis</h2>
       </div>
-      <div class="description-div pt-3">
+      <div class="text-center text-lg-start pt-3">
         <span class="description ">{{ this.movie.description }}</span>
       </div>
     </div>
 
     <div class="container py-4">
-      <div class="section-heading">
+      <div class="section-heading justify-content-center justify-content-lg-start">
         <h2 class="sinopsis mb-0">Comentarios</h2>
       </div>
-      <div v-if="this.contentComment" class="description-div-comments py-3">
-        <CommentsMovie v-for="comment of this.comments" :key="comment" :comment="comment" />
-      </div>
-      <div v-else class="pt-5">
-        <p style="font-size: 25px; color: #00c740" class="text-center">Nadie ha comentado todavía esta película, sé tu el primero!</p>
-      </div>
+    </div>
+    <div v-if="this.contentComment" class=" container align-items-center flex-column align-items-lg-start">
+      <CommentsMovie  v-for="comment of this.comments" :key="comment" :comment="comment" />
+    </div>
+    <div v-else class="pt-5">
+      <p style="font-size: 25px; color: #00c740" class="text-center">Nadie ha comentado todavía esta película, sé tu el primero!</p>
     </div>
 
   </div>
@@ -114,22 +114,9 @@ export default {
   margin-bottom: 3rem;
 }
 
-.description-div-comments {
-  text-align: left;
-  width: 45rem;
-}
-.description-div {
-  text-align: left;
-  margin-right: 10vw;
-}
-
 .description {
   color: #c9c9c9;
   line-height: 25px;
-}
-
-.sinopsis {
-  text-align: left;
 }
 
 .section-heading {
@@ -150,5 +137,6 @@ export default {
   background-color: black;
   padding-top: 4rem;
 }
+
 
 </style>

@@ -1,42 +1,37 @@
 <template>
 
-  <section class="container d-flex justify-content-md-between my-3">
+  <div class="d-flex align-items-center col-6">
+    <span class="text-filter">Filtrar por :</span>
+    <div class="filters d-flex align-items-center bar-nav">
+      <div class="dropdown">
+        <label class="button-filter dropdown-toggle" type=""  data-bs-toggle="dropdown">
+          Category
+        </label>
+        <ul id="categoriesFilter" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 
-    <div class="d-flex align-items-center ">
-      <span>Filtrar por :</span>
-      <div class="filters d-flex align-items-center bar-nav">
-        <div class="dropdown">
-          <label class="button-filter dropdown-toggle" type="" id="dropdownMenuButton2" data-bs-toggle="dropdown">
-            Category
-          </label>
-          <ul id="categoriesFilter" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+        </ul>
+      </div>
+      <div class="dropdown yes">
+        <label class="button-filter dropdown-toggle" type="" data-bs-toggle="dropdown">
+          Year
+        </label>
+        <ul id="yearsFilter" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 
-          </ul>
-        </div>
-        <div class="dropdown yes">
-          <label class="button-filter dropdown-toggle" type="" id="dropdownMenuButton2" data-bs-toggle="dropdown">
-            Year
-          </label>
-          <ul id="yearsFilter" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
-
-    <Searcher/>
-  </section>
+  </div>
 </template>
 
 <script>
-import Searcher from "@/components/movies/movies-page/Searcher";
+
 export default {
-  name: "FilterBrowser",
-  components: {Searcher},
+  name: "Filter",
+  components: {},
   data() {
     return {
       categories: [],
-      baseUrl : window.origin
+      baseUrl: window.origin
     }
   },
 
@@ -69,7 +64,7 @@ export default {
       let baseYear = 1950
       let getCurrentYear = new Date().getFullYear()
 
-      for (let i = baseYear; i < getCurrentYear; i = i+10) {
+      for (let i = baseYear; i < getCurrentYear; i = i + 10) {
         yearsFilter.innerHTML += `
           <li><a style="font-size: 12px; text-transform: capitalize" class="dropdown-item" href="${this.baseUrl}/movies/years/${i}">${i}s</a></li>
         `
@@ -106,6 +101,12 @@ span {
   text-transform: uppercase;
 }
 
+@media (max-width: 600px) {
+  span {
+    display: none;
+  }
+}
+
 span:last-child {
   width: fit-content;
 }
@@ -113,25 +114,6 @@ span:last-child {
 .button-filter {
   padding: 10px;
   margin: 0;
-}
-
-.field {
-  background-color: #2c3440;
-  border: 1px solid #303840;
-  border-radius: 3px;
-  box-shadow: inset 0 -1px 0 #456;
-  box-sizing: border-box;
-  color: white;
-  font-size: 1.07692308rem;
-  line-height: 1;
-  margin: 0;
-  padding: 9px 9px 8px;
-  width: 100%;
-}
-
-.searcher{
-  display: flex;
-  align-items: center;
 }
 
 .bar-nav {
@@ -161,7 +143,8 @@ label {
 }
 
 .yes {
-  top: auto; bottom: 100%
+  top: auto;
+  bottom: 100%
 }
 
 </style>

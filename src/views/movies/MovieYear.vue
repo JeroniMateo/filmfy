@@ -5,12 +5,19 @@
       <span>{{ title }}</span>
     </div>
 
-    <FilterBrowser/>
+    <div class="container">
+      <div class="row flex-column flex-lg-row align-items-center">
+        <Filter class="col-12 col-lg-6 my-2 justify-content-center justify-content-lg-start"/>
+        <Searcher class="col-12 col-lg-6 my-2 justify-content-center justify-content-lg-end"/>
+      </div>
+    </div>
 
-    <div class="container justify-content-between d-flex flex-wrap">
-      <MovieCardGeneral
-          v-for="movie of this.moviesYear" :key="movie" :movie="movie"
-      />
+    <div class="container justify-content-between">
+      <div class="row">
+        <MovieCardGeneral
+            v-for="movie of this.moviesYear" :key="movie" :movie="movie"
+        />
+      </div>
     </div>
   </div>
 
@@ -18,11 +25,12 @@
 
 <script>
 import MovieCardGeneral from "@/components/movies/movie-card/MovieCardGeneral";
-import FilterBrowser from "@/components/movies/detailed-movie-page/FilterBrowser";
+import Searcher from "@/components/movies/movies-page/Searcher";
+import Filter from "@/components/movies/detailed-movie-page/Filter";
 
 export default {
   name: "MovieCategories",
-  components: {FilterBrowser, MovieCardGeneral},
+  components: {Filter, Searcher, MovieCardGeneral},
   data() {
     return {
       year: this.$route.params.year,

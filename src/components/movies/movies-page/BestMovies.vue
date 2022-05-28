@@ -1,10 +1,12 @@
 <template>
   <div class="container">
-    <div class="section-heading mt-5">
+    <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
       <span>Películas mejor valoradas</span>
     </div>
-    <div class="container d-flex flex-wrap justify-content-between overflow-hidden">
-      <MovieCardGeneral v-for="movie of this.movies" :key="movie" :movie="movie" class="card-movie"/>
+    <div class="container justify-content-between">
+      <div class="row">
+        <MovieCardGeneral v-for="movie of this.movies" :key="movie" :movie="movie" />
+      </div>
     </div>
   </div>
 
@@ -45,14 +47,6 @@ export default {
 </script>
 
 <style scoped>
-
-.card-movie {
-  width: 230px;
-}
-
-.image {
-  width: 100%;
-}
 
 #popular-films .section-heading {
   margin-bottom: 15px;

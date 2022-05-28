@@ -17,7 +17,7 @@
       <div class="panel">
         <p id="release_date"><span>Fecha de lanzamiento : </span></p>
       </div>
-      <div class="p-3 d-flex align-items-center" id="categories">
+      <div class="p-3 d-flex align-items-center justify-content-center" id="categories">
 
       </div>
     </div>

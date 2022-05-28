@@ -1,6 +1,6 @@
 <template>
 
-  <div class="card-movie d-flex flex-column align-items-center col-3 p-0 m-0">
+  <div class="card-movie d-flex flex-column align-items-center col-12 col-md-6 col-lg-4 cust-col-lg-5 p-0 m-0">
     <div v-bind:id="movie.id" class="d-flex flex-column align-items-center" style="visibility: hidden">
       <span class="frame-title">{{ movie.title }}</span>
       <span class="frame-title-description"></span>
@@ -72,7 +72,6 @@ export default {
 }
 
 .card-movie {
-  width: 230px;
   margin-top: 0px;
 }
 
