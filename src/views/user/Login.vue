@@ -325,15 +325,8 @@ input {
   outline-color: var(--rgba-primary-2);
   height: 3em;
   width: 70%;
-  transition: all 0.5s ease-in-out;
-}
-
-input:hover {
-  width: 80%;
-}
-
-input:focus {
-  box-shadow: 2px 2px 2px var(--rgba-primary-2);
+  border: solid 2px #00c740;
+  transition: border-width 0.6s linear;
 }
 
 .button {
