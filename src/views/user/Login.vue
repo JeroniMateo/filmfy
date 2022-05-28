@@ -21,87 +21,45 @@
       />
     </head>
     <body>
-      <div id="layout">
-        <header>
-          <a href="/"><img src="../../assets/img/cameraLogo.png" /></a>
-        </header>
-        <section id="infoutil">
-          <h4>Disfruta de este arte llamado Cine</h4>
-          <div>
-            <i class="fas fa-ticket-alt"></i>
-            <div>
-              <p>
-                En nuestra web te ofrecemos todas las facilidades para que
-                puedas disfrutar de tus peliculas favoritas.
-              </p>
-            </div>
-          </div>
+      <div id="formlogin">
+        <h1>Iniciar sesión</h1>
+        <form id="InicioSesion" method="POST" action="" >
+          <input
+            id="emailL"
+            aria-label="email"
+            placeholder="Email*"
+            type="text"
+            name="email"
+            aria-required="true"
+          />
+          <p id="error_email" class="error"></p>
+          <input
+            id="passwordL"
+            aria-label="password"
+            placeholder="Password*"
+            type="password"
+            name="password"
+            aria-required="true"
+          />
+          <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
+          <p id="error_password" class="error"><b></b></p>
+          <span id="errorLogin" class="error"></span><br />
+          <button
+            @click="loginValidation"
+            id="loginButton"
+            class="button"
+            aria-label="Inicia sesión"
+          >
+            Inicia sesión
+          </button>
 
-          <h4>Entérate de los ultimos estrenos</h4>
-          <div>
-            <i class="far fa-newspaper"></i>
-            <div>
-              <p>
-                Trabajamos día a día para mantenerte actualizado. En nuestro
-                portal de cartelera podrás conocer de primera mano todo lo que
-                necesitas saber de estrenos.
-              </p>
-            </div>
-          </div>
-
-          <h4>Participa en nuestros sorteos</h4>
-          <div>
-            <i class="far fa-star"></i>
-            <div>
-              <p>
-                Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
-                Formar parte de la comunidad de Music4Events te da la
-                posibilidad de participar en todos los sorteos.
-              </p>
-            </div>
-          </div>
-          <h3>¿A qué estás esperando?</h3>
-        </section>
-        <section id="formlogin">
-          <h1>Iniciar sesión</h1>
-          <form id="InicioSesion" action="">
-            <input
-              id="emailL"
-              aria-label="email"
-              placeholder="Email*"
-              type="text"
-              name="email"
-              aria-required="true"
-            />
-            <p id="error_email" class="error"></p>
-            <input
-              id="passwordL"
-              aria-label="password"
-              placeholder="Password*"
-              type="password"
-              name="password"
-              aria-required="true"
-            />
-            <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
-            <p id="error_password" class="error"><b></b></p>
-            <span id="errorLogin" class="error"></span><br />
-            <button
-              @click="loginValidation"
-              id="loginButton"
-              class="button"
-              aria-label="Inicia sesión"
-            >
-              Inicia sesión
-            </button>
-
-            <button id="signUpButton" class="button" aria-label="Inicia sesión">
-              <a href="/register">Registrarse</a>
-            </button>
-            <p>¿Eres nuevo en Music4Events?</p>
-            <div id="suscrito"></div>
-          </form>
-          <br />
-        </section>
+          <button id="signUpButton" class="button" aria-label="Inicia sesión">
+            <a href="/register">Registrarse</a>
+          </button>
+          <p>¿Eres nuevo en Music4Events?</p>
+          <div id="suscrito"></div>
+        </form>
+        <br />
       </div>
     </body>
   </html>
@@ -207,7 +165,6 @@ button {
   background-color: #00c740;
 }
 body {
-  margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #242424;
 }
@@ -288,12 +245,8 @@ header a img {
 @media screen and (max-width: 850px) {
   #formlogin,
   #formSignUp {
-    grid-area: formresp;
     display: flex;
     flex-direction: column;
-    align-content: space-between;
-    margin-right: 5%;
-    margin-left: 5%;
   }
 }
 
@@ -324,8 +277,7 @@ header a img {
 input {
   outline-color: var(--rgba-primary-2);
   height: 3em;
-  width: 70%;
-  border: solid 2px #00c740;
+  width: 40%;
   transition: border-width 0.6s linear;
 }
 
@@ -335,7 +287,7 @@ input {
   align-items: center;
   color: white;
   height: 2.2em;
-  width: 70%;
+  width: 40%;
   font-size: 1.2em;
   border-radius: 8px;
   padding: 1%;
@@ -388,7 +340,7 @@ form {
   position: relative;
   z-index: 1;
   bottom: 2.6em;
-  left: 30%;
+  left: 18%;
   transition: background-color 0.4s ease-in-out;
   cursor: pointer;
   padding: 0.5em;
