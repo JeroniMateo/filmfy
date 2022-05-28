@@ -38,7 +38,7 @@
         </li>
         <li>
           <a
-              href="/playlists"
+              href="/lists"
               class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
           >Listas</a
           >

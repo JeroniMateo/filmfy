@@ -88,31 +88,31 @@
             <div class="d-flex flex-column justify-content-center align-items-center">
             <div v-for="list in latestLists">
 
-            <div class="list -overlapped -stacked d-flex flex-column">
-              <a class="list-link">
-                <div class="list-link-stacked clear">
-                  <ul class="poster-list -overlapped -p70" v-for="movie_img in list.m_imgs.slice(0,5)">
+              <div class="list -overlapped -stacked d-flex flex-column">
+                <a class="list-link">
+                  <div class="list-link-stacked clear">
+                    <ul class="poster-list -overlapped -p70" v-for="movie_img in list.m_imgs.slice(0,5)">
 
-                    <li class="react-component poster film-poster listitem">
-                      <div><img :src="'http://filmfy-api.ddns.net' + movie_img"
-                          width="80" height="130" alt="list movie img"
-                          class="image">
-                      </div>
-                    </li>
+                      <li class="react-component poster film-poster listitem">
+                        <div><img :src="'http://filmfy-api.ddns.net' + movie_img"
+                            width="80" height="130" alt="list movie img"
+                            class="image">
+                        </div>
+                      </li>
 
-                  </ul>
-                </div>
-              </a>
-              <div class="list-content d-flex flex-row mt-2">
-                  <p class="list-title d-flex align-content-center"><strong>{{ list.l_title }}</strong></p>
-                  <div class="mx-4">
-                    <img class="user-img" src="#" width="30" height="30" alt=""/>
-                    <small class="comment-user-name mx-2">{{ list.u_name }}</small>
-                      <span><i class="fa-solid fa-thumbs-up"></i></span>
-                      <span class="mx-1">{{ list.l_likes }}</span>
+                    </ul>
                   </div>
+                </a>
+                <div class="list-content d-flex flex-row mt-2">
+                    <p class="list-title d-flex align-content-center"><strong>{{ list.l_title }}</strong></p>
+                    <div class="mx-4">
+                      <img class="user-img" src="#" width="30" height="30" alt=""/>
+                      <small class="comment-user-name mx-2">{{ list.u_name }}</small>
+                        <span><i class="fa-solid fa-thumbs-up"></i></span>
+                        <span class="mx-1">{{ list.l_likes }}</span>
+                    </div>
+                </div>
               </div>
-            </div>
 
             </div>
           </div>
