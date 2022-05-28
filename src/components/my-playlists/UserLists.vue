@@ -64,8 +64,8 @@ export default {
 
 <style>
 #UserList {
-  background-color: #0f0505;
-  color: #f7f7f5;
+  color: #0f0505;
+  background-color: #f7f7f5;
   font-family: Arial;
   font-size: 2vh;
   display: flex;
