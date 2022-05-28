@@ -60,7 +60,7 @@
         </section>
         <div id="formSignUp">
           <h1>Registrarse</h1>
-          <form action="">
+          <form action="" method="POST">
             <input
               id="usernameR"
               placeholder="Username*"
@@ -110,10 +110,10 @@
             >
               Regístrate
             </button>
-            <div>¿Ya tienes una cuenta?</div>
             <button id="loginButton" class="button" aria-label="Inicia sesión">
               <a href="/login">Inicia sesión</a>
             </button>
+              <p>¿Ya tienes una cuenta?</p>
             <div id="signUpAlert"></div>
           </form>
         </div>
@@ -440,15 +440,7 @@ input {
   outline-color: var(--rgba-primary-2);
   height: 3em;
   width: 70%;
-  transition: all 0.5s ease-in-out;
-}
-
-input:hover {
-  width: 80%;
-}
-
-input:focus {
-  box-shadow: 2px 2px 2px var(--rgba-primary-2);
+  transition: border-width 0.6s linear;
 }
 
 .button {
@@ -461,6 +453,8 @@ input:focus {
   font-size: 1.2em;
   border-radius: 8px;
   padding: 1%;
+  background-color: #00c740;
+  margin-top: 3vh;
 }
 
 #formlogin div,
@@ -469,15 +463,15 @@ input:focus {
 }
 
 #loginButton {
-  background-color: var(--rgba-primary-2);
-  transition: background-color 0.4s ease-in-out;
+  background-color: #787b66;
   cursor: pointer;
+  padding: 1%;
 }
 
 #signUpButton {
-  background-color: var(--rgba-secondary-1-2);
-  transition: background-color 0.4s ease-in-out;
+  background-color: #787b66;
   cursor: pointer;
+  margin-top: 2vh;
 }
 
 #loginButton:hover {

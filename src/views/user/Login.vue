@@ -23,7 +23,7 @@
     <body>
       <div id="formlogin">
         <h1>Iniciar sesión</h1>
-        <form id="InicioSesion" method="POST" action="" >
+        <form id="InicioSesion" method="POST" action="">
           <input
             id="emailL"
             aria-label="email"
@@ -52,14 +52,12 @@
           >
             Inicia sesión
           </button>
-
           <button id="signUpButton" class="button" aria-label="Inicia sesión">
             <a href="/register">Registrarse</a>
           </button>
-          <p>¿Eres nuevo en Music4Events?</p>
-          <div id="suscrito"></div>
         </form>
-        <br />
+        <p>¿Eres nuevo en Filmfy?</p>
+        <div id="suscrito"></div>
       </div>
     </body>
   </html>
