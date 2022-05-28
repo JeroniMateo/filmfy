@@ -17,7 +17,7 @@
 - Info: #0f0505;
 - Success: #2ecc71
 - Error: #c50909
-- Warning:#f1c40f
+- Warning:#897213
 - Cyan: #5bdee6;
 - Gray: #787b66;
 

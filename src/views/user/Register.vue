@@ -22,48 +22,56 @@
     </head>
     <body>
       <div id="layout">
-        <header>
-          <a href="/"><img src="../../assets/img/cameraLogo.png" /></a>
-        </header>
         <section id="infoutil">
           <h4>Disfruta de este arte llamado Cine</h4>
           <div>
             <i class="fas fa-ticket-alt"></i>
             <div>
               <p>
-                En nuestra web te ofrecemos todas las facilidades para que
-                puedas disfrutar de tus peliculas favoritas.
+                No te pierdas ninguna de las películas que te gustan. ¡Las
+                podrás guardar!
               </p>
             </div>
           </div>
 
-          <h4>Entérate de los ultimos estrenos</h4>
+          <h4>Pasa momentos inolvidables junto a tus amigos</h4>
           <div>
             <i class="far fa-newspaper"></i>
             <div>
-              <p></p>
+              <p>
+                Comparte tus listas, opiniones y películas con quien quieras,
+                cuando sea.
+              </p>
+            </div>
+          </div>
+          <h4>Ten recuerdo de los grandes momentos del Cine</h4>
+          <div>
+            <i class="far fa-newspaper"></i>
+            <div>
+              <p>
+                Da likes, guarda listas y organiza tus películas favoritas como
+                prefieras.
+              </p>
             </div>
           </div>
 
-          <h4>Participa en nuestros sorteos</h4>
+          <h4>Se un hito de la gran pantalla</h4>
           <div>
             <i class="far fa-star"></i>
             <div>
               <p>
-                Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
-                Formar parte de la comunidad de Music4Events te da la
-                posibilidad de participar en todos los sorteos.
+                Escribe comentarios, puntúa y debate con otros usuarios.
+                Conviértete en crítico.
               </p>
             </div>
           </div>
-          <h3>¿A qué estás esperando?</h3>
         </section>
         <div id="formSignUp">
           <h1>Registrarse</h1>
-          <form action="">
+          <form action="" method="POST">
             <input
               id="usernameR"
-              placeholder="Username*"
+              placeholder="Nombre de Usuario*"
               class="registro"
               type="test"
               name="username"
@@ -72,7 +80,7 @@
             <p id="error_username" class="error"></p>
             <input
               id="nameR"
-              placeholder="Name*"
+              placeholder="Nombre*"
               class="registro"
               type="text"
               name="name"
@@ -90,7 +98,7 @@
             <p id="error_email" class="error"></p>
             <input
               id="passwordR"
-              placeholder="Password*"
+              placeholder="Contraseña*"
               class="registro"
               type="password"
               name="password"
@@ -106,7 +114,7 @@
             <p id="error_password" class="error"></p>
             <input
               id="password_confirmR"
-              placeholder="Password Confirm*"
+              placeholder="Confirmar Contraseña*"
               class="registro"
               type="password"
               name="password_confirm"
@@ -129,10 +137,10 @@
             >
               Regístrate
             </button>
-            <div>¿Ya tienes una cuenta?</div>
             <button id="loginButton" class="button" aria-label="Inicia sesión">
               <a href="/login">Inicia sesión</a>
             </button>
+            <p>¿Ya tienes una cuenta?</p>
             <div id="signUpAlert"></div>
           </form>
         </div>
@@ -364,19 +372,24 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #242424;
 }
-
+#layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (max-width: 850px) {
   #layout {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 15% 80%;
-    gap: 5% 0%;
+
     grid-auto-flow: row;
     grid-template-areas:
       'header header'
       'formresp formresp';
-    width: 100%;
-    height: 110vh;
   }
 }
 
@@ -385,13 +398,11 @@ body {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 15% 80%;
-    gap: 5% 0%;
+
     grid-auto-flow: row;
     grid-template-areas:
       'header header'
       'infoutil form';
-    width: 100%;
-    height: 110vh;
   }
 }
 
@@ -478,15 +489,7 @@ input {
   outline-color: var(--rgba-primary-2);
   height: 3em;
   width: 70%;
-  transition: all 0.5s ease-in-out;
-}
-
-input:hover {
-  width: 80%;
-}
-
-input:focus {
-  box-shadow: 2px 2px 2px var(--rgba-primary-2);
+  transition: border-width 0.6s linear;
 }
 
 .button {
@@ -499,6 +502,8 @@ input:focus {
   font-size: 1.2em;
   border-radius: 8px;
   padding: 1%;
+  background-color: #00c740;
+  margin-top: 3vh;
 }
 
 #formlogin div,
@@ -506,25 +511,27 @@ input:focus {
   margin: 2%;
 }
 
-#loginButton {
-  background-color: var(--rgba-primary-2);
-  transition: background-color 0.4s ease-in-out;
-  cursor: pointer;
-}
-
 #signUpButton {
-  background-color: var(--rgba-secondary-1-2);
-  transition: background-color 0.4s ease-in-out;
+  background-color: #fcae07;
   cursor: pointer;
+  margin-top: 2vh;
 }
 
-#loginButton:hover {
-  background-color: var(--rgba-primary-1);
+#loginButton {
+  background-color: #5d4c0a;
+  cursor: pointer;
+  padding: 1%;
 }
 
 #signUpButton:hover {
-  background-color: var(--rgba-secondary-1-1);
+  background-color: #00c740;
 }
+
+#loginButton:hover {
+  background-color: #2ecc71;
+}
+
+
 
 a:any-link {
   color: white;

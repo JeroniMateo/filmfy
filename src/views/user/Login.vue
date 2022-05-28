@@ -23,7 +23,7 @@
     <body>
       <div id="formlogin">
         <h1>Iniciar sesión</h1>
-        <form id="InicioSesion" method="POST" action="" >
+        <form id="InicioSesion" method="POST" action="">
           <input
             id="emailL"
             aria-label="email"
@@ -36,7 +36,7 @@
           <input
             id="passwordL"
             aria-label="password"
-            placeholder="Password*"
+            placeholder="Contraseña*"
             type="password"
             name="password"
             aria-required="true"
@@ -52,14 +52,12 @@
           >
             Inicia sesión
           </button>
-
           <button id="signUpButton" class="button" aria-label="Inicia sesión">
             <a href="/register">Registrarse</a>
           </button>
-          <p>¿Eres nuevo en Music4Events?</p>
-          <div id="suscrito"></div>
         </form>
-        <br />
+        <p>¿Eres nuevo en Filmfy?</p>
+        <div id="suscrito"></div>
       </div>
     </body>
   </html>
@@ -274,8 +272,6 @@ header a img {
     display: flex;
     flex-direction: column;
     align-content: space-between;
-    margin-right: 15%;
-    margin-left: 5%;
   }
 }
 
@@ -294,7 +290,7 @@ header a img {
 input {
   outline-color: var(--rgba-primary-2);
   height: 3em;
-  width: 40%;
+  width: 35%;
   transition: border-width 0.6s linear;
 }
 
@@ -304,7 +300,7 @@ input {
   align-items: center;
   color: white;
   height: 2.2em;
-  width: 40%;
+  width: 35%;
   font-size: 1.2em;
   border-radius: 8px;
   padding: 1%;
@@ -317,13 +313,13 @@ input {
 }
 
 #loginButton {
-  background-color: #787b66;
+  background-color: #fcae07;
   cursor: pointer;
   padding: 1%;
 }
 
 #signUpButton {
-  background-color: #787b66;
+  background-color: #5d4c0a;
   cursor: pointer;
   margin-top: 2vh;
 }
