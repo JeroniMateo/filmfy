@@ -10,16 +10,22 @@
 
 ## 1.Pallete Color
 
-- Primary: #00c740
-- Secondary: #f7f7f5
-- Background: #242424
-- Light: #e49e06
-- Info: #0f0505;
-- Success: #2ecc71
-- Error: #c50909
-- Warning:#f1c40f
-- Cyan: #5bdee6;
-- Gray: #787b66;
+* $primary: #00c740;
+* $secondary: #f7f7f5;
+* $tertiary: #898f78;
+* $quaternary: #5bdee6;
+
+
+* $bg-main: #000000;
+
+
+* $primary-icon: #0a53be;
+* $secondary-icon: #e49e06;
+
+
+* $success: #00ff71;
+* $error:#c50909;
+* $warning:#f1c40f;
 
   
 
