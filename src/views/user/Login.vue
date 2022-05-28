@@ -86,17 +86,18 @@
             <p id="error_password" class="error"><b></b></p>
             <span id="errorLogin" class="error"></span><br />
             <button
-              onclick="LoginAPI()"
+              @click="loginValidation"
               id="loginButton"
               class="button"
               aria-label="Inicia sesión"
             >
               Inicia sesión
             </button>
-            <div><b>¿Eres nuevo en Music4Events?</b></div>
+
             <button id="signUpButton" class="button" aria-label="Inicia sesión">
               <a href="/register">Registrarse</a>
             </button>
+            <p>¿Eres nuevo en Music4Events?</p>
             <div id="suscrito"></div>
           </form>
           <br />
@@ -110,7 +111,7 @@
 export default {
   name: 'Login',
 
-  data () {
+  data() {
     return {
       email: '',
       error_email: '',
@@ -345,6 +346,7 @@ input:focus {
   font-size: 1.2em;
   border-radius: 8px;
   padding: 1%;
+  background-color: #00c740;
 }
 
 #formlogin div,
@@ -353,23 +355,23 @@ input:focus {
 }
 
 #loginButton {
-  background-color: var(--rgba-primary-2);
-  transition: background-color 0.4s ease-in-out;
+  background-color: #787b66;
   cursor: pointer;
+  padding: 1%;
 }
 
 #signUpButton {
-  background-color: var(--rgba-secondary-1-2);
-  transition: background-color 0.4s ease-in-out;
+  background-color: #787b66;
   cursor: pointer;
+  margin-top: 2vh;
 }
 
 #loginButton:hover {
-  background-color: var(--rgba-primary-1);
+  background-color: #00c740;
 }
 
 #signUpButton:hover {
-  background-color: var(--rgba-secondary-1-1);
+  background-color: #2ecc71;
 }
 
 a:any-link {
