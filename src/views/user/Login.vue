@@ -31,6 +31,8 @@
             type="text"
             name="email"
             aria-required="true"
+            v-model="email"
+            required
           />
           <p id="error_email" class="error"></p>
           <input
@@ -40,6 +42,8 @@
             type="password"
             name="password"
             aria-required="true"
+            v-model="password"
+            required
           />
           <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
           <p id="error_password" class="error"><b></b></p>
@@ -67,18 +71,20 @@
 export default {
   name: 'Login',
 
-  data() {
+  data () {
     return {
       email: '',
       error_email: '',
       email_validation: false,
-
       password: '',
       error_password: '',
       password_validation: false,
 
       error_log: '',
-      log: true
+      log: true,
+
+      email_userR: '',
+      password_userR: ''
     }
   },
 
@@ -362,5 +368,8 @@ form {
 
 .ver:hover {
   background-color: var(--rgba-primary-4-transpar2);
+}
+.error{
+  color:#c50909
 }
 </style>
