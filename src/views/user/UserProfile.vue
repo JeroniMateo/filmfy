@@ -1,89 +1,70 @@
 <template>
-  <div id="UserProfile" class="container-fluid">
-    <h2>{{ username }} Perfil</h2>
-    <form action="" method="post">
-      <div class="row g-3">
-        <div class="col-auto" id="ImageProfile">
-          <button @click="cambiarPerfilIMG">
-            <img id="user_img" src="" alt="" />
-          </button>
+  <div id="UserProfile">
+    <div class="wrap-content">
+      <section id="profile-header">
+        <div class="profile-sumary">
+          <div class="profile-avatar">
+            <span class="avatar-large">
+              <img src="{{user.avatar}}" alt="" />
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="col-auto">
-        <label for="input_username_user" class="col-sm-2 col-form-label">{{
-          username_user
-        }}</label>
-        <input
-          v-model="username"
-          type="text"
-          name="input_username_user"
-          id="input_username_user"
-        />
-      </div>
-      <div class="col-auto">
-        <label for="inputFullName" class="col-sm-2 col-form-label">{{
-          name_user
-        }}</label>
-        <input
-          v-model="name"
-          type="text"
-          class="form-control"
-          id="inputFullName"
-        />
-      </div>
-      <div class="col-auto">
-        <label for="inputEmail" class="col-sm-2 col-form-label">
-          {{ email }}
-        </label>
-        <input
-          v-model="email"
-          type="email"
-          class="form-control"
-          id="inputEmail"
-        />
-      </div>
-      <div class="col-auto">
-        <label for="inputPassword" class="col-sm-2 col-form-label">
-          {{ password }}
-        </label>
-        <input
-          v-model="password"
-          type="password"
-          class="form-control"
-          id="inputPassword"
-        />
-      </div>
-      <div class="col-auto">
-        <label for="inputPhone" class="col-sm-2 col-form-label">
-          {{ phone }}
-        </label>
-        <input
-          v-model="phone"
-          type="number"
-          class="form-control"
-          id="inputPhone"
-        />
-      </div>
-      <button type="submit" class="btn btn-primary mb-3" @click="SaveProfileUser" aria-label="Save">Save</button>
-    </form>
+        <div class="profile-name">
+          <div class="profile-name-wrap">
+            <h1 class="title-1">Mattius DT</h1>
+          </div>
+        </div>
+        <div class="profile-info">
+          <div class="profile-stats">
+            <h4 class="profile-statistic">
+              <a href="">
+                <span class="value">0</span>
+                <span class="definition">Films</span>
+              </a>
+            </h4>
+            <h4 class="profile-statistic">
+              <a href="">
+                <span class="value">0</span>
+                <span class="definition">Lists</span>
+              </a>
+            </h4>
+            <h4 class="profile-statistic">
+              <a href="">
+                <span class="value">0</span>
+                <span class="definition">Following</span>
+              </a>
+            </h4>
+            <h4 class="profile-statistic">
+              <a href="">
+                <span class="value">0</span>
+                <span class="definition">Followers</span>
+              </a>
+            </h4>
+          </div>
+          <div class="follow-button-wrapper">
+            <a href="" class="button-small">Edit Profile</a>
+          </div>
+          <div class="_context-observer"></div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'UserProfile',
-  data () {
+  data() {
     return {
-      username: '',
-      name: '',
-      email: '',
-      password: '',
-      phone: ''
+      username_user: '',
+      name_user: '',
+      email_user: '',
+      password_user: '',
+      phone_user: ''
     }
   },
 
   methods: {
-    cambiarPerfilIMG () {
+    cambiarPerfilIMG() {
       const x = document.createElement('INPUT')
       x.setAttribute('type', 'file')
       document.body.appendChild(x)
@@ -94,63 +75,40 @@ export default {
 </script>
 
 <style scoped>
-label.form-label {
-  font-size: 3vh;
-  color: #f7f7f5;
+.no-mobile .profile-info .profile-stats {
+    float: right;
+    padding-left: 3.07692308rem;
 }
-.error {
-  color: #c50909;
-  font-size: 1.5rem;
-  font-weight: bold;
+.profile-stats {
+    align-items: flex-start;
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
 }
-button {
-  background-color: #00c740;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+.profile-statistic {
+    font-weight: 400;
+    text-align: center;
 }
-h2 {
-  font-size: 4rem;
-  color: #f7f7f5;
+.profile-info {
+    margin-top: 0.38461538rem;
 }
-.formConfirm {
-  display: flex;
-  justify-content: space-around;
-  justify-items: stretch;
-  align-content: center;
-  align-items: center;
+.profile-name {
+    padding-left: 120px;
+}
+.profile-info {
+    margin-top: 0.57692308rem;
+}
+.title-1 {
+    max-width: 450px;
+    color:blue
 }
 
-input {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #0f0505;
-  margin: 5%;
+.profile-name-wrap {
+    display: flex;
+    margin-right: 1.92307692rem;
+    max-width: 100%;
+  margin-bottom: 0.23076923rem;
+    margin-bottom: 0;
 }
-.row {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  align-content: space-around;
-}
-#layoutLogin {
-  margin: auto;
-  width: 85%;
-  background-color: #0f0505;
-  display: flex;
-  flex-direction: column;
-}
+
 </style>
