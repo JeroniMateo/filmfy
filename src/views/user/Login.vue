@@ -298,13 +298,13 @@ input {
 }
 
 #loginButton {
-  background-color: #787b66;
+  background-color: #fcae07;
   cursor: pointer;
   padding: 1%;
 }
 
 #signUpButton {
-  background-color: #787b66;
+  background-color: #5d4c0a;
   cursor: pointer;
   margin-top: 2vh;
 }

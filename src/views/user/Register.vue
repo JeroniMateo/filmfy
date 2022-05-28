@@ -22,9 +22,6 @@
     </head>
     <body>
       <div id="layout">
-        <header>
-          <a href="/"><img src="../../assets/img/cameraLogo.png" /></a>
-        </header>
         <section id="infoutil">
           <h4>Disfruta de este arte llamado Cine</h4>
           <div>
@@ -337,19 +334,24 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #242424;
 }
-
+#layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (max-width: 850px) {
   #layout {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 15% 80%;
-    gap: 5% 0%;
+
     grid-auto-flow: row;
     grid-template-areas:
       'header header'
       'formresp formresp';
-    width: 100%;
-    height: 110vh;
   }
 }
 
@@ -358,13 +360,11 @@ body {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 15% 80%;
-    gap: 5% 0%;
+
     grid-auto-flow: row;
     grid-template-areas:
       'header header'
       'infoutil form';
-    width: 100%;
-    height: 110vh;
   }
 }
 
@@ -473,25 +473,27 @@ input {
   margin: 2%;
 }
 
-#loginButton {
-  background-color: #787b66;
-  cursor: pointer;
-  padding: 1%;
-}
-
 #signUpButton {
-  background-color: #787b66;
+  background-color: #fcae07;
   cursor: pointer;
   margin-top: 2vh;
 }
 
-#loginButton:hover {
-  background-color: var(--rgba-primary-1);
+#loginButton {
+  background-color: #5d4c0a;
+  cursor: pointer;
+  padding: 1%;
 }
 
 #signUpButton:hover {
-  background-color: var(--rgba-secondary-1-1);
+  background-color: #00c740;
 }
+
+#loginButton:hover {
+  background-color: #2ecc71;
+}
+
+
 
 a:any-link {
   color: white;
