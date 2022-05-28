@@ -139,6 +139,23 @@ export default {
       }
       return ''
     }
+  },
+  mostrarPassword: function () {
+    this.passwordR = document.getElementById('password')
+    if (this.passwordR.type === 'text') {
+      this.passwordR.type = 'password'
+    } else {
+      this.passwordR.type = 'text'
+    }
+  },
+  ocultarPassword: function () {
+    this.password_confirmR = document.getElementById('confirmP')
+    this.passwordR = document.getElementById('password')
+    if (this.password_confirmR.type === 'text') {
+      this.password_confirmR.type = 'password'
+    } else if (this.passwordR.type === 'text') {
+      this.passwordR.type = 'password'
+    }
   }
 }
 </script>

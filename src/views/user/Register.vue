@@ -67,6 +67,7 @@
               class="registro"
               type="test"
               name="username"
+              required
             />
             <p id="error_username" class="error"></p>
             <input
@@ -75,6 +76,7 @@
               class="registro"
               type="text"
               name="name"
+              required
             />
             <p id="error_name" class="error"></p>
             <input
@@ -83,6 +85,7 @@
               class="registro"
               type="email"
               name="email"
+              required
             />
             <p id="error_email" class="error"></p>
             <input
@@ -91,7 +94,15 @@
               class="registro"
               type="password"
               name="password"
+              required
             />
+            <span
+              @mouseover="mostrarPassword"
+              @mouseleave="ocultarPassword"
+              class="ver"
+              id="verPassword"
+              ><i class="far fa-eye"></i
+            ></span>
             <p id="error_password" class="error"></p>
             <input
               id="password_confirmR"
@@ -99,11 +110,19 @@
               class="registro"
               type="password"
               name="password_confirm"
+              required
             />
+            <span
+              @mouseover="mostrarPassword"
+              @mouseleave="ocultarPassword"
+              class="ver"
+              id="verPassword"
+              ><i class="far fa-eye"></i
+            ></span>
             <p id="error_password_confirm" class="error"></p>
             <button
               type="button"
-              onclick="signUpAPI()"
+              @click="registerValidation"
               id="signUpButton"
               class="button"
               aria-label="Regístrate"
@@ -282,7 +301,7 @@ export default {
       })
         .then((response) => response.json())
         .then((token) => {
-          setCookie('tokenName', token.access_token, 365)
+          this.setCookie('tokenName', token.access_token, 365)
           this.log = true
           this.$router.push('/')
         })
@@ -295,6 +314,25 @@ export default {
       d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
       const expires = 'expires=' + d.toGMTString()
       document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
+    }
+  },
+
+  mostrarPassword: function () {
+    this.passwordR = document.getElementById('password')
+    if (this.passwordR.type === 'text') {
+      this.passwordR.type = 'password'
+    } else {
+      this.passwordR.type = 'text'
+    }
+  },
+
+  ocultarPassword: function () {
+    this.password_confirmR = document.getElementById('confirmP')
+    this.passwordR = document.getElementById('password')
+    if (this.password_confirmR.type === 'text') {
+      this.password_confirmR.type = 'password'
+    } else if (this.passwordR.type === 'text') {
+      this.passwordR.type = 'password'
     }
   }
 }
