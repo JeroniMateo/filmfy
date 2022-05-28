@@ -31,32 +31,43 @@
             <i class="fas fa-ticket-alt"></i>
             <div>
               <p>
-                En nuestra web te ofrecemos todas las facilidades para que
-                puedas disfrutar de tus peliculas favoritas.
+                No te pierdas ninguna de las películas que te gustan. ¡Las
+                podrás guardar!
               </p>
             </div>
           </div>
 
-          <h4>Entérate de los ultimos estrenos</h4>
+          <h4>Pasa momentos inolvidables junto a tus amigos</h4>
           <div>
             <i class="far fa-newspaper"></i>
             <div>
-              <p></p>
+              <p>
+                Comparte tus listas, opiniones y películas con quien quieras,
+                cuando sea.
+              </p>
+            </div>
+          </div>
+          <h4>Ten recuerdo de los grandes momentos del Cine</h4>
+          <div>
+            <i class="far fa-newspaper"></i>
+            <div>
+              <p>
+                Da likes, guarda listas y organiza tus películas favoritas como
+                prefieras.
+              </p>
             </div>
           </div>
 
-          <h4>Participa en nuestros sorteos</h4>
+          <h4>Se un hito de la gran pantalla</h4>
           <div>
             <i class="far fa-star"></i>
             <div>
               <p>
-                Desde camisetas personalizadas, hasta pasar un día con tu ídolo.
-                Formar parte de la comunidad de Music4Events te da la
-                posibilidad de participar en todos los sorteos.
+                Escribe comentarios, puntúa y debate con otros usuarios.
+                Conviértete en crítico.
               </p>
             </div>
           </div>
-          <h3>¿A qué estás esperando?</h3>
         </section>
         <div id="formSignUp">
           <h1>Registrarse</h1>
@@ -113,7 +124,7 @@
             <button id="loginButton" class="button" aria-label="Inicia sesión">
               <a href="/login">Inicia sesión</a>
             </button>
-              <p>¿Ya tienes una cuenta?</p>
+            <p>¿Ya tienes una cuenta?</p>
             <div id="signUpAlert"></div>
           </form>
         </div>
