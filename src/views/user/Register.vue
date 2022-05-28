@@ -75,33 +75,37 @@
               class="registro"
               type="test"
               name="username"
+              v-model="usernameR"
               required
             />
-            <p id="error_username" class="error"></p>
+            <p id="error_username" class="error"> {{ error_username }} </p>
             <input
               id="nameR"
               placeholder="Nombre*"
               class="registro"
               type="text"
               name="name"
+              v-model="nameR"
               required
             />
-            <p id="error_name" class="error"></p>
+            <p id="error_name" class="error"> {{ error_name }} </p>
             <input
               id="emailR"
               placeholder="Email*"
               class="registro"
               type="email"
               name="email"
+              v-model="emailR"
               required
             />
-            <p id="error_email" class="error"></p>
+            <p id="error_email" class="error">{{ error_email }}</p>
             <input
               id="passwordR"
               placeholder="Contraseña*"
               class="registro"
               type="password"
               name="password"
+              v-model="passwordR"
               required
             />
             <span
@@ -111,13 +115,14 @@
               id="verPassword"
               ><i class="far fa-eye"></i
             ></span>
-            <p id="error_password" class="error"></p>
+            <p id="error_password" class="error"> {{ error_password }} </p>
             <input
               id="password_confirmR"
               placeholder="Confirmar Contraseña*"
               class="registro"
               type="password"
               name="password_confirm"
+              v-model="password_confirmR"
               required
             />
             <span
@@ -127,7 +132,7 @@
               id="verPassword"
               ><i class="far fa-eye"></i
             ></span>
-            <p id="error_password_confirm" class="error"></p>
+            <p id="error_password_confirm" class="error">{{ error_password_confirm }}</p>
             <button
               type="button"
               @click="registerValidation"
@@ -153,7 +158,7 @@
 export default {
   name: 'Register',
 
-  data() {
+  data () {
     return {
       usernameR: '',
       error_username: '',
