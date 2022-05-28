@@ -1,26 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
-import Browser from '../views/Browser.vue'
 
 import DetailedMoviePage from "@/views/movies/DetailedMoviePage";
 import MainMoviesPage from "@/views/movies/MainMoviesPage";
 
-import BillBoard from '../views/BillBoard.vue'
-
-import Outstandings from '../views/Outstandings.vue'
 import Playlists from '../views/my-lists/Playlists.vue'
-
-import ListContent from '../views/my-lists/ListContent.vue'
 
 import UserProfile from '../views/user/UserProfile.vue'
 import Register from '../views/user/Register.vue'
 
 import Login from '../views/user/Login.vue'
-import Search from '../views/SearchResults.vue'
 import MovieCategories from "@/views/movies/MovieCategories";
 import MovieYear from "@/views/movies/MovieYear";
-import CommentMovie from "@/views/comments/CommentMovie";
 
 const routes = [
   {
@@ -28,11 +20,7 @@ const routes = [
     name: 'home',
     component: Home
   },
-  {
-    path: '/browser',
-    name: 'browser',
-    component: Browser
-  },
+
   {
     path: '/movies',
     name: 'movies',
@@ -53,27 +41,11 @@ const routes = [
     name: 'movie-year',
     component: MovieYear
   },
-  {
-    path: '/billboard',
-    name: 'billboard',
-    component: BillBoard
-  },
-
-  {
-    path: '/outstandings',
-    name: 'outstandings',
-    component: Outstandings
-  },
 
   {
     path: '/playlists',
     name: 'playlists',
     component: Playlists
-  },
-  {
-    path: '/listContent/:id',
-    name: 'ListContent',
-    component: ListContent
   },
 
   {
@@ -93,11 +65,6 @@ const routes = [
     component: Register
   },
 
-  {
-    path: '/search/:query',
-    name: 'search',
-    component: Search
-  }
 ]
 
 const router = createRouter({
