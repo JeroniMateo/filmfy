@@ -78,7 +78,7 @@
               v-model="usernameR"
               required
             />
-            <p id="error_username" class="error"> {{ error_username }} </p>
+            <p id="error_username" class="error">{{ error_username }}</p>
             <input
               id="nameR"
               placeholder="Nombre*"
@@ -88,7 +88,7 @@
               v-model="nameR"
               required
             />
-            <p id="error_name" class="error"> {{ error_name }} </p>
+            <p id="error_name" class="error">{{ error_name }}</p>
             <input
               id="emailR"
               placeholder="Email*"
@@ -115,7 +115,7 @@
               id="verPassword"
               ><i class="far fa-eye"></i
             ></span>
-            <p id="error_password" class="error"> {{ error_password }} </p>
+            <p id="error_password" class="error">{{ error_password }}</p>
             <input
               id="password_confirmR"
               placeholder="Confirmar Contraseña*"
@@ -132,7 +132,9 @@
               id="verPassword"
               ><i class="far fa-eye"></i
             ></span>
-            <p id="error_password_confirm" class="error">{{ error_password_confirm }}</p>
+            <p id="error_password_confirm" class="error">
+              {{ error_password_confirm }}
+            </p>
             <button
               type="button"
               @click="registerValidation"
@@ -158,7 +160,7 @@
 export default {
   name: 'Register',
 
-  data () {
+  data() {
     return {
       usernameR: '',
       error_username: '',
@@ -209,14 +211,15 @@ export default {
         /^[a-zA-Z0-9]+$/.test(this.username_userRR) === true
       ) {
         this.username = true
+        this.error_username = ''
       }
 
       // Name
       if (this.nameR === '') {
         this.error_name = 'El nombre es obligatorio'
       }
-      if (this.nameR.length < 6) {
-        this.error_name = 'El nombre debe tener al menos 6 caracteres'
+      if (this.nameR.length < 3) {
+        this.error_name = 'El nombre debe tener al menos 3 caracteres'
       }
       if (this.nameR.length > 15) {
         this.error_name = 'El nombre no puede tener más de 15 caracteres'
@@ -231,6 +234,7 @@ export default {
         /^[a-zA-Z]+$/.test(this.nameR) === true
       ) {
         this.name = true
+        this.error_name = ''
       }
 
       // Email
@@ -238,18 +242,17 @@ export default {
         this.error_email = 'El email es obligatorio'
       }
       if (
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.emailR) ===
+        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.emailR) ===
         false
       ) {
         this.error_email = 'El email no es válido'
-        this.email = false
       }
       if (
         this.emailR !== '' &&
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.emailR) ===
-          true
+        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.emailR) === true
       ) {
-        this.email = true
+        this.name = true
+        this.error_name = ''
       }
       // Password
       if (this.passwordR === '') {
@@ -269,7 +272,7 @@ export default {
           this.passwordR
         ) === true
       ) {
-        this.password = true
+        this.passwordR = true
       }
       // Password Confirm
       if (this.password_confirmR === '') {
@@ -486,10 +489,6 @@ header a img {
   border-color: var(--rgba-secondary-2-2);
 }
 
-.error {
-  color: var(--rgba-secondary-2-2);
-}
-
 input {
   outline-color: var(--rgba-primary-2);
   height: 3em;
@@ -536,8 +535,6 @@ input {
   background-color: #2ecc71;
 }
 
-
-
 a:any-link {
   color: white;
   text-decoration: none;
@@ -568,5 +565,9 @@ form {
 
 .ver:hover {
   background-color: var(--rgba-primary-4-transpar2);
+}
+p.error {
+  color: #e60a0a;
+  font-size: 1em;
 }
 </style>
