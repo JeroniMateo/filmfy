@@ -1,20 +1,27 @@
 <template>
 
   <div class="card-movie d-flex flex-column align-items-center col-12 col-md-6 col-lg-4 cust-col-lg-5 p-0 m-0">
-    <div v-bind:id="movie.id" class="d-flex flex-column align-items-center" style="visibility: hidden">
+    <div v-bind:id="random_id" class="d-flex flex-column align-items-center" style="visibility: hidden">
       <span class="frame-title">{{ movie.title }}</span>
       <span class="frame-title-description"></span>
     </div>
 
-    <div class="movie-card" @mouseout="hideTitle(this.movie.id)" @mouseover="displayTitle(this.movie.id)" v-bind:id="this.movie.id">
+    <div class="movie-card" @mouseout="hideTitle(this.random_id)" @mouseover="displayTitle(this.random_id)"
+         v-bind:id="this.movie.id">
       <a v-bind:href="this.href" class="frame">
         <img v-bind:src="this.url" alt="" class="image">
       </a>
     </div>
 
     <div class="d-flex align-items-center mt-2" v-bind:id="this.movie.title + '-' + this.movie.id">
-      <div class="d-flex align-items-center"><i style="color: orange " class="fa-solid fa-heart me-1"></i>
-        <span class="text-white m-0 extra-info">{{ this.movie.likes }}</span></div>
+      <div class="d-flex align-items-center">
+        <i style="color: orange " class="fa-solid fa-heart me-1"></i>
+        <span class="text-white m-0 extra-info">{{ this.movie.likes }}</span>
+      </div>
+      <div v-if="this.movie.times_added" class="d-flex align-items-center mx-2">
+        <i style="color: #0a53be" class="fa-solid fa-list mx-2"></i>
+        <span class="text-white m-0 extra-info">{{ this.movie.times_added }}</span>
+      </div>
     </div>
   </div>
 
@@ -29,6 +36,7 @@ export default {
     return {
       url: "",
       href: "",
+      random_id: this.movie.id + "-" + Math.round(Math.random() * 100),
     }
   },
 
@@ -42,7 +50,6 @@ export default {
     displayTitle(id) {
       let element = document.getElementById(id)
       element.style.visibility = "visible"
-
     },
 
     hideTitle(id) {

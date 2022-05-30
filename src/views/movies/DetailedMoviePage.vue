@@ -2,7 +2,7 @@
   <div class="general">
 
     <div class="container">
-      <h2 class="title">{{ this.movie.title }} ({{this.date.getFullYear()}})</h2>
+      <h2 class="title">{{ this.movie.title }} ({{ this.date.getFullYear() }})</h2>
     </div>
 
     <div class="container d-flex justify-content-between align-items-center flex-column">
@@ -10,11 +10,13 @@
       <div class="row big-width">
         <MovieDetailedCard :movieID="movieID" class="col-12 col-md-6 col-lg-3 my-3"/>
 
-        <div class="d-flex flex-column align-items-center justify-content-center contentData col-12 order-md-last col-lg-7 my-3">
+        <div
+            class="d-flex flex-column align-items-center justify-content-center contentData col-12 order-md-last col-lg-7 my-3">
           <Tabs :movie="this.movie"/>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-2 d-flex align-items-center justify-content-center justify-content-lg-start order-lg-last flex-column p-0 my-3">
+        <div
+            class="col-12 col-md-6 col-lg-2 d-flex align-items-center justify-content-center justify-content-lg-start order-lg-last flex-column p-0 my-3">
           <AsideDetailedMovie :movie="this.movie"/>
         </div>
       </div>
@@ -33,14 +35,26 @@
 
     <div class="container py-4">
       <div class="section-heading justify-content-center justify-content-lg-start">
+        <h2 class="sinopsis mb-0 ">Trailer</h2>
+      </div>
+      <div class="d-flex justify-content-center pt-3 ">
+        <iframe class="video" v-bind:src="this.movie.trailer" v-bind:title="this.movie.title"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="section-heading justify-content-center justify-content-lg-start">
         <h2 class="sinopsis mb-0">Comentarios</h2>
       </div>
     </div>
     <div v-if="this.contentComment" class=" container align-items-center flex-column align-items-lg-start">
-      <CommentsMovie  v-for="comment of this.comments" :key="comment" :comment="comment" />
+      <CommentsMovie v-for="comment of this.comments" :key="comment" :comment="comment"/>
     </div>
     <div v-else class="pt-5">
-      <p style="font-size: 25px; color: #00c740" class="text-center">Nadie ha comentado todavía esta película, sé tu el primero!</p>
+      <p style="font-size: 25px; color: #00c740" class="text-center m-0">Nadie ha comentado todavía esta película, sé tu el
+        primero!</p>
     </div>
 
   </div>
@@ -90,9 +104,9 @@ export default {
     },
 
     async checkData() {
-      if (this.comments.length === 0){
+      if (this.comments.length === 0) {
         this.contentComment = false
-      }else {
+      } else {
         this.contentComment = true
       }
     },
@@ -136,6 +150,18 @@ export default {
 .general {
   background-color: black;
   padding-top: 4rem;
+}
+
+.video {
+  width: 75vw;
+  height: 40vw;
+}
+
+@media(max-width: 650px){
+  .video {
+    width: 100%;
+    height: 50vw;
+  }
 }
 
 
