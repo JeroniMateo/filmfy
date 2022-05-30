@@ -16,27 +16,30 @@
   </aside>
 
   <aside v-else class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
-    <div class="m-auto p-3" style="cursor: pointer">
-      <a v-bind:href="baseUrl + '/login'" class="text-decoration-none">
+
+    <a v-bind:href="baseUrl + '/login'" class="text-decoration-none" style="cursor: pointer">
+      <div class="m-auto p-3">
         <span class="text-center">Unete a filmfy para poder añadir peliculas a tu listas y darle me gusta</span>
-      </a>
-    </div>
+      </div>
+    </a>
+
   </aside>
-  <FormModal id="modal" :movie="this.movie"/>
+  <FormModal id="modal" :movie="this.movie" :user="userID"/>
 
 </template>
 
 <script>
 import FormModal from "@/components/movies/detailed-movie-page/FormModal";
-import {getCookie, origin, getUser} from "@/main.js"
+import {getCookie, getUser, origin} from "@/main.js"
+
 export default {
-  props:["movie"],
+  props: ["movie"],
   name: "AsideDetailedMovie",
   components: {FormModal},
 
   data() {
     return {
-      log:false,
+      log: false,
       token: "",
       baseUrl: origin(),
       liked: false,
@@ -45,8 +48,8 @@ export default {
   },
 
   beforeMount() {
-    if (getCookie("auth")){
-      this.log= true
+    if (getCookie("auth")) {
+      this.log = true
       this.token = getCookie("auth")
       this.userID = getUser(this.token)
       this.getLike()
@@ -55,7 +58,7 @@ export default {
 
   methods: {
 
-    async getLike(){
+    async getLike() {
 
     },
 
@@ -79,9 +82,9 @@ export default {
 
     },
 
-    displayModalForm(){
+    displayModalForm() {
       let formModal = document.getElementById("modal")
-      formModal.style.display="block"
+      formModal.style.display = "block"
     }
   }
 }

@@ -54,7 +54,7 @@ export async function getUser(token) {
     })
 
     let user = await promise.json()
-    return user.user.id
+    return user.user.id;
 }
 
 createApp(App).use(store).use(router).mount('#app')

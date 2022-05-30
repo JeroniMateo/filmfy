@@ -38,19 +38,32 @@
 </template>
 
 <script>
+import {getCookie, getUser} from "@/main";
+
 export default {
   name: "FormModal",
-  props: ["movie"],
+  props: ["movie", "user"],
+
+  data() {
+    return {
+      token: getCookie("auth"),
+      commented: false,
+    }
+  },
+
+  beforeMount() {
+    this.checkCommented()
+  },
+
 
   methods: {
     async postComment() {
-      await fetch(`http://filmfy-api.ddns.net/api/comments-store/${this.movie.id}`, {
+      await fetch(`http://filmfy-api.ddns.net/api/v1/comments-store/${this.movie.id}`, {
         method: "POST",
-        mode: 'cors',
         headers: {
           'Accept': 'application/json',
           'Content-type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
+          'Authorization': 'Bearer ' + this.token,
         },
         body: JSON.stringify({
           "title": document.getElementById("title").value,
@@ -59,7 +72,24 @@ export default {
           "users_id": document.getElementById("users_id").value,
         })
       })
-      await location.reload()
+      location.reload()
+    },
+
+    async checkCommented() {
+      let promise = await fetch("http://127.0.0.1:8000/api/user-had-comment", {
+        method: "POST",
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          "movie": this.movie.id,
+          "user": this.user
+        })
+      })
+
+      let response = promise.json()
+
+      response ? this.commented = true : this.commented = false
     },
 
     hideForm() {
@@ -110,6 +140,7 @@ export default {
 .rating {
   background-color: rgb(204, 221, 238);
 }
+
 .button-send-form {
   background-color: #00c740;
   color: white;

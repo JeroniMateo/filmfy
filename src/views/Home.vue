@@ -146,6 +146,7 @@ export default {
       topMoviesId: [22, 33, 53, 183, 229, 44],
     }
   },
+
   methods: {
     getTopMovies() {
       this.topMoviesId.forEach( item => {
@@ -202,6 +203,7 @@ export default {
     },
   },
   beforeMount() {
+    this
     this.getTopMovies()
     this.getLatestComments()
     this.getLatestLists()
