@@ -1,5 +1,6 @@
 <template>
-  <div class="list-details">
+  <main>
+  <div class="list-details container bg-bgmain">
 
     <div class="initial">
       <div class="user">
@@ -40,10 +41,18 @@
     </div>
 
   </div>
-  <div>
-    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
-  </div>
+  <div class="movies-container container">
+      <ul class="d-flex flex-wrap justify-content-center">
+        <li><div class="m-2"><a><img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" alt=""/></a></div></li>
+        <li><div class="m-2"><a><img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" alt=""/></a></div></li>
+        <li><div class="m-2"><a><img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" alt=""/></a></div></li>
+        <li><div class="m-2"><a><img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" alt=""/></a></div></li>
+        <li><div class="m-2"><a><img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" alt=""/></a></div></li>
 
+        <li class="m-2 col-md-3 col-sm-3 col-xs-3">&nbsp;</li>
+      </ul>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -66,6 +75,27 @@ export default {
 
 * {
   background-color: black;
+}
+
+ul > li > a > img {
+  border-radius: 7px;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* xs */
+ul > li > div > a > img {
+  width: 200px;
+  height: auto;
+}
+
+/* lg */
+@media (min-width: 1200px) {
+  ul > li > div > a > img {
+    width: 250px;
+  }
 }
 
 </style>
