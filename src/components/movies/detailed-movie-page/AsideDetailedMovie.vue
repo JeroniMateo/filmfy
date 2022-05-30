@@ -1,8 +1,11 @@
 <template>
 
-  <aside class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
-    <div @click="sendLike" class="m-auto p-3" style="cursor: pointer">
+  <aside v-if="this.log" class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
+    <div v-if="liked" @click="sendLike" class="m-auto p-3" style="cursor: pointer">
       <i class="fa-solid fa-heart me-2 heart"></i>
+    </div>
+    <div v-else class="m-auto p-3" style="color: orange; cursor: pointer">
+      <i class="fa-solid fa-heart me-2"></i>
     </div>
     <div class="text-center p-3">
       <span>Añadir a lista</span>
@@ -11,29 +14,66 @@
       <a @click="displayModalForm" class="text-decoration-none"><span>Añadir un comentario</span></a>
     </div>
   </aside>
+
+  <aside v-else class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
+    <div class="m-auto p-3" style="cursor: pointer">
+      <a v-bind:href="baseUrl + '/login'" class="text-decoration-none">
+        <span class="text-center">Unete a filmfy para poder añadir peliculas a tu listas y darle me gusta</span>
+      </a>
+    </div>
+  </aside>
   <FormModal id="modal" :movie="this.movie"/>
 
 </template>
 
 <script>
 import FormModal from "@/components/movies/detailed-movie-page/FormModal";
+import {getCookie, origin, getUser} from "@/main.js"
 export default {
   props:["movie"],
   name: "AsideDetailedMovie",
   components: {FormModal},
+
+  data() {
+    return {
+      log:false,
+      token: "",
+      baseUrl: origin(),
+      liked: false,
+      userID: ""
+    }
+  },
+
+  beforeMount() {
+    if (getCookie("auth")){
+      this.log= true
+      this.token = getCookie("auth")
+      this.userID = getUser(this.token)
+      this.getLike()
+    }
+  },
+
   methods: {
+
+    async getLike(){
+
+    },
+
     async sendLike() {
-      await fetch("http://filmfy-api.ddns.net/api/movies-likes", {
+
+      await fetch("http://filmfy-api.ddns.net/api/v1/movies-likes", {
         method: "POST",
         headers: {
           'Content-type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Origin': '*',
+          'Authorization': 'Bearer ' + this.token,
         },
         body: JSON.stringify({
           "movies_id": this.$route.params.movie,
-          "users_id": "2"
+          "users_id": this.userID
         })
       })
+
 
       await location.reload()
 

@@ -1,164 +1,128 @@
 <template>
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="css/forms.css" />
-      <title>TimeInn - Login</title>
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="../../assets/img/cameraLogo.png"
-      />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
-        rel="stylesheet"
-      />
-    </head>
-    <body>
-      <div id="formlogin">
-        <h1>Iniciar sesión</h1>
-        <form id="InicioSesion" method="POST" action="">
-          <input
-            id="emailL"
-            aria-label="email"
-            placeholder="Email*"
-            type="text"
-            name="email"
-            aria-required="true"
-            v-model="email"
-            required
-          />
-          <p id="error_email" class="error"></p>
-          <input
-            id="passwordL"
-            aria-label="password"
-            placeholder="Contraseña*"
-            type="password"
-            name="password"
-            aria-required="true"
-            v-model="password"
-            required
-          />
-          <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
-          <p id="error_password" class="error"><b></b></p>
-          <span id="errorLogin" class="error"></span><br />
-          <button
-            @click="loginValidation"
-            id="loginButton"
-            class="button"
-            aria-label="Inicia sesión"
-          >
-            Inicia sesión
-          </button>
-          <button id="signUpButton" class="button" aria-label="Inicia sesión">
-            <a href="/register">Registrarse</a>
-          </button>
-        </form>
-        <p>¿Eres nuevo en Filmfy?</p>
-        <div id="suscrito"></div>
-      </div>
-    </body>
-  </html>
+  <div id="formlogin">
+    <h1>Iniciar sesión</h1>
+    <input
+        id="emailL"
+        aria-label="email"
+        placeholder="Email*"
+        type="text"
+        name="email"
+        aria-required="true"
+        v-model="email"
+        required
+    />
+    <p id="error_email" class="text-danger">{{ this.error_email }}</p>
+    <input
+        id="passwordL"
+        aria-label="password"
+        placeholder="Contraseña*"
+        type="password"
+        name="password"
+        aria-required="true"
+        v-model="password"
+        required
+    />
+    <span class="ver" id="verPassword"><i class="far fa-eye"></i></span>
+    <p id="error_password" class="error"><b></b></p>
+    <span id="errorLogin" class="error"></span><br/>
+    <button
+        @click="loginValidation"
+        id="loginButton"
+        class="button"
+        aria-label="Inicia sesión"
+    >
+      Inicia sesión
+    </button>
+    <button id="signUpButton" class="button" aria-label="Inicia sesión">
+      <a href="/register">Registrarse</a>
+    </button>
+    <p>{{ this.response }}</p>
+    <p>¿Eres nuevo en Filmfy?</p>
+    <div id="suscrito"></div>
+  </div>
 </template>
 
 <script>
+import {setCookie} from "@/main";
+
 export default {
   name: 'Login',
 
-  data () {
+  data() {
     return {
       email: '',
-      error_email: '',
-      email_validation: false,
       password: '',
+      error_email: '',
       error_password: '',
-      password_validation: false,
-
-      error_log: '',
-      log: true,
-
-      email_userR: '',
-      password_userR: ''
+      error_on_login: '',
+      response: ""
     }
   },
 
   methods: {
+
     loginValidation: function () {
-      if (
-        this.email_user === this.email_userR &&
-        this.password_user === this.password_userR
-      ) {
-        this.log = true
-        this.loginAPI()
+      if (this.email !== "") {
+        if (this.password !== "") {
+          console.log("s")
+          this.loginAPI()
+        } else {
+          this.error_password = "Introduce una contraseña valida"
+        }
       } else {
-        this.error_log = 'El email o la contraseña son incorrectos'
+        this.error_email = "Introduce un email valido"
       }
     },
 
-    loginAPI: function () {
-      const authString = `${this.email}:${this.password}`
+    async loginAPI() {
+      /*const authString = `${this.email}:${this.password}`
       const header = new Headers()
-      header.set('Authorization', 'Basic ' + btoa(authString))
-
-      fetch('http://filmfy-api.ddns.net/api/login/', {
-        method: 'GET',
-        headers: header
+      header.set('Authorization', 'Basic ' + btoa(authString))*/
+      let promise = await fetch('http://filmfy-api.ddns.net/api/v1/login', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify({
+          "email": this.email,
+          "password": this.password
+        })
       })
-        .then((response) => response.json())
-        .then((token) => {
-          this.setCookie('tokenName', token.access_token, 365)
-          this.log = true
-          this.$router.push('/')
-        })
-        .catch(function (error) {
-          console.log('Error en el fetch', error)
-        })
-    },
+      let response = await promise.json()
 
-    setCookie: function (cname, cvalue, exdays) {
-      const d = new Date()
-      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
-      const expires = 'expires=' + d.toGMTString()
-      document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
-    },
-
-    getCookie: function (cname) {
-      const name = cname + '='
-      const decodedCookie = decodeURIComponent(document.cookie)
-      const ca = decodedCookie.split(';')
-      for (let i = 0; i < ca.length; i++) {
-        let c = ca[i]
-        while (c.charAt(0) === ' ') {
-          c = c.substring(1)
-        }
-        if (c.indexOf(name) === 0) {
-          return c.substring(name.length, c.length)
+      if (response.hasOwnProperty('error')) {
+        if (response.error.hasOwnProperty('email')) {
+          this.response = "Introduzca un email válido"
+        } else if (response.error.hasOwnProperty('password')) {
+          this.response = "La contraseña debe ser de al menos 6 caracteres"
         }
       }
-      return ''
-    }
-  },
-  mostrarPassword: function () {
-    this.passwordR = document.getElementById('password')
-    if (this.passwordR.type === 'text') {
-      this.passwordR.type = 'password'
-    } else {
-      this.passwordR.type = 'text'
-    }
-  },
-  ocultarPassword: function () {
-    this.password_confirmR = document.getElementById('confirmP')
-    this.passwordR = document.getElementById('password')
-    if (this.password_confirmR.type === 'text') {
-      this.password_confirmR.type = 'password'
-    } else if (this.passwordR.type === 'text') {
-      this.passwordR.type = 'password'
+      if (response.hasOwnProperty('message')) {
+        this.response = "Login fallido, pruebe de nuevo"
+      } else {
+        await setCookie("auth", response.token, 30)
+        window.location = window.origin
+      }
+    },
+
+    mostrarPassword: function () {
+      this.passwordR = document.getElementById('password')
+      if (this.passwordR.type === 'text') {
+        this.passwordR.type = 'password'
+      } else {
+        this.passwordR.type = 'text'
+      }
+    },
+    ocultarPassword: function () {
+      this.password_confirmR = document.getElementById('confirmP')
+      this.passwordR = document.getElementById('password')
+      if (this.password_confirmR.type === 'text') {
+        this.password_confirmR.type = 'password'
+      } else if (this.passwordR.type === 'text') {
+        this.passwordR.type = 'password'
+      }
     }
   }
 }
@@ -174,17 +138,20 @@ h4 {
   color: #2ecc71;
   background-color: #242424;
 }
+
 p {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;
   color: #f7f7f5;
   background-color: #242424;
 }
+
 button {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   background-color: #00c740;
 }
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #242424;
@@ -369,7 +336,8 @@ form {
 .ver:hover {
   background-color: var(--rgba-primary-4-transpar2);
 }
-.error{
-  color:#c50909
+
+.error {
+  color: #c50909
 }
 </style>

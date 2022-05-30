@@ -50,8 +50,22 @@
         </li>
       </ul>
 
-      <div class="main main-menu col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2" @click="login">
+      <div v-if="this.log" class="">
+        <a>
+          <button
+              type="button"
+              class="btn btn-outline-primary me-2"
+          >
+            Mi perfil
+          </button>
+        </a>
+      </div>
+      <div v-else>
+        <button
+            type="button"
+            class="btn btn-outline-primary me-2"
+            @click="login"
+        >
           Accede
         </button>
       </div>
@@ -76,7 +90,18 @@
             <a href="/playlists">Listas</a>
             <a href="">Usuarios</a>
           </div>
-          <div class="login-content-hamburger">
+
+          <div v-if="this.log === false" class="login-content-hamburger">
+            <a>
+              <button
+                  type="button"
+                  class="btn btn-outline-primary me-2"
+              >
+                Mi perfil
+              </button>
+            </a>
+          </div>
+          <div v-else>
             <button
                 type="button"
                 class="btn btn-outline-primary me-2"
@@ -93,18 +118,26 @@
 </template>
 
 <script>
-// import Navbar from './Navbar.vue'
-// import User from './User.vue'
+
+import {getCookie} from "@/main";
+
 export default {
   name: 'Header',
   components: {
-    // Navbar,
-    // User
+
   },
   data: () => ({
     openHamburger: '',
-    closeHamburger: ''
+    closeHamburger: '',
+    log: false
   }),
+
+  beforeMount() {
+    if (getCookie("auth")){
+      this.log= true
+    }
+  },
+
   methods: {
     hamburgerIconHandling () {
       this.openHamburger = document.getElementById('hamburger')
