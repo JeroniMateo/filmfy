@@ -9,7 +9,7 @@
             <span class="heading"><strong>Comparte con tus amigos.</strong></span>
           </div>
           <div class="mt-3">
-            <button type="button" class="btn btn-primary">Únete</button>
+            <button type="button" class="btn btn-primary" @click="unete">Únete</button>
           </div>
         </div>
     </section>
@@ -147,6 +147,9 @@ export default {
     }
   },
   methods: {
+    unete(){
+      this.$router.push('/register')
+    },
     getTopMovies() {
       this.topMoviesId.forEach( item => {
           fetch("http://filmfy-api.ddns.net/api/movies/" + item,
