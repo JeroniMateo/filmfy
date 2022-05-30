@@ -16,10 +16,10 @@
 
     <div class="title-description">
       <div>
-        <h1>List title</h1>
+        <h1>{{ list.title }}</h1>
       </div>
       <div>
-        <h1>This is the description of the list. No limit of words here</h1>
+        <span>{{ list.description }}</span>
       </div>
     </div>
 
@@ -43,12 +43,16 @@
   </div>
   <div class="movies-container container">
       <ul class="d-flex flex-wrap justify-content-center">
-        <li><div class="m-2"><a><img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" alt=""/></a></div></li>
-        <li><div class="m-2"><a><img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" alt=""/></a></div></li>
-        <li><div class="m-2"><a><img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" alt=""/></a></div></li>
-        <li><div class="m-2"><a><img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" alt=""/></a></div></li>
-        <li><div class="m-2"><a><img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" alt=""/></a></div></li>
-
+        <div v-for="movie in list.movies">
+          <div :id="movie.id" class="d-flex flex-column align-items-center" style="visibility: hidden">
+            <span class="frame-title">{{ movie.title }}</span>
+          </div>
+          <li @mouseout="hideMovieTitle(movie.id)" @mouseover="displayMovieTitle(movie.id)">
+            <div class="m-2">
+              <a :href="baseURL + '/movies/' + movie.id"><img :src="'http://filmfy-api.ddns.net' + movie.image" :alt="movie.title"/></a>
+            </div>
+          </li>
+        </div>
         <li class="m-2 col-md-3 col-sm-3 col-xs-3">&nbsp;</li>
       </ul>
     </div>
@@ -57,6 +61,7 @@
 
 <script>
 import AsideDetailedList from "@/components/lists/AsideDetailedList";
+
 export default {
   name: "DetailedListPage",
   components: {
@@ -64,9 +69,33 @@ export default {
   },
   data() {
     return {
+      baseURL: window.origin,
+      listId: this.$route.params.list,
       list: [],
     }
-  }
+  },
+
+  methods: {
+    async fetchList() {
+      const promiseList = await fetch(`http://filmfy-api.ddns.net/api/lists/${this.listId}`)
+      this.list = await promiseList.json()
+      console.log(this.list)
+    },
+    displayMovieTitle(id) {
+      let element = document.getElementById(id)
+      element.style.visibility = "visible"
+
+    },
+
+    hideMovieTitle(id) {
+      let element = document.getElementById(id)
+      element.style.visibility = "hidden"
+    }
+  },
+
+  beforeMount() {
+    this.fetchList()
+  },
 }
 
 </script>
@@ -77,7 +106,7 @@ export default {
   background-color: black;
 }
 
-ul > li > a > img {
+ul > div > li > div > a > img {
   border-radius: 7px;
 }
 
@@ -85,15 +114,33 @@ ul, ol {
   list-style: none;
 }
 
+.frame-title {
+  border-radius: 5px;
+  background-color: #283038;
+  color: floralwhite;
+  padding: 10px;
+  font-size: 13px;
+  width: max-content;
+}
+
+.frame-title-description {
+  border-top: 10px solid #283038;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+}
+
+
+
+/* Media queries */
 /* xs */
-ul > li > div > a > img {
+ul > div > li > div > a > img {
   width: 200px;
   height: auto;
 }
 
 /* lg */
 @media (min-width: 1200px) {
-  ul > li > div > a > img {
+  ul > div > li > div > a > img {
     width: 250px;
   }
 }
