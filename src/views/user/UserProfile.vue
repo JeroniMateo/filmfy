@@ -17,7 +17,7 @@
         </div>
         <div class="profile-info">
           <div class="follow-button-wrapper">
-            <a href="" class="button -small">Edit Profile</a>
+            <a href="/editProfile" class="button -small">Edit Profile</a>
           </div>
           <div class="_context-observer"></div>
         </div>
