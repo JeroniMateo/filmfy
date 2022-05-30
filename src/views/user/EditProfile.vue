@@ -30,15 +30,15 @@
         </div>
         <div class="col-md-6">
           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="invalidCheck"
-              required
-            />
-            <label class="form-check-label" for="invalidCheck">
-              Agree to terms and conditions
+            <label id="Checkbox" class="form-check-label" for="invalidCheck">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="invalidCheck"
+                required
+              />
+              <small> Agree to terms and conditions </small>
             </label>
             <div class="invalid-feedback">
               You must agree before submitting.
@@ -59,36 +59,108 @@
 <script>
 export default {
   name: 'EditProfile',
+  data() {
+    return {
+      user: {
+        name: '',
+        username: '',
+        email: '',
+        password: ''
+      }
+    }
+  },
+  beforeMount() {
+    this.getUserProfile()
+  },
   methods: {
-    editProfile() {
-      fetch('')
+    getUserProfile (id) {
+      fetch(`http://filmfy-api.ddns.net/api/register/${id}`, {
+        method: 'POST',
+        body: JSON.stringify({
+          usernameR: this.username,
+          nameR: this.name,
+          emailR: this.email,
+          passwordR: this.password,
+          password_confirmR: this.password_confirm
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
+        }
+      })
+        .then((response) => response.json())
+        .then((token) => {
+          this.setCookie('tokenName', token.access_token, 365)
+          this.log = true
+          this.$router.push('/')
+        })
+        .catch(function (error) {
+          console.log('Error en el fetch', error)
+        })
+    },
+
+    editProfile (id) {
+      fetch(`http://filmfy-api.ddns.net/api/register/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          name: this.name,
+          password: this.password,
+          username: this.username,
+          email: this.email
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then((response) => response.json())
+        .then((token) => {
+          this.setCookie('tokenName', token.access_token, 365)
+          this.log = true
+          this.$router.push('/')
+        })
+        .catch(function (error) {
+          console.log('Error en el fetch', error)
+        })
     }
   }
 }
 </script>
 
-<style>
-div#formEdit {
-}
-label {
-  width: 70%;
-}
-input {
-  width: 60vh;
+<style scoped>
+#Perfil {
+  background-color: gray;
 }
 #tab-profile {
   background-color: black;
 }
 #EditProfile {
-  background-color: black;
-  with: 75%;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(25, 23, 23);
 }
 .container {
   background-color: black;
-  width: 75%;
+  padding: 5%;
+  width: 70%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.form-check {
-  margin-top: 2.5vw;
-  margin-left: 5vw;
+#Checkbox {
+  margin-top: 4vh;
+}
+h1 {
+  font-size: 7vh;
+  color: #00c740;
+}
+label {
+  color: white;
+  font-size: 3vh;
+}
+small {
+  color: white;
+  font-size: 2vh;
 }
 </style>

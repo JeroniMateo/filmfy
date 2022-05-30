@@ -160,7 +160,7 @@
 export default {
   name: 'Register',
 
-  data() {
+  data () {
     return {
       usernameR: '',
       error_username: '',
