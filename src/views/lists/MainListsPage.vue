@@ -22,7 +22,7 @@
           <hr>
         </div>
         <div class="mt-3 row">
-          <div class="list1 col-4">
+          <div class="list1 col-xxl-4 col-xl-6 col-12 d-flex flex-column align-items-center mt-2">
             <div class="image-overlap">
                 <span class="movie-img">
                   <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
@@ -53,7 +53,7 @@
             </div>
           </div>
 
-          <div class="list2 col-4">
+          <div class="list2 col-xxl-4 col-xl-6 col-12 d-flex flex-column align-items-center mt-2">
             <div class="image-overlap">
                 <span class="movie-img">
                   <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
@@ -84,102 +84,7 @@
             </div>
           </div>
 
-          <div class="list3 col-4">
-            <div class="image-overlap">
-                <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-            </div>
-            <div class="list-details d-flex flex-column">
-              <div class="list-title d-flex flex-row">
-                <span style="text-align: left">¡Lista de prueba, esto está muy bien y se respeta el ancho de las imágenes!</span>
-              </div>
-              <div class="list-data d-flex flex-row">
-                <img src="#" alt="" />
-                <span>Autor molón</span>
-                <span class="mx-2">❤ 4.333</span>
-                <span>27 films</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-3 row">
-          <div class="list1 col-4">
-            <div class="image-overlap">
-                <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-            </div>
-            <div class="list-details d-flex flex-column">
-              <div class="list-title d-flex flex-row justify-content-start">
-                <span style="text-align: left">¡Lista de prueba, esto está muy bien y se respeta el ancho de las imágenes!</span>
-              </div>
-              <div class="list-data d-flex flex-row">
-                <img src="#" alt="" />
-                <span>Autor molón</span>
-                <span class="mx-2">❤ 4.333</span>
-                <span>27 films</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="list2 col-4">
-            <div class="image-overlap">
-                <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-              <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
-                  </span>
-            </div>
-            <div class="list-details d-flex flex-column">
-              <div class="list-title d-flex flex-row">
-                <span style="text-align: left">¡Lista de prueba, esto está muy bien y se respeta el ancho de las imágenes!</span>
-              </div>
-              <div class="list-data d-flex flex-row">
-                <img src="" alt="" />
-                <span>Autor molón</span>
-                <span class="mx-2">❤ 4.333</span>
-                <span>27 films</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="list3 col-4">
+          <div class="list3 col-xxl-4 col-xl-6 col-12 d-flex flex-column align-items-center mt-2">
             <div class="image-overlap">
                 <span class="movie-img">
                   <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="95" height="160" alt=""/>
@@ -216,7 +121,7 @@
 
     <div class="container-md mt-5">
       <div class="row">
-        <section class="recently-liked col-8">
+        <section class="recently-liked col-xxl-8 col-12">
           <div class="mt-5">
             <span>Recomendadas recientemente</span>
             <hr>
@@ -225,20 +130,20 @@
             <div class="d-flex justify-content-center mt-4">
               <div class="list1 d-flex">
                 <div class="image-overlap">
-                <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
-                </span>
                   <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
+                    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
                   </span>
                   <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
+                    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
                   </span>
                   <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
+                    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
                   </span>
                   <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
+                    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
+                  </span>
+                  <span class="movie-img">
+                    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
                   </span>
                 </div>
                 <div class="list-details d-flex flex-column justify-content-center">
@@ -259,24 +164,27 @@
             </div>
 
             <div class="d-flex justify-content-center mt-4">
+
               <div class="list2 d-flex">
+
                 <div class="image-overlap">
-                <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
-                </span>
                   <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
+                    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
                   </span>
                   <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
+                    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
                   </span>
                   <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
+                    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
                   </span>
                   <span class="movie-img">
-                  <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
+                    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
+                  </span>
+                  <span class="movie-img">
+                    <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="65" height="133" alt=""/>
                   </span>
                 </div>
+
                 <div class="list-details d-flex flex-column justify-content-center">
                   <div class="list-title d-flex flex-row justify-content-start m-1">
                     <span style="text-align: left">¡Lista de prueba, esto está muy bien y se respeta el ancho de las imágenes!</span>
@@ -291,6 +199,7 @@
                     <span style="text-align: left">Una lista de películas que son las Star Wars porque están muy bien y esas cosas</span>
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -405,7 +314,7 @@
           </div>
         </section>
 
-        <section class="recommended col-4">
+        <section class="recommended col-xxl-4 col-12">
           <div class="mt-5">
             <span>Selección Filmfy</span>
             <hr>
@@ -418,70 +327,27 @@
                   <div class="list-link-stacked clear">
                     <ul class="poster-list -overlapped -p70"> <!-- v-for="movie_img in list.m_imgs.slice(0,5)" -->
 
-                      <li class="react-component poster film-poster listitem">
+                      <li class="poster film-poster listitem">
                         <div>
                           <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
                         </div>
                       </li>
-                      <li class="react-component poster film-poster listitem">
+                      <li class="poster film-poster listitem">
                         <div>
                           <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
                         </div>
                       </li>
-                      <li class="react-component poster film-poster listitem">
+                      <li class="poster film-poster listitem">
                         <div>
                           <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
                         </div>
                       </li>
-                      <li class="react-component poster film-poster listitem">
+                      <li class="poster film-poster listitem">
                         <div>
                           <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
                         </div>
                       </li>
-                      <li class="react-component poster film-poster listitem">
-                        <div>
-                          <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </a>
-                <div class="list-content d-flex flex-row mt-2">
-                  <p class="list-title d-flex align-content-center"><strong>Título de lista</strong></p>
-                  <div class="mx-4">
-                    <img class="user-img" src="#" width="30" height="30" alt=""/>
-                    <small class="comment-user-name mx-2">Toniet Garsía</small>
-                    <span class="mx-1">20 films</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="list -overlapped -stacked d-flex flex-column">
-                <a class="list-link">
-                  <div class="list-link-stacked clear">
-                    <ul class="poster-list -overlapped -p70"> <!-- v-for="movie_img in list.m_imgs.slice(0,5)" -->
-
-                      <li class="react-component poster film-poster listitem">
-                        <div>
-                          <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
-                        </div>
-                      </li>
-                      <li class="react-component poster film-poster listitem">
-                        <div>
-                          <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
-                        </div>
-                      </li>
-                      <li class="react-component poster film-poster listitem">
-                        <div>
-                          <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
-                        </div>
-                      </li>
-                      <li class="react-component poster film-poster listitem">
-                        <div>
-                          <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
-                        </div>
-                      </li>
-                      <li class="react-component poster film-poster listitem">
+                      <li class="poster film-poster listitem">
                         <div>
                           <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
                         </div>
@@ -504,27 +370,70 @@
                   <div class="list-link-stacked clear">
                     <ul class="poster-list -overlapped -p70"> <!-- v-for="movie_img in list.m_imgs.slice(0,5)" -->
 
-                      <li class="react-component poster film-poster listitem">
+                      <li class="poster film-poster listitem">
                         <div>
                           <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
                         </div>
                       </li>
-                      <li class="react-component poster film-poster listitem">
+                      <li class="poster film-poster listitem">
                         <div>
                           <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
                         </div>
                       </li>
-                      <li class="react-component poster film-poster listitem">
+                      <li class="poster film-poster listitem">
                         <div>
                           <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
                         </div>
                       </li>
-                      <li class="react-component poster film-poster listitem">
+                      <li class="poster film-poster listitem">
                         <div>
                           <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
                         </div>
                       </li>
-                      <li class="react-component poster film-poster listitem">
+                      <li class="poster film-poster listitem">
+                        <div>
+                          <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+                <div class="list-content d-flex flex-row mt-2">
+                  <p class="list-title d-flex align-content-center"><strong>Título de lista</strong></p>
+                  <div class="mx-4">
+                    <img class="user-img" src="#" width="30" height="30" alt=""/>
+                    <small class="comment-user-name mx-2">Toniet Garsía</small>
+                    <span class="mx-1">20 films</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="list -overlapped -stacked d-flex flex-column">
+                <a class="list-link">
+                  <div class="list-link-stacked clear">
+                    <ul class="poster-list -overlapped -p70"> <!-- v-for="movie_img in list.m_imgs.slice(0,5)" -->
+
+                      <li class="poster film-poster listitem">
+                        <div>
+                          <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
+                        </div>
+                      </li>
+                      <li class="poster film-poster listitem">
+                        <div>
+                          <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
+                        </div>
+                      </li>
+                      <li class="poster film-poster listitem">
+                        <div>
+                          <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
+                        </div>
+                      </li>
+                      <li class="poster film-poster listitem">
+                        <div>
+                          <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
+                        </div>
+                      </li>
+                      <li class="poster film-poster listitem">
                         <div>
                           <img src="https://static.carrefour.es/hd_510x_/imagenes/products/84351/07832/636/8435107832636/imagenGrande1.jpg" width="75" height="140" alt=""/>
                         </div>
@@ -648,5 +557,22 @@ ol, ul {
   border-radius: 4px;
   display: block;
 }
+
+@media only screen and (max-width: 992px) {
+
+  .recently-liked > div > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+
+  .month-popular > div > div > div > span > img {
+    width: 75px; height: 145px;
+  }
+}
+
 
 </style>
