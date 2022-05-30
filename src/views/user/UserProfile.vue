@@ -1,89 +1,45 @@
 <template>
-  <div id="UserProfile" class="container-fluid">
-    <h2>{{ username }} Perfil</h2>
-    <form action="" method="post">
-      <div class="row g-3">
-        <div class="col-auto" id="ImageProfile">
-          <button @click="cambiarPerfilIMG">
-            <img id="user_img" src="" alt="" />
-          </button>
+  <div id="UserProfile content" class="site-body">
+    <div class="wrap-content">
+      <section id="profile-header">
+        <div class="profile-sumary">
+          <div class="profile-avatar">
+            <span class="avatar -large">
+              <img src="https://s.ltrbxd.com/static/img/avatar220.1dea069d.png" alt="" width="150px" height="150px" />
+              <a id="avatar-zoom" class="cboxElement"></a>
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="col-auto">
-        <label for="input_username_user" class="col-sm-2 col-form-label">{{
-          username_user
-        }}</label>
-        <input
-          v-model="username"
-          type="text"
-          name="input_username_user"
-          id="input_username_user"
-        />
-      </div>
-      <div class="col-auto">
-        <label for="inputFullName" class="col-sm-2 col-form-label">{{
-          name_user
-        }}</label>
-        <input
-          v-model="name"
-          type="text"
-          class="form-control"
-          id="inputFullName"
-        />
-      </div>
-      <div class="col-auto">
-        <label for="inputEmail" class="col-sm-2 col-form-label">
-          {{ email }}
-        </label>
-        <input
-          v-model="email"
-          type="email"
-          class="form-control"
-          id="inputEmail"
-        />
-      </div>
-      <div class="col-auto">
-        <label for="inputPassword" class="col-sm-2 col-form-label">
-          {{ password }}
-        </label>
-        <input
-          v-model="password"
-          type="password"
-          class="form-control"
-          id="inputPassword"
-        />
-      </div>
-      <div class="col-auto">
-        <label for="inputPhone" class="col-sm-2 col-form-label">
-          {{ phone }}
-        </label>
-        <input
-          v-model="phone"
-          type="number"
-          class="form-control"
-          id="inputPhone"
-        />
-      </div>
-      <button type="submit" class="btn btn-primary mb-3" @click="SaveProfileUser" aria-label="Save">Save</button>
-    </form>
+        <div class="profile-name">
+          <div class="profile-name-wrap">
+            <h1 class="title-1">Mattius DT</h1>
+          </div>
+        </div>
+        <div class="profile-info">
+          <div class="follow-button-wrapper">
+            <a href="/editProfile" class="button -small">Edit Profile</a>
+          </div>
+          <div class="_context-observer"></div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'UserProfile',
-  data () {
+  data() {
     return {
-      username: '',
-      name: '',
-      email: '',
-      password: '',
-      phone: ''
+      username_user: '',
+      name_user: '',
+      email_user: '',
+      password_user: '',
+      phone_user: ''
     }
   },
 
   methods: {
-    cambiarPerfilIMG () {
+    cambiarPerfilIMG() {
       const x = document.createElement('INPUT')
       x.setAttribute('type', 'file')
       document.body.appendChild(x)
@@ -94,63 +50,140 @@ export default {
 </script>
 
 <style scoped>
-label.form-label {
-  font-size: 3vh;
-  color: #f7f7f5;
+.profile-info {
+  margin-top: 0.38461538rem;
 }
-.error {
-  color: #c50909;
-  font-size: 1.5rem;
-  font-weight: bold;
+.profile-name {
+  padding-left: 120px;
 }
-button {
-  background-color: #00c740;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+.profile-info {
+  margin-top: 0.57692308rem;
 }
-h2 {
-  font-size: 4rem;
-  color: #f7f7f5;
-}
-.formConfirm {
-  display: flex;
-  justify-content: space-around;
-  justify-items: stretch;
-  align-content: center;
-  align-items: center;
+.title-1 {
+  max-width: 450px;
+  color: #c8d4e0;
 }
 
-input {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #0f0505;
-  margin: 5%;
-}
-.row {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
+.profile-name-wrap {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
-  align-items: center;
+  margin-right: 1.92307692rem;
+  max-width: 100%;
+  margin-bottom: 0.23076923rem;
+  margin-bottom: 0;
+}
+
+.profile-name {
+  display: flex;
+  padding-left: 120px;
+}
+
+.profile-summary {
+  align-items: normal;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex-direction: column;
-  align-content: space-around;
+  margin-bottom: 25px;
+  min-height: 100px;
+  position: relative;
 }
-#layoutLogin {
-  margin: auto;
-  width: 85%;
-  background-color: #0f0505;
+
+#profile-header {
   display: flex;
-  flex-direction: column;
+  margin-bottom: 3.07692308rem;
+  overflow: hidden;
+}
+article,
+aside,
+footer,
+header,
+img,
+nav,
+section {
+  display: block;
+}
+
+.content-wrap {
+  margin: 0 auto;
+  width: 950px;
+}
+.site-body {
+  background: #14181c;
+  padding: 30px 0;
+}
+
+.follow-button-wrapper {
+  margin-top: 2rem;
+  margin-left: -40vh;
+}
+.button {
+  text-align: center;
+}
+
+.button.-small {
+  font-size: 0.84615385rem;
+  padding: 7px 10px 6px;
+}
+
+.button {
+  appearance: none;
+  background: #567;
+  border-radius: 3px;
+
+  color: #c8d4e0;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  letter-spacing: 0.075em;
+  line-height: 12px;
+  padding: 9px 12px 8px;
+  text-transform: uppercase;
+}
+a {
+  color: #678;
+  text-decoration: none;
+}
+a {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+.profile-avatar {
+  left: 1rem;
+  position: absolute;
+  top: -3vh;
+  height: 14vh;
+}
+
+.avatar {
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  float: none;
+  margin-top: 20vh;
+  margin-right: 0;
+}
+
+img {
+  border-radius: 50px;
+  font-family: 'object-fit: cover;';
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+#avatar-zoom {
+  z-index: 1;
+}
+a {
+    color: #678;
+    text-decoration: none;
 }
 </style>

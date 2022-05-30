@@ -8,6 +8,7 @@ import MainMoviesPage from "@/views/movies/MainMoviesPage";
 import Playlists from '../views/my-lists/Playlists.vue'
 
 import UserProfile from '../views/user/UserProfile.vue'
+import EditProfile from '../views/user/EditProfile.vue'
 import Register from '../views/user/Register.vue'
 
 import Login from '../views/user/Login.vue'
@@ -50,8 +51,13 @@ const routes = [
 
   {
     path: '/userProfile',
-    name: 'profile',
+    name: 'userProfile',
     component: UserProfile
+  }, 
+  {
+    path: '/editProfile',
+    name: 'editProfile',
+    component: EditProfile
   },
 
   {

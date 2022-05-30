@@ -1,149 +1,97 @@
-# Filmfy
+## Filmfy
 
-## Main Idea
-1. Filmfy (red social de películas diferenciado por poder hacer listas de contenido, tener noticias y un foro de debate de usuarios)
+## Idea principal
+1. Filmfy (red social de cine diferenciada por poder listar contenidos, tener noticias y un foro de discusión de usuarios)
 
-    - Technologies: 
+    - Tecnologías: 
       - Front: Vue.js & Bootstrap
-      - Back: Laravel  & Python
-      - Database: MySQL
+      - Back: Laravel & Python
+      - Base de datos: MySQL
 
-## 1.Pallete Color
+## 1.Paleta de colores
 
-- Primary: #00c740
-- Secondary: #f7f7f5
-- Background: #242424
-- Light: #e49e06
-- Info: #0f0505;
-- Success: #2ecc71
+- Primario: #00c740
+- Secundario: #f7f7f5
+- Fondo: #242424
+- Luz: #e49e06
+- Información #0f0505;
+- Éxito: #2ecc71
 - Error: #c50909
-- Warning:#897213
-- Cyan: #5bdee6;
-- Gray: #787b66;
+- Advertencia:#897213
+- Cian: #5bdee6
+- Gris: #787b66;
 
   
 
-## 2. Filmfy App
+## 2. Aplicación Filmfy
+
+Filmfy es una aplicación web que permite a los usuarios registrarse, crear listas de contenidos, ver las listas de contenidos de otros usuarios, ver las noticias de las redes sociales, comentar en los foros de discusión y ver los comentarios de los usuarios.
+
+## 2.1 ¿Qué aspecto tiene la aplicación?
+
+    Para navegar por Filmfy, esta aplicación se distribuye de la siguiente manera:
+
+### Inicio: Página principal de Filmfy.
+    - Una home, donde se recogen las películas más destacadas, que hace Filmfy, los últimos comentarios publicados por los usuarios y las listas más populares. Además de esto, en la home obtenemos una barra de navegación para ver Películas Usuarios y Listas. Por último la posibilidad de Registrarnos si no lo estamos o Logearnos si ya lo estamos.
+    - En todas las páginas de la aplicación veremos una cabecera formada por un menú de navegación y una barra de acción. Dependiendo de si estamos logueados o no nos dará la posibilidad de Ingresar o Nuestro Perfil.
+    - Al final de las páginas un pie de página con una barra de navegación con nuestras redes sociales.
+
+### Usuarios.
+    - En la sección de registro, nos aparecen los campos para registrarnos, en los que podemos registrarnos con un correo electrónico, una contraseña, un nombre de usuario y nuestro nombre. y en un lateral destacamos que el usuario puede disfrutar cuando se registra.
+    - Un apartado de login, en el que el usuario deberá poner su email y contraseña para poder entrar en su cuenta.
+    - Una vez logueado tendrá su propio perfil donde tendrá sus listas de contenidos, y tendrá la posibilidad de modificar sus datos.
+### Listas
+    - Una sección para crear listas de contenido, donde por defecto tendrás una de tus películas favoritas y si estás logueado podrás crear tus propias listas de contenido.
+
+### Películas
+    - En la sección de Películas, podemos ver las películas más populares y las más recientes con los likes que los usuarios les han dado.
+    - Si queremos buscar una película, podemos hacerlo por su nombre o por su género y año.
+      - Si entramos en una película, obtenemos la ficha técnica de la misma, la descripción de la película, la lista de actores, el director, el género, el año de estreno, la duración, la imagen de la película. Una breve sinopsis, el trailer de la película y los comentarios de los usuarios, a los que podemos darles Like.
+      - Además, podemos añadir un nuevo comentario, guardarlo en favoritos y añadirlo a una de nuestras listas.
 
 
-## 2.1. What is Filmfy?
+## ¿Qué es Filmfy?
 
-    Fimfy is a social network for movies.
-    Filmfy App is a web application that allows users to create lists of movies.
-    Our Users can create lists of movies, add movies to the list, edit the list, delete the list, and share the list with other users.
+    Fimfy es una red social de películas.
+    Filmfy App es una aplicación web que permite a los usuarios crear listas de películas.
+    Nuestros usuarios pueden crear listas de películas, añadir películas a la lista, editar la lista, eliminar la lista y compartir la lista con otros usuarios.
 
-    Users can also create posts and comments on the posts.
-    Users can also create comments and votes on the list.
-    - Our Lists can be created by users, and can be shared with other users.
-    - Our Lists can be voted by users.
-    - Our Movies can be rated by users.
-    - Our Users can create comments and votes on the movies.
+    Los usuarios también pueden crear entradas y comentarios en las entradas.
+    Los usuarios también pueden crear comentarios y votos en la lista.
+    - Nuestras Listas pueden ser creadas por los usuarios, y pueden ser compartidas con otros usuarios.
+    - Nuestras Listas pueden ser votadas por los usuarios.
+    - Nuestras Películas pueden ser calificadas por los usuarios.
+    - Nuestros Usuarios pueden crear comentarios y votos sobre las películas.
 
   
-    In our app we have a Billboard where see which movies have recent premieres.
-    - Usersthe movies that are in the cinema.
-    - Users can create lists of movies.
-    - Users can create comments and votes on the movies.
+    En nuestra aplicación tenemos una Cartelera donde ver qué películas se han estrenado recientemente.
+    - Los usuarios pueden ver las películas que están en el cine.
+    - Los usuarios pueden crear listas de películas.
+    - Los usuarios pueden crear comentarios y votos sobre las películas.
     
-    We have a list of movies that we have in our database.
-    A part of that users can see the top 10 movies.
-    Also they can see the upcoming movies.
-
-    
-### 2.2. The application is divided into:
-    - **Frontend**: The frontend is developed with 'Vue.js' & 'Bootstrap'.
-    - **Backend**: The backend is developed with 'Laravel'.
-    - **Database**: The database is developed with 'MySQL'.
-    - **Deployment**: The application is deployed on '...'
-    - **Hosting**: The application is hosted on ''.
-    - **GitHub**: The application is hosted on 'GitHub'.
-    - **Documentation**: The documentation is generated with 'Markdown'.
-    - **API**: The API is developed with '' & 'Laravel'.
-    - **Domain**: The domain is developed with ''.
-    - **SSL**: The SSL is developed with ''.
-    - **DNS**: The DNS is developed with ''.
-
-## 3 Features
-    - **Lists**: The application allows users to create lists of movies.
-    - **Comments**: The application allows users to create comments.
-    - **Create lists**: Users can create lists of movies.
-    - **Add movies**: Users can add movies to the list.
-    - **Edit lists**: Users can edit the list.
-    - **Delete lists**: Users can delete the list.
-    - **Share lists**: Users can share the list with other users.
-    - **Search movies**: Users can search movies.
-    - **See the list of comments**: Users can see the list of comments.
-    - **See the list of reports**: Users can see the list of reports.
-    - **See the list of posts**: Users can see the list of posts.
-    - **See the list of comments**: Users can see the list of comments.
-
-    ### 3.1. The list of movies
-    - **See the list of movies**: Users can see the list of movies.
-    
-    
-    ### 3.2. The list of comments
-    - **See the list of comments**: Users can see the list of comments.
-    - **Create comments**: Users can create comments.
-    - **Edit comments**: Users can edit comments.
-    - **Delete comments**: Users can delete comments.
-    - **Report comments**: Users can report comments.
-    - **Report a comment**: Users can report a comment.
-    - **Report a list**: Users can report a list.
-    - **Report a movie**: Users can report a movie.
-    - **Report a user**: Users can report a user.
-    - **Report a vote**: Users can report a vote.
-    - **Report a comment**: Users can report a comment.
-    - **Vote comments**: Users can vote comments.
-    - **Vote lists**: Users can vote lists.
-    - **Vote movies**: Users can vote movies.
-    - **Vote users**: Users can vote users.
-    - **Report lists**: Users can report lists.
-    - **Report movies**: Users can report movies.
-    - **Report users**: Users can report users.
-    - **Report posts**: Users can report posts.
-    - **Report comments**: Users can report comments.
-    - **Report votes**: Users can report votes.
-    - **Report reports**: Users can report reports.
+    Tenemos una lista de películas que tenemos en nuestra base de datos.
+    Una parte de que los usuarios pueden ver las 10 mejores películas.
+    También pueden ver las próximas películas.
 
     
+### La aplicación se divide en:
+    - Frontend**: El frontend está desarrollado con 'Vue.js' y 'Bootstrap'.
+    - Backend**: El backend está desarrollado con 'Laravel'.
+    - Base de datos**: La base de datos está desarrollada con 'MySQL'.
+    - Despliegue**: La aplicación está desplegada en '...'.
+    - Alojamiento**: La aplicación está alojada en ''.
+    - GitHub**: La aplicación está alojada en 'GitHub'.
+    - Documentación**: La documentación se genera con 'Markdown'.
+    - API**: La API está desarrollada con '' y 'Laravel'.
+    - Dominio**: El dominio está desarrollado con ''.
+    - SSL**: El SSL está desarrollado con ''.
+    - DNS**: El DNS se desarrolla con ''.
 
+## 3 Características
+    - Listas**: La aplicación permite a los usuarios crear listas de películas.
+    - Comentarios**: La aplicación permite a los usuarios crear comentarios.
+    - Crear listas**: Los usuarios pueden crear listas de películas.
+    - Añadir películas**: Los usuarios pueden añadir películas a la lista.
+    - Editar listas**: Los usuarios pueden editar las listas.
 
-    ### 3.3. The list of posts & comments
-    - **See the list of reports**: Users can see the list of reports
-    - **See the list of posts**: Users can see the list of posts.
-    - **See the list of comments**: Users can see the list of comments.
-    - **Create comments**: Users can create comments.
-    - **Create votes**: Users can create votes.
-    - **See the list of comments**: Users can see the list of comments.
-    - **See the list of votes**: Users can see the list of votes.
-    - **See the list of reports**: Users can see the list of reports.
-    - **See the list of posts**: Users can see the list of posts.
-    - **See the list of comments**: Users can see the list of comments.   
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
-
-
-
-## Libraries
-
-Star ratings
-https://openbase.com/js/vue-star-rating
-
+Traducción realizada con la versión gratuita del traductor www.DeepL.com/Translator
