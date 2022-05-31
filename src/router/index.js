@@ -2,14 +2,15 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
 
-import DetailedMoviePage from "@/views/movies/DetailedMoviePage";
-import MainMoviesPage from "@/views/movies/MainMoviesPage";
-import MovieCategories from "@/views/movies/MovieCategories";
-import MovieYear from "@/views/movies/MovieYear";
-import AddMovieToList from "@/components/lists/AddMovieToList";
+import DetailedMoviePage from '@/views/movies/DetailedMoviePage'
+import MainMoviesPage from '@/views/movies/MainMoviesPage'
+import MovieCategories from '@/views/movies/MovieCategories'
+import MovieYear from '@/views/movies/MovieYear'
+import AddMovieToList from '@/components/lists/AddMovieToList'
+import CreateList from '@/components/lists/CreateList'
 
-import MainListsPage from "@/views/lists/MainListsPage";
-import DetailedListPage from "@/views/lists/DetailedListPage";
+import MainListsPage from '@/views/lists/MainListsPage'
+import DetailedListPage from '@/views/lists/DetailedListPage'
 
 import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
@@ -48,6 +49,11 @@ const routes = [
     name: 'movie-add-to-list',
     component: AddMovieToList
   },
+  {
+    path: '/createList',
+    name: 'create-list',
+    component: CreateList
+  },
 
   {
     path: '/lists',
@@ -60,7 +66,6 @@ const routes = [
     name: 'list-content',
     component: DetailedListPage
   },
-
 
   {
     path: '/userProfile',
@@ -77,8 +82,7 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register
-  },
-
+  }
 ]
 
 const router = createRouter({
