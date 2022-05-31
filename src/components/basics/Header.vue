@@ -73,7 +73,7 @@
           </a>
           <div class="menu-links">
             <a href="/movies">Películas</a>
-            <a href="/playlists">Listas</a>
+            <a href="/lists">Listas</a>
             <a href="">Usuarios</a>
           </div>
           <div class="login-content-hamburger">
