@@ -17,7 +17,7 @@
     <section class="d-flex justify-content-center">
       <div id="top-movies" class="container-md row justify-content-between p-5">
         <div class="movie col-xl-2 col-md-4 col-sm-6 col-12 p-2" v-for="movie in topMovies">
-          <a :href="baseURL + '/movies/' + movie.id"><img :src="'http://filmfy-api.ddns.net' + movie.image" class="rounded" alt="top-movie"/></a>
+          <a :href="baseURL + '/movies/' + movie.id"><img :src="'http://filmfy-api.ddns.net' + movie.image" class="rounded" :alt="movie.title"/></a>
         </div>
       </div>
     </section>
@@ -42,7 +42,7 @@
 
                 <li class="comment d-flex flex-row" >
                   <div class="comment-movie-image">
-                    <img :src="'http://filmfy-api.ddns.net' + comment.m_image" width="115" height="170" alt=""/>
+                    <img :src="'http://filmfy-api.ddns.net' + comment.m_image" width="115" height="170" :alt="comment.m_title"/>
                   </div>
                   <div class="comment-details p-3">
                     <div class="comment-movie-details d-flex">
@@ -95,7 +95,7 @@
 
                       <li class="react-component poster film-poster listitem">
                         <div><img :src="'http://filmfy-api.ddns.net' + movie.image"
-                            width="80" height="130" alt="list movie img"
+                            width="80" height="130" :alt="movie.title"
                             class="image">
                         </div>
                       </li>
