@@ -94,4 +94,40 @@ Filmfy es una aplicación web que permite a los usuarios registrarse, crear list
     - Añadir películas**: Los usuarios pueden añadir películas a la lista.
     - Editar listas**: Los usuarios pueden editar las listas.
 
-Traducción realizada con la versión gratuita del traductor www.DeepL.com/Translator
+## Estructura de Carpetas
+
+    Nuestro proyecto está dividido en las siguientes carpetas:
+    - src: Contiene todos los archivos fuente de la aplicación.
+        Dentro de src tenemos 2 carpetas principales que son Components i Views
+        - Components: Contiene todos los componentes de la aplicación.
+          - Movies: Contiene todos los componentes relacionados con las películas.
+            - Detailed Movie: Contiene los componentes para la información detallada de cada una de las peliculas   
+                - AsideDitailedMovie.vue: Componente para la información detallada donde podemos darle me gusta a la pelicula, Añadirla a una lista y comentarla.
+                - CommentsMovie.vue: Componente para los comentarios de la pelicula.
+                - Filter.vue: Componente para buscar peliculas i/o filtrarlas por categoria o año
+                - FormModal.vue & Tabs.vue: Componentes con la ficha tecnica de una pelicula.
+            - Movie-card: Carpeta con los componentes para hacer las tarjetas de las películas.
+                - MovieCard.vue: Componente para las tarjetas de las películas.
+                - MovieCardDetailed.vue: Componente para las tarjetas de las películas 
+                - MovieCardDetailedAside.vue: Componente para las tarjetas de las películas con información detallada y una barra inferior.
+            - Movies-page: Carpeta compuesta con los componentes:
+            - Best-movies.vue: Carpeta con los componentes para las mejores películas.
+            - ItemsSerched.vue: Componente para las películas que se han buscado.
+            - RecentMovies.vue: Componente para las películas recientes.
+            - Sercher: Componente para buscar películas.
+    -Views: Carpeta con cada una de las vistas de la app
+        - Lists: Carpeta con las vistas de las listas.
+            <!-- - DetailedListPage.vue: Vista con los detalles de las listas -->
+            - MainListsPage.vue: Vista general de las Listas.
+        - Movies: Carpeta con las vistas de las películas.
+            - DetailedMoviePage.vue: Vista con los detalles de las películas.
+            - MainMoviesPage.vue:  vista general de las películas.
+            - MovieCategories.vue: Vista con las categorias de las películas.
+            - MovieYears.vue: Vista con los años de las películas.
+        -Users: Carpeta con las vistas de los usuarios.
+            - EditProfile.vue: vista para editar el perfil del usuario.
+            - Login.vue: vista para iniciar sesión.
+            - Register.vue: vista para registrarse.
+            - UserProfile.vue: vista para ver el perfil del usuario.
+        -Home:Visita la pagina principal de la aplicación.
+        -Movies: Vista con las películas.
