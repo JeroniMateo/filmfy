@@ -63,7 +63,7 @@ export default {
 
     async checkLiked(){
       let likes = document.getElementById("likes")
-      let promise = await fetch("http://127.0.0.1:8000/api/user-had-like-movie", {
+      let promise = await fetch("http://filmfy-api.ddns.net/api/user-had-like-movie", {
         method: "POST",
         headers: {
           'Content-type': 'application/json',
@@ -84,15 +84,16 @@ export default {
       }else {
         likes.innerHTML =`
         <div id="sendLike" class="m-auto p-3">
-            <i class="fa-solid fa-heart me-2 fs-3 heart" ></i>
+            <i class="fa-solid fa-heart me-2 heart" ></i>
         </div>`
         document.getElementById("sendLike").addEventListener("click", this.sendLike)
+
       }
     },
 
     async checkCommented() {
       let comment = document.getElementById("comments")
-      let promise = await fetch("http://127.0.0.1:8000/api/user-had-comment", {
+      let promise = await fetch("http://filmfy-api.ddns.net/api/user-had-comment", {
         method: "POST",
         headers: {
           'Content-type': 'application/json',
@@ -118,6 +119,7 @@ export default {
     },
 
     async sendLike() {
+      console.log("fs")
 
       await fetch("http://filmfy-api.ddns.net/api/v1/movies-likes", {
         method: "POST",
@@ -153,16 +155,6 @@ export default {
 }
 
 
-.addComment:hover {
-  cursor: pointer;
-  color: white;
-}
-
-.commented:hover {
-  cursor: auto;
-  color: white;
-}
-
 aside > div {
   width: -webkit-fill-available;
   border-bottom: 1px solid #445566;
@@ -172,13 +164,5 @@ aside > div:last-child {
   border-bottom: none;
 }
 
-.fa-heart {
-  color: orange;
-  font-size: 30px;
-}
-
-#sendLike > i:hover {
-  color: orange;
-}
 
 </style>

@@ -11316,4 +11316,86 @@ textarea.form-control-lg {
   }
 }
 
+.cust-col-xs-5,
+
+.cust-col-sm-5,
+
+.cust-col-md-5,
+
+.cust-col-lg-5 {
+
+  min-height: 1px;
+
+  position: relative;
+
+}
+
+.cust-col-xs-5 {
+
+  float: left;
+
+  width: 20%;
+
+}
+
+@media (min-width: 768px) {
+
+  .cust-col-sm-5 {
+
+    float: left;
+
+    width: 20%;
+
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  .cust-col-md-5 {
+
+    float: left;
+
+    width: 20%;
+
+  }
+
+}
+
+@media (min-width: 1400px) {
+
+  .cust-col-lg-5 {
+
+    float: left;
+
+    width: 20%;
+
+  }
+
+}
+
+.heart {
+  font-size: 30px;
+}
+
+.heart-liked {
+  font-size: 30px;
+  color: orange;
+}
+
+.heart:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.addComment:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.commented:hover {
+  cursor: default;
+  color: white;
+}
+
 /*# sourceMappingURL=styles.css.map */
