@@ -4,16 +4,16 @@ import Home from '../views/Home.vue'
 
 import DetailedMoviePage from "@/views/movies/DetailedMoviePage";
 import MainMoviesPage from "@/views/movies/MainMoviesPage";
-
-import Playlists from '../views/my-lists/Playlists.vue'
-
-import UserProfile from '../views/user/UserProfile.vue'
-import EditProfile from '../views/user/EditProfile.vue'
-import Register from '../views/user/Register.vue'
-
-import Login from '../views/user/Login.vue'
 import MovieCategories from "@/views/movies/MovieCategories";
 import MovieYear from "@/views/movies/MovieYear";
+
+import MainListsPage from "@/views/lists/MainListsPage";
+import DetailedListPage from "@/views/lists/DetailedListPage";
+
+import Register from '../views/user/Register.vue'
+import Login from '../views/user/Login.vue'
+
+import UserProfile from '../views/user/UserProfile.vue'
 
 const routes = [
   {
@@ -44,20 +44,22 @@ const routes = [
   },
 
   {
-    path: '/playlists',
-    name: 'playlists',
-    component: Playlists
+    path: '/lists',
+    name: 'lists',
+    component: MainListsPage
   },
 
   {
-    path: '/userProfile',
-    name: 'userProfile',
-    component: UserProfile
-  }, 
+    path: '/lists/:list',
+    name: 'list-content',
+    component: DetailedListPage
+  },
+
+
   {
-    path: '/editProfile',
-    name: 'editProfile',
-    component: EditProfile
+    path: '/userProfile',
+    name: 'profile',
+    component: UserProfile
   },
 
   {

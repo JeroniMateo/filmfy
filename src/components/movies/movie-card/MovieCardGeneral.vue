@@ -83,7 +83,6 @@ export default {
 }
 
 .frame-title {
-
   border-radius: 5px;
   background-color: #283038;
   color: floralwhite;

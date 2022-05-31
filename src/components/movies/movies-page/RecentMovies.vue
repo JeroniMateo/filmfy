@@ -4,7 +4,7 @@
       <span class="text-center">Películas más recientes</span>
     </div>
   </div>
-  <div class="container justify-content-between ">
+  <div class="container justify-content-between">
     <div class="row">
       <MovieCardGeneral v-for="movie of this.movies" :key="movie" :movie="movie"/>
     </div>

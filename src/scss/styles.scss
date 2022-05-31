@@ -1,15 +1,33 @@
 $primary: #00c740;
-$secondary: #f7f7f5;
-$body-bg: #242424;
-$orange: #e49e06;
-$info: #0f0505;
-$success:#2ecc71;
+$secondary: #FFFFFFFF;
+$tertiary: #abc;
+$quaternary: #5bdee6;
+
+$bgmain: #000001;
+
+$primary-icon: #0a53be;
+$secondary-icon: #e49e06;
+
+$success: #00ff71;
 $error:#c50909;
 $warning:#f1c40f;
-$cyan: #5bdee6;
-$gray: #787b66;
 
 
+$theme-colors: (
+        primary: $primary,
+        secondary: $secondary,
+        tertiary: $tertiary,
+        quaternary: $quaternary,
+
+        bgmain: $bgmain,
+
+        primary-icon: $primary-icon,
+        secondary-icon: $secondary-icon,
+
+        success: $success,
+        error: $error,
+        warning: $warning,
+);
 
 /**
 * Importing all bootstrap
