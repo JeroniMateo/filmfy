@@ -34,42 +34,21 @@ export default {
   methods: {
 
     filteredList() {
-      console.log("hi")
-      this.moviesSearch = this.moviesAll.filter(movie => {
-        return movie.title.toLowerCase().includes(this.search)
-      })
-      this.limitData(this.moviesSearch)
+      if (this.search) {
+        this.moviesSearch = this.moviesAll.filter(movie => {
+          return movie.title.toLowerCase().includes(this.search)
+        })
+        this.limitData(this.moviesSearch)
+      }else {
+        this.removeElements()
+      }
+
     },
 
     async movies() {
       let promise = await fetch("http://filmfy-api.ddns.net/api/movies")
       let moviesData = await promise.json()
       this.moviesAll = moviesData
-    },
-
-    async searchMovies() {
-      let inputSearch = document.getElementById("searcher")
-
-      if (inputSearch.value !== "") {
-        let promise = await fetch("http://filmfy-api.ddns.net/api/find-movies", {
-          method: 'POST',
-          mode: 'cors',
-          headers: {
-            'Accept': 'application/json',
-            'Content-type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-          },
-          body: JSON.stringify({
-            "parameter": inputSearch.value
-          })
-        })
-
-        let movieData = await promise.json()
-        this.limitData(movieData)
-      } else {
-        this.moviesSearch = []
-      }
-
     },
 
     expect() {

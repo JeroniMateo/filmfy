@@ -16,12 +16,20 @@
               <label for="" class="form-label">Cuerpo de la critica</label>
               <textarea id="body" name="body" class="form-control body"></textarea>
             </div>
-            <div class="mb-3">
-              <label for="" class="form-label">Puntuación</label>
-              <input id="rating" type="text" name="rating" class="form-control rating">
-            </div>
+            <star-rating
+                v-model:rating="rating"
+                v-bind:round-start-rating="false"
+                v-bind:max-rating="5"
+                v-bind:increment="0.5"
+                v-bind:read-only="false"
+                v-bind:show-rating="false"
+                active-color="#00c740"
+                inactive-color="#fff"
+                v-bind:star-size="20"
+            /> <!-- Lightgreen: #00c740 -->
+
             <!--            TODO: Change when login-->
-            <input type="hidden" id="users_id" name="users_id" value="2">
+            <input type="hidden" id="users_id" name="users_id" v-bind:value="user">
             <div class="d-flex justify-content-end">
               <input class="button-send-form" type="button" @click="postComment" value="Enviar">
             </div>
@@ -38,28 +46,41 @@
 </template>
 
 <script>
+import {getCookie, getUser} from "@/main";
+import StarRating from 'vue-star-rating'
+
 export default {
   name: "FormModal",
-  props: ["movie"],
+  props: ["movie", "user"],
+  components: {StarRating},
+
+  data() {
+    return {
+      token: getCookie("auth"),
+      commented: false,
+      rating: 0
+    }
+  },
+
 
   methods: {
+
     async postComment() {
-      await fetch(`http://filmfy-api.ddns.net/api/comments-store/${this.movie.id}`, {
+      await fetch(`http://filmfy-api.ddns.net/api/v1/comments-store/${this.movie.id}`, {
         method: "POST",
-        mode: 'cors',
         headers: {
           'Accept': 'application/json',
           'Content-type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
+          'Authorization': 'Bearer ' + this.token,
         },
         body: JSON.stringify({
           "title": document.getElementById("title").value,
           "body": document.getElementById("body").value,
-          "rating": document.getElementById("rating").value,
+          "rating": this.rating,
           "users_id": document.getElementById("users_id").value,
         })
       })
-      await location.reload()
+      location.reload()
     },
 
     hideForm() {
@@ -110,6 +131,7 @@ export default {
 .rating {
   background-color: rgb(204, 221, 238);
 }
+
 .button-send-form {
   background-color: #00c740;
   color: white;

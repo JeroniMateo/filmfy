@@ -4,21 +4,25 @@
       <div class="col-3 col-lg-2">
         <img v-bind:src="this.icon" width="55" height="55" style="border-radius: 100px" alt=""/>
       </div>
-      <div class=" col-9 col-lg-10">
+      <div class=" col-9 col-lg-10 py-3">
 
         <div class="d-flex flex-column align-items-start">
           <span class="comment-movie-title"><strong>{{ this.comment.title }}</strong></span>
           <small class="comment-user-name my-2">review escrita por {{ this.comment.user }}</small>
         </div>
 
-        <div class="comment-user-details d-flex flex-row mt-2">
-          <div class="comment-rating">
-            <i class="fa-solid fa-star stars"></i>
-            <i class="fa-solid fa-star stars"></i>
-            <i class="fa-solid fa-star stars"></i>
-            <i class="fa-solid fa-star-half-stroke stars"></i>
-            <i class="fa-regular fa-star stars"></i>
-          </div>
+        <div class="comment-user-details d-flex flex-row py-2">
+          <star-rating
+              v-bind:rating="comment.rating"
+              v-bind:round-start-rating="false"
+              v-bind:max-rating="5"
+              v-bind:increment="0.5"
+              v-bind:read-only="false"
+              v-bind:show-rating="false"
+              active-color="#00c740"
+              inactive-color="#fff"
+              v-bind:star-size="20"
+          /> <!-- Lightgreen: #00c740 -->
         </div>
         <div class="comment-content d-flex mt-2">
           <p class="comment-text text-start">{{ this.comment.body }}</p>
@@ -29,7 +33,7 @@
           <span class="comment-movie-year mx-2">{{ this.comment.created_at }}</span>
         </div>
       </div>
-      <div class="d-flex flex-column align-items-end col-12 py-3">
+      <div v-if="token" class="d-flex flex-column align-items-end col-12 pb-3">
         <span @click="sendLike(this.comment.id)" style="font-size: 13px">Me gusta</span>
       </div>
       <hr>
@@ -38,16 +42,20 @@
 
 <script>
 
-import {onMounted} from "vue";
+import StarRating from 'vue-star-rating'
+import {getCookie} from "@/main";
 
 export default {
   name: "CommentsMovie",
 
   props: ["comment"],
 
+  components: {StarRating},
+
   data() {
     return {
       icon: "",
+      token: getCookie("auth")
     }
   },
 
@@ -66,7 +74,7 @@ export default {
 
     async sendLike(id) {
       let promise = await fetch(`http://filmfy-api.ddns.net/api/comment-like/${id}`)
-      location.reload()
+      await location.reload()
     }
   }
 }
