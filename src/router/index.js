@@ -6,6 +6,7 @@ import DetailedMoviePage from "@/views/movies/DetailedMoviePage";
 import MainMoviesPage from "@/views/movies/MainMoviesPage";
 import MovieCategories from "@/views/movies/MovieCategories";
 import MovieYear from "@/views/movies/MovieYear";
+import AddMovieToList from "@/components/lists/AddMovieToList";
 
 import MainListsPage from "@/views/lists/MainListsPage";
 import DetailedListPage from "@/views/lists/DetailedListPage";
@@ -41,6 +42,11 @@ const routes = [
     path: '/movies/years/:year',
     name: 'movie-year',
     component: MovieYear
+  },
+  {
+    path: '/movieAddToList/:movieId',
+    name: 'movie-add-to-list',
+    component: AddMovieToList
   },
 
   {
