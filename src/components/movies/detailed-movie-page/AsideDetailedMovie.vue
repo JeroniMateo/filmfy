@@ -79,12 +79,12 @@ export default {
       if (response.status === 1) {
         likes.innerHTML =`
         <div class="m-auto p-3" >
-            <i class="fa-solid fa-heart me-2 fs-3 text-orange"></i>
+            <i class="fa-solid fa-heart me-2 fs-3" style="color: orange"></i>
         </div>`
       }else {
         likes.innerHTML =`
         <div id="sendLike" class="m-auto p-3">
-            <i class="fa-solid fa-heart me-2 heart"></i>
+            <i class="fa-solid fa-heart me-2 fs-3 heart" ></i>
         </div>`
         document.getElementById("sendLike").addEventListener("click", this.sendLike)
       }
@@ -172,22 +172,13 @@ aside > div:last-child {
   border-bottom: none;
 }
 
-.heart {
-  color: white;
-  font-size: 30px;
-}
-
-.heart:hover {
-  color: orange;
-}
-
-.heart-2 {
+.fa-heart {
   color: orange;
   font-size: 30px;
 }
 
-.heart-2:hover {
-  cursor: auto;
+#sendLike > i:hover {
+  color: orange;
 }
 
 </style>

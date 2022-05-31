@@ -1,17 +1,17 @@
 <Header/>
 <template>
   <main>
-      <section id="cover" class="container d-flex align-content-end justify-content-center">
-        <div class="d-flex flex-column justify-content-center align-content-end mt-auto mx-auto">
-          <div class="d-flex flex-column">
-            <span class="heading"><strong>Sigue las mejores películas.</strong></span>
-            <span class="heading"><strong>Crea listas de contenido.</strong></span>
-            <span class="heading"><strong>Comparte con tus amigos.</strong></span>
-          </div>
-          <div class="mt-3">
-            <button type="button" class="btn btn-primary">Únete</button>
-          </div>
+    <section id="cover" class="container d-flex align-content-end justify-content-center">
+      <div class="d-flex flex-column justify-content-center align-content-end mt-auto mx-auto">
+        <div class="d-flex flex-column">
+          <span class="heading"><strong>Sigue las mejores películas.</strong></span>
+          <span class="heading"><strong>Crea listas de contenido.</strong></span>
+          <span class="heading"><strong>Comparte con tus amigos.</strong></span>
         </div>
+        <div class="mt-3">
+          <button type="button" class="btn btn-primary">Únete</button>
+        </div>
+      </div>
     </section>
 
     <section class="d-flex justify-content-center">
@@ -55,15 +55,15 @@
                       <div class="comment-rating mx-2">
 
                         <star-rating
-                                     v-bind:round-start-rating="false"
-                                     v-bind:rating="(comment.rating / 2)"
-                                     v-bind:max-rating="5"
-                                     v-bind:increment="0.5"
-                                     v-bind:read-only="false"
-                                     v-bind:show-rating="false"
-                                     active-color="#00c740"
-                                     inactive-color="#fff"
-                                     v-bind:star-size="20"
+                            v-bind:round-start-rating="false"
+                            v-bind:rating="comment.rating"
+                            v-bind:max-rating="5"
+                            v-bind:increment="0.5"
+                            v-bind:read-only="false"
+                            v-bind:show-rating="false"
+                            active-color="#00c740"
+                            inactive-color="#fff"
+                            v-bind:star-size="20"
                         /> <!-- Lightgreen: #00c740 -->
                       </div>
                     </div>
@@ -86,36 +86,36 @@
             <span class="section-heading d-flex my-4">Listas populares</span>
             <hr>
             <div class="d-flex flex-column justify-content-center align-items-center">
-            <div v-for="list in latestLists">
+              <div v-for="list in latestLists">
 
-            <div class="list -overlapped -stacked d-flex flex-column">
-              <a class="list-link">
-                <div class="list-link-stacked clear">
-                  <ul class="poster-list -overlapped -p70" v-for="movie_img in list.m_imgs.slice(0,5)">
+                <div class="list -overlapped -stacked d-flex flex-column">
+                  <a class="list-link">
+                    <div class="list-link-stacked clear">
+                      <ul class="poster-list -overlapped -p70" v-for="movie_img in list.m_imgs.slice(0,5)">
 
-                    <li class="react-component poster film-poster listitem">
-                      <div><img :src="'http://filmfy-api.ddns.net' + movie_img"
-                          width="80" height="130" alt="list movie img"
-                          class="image">
-                      </div>
-                    </li>
+                        <li class="react-component poster film-poster listitem">
+                          <div><img :src="'http://filmfy-api.ddns.net' + movie_img"
+                                    width="80" height="130" alt="list movie img"
+                                    class="image">
+                          </div>
+                        </li>
 
-                  </ul>
-                </div>
-              </a>
-              <div class="list-content d-flex flex-row mt-2">
-                  <p class="list-title d-flex align-content-center"><strong>{{ list.l_title }}</strong></p>
-                  <div class="mx-4">
-                    <img class="user-img" src="#" width="30" height="30" alt=""/>
-                    <small class="comment-user-name mx-2">{{ list.u_name }}</small>
+                      </ul>
+                    </div>
+                  </a>
+                  <div class="list-content d-flex flex-row mt-2">
+                    <p class="list-title d-flex align-content-center"><strong>{{ list.l_title }}</strong></p>
+                    <div class="mx-4">
+                      <img class="user-img" src="#" width="30" height="30" alt=""/>
+                      <small class="comment-user-name mx-2">{{ list.u_name }}</small>
                       <span><i class="fa-solid fa-thumbs-up"></i></span>
                       <span class="mx-1">{{ list.l_likes }}</span>
+                    </div>
                   </div>
+                </div>
+
               </div>
             </div>
-
-            </div>
-          </div>
           </div>
         </div>
       </div>
@@ -150,21 +150,21 @@ export default {
   methods: {
     getTopMovies() {
       this.topMoviesId.forEach( item => {
-          fetch("http://filmfy-api.ddns.net/api/movies/" + item,
-              {
-                method: 'GET',
-                headers: {
-                  'Accept': 'application/json',
-                  'Content-type': 'application/json',
-                  'Access-Control-Allow-Origin': '*',
-                  "Access-Control-Allow-Credentials" : true
-                }
-              })
-            .then(response => response.json())
-            .then(data => {
-              this.topMovies.push(data)
-            })
-         }
+            fetch("http://filmfy-api.ddns.net/api/movies/" + item,
+                {
+                  method: 'GET',
+                  headers: {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    "Access-Control-Allow-Credentials" : true
+                  }
+                })
+                .then(response => response.json())
+                .then(data => {
+                  this.topMovies.push(data)
+                })
+          }
       )
     },
     getLatestComments() {
@@ -303,7 +303,7 @@ div > svg {
 }
 
 .comment-movie-title, .list-title {
- font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .comment-movie-year {

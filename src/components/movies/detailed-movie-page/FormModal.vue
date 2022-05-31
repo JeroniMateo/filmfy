@@ -80,7 +80,7 @@ export default {
           "users_id": document.getElementById("users_id").value,
         })
       })
-      //location.reload()
+      location.reload()
     },
 
     hideForm() {
