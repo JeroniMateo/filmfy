@@ -2,92 +2,103 @@
   <div class="searcher">
     <span class="section-heading">Buscar : </span>
     <div>
-      <div class="search-wrapper ">
-        <input class="field field-large ac_input" @mouseup="removeElements" @keyup="filteredList" type="text" v-model="search" />
+      <div class="search-wrapper">
+        <input
+          class="field field-large ac_input"
+          @mouseup="removeElements"
+          @keyup="filteredList"
+          type="text"
+          v-model="search"
+        />
       </div>
-      <div class="content-searched bg-light d-flex flex-column align-items-center justify-content-between wrapper">
-        <ItemSearched v-for="movies in this.moviesSearch" :key="movies" :movies="movies"/>
+      <div
+        class="content-searched bg-light d-flex flex-column align-items-center justify-content-between wrapper"
+      >
+        <ItemSearched
+          v-for="movies in this.moviesSearch"
+          :key="movies"
+          :movies="movies"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ItemSearched from "@/components/movies/movies-page/ItemSearched";
+import ItemSearched from '@/components/movies/movies-page/ItemSearched'
 
 export default {
-  name: "Searcher",
-  components: {ItemSearched},
-  data() {
+  name: 'Searcher',
+  components: { ItemSearched },
+  data () {
     return {
-      moviesAll : [],
-      search: "",
+      moviesAll: [],
+      search: '',
       moviesSearch: [],
       baseUrl: window.origin
     }
   },
 
-  beforeMount() {
+  beforeMount () {
     this.movies()
   },
 
   methods: {
-
-    filteredList() {
-      console.log("hi")
-      this.moviesSearch = this.moviesAll.filter(movie => {
+    filteredList () {
+      console.log('hi')
+      this.moviesSearch = this.moviesAll.filter((movie) => {
         return movie.title.toLowerCase().includes(this.search)
       })
       this.limitData(this.moviesSearch)
     },
 
-    async movies() {
-      let promise = await fetch("http://filmfy-api.ddns.net/api/movies")
-      let moviesData = await promise.json()
+    async movies () {
+      const promise = await fetch('http://filmfy-api.ddns.net/api/movies')
+      const moviesData = await promise.json()
       this.moviesAll = moviesData
     },
 
-    async searchMovies() {
-      let inputSearch = document.getElementById("searcher")
+    async searchMovies () {
+      const inputSearch = document.getElementById('searcher')
 
-      if (inputSearch.value !== "") {
-        let promise = await fetch("http://filmfy-api.ddns.net/api/find-movies", {
-          method: 'POST',
-          mode: 'cors',
-          headers: {
-            'Accept': 'application/json',
-            'Content-type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-          },
-          body: JSON.stringify({
-            "parameter": inputSearch.value
-          })
-        })
+      if (inputSearch.value !== '') {
+        const promise = await fetch(
+          'http://filmfy-api.ddns.net/api/find-movies',
+          {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+              Accept: 'application/json',
+              'Content-type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
+            },
+            body: JSON.stringify({
+              parameter: inputSearch.value
+            })
+          }
+        )
 
-        let movieData = await promise.json()
+        const movieData = await promise.json()
         this.limitData(movieData)
       } else {
         this.moviesSearch = []
       }
-
     },
 
-    expect() {
-      let inputSearch = document.getElementById("searcher")
+    expect () {
+      const inputSearch = document.getElementById('searcher')
 
-      if (inputSearch.value === "") {
+      if (inputSearch.value === '') {
         this.moviesSearch = []
       }
     },
 
-    limitData(movieData) {
-      const sliced = Object.fromEntries(
-          Object.entries(movieData).slice(0, 3)
-      )
+    limitData (movieData) {
+      const sliced = Object.fromEntries(Object.entries(movieData).slice(0, 3))
       this.moviesSearch = sliced
     },
 
-    removeElements() {
+    removeElements () {
       this.moviesSearch = []
     }
   }
@@ -95,7 +106,6 @@ export default {
 </script>
 
 <style scoped>
-
 .searcher {
   display: flex;
   align-items: center;
@@ -133,10 +143,10 @@ span {
 
 .div-movie-searcher {
   z-index: 1;
-  background-color: rgb(68,85,102);
+  background-color: rgb(68, 85, 102);
 }
 
-.searcher{
+.searcher {
   display: flex;
   align-items: center;
 }

@@ -5,7 +5,12 @@
         <div class="profile-sumary">
           <div class="profile-avatar">
             <span class="avatar -large">
-              <img src="https://s.ltrbxd.com/static/img/avatar220.1dea069d.png" alt="" width="150px" height="150px" />
+              <img
+                src="https://s.ltrbxd.com/static/img/avatar220.1dea069d.png"
+                alt=""
+                width="150px"
+                height="150px"
+              />
               <a id="avatar-zoom" class="cboxElement"></a>
             </span>
           </div>
@@ -28,7 +33,7 @@
 <script>
 export default {
   name: 'UserProfile',
-  data() {
+  data () {
     return {
       username_user: '',
       name_user: '',
@@ -39,7 +44,7 @@ export default {
   },
 
   methods: {
-    cambiarPerfilIMG() {
+    cambiarPerfilIMG () {
       const x = document.createElement('INPUT')
       x.setAttribute('type', 'file')
       document.body.appendChild(x)
@@ -183,7 +188,7 @@ img {
   z-index: 1;
 }
 a {
-    color: #678;
-    text-decoration: none;
+  color: #678;
+  text-decoration: none;
 }
 </style>

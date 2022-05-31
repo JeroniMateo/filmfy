@@ -369,7 +369,7 @@ form {
 .ver:hover {
   background-color: var(--rgba-primary-4-transpar2);
 }
-.error{
-  color:#c50909
+.error {
+  color: #c50909;
 }
 </style>

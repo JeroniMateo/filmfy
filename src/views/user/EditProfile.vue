@@ -59,7 +59,7 @@
 <script>
 export default {
   name: 'EditProfile',
-  data() {
+  data () {
     return {
       user: {
         name: '',
@@ -69,7 +69,7 @@ export default {
       }
     }
   },
-  beforeMount() {
+  beforeMount () {
     this.getUserProfile()
   },
   methods: {

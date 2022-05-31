@@ -1,7 +1,7 @@
 <template>
-  <Header/>
-  <router-view/>
-  <Footer/>
+  <Header />
+  <router-view />
+  <Footer />
 </template>
 <script>
 import Header from '../src/components/basics/Header.vue'
@@ -16,7 +16,6 @@ export default {
 }
 </script>
 <style>
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

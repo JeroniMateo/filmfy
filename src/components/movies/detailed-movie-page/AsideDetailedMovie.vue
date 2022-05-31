@@ -1,5 +1,4 @@
 <template>
-
   <aside class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
     <div @click="sendLike" class="m-auto p-3" style="cursor: pointer">
       <i class="fa-solid fa-heart me-2 heart"></i>
@@ -8,49 +7,48 @@
       <span>Añadir a lista</span>
     </div>
     <div class="text-center p-3">
-      <a @click="displayModalForm" class="text-decoration-none"><span>Añadir un comentario</span></a>
+      <a @click="displayModalForm" class="text-decoration-none"
+        ><span>Añadir un comentario</span></a
+      >
     </div>
   </aside>
-  <FormModal id="modal" :movie="this.movie"/>
-
+  <FormModal id="modal" :movie="this.movie" />
 </template>
 
 <script>
-import FormModal from "@/components/movies/detailed-movie-page/FormModal";
+import FormModal from '@/components/movies/detailed-movie-page/FormModal'
 export default {
-  props:["movie"],
-  name: "AsideDetailedMovie",
-  components: {FormModal},
+  props: ['movie'],
+  name: 'AsideDetailedMovie',
+  components: { FormModal },
   methods: {
-    async sendLike() {
-      await fetch("http://filmfy-api.ddns.net/api/movies-likes", {
-        method: "POST",
+    async sendLike () {
+      await fetch('http://filmfy-api.ddns.net/api/movies-likes', {
+        method: 'POST',
         headers: {
           'Content-type': 'application/json',
           'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
-          "movies_id": this.$route.params.movie,
-          "users_id": "2"
+          movies_id: this.$route.params.movie,
+          users_id: '2'
         })
       })
 
       await location.reload()
-
     },
 
-    displayModalForm(){
-      let formModal = document.getElementById("modal")
-      formModal.style.display="block"
+    displayModalForm () {
+      const formModal = document.getElementById('modal')
+      formModal.style.display = 'block'
     }
   }
 }
 </script>
 
 <style scoped>
-
 .aside-card {
-  background-color: #2C3440;
+  background-color: #2c3440;
   width: fit-content;
 }
 
@@ -80,5 +78,4 @@ aside > div:last-child {
 .heart:hover {
   color: orange;
 }
-
 </style>

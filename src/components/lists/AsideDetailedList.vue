@@ -1,5 +1,4 @@
 <template>
-
   <aside class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
     <div @click="sendLike" class="m-auto p-3" style="cursor: pointer">
       <i class="fa-solid fa-heart me-2 heart"></i>
@@ -12,48 +11,41 @@
       <a><i class="fa-solid fa-envelope p-1"></i></a>
     </div>
   </aside>
-
 </template>
 
 <script>
-
-
 export default {
-  props:["list"],
-  name: "AsideDetailedMovie",
-  components: {
-
-  },
+  props: ['list'],
+  name: 'AsideDetailedMovie',
+  components: {},
   methods: {
-    async sendLike() {
-      await fetch("http://filmfy-api.ddns.net/api/lists-likes", {
-        method: "POST",
+    async sendLike () {
+      await fetch('http://filmfy-api.ddns.net/api/lists-likes', {
+        method: 'POST',
         headers: {
           'Content-type': 'application/json',
           'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
-          "movies_id": this.$route.params.movie,
-          "users_id": "2"
+          movies_id: this.$route.params.movie,
+          users_id: '2'
         })
       })
 
       await location.reload()
-
     },
 
-    displayModalForm(){
-      let formModal = document.getElementById("modal")
-      formModal.style.display="block"
+    displayModalForm () {
+      const formModal = document.getElementById('modal')
+      formModal.style.display = 'block'
     }
   }
 }
 </script>
 
 <style scoped>
-
 .aside-card {
-  background-color: #2C3440;
+  background-color: #2c3440;
   width: fit-content;
 }
 
@@ -87,5 +79,4 @@ aside > div:last-child {
 .share-buttons > a {
   font-size: 2rem;
 }
-
 </style>
