@@ -18,28 +18,10 @@
           <textarea
             name="description_list"
             id="description_list"
-            cols="30"
-            rows="10"
+            cols="40"
+            rows="20"
           ></textarea>
         </div>
-        <div class="col-md-6">
-          <div class="form-check">
-            <label id="Checkbox" class="form-check-label" for="invalidCheck">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="invalidCheck"
-                required
-              />
-              <small> Agree to terms and conditions </small>
-            </label>
-            <div class="invalid-feedback">
-              You must agree before submitting.
-            </div>
-          </div>
-        </div>
-
         <div class="col-12">
           <button class="btn btn-primary" type="submit" @click="crearLista">
             Crear Lista
@@ -74,6 +56,12 @@ export default {
         }
       })
         .then((response) => response.json())
+        .then((response) => {
+          console.log(response)
+        })
+        .then(() => {
+          this.$router.push('/lists')
+        })
         .catch(function (error) {
           console.log('Error en el fetch', error)
         })
@@ -83,13 +71,10 @@ export default {
 </script>
 
 <style scoped>
-#Perfil {
-  background-color: gray;
-}
 #tab-profile {
   background-color: black;
 }
-#EditProfile {
+#CreateList {
   width: 100%;
   height: 100%;
   background-color: rgb(25, 23, 23);
@@ -104,9 +89,6 @@ export default {
   justify-items: center;
   justify-content: center;
   flex-direction: column;
-}
-#Checkbox {
-  margin-top: 4vh;
 }
 h1 {
   font-size: 7vh;

@@ -22,7 +22,7 @@
           <button
             class="btn btn-primary"
             type="submit"
-            @click="añadirNuevaPelicula"
+            @click="añadirNuevaPelicula;"
           >
             Añadir Pelicula
           </button>
@@ -35,7 +35,7 @@
 <script>
 export default {
   name: 'EditProfile',
-  data() {
+  data () {
     return {
       list_name: '',
       username: '',
@@ -56,6 +56,12 @@ export default {
         }
       })
         .then((response) => response.json())
+        .then((response) => {
+          console.log(response)
+        })
+        .then(() => {
+          this.$router.push('/lists')
+        })
         .catch(function (error) {
           console.log('Error en el fetch', error)
         })
@@ -71,7 +77,7 @@ export default {
 #tab-profile {
   background-color: black;
 }
-#EditProfile {
+#AddMovieToList {
   width: 100%;
   height: 100%;
   background-color: rgb(25, 23, 23);
@@ -87,9 +93,6 @@ export default {
   justify-content: center;
   flex-direction: column;
 }
-#Checkbox {
-  margin-top: 4vh;
-}
 h1 {
   font-size: 7vh;
   color: #00c740;
@@ -97,9 +100,5 @@ h1 {
 label {
   color: white;
   font-size: 3vh;
-}
-small {
-  color: white;
-  font-size: 2vh;
 }
 </style>
