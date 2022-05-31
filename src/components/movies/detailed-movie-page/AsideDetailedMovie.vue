@@ -10,8 +10,11 @@
     <div class="text-center p-3">
       <span>Añadir a lista</span>
     </div>
-    <div class="text-center p-3">
+    <div v-if="!commented" class="text-center p-3">
       <a @click="displayModalForm" class="text-decoration-none"><span>Añadir un comentario</span></a>
+    </div>
+    <div v-else class="text-center p-3">
+      <a class="text-decoration-none"><span>Película comentada</span></a>
     </div>
   </aside>
 
@@ -43,20 +46,42 @@ export default {
       token: "",
       baseUrl: origin(),
       liked: false,
-      userID: ""
+      userID: "",
+      commented: false
     }
   },
 
-  beforeMount() {
+  async beforeMount() {
     if (getCookie("auth")) {
       this.log = true
       this.token = getCookie("auth")
-      this.userID = getUser(this.token)
-      this.getLike()
-    }
+      this.userID = await getUser(this.token)
+      await this.checkCommented()
+     }
   },
 
   methods: {
+
+    async checkCommented() {
+      let promise = await fetch("http://127.0.0.1:8000/api/user-had-comment", {
+        method: "POST",
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          "movie": this.movie.id,
+          "user": this.userID
+        })
+      })
+
+      let response = await promise.json()
+
+      if (response.status === 1) {
+        this.commented = true
+      }else {
+        this.commented = false
+      }
+    },
 
     async getLike() {
 

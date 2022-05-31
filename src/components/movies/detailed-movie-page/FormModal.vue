@@ -42,7 +42,7 @@ import {getCookie, getUser} from "@/main";
 
 export default {
   name: "FormModal",
-  props: ["movie", "user"],
+  props: ["movie"],
 
   data() {
     return {
@@ -51,12 +51,9 @@ export default {
     }
   },
 
-  beforeMount() {
-    this.checkCommented()
-  },
-
 
   methods: {
+
     async postComment() {
       await fetch(`http://filmfy-api.ddns.net/api/v1/comments-store/${this.movie.id}`, {
         method: "POST",
@@ -73,23 +70,6 @@ export default {
         })
       })
       location.reload()
-    },
-
-    async checkCommented() {
-      let promise = await fetch("http://127.0.0.1:8000/api/user-had-comment", {
-        method: "POST",
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          "movie": this.movie.id,
-          "user": this.user
-        })
-      })
-
-      let response = promise.json()
-
-      response ? this.commented = true : this.commented = false
     },
 
     hideForm() {
