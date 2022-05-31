@@ -203,7 +203,6 @@ export default {
     },
   },
   beforeMount() {
-    this
     this.getTopMovies()
     this.getLatestComments()
     this.getLatestLists()

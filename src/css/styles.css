@@ -230,14 +230,6 @@ sup {
   top: -0.5em;
 }
 
-a {
-  color: #00c740;
-  text-decoration: underline;
-}
-a:hover {
-  color: #009f33;
-}
-
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;

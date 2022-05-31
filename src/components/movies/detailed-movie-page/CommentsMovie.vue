@@ -12,13 +12,17 @@
         </div>
 
         <div class="comment-user-details d-flex flex-row py-2">
-          <div class="comment-rating">
-            <i class="fa-solid fa-star stars"></i>
-            <i class="fa-solid fa-star stars"></i>
-            <i class="fa-solid fa-star stars"></i>
-            <i class="fa-solid fa-star-half-stroke stars"></i>
-            <i class="fa-regular fa-star stars"></i>
-          </div>
+          <star-rating
+              v-bind:rating="comment.rating"
+              v-bind:round-start-rating="false"
+              v-bind:max-rating="5"
+              v-bind:increment="0.5"
+              v-bind:read-only="false"
+              v-bind:show-rating="false"
+              active-color="#00c740"
+              inactive-color="#fff"
+              v-bind:star-size="20"
+          /> <!-- Lightgreen: #00c740 -->
         </div>
         <div class="comment-content d-flex mt-2">
           <p class="comment-text text-start">{{ this.comment.body }}</p>
@@ -38,13 +42,15 @@
 
 <script>
 
-import {onMounted} from "vue";
+import StarRating from 'vue-star-rating'
 import {getCookie} from "@/main";
 
 export default {
   name: "CommentsMovie",
 
   props: ["comment"],
+
+  components: {StarRating},
 
   data() {
     return {
@@ -68,7 +74,7 @@ export default {
 
     async sendLike(id) {
       let promise = await fetch(`http://filmfy-api.ddns.net/api/comment-like/${id}`)
-
+      await location.reload()
     }
   }
 }

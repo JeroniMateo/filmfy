@@ -1,28 +1,25 @@
 <template>
 
   <aside v-if="this.log" class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
-    <div v-if="liked" @click="sendLike" class="m-auto p-3" style="cursor: pointer">
-      <i class="fa-solid fa-heart me-2 heart"></i>
+    <div id="likes">
+
     </div>
-    <div v-else class="m-auto p-3" style="color: orange; cursor: pointer">
-      <i class="fa-solid fa-heart me-2"></i>
-    </div>
+
     <div class="text-center p-3">
       <span>Añadir a lista</span>
     </div>
-    <div v-if="!commented" class="text-center p-3">
-      <a @click="displayModalForm" class="text-decoration-none"><span>Añadir un comentario</span></a>
+
+    <div id="comments" class="text-center p-3">
+
     </div>
-    <div v-else class="text-center p-3">
-      <a class="text-decoration-none"><span>Película comentada</span></a>
-    </div>
+
   </aside>
 
   <aside v-else class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
 
     <a v-bind:href="baseUrl + '/login'" class="text-decoration-none" style="cursor: pointer">
       <div class="m-auto p-3">
-        <span class="text-center">Unete a filmfy para poder añadir peliculas a tu listas y darle me gusta</span>
+        <span class="text-center text-white">Unete a filmfy para poder añadir peliculas a tu listas y darle me gusta</span>
       </div>
     </a>
 
@@ -34,6 +31,7 @@
 <script>
 import FormModal from "@/components/movies/detailed-movie-page/FormModal";
 import {getCookie, getUser, origin} from "@/main.js"
+
 
 export default {
   props: ["movie"],
@@ -56,13 +54,44 @@ export default {
       this.log = true
       this.token = getCookie("auth")
       this.userID = await getUser(this.token)
+      await this.checkLiked()
       await this.checkCommented()
-     }
+    }
   },
 
   methods: {
 
+    async checkLiked(){
+      let likes = document.getElementById("likes")
+      let promise = await fetch("http://127.0.0.1:8000/api/user-had-like-movie", {
+        method: "POST",
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          "movie": this.movie.id,
+          "user": this.userID
+        })
+      })
+
+      let response = await promise.json()
+
+      if (response.status === 1) {
+        likes.innerHTML =`
+        <div class="m-auto p-3" >
+            <i class="fa-solid fa-heart me-2 fs-3 text-orange"></i>
+        </div>`
+      }else {
+        likes.innerHTML =`
+        <div id="sendLike" class="m-auto p-3">
+            <i class="fa-solid fa-heart me-2 heart"></i>
+        </div>`
+        document.getElementById("sendLike").addEventListener("click", this.sendLike)
+      }
+    },
+
     async checkCommented() {
+      let comment = document.getElementById("comments")
       let promise = await fetch("http://127.0.0.1:8000/api/user-had-comment", {
         method: "POST",
         headers: {
@@ -77,9 +106,10 @@ export default {
       let response = await promise.json()
 
       if (response.status === 1) {
-        this.commented = true
-      }else {
-        this.commented = false
+        comment.innerHTML = `<a class="text-decoration-none text-white commented"><span >Película comentada</span></a>`
+      } else {
+        comment.innerHTML = `<a class="text-decoration-none text-white addComment"><span >Añadir un comentario</span></a>`
+        document.getElementsByClassName("addComment")[0].addEventListener("click", this.displayModalForm)
       }
     },
 
@@ -122,12 +152,14 @@ export default {
   width: fit-content;
 }
 
-span {
-  color: #bcd;
+
+.addComment:hover {
+  cursor: pointer;
+  color: white;
 }
 
-span:hover {
-  cursor: pointer;
+.commented:hover {
+  cursor: auto;
   color: white;
 }
 
@@ -147,6 +179,15 @@ aside > div:last-child {
 
 .heart:hover {
   color: orange;
+}
+
+.heart-2 {
+  color: orange;
+  font-size: 30px;
+}
+
+.heart-2:hover {
+  cursor: auto;
 }
 
 </style>

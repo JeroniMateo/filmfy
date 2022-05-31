@@ -219,7 +219,8 @@ h3 {
 @media only screen and (max-width: 993px) {
   .login-space {
     height: auto;
-    padding: 30px;
+    padding
+    : 30px;
   }
 }
 
