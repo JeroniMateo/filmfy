@@ -10,16 +10,17 @@
 
 ## 1.Paleta de colores
 
-- Primario: #00c740
-- Secundario: #f7f7f5
-- Fondo: #242424
-- Luz: #e49e06
-- Información #0f0505;
-- Éxito: #2ecc71
-- Error: #c50909
-- Advertencia:#897213
-- Cian: #5bdee6
-- Gris: #787b66;
+- Primario:  ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#00c740`
+ 
+- Secundario:![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)  `#f7f7f5`
+- Fondo: ![#242424](https://via.placeholder.com/15/f03c15/000000?text=+) `#242424`
+- Luz: ![#e49e06](https://via.placeholder.com/15/f03c15/000000?text=+) `#e49e06`
+- Información ![#0f0505](https://via.placeholder.com/15/f03c15/000000?text=+) `#0f0505`
+- Éxito: ![#2ecc71](https://via.placeholder.com/15/f03c15/000000?text=+) `#2ecc71`
+- Error: ![#c50909](https://via.placeholder.com/15/f03c15/000000?text=+) `#c50909`
+- Advertencia ![#897213](https://via.placeholder.com/15/f03c15/000000?text=+) `#897213`
+- Cian: ![#5bdee6](https://via.placeholder.com/15/f03c15/000000?text=+) `#5bdee6`
+- Gris: ![#787b66](https://via.placeholder.com/15/f03c15/000000?text=+) `#787b66`
 
   
 
