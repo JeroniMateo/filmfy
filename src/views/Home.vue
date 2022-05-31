@@ -86,15 +86,15 @@
             <span class="section-heading d-flex my-4">Listas populares</span>
             <hr>
             <div class="d-flex flex-column justify-content-center align-items-center">
-            <div v-for="list in latestLists">
+            <div v-for="list in latestLists.slice(0,5)">
 
               <div class="list -overlapped -stacked d-flex flex-column">
                 <a class="list-link">
                   <div class="list-link-stacked clear">
-                    <ul class="poster-list -overlapped -p70" v-for="movie_img in list.m_imgs.slice(0,5)">
+                    <ul class="poster-list -overlapped -p70" v-for="movie in list.movies.slice(0,4)">
 
                       <li class="react-component poster film-poster listitem">
-                        <div><img :src="'http://filmfy-api.ddns.net' + movie_img"
+                        <div><img :src="'http://filmfy-api.ddns.net' + movie.image"
                             width="80" height="130" alt="list movie img"
                             class="image">
                         </div>
@@ -106,8 +106,8 @@
                 <div class="list-content d-flex flex-row mt-2">
                     <p class="list-title d-flex align-content-center"><strong>{{ list.l_title }}</strong></p>
                     <div class="mx-4">
-                      <img class="user-img" src="#" width="30" height="30" alt=""/>
-                      <small class="comment-user-name mx-2">{{ list.u_name }}</small>
+                      <img class="user-img" :src="'http://filmfy-api.ddns.net' + list.user.profile_image" width="30" height="30" alt=""/>
+                      <small class="comment-user-name mx-2">{{ list.user.name }}</small>
                         <span><i class="fa-solid fa-thumbs-up"></i></span>
                         <span class="mx-1">{{ list.l_likes }}</span>
                     </div>
@@ -184,7 +184,7 @@ export default {
           })
     },
     getLatestLists() {
-      fetch("http://filmfy-api.ddns.net/api/lists-recent",
+      fetch("http://filmfy-api.ddns.net/api/lists-most-liked",
           {
             method: 'GET',
             headers: {
