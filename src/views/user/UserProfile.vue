@@ -22,7 +22,7 @@
         </div>
         <div class="profile-info">
           <div class="follow-button-wrapper">
-            <a href="/editProfile" class="button -small">Edit Profile</a>
+            <a href="/editarPerfil" class="button -small">Edit Profile</a>
           </div>
           <div class="_context-observer"></div>
         </div>
@@ -117,8 +117,8 @@ section {
 }
 
 .follow-button-wrapper {
-  margin-top: 2rem;
-  margin-left: -40vh;
+  margin-top: 3rem;
+  margin-left: -30vh;
 }
 .button {
   text-align: center;
@@ -176,13 +176,15 @@ a {
 }
 
 img {
-  border-radius: 50px;
-  font-family: 'object-fit: cover;';
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    border-radius: 50px;
+    font-family: 'object-fit: cover;';
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    width: 94%;
+    height: 70%;
+    margin-top:-2vh
 }
 #avatar-zoom {
   z-index: 1;

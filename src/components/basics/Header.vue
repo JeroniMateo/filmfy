@@ -1,8 +1,9 @@
 <template>
-
   <div class="all">
-    <header @load="hamburgerIconHandling" class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-
+    <header
+      @load="hamburgerIconHandling"
+      class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+    >
       <div id="hamburger" @click="hamburgerIconHandling">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -10,30 +11,75 @@
       </div>
 
       <div class="main-menu d-flex col-md-3 mx-3">
-        <a href="/" class="d-flex align-items-center mb-md-0 text-dark text-decoration-none">
-          <img src="../../assets/img/cameraLogo.png" class="bi me-2" width="30" height="30" role="img" aria-label="Bootstrap" alt="logo"/>
-        <span class="brand-name"><strong>Filmfy</strong></span>
+        <a
+          href="/"
+          class="d-flex align-items-center mb-md-0 text-dark text-decoration-none"
+        >
+          <img
+            src="../../assets/img/cameraLogo.png"
+            class="bi me-2"
+            width="30"
+            height="30"
+            role="img"
+            aria-label="Bootstrap"
+            alt="logo"
+          />
+          <span class="brand-name"><strong>Filmfy</strong></span>
         </a>
       </div>
 
-      <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
-        <li><a href="/movies" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Películas</a></li>
-        <li><a href="/lists" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Listas</a></li>
-        <li><a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Usuarios</a></li>
+      <ul
+        class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0"
+      >
+        <li>
+          <a
+            href="/movies"
+            class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+            >Películas</a
+          >
+        </li>
+        <li>
+          <a
+            href="/lists"
+            class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+            >Listas</a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4"
+            >Usuarios</a
+          >
+        </li>
       </ul>
 
       <div v-if="!log" class="main main-menu col-md-3 text-end">
-        <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
+        <a href="/login"
+          ><button type="button" class="btn btn-outline-primary me-2">
+            Accede
+          </button></a
+        >
       </div>
       <div v-else class="main main-menu col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Mi perfil</button>
+        <button
+          type="button"
+          class="btn btn-outline-primary me-2"
+          @click="goMiPerfil"
+        >
+          Mi perfil
+        </button>
       </div>
 
       <div class="hamburger-container">
         <div id="hamburgerMenu">
-          <a href="" style="text-decoration: none;">
-            <div style="display: flex; align-items: center;">
-              <img class="logo" src="../../assets/img/cameraLogo.png" width="30" height="30" alt="logo">
+          <a href="" style="text-decoration: none">
+            <div style="display: flex; align-items: center">
+              <img
+                class="logo"
+                src="../../assets/img/cameraLogo.png"
+                width="30"
+                height="30"
+                alt="logo"
+              />
               <p class="brand-name">Filmfy</p>
               <span class="close-hamburger">&times;</span>
             </div>
@@ -45,28 +91,29 @@
           </div>
 
           <div v-if="!log" class="login-content-hamburger">
-            <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
+            <a href="/login"
+              ><button type="button" class="btn btn-outline-primary me-2">
+                Accede
+              </button></a
+            >
           </div>
           <div v-else class="login-content-hamburger">
-            <button type="button" class="btn btn-outline-primary me-2">Mi perfil</button>
+            <button type="button" class="btn btn-outline-primary me-2">
+              Mi perfil
+            </button>
           </div>
         </div>
       </div>
-
     </header>
   </div>
-
 </template>
 
 <script>
-
-import {getCookie, getUser} from "@/main";
+import { getCookie, getUser } from '@/main'
 
 export default {
   name: 'Header',
-  components: {
-
-  },
+  components: {},
   data: () => ({
     openHamburger: '',
     closeHamburger: '',
@@ -74,31 +121,33 @@ export default {
   }),
 
   async beforeMount() {
-
-    this.token = getCookie("auth")
+    this.token = getCookie('auth')
     if (this.token) {
       this.userID = await getUser(this.token)
-      if (this.userID !== "User expired") {
+      if (this.userID !== 'User expired') {
         this.log = true
       }
     }
-
   },
 
   methods: {
-    hamburgerIconHandling () {
+    goMiPerfil() {
+      this.$router.push('/miPerfil')
+    },
+    hamburgerIconHandling() {
       this.openHamburger = document.getElementById('hamburger')
       document.getElementsByClassName('hamburger-container')[0].style.display =
-          'flex'
+        'flex'
 
-      this.closeHamburger = document.getElementsByClassName('close-hamburger')[0]
+      this.closeHamburger =
+        document.getElementsByClassName('close-hamburger')[0]
       this.closeHamburger.addEventListener('click', function () {
         document.getElementsByClassName(
-            'hamburger-container'
+          'hamburger-container'
         )[0].style.display = 'none'
       })
     },
-    login () {
+    login() {
       this.$router.push('/login')
     }
   }

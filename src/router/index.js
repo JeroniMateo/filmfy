@@ -16,6 +16,7 @@ import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
 
 import UserProfile from '../views/user/UserProfile.vue'
+import EditProfile from '../views/user/EditProfile.vue'
 import ListCreationPage from "@/views/lists/ListCreationPage";
 
 const routes = [
@@ -75,9 +76,14 @@ const routes = [
   },
 
   {
-    path: '/userProfile',
-    name: 'profile',
+    path: '/miPerfil',
+    name: 'miPerfil',
     component: UserProfile
+  },
+  {
+    path: '/editarPerfil',
+    name: 'editarPerfil',
+    component: EditProfile
   },
 
   {
