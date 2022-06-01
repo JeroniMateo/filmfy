@@ -3,7 +3,7 @@
     <a :href="baseURL + '/lists/' + list.id" style="text-decoration: none">
       <div class="image-overlap">
                   <span class="movie-img" v-for="movie in list.movies.slice(0,5)">
-                    <img :src="'http://filmfy-api.ddns.net' + movie.image" width="190" height="280" :alt="movie.title"/>
+                    <img :src="'http://filmfy-api.ddns.net' + movie.image" v-bind:width="this.width" v-bind:height="this.height" :alt="movie.title"/>
                   </span>
       </div>
 
@@ -27,7 +27,7 @@ import {getCookie} from "@/main";
 
 export default {
   name: "MoviesListsCards",
-  props: ["list", "user"],
+  props: ["list", "user", "width", "height"],
   data() {
     return {
       baseURL: window.origin,

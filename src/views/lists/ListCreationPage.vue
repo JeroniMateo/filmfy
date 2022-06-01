@@ -10,7 +10,7 @@
     <div class="container">
       <div class="my-5 row">
         <div class="col-10">
-          <MoviesListsCards v-for="list in lists" :key="list" :list="list" :user="user"/>
+          <MoviesListsCards v-for="list in lists" :key="list" :list="list" :user="user" :width="190" :height="280"/>
         </div>
         <aside class="aside-card d-flex flex-column align-items-start col-2 rounded-3 p-0">
 

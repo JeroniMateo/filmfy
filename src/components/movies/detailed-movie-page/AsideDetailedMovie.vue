@@ -11,7 +11,7 @@
     </div>
 
     <div class="text-center p-3">
-      <span>Añadir a lista</span>
+      <span @click="this.displayFormAddToList" class="addComment">Añadir a lista</span>
     </div>
 
     <div v-if="commented" class="text-center p-3">
@@ -33,18 +33,20 @@
   </aside>
 
   <FormModal id="modal" :movie="this.movie" :user="userID"/>
+  <FormAddMovieList id="formAddMovieToList" :movie="movie"/>
 
 </template>
 
 <script>
 import FormModal from "@/components/movies/detailed-movie-page/FormModal";
 import {getCookie, getUser, origin} from "@/main.js"
+import FormAddMovieList from "@/components/movies/detailed-movie-page/FormAddMovieList";
 
 
 export default {
   props: ["movie"],
   name: "AsideDetailedMovie",
-  components: {FormModal},
+  components: {FormAddMovieList, FormModal},
 
   data() {
     return {
@@ -115,7 +117,6 @@ export default {
     },
 
     async sendLike() {
-      console.log("ffff")
 
       await fetch("http://filmfy-api.ddns.net/api/v1/movies-likes", {
         method: "POST",
@@ -137,6 +138,11 @@ export default {
     displayModalForm() {
       let formModal = document.getElementById("modal")
       formModal.style.display = "block"
+    },
+
+    displayFormAddToList() {
+      let formAddMovieToList = document.getElementById("formAddMovieToList")
+      formAddMovieToList.style.display = "block"
     }
   }
 }

@@ -81,7 +81,6 @@ export default {
       let categories = document.getElementById("categories")
       this.movie.categories.forEach((category, index) => {
           categories.innerHTML += `<p style="border: 1px solid white; border-radius: 20px; padding: 4px 12px 4px 12px; margin-bottom: 0px; margin-right: 10px">${category}</p>`
-
       })
 
       let date = new Date(this.movie.release_date)

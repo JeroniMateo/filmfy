@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import {getCookie, getUser} from "@/main";
+import {getCookie} from "@/main";
 import StarRating from 'vue-star-rating'
 
 export default {
