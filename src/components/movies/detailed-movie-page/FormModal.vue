@@ -30,17 +30,20 @@
                 class="form-control body"
               ></textarea>
             </div>
-            <div class="mb-3">
-              <label for="" class="form-label">Puntuación</label>
-              <input
-                id="rating"
-                type="text"
-                name="rating"
-                class="form-control rating"
-              />
-            </div>
+            <star-rating
+                v-model:rating="rating"
+                v-bind:round-start-rating="false"
+                v-bind:max-rating="5"
+                v-bind:increment="0.5"
+                v-bind:read-only="false"
+                v-bind:show-rating="false"
+                active-color="#00c740"
+                inactive-color="#fff"
+                v-bind:star-size="20"
+            /> <!-- Lightgreen: #00c740 -->
+
             <!--            TODO: Change when login-->
-            <input type="hidden" id="users_id" name="users_id" value="2" />
+            <input type="hidden" id="users_id" name="users_id" v-bind:value="user">
             <div class="d-flex justify-content-end">
               <input
                 class="button-send-form"
@@ -60,31 +63,41 @@
 </template>
 
 <script>
+import {getCookie, getUser} from "@/main";
+import StarRating from 'vue-star-rating'
+
 export default {
-  name: 'FormModal',
-  props: ['movie'],
+  name: "FormModal",
+  props: ["movie", "user"],
+  components: {StarRating},
+
+  data() {
+    return {
+      token: getCookie("auth"),
+      commented: false,
+      rating: 0
+    }
+  },
+
 
   methods: {
-    async postComment () {
-      await fetch(
-        `http://filmfy-api.ddns.net/api/comments-store/${this.movie.id}`,
-        {
-          method: 'POST',
-          mode: 'cors',
-          headers: {
-            Accept: 'application/json',
-            'Content-type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-          },
-          body: JSON.stringify({
-            title: document.getElementById('title').value,
-            body: document.getElementById('body').value,
-            rating: document.getElementById('rating').value,
-            users_id: document.getElementById('users_id').value
-          })
-        }
-      )
-      await location.reload()
+
+    async postComment() {
+      await fetch(`http://filmfy-api.ddns.net/api/v1/comments-store/${this.movie.id}`, {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json',
+          'Authorization': 'Bearer ' + this.token,
+        },
+        body: JSON.stringify({
+          "title": document.getElementById("title").value,
+          "body": document.getElementById("body").value,
+          "rating": this.rating,
+          "users_id": document.getElementById("users_id").value,
+        })
+      })
+      location.reload()
     },
 
     hideForm () {
@@ -135,6 +148,7 @@ export default {
 .rating {
   background-color: rgb(204, 221, 238);
 }
+
 .button-send-form {
   background-color: #00c740;
   color: white;

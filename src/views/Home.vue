@@ -116,17 +116,16 @@
                       >
                       <div class="comment-rating mx-2">
                         <star-rating
-                          v-bind:round-start-rating="false"
-                          v-bind:rating="comment.rating / 2"
-                          v-bind:max-rating="5"
-                          v-bind:increment="0.5"
-                          v-bind:read-only="false"
-                          v-bind:show-rating="false"
-                          active-color="#00c740"
-                          inactive-color="#fff"
-                          v-bind:star-size="20"
-                        />
-                        <!-- Lightgreen: #00c740 -->
+                                     v-bind:round-start-rating="false"
+                                     v-bind:rating="comment.rating"
+                                     v-bind:max-rating="5"
+                                     v-bind:increment="0.5"
+                                     v-bind:read-only="false"
+                                     v-bind:show-rating="false"
+                                     active-color="#00c740"
+                                     inactive-color="#fff"
+                                     v-bind:star-size="20"
+                        /> <!-- Lightgreen: #00c740 -->
                       </div>
                     </div>
                     <div class="comment-content d-flex mt-2">
