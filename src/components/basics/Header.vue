@@ -1,6 +1,6 @@
 <template>
 
-  <div class="all">
+  <div class="all bg-bgmain">
     <header @load="hamburgerIconHandling" class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
       <div id="hamburger" @click="hamburgerIconHandling">
@@ -107,7 +107,6 @@ export default {
 
 <style scoped>
 .all {
-  background-color: #242424;
   padding-bottom: 10px;
 }
 .brand-name {

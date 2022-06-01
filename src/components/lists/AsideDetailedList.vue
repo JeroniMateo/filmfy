@@ -1,15 +1,18 @@
 <template>
 
   <aside class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
-    <div @click="sendLike" class="m-auto p-3" style="cursor: pointer">
-      <i class="fa-solid fa-heart me-2 heart"></i>
+    <div @click="sendLike" class="m-auto p-2" style="cursor: pointer">
+      <div class="">
+        <span class="mx-3">Me gusta</span>
+        <i class="fa-solid fa-heart me-2 heart"></i>
+      </div>
     </div>
-    <div class="text-center p-3 share-buttons">
-      <a><i class="fa-brands fa-facebook-square p-1"></i></a>
-      <a><i class="fa-brands fa-twitter p-1"></i></a>
-      <a><i class="fa-brands fa-whatsapp p-1"></i></a>
-      <a><i class="fa-brands fa-telegram p-1"></i></a>
-      <a><i class="fa-solid fa-envelope p-1"></i></a>
+    <div class="text-center p-1 share-buttons">
+      <a><i class="text-primary mx-2 fa-brands fa-facebook-square p-1"></i></a>
+      <a><i class="text-primary mx-2 fa-brands fa-twitter p-1"></i></a>
+      <a><i class="text-primary mx-2 fa-brands fa-whatsapp p-1"></i></a>
+      <a><i class="text-primary mx-2 fa-brands fa-telegram p-1"></i></a>
+      <a><i class="text-primary mx-2 fa-solid fa-envelope p-1"></i></a>
     </div>
   </aside>
 

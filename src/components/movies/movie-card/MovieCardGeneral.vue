@@ -100,4 +100,5 @@ export default {
 .extra-info {
   font-size: 12px;
 }
+
 </style>
