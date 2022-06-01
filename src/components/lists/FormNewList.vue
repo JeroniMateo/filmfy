@@ -6,22 +6,30 @@
       </div>
     </div>
     <div>
-      <form action="">
+      <form @submit.prevent="this.postList" >
 
-        <div class="container">
-          <div class="row">
-            <div class="mb-3">
-              <label for="" class="form-label">Título</label>
-              <input id="title" name="title" type="text" class="form-control title" value="" required>
+        <div class="container my-4 ">
+          <div class="row justify-content-center">
+
+            <div class="d-flex flex-column justify-content-start col-4 form-row">
+              <label class="has-icon validated text-start"><span class="icon"></span>Nombre de la lista</label>
+              <input v-model="title" type="text" name="name" class="field" >
             </div>
+
+            <div class="d-flex flex-column justify-content-start col-6 form-row">
+              <label class="has-icon validated text-start"><span class="icon"></span>Descripción</label>
+              <textarea v-model="description" type="text" name="name" class="field " style="height: 5rem"/>
+            </div>
+
+            <div class=" " >
+              <SearchMoviesForList class="col-10" v-on:addToList="addToListMovie"/>
+            </div>
+
           </div>
         </div>
-
       </form>
     </div>
-    <div class="container">
-      <SearchMoviesForList/>
-    </div>
+
   </div>
 
 
@@ -29,10 +37,52 @@
 
 <script>
 import SearchMoviesForList from "@/components/lists/SearchMoviesForList";
+import {getCookie, getUser} from "@/main";
 
 export default {
   name: "FormNewList",
-  components: {SearchMoviesForList}
+  components: {SearchMoviesForList},
+
+  data() {
+    return {
+      title: "",
+      description : "",
+      userID : "",
+      token: "",
+      list: []
+    }
+  },
+
+  async beforeMount() {
+    this.token = getCookie("auth")
+    if (this.token) {
+      this.userID = await getUser(this.token)
+    }
+  },
+
+  methods: {
+    async postList() {
+      let promise = await fetch("http://127.0.0.1:8000/api/create-list", {
+        method: "POST",
+        headers: {
+          'Content-type': 'application/json',
+          'Authorization': 'Bearer ' + this.token,
+        },
+        body: JSON.stringify({
+          title: this.title,
+          description : this.description,
+          users_id: this.userID,
+          movies: this.list
+        })
+      })
+
+      await this.$router.push('/my-lists')
+    },
+
+    addToListMovie(movie) {
+      this.list.push(movie)
+    }
+  }
 }
 </script>
 
@@ -60,4 +110,26 @@ export default {
 .section-heading a {
   color: #9ab;
 }
+
+.form-row {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.field {
+  background-color: #2c3440;
+  border: none;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #456;
+  box-sizing: border-box;
+  color: #89a;
+  font-size: 1.07692308rem;
+  line-height: 1;
+  margin: 0;
+  padding: 9px 9px 8px;
+  width: 100%;
+}
+
+
+
 </style>

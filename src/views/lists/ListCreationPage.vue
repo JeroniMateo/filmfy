@@ -3,18 +3,18 @@
   <div class="all">
     <div class="container">
       <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
-        <span class="text-center">Tus listas</span>
+        <span class="text-center">Mis listas</span>
       </div>
     </div>
 
     <div class="container">
       <div class="my-5 row">
         <div class="col-10">
-          <MoviesListsCards v-for="list in lists.slice(0,5)" :key="list" :list="list" :userID="userID"/>
+          <MoviesListsCards v-for="list in lists" :key="list" :list="list" :user="user"/>
         </div>
         <aside class="aside-card d-flex flex-column align-items-start col-2 rounded-3 p-0">
 
-          <a v-bind:href="baseUrl + '/list/new'" class="text-decoration-none" style="cursor: pointer">
+          <a v-bind:href="baseUrl + '/lists/new'" class="text-decoration-none" style="cursor: pointer">
             <div class="m-auto p-3">
               <span class="text-center text-white">Nueva lista</span>
             </div>
@@ -40,7 +40,9 @@ export default {
   data() {
     return {
       userID: "",
-      lists: []
+      user : "",
+      lists: [],
+      baseUrl: window.origin
     }
   },
 
@@ -50,6 +52,9 @@ export default {
     if (this.token) {
       this.userID = await getUser(this.token)
       if (this.userID !== "User expired") {
+        let promise = await fetch(`http://filmfy-api.ddns.net/api/users/${this.userID}`)
+        let response = await promise.json()
+        this.user = response
         this.log = true
         await this.fetchUserLists()
       }

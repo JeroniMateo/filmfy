@@ -1,14 +1,26 @@
 <template>
-  <div class="searcher">
-    <span class="section-heading">Buscar : </span>
-    <div>
-      <div class="search-wrapper ">
-        <input class="field field-large ac_input" @mouseup="removeElements" @keyup="filteredList" type="text" v-model="search" />
+  <div class="searcher d-flex align-items-start justify-content-between">
+    <div class="d-flex align-items-center">
+      <span class="section-heading">Buscar : </span>
+
+      <div>
+        <div class="search-wrapper ">
+          <input id="search" class="field field-large ac_input" @mouseup="removeElements" @keyup="filteredList" type="text"
+                 v-model="search"/>
+        </div>
+        <div class="content-searched bg-light d-flex flex-column align-items-center justify-content-between wrapper">
+          <ItemsForSearchMoviesList v-for="movies in this.moviesSearch" :key="movies" :movies="movies"
+                                    v-on:changeItem="addToList"/>
+        </div>
       </div>
-      <div class="content-searched bg-light d-flex flex-column align-items-center justify-content-between wrapper">
-        <ItemsForSearchMoviesList v-for="movies in this.moviesSearch" :key="movies" :movies="movies"/>
-      </div>
+
     </div>
+    <div>
+      <input class="btn btn-success" value="Crear lista" type="submit">
+    </div>
+  </div>
+  <div id="containerMovies" class="container my-4 container-contain-movies d-flex align-items-start flex-wrap">
+      <p id="p2">Añade contenido gueu</p>
   </div>
 </template>
 
@@ -21,10 +33,10 @@ export default {
   components: {ItemsForSearchMoviesList, ItemSearched},
   data() {
     return {
-      moviesAll : [],
+      moviesAll: [],
       search: "",
       moviesSearch: [],
-      baseUrl: window.origin
+      baseUrl: window.origin,
     }
   },
 
@@ -40,7 +52,7 @@ export default {
           return movie.title.toLowerCase().includes(this.search)
         })
         this.limitData(this.moviesSearch)
-      }else {
+      } else {
         this.removeElements()
       }
 
@@ -52,23 +64,31 @@ export default {
       this.moviesAll = moviesData
     },
 
-    expect() {
-      let inputSearch = document.getElementById("searcher")
-
-      if (inputSearch.value === "") {
-        this.moviesSearch = []
-      }
-    },
-
     limitData(movieData) {
       const sliced = Object.fromEntries(
-          Object.entries(movieData).slice(0, 3)
+          Object.entries(movieData).slice(0, 6)
       )
       this.moviesSearch = sliced
     },
 
     removeElements() {
       this.moviesSearch = []
+    },
+
+    addToList(movie) {
+      this.$emit("addToList", movie)
+      this.removeElements()
+      this.printMovie(movie)
+    },
+
+    printMovie(movie) {
+      const element = document.getElementById('p2');
+      element ? element.remove() : ""; // Removes the div with the 'div-02' id
+      let containerMovies = document.getElementById("containerMovies")
+      containerMovies.innerHTML += `
+            <img style="width: 130px; border: 1px solid white; height: 200px; border-radius: 5px; margin-right: 10px; margin-top: 15px; margin-bottom: 15px" src="http://filmfy-api.ddns.net${movie.image}">
+        `
+
     }
   }
 }
@@ -91,7 +111,7 @@ export default {
   line-height: 1;
   margin: 0;
   padding: 9px 9px 8px;
-  width: 20rem;
+  width: 30rem;
 }
 
 span {
@@ -107,16 +127,16 @@ span {
 }
 
 .content-searched {
-  width: 20rem;
+  width: 30rem;
   position: absolute;
 }
 
 .div-movie-searcher {
   z-index: 1;
-  background-color: rgb(68,85,102);
+  background-color: rgb(68, 85, 102);
 }
 
-.searcher{
+.searcher {
   display: flex;
   align-items: center;
 }
@@ -133,4 +153,12 @@ a:hover {
 .content-text-year {
   height: 130px;
 }
+
+.container-contain-movies {
+  border: 1px solid #2c3440;
+  min-height: 200px;
+  height: fit-content;
+}
+
+
 </style>

@@ -1,14 +1,15 @@
 <template>
-  <div class="row pt-4 ps-1 pe-1 pb-4 d-flex align-items-start div-movie-searched" >
-    <img class="col-5" v-bind:src="this.baseUrlApi + movies.image">
-    <div class="d-flex flex-column align-items-start col-7 justify-content-between content-text-year">
-      <a class="text-start" v-bind:href="this.baseUrl + '/movies/' + movies.id">{{ movies.title }}</a>
-      <span>{{ movies.release_date }}</span>
+  <div @click="this.selectMovie(movies.id)" class="row pt-3 ps-1 pe-1 pb-3 d-flex align-items-start div-movie-searched" >
+    <div class="d-flex align-items-start col-12">
+      <a class="text-start me-2">{{ movies.title }}</a>
+      <span>({{ year }})</span>
     </div>
   </div>
 </template>
 
 <script>
+import {fullyear} from "@/main";
+
 export default {
   name: "ItemsForSearchMoviesList",
   props: ["movies"],
@@ -16,9 +17,19 @@ export default {
   data() {
     return {
       baseUrlApi: "http://filmfy-api.ddns.net/",
-      baseUrl: window.origin
+      baseUrl: window.origin,
+      year: fullyear(this.movies.release_date),
+    }
+  },
+
+  methods: {
+    async selectMovie(id) {
+      let promise = await fetch(`http://filmfy-api.ddns.net/api/movies/${id}`)
+      let response = await promise.json()
+      this.$emit("changeItem", response)
     }
   }
+
 }
 </script>
 
@@ -37,7 +48,14 @@ span {
   box-sizing: border-box;
   border-top: 1px solid #242424;
   border-bottom: 1px solid #242424;
-  width: 20rem;
+  width: 30rem;
+}
+
+.div-movie-searched:hover {
+  z-index: 1;
+  background-color: green;
+  color: white;
+  cursor: pointer;
 }
 
 .div-movie-searched:first-child {
@@ -49,11 +67,4 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #dcdada;
-}
-
-.content-text-year {
-  height: 130px;
-}
 </style>

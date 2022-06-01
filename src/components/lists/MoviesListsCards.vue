@@ -12,7 +12,7 @@
           <span style="text-align: left"><b>{{ list.title }}</b></span>
         </div>
         <div class="list-data d-flex flex-row">
-          <img v-bind:src="baseURL + user.profile_image" width="20" height="20"/>
+          <img v-bind:src="'http://filmfy-api.ddns.net' + user.profile_image" width="20" height="20"/>
           <span class="mx-2">{{  }}</span>
           <span class="mx-2">❤ {{}}</span>
           <span> <i class="fa-solid fa-film"></i> {{ list.movies_count }}</span>
@@ -27,19 +27,12 @@ import {getCookie} from "@/main";
 
 export default {
   name: "MoviesListsCards",
-  props: ["list", "userID"],
+  props: ["list", "user"],
   data() {
     return {
       baseURL: window.origin,
-      user:"",
     }
   },
-
-  async beforeMount() {
-    let promise = await fetch(`http://filmfy-api.ddns.net/api/users/${this.userID}`)
-    let user = await promise.json()
-    this.user = user
-  }
 }
 </script>
 
