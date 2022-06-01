@@ -10,7 +10,8 @@
           <span><strong>Las listas de Filmfy son la forma perfecta de tener tus películas.</strong></span>
         </div>
         <div class="mt-3">
-          <button type="button" class="btn btn-primary">Crea tus listas</button>
+          <a v-if="log" href="/lists/new"><button type="button" class="btn btn-primary">Crea tus listas</button></a>
+          <a v-else href="/login"><button type="button" class="btn btn-primary">Inicia sesión para crear tus listas</button></a>
         </div>
       </div>
     </div>
@@ -133,6 +134,7 @@
 <script>
 import Header from "@/components/basics/Header";
 import Footer from "@/components/basics/Footer";
+import {getCookie, getUser} from "@/main";
 
 export default {
   name: "MainListsPage",
@@ -146,8 +148,12 @@ export default {
       listsMostLiked: [],
       listsRecent: [],
       selectedLists: [],
+      log: false,
     }
   },
+
+
+
   methods: {
     async popularLists() {
       const promise = await fetch('http://filmfy-api.ddns.net/api/lists-most-liked')
@@ -163,12 +169,22 @@ export default {
       console.log(this.selectedLists)
     },
   },
-  beforeMount() {
-    this.popularLists()
-    this.recentLists()
-    this.selectedList(1)
-    this.selectedList(2)
-    this.selectedList(3)
+
+  async beforeMount() {
+
+    this.token = getCookie("auth")
+    if (this.token) {
+      this.userID = await getUser(this.token)
+      if (this.userID !== "User expired") {
+        this.log = true
+      }
+    }
+
+    await this.popularLists()
+    await this.recentLists()
+    await this.selectedList(1)
+    await this.selectedList(2)
+    await this.selectedList(3)
   }
 }
 </script>

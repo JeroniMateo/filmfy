@@ -7,16 +7,17 @@
           <img v-bind:src="'http://filmfy-api.ddns.net/' + this.movie.image" alt="" width="200">
         </div>
         <div class="col-7">
-          <form>
+          <form @submit.prevent="this.postComment">
             <div class="mb-3">
               <label for="" class="form-label">Título</label>
               <input id="title" name="title" type="text" class="form-control title" value="" required>
             </div>
             <div class="mb-3">
               <label for="" class="form-label">Cuerpo de la critica</label>
-              <textarea id="body" name="body" class="form-control body"></textarea>
+              <textarea id="body" name="body" class="form-control body" required></textarea>
             </div>
             <star-rating
+                required
                 v-model:rating="rating"
                 v-bind:round-start-rating="false"
                 v-bind:max-rating="5"
@@ -31,7 +32,7 @@
             <!--            TODO: Change when login-->
             <input type="hidden" id="users_id" name="users_id" v-bind:value="user">
             <div class="d-flex justify-content-end">
-              <input class="button-send-form" type="button" @click="postComment" value="Enviar">
+              <input class="button-send-form" type="submit"  value="Enviar">
             </div>
           </form>
         </div>

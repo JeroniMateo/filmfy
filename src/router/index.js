@@ -15,6 +15,7 @@ import Login from '../views/user/Login.vue'
 
 import UserProfile from '../views/user/UserProfile.vue'
 import ListCreationPage from "@/views/lists/ListCreationPage";
+import FormNewList from "@/components/lists/FormNewList";
 
 const routes = [
   {
@@ -53,6 +54,12 @@ const routes = [
   {
     path: '/lists/new',
     name: 'lists-new',
+    component: FormNewList
+  },
+
+  {
+    path: '/my-lists/',
+    name: 'my-lists',
     component: ListCreationPage
   },
 
