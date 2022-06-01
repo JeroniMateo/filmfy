@@ -8,22 +8,22 @@
         <div class="initial w-100">
           <div class="use d-flex my-2">
             <img :src="'http://filmfy-api.ddns.net' + list.user.profile_image" :alt="list.user.name" width="20" height="20"/>
-            <span class="mx-2">Lista de {{ list.user.name }}</span>
+            <span class="mx-2 text-tertiary">Lista de {{ list.user.name }}</span>
           </div>
 
           <div class="data d-flex w-100 justify-content-between p-1">
-            <span class="d-flex justify-content-start">Actualizada el 7 de enero </span>
+            <span class="text-tertiary d-flex justify-content-start">Actualizada el 1 de junio</span>
             <div class="d-flex justify-content-end align-items-center">
-              <i style="color: orange " class="mx-2 fa-solid fa-heart me-1"></i> <span>27</span>
+              <i style="color: orange " class="mx-2 fa-solid fa-heart me-1"></i> <span class="text-tertiary">27</span>
               <span class="mx-2">|</span>
-              <i class="mx-1 fa-solid fa-film me-1"></i><span>{{ list.movies_count }}</span>
+              <i class="mx-1 fa-solid fa-film me-1"></i><span class="text-tertiary">{{ list.movies_count }}</span>
             </div>
           </div>
         </div>
 
         <div class="title-description">
           <div class="mt-4">
-            <h1 class="d-flex">{{ list.title }}</h1>
+            <h1 class="d-flex"><b>{{ list.title }}</b></h1>
           </div>
           <div class="my-3">
             <span>{{ list.description }}</span>
@@ -91,6 +91,7 @@ export default {
       const promiseList = await fetch(`http://filmfy-api.ddns.net/api/lists/${this.listId}`)
       this.list = await promiseList.json()
       console.log(this.list)
+      console.log(this.currentUrl)
 
 
     },
@@ -152,8 +153,8 @@ ul, ol {
 }
 
 .data {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1px solid var(--bs-tertiary);
+  border-bottom: 1px solid var(--bs-tertiary);
 }
 
 /* Media queries */
