@@ -8,11 +8,11 @@
       </div>
     </div>
     <div class="text-center p-1 share-buttons">
-      <a><i class="text-primary mx-2 fa-brands fa-facebook-square p-1"></i></a>
-      <a><i class="text-primary mx-2 fa-brands fa-twitter p-1"></i></a>
-      <a><i class="text-primary mx-2 fa-brands fa-whatsapp p-1"></i></a>
-      <a><i class="text-primary mx-2 fa-brands fa-telegram p-1"></i></a>
-      <a><i class="text-primary mx-2 fa-solid fa-envelope p-1"></i></a>
+      <a :href="'https://www.facebook.com/sharer.php?u=' + currentUrl" target="_blank"><i class="text-primary mx-2 fa-brands fa-facebook-square p-1"></i></a>
+      <a :href="'https://twitter.com/share?ref_src=' + currentUrl" class="twitter-share-button" target="_blank"><i class="text-primary mx-2 fa-brands fa-twitter p-1"></i></a>
+      <a :href="'https://api.whatsapp.com/send?text=' + '¡Mira esta lista de películas que he visto en FilmFy!' + currentUrl" data-action="share/whatsapp/share" target="_blank"><i class="text-primary mx-2 fa-brands fa-whatsapp p-1"></i></a>
+      <a :href="'https://telegram.me/share/url?url=' + currentUrl + '&text=¡Comparte esta lista en telegram!'" target="_blank"><i class="text-primary mx-2 fa-brands fa-telegram p-1"></i></a>
+      <a href="mailto:" target="_blank"><i class="text-primary mx-2 fa-solid fa-envelope p-1"></i></a>
     </div>
   </aside>
 
@@ -27,6 +27,14 @@ export default {
   components: {
 
   },
+  data () {
+    return {
+      currentUrl: '',
+    }
+  },
+  created: function() {
+    this.currentUrl = window.location.href
+  },
   methods: {
     async sendLike() {
       await fetch("http://filmfy-api.ddns.net/api/lists-likes", {
@@ -40,9 +48,7 @@ export default {
           "users_id": "2"
         })
       })
-
       await location.reload()
-
     },
 
     displayModalForm(){
@@ -80,7 +86,7 @@ aside > div:last-child {
 
 .heart {
   color: white;
-  font-size: 30px;
+  font-size: 1.5rem;
 }
 
 .heart:hover {
