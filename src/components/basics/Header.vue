@@ -60,7 +60,7 @@
 
 <script>
 
-import {getCookie} from "@/main";
+import {getCookie, getUser} from "@/main";
 
 export default {
   name: 'Header',
@@ -73,10 +73,14 @@ export default {
     log: false
   }),
 
-  beforeMount() {
-    if (getCookie("auth")){
-      this.log= true
+  async beforeMount() {
+
+    this.token = getCookie("auth")
+    this.userID = await getUser(this.token)
+    if (this.userID !== "User expired") {
+      this.log = true
     }
+
   },
 
   methods: {

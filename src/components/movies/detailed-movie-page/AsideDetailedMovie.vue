@@ -2,17 +2,24 @@
 
   <aside v-if="this.log" class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
     <div id="likes">
-
+      <div v-if="liked" class="m-auto p-3" >
+        <i class="fa-solid fa-heart me-2 fs-3" style="color: orange"></i>
+      </div>
+      <div v-else  @click="this.sendLike" class="m-auto p-3" >
+        <i class="fa-solid fa-heart me-2 heart" ></i>
+      </div>
     </div>
 
     <div class="text-center p-3">
       <span>Añadir a lista</span>
     </div>
 
-    <div id="comments" class="text-center p-3">
-
+    <div v-if="commented" class="text-center p-3">
+      <a class="text-decoration-none text-white commented"><span >Película comentada</span></a>
     </div>
-
+    <div v-else class="text-center p-3">
+      <a @click="this.displayModalForm" class="text-decoration-none text-white addComment"><span >Añadir un comentario</span></a>
+    </div>
   </aside>
 
   <aside v-else class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
@@ -24,6 +31,7 @@
     </a>
 
   </aside>
+
   <FormModal id="modal" :movie="this.movie" :user="userID"/>
 
 </template>
@@ -40,29 +48,31 @@ export default {
 
   data() {
     return {
+      baseUrl: origin(),
       log: false,
       token: "",
-      baseUrl: origin(),
-      liked: false,
       userID: "",
+      liked: false,
       commented: false
     }
   },
 
   async beforeMount() {
-    if (getCookie("auth")) {
-      this.log = true
-      this.token = getCookie("auth")
+
+    this.token = getCookie("auth")
+    if (this.token) {
       this.userID = await getUser(this.token)
-      await this.checkLiked()
-      await this.checkCommented()
+      if (this.userID !== "User expired") {
+        this.log = true
+        await this.checkLiked()
+        await this.checkCommented()
+      }
     }
   },
 
   methods: {
 
     async checkLiked(){
-      let likes = document.getElementById("likes")
       let promise = await fetch("http://filmfy-api.ddns.net/api/user-had-like-movie", {
         method: "POST",
         headers: {
@@ -77,22 +87,13 @@ export default {
       let response = await promise.json()
 
       if (response.status === 1) {
-        likes.innerHTML =`
-        <div class="m-auto p-3" >
-            <i class="fa-solid fa-heart me-2 fs-3" style="color: orange"></i>
-        </div>`
+        this.liked = true
       }else {
-        likes.innerHTML =`
-        <div id="sendLike" class="m-auto p-3">
-            <i class="fa-solid fa-heart me-2 heart" ></i>
-        </div>`
-        document.getElementById("sendLike").addEventListener("click", this.sendLike)
-
+        this.liked = false
       }
     },
 
     async checkCommented() {
-      let comment = document.getElementById("comments")
       let promise = await fetch("http://filmfy-api.ddns.net/api/user-had-comment", {
         method: "POST",
         headers: {
@@ -107,19 +108,14 @@ export default {
       let response = await promise.json()
 
       if (response.status === 1) {
-        comment.innerHTML = `<a class="text-decoration-none text-white commented"><span >Película comentada</span></a>`
+        this.commented = true
       } else {
-        comment.innerHTML = `<a class="text-decoration-none text-white addComment"><span >Añadir un comentario</span></a>`
-        document.getElementsByClassName("addComment")[0].addEventListener("click", this.displayModalForm)
+        this.commented = false
       }
     },
 
-    async getLike() {
-
-    },
-
     async sendLike() {
-      console.log("fs")
+      console.log("ffff")
 
       await fetch("http://filmfy-api.ddns.net/api/v1/movies-likes", {
         method: "POST",
@@ -133,7 +129,6 @@ export default {
           "users_id": this.userID
         })
       })
-
 
       await location.reload()
 

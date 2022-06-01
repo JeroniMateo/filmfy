@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
 
 import router from './router'
@@ -31,7 +31,7 @@ export function getCookie(cname) {
     return ''
 }
 
-export function origin(){
+export function origin() {
     return window.origin
 }
 
@@ -43,18 +43,29 @@ export function setCookie(cname, cvalue, exdays) {
 }
 
 export async function getUser(token) {
-    let promise = await fetch('http://filmfy-api.ddns.net/api/v1/get-user', {
-        method: "POST",
-        headers: {
-            'Content-type': 'application/json',
-        },
-        body: JSON.stringify({
-            "token": token
-        })
-    })
 
-    let user = await promise.json()
-    return user.user.id;
+    if (token) {
+        let promise = await fetch('http://filmfy-api.ddns.net/api/v1/get-user', {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                "token": token
+            })
+        })
+
+        let user = await promise.json()
+
+        if (user.status === "Token is Expired") {
+            return "User expired"
+        } else {
+            return user.user.id;
+        }
+    }else {
+        return false
+    }
+
 }
 
 createApp(App).use(store).use(router).mount('#app')
