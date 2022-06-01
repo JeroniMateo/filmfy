@@ -89,7 +89,7 @@
             <div v-for="list in latestLists.slice(0,5)">
 
               <div class="list -overlapped -stacked d-flex flex-column">
-                <a class="list-link">
+                <a class="list-link" :href="baseURL + '/lists/' + list.l_id" style="text-decoration: none">
                   <div class="list-link-stacked clear">
                     <ul class="poster-list -overlapped -p70" v-for="movie in list.movies.slice(0,4)">
 

@@ -1,4 +1,3 @@
-<Header/>
 <template>
 
   <main class="bg-bgmain">
@@ -37,7 +36,7 @@
                     <img :src="'http://filmfy-api.ddns.net' + list.user.profile_image" :alt="list.user.name" width="20" height="20"/>
                     <span class="mx-2">{{ list.user.name }}</span>
                     <span class="mx-2"><i style="color: orange " class="fa-solid fa-heart me-1"></i> {{ list.l_likes }}</span>
-                    <span><i class="fa-solid fa-film"></i> {{ list.movies_count }}</span>
+                    <span><i class="text-quaternary fa-solid fa-film"></i> {{ list.movies_count }}</span>
                   </div>
               </div>
             </a>
@@ -72,7 +71,7 @@
                     <img :src="'http://filmfy-api.ddns.net' + list.user.profile_image" :alt="list.user.name" width="20" height="20"/>
                     <span class="mx-2">{{ list.user.name }}</span>
                     <span class="mx-2"><i style="color: orange " class="fa-solid fa-heart me-1"></i> {{ list.l_likes }}</span>
-                    <span> <i class="fa-solid fa-film"></i> {{ list.movies_count }}</span>
+                    <span> <i class="text-quaternary fa-solid fa-film"></i> {{ list.movies_count }}</span>
                   </div>
 
                 </div>
@@ -107,7 +106,7 @@
                 <div class="mx-4">
                   <img :src="'http://filmfy-api.ddns.net' + list.user.profile_image" :alt="list.user.name" width="20" height="20"/>
                   <small class="comment-user-name mx-2">{{ list.user.name }}</small>
-                  <span> <i class="fa-solid fa-film"></i> {{ list.movies_count }}</span>
+                  <span> <i class="text-quaternary fa-solid fa-film"></i> {{ list.movies_count }}</span>
                 </div>
               </div>
             </div>
@@ -120,7 +119,6 @@
   </main>
 
 </template>
-<Footer/>
 
 <script>
 import Header from "@/components/basics/Header";
@@ -167,10 +165,7 @@ export default {
 
 <style scoped>
 
-main {
-  width: 100%;
-  height: 100%;
-}
+
 
 .image {
   background-image: linear-gradient(to bottom,

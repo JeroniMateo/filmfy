@@ -1,6 +1,6 @@
 <template>
-  <main>
-  <div class="list-details container bg-bgmain">
+  <main class="bg-bgmain p-1">
+  <div class="list-details container">
 
     <div class="row">
       <div class="main-information col-12 col-lg-6 d-flex flex-column align-items-start">
@@ -12,21 +12,21 @@
           </div>
 
           <div class="data d-flex w-100 justify-content-between p-1">
-            <span class="text-tertiary d-flex justify-content-start">Actualizada el 1 de junio</span>
+            <span class="text-tertiary d-flex justify-content-start">{{ listUpdated }}</span>
             <div class="d-flex justify-content-end align-items-center">
-              <i style="color: orange " class="mx-2 fa-solid fa-heart me-1"></i> <span class="text-tertiary">27</span>
+              <i style="color: orange" class="mx-2 fa-solid fa-heart me-1"></i> <span class="text-tertiary">{{ list.likes }}</span>
               <span class="mx-2">|</span>
-              <i class="mx-1 fa-solid fa-film me-1"></i><span class="text-tertiary">{{ list.movies_count }}</span>
+              <i class="text-quaternary mx-1 fa-solid fa-film me-1"></i><span class="text-tertiary">{{ list.movies_count }}</span>
             </div>
           </div>
         </div>
 
         <div class="title-description">
           <div class="mt-4">
-            <h1 class="d-flex"><b>{{ list.title }}</b></h1>
+            <h1 class="d-flex text-left" style="text-align: left"><b>{{ list.title }}</b></h1>
           </div>
-          <div class="my-3">
-            <span>{{ list.description }}</span>
+          <div class="my-3" >
+            <p class="text-left" style="text-align: left">{{ list.description }}</p>
           </div>
         </div>
 
@@ -83,22 +83,34 @@ export default {
       listId: this.$route.params.list,
       list: [],
       listCategories: [],
+      listUpdated: '',
     }
   },
 
   methods: {
     async fetchList() {
-      const promiseList = await fetch(`http://filmfy-api.ddns.net/api/lists/${this.listId}`)
-      this.list = await promiseList.json()
-      console.log(this.list)
-      console.log(this.currentUrl)
 
+      // List content
+      const promiseList = await fetch(`http://filmfy-api.ddns.net/api/lists/${this.listId}`);
+      this.list = await promiseList.json();
 
+      // Processing list update for front
+      let dateObj = new Date (this.list.updated_at);
+      const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre' ];
+      let year = dateObj.getUTCFullYear();
+      let month = months[dateObj.getUTCMonth()];
+      let day = dateObj.getUTCDate();
+
+      this.listUpdated = `Actualizada el ${day} de ${month} de ${year}`;
+
+      // Reading categories of movies
+      this.lit
     },
+
     displayMovieTitle(id) {
       let element = document.getElementById(id)
       element.style.visibility = "visible"
-
     },
 
     hideMovieTitle(id) {
