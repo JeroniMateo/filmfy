@@ -76,9 +76,11 @@ export default {
   async beforeMount() {
 
     this.token = getCookie("auth")
-    this.userID = await getUser(this.token)
-    if (this.userID !== "User expired") {
-      this.log = true
+    if (this.token) {
+      this.userID = await getUser(this.token)
+      if (this.userID !== "User expired") {
+        this.log = true
+      }
     }
 
   },
