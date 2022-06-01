@@ -12,8 +12,8 @@
       <div class="main-menu d-flex col-md-3 mx-3">
         <a href="/" class="d-flex align-items-center mb-md-0 text-dark text-decoration-none">
           <img src="../../assets/img/cameraLogo.png" class="bi me-2" width="30" height="30" role="img" aria-label="Bootstrap" alt="logo"/>
-        </a>
         <span class="brand-name"><strong>Filmfy</strong></span>
+        </a>
       </div>
 
       <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
