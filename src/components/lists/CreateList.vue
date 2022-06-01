@@ -1,9 +1,9 @@
 <template>
   <div id="CreateList">
     <div class="container">
-      <h1>Nueva Lista</h1>
       <form class="row g-3 needs-validation" novalidate>
-        <div class="col-md-6">
+        <h1><b>Nueva Lista</b></h1>
+        <div id="CrearListaForm" class="col-md-6">
           <label for="name_list" class="form-label">Nombre de la Lista</label>
           <input type="text" class="form-control" id="name_list" value="" />
         </div>
@@ -11,15 +11,15 @@
           <label for="username" class="form-label">Nombre de Usuario</label>
           <input type="text" class="form-control" id="username" required />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 description" >
           <label for="description_list" class="form-label"
-            >Descripción de la lista</label
+            >Descripción</label
           >
           <textarea
             name="description_list"
             id="description_list"
-            cols="40"
-            rows="20"
+            cols="70"
+            rows="8"
           ></textarea>
         </div>
         <div class="col-12">
@@ -81,9 +81,8 @@ export default {
 }
 .container {
   background-color: black;
-  padding: 5%;
   width: 70%;
-  height: 70vh;
+  padding: 2%;
   display: flex;
   align-items: center;
   justify-items: center;
@@ -101,5 +100,24 @@ label {
 small {
   color: white;
   font-size: 2vh;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+input{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+textarea{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 </style>

@@ -15,7 +15,9 @@
           >
         </div>
         <div class="mt-3">
-          <button type="button" class="btn btn-primary">Crea tus listas</button>
+          <button type="button" class="btn btn-primary" @click="crearLista">
+            Crea tus listas
+          </button>
         </div>
       </div>
     </div>
@@ -224,7 +226,7 @@ export default {
     Header,
     Footer
   },
-  data () {
+  data() {
     return {
       baseURL: window.origin,
       listsMostLiked: [],
@@ -233,23 +235,26 @@ export default {
     }
   },
   methods: {
-    async popularLists () {
+    crearLista () {
+      this.$router.push('/createList')
+    },
+    async popularLists() {
       const promise = await fetch(
         'http://filmfy-api.ddns.net/api/lists-most-liked'
       )
       this.listsMostLiked = await promise.json()
     },
-    async recentLists () {
+    async recentLists() {
       const promise = await fetch('http://filmfy-api.ddns.net/api/lists-recent')
       this.listsRecent = await promise.json()
     },
-    async selectedList (id) {
+    async selectedList(id) {
       const promise = await fetch('http://filmfy-api.ddns.net/api/lists/' + id)
       this.selectedLists.push(await promise.json())
       console.log(this.selectedLists)
     }
   },
-  beforeMount () {
+  beforeMount() {
     this.popularLists()
     this.recentLists()
     this.selectedList(1)
