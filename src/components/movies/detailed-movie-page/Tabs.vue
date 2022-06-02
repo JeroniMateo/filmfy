@@ -32,8 +32,8 @@ export default {
 
   props: ["movie"],
 
-  async mounted() {
-    await this.infoOutput()
+  updated() {
+     this.infoOutput()
   },
 
   methods: {

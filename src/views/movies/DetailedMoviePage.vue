@@ -2,7 +2,7 @@
   <div class="general">
 
     <div class="container">
-      <h2 class="title">{{ this.movie.title }} ({{ this.date.getFullYear() }})</h2>
+      <h2 class="title">{{ this.movie.title }} ({{ this.date}})</h2>
     </div>
 
     <div class="container d-flex justify-content-between align-items-center flex-column">
@@ -92,7 +92,7 @@ export default {
       const promiseMovie = await fetch(`http://filmfy-api.ddns.net/api/movies/${this.movieID}`)
       const moviesData = await promiseMovie.json()
       this.movie = moviesData
-      this.date = new Date(moviesData.release_date)
+      this.date = new Date(moviesData.release_date).getFullYear()
       await this.fetchComments()
     },
 

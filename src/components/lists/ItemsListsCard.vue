@@ -28,8 +28,6 @@ export default {
   beforeMount() {
     this.list.movies.forEach(movie => {
       if (movie.id === this.movie.id) {
-        console.log("Entre")
-        console.log(movie.id)
         this.movieInList = true
       }
     })

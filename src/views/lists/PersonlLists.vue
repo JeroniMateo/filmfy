@@ -10,7 +10,7 @@
     <div class="container">
       <div class="my-5 row">
         <div class="col-10">
-          <MoviesListsCards v-for="list in lists" :key="list" :list="list" :user="user" :width="190" :height="280"/>
+          <MoviesListsCards v-for="list in lists" :key="list" :list="list" :user="user" :width="90" :height="150"/>
         </div>
         <aside class="aside-card d-flex flex-column align-items-start col-2 rounded-3 p-0">
 
@@ -64,7 +64,7 @@ export default {
 
   methods: {
     async fetchUserLists() {
-      let promise = await fetch(`http://127.0.0.1:8000/api/user-lists/${this.userID}`)
+      let promise = await fetch(`http://filmfy-api.ddns.net/api/user-lists/${this.userID}`)
       this.lists = await promise.json()
     }
   }

@@ -16,6 +16,7 @@
     </div>
     <RecentMovies/>
     <BestMovies/>
+    <UpcommingMovies/>
     <MoviesMoreLists/>
   </div>
 
@@ -27,10 +28,11 @@ import BestMovies from "@/components/movies/movies-page/BestMovies";
 import Filter from "@/components/movies/detailed-movie-page/Filter";
 import Searcher from "@/components/movies/movies-page/Searcher";
 import MoviesMoreLists from "@/components/movies/movies-page/MoviesMoreLists";
+import UpcommingMovies from "@/components/movies/movies-page/UpcommingMovies";
 
 export default {
   name: "MainMoviesPage",
-  components: {MoviesMoreLists, Searcher, Filter, BestMovies, RecentMovies}
+  components: {UpcommingMovies, MoviesMoreLists, Searcher, Filter, BestMovies, RecentMovies}
 }
 </script>
 

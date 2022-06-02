@@ -1,41 +1,41 @@
 <template>
   <div v-if="!listControlEmpty" id="form-sended" class="subscription">
-
-    <div class="form-sended-content container mx-auto">
-      <div class="row">
-        <div class="all col-12 d-flex justify-content-between section-heading">
-          <div class=" align-items-center align-items-lg-start flex-column">
-            <span class="text-center">Mis listas</span>
+    <form @submit.prevent="this.postMovieToList">
+      <div class="form-sended-content container mx-auto">
+        <div class="row">
+          <div class="all col-12 d-flex justify-content-between section-heading">
+            <div class=" align-items-center align-items-lg-start flex-column">
+              <span class="text-center">Mis listas</span>
+            </div>
+            <div class="">
+              <span @click="hideForm" style="cursor: pointer ">x</span>
+            </div>
           </div>
-          <div class="">
-            <span @click="hideForm" style="cursor: pointer ">x</span>
-          </div>
-        </div>
 
-        <div class="container col-10">
-          <div class="mt-4 mb-2 row flex-column">
-            <ItemsListsCard v-for="list in this.lists" :key="list" :list="list" v-on:changeItem="this.pushIdList"
-                            v-on:changeItemDelete="this.itemDelete" :listsTotal="this.lists" :movie="movie"/>
+          <div class="container col-10">
+            <div class="mt-4 mb-2 row flex-column">
+              <ItemsListsCard v-for="list in this.lists" :key="list" :list="list" v-on:changeItem="this.pushIdList"
+                              v-on:changeItemDelete="this.itemDelete" :listsTotal="this.lists" :movie="movie"/>
+            </div>
           </div>
-        </div>
 
-        <div class="col-12 d-flex flex-row align-items-end">
-          <button @click="postMovieToList" class="btn btn-success btn-add-list text-white">Añadir a la lista</button>
+          <div class="col-12 d-flex flex-row align-items-end">
+            <button type="submit" class="btn btn-outline-primary btn-add-list">Añadir a la lista</button>
+          </div>
         </div>
       </div>
+    </form>
+  </div>
+
+  <div v-else id="form-sended" class="subscription">
+
+    <div class="form-sended-content container mx-auto">
+      <router-link to="/lists/new">
+        <button class="btn btn-outline-primary text-white">Empieza a crear tus listas</button>
+      </router-link>
     </div>
 
   </div>
-
-    <div v-else id="form-sended" class="subscription">
-
-      <div class="form-sended-content container mx-auto">
-        <router-link to="/lists/new">
-          <button class="btn text-white">Empieza a crear tus listas</button>
-        </router-link>
-      </div>
-
-    </div>
 </template>
 
 <script>
@@ -66,7 +66,7 @@ export default {
   methods: {
 
     async fetchUserLists() {
-      let promise = await fetch(`http://127.0.0.1:8000/api/user-lists/${this.userID}`)
+      let promise = await fetch(`http://filmfy-api.ddns.net/api/user-lists/${this.userID}`)
       this.lists = await promise.json()
       if (this.lists.length === 0) {
         this.listControlEmpty = true

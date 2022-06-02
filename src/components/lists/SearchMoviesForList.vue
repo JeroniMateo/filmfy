@@ -1,28 +1,29 @@
 <template>
-  <div class="searcher d-flex align-items-start justify-content-between ">
-    <div class="d-flex align-items-center mb-4">
+  <div class="searcher d-flex flex-column flex-md-row justify-content-between align-items-center row">
+
+    <div class="d-flex align-items-center mb-4 col-12 col-lg-10">
       <span class="section-heading">Buscar : </span>
 
       <div>
-        <div class="search-wrapper ">
-          <input id="search" class="field field-large ac_input" @mouseup="removeElements" @keyup="filteredList"
+        <div class="">
+          <input id="search" class="field " @mouseup="removeElements" @keyup="filteredList"
                  type="text"
                  v-model="search"/>
         </div>
-        <div class="content-searched bg-light d-flex flex-column align-items-center justify-content-between wrapper">
+        <div class="content-searched bg-light d-flex flex-column align-items-center justify-content-between ">
           <ItemsForSearchMoviesList v-for="movies in this.moviesSearch" :key="movies" :movies="movies"
                                     v-on:changeItem="addToList"/>
         </div>
       </div>
 
     </div>
-    <div>
-      <input class="btn btn-success" value="Crear lista" type="submit">
+    <div class="col-12 col-lg-2">
+      <input class="btn btn-outline-primary" value="Crear lista" type="submit">
     </div>
   </div>
 
   <div id="containerMovies" class="container my-4 container-contain-movies d-flex align-items-center justify-content-center flex-wrap">
-    <p id="p2" class="text-center">Añade contenido gueu</p>
+    <p id="p2" class="text-center fs-6">La lista esta vacía, añade contenido!</p>
   </div>
 </template>
 
@@ -78,6 +79,7 @@ export default {
     },
 
     addToList(movie) {
+      this.search = ""
       this.$emit("addToList", movie)
       this.removeElements()
       this.printMovie(movie)
@@ -85,7 +87,7 @@ export default {
 
     printMovie(movie) {
       const element = document.getElementById('p2');
-      element ? element.remove() : ""; // Removes the div with the 'div-02' id
+      element ? element.remove() : "";
       let containerMovies = document.getElementById("containerMovies")
       containerMovies.innerHTML += `
             <img style="width: 130px; border: 1px solid white; height: 200px; border-radius: 5px; margin-right: 10px; margin-top: 15px; margin-bottom: 15px" src="http://filmfy-api.ddns.net${movie.image}">
@@ -126,16 +128,17 @@ span {
   span {
     display: none;
   }
+  .field {
+    width: 90vw;
+  }
+  .section-heading {
+    display: none;
+  }
 }
 
 .content-searched {
   width: 30rem;
   position: absolute;
-}
-
-.div-movie-searcher {
-  z-index: 1;
-  background-color: rgb(68, 85, 102);
 }
 
 .searcher {
@@ -150,10 +153,6 @@ a {
 
 a:hover {
   color: #dcdada;
-}
-
-.content-text-year {
-  height: 130px;
 }
 
 .container-contain-movies {

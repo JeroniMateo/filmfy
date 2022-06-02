@@ -2,11 +2,20 @@
   <div id="form-sended" class="subscription">
     <div class="form-sended-content">
 
+      <div class="all col-12 d-flex justify-content-between section-heading mb-4">
+        <div class=" align-items-center align-items-lg-start flex-column">
+          <span class="text-center">Añadir comentario</span>
+        </div>
+        <div class="">
+          <span @click="hideForm" style="cursor: pointer ">x</span>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-4">
           <img v-bind:src="'http://filmfy-api.ddns.net/' + this.movie.image" alt="" width="200">
         </div>
-        <div class="col-7">
+        <div class="col-8">
           <form @submit.prevent="this.postComment">
             <div class="mb-3">
               <label for="" class="form-label">Título</label>
@@ -27,17 +36,13 @@
                 active-color="#00c740"
                 inactive-color="#fff"
                 v-bind:star-size="20"
-            /> <!-- Lightgreen: #00c740 -->
+            />
 
-            <!--            TODO: Change when login-->
             <input type="hidden" id="users_id" name="users_id" v-bind:value="user">
             <div class="d-flex justify-content-end">
-              <input class="button-send-form" type="submit"  value="Enviar">
+              <input class="button-send-form btn btn-outline-primary" type="submit"  value="Enviar">
             </div>
           </form>
-        </div>
-        <div class="col-1">
-          <span @click="hideForm" style="cursor: pointer ">x</span>
         </div>
       </div>
 
@@ -93,6 +98,21 @@ export default {
 </script>
 
 <style scoped>
+
+.section-heading {
+  display: flex;
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: Graphik-Regular-Web, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .075em;
+  margin-bottom: 0.76923077rem;
+  margin-top: 0;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
 .form-sended-content {
   border-radius: 8px;
   display: flex;
@@ -129,15 +149,5 @@ export default {
   background-color: rgb(204, 221, 238);
 }
 
-.rating {
-  background-color: rgb(204, 221, 238);
-}
 
-.button-send-form {
-  background-color: #00c740;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  padding: 7px;
-}
 </style>

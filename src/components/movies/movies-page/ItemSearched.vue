@@ -1,9 +1,9 @@
 <template>
   <div class="row pt-4 ps-1 pe-1 pb-4 d-flex align-items-start div-movie-searched" >
-    <img class="col-5" v-bind:src="this.baseUrlApi + movies.image">
-    <div class="d-flex flex-column align-items-start col-7 justify-content-between content-text-year">
-      <a class="text-start" v-bind:href="this.baseUrl + '/movies/' + movies.id">{{ movies.title }}</a>
-      <span>{{ movies.release_date }}</span>
+    <img class="col-3 rounded-3" v-bind:src="this.baseUrlApi + movies.image">
+    <div class="d-flex flex-column align-items-start col-9 justify-content-between content-text-year">
+      <a class="text-start mb-3" v-bind:href="this.baseUrl + '/movies/' + movies.id">{{ movies.title }}</a>
+      <span>{{ this.date }}</span>
     </div>
   </div>
 </template>
@@ -16,8 +16,13 @@ export default {
   data() {
     return {
       baseUrlApi: "http://filmfy-api.ddns.net/",
-      baseUrl: window.origin
+      baseUrl: window.origin,
+      date: "",
     }
+  },
+
+  beforeMount() {
+    this.date = new Date(this.movies.release_date).getFullYear()
   }
 }
 </script>
@@ -53,7 +58,4 @@ a:hover {
   color: #dcdada;
 }
 
-.content-text-year {
-  height: 130px;
-}
 </style>

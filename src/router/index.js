@@ -16,6 +16,7 @@ import Login from '../views/user/Login.vue'
 import UserProfile from '../views/user/UserProfile.vue'
 import FormNewList from "@/components/lists/FormNewList";
 import PersonlLists from "@/views/lists/PersonlLists";
+import EditList from "@/components/lists/EditList";
 
 const routes = [
   {
@@ -61,6 +62,12 @@ const routes = [
     path: '/my-lists/',
     name: 'my-lists',
     component: PersonlLists
+  },
+
+  {
+    path: '/my-lists/:list/edit',
+    name: 'my-lists-edit',
+    component: EditList
   },
 
   {

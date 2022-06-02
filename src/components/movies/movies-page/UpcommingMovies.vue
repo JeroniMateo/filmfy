@@ -1,22 +1,21 @@
 <template>
   <div class="container">
     <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
-      <span class="text-center">Películas más recientes</span>
+      <span>Próximos estrenos</span>
+    </div>
+    <div class="container justify-content-between">
+      <div class="row">
+        <MovieCardGeneral v-for="movie of this.movies" :key="movie" :movie="movie" />
+      </div>
     </div>
   </div>
-  <div class="container justify-content-between">
-    <div class="row">
-      <MovieCardGeneral v-for="movie of this.movies" :key="movie" :movie="movie"/>
-    </div>
-  </div>
-
 </template>
 
 <script>
 import MovieCardGeneral from "@/components/movies/movie-card/MovieCardGeneral";
 
 export default {
-  name: "RecentMovies",
+  name: "UpcommingMovies",
   components: {MovieCardGeneral},
   data() {
     return {
@@ -25,14 +24,14 @@ export default {
   },
 
   beforeMount() {
-    this.fetchRecentMovies()
+    this.fetchUpcommingMovies()
   },
 
   methods: {
-    async fetchRecentMovies() {
-      const promiseMovies = await fetch(`http://127.0.0.1:8000/api/recent-movies`)
-      const recentMoviesData = await promiseMovies.json()
-      this.limitData(recentMoviesData)
+    async fetchUpcommingMovies() {
+      const promise = await fetch(`http://127.0.0.1:8000/api/upcomming-movies`)
+      const response = await promise.json()
+      this.limitData(response)
     },
 
     limitData(movieData) {
@@ -47,8 +46,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 #popular-films .section-heading {
   margin-bottom: 15px;
 }
@@ -80,5 +77,4 @@ h2 {
 span {
 
 }
-
 </style>

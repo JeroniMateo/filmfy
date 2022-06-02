@@ -11,21 +11,21 @@
         <div class="container my-4 ">
 
           <div class="row justify-content-center">
-            <div class="d-flex flex-column justify-content-start col-5 form-row ">
+            <div class="d-flex flex-column justify-content-start col-lg-7 col-xl-5 col-12 form-row ">
               <label class="has-icon validated text-start"><span class="icon"></span>Nombre de la lista</label>
               <input v-model="title" type="text" name="name" class="field">
             </div>
           </div>
 
           <div class="row justify-content-center mb-5">
-            <div class="d-flex flex-column justify-content-start col-5  form-row">
+            <div class="d-flex flex-column justify-content-start col-lg-7 col-12 col-xl-5 form-row">
               <label class="has-icon validated text-start"><span class="icon"></span>Descripción</label>
               <textarea v-model="description" type="text" name="name" class="field " style="height: 5rem"/>
             </div>
           </div>
 
 
-          <SearchMoviesForList class="-" v-on:addToList="addToListMovie"/>
+          <SearchMoviesForList class="" v-on:addToList="addToListMovie"/>
 
         </div>
       </form>
