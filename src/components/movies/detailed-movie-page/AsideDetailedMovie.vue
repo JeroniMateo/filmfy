@@ -55,20 +55,22 @@ export default {
       token: "",
       userID: "",
       liked: false,
-      commented: false
+      commented: false,
+      counter : 0,
     }
   },
 
   async beforeMount() {
 
     this.token = getCookie("auth")
-    if (this.token) {
+    if (this.token && this.counter === 0) {
       this.userID = await getUser(this.token)
       if (this.userID !== "User expired") {
         this.log = true
         await this.checkLiked()
         await this.checkCommented()
       }
+      this.counter++
     }
   },
 
@@ -87,7 +89,7 @@ export default {
       })
 
       let response = await promise.json()
-
+      console.log(response)
       if (response.status === 1) {
         this.liked = true
       }else {

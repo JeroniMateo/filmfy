@@ -70,17 +70,19 @@ export default {
   data: () => ({
     openHamburger: '',
     closeHamburger: '',
-    log: false
+    log: false,
+    counter : 0,
   }),
 
   async beforeMount() {
 
     this.token = getCookie("auth")
-    if (this.token) {
+    if (this.token && this.counter === 0) {
       this.userID = await getUser(this.token)
       if (this.userID !== "User expired") {
         this.log = true
       }
+      this.counter++
     }
 
   },

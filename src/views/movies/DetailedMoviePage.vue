@@ -79,7 +79,7 @@ export default {
       directors: "Directores : ",
       writters: "Escritores : ",
       actors: "Actores : ",
-      contentComment: true
+      contentComment: true,
     }
   },
 

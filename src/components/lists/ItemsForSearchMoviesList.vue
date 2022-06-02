@@ -18,7 +18,7 @@ export default {
     return {
       baseUrlApi: "http://filmfy-api.ddns.net/",
       baseUrl: window.origin,
-      year: fullyear(this.movies.release_date),
+      year: new Date(this.movies.release_date).getFullYear(),
     }
   },
 

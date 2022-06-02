@@ -16,6 +16,7 @@
           <span class="mx-2">{{  }}</span>
           <span class="mx-2">❤ {{}}</span>
           <span> <i class="fa-solid fa-film"></i> {{ list.movies_count }}</span>
+          <a v-bind:href="baseURL + '/my-lists/'+ list.id +'/edit'"> <i class="fa-solid fa-pencil mx-2"></i></a>
         </div>
       </div>
     </a>
