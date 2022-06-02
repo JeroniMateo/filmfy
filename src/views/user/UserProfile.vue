@@ -28,7 +28,35 @@
         </div>
       </section>
     </div>
-   
+    <div>
+         <section id="UserInfo"  class="user-benefits form col-12 col-lg-4 p-3">
+        <div class="benefit 1 my-3">
+          <div class="d">
+            <h3 >Nombre de Usuario</h3>
+            <p > Mattius DT</p>
+          </div>
+        </div>
+        <div class="benefit 2 my-3">
+          <div>
+            <i class='far fa-calendar'></i>
+          </div>
+          <div>
+            <h3 >Nombre</h3>
+            <p >Usuario 1</p>
+          </div>
+        </div>
+        <div class="benefit 3 my-3">
+          <div>
+            <i class="far fa-newspaper"></i>
+          </div>
+          <div>
+            <h3 >Email</h3>
+            <p >mattius@gmail.com</p>
+          </div>
+        </div>
+      </section>
+      
+    </div>
   </div>
 </template>
 <script>
@@ -286,6 +314,12 @@ input {
 .register-space > div > h3 {
   font-size: 0.8rem;
 }
-
+p{
+  font-size: 2vw;
+}
+h3{
+  font-size: 4vh;
+  color: #00c740;
+}
 
 </style>
