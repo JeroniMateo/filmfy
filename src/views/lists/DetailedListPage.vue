@@ -32,14 +32,10 @@
 
         <div class="tags">
           <div class="p-3 d-flex align-items-center justify-content-center" id="categories" data-v-32954910="">
-            <p style="border: 1px solid white; border-radius: 20px; padding: 4px 12px 4px 12px; margin-bottom: 0px; margin-right: 10px">
-            Animación
+            <p v-for="category in listUniqueCategories.slice(0,4)"
+                style="border: 1px solid white; border-radius: 20px; padding: 4px 12px 4px 12px; margin-bottom: 0px; margin-right: 10px">
+              {{ category[0] }}
             </p>
-            <p style="border: 1px solid white; border-radius: 20px; padding: 4px 12px 4px 12px; margin-bottom: 0px; margin-right: 10px">
-              Aventura
-            </p>
-            <p style="border: 1px solid white; border-radius: 20px; padding: 4px 12px 4px 12px; margin-bottom: 0px; margin-right: 10px">
-              Familia</p>
           </div>
         </div>
       </div>
@@ -83,7 +79,8 @@ export default {
       baseURL: window.origin,
       listId: this.$route.params.list,
       list: [],
-      listCategories: [],
+      listUniqueCategories: [],
+      categoriesHolder: {},
       listUpdated: '',
     }
   },
@@ -106,7 +103,26 @@ export default {
       this.listUpdated = `Actualizada el ${day} de ${month} de ${year}`;
 
       // Reading categories of movies
-      this.lit
+      this.list.movies.forEach( (movie) => {
+        movie.categories.forEach( (category) => {
+          if (!(category in this.categoriesHolder)) {
+            this.categoriesHolder[category] = 1
+          } else {
+            this.categoriesHolder[category] = this.categoriesHolder[category] + 1
+          }
+        })
+      })
+
+      let sortable = [];
+      for (let uniqueCategory in this.categoriesHolder) {
+        sortable.push([uniqueCategory, this.categoriesHolder[uniqueCategory]])
+      }
+
+      sortable.sort(function(a, b) {
+        return b[1] - a[1];
+      });
+
+      this.listUniqueCategories = sortable
     },
 
     displayMovieTitle(id) {

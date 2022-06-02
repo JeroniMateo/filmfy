@@ -56,10 +56,10 @@
 
                         <star-rating
                                      v-bind:round-start-rating="false"
-                                     v-bind:rating="comment.rating"
+                                     v-bind:rating="comment.rating/2"
                                      v-bind:max-rating="5"
                                      v-bind:increment="0.5"
-                                     v-bind:read-only="false"
+                                     v-bind:read-only="true"
                                      v-bind:show-rating="false"
                                      active-color="#00c740"
                                      inactive-color="#fff"
