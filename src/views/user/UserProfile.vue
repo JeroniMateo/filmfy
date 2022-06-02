@@ -17,10 +17,10 @@
         </div>
         <div class="profile-name">
           <div class="profile-name-wrap">
-            <h1 class="title-1">{{ firstName }} Mattius DT</h1>
+            <h1 class="title-1"> {{ firstName }} </h1>
           </div>
           <div class="profile-info">
-            <a href="/editarPerfil" class="button ">Edit Profile</a>
+            <a href="/editarPerfil" class="button ">Editar Perfil</a>
           
             <a  id="logout" class="button " @click="logout"
               >Cerrar Sesion</a
@@ -34,7 +34,7 @@
         <div class="benefit 1 my-3">
           <div class="d">
             <h3>Nombre de Usuario</h3>
-            <p>Mattius DT</p>
+            <p>{{ firstName }}</p>
           </div>
         </div>
         <div class="benefit 2 my-3">
@@ -43,7 +43,7 @@
           </div>
           <div>
             <h3>Nombre</h3>
-            <p>Usuario 1</p>
+            <p> {{ firstName }} </p>
           </div>
         </div>
         <div class="benefit 3 my-3">
@@ -52,7 +52,7 @@
           </div>
           <div>
             <h3>Email</h3>
-            <p>mattius@gmail.com</p>
+            <p> {{ email}} </p>
           </div>
         </div>
       </section>
