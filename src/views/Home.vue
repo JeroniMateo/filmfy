@@ -116,16 +116,17 @@
                       >
                       <div class="comment-rating mx-2">
                         <star-rating
-                                     v-bind:round-start-rating="false"
-                                     v-bind:rating="comment.rating"
-                                     v-bind:max-rating="5"
-                                     v-bind:increment="0.5"
-                                     v-bind:read-only="false"
-                                     v-bind:show-rating="false"
-                                     active-color="#00c740"
-                                     inactive-color="#fff"
-                                     v-bind:star-size="20"
-                        /> <!-- Lightgreen: #00c740 -->
+                          v-bind:round-start-rating="false"
+                          v-bind:rating="comment.rating"
+                          v-bind:max-rating="5"
+                          v-bind:increment="0.5"
+                          v-bind:read-only="false"
+                          v-bind:show-rating="false"
+                          active-color="#00c740"
+                          inactive-color="#fff"
+                          v-bind:star-size="20"
+                        />
+                        <!-- Lightgreen: #00c740 -->
                       </div>
                     </div>
                     <div class="comment-content d-flex mt-2">
@@ -215,7 +216,7 @@ export default {
     Footer,
     StarRating
   },
-  data () {
+  data() {
     return {
       baseURL: window.origin,
       latestComments: '',
@@ -225,10 +226,10 @@ export default {
     }
   },
   methods: {
-    unete () {
+    unete() {
       this.$router.push('/register')
     },
-    getTopMovies () {
+    getTopMovies() {
       this.topMoviesId.forEach((item) => {
         fetch('http://filmfy-api.ddns.net/api/movies/' + item, {
           method: 'GET',
@@ -243,9 +244,12 @@ export default {
           .then((data) => {
             this.topMovies.push(data)
           })
+          .catch((error) => {
+            console.log(error)
+          })
       })
     },
-    getLatestComments () {
+    getLatestComments() {
       fetch('http://filmfy-api.ddns.net/api/comments-recent', {
         method: 'GET',
         headers: {
@@ -260,8 +264,11 @@ export default {
           this.latestComments = data
           console.log(this.latestComments)
         })
+        .catch((error) => {
+          console.log(error)
+        })
     },
-    getLatestLists () {
+    getLatestLists() {
       fetch('http://filmfy-api.ddns.net/api/lists-most-liked', {
         method: 'GET',
         headers: {
@@ -275,10 +282,12 @@ export default {
         .then((data) => {
           this.latestLists = data
           console.log(this.latestLists)
+        }).catch((error) => {
+          console.log(error)
         })
     }
   },
-  beforeMount () {
+  beforeMount() {
     this.getTopMovies()
     this.getLatestComments()
     this.getLatestLists()
