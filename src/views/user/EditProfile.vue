@@ -3,24 +3,14 @@
     <div class="container">
       <h1>Perfil de Usuario</h1>
       <form class="row g-3 needs-validation" novalidate>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <label for="name" class="form-label">Nombre</label>
-          <input
-            type="text"
-            class="form-control"
-            id="validationCustom02"
-            value=""
-          />
+          <input type="text" class="form-control" id="name" value="" />
         </div>
-        <div class="col-md-4">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" required />
-        </div>
-
-        <div class="col-md-4">
+        <div class="col-md-6">
           <label for="username" class="form-label">Username</label>
-          <div class="input-group has-validation">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <div class="input-group">
+            <span class="input-group-text" id="username">@</span>
             <input type="text" class="form-control" id="username" value="" />
           </div>
         </div>
@@ -29,23 +19,9 @@
           <input type="email" class="form-control" id="email" value="" />
         </div>
         <div class="col-md-6">
-          <div class="form-check">
-            <label id="Checkbox" class="form-check-label" for="invalidCheck">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="invalidCheck"
-                required
-              />
-              <small> Agree to terms and conditions </small>
-            </label>
-            <div class="invalid-feedback">
-              You must agree before submitting.
-            </div>
-          </div>
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="Password" value="" />
         </div>
-
         <div class="col-12">
           <button class="btn btn-primary" type="submit" @click="editProfile">
             Guardar Cambios
@@ -59,11 +35,10 @@
 <script>
 export default {
   name: 'EditProfile',
-  data() {
+  data () {
     return {
-      user: {
-        name: '',
-        username: '',
+      form: {
+        firstName: '',
         email: '',
         password: ''
       }
@@ -75,23 +50,20 @@ export default {
   methods: {
     getUserProfile (id) {
       fetch(`http://filmfy-api.ddns.net/api/register/${id}`, {
-        method: 'POST',
-        body: JSON.stringify({
-          usernameR: this.username,
-          nameR: this.name,
-          emailR: this.email,
-          passwordR: this.password,
-          password_confirmR: this.password_confirm
-        }),
+        method: 'GET',
         headers: {
-          'Content-type': 'application/json; charset=UTF-8'
+          Accept: 'application/json',
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true
         }
       })
         .then((response) => response.json())
-        .then((token) => {
-          this.setCookie('tokenName', token.access_token, 365)
-          this.log = true
-          this.$router.push('/')
+        .then((data) => {
+          this.form.firstName.push(data)
+          this.form.username.push(data)
+          this.form.email.push(data)
+          this.form.password.push(data)
         })
         .catch(function (error) {
           console.log('Error en el fetch', error)
@@ -99,7 +71,7 @@ export default {
     },
 
     editProfile (id) {
-      fetch(`http://filmfy-api.ddns.net/api/register/${id}`, {
+      fetch(`http://filmfy-api.ddns.net/api/v1/register/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
           name: this.name,
@@ -155,12 +127,33 @@ h1 {
   font-size: 7vh;
   color: #00c740;
 }
-label {
+label,
+p {
   color: white;
   font-size: 3vh;
 }
 small {
   color: white;
   font-size: 2vh;
+}
+@media only screen and (max-width: 993px) {
+  .big-div {
+    height: auto;
+    padding-top: 30px;
+  }
+  .user-benefits {
+    border: none;
+  }
+  label,
+  p {
+    color: white;
+    font-size: 2vh;
+    width: 50%;
+  }
+  small {
+    color: white;
+    font-size: 1vh;
+    width: 50%;
+  }
 }
 </style>

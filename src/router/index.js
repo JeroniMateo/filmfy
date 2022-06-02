@@ -2,18 +2,21 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
 
-import DetailedMoviePage from "@/views/movies/DetailedMoviePage";
-import MainMoviesPage from "@/views/movies/MainMoviesPage";
-import MovieCategories from "@/views/movies/MovieCategories";
-import MovieYear from "@/views/movies/MovieYear";
+import DetailedMoviePage from '@/views/movies/DetailedMoviePage'
+import MainMoviesPage from '@/views/movies/MainMoviesPage'
+import MovieCategories from '@/views/movies/MovieCategories'
+import MovieYear from '@/views/movies/MovieYear'
+import AddMovieToList from '@/components/lists/AddMovieToList'
+import CreateList from '@/components/lists/CreateList'
 
-import MainListsPage from "@/views/lists/MainListsPage";
-import DetailedListPage from "@/views/lists/DetailedListPage";
+import MainListsPage from '@/views/lists/MainListsPage'
+import DetailedListPage from '@/views/lists/DetailedListPage'
 
 import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
 
 import UserProfile from '../views/user/UserProfile.vue'
+import EditProfile from '../views/user/EditProfile.vue'
 import ListCreationPage from "@/views/lists/ListCreationPage";
 
 const routes = [
@@ -43,6 +46,16 @@ const routes = [
     name: 'movie-year',
     component: MovieYear
   },
+  {
+    path: '/movieAddToList/:movieId',
+    name: 'movie-add-to-list',
+    component: AddMovieToList
+  },
+  {
+    path: '/createList',
+    name: 'create-list',
+    component: CreateList
+  },
 
   {
     path: '/lists',
@@ -62,11 +75,15 @@ const routes = [
     component: DetailedListPage
   },
 
-
   {
-    path: '/userProfile',
-    name: 'profile',
+    path: '/miPerfil',
+    name: 'miPerfil',
     component: UserProfile
+  },
+  {
+    path: '/editarPerfil',
+    name: 'editarPerfil',
+    component: EditProfile
   },
 
   {
@@ -78,8 +95,7 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register
-  },
-
+  }
 ]
 
 const router = createRouter({

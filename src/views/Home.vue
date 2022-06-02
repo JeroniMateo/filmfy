@@ -56,10 +56,10 @@
 
                         <star-rating
                                      v-bind:round-start-rating="false"
-                                     v-bind:rating="comment.rating/2"
+                                     v-bind:rating="comment.rating"
                                      v-bind:max-rating="5"
                                      v-bind:increment="0.5"
-                                     v-bind:read-only="true"
+                                     v-bind:read-only="false"
                                      v-bind:show-rating="false"
                                      active-color="#00c740"
                                      inactive-color="#fff"
@@ -143,72 +143,68 @@ export default {
       latestComments: '',
       latestLists: '',
       topMovies: [],
-      topMoviesId: [22, 33, 53, 183, 229, 44],
+      topMoviesId: [22, 33, 53, 183, 229, 44]
     }
   },
   methods: {
-    unete(){
+    unete () {
       this.$router.push('/register')
     },
-    getTopMovies() {
-      this.topMoviesId.forEach( item => {
-          fetch("http://filmfy-api.ddns.net/api/movies/" + item,
-              {
-                method: 'GET',
-                headers: {
-                  'Accept': 'application/json',
-                  'Content-type': 'application/json',
-                  'Access-Control-Allow-Origin': '*',
-                  "Access-Control-Allow-Credentials" : true
-                }
-              })
-            .then(response => response.json())
-            .then(data => {
-              this.topMovies.push(data)
-            })
-         }
-      )
+    getTopMovies () {
+      this.topMoviesId.forEach((item) => {
+        fetch('http://filmfy-api.ddns.net/api/movies/' + item, {
+          method: 'GET',
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': true
+          }
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            this.topMovies.push(data)
+          })
+      })
     },
-    getLatestComments() {
-      fetch("http://filmfy-api.ddns.net/api/comments-recent",
-          {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/json',
-              'Content-type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-              "Access-Control-Allow-Credentials" : true
-            }
-          })
-          .then(response => response.json())
-          .then(data => {
-            this.latestComments = data
-            console.log(this.latestComments)
-          })
+    getLatestComments () {
+      fetch('http://filmfy-api.ddns.net/api/comments-recent', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true
+        }
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          this.latestComments = data
+          console.log(this.latestComments)
+        })
     },
-    getLatestLists() {
-      fetch("http://filmfy-api.ddns.net/api/lists-most-liked",
-          {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/json',
-              'Content-type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-              "Access-Control-Allow-Credentials" : true
-            }
-          })
-          .then(response => response.json())
-          .then(data => {
-            this.latestLists = data
-            console.log(this.latestLists)
-          })
-    },
+    getLatestLists () {
+      fetch('http://filmfy-api.ddns.net/api/lists-most-liked', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true
+        }
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          this.latestLists = data
+          console.log(this.latestLists)
+        })
+    }
   },
-  beforeMount() {
+  beforeMount () {
     this.getTopMovies()
     this.getLatestComments()
     this.getLatestLists()
-  },
+  }
 }
 </script>
 
@@ -222,11 +218,8 @@ main {
   width: 100vw;
   height: 50vh;
   background-repeat: no-repeat;
-  background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 100)
-  ), url("../assets/img/home/cover-img2.jpg") center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 100)),
+    url('../assets/img/home/cover-img2.jpg') center;
   background-size: cover;
 
 
@@ -370,8 +363,4 @@ div > svg {
   border-radius: 4px;
   display: block;
 }
-
-
-
-
 </style>

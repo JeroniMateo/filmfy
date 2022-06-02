@@ -1,7 +1,9 @@
 <template>
   <footer>
-    <div class="d-flex flex-column align-items-center flex-nowrap container-fluid p-3">
-      <hr style="color:white;">
+    <div
+      class="d-flex flex-column align-items-center flex-nowrap container-fluid p-3"
+    >
+      <hr style="color: white" />
       <div class="">
         <img src="../../assets/img/cameraLogo.png" alt="logo" />
         <span class="brand-size">Filfmy</span>
@@ -35,7 +37,7 @@ footer > div {
   color: #ecdbba;
 }
 .brand-size {
-  font-size: 125%;;
+  font-size: 125%;
 }
 .social {
   display: grid;

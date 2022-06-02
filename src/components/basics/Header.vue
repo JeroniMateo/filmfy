@@ -1,6 +1,6 @@
 <template>
 
-  <div class="all bg-bgmain">
+  <div class="all">
     <header @load="hamburgerIconHandling" class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
       <div id="hamburger" @click="hamburgerIconHandling">
@@ -59,14 +59,11 @@
 </template>
 
 <script>
-
-import {getCookie, getUser} from "@/main";
+import { getCookie, getUser } from '@/main'
 
 export default {
   name: 'Header',
-  components: {
-
-  },
+  components: {},
   data: () => ({
     openHamburger: '',
     closeHamburger: '',
@@ -74,31 +71,33 @@ export default {
   }),
 
   async beforeMount() {
-
-    this.token = getCookie("auth")
+    this.token = getCookie('auth')
     if (this.token) {
       this.userID = await getUser(this.token)
-      if (this.userID !== "User expired") {
+      if (this.userID !== 'User expired') {
         this.log = true
       }
     }
-
   },
 
   methods: {
-    hamburgerIconHandling () {
+    goMiPerfil() {
+      this.$router.push('/miPerfil')
+    },
+    hamburgerIconHandling() {
       this.openHamburger = document.getElementById('hamburger')
       document.getElementsByClassName('hamburger-container')[0].style.display =
-          'flex'
+        'flex'
 
-      this.closeHamburger = document.getElementsByClassName('close-hamburger')[0]
+      this.closeHamburger =
+        document.getElementsByClassName('close-hamburger')[0]
       this.closeHamburger.addEventListener('click', function () {
         document.getElementsByClassName(
-            'hamburger-container'
+          'hamburger-container'
         )[0].style.display = 'none'
       })
     },
-    login () {
+    login() {
       this.$router.push('/login')
     }
   }
@@ -107,6 +106,7 @@ export default {
 
 <style scoped>
 .all {
+  background-color: #242424;
   padding-bottom: 10px;
 }
 .brand-name {

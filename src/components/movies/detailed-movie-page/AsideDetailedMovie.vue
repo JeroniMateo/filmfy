@@ -131,7 +131,6 @@ export default {
       })
 
       await location.reload()
-
     },
 
     displayModalForm() {
@@ -143,9 +142,8 @@ export default {
 </script>
 
 <style scoped>
-
 .aside-card {
-  background-color: #2C3440;
+  background-color: #2c3440;
   width: fit-content;
 }
 
