@@ -240,16 +240,7 @@ h3 {
     padding: 30px;
   }
 }
-h2{
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color:#00c740
-}
-.h2-container {
-  margin-bottom: 2rem;
-  padding: 0.5rem;
-}
+
 
 .data-container {
   position: relative;
@@ -379,5 +370,15 @@ h2{
   .user-benefits {
     display: none;
   }
+}
+h2{
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color:#00c740
+}
+.h2-container {
+  margin-bottom: 2rem;
+  padding: 0.5rem;
 }
 </style>
