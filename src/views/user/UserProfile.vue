@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="profile-info">
-          <div class="follow-button-wrapper">
+          <div class="follow-button-wrapper" id="editProfile">
             <a href="/editarPerfil" class="button -small">Edit Profile</a>
           </div>
           <div class="_context-observer"></div>
@@ -224,13 +224,13 @@ export default {
   },
 
   methods: {
-    async popularLists () {
+    async popularLists() {
       const promise = await fetch(
         'http://filmfy-api.ddns.net/api/lists-most-liked'
       )
       this.listsMostLiked = await promise.json()
     },
-    async recentLists () {
+    async recentLists() {
       const promise = await fetch('http://filmfy-api.ddns.net/api/lists-recent')
       this.listsRecent = await promise.json()
     },
@@ -263,7 +263,7 @@ export default {
         })
     }
   },
-  beforeMount () {
+  beforeMount() {
     this.getUserInfo()
   }
 }
@@ -431,7 +431,7 @@ h3 {
   font-size: 1.1rem;
   line-height: 1.5rem;
   font-weight: 700;
-  color:#fff
+  color: #fff;
 }
 
 .register-heading > a {
@@ -492,5 +492,8 @@ input {
   .user-benefits {
     border: none;
   }
+}
+div#editProfile{
+  background-color: #2ecc71;
 }
 </style>
