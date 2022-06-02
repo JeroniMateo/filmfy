@@ -19,30 +19,31 @@
           <div class="profile-name-wrap">
             <h1 class="title-1">{{ firstName }} Mattius DT</h1>
           </div>
-        </div>
-        <div class="profile-info">
-          <div class="follow-button-wrapper" id="editProfile">
-            <a href="/editarPerfil" class="button -small">Edit Profile</a>
+          <div class="profile-info">
+            <a href="/editarPerfil" class="button ">Edit Profile</a>
+          
+            <a href="/editarPerfil" id="logout" class="button " @click="logout"
+              >Cerrar Sesion</a
+            >
           </div>
-          <div class="_context-observer"></div>
         </div>
       </section>
     </div>
     <div id="UserInfo">
-         <section   class="user-benefits form col-12 col-lg-4 p-3">
+      <section class="user-benefits form col-12 col-lg-4 p-3">
         <div class="benefit 1 my-3">
           <div class="d">
-            <h3 >Nombre de Usuario</h3>
-            <p > Mattius DT</p>
+            <h3>Nombre de Usuario</h3>
+            <p>Mattius DT</p>
           </div>
         </div>
         <div class="benefit 2 my-3">
           <div>
-            <i class='far fa-calendar'></i>
+            <i class="far fa-calendar"></i>
           </div>
           <div>
-            <h3 >Nombre</h3>
-            <p >Usuario 1</p>
+            <h3>Nombre</h3>
+            <p>Usuario 1</p>
           </div>
         </div>
         <div class="benefit 3 my-3">
@@ -50,18 +51,14 @@
             <i class="far fa-newspaper"></i>
           </div>
           <div>
-            <h3 >Email</h3>
-            <p >mattius@gmail.com</p>
+            <h3>Email</h3>
+            <p>mattius@gmail.com</p>
           </div>
         </div>
       </section>
       <div id="UserLists">
+        <h2 class="title">Mis Listas Creadas y Favoritas</h2>
         <section class="recommended col-xxl-4 col-12">
-          <div class="mt-5">
-            <span>Mis Listas</span>
-            <hr />
-          </div>
-
           <div
             class="d-flex flex-column justify-content-center align-items-center"
           >
@@ -126,6 +123,7 @@ export default {
   name: 'UserProfile',
   data() {
     return {
+      log: '',
       firstName: '',
       name: '',
       email: '',
@@ -137,7 +135,11 @@ export default {
   },
 
   methods: {
-
+    logout() {
+      localStorage.removeItem('token')
+      this.log = false
+      window.location.href = '/'
+    },
     getUserInfo() {
       fetch('http://filmfy-api.ddns.net/api/v1/register', {
         method: 'GET',
@@ -163,9 +165,12 @@ export default {
 </script>
 
 <style scoped>
-#UserInfo{
+#UsersList {
   display: flex;
-
+}
+#UserInfo {
+  display: flex;
+  justify-content: center;
 }
 .profile-info {
   margin-top: 0.38461538rem;
@@ -192,6 +197,7 @@ export default {
 .profile-name {
   display: flex;
   padding-left: 120px;
+  flex-direction: column;
 }
 
 .profile-summary {
@@ -380,12 +386,28 @@ input {
 .register-space > div > h3 {
   font-size: 0.8rem;
 }
-p{
+p {
   font-size: 2vw;
 }
-h3{
+h3 {
   font-size: 4vh;
   color: #00c740;
 }
+h2.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  margin-left: 20vh;
+}
+#logout{
+  margin-left: 2vh;
 
+  background-color:#c50909
+}
+.wrap-content{
+
+}
 </style>
