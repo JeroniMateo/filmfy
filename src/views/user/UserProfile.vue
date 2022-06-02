@@ -17,7 +17,7 @@
         </div>
         <div class="profile-name">
           <div class="profile-name-wrap">
-            <h1 class="title-1">{{ firstName }}</h1>
+            <h1 class="title-1">{{ firstName }} Mattius DT</h1>
           </div>
         </div>
         <div class="profile-info">
@@ -28,184 +28,7 @@
         </div>
       </section>
     </div>
-    <div class="container-fluid px-5 big-div">
-      <div class="row align-items-center justify-content-center">
-        <section class="user-benefits form col-12 col-lg-4 p-3">
-          <div class="benefit 1 my-3">
-            <div>
-              <i class="fas fa-film"></i>
-            </div>
-            <div class="d">
-              <h3 style="color: green">{{ username }}</h3>
-            </div>
-          </div>
-          <div class="benefit 2 my-3">
-            <div>
-              <h3 style="color: green">
-                {{ name }}
-              </h3>
-            </div>
-          </div>
-          <div class="benefit 3 my-3">
-            <div>
-              <h3 style="color: green">
-                {{ email }}
-              </h3>
-            </div>
-          </div>
-        </section>
-        // Listas del Usuario por Filmfy
-        <section class="form col-12 col-lg-4 px-4">
-          <div>
-            <div class="listsHeader">
-              <h1>Mis Listas por Filmfy</h1>
-            </div>
-            <div id="UserLists">
-              //Listas creadas por el usuario
-              <section class="recommended col-xxl-4 col-12">
-                <div class="mt-5">
-                  <span>Selección Filmfy</span>
-                  <hr />
-                </div>
-
-                <div
-                  class="d-flex flex-column justify-content-center align-items-center"
-                >
-                  <div
-                    class="list -overlapped -stacked d-flex flex-column"
-                    v-for="list in selectedLists"
-                  >
-                    <a
-                      :href="baseURL + '/lists/' + list.id"
-                      class="list-link"
-                      style="text-decoration: none"
-                    >
-                      <div class="list-link-stacked clear">
-                        <ul class="poster-list -overlapped -p70">
-                          <li
-                            class="poster film-poster listitem"
-                            v-for="movie in list.movies.slice(0, 5)"
-                          >
-                            <div>
-                              <img
-                                :src="
-                                  'http://filmfy-api.ddns.net' + movie.image
-                                "
-                                width="80"
-                                height="140"
-                                alt=""
-                              />
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </a>
-                    <div class="list-content d-flex flex-row mt-2">
-                      <p class="list-title d-flex align-content-center">
-                        <strong>{{ list.title }}</strong>
-                      </p>
-                      <div class="mx-4">
-                        <img
-                          :src="
-                            'http://filmfy-api.ddns.net' +
-                            list.user.profile_image
-                          "
-                          :alt="list.user.name"
-                          width="20"
-                          height="20"
-                        />
-                        <small class="comment-user-name mx-2">{{
-                          list.user.name
-                        }}</small>
-                        <span>
-                          <i class="fa-solid fa-film"></i>
-                          {{ list.movies_count }}</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </section>
-        // Listas creadas Por el usuario
-        <section class="form col-12 col-lg-4 px-4">
-          <div>
-            <div class="listsHeader">
-              <h1>Mis Listas</h1>
-            </div>
-            <div id="UserLists">
-              //Listas creadas por el usuario
-              <section class="recommended col-xxl-4 col-12">
-                <div class="mt-5">
-                  <span>Selección Filmfy</span>
-                  <hr />
-                </div>
-
-                <div
-                  class="d-flex flex-column justify-content-center align-items-center"
-                >
-                  <div
-                    class="list -overlapped -stacked d-flex flex-column"
-                    v-for="list in selectedLists"
-                  >
-                    <a
-                      :href="baseURL + '/lists/' + list.id"
-                      class="list-link"
-                      style="text-decoration: none"
-                    >
-                      <div class="list-link-stacked clear">
-                        <ul class="poster-list -overlapped -p70">
-                          <li
-                            class="poster film-poster listitem"
-                            v-for="movie in list.movies.slice(0, 5)"
-                          >
-                            <div>
-                              <img
-                                :src="
-                                  'http://filmfy-api.ddns.net' + movie.image
-                                "
-                                width="80"
-                                height="140"
-                                alt=""
-                              />
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </a>
-                    <div class="list-content d-flex flex-row mt-2">
-                      <p class="list-title d-flex align-content-center">
-                        <strong>{{ list.title }}</strong>
-                      </p>
-                      <div class="mx-4">
-                        <img
-                          :src="
-                            'http://filmfy-api.ddns.net' +
-                            list.user.profile_image
-                          "
-                          :alt="list.user.name"
-                          width="20"
-                          height="20"
-                        />
-                        <small class="comment-user-name mx-2">{{
-                          list.user.name
-                        }}</small>
-                        <span>
-                          <i class="fa-solid fa-film"></i>
-                          {{ list.movies_count }}</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
+   
   </div>
 </template>
 <script>
@@ -224,27 +47,7 @@ export default {
   },
 
   methods: {
-    async popularLists() {
-      const promise = await fetch(
-        'http://filmfy-api.ddns.net/api/lists-most-liked'
-      )
-      this.listsMostLiked = await promise.json()
-    },
-    async recentLists() {
-      const promise = await fetch('http://filmfy-api.ddns.net/api/lists-recent')
-      this.listsRecent = await promise.json()
-    },
-    async selectedList(id) {
-      const promise = await fetch('http://filmfy-api.ddns.net/api/lists/' + id)
-      this.selectedLists.push(await promise.json())
-      console.log(this.selectedLists)
-    },
-    cambiarPerfilIMG() {
-      const x = document.createElement('INPUT')
-      x.setAttribute('type', 'file')
-      document.body.appendChild(x)
-      document.getElementById('user_img').src = URL.createObjectURL(x.files[0])
-    },
+
     getUserInfo() {
       fetch('http://filmfy-api.ddns.net/api/v1/register', {
         method: 'GET',
@@ -333,7 +136,7 @@ section {
 
 .follow-button-wrapper {
   margin-top: 3rem;
-  margin-left: -30vh;
+  margin-left: -45vh;
 }
 
 .button.-small {
@@ -382,7 +185,7 @@ a {
   width: 100px;
   display: flex;
   float: none;
-  margin-top: 20vh;
+  margin-top: 25vh;
   margin-right: 0;
 }
 
@@ -394,7 +197,7 @@ img {
   object-fit: cover;
   position: absolute;
   width: 94%;
-  height: 70%;
+  height: 90%;
   margin-top: -2vh;
 }
 #avatar-zoom {
@@ -484,16 +287,5 @@ input {
   font-size: 0.8rem;
 }
 
-@media only screen and (max-width: 993px) {
-  .big-div {
-    height: auto;
-    padding-top: 30px;
-  }
-  .user-benefits {
-    border: none;
-  }
-}
-div#editProfile{
-  background-color: #2ecc71;
-}
+
 </style>
