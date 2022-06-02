@@ -1,11 +1,12 @@
 <template>
-  <div class="searcher d-flex align-items-start justify-content-between">
-    <div class="d-flex align-items-center">
+  <div class="searcher d-flex align-items-start justify-content-between ">
+    <div class="d-flex align-items-center mb-4">
       <span class="section-heading">Buscar : </span>
 
       <div>
         <div class="search-wrapper ">
-          <input id="search" class="field field-large ac_input" @mouseup="removeElements" @keyup="filteredList" type="text"
+          <input id="search" class="field field-large ac_input" @mouseup="removeElements" @keyup="filteredList"
+                 type="text"
                  v-model="search"/>
         </div>
         <div class="content-searched bg-light d-flex flex-column align-items-center justify-content-between wrapper">
@@ -19,8 +20,9 @@
       <input class="btn btn-success" value="Crear lista" type="submit">
     </div>
   </div>
-  <div id="containerMovies" class="container my-4 container-contain-movies d-flex align-items-start flex-wrap">
-      <p id="p2">Añade contenido gueu</p>
+
+  <div id="containerMovies" class="container my-4 container-contain-movies d-flex align-items-center justify-content-center flex-wrap">
+    <p id="p2" class="text-center">Añade contenido gueu</p>
   </div>
 </template>
 

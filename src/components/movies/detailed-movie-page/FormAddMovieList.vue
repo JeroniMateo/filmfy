@@ -1,26 +1,41 @@
 <template>
-  <div id="form-sended" class="subscription">
+  <div v-if="!listControlEmpty" id="form-sended" class="subscription">
 
-    <div class="form-sended-content">
-      <div class="all">
-        <div class="container">
-          <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
+    <div class="form-sended-content container mx-auto">
+      <div class="row">
+        <div class="all col-12 d-flex justify-content-between section-heading">
+          <div class=" align-items-center align-items-lg-start flex-column">
             <span class="text-center">Mis listas</span>
           </div>
-        </div>
-
-        <div class="container">
-          <div class="my-5 row">
-            <div class="col-12 d-flex align-items-start flex-column">
-              <ItemsListsCard v-for="list in this.lists" :key="list" :list="list" />
-            </div>
+          <div class="">
+            <span @click="hideForm" style="cursor: pointer ">x</span>
           </div>
         </div>
+
+        <div class="container col-10">
+          <div class="mt-4 mb-2 row flex-column">
+            <ItemsListsCard v-for="list in this.lists" :key="list" :list="list" v-on:changeItem="this.pushIdList"
+                            v-on:changeItemDelete="this.itemDelete" :listsTotal="this.lists" :movie="movie"/>
+          </div>
+        </div>
+
+        <div class="col-12 d-flex flex-row align-items-end">
+          <button @click="postMovieToList" class="btn btn-success btn-add-list text-white">Añadir a la lista</button>
+        </div>
       </div>
-      <button @click="addToList" class="btn btn-success btn-add-list text-white" >Añadir a la lista</button>
     </div>
 
   </div>
+
+    <div v-else id="form-sended" class="subscription">
+
+      <div class="form-sended-content container mx-auto">
+        <router-link to="/lists/new">
+          <button class="btn text-white">Empieza a crear tus listas</button>
+        </router-link>
+      </div>
+
+    </div>
 </template>
 
 <script>
@@ -36,7 +51,9 @@ export default {
     return {
       token: getCookie("auth"),
       lists: [],
-      userID: ""
+      userID: "",
+      listControlEmpty: false,
+      idLists: []
     }
   },
 
@@ -51,24 +68,38 @@ export default {
     async fetchUserLists() {
       let promise = await fetch(`http://127.0.0.1:8000/api/user-lists/${this.userID}`)
       this.lists = await promise.json()
+      if (this.lists.length === 0) {
+        this.listControlEmpty = true
+      }
     },
 
+    pushIdList(idList) {
+      this.idLists.push(idList)
+    },
 
-    async postComment() {
-      await fetch(`http://filmfy-api.ddns.net/api/v1/comments-store/${this.movie.id}`, {
-        method: "POST",
-        headers: {
-          'Accept': 'application/json',
-          'Content-type': 'application/json',
-          'Authorization': 'Bearer ' + this.token,
-        },
-        body: JSON.stringify({
-          "title": document.getElementById("title").value,
-          "body": document.getElementById("body").value,
-          "rating": this.rating,
-          "users_id": document.getElementById("users_id").value,
-        })
+    itemDelete(idList) {
+      this.idLists = this.idLists.filter(item => {
+        return item !== idList
       })
+    },
+
+    async postMovieToList() {
+
+      for (const item of this.idLists) {
+        await fetch(`http://filmfy-api.ddns.net/api/v1/add-movie-to-list`, {
+          method: "POST",
+          headers: {
+            'Accept': 'application/json',
+            'Content-type': 'application/json',
+            'Authorization': 'Bearer ' + this.token,
+          },
+          body: JSON.stringify({
+            "movies_id": this.movie.id,
+            "lists_id": item
+
+          })
+        })
+      }
       location.reload()
     },
 
@@ -81,15 +112,31 @@ export default {
 </script>
 
 <style scoped>
+
+.section-heading {
+  display: flex;
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: Graphik-Regular-Web, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .075em;
+  margin-bottom: 0.76923077rem;
+  margin-top: 0;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
 .form-sended-content {
+  margin-top: 120px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 55vw;
+  width: 30rem;
+  min-height: 300px;
   height: auto;
   background-color: #2C3440;
-  margin: 50px auto;
   padding: 20px;
   border: 1px solid #888;
   text-align: center;
@@ -106,27 +153,6 @@ export default {
   height: 100%;
   overflow: auto; /* Enable scroll if needed */
   backdrop-filter: blur(6px); /* blur effect for the overlay! */
-}
-
-.body {
-  height: 300px;
-  background-color: rgb(204, 221, 238);
-}
-
-.title {
-  background-color: rgb(204, 221, 238);
-}
-
-.rating {
-  background-color: rgb(204, 221, 238);
-}
-
-.button-send-form {
-  background-color: #00c740;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  padding: 7px;
 }
 
 .btn-add-list {

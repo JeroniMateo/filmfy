@@ -6,26 +6,27 @@
       </div>
     </div>
     <div>
-      <form @submit.prevent="this.postList" >
+      <form @submit.prevent="this.postList">
 
         <div class="container my-4 ">
+
           <div class="row justify-content-center">
-
-            <div class="d-flex flex-column justify-content-start col-4 form-row">
+            <div class="d-flex flex-column justify-content-start col-5 form-row ">
               <label class="has-icon validated text-start"><span class="icon"></span>Nombre de la lista</label>
-              <input v-model="title" type="text" name="name" class="field" >
+              <input v-model="title" type="text" name="name" class="field">
             </div>
+          </div>
 
-            <div class="d-flex flex-column justify-content-start col-6 form-row">
+          <div class="row justify-content-center mb-5">
+            <div class="d-flex flex-column justify-content-start col-5  form-row">
               <label class="has-icon validated text-start"><span class="icon"></span>Descripción</label>
               <textarea v-model="description" type="text" name="name" class="field " style="height: 5rem"/>
             </div>
-
-            <div class=" " >
-              <SearchMoviesForList class="col-10" v-on:addToList="addToListMovie"/>
-            </div>
-
           </div>
+
+
+          <SearchMoviesForList class="-" v-on:addToList="addToListMovie"/>
+
         </div>
       </form>
     </div>
@@ -46,8 +47,8 @@ export default {
   data() {
     return {
       title: "",
-      description : "",
-      userID : "",
+      description: "",
+      userID: "",
       token: "",
       list: []
     }
@@ -70,7 +71,7 @@ export default {
         },
         body: JSON.stringify({
           title: this.title,
-          description : this.description,
+          description: this.description,
           users_id: this.userID,
           movies: this.list
         })
@@ -122,14 +123,13 @@ export default {
   border-radius: 3px;
   box-shadow: inset 0 -1px 0 #456;
   box-sizing: border-box;
-  color: #89a;
+  color: white;
   font-size: 1.07692308rem;
   line-height: 1;
   margin: 0;
   padding: 9px 9px 8px;
   width: 100%;
 }
-
 
 
 </style>

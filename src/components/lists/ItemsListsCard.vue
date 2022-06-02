@@ -1,30 +1,52 @@
 <template>
-  <div @click="checkList" class="d-flex align-items-center justify-content-between div-content-list">
-    <i v-if="checked" class="fa fa-check me-3" ></i>
-    <span v-else ></span>
+
+  <div v-if="!movieInList" @click="checkList(this.list.id)" v-bind:id="this.list.id + '-itemList'"
+       class="flex-row-reverse justify-content-between div-content-list col-12 d-flex align-items-center">
     <p class="m-0 py-3">{{ this.list.title }}</p>
   </div>
+
+  <div v-else v-bind:id="this.list.id + '-itemList'"
+       class=" justify-content-between div-content-list col-12 d-flex align-items-center">
+    <i class="fa fa-check me-3"></i>
+    <p class="m-0 py-3">{{ this.list.title }}</p>
+  </div>
+
 </template>
 
 <script>
 export default {
   name: "ItemsListsCard",
-  props: ["list"],
+  props: ["list", "movie"],
 
   data() {
     return {
       checked: false,
-      list: []
+      movieInList: false
     }
+  },
+
+  beforeMount() {
+    this.list.movies.forEach(movie => {
+      if (movie.id === this.movie.id) {
+        console.log("Entre")
+        console.log(movie.id)
+        this.movieInList = true
+      }
+    })
   },
 
   methods: {
 
-    checkList() {
-      if (!this.checked){
+    checkList(idList) {
+      if (!this.checked) {
         this.checked = true
-      }else {
+        document.getElementById(`${idList}-itemList`).innerHTML += `<i id="${idList}-check" class="fa fa-check me-3" ></i>`
+        this.$emit("changeItem", idList)
+      } else {
         this.checked = false
+        let el = document.getElementById(`${idList}-check`)
+        el.remove()
+        this.$emit("changeItemDelete", idList)
       }
     }
   }

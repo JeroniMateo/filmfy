@@ -33,7 +33,7 @@ import {getCookie, getUser} from "@/main";
 import MoviesListsCards from "@/components/lists/MoviesListsCards";
 
 export default {
-  name: "ListCreationPage",
+  name: "PersonalLists",
   components: {MoviesListsCards},
 
 
