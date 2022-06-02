@@ -1,5 +1,4 @@
 <template>
-
   <section class="login-space">
     <div class="d-flex flex-column form">
       <div class="h2-container">
@@ -7,16 +6,36 @@
       </div>
 
       <div class="data-container">
-        <input aria-label="Email" type="text" autofocus="" id="email" name="email" class="text-black"
-               placeholder="E-mail*" v-model="email"/>
+        <input
+          aria-label="Email"
+          type="text"
+          autofocus=""
+          id="email"
+          name="email"
+          class="text-black"
+          placeholder="E-mail*"
+          v-model="email"
+        />
         <p class="text-danger">{{ this.error_email }}</p>
       </div>
 
       <div class="data-container">
-        <input aria-label="Password" type="password" autofocus="" class="text-black" id="password" name="password"
-               placeholder="Contraseña*" v-model="password"/>
-        <span id="eye1" class="show-pass-icon eye" style="display: block"><i class="fas fa-eye"></i></span>
-        <span id="eye2" class="hide-pass-icon eye" style="display: none"><i class="fas fa-eye-slash"></i></span>
+        <input
+          aria-label="Password"
+          type="password"
+          autofocus=""
+          class="text-black"
+          id="password"
+          name="password"
+          placeholder="Contraseña*"
+          v-model="password"
+        />
+        <span id="eye1" class="show-pass-icon eye" style="display: block"
+          ><i class="fas fa-eye"></i
+        ></span>
+        <span id="eye2" class="hide-pass-icon eye" style="display: none"
+          ><i class="fas fa-eye-slash"></i
+        ></span>
         <p class="text-danger">{{ this.error_password }}</p>
       </div>
 
@@ -31,17 +50,21 @@
         <div>
           <h3>¿No estás en filmfy? ¡Regístrate!</h3>
         </div>
-        <a class="text-decoration-none text-white button w-100 p-2 bg-danger rounded-3" href="/register" id="signUpButton" aria-label="Inicia sesión">
-          <p class="text-decoration-none text-white m-0 fw-bold" >Registrarse</p>
+        <a
+          class="text-decoration-none text-white button w-100 register-button p-2 bg-danger rounded-3"
+          href="/register"
+          id="signUpButton"
+          aria-label="Inicia sesión"
+        >
+          <p class="text-decoration-none text-white m-0 fw-bold">Registrarse</p>
         </a>
       </div>
     </div>
   </section>
-
 </template>
 
 <script>
-import {setCookie} from "@/main";
+import { setCookie } from '@/main'
 
 export default {
   name: 'Login',
@@ -53,53 +76,51 @@ export default {
       error_email: '',
       error_password: '',
       error_on_login: '',
-      response: ""
+      response: ''
     }
   },
 
   methods: {
-
     loginValidation: function () {
-      if (this.email !== "") {
-        if (this.password !== "") {
+      if (this.email !== '') {
+        if (this.password !== '') {
           this.loginAPI()
         } else {
-          this.error_password = "Introduce una contraseña valida"
+          this.error_password = 'Introduce una contraseña valida'
         }
       } else {
-        this.error_email = "Introduce un email valido"
+        this.error_email = 'Introduce un email valido'
       }
     },
 
     async loginAPI() {
-
       let promise = await fetch('http://filmfy-api.ddns.net/api/v1/login', {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
           'Content-type': 'application/json',
           'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
-          "email": this.email,
-          "password": this.password
+          email: this.email,
+          password: this.password
         })
       })
       let response = await promise.json()
 
       if (response.hasOwnProperty('error')) {
         if (response.error.hasOwnProperty('email')) {
-          this.response = "Introduzca un email válido"
+          this.response = 'Introduzca un email válido'
         } else if (response.error.hasOwnProperty('password')) {
-          this.response = "La contraseña debe ser de al menos 6 caracteres"
+          this.response = 'La contraseña debe ser de al menos 6 caracteres'
         }
       }
       if (response.hasOwnProperty('message')) {
-        this.response = "Login fallido, pruebe de nuevo"
+        this.response = 'Login fallido, pruebe de nuevo'
       }
 
       if (promise.status === 200) {
-        await setCookie("auth", response.token, 30)
+        await setCookie('auth', response.token, 30)
         window.location = window.origin
       }
     },
@@ -126,7 +147,6 @@ export default {
 </script>
 
 <style scoped>
-
 #formlogin {
   background-color: #242424;
 }
@@ -172,10 +192,9 @@ h3 {
   margin-top: 0;
 }
 
-
 /* Left section */
 .user-benefits {
-  border-right: 1px solid white;
+  border-right: 1px solid #fff;
 }
 
 .benefit {
@@ -206,12 +225,11 @@ h3 {
   letter-spacing: normal;
 }
 
-
 /* Right section */
 .login-space {
-  padding-top: 20vh;
-  height: 50rem;
-  background-color: black;
+  padding-top: 5vh;
+  height: 35rem;
+  background-color: #0f0505;
   display: flex;
   justify-content: center;
 }
@@ -219,11 +237,15 @@ h3 {
 @media only screen and (max-width: 993px) {
   .login-space {
     height: auto;
-    padding
-    : 30px;
+    padding: 30px;
   }
 }
-
+h2{
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color:#00c740
+}
 .h2-container {
   margin-bottom: 2rem;
   padding: 0.5rem;
@@ -234,7 +256,8 @@ h3 {
   padding: 0.5rem;
 }
 
-.show-pass-icon, .hide-pass-icon {
+.show-pass-icon,
+.hide-pass-icon {
   float: right;
   margin-top: -2.3rem;
   font-size: 1.2rem;
@@ -253,13 +276,14 @@ h3 {
   color: var(--focus-black);
 }
 
-.login-button, .register-link {
+.login-button,
+.register-link {
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: green;
+  color: #fff;
+  background-color: #00c740;
   border: none;
   width: 100%;
   min-height: 3rem;
@@ -271,7 +295,10 @@ h3 {
   border-radius: 5px;
 }
 
-.login-button > div > p {
+.register-button > div > p {
+  font-weight: 900;
+
+}.login-button > div > p {
   font-weight: 900;
 }
 
@@ -299,8 +326,9 @@ h3 {
   font-weight: 900;
 }
 
-.login-button:hover, .register-link:hover {
-  background-color: orange;
+.login-button:hover,
+.register-link:hover {
+  background-color: #f1c40f;
 }
 
 .error-container {
@@ -315,11 +343,10 @@ h3 {
   margin-bottom: 1.5rem;
   border-width: 1px 1px 1px 20px;
   border-style: solid;
-  border-color: var(--error-color);
+  border-color: #c50909;
   border-image: initial;
-  color: var(--error-color);
+  color: #c50909;
 }
-
 
 @media only screen and (max-width: 1025px) {
   body {
@@ -353,5 +380,4 @@ h3 {
     display: none;
   }
 }
-
 </style>
