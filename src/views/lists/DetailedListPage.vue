@@ -70,7 +70,8 @@
 </template>
 
 <script>
-import AsideDetailedList from "@/components/lists/AsideDetailedList";
+
+import AsideDetailedList from "@/components/lists/detailed-list-page/AsideDetailedList";
 
 export default {
   name: "DetailedListPage",
