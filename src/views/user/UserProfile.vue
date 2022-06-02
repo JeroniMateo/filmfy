@@ -22,7 +22,7 @@
           <div class="profile-info">
             <a href="/editarPerfil" class="button ">Edit Profile</a>
           
-            <a href="/editarPerfil" id="logout" class="button " @click="logout"
+            <a  id="logout" class="button " @click="logout"
               >Cerrar Sesion</a
             >
           </div>
@@ -138,7 +138,7 @@ export default {
     logout() {
       localStorage.removeItem('token')
       this.log = false
-      window.location.href = '/'
+      this.$router.push('/')
     },
     getUserInfo() {
       fetch('http://filmfy-api.ddns.net/api/v1/register', {
