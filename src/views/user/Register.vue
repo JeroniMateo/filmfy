@@ -8,7 +8,7 @@
             <i class="fas fa-film"></i>
           </div>
           <div class="d">
-            <h3 style="color: green">Disfruta de este arte llamado Cine</h3>
+            <h3 style="color: green">Guarda tus películas</h3>
             <p style="font-size: 15px">
               No te pierdas ninguna de las películas que te gustan. ¡Las podrás
               guardar!
@@ -21,7 +21,7 @@
           </div>
           <div>
             <h3 style="color: green">
-              Pasa momentos inolvidables junto a tus amigos
+              Envia listas a tus amig@s
             </h3>
             <p style="font-size: 15px">
               Comparte tus listas, opiniones y películas con quien quieras,
@@ -35,7 +35,7 @@
           </div>
           <div>
             <h3 style="color: green">
-              Ten recuerdo de los grandes momentos del Cine
+              Conviértete en un experto en cine
             </h3>
             <p style="font-size: 15px">
               Da likes, guarda listas y organiza tus películas favoritas como
