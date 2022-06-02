@@ -53,7 +53,7 @@
   </div>
   <div class="movies-container container">
       <ul class="d-flex flex-wrap justify-content-start">
-        <div v-for="movie in list.movies">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="movie in list.movies">
           <div :id="movie.id" class="d-flex flex-column align-items-center" style="visibility: hidden">
             <span class="frame-title">{{ movie.title }}</span>
           </div>
