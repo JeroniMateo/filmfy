@@ -29,21 +29,8 @@
           <input type="email" class="form-control" id="email" value="" />
         </div>
         <div class="col-md-6">
-          <div class="form-check">
-            <label id="Checkbox" class="form-check-label" for="invalidCheck">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="invalidCheck"
-                required
-              />
-              <small> Agree to terms and conditions </small>
-            </label>
-            <div class="invalid-feedback">
-              You must agree before submitting.
-            </div>
-          </div>
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" value="" />
         </div>
 
         <div class="col-12">
@@ -75,31 +62,28 @@ export default {
   methods: {
     getUserProfile (id) {
       fetch(`http://filmfy-api.ddns.net/api/register/${id}`, {
-        method: 'POST',
-        body: JSON.stringify({
-          usernameR: this.username,
-          nameR: this.name,
-          emailR: this.email,
-          passwordR: this.password,
-          password_confirmR: this.password_confirm
-        }),
+        method: 'GET',
         headers: {
-          'Content-type': 'application/json; charset=UTF-8'
+          Accept: 'application/json',
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true
         }
       })
         .then((response) => response.json())
-        .then((token) => {
-          this.setCookie('tokenName', token.access_token, 365)
-          this.log = true
-          this.$router.push('/')
+        .then((data) => {
+          this.name.push(data)
+          this.username.push(data)
+          this.email.push(data)
+          this.password.push(data)
         })
         .catch(function (error) {
           console.log('Error en el fetch', error)
         })
     },
 
-    editProfile (id) {
-      fetch(`http://filmfy-api.ddns.net/api/register/${id}`, {
+    editProfile(id) {
+      fetch(`http://filmfy-api.ddns.net/api/v1/register/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
           name: this.name,
@@ -155,7 +139,7 @@ h1 {
   font-size: 7vh;
   color: #00c740;
 }
-label {
+label,p {
   color: white;
   font-size: 3vh;
 }

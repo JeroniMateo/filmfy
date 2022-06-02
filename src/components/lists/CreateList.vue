@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  name: 'EditProfile',
+  name: 'CreateList',
   data () {
     return {
       name_list: '',
@@ -93,7 +93,7 @@ h1 {
   font-size: 7vh;
   color: #00c740;
 }
-label {
+label,p {
   color: white;
   font-size: 3vh;
 }

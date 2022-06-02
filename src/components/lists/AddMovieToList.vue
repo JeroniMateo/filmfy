@@ -34,8 +34,8 @@
 
 <script>
 export default {
-  name: 'EditProfile',
-  data () {
+  name: 'AddMovieToList',
+  data() {
     return {
       list_name: '',
       username: '',
@@ -43,7 +43,7 @@ export default {
     }
   },
   methods: {
-    añadirNuevaPelicula () {
+    añadirNuevaPelicula() {
       fetch('http://filmfy-api.ddns.net/api/register/', {
         method: 'POST',
         body: JSON.stringify({
