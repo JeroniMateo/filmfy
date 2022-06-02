@@ -28,8 +28,8 @@
         </div>
       </section>
     </div>
-    <div>
-         <section id="UserInfo"  class="user-benefits form col-12 col-lg-4 p-3">
+    <div id="UserInfo">
+         <section   class="user-benefits form col-12 col-lg-4 p-3">
         <div class="benefit 1 my-3">
           <div class="d">
             <h3 >Nombre de Usuario</h3>
@@ -55,7 +55,69 @@
           </div>
         </div>
       </section>
-      
+      <div id="UserLists">
+        <section class="recommended col-xxl-4 col-12">
+          <div class="mt-5">
+            <span>Mis Listas</span>
+            <hr />
+          </div>
+
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <div
+              class="list -overlapped -stacked d-flex flex-column"
+              v-for="list in selectedLists"
+            >
+              <a
+                :href="baseURL + '/lists/' + list.id"
+                class="list-link"
+                style="text-decoration: none"
+              >
+                <div class="list-link-stacked clear">
+                  <ul class="poster-list -overlapped -p70">
+                    <li
+                      class="poster film-poster listitem"
+                      v-for="movie in list.movies.slice(0, 5)"
+                    >
+                      <div>
+                        <img
+                          :src="'http://filmfy-api.ddns.net' + movie.image"
+                          width="80"
+                          height="140"
+                          alt=""
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </a>
+              <div class="list-content d-flex flex-row mt-2">
+                <p class="list-title d-flex align-content-center">
+                  <strong>{{ list.title }}</strong>
+                </p>
+                <div class="mx-4">
+                  <img
+                    :src="
+                      'http://filmfy-api.ddns.net' + list.user.profile_image
+                    "
+                    :alt="list.user.name"
+                    width="20"
+                    height="20"
+                  />
+                  <small class="comment-user-name mx-2">{{
+                    list.user.name
+                  }}</small>
+                  <span>
+                    <i class="fa-solid fa-film"></i>
+                    {{ list.movies_count }}</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </template>
@@ -101,6 +163,10 @@ export default {
 </script>
 
 <style scoped>
+#UserInfo{
+  display: flex;
+
+}
 .profile-info {
   margin-top: 0.38461538rem;
 }
