@@ -1,11 +1,13 @@
 <template>
-  <div class="row pt-4 ps-1 pe-1 pb-4 d-flex align-items-start div-movie-searched" >
-    <img class="col-3 rounded-3" v-bind:src="this.baseUrlApi + movies.image">
-    <div class="d-flex flex-column align-items-start col-9 justify-content-between content-text-year">
-      <a class="text-start mb-3" v-bind:href="this.baseUrl + '/movies/' + movies.id">{{ movies.title }}</a>
-      <span>{{ this.date }}</span>
-    </div>
-  </div>
+
+  <a v-bind:href="this.baseUrl + '/movies/' + movies.id" class="row pt-2 ps-1 pe-1 pb-2 align-items-center div-movie-searched">
+      <img class="col-3 rounded-3" v-bind:src="this.baseUrlApi + movies.image">
+      <div class="d-flex flex-column align-items-start col-9 justify-content-center">
+        <span class="text-start  " >{{ movies.title }}</span>
+        <span>{{ this.date }}</span>
+      </div>
+  </a>
+
 </template>
 
 <script>
@@ -29,11 +31,13 @@ export default {
 
 <style scoped>
 
+.text-title {
+  font-size: 14px;
+}
 
 span {
   font-size: 1rem;
   margin-right: 10px;
-  text-transform: uppercase;
 }
 
 .div-movie-searched {
@@ -42,7 +46,13 @@ span {
   box-sizing: border-box;
   border-top: 1px solid #242424;
   border-bottom: 1px solid #242424;
-  width: 20rem;
+  width: 25rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .div-movie-searched {
+    width: 20rem;
+  }
 }
 
 .div-movie-searched:first-child {
@@ -56,6 +66,7 @@ a {
 
 a:hover {
   color: #dcdada;
+  background-color: green;
 }
 
 </style>

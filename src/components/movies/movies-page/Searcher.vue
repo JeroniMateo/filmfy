@@ -61,7 +61,7 @@ export default {
 
     limitData(movieData) {
       const sliced = Object.fromEntries(
-          Object.entries(movieData).slice(0, 3)
+          Object.entries(movieData).slice(0, 5)
       )
       this.moviesSearch = sliced
     },
@@ -90,7 +90,27 @@ export default {
   line-height: 1;
   margin: 0;
   padding: 9px 9px 8px;
-  width: 20rem;
+  width: 25rem;
+}
+
+.content-searched {
+  width: 25rem;
+  position: absolute;
+}
+
+@media only screen and (max-width: 767px) {
+  .field {
+    width: 20rem;
+  }
+  .content-searched {
+    width: 20rem;
+    position: absolute;
+  }
+
+  span {
+    display: none;
+  }
+
 }
 
 span {
@@ -99,16 +119,7 @@ span {
   text-transform: uppercase;
 }
 
-@media (max-width: 600px) {
-  span {
-    display: none;
-  }
-}
 
-.content-searched {
-  width: 20rem;
-  position: absolute;
-}
 
 .div-movie-searcher {
   z-index: 1;
@@ -129,7 +140,4 @@ a:hover {
   color: #dcdada;
 }
 
-.content-text-year {
-  height: 130px;
-}
 </style>
