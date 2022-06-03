@@ -26,7 +26,6 @@ export default {
     return {
       movie: [],
       url: '',
-      href: ''
     }
   },
 
@@ -42,7 +41,6 @@ export default {
       const moviesData = await promiseMovies.json()
       this.movie = moviesData
       this.url = 'http://filmfy-api.ddns.net' + this.movie.image
-      this.href = window.origin + '/movies/' + this.movie.id
     },
     addToList () {
       this.$router.push('/movieAddToList/:movieId')

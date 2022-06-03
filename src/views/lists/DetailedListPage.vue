@@ -98,13 +98,13 @@
             @mouseover="displayMovieTitle(movie.id)"
           >
             <div class="m-2 movie-card">
-              <a :href="baseURL + '/movies/' + movie.id"
+              <router-link :to="{ name: 'movie-content', params: {movie: movie.id } }"
                 ><img
                   :src="'http://filmfy-api.ddns.net' + movie.image"
                   :alt="movie.title"
                   width="250"
                   height="355"
-              /></a>
+              /></router-link>
             </div>
           </li>
         </div>

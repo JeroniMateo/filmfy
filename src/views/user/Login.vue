@@ -30,14 +30,14 @@
         <div>
           <h3>¿No estás en filmfy? ¡Regístrate!</h3>
         </div>
-        <a
+        <router-link
           class="text-decoration-none text-white button w-100 register-button p-2 bg-danger rounded-3"
-          href="/register"
+          :to="{ name: 'register'}"
           id="signUpButton"
           aria-label="Inicia sesión"
         >
           <p class="text-decoration-none text-white m-0 fw-bold">Registrarse</p>
-        </a>
+        </router-link>
       </div>
     </div>
   </section>
