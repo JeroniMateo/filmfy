@@ -74,7 +74,7 @@ export default {
 
     async sendLike(id) {
       let promise = await fetch(`http://filmfy-api.ddns.net/api/comment-like/${id}`)
-      await this.$router.go()
+      await location.reload()
     }
   }
 }

@@ -222,7 +222,7 @@ export default {
             password: this.userPassword,
           })
       });
-      await this.$router.go()
+      await location.reload()
     },
 
     destroySession() {

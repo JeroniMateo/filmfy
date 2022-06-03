@@ -86,7 +86,7 @@ export default {
           "users_id": document.getElementById("users_id").value,
         })
       })
-      await this.$router.push("/movies/" + this.movie.id)
+      location.reload()
     },
 
     hideForm() {
