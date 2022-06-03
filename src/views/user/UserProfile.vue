@@ -4,14 +4,21 @@
 
       <div class="row welcome">
         <div class="d-flex flex-column align-items-start">
-          <h1><b>Bienvenido a Filmfy, {{ currentUser.user.name }}</b></h1>
+          <h1><b>Bienvenido a Filmfy, {{ currentUser.name }}</b></h1>
           <p>Accede a tus contenidos, modifica los datos de tu perfil o cierra tu sesión</p>
           <button type="button" class="btn btn-outline-primary me-2" @click="">Ver todo tu contenido</button>
           <button type="button" class="btn btn-outline-error me-2 my-2" @click="destroySession">Cerrar Sesión</button>
         </div>
       </div>
 
-      <div class="row content">
+      <!-- Tab links -->
+      <div class="tab">
+        <button class="tablinks active" @click="openCity(event, 'London')">Último contenido</button>
+        <button class="tablinks" @click="openCity(event, 'Paris')">Editar perfil</button>
+      </div>
+
+      <!-- Tab content -->
+      <div id="London" class="tabcontent">
         <div class="list-comments col-lg-7 col-12">
           <div class="p-3 py-5">
             <div class="heading-container d-flex justify-content-between align-items-center experience">
@@ -101,37 +108,36 @@
           </div>
 
         </div>
+      </div>
 
-
+      <div id="Paris" class="tabcontent">
         <div class="user col-lg-5 col-md-8 col-12 border-right">
-          <div class="p-3 py-5">
-
-            <div class="heading-container d-flex justify-content-center align-items-center">
-              <h4 class="p-2">Datos de usuario</h4>
-            </div>
+          <div class="p-3 py-3">
 
             <div class="col border-right d-flex justify-content-center">
               <div class="d-flex flex-column justify-content-center align-items-center text-center p-1 my-2">
-                <img class="rounded-circle mt-5" width="150" :src="'http://filmfy-api.ddns.net' + currentUser.user.profile_image" :alt="currentUser.user.name">
+                <img class="rounded-circle" width="150" :src="'http://filmfy-api.ddns.net' + currentUser.profile_image" :alt="currentUser.name">
               </div>
             </div>
 
             <div class="row mt-2">
-              <div class="col-md-12"><label class="labels">Nombre</label><input type="text" class="form-control" placeholder="Nombre" :value="currentUser.user.name"></div>
+              <div class="col-md-12"><label class="labels">Nombre</label><input v-model="userName" type="text" class="form-control" placeholder="Nombre"></div>
             </div>
             <div class="row mt-3">
-              <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="Email" :value="currentUser.user.email"></div>
-              <div class="col-md-12"><label class="labels">Contraseña</label><input type="text" class="form-control" placeholder="Contraseña" value="***********"></div>
+              <div class="col-md-12"><label class="labels">Email</label><input v-model="userEmail" type="text" class="form-control" placeholder="Email"></div>
+              <div class="col-md-12"><label class="labels">Contraseña</label><input v-model="userPassword" type="password" class="form-control" placeholder="*************"></div>
             </div>
-            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" @click="">Guardar cambios</button></div>
+            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" @click="updateUserData">Guardar cambios</button></div>
             <div class="mt-3 text-center"><button class="btn btn-error close-session-button" type="button" @click="destroySession">Cerrar sesión</button></div>
 
           </div>
         </div>
-
       </div>
+
     </div>
+
   </main>
+
 </template>
 
 <script>
@@ -141,15 +147,21 @@ import StarRating from 'vue-star-rating'
 
 export default {
 
-  name: "UserProfile2",
+  name: "UserProfile",
   components: {
-    StarRating
+    StarRating,
   },
   data () {
     return {
+      token: "",
+
       baseURL: window.origin,
 
       currentUser: [],
+      userName: '',
+      userEmail: '',
+      userPassword: '',
+
 
       userLists: [],
       userComments: [],
@@ -158,38 +170,89 @@ export default {
       contentComments: false,
     }
   },
+
+  async beforeMount() {
+    this.token = await getCookie('auth')
+
+    if (this.token) {
+      let user = await getUser(this.token)
+      this.currentUser = user.user;
+      this.userName = this.currentUser.name;
+      this.userEmail = this.currentUser.email;
+      this.userPassword = this.currentUser.password;
+      if (this.userID !== 'User expired') {
+        this.log = true;
+      }
+    }
+    await this.userListsFetch()
+    await this.userCommentsFetch()
+    this.openCity(event, 'London')
+  },
+
   methods: {
+
+
     async userListsFetch() {
-      const promise = await fetch('http://filmfy-api.ddns.net/api/user-lists/' + this.currentUser.user.id)
+      const promise = await fetch('http://filmfy-api.ddns.net/api/user-lists/' + this.currentUser.id)
       this.userLists = await promise.json()
       if (Object.keys(this.userLists).length > 0 ){
         this.contentLists = true;
       }
     },
     async userCommentsFetch() {
-      const promise = await fetch('http://filmfy-api.ddns.net/api/comments-user/' + this.currentUser.user.id)
+      const promise = await fetch('http://filmfy-api.ddns.net/api/comments-user/' + this.currentUser.id)
       this.userComments = await promise.json()
       if (Object.keys(this.userComments).length > 0 ){
         this.contentComments = true;
       }
     },
+
+    async updateUserData() {
+      const promise = await fetch('http://filmfy-api.ddns.net/api/v1/edit-user/' + this.currentUser.id, {
+          method: 'PUT',
+          headers: {
+            'Accept': 'application/json',
+            'Content-type': 'application/json',
+            'Authorization': 'Bearer ' + this.token,
+          },
+          body: JSON.stringify({
+            id: this.currentUser.id,
+            name: this.userName,
+            email: this.userEmail,
+            password: this.userPassword,
+          })
+      });
+      await location.reload()
+    },
+
     destroySession() {
       document.cookie ="auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
       window.location = '/';
-    }
-  },
-  async beforeMount() {
-    this.token = getCookie('auth')
-    if (this.token) {
-      this.currentUser = await getUser(this.token)
-      this.userID = await getUser(this.token)
-      if (this.userID !== 'User expired') {
-        this.log = true
+    },
+
+    openCity(evt, cityName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
       }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace("active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(cityName).style.display = "flex";
+      evt.currentTarget.className += " active";
     }
-    this.userListsFetch()
-    this.userCommentsFetch()
+
   },
+
 }
 </script>
 
@@ -209,7 +272,6 @@ h1 {
 main {
   min-height: 100vh;
 }
-
 
 .form-control:focus {
   box-shadow: none;
@@ -253,11 +315,60 @@ main {
   z-index: 1;
 }
 
-@media only screen and (max-width: 992px) {
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: var(--bs-primary);
+}
+
+.tablinks {
+  color: black;
+  font-weight: bolder;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: var(--bs-success);;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: var(--bs-secondary);;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  justify-content: center;
+  padding: 6px 12px;
+  border: 1px solid var(--bs-primary);;
+  border-top: none;
+}
+
+
+
   .content {
     display: flex;
     justify-content: center;
   }
+
+  @media only screen and (max-width: 500px) {
+
+    .movie-img > img {
+      width: 75px;
+      height: 135px;
+    }
 
 }
 </style>
