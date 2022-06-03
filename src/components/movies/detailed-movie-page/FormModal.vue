@@ -38,7 +38,7 @@
                 v-bind:star-size="20"
             />
 
-            <input type="hidden" id="users_id" name="users_id" v-bind:value="user">
+            <input type="hidden" id="users_id" name="users_id" v-bind:value="user.id">
             <div class="d-flex justify-content-end">
               <input class="button-send-form btn btn-outline-primary" type="submit"  value="Enviar">
             </div>
@@ -64,7 +64,7 @@ export default {
     return {
       token: getCookie("auth"),
       commented: false,
-      rating: 0
+      rating: 0,
     }
   },
 

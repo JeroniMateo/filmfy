@@ -48,7 +48,7 @@ export default {
     return {
       title: "",
       description: "",
-      userID: "",
+      user: [],
       token: "",
       list: []
     }
@@ -57,7 +57,7 @@ export default {
   async beforeMount() {
     this.token = getCookie("auth")
     if (this.token) {
-      this.userID = await getUser(this.token)
+      this.user = await getUser(this.token)
     }
   },
 
@@ -72,7 +72,7 @@ export default {
         body: JSON.stringify({
           title: this.title,
           description: this.description,
-          users_id: this.userID,
+          users_id: this.user.id,
           movies: this.list
         })
       })

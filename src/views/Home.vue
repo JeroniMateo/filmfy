@@ -162,7 +162,7 @@ export default {
       latestLists: '',
       topMovies: [],
       topMoviesId: [22, 33, 53, 183, 229, 44],
-      userID: "",
+      user: [],
       log: false
     }
   },
@@ -230,11 +230,8 @@ export default {
 
     this.token = getCookie("auth")
     if (this.token) {
-      this.userID = await getUser(this.token)
-      if (this.userID !== "User expired") {
-        let promise = await fetch(`http://filmfy-api.ddns.net/api/users/${this.userID}`)
-        let response = await promise.json()
-        this.user = response
+      this.user = await getUser(this.token)
+      if (this.user !== "User expired") {
         this.log = true
       }
     }

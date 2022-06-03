@@ -32,8 +32,8 @@
 
   </aside>
 
-  <FormModal id="modal" :movie="this.movie" :user="userID"/>
-  <FormAddMovieList id="formAddMovieToList" :movie="movie"/>
+  <FormModal id="modal" :movie="this.movie" :user="user"/>
+  <FormAddMovieList id="formAddMovieToList" :movie="movie" :user="user"/>
 
 </template>
 
@@ -53,7 +53,7 @@ export default {
       baseUrl: origin(),
       log: false,
       token: "",
-      userID: "",
+      user: "",
       liked: false,
       commented: false,
       counter : 0,
@@ -64,8 +64,8 @@ export default {
 
     this.token = getCookie("auth")
     if (this.token && this.counter === 0) {
-      this.userID = await getUser(this.token)
-      if (this.userID !== "User expired") {
+      this.user = await getUser(this.token)
+      if (this.user !== "User expired") {
         this.log = true
         await this.checkLiked()
         await this.checkCommented()
@@ -84,12 +84,11 @@ export default {
         },
         body: JSON.stringify({
           "movie": this.movie.id,
-          "user": this.userID
+          "user": this.user.id
         })
       })
 
       let response = await promise.json()
-      console.log(response)
       if (response.status === 1) {
         this.liked = true
       }else {
@@ -105,7 +104,7 @@ export default {
         },
         body: JSON.stringify({
           "movie": this.movie.id,
-          "user": this.userID
+          "user": this.user.id
         })
       })
 
@@ -129,7 +128,7 @@ export default {
         },
         body: JSON.stringify({
           "movies_id": this.$route.params.movie,
-          "users_id": this.userID
+          "users_id": this.user.id
         })
       })
 

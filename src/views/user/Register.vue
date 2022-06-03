@@ -185,7 +185,7 @@ export default {
       let response = await promise.json()
 
       if (promise.status === 200) {
-        await setCookie("auth", response.token, 30)
+        await setCookie("auth", response.token, 7)
         window.location = window.origin
       }
     }

@@ -71,15 +71,15 @@ export default {
     openHamburger: '',
     closeHamburger: '',
     log: false,
-    counter : 0,
+    user: []
   }),
 
   async beforeMount() {
 
     this.token = getCookie("auth")
     if (this.token && this.counter === 0) {
-      this.userID = await getUser(this.token)
-      if (this.userID !== "User expired") {
+      this.user = await getUser(this.token)
+      if (this.user !== "User expired") {
         this.log = true
       }
       this.counter++

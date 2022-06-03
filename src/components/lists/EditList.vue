@@ -37,19 +37,21 @@
 <script>
 import SearchMoviesForList from "@/components/lists/SearchMoviesForList";
 import {getCookie, getUser} from "@/main";
+
 export default {
   name: "EditList",
   components: {SearchMoviesForList},
   data() {
     return {
+      edit: true,
       listID: this.$route.params.list,
       list: [],
       moviesList: [],
       token: "",
+      user: [],
       movies: [],
       title: "",
-      description: "",
-      edit: true,
+      description: ""
     }
   },
 
@@ -57,7 +59,7 @@ export default {
     await this.fetchList()
     this.token = getCookie("auth")
     if (this.token) {
-      this.userID = await getUser(this.token)
+      this.user = await getUser(this.token)
     }
   },
 
@@ -88,7 +90,7 @@ export default {
           id: this.listID,
           title: this.title,
           description: this.description,
-          users_id: this.userID,
+          users_id: this.user.id,
           movies: this.movies
         })
       })

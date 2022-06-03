@@ -45,20 +45,18 @@ import ItemsListsCard from "@/components/lists/ItemsListsCard";
 export default {
   name: "FormAddMovieList",
   components: {ItemsListsCard},
-  props: ["movie"],
+  props: ["movie", "user"],
 
   data() {
     return {
       token: getCookie("auth"),
       lists: [],
-      userID: "",
       listControlEmpty: false,
-      idLists: []
+      idLists: [],
     }
   },
 
   async beforeMount() {
-    this.userID = await getUser(this.token)
     await this.fetchUserLists()
   },
 
@@ -66,7 +64,7 @@ export default {
   methods: {
 
     async fetchUserLists() {
-      let promise = await fetch(`http://filmfy-api.ddns.net/api/user-lists/${this.userID}`)
+      let promise = await fetch(`http://filmfy-api.ddns.net/api/user-lists/${this.user.id}`)
       this.lists = await promise.json()
       if (this.lists.length === 0) {
         this.listControlEmpty = true

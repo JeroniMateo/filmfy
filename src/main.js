@@ -65,7 +65,7 @@ export async function getUser(token) {
         if (user.status === "Token is Expired") {
             return "User expired"
         } else {
-            return user.user.id;
+            return user.user;
         }
     }else {
         return false

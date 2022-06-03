@@ -39,8 +39,7 @@ export default {
 
   data() {
     return {
-      userID: "",
-      user : "",
+      user : [],
       lists: [],
       baseUrl: window.origin
     }
@@ -50,11 +49,8 @@ export default {
 
     this.token = getCookie("auth")
     if (this.token) {
-      this.userID = await getUser(this.token)
-      if (this.userID !== "User expired") {
-        let promise = await fetch(`http://filmfy-api.ddns.net/api/users/${this.userID}`)
-        let response = await promise.json()
-        this.user = response
+      this.user = await getUser(this.token)
+      if (this.user !== "User expired") {
         this.log = true
         await this.fetchUserLists()
       }
@@ -64,7 +60,7 @@ export default {
 
   methods: {
     async fetchUserLists() {
-      let promise = await fetch(`http://filmfy-api.ddns.net/api/user-lists/${this.userID}`)
+      let promise = await fetch(`http://filmfy-api.ddns.net/api/user-lists/${this.user.id}`)
       this.lists = await promise.json()
     }
   }
