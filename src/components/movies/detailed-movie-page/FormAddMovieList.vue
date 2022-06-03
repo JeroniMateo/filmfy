@@ -105,7 +105,7 @@ export default {
           })
         })
       }
-      location.reload()
+      this.$router.push('/movies/' + this.movie.id)
     },
 
     hideForm() {
