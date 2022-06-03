@@ -163,7 +163,8 @@ export default {
       topMovies: [],
       topMoviesId: [22, 33, 53, 183, 229, 44],
       user: [],
-      log: false
+      log: false,
+      token : "",
     }
   },
   methods: {

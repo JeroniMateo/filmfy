@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container searcher">
       <div class="row flex-column flex-lg-row align-items-center">
         <Filter class="col-12 col-lg-6 my-2 justify-content-center justify-content-lg-start"/>
         <Searcher class="col-12 col-lg-6 my-2 justify-content-center justify-content-lg-end"/>
@@ -38,19 +38,23 @@ export default {
 
 <style scoped>
 
+.searcher {
+  margin-bottom: 150px;
+}
+
 .text-movie {
-  height: 55vh;
+  height: 65vh;
 }
 
 .image {
   background-image: linear-gradient(to bottom,
   rgba(0, 0, 0, 0),
-  rgba(0, 0, 0, 100)), url("https://wallpapercave.com/wp/sepNm9t.jpg");
+  rgba(0, 0, 0, 100)), url("../../assets/img/MoviesIMG/batman.jpg");
   box-sizing: border-box;
   background-size: cover;
   background-position: 50% 40%;
   width: 100%;
-  height: 60vh;
+  height: 75vh;
 }
 
 .all {

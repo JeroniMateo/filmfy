@@ -71,7 +71,8 @@ export default {
     openHamburger: '',
     closeHamburger: '',
     log: false,
-    user: []
+    user: [],
+    counter : 0
   }),
 
   async beforeMount() {

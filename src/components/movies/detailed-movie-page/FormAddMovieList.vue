@@ -45,21 +45,28 @@ import ItemsListsCard from "@/components/lists/ItemsListsCard";
 export default {
   name: "FormAddMovieList",
   components: {ItemsListsCard},
-  props: ["movie", "user"],
+  props: ["movie"],
 
   data() {
     return {
-      token: getCookie("auth"),
+      token: "",
       lists: [],
       listControlEmpty: false,
       idLists: [],
+      counter: 0,
+      user: []
     }
   },
 
   async beforeMount() {
-    await this.fetchUserLists()
-  },
 
+    if(this.counter === 0) {
+      this.token = getCookie("auth")
+      this.user = await getUser(this.token)
+      await this.fetchUserLists()
+    }
+    this.counter++
+  },
 
   methods: {
 

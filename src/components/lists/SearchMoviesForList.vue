@@ -11,7 +11,7 @@
                  v-model="search"/>
         </div>
         <div class="content-searched bg-light d-flex flex-column align-items-center justify-content-between ">
-          <ItemsForSearchMoviesList v-if="!edit" v-for="movies in this.moviesSearch"  :movies="movies"
+          <ItemsForSearchMoviesList v-if="!edit" v-for="movies in this.moviesSearch" :movies="movies"
                                     v-on:changeItem="addToList"/>
           <ItemsForSearchMoviesList v-else v-for="movies1 in this.moviesSearch" :movies="movies1"
                                     v-on:changeItem="addToListEdit"/>
@@ -32,7 +32,11 @@
   <div v-else id="containerMoviesEdit"
        class="container my-4 container-contain-movies d-flex align-items-center justify-content-center flex-wrap">
 
+    <div v-if="!loaded" id="contenedor">
+      <div class="loader" id="loader">Loading...</div>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -49,24 +53,25 @@ export default {
       search: "",
       moviesSearch: [],
       baseUrl: window.origin,
-      counter: 0
+      counter: 0,
+      loaded: false
     }
   },
 
-  async updated() {
+  async beforeMount() {
     if (this.edit && this.counter === 0) {
-      this.printMoviesEdit()
-      this.counter++
       await this.fetchMovies()
-    }else if (this.counter === 0){
+      await this.printMoviesEdit()
+    } else if (this.counter === 0) {
       await this.fetchMovies()
-      this.counter++
     }
+    this.counter++
   },
 
   methods: {
 
     filteredList() {
+
       if (this.search) {
         this.moviesSearch = this.moviesAll.filter(movie => {
           return movie.title.toLowerCase().includes(this.search)
@@ -81,6 +86,7 @@ export default {
     async fetchMovies() {
       let promise = await fetch("http://filmfy-api.ddns.net/api/movies")
       this.moviesAll = await promise.json()
+      this.loaded = true
     },
 
     limitData(movieData) {
@@ -119,7 +125,7 @@ export default {
     },
 
     //Edit
-    printMoviesEdit() {
+    async printMoviesEdit() {
       let containerMovies = document.getElementById("containerMoviesEdit")
       this.movies.forEach(item => {
         containerMovies.innerHTML += `
@@ -164,13 +170,20 @@ span {
   text-transform: uppercase;
 }
 
+.content-searched {
+  width: 30rem;
+  position: absolute;
+}
+
 @media (max-width: 600px) {
-  span {
-    display: none;
+
+  .content-searched {
+    width: 94vw;
+    position: absolute;
   }
 
   .field {
-    width: 90vw;
+    width: 94vw;
   }
 
   .section-heading {
@@ -178,10 +191,6 @@ span {
   }
 }
 
-.content-searched {
-  width: 30rem;
-  position: absolute;
-}
 
 .searcher {
   display: flex;

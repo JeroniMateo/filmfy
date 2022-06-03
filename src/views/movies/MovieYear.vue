@@ -1,6 +1,6 @@
 <template>
 
-  <div class="content-movie-year">
+  <div v-if="loaded" class="content-movie-year">
     <div class="container py-5">
       <span>{{ title }}</span>
     </div>
@@ -12,12 +12,21 @@
       </div>
     </div>
 
-    <div class="container justify-content-between">
+    <div class="container justify-content-between" style="margin-top: 110px">
       <div class="row">
         <MovieCardGeneral
             v-for="movie of this.moviesYear" :key="movie" :movie="movie"
         />
       </div>
+    </div>
+  </div>
+
+  <div v-else class="content-movie-year">
+    <div class="container py-5">
+      <span>{{ title }}</span>
+    </div>
+    <div id="contenedor">
+      <div class="loader" id="loader">Loading...</div>
     </div>
   </div>
 
@@ -35,7 +44,8 @@ export default {
     return {
       year: this.$route.params.year,
       moviesYear: [],
-      title: ""
+      title: "",
+      loaded: false
     }
 
   },
@@ -50,6 +60,7 @@ export default {
       const moviesCategoryData = await promiseMovies.json()
       this.moviesYear = moviesCategoryData
       this.printTitle()
+      this.loaded = true
     },
 
     printTitle() {
@@ -64,6 +75,7 @@ export default {
 
 .content-movie-year {
   background-color: black;
+  min-height: 70vh;
 }
 
 

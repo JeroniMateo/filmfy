@@ -1,18 +1,18 @@
 <template>
 
-  <div class="all">
-    <div class="container">
+  <div v-if="loaded" class="all ">
+    <div class="container px-lg-5">
       <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
         <span class="text-center">Mis listas</span>
       </div>
     </div>
 
-    <div class="container">
-      <div class="my-5 row">
-        <div class="col-10">
-          <MoviesListsCards v-for="list in lists" :key="list" :list="list" :user="user" :width="90" :height="150"/>
+    <div class="container px-lg-5">
+      <div class="my-5 row ">
+        <div class="col-12 col-lg-10 align-items-center">
+          <MoviesListsCards v-for="list in lists" :key="list" :list="list" :user="user" :width="80" :height="140"/>
         </div>
-        <aside class="aside-card d-flex flex-column align-items-start col-2 rounded-3 p-0">
+        <aside class="aside-card d-flex flex-column align-items-start col-12 col-lg-2 rounded-3 p-0">
 
           <a v-bind:href="baseUrl + '/lists/new'" class="text-decoration-none" style="cursor: pointer">
             <div class="m-auto p-3">
@@ -24,6 +24,18 @@
       </div>
     </div>
 
+  </div>
+
+  <div v-else class="all ">
+    <div class="container px-lg-5 mb-4">
+      <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
+        <span class="text-center">Mis listas</span>
+      </div>
+    </div>
+    <div id="contenedor" class="mb-5 ">
+      <div class="fs-5">Cargando tus listas</div>
+      <div class="loader" id="loader"></div>
+    </div>
   </div>
 
 </template>
@@ -41,7 +53,8 @@ export default {
     return {
       user : [],
       lists: [],
-      baseUrl: window.origin
+      baseUrl: window.origin,
+      loaded: false,
     }
   },
 
@@ -60,8 +73,9 @@ export default {
 
   methods: {
     async fetchUserLists() {
-      let promise = await fetch(`http://filmfy-api.ddns.net/api/user-lists/${this.user.id}`)
+      let promise = await fetch(`http://127.0.0.1:8000/api/user-lists/${this.user.id}`)
       this.lists = await promise.json()
+      this.loaded = true
     }
   }
 }
@@ -72,6 +86,7 @@ export default {
 .all {
   padding: 1px;
   background-color: black;
+  min-height: 70vh;
 }
 
 .section-heading {
@@ -107,5 +122,7 @@ aside > div {
 aside > div:last-child {
   border-bottom: none;
 }
+
+
 
 </style>

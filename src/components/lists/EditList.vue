@@ -2,7 +2,7 @@
   <div class="all">
     <div class="container">
       <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
-        <span class="text-center">Nueva lista</span>
+        <span class="text-center">Actualizar lista</span>
       </div>
     </div>
     <div>

@@ -1,30 +1,32 @@
 <template>
-  <div class="list col-12 d-flex flex-column align-items-start my-4" >
-    <a :href="baseURL + '/lists/' + list.id" style="text-decoration: none">
-      <div class="image-overlap">
+
+  <div class="div-general row align-items-center flex-column flex-lg-row py-4">
+    <a :href="baseURL + '/lists/' + list.id" style="text-decoration: none" class="col-12 col-lg-4">
+      <div class="image-overlap ">
                   <span class="movie-img" v-for="movie in list.movies.slice(0,5)">
-                    <img :src="'http://filmfy-api.ddns.net' + movie.image" v-bind:width="this.width" v-bind:height="this.height" :alt="movie.title"/>
+                    <img :src="'http://filmfy-api.ddns.net' + movie.image" v-bind:width="this.width"
+                         v-bind:height="this.height" :alt="movie.title"/>
                   </span>
       </div>
-
-      <div class="list-details d-flex flex-column">
-        <div class="list-title d-flex flex-row justify-content-start">
-          <span style="text-align: left"><b>{{ list.title }}</b></span>
-        </div>
-        <div class="list-data d-flex flex-row">
-          <img v-bind:src="'http://filmfy-api.ddns.net' + user.profile_image" width="20" height="20"/>
-          <span class="mx-2">{{  }}</span>
-          <span class="mx-2">❤ {{}}</span>
-          <span> <i class="fa-solid fa-film"></i> {{ list.movies_count }}</span>
-          <a v-bind:href="baseURL + '/my-lists/'+ list.id +'/edit'"> <i class="fa-solid fa-pencil mx-2"></i></a>
-        </div>
-      </div>
     </a>
+
+    <div class="list-details d-flex flex-column align-items-center align-items-lg-start justify-content-between col-12 col-lg-4">
+      <div class="list-title ">
+        <span class=""><b>{{ list.title }}</b></span>
+      </div>
+      <div class="list-data d-flex flex-row align-items-center" >
+        <img v-bind:src="'http://filmfy-api.ddns.net' + user.profile_image" width="20" height="20"/>
+        <span class="mx-3">{{  }}</span>
+        <span class="mx-3">❤ {{}}</span>
+        <span> <i class="fa-solid fa-film"></i> {{ list.movies_count }}</span>
+        <a v-bind:href="baseURL + '/my-lists/'+ list.id +'/edit'"> <i class="fa-solid fa-pencil mx-3"></i></a>
+        <span @click="deleteList(this.list.id)"><i class="fa-solid fa-trash text-danger" style="cursor: pointer" ></i></span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import {getCookie} from "@/main";
 
 export default {
   name: "MoviesListsCards",
@@ -34,6 +36,15 @@ export default {
       baseURL: window.origin,
     }
   },
+
+  methods: {
+    async deleteList(idList) {
+      await fetch(`http://filmfy-api.ddns.net/api/lists/${idList} `, {
+        method: "DELETE"
+      })
+      location.reload()
+    }
+  }
 }
 </script>
 
@@ -49,13 +60,46 @@ export default {
 }
 
 .image-overlap {
-  direction: rtl;  /* This is to get the stack with left on top */
-  text-align: left;  /* Now need to explitly align left */
-  padding-left: 25px;  /* Same value as the negative margin */
+  direction: rtl; /* This is to get the stack with left on top */
+  text-align: left; /* Now need to explitly align left */
+  padding-left: 25px; /* Same value as the negative margin */
 }
 
-.comment-movie-title, .list-title {
+.list-details {
+  height: 130px;
+}
+
+.list-title {
   font-size: 1.1rem;
+  text-align: start;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .image-overlap {
+    direction: rtl; /* This is to get the stack with left on top */
+    text-align: center; /* Now need to explitly align left */
+    padding-left: 25px; /* Same value as the negative margin */
+  }
+
+  .list-details {
+    height: 80px;
+    margin-top: 20px;
+  }
+
+  .list-title {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+.div-general {
+  border-bottom: 1px solid #445566;
 }
 
 </style>
