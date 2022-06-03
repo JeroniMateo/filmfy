@@ -28,7 +28,7 @@
         </div>
         <div v-else class="main main-menu text-end d-flex align-items-center">
           <img class="rounded-circle mx-2" width="40" :src="'http://filmfy-api.ddns.net' + currentUser.user.profile_image" :alt="currentUser.user.name">
-          <button type="button" class="btn btn-outline-primary me-2" @click="toProfile">Mi perfil</button>
+          <a :href="baseURL + '/profile'"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></a>
         </div>
       </div>
 
@@ -69,6 +69,7 @@ export default {
   name: 'Header',
   components: {},
   data: () => ({
+    baseURL: window.origin,
     currentUser: [],
     openHamburger: '',
     closeHamburger: '',
@@ -88,9 +89,6 @@ export default {
   },
 
   methods: {
-    toProfile() {
-      this.$router.push('/profile')
-    },
     hamburgerIconHandling() {
       this.openHamburger = document.getElementById('hamburger')
       document.getElementsByClassName('hamburger-container')[0].style.display =
