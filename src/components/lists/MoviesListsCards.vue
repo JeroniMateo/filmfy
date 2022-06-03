@@ -40,7 +40,7 @@ export default {
       await fetch(`http://filmfy-api.ddns.net/api/lists/${idList} `, {
         method: "DELETE"
       })
-      location.reload()
+      this.$router.go()
     }
   }
 }

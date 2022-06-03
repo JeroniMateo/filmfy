@@ -41,6 +41,7 @@
 import FormModal from "@/components/movies/detailed-movie-page/FormModal";
 import {getCookie, getUser, origin} from "@/main.js"
 import FormAddMovieList from "@/components/movies/detailed-movie-page/FormAddMovieList";
+import router from "@/router";
 
 
 export default {
@@ -132,7 +133,7 @@ export default {
         })
       })
 
-      await location.reload()
+      await this.$router.go()
 
     },
 

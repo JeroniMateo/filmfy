@@ -105,7 +105,7 @@ export default {
           })
         })
       }
-      this.$router.push('/movies/' + this.movie.id)
+      await this.$router.go()
     },
 
     hideForm() {

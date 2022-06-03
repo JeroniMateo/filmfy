@@ -70,7 +70,7 @@ export default {
           users_id: '2'
         })
       })
-      await location.reload()
+      await this.$router.go()
     },
 
     displayModalForm () {
