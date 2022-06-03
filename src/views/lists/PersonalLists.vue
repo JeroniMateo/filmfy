@@ -1,26 +1,39 @@
 <template>
 
   <div v-if="loaded" class="all ">
-    <div class="container px-lg-5">
-      <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
-        <span class="text-center">Mis listas</span>
-      </div>
-    </div>
-
-    <div class="container px-lg-5">
-      <div class="my-5 row ">
-        <div class="col-12 col-lg-10 align-items-center">
-          <MoviesListsCards v-for="list in lists" :key="list" :list="list" :user="user" :width="80" :height="140"/>
+    <div v-if="lists.length === 0" class="d-flex align-items-center flex-column">
+      <div class="container px-lg-5 mb-4">
+        <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
+          <span class="text-center">Mis listas</span>
         </div>
-        <aside class="aside-card d-flex flex-column align-items-start col-12 col-lg-2 rounded-3 p-0">
+      </div>
+      <div class="w-75 div-no-list">
+        <a v-bind:href="baseUrl + '/lists/new'" class="text-decoration-none text-white new-list" style="cursor: pointer"><span>Empieza a crear tus listas!</span></a>
+      </div>
 
-          <a v-bind:href="baseUrl + '/lists/new'" class="text-decoration-none" style="cursor: pointer">
-            <div class="m-auto p-3">
-              <span class="text-center text-white">Nueva lista</span>
-            </div>
-          </a>
+    </div>
+    <div v-else>
+      <div class="container px-lg-5">
+        <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
+          <span class="text-center">Mis listas</span>
+        </div>
+      </div>
 
-        </aside>
+      <div class="container px-lg-5">
+        <div class="my-5 row ">
+          <div class="col-12 col-lg-10 align-items-center">
+            <MoviesListsCards v-for="list in lists" :key="list" :list="list" :user="user" :width="80" :height="140"/>
+          </div>
+          <aside class="aside-card d-flex flex-column align-items-start col-12 col-lg-2 rounded-3 p-0">
+
+            <a v-bind:href="baseUrl + '/lists/new'" class="text-decoration-none" style="cursor: pointer">
+              <div class="m-auto p-3">
+                <span class="text-center text-white">Nueva lista</span>
+              </div>
+            </a>
+
+          </aside>
+        </div>
       </div>
     </div>
 
@@ -33,7 +46,6 @@
       </div>
     </div>
     <div id="contenedor" class="mb-5 ">
-      <div class="fs-5">Cargando tus listas</div>
       <div class="loader" id="loader"></div>
     </div>
   </div>
@@ -51,7 +63,7 @@ export default {
 
   data() {
     return {
-      user : [],
+      user: [],
       lists: [],
       baseUrl: window.origin,
       loaded: false,
@@ -82,6 +94,17 @@ export default {
 </script>
 
 <style scoped>
+
+.div-no-list {
+  padding: 75px 50px 75px 50px;
+  border: 1px solid #9ab;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+.new-list:hover {
+  text-decoration: underline;
+}
 
 .all {
   padding: 1px;
@@ -122,7 +145,6 @@ aside > div {
 aside > div:last-child {
   border-bottom: none;
 }
-
 
 
 </style>

@@ -95,7 +95,7 @@ export default {
         })
       })
 
-      this.$router.push('/lists/' + this.listID)
+      this.$router.push('/my-lists')
 
     },
 
