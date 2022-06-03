@@ -1,407 +1,263 @@
 <template>
-  <div id="UserProfile content" class="site-body">
-    <div class="wrap-content">
-      <section id="profile-header">
-        <div class="profile-sumary">
-          <div class="profile-avatar">
-            <span class="avatar -large">
-              <img
-                src="https://s.ltrbxd.com/static/img/avatar220.1dea069d.png"
-                alt=""
-                width="150px"
-                height="150px"
-              />
-              <a id="avatar-zoom" class="cboxElement"></a>
-            </span>
-          </div>
+  <main>
+    <div class="container rounded">
+
+      <div class="row welcome">
+        <div class="d-flex flex-column align-items-start">
+          <h1><b>Bienvenido a Filmfy, {{ currentUser.user.name }}</b></h1>
+          <p>Accede a tus contenidos, modifica los datos de tu perfil o cierra tu sesión</p>
+          <button type="button" class="btn btn-outline-primary me-2" @click="">Ver todo tu contenido</button>
+          <button type="button" class="btn btn-outline-error me-2 my-2" @click="destroySession">Cerrar Sesión</button>
         </div>
-        <div class="profile-name">
-          <div class="profile-name-wrap">
-            <h1 class="title-1">{{ firstName }}</h1>
-          </div>
-          <div class="profile-info">
-            <a href="/editarPerfil" class="button">Editar Perfil</a>
-            <a id="logout" class="button" @click="logout">Cerrar Sesion</a>
-          </div>
-        </div>
-      </section>
-    </div>
-    <div id="UserInfo">
-      <section class="user-benefits form col-12 col-lg-4 p-3">
-        <div class="benefit 1 my-3">
-          <div class="d">
-            <h3>Nombre de Usuario</h3>
-            <p>{{ firstName }}</p>
-          </div>
-        </div>
-        <div class="benefit 2 my-3">
-          <div>
-            <i class="far fa-calendar"></i>
-          </div>
-          <div>
-            <h3>Nombre</h3>
-            <p>{{ firstName }}</p>
-          </div>
-        </div>
-        <div class="benefit 3 my-3">
-          <div>
-            <i class="far fa-newspaper"></i>
-          </div>
-          <div>
-            <h3>Email</h3>
-            <p>{{ email }}</p>
-          </div>
-        </div>
-      </section>
-      <div id="UserLists">
-        <h2 class="title">Mis Listas Creadas y Favoritas</h2>
-        <section class="recommended col-xxl-4 col-12">
-          <div
-            class="d-flex flex-column justify-content-center align-items-center"
-          >
-            <div
-              class="list -overlapped -stacked d-flex flex-column"
-              v-for="list in selectedLists"
-            >
-              <a
-                :href="baseURL + '/lists/' + list.id"
-                class="list-link"
-                style="text-decoration: none"
-              >
-                <div class="list-link-stacked clear">
-                  <ul class="poster-list -overlapped -p70">
-                    <li
-                      class="poster film-poster listitem"
-                      v-for="movie in list.movies.slice(0, 5)"
-                    >
-                      <div>
-                        <img
-                          :src="'http://filmfy-api.ddns.net' + movie.image"
-                          width="80"
-                          height="140"
-                          alt=""
-                        />
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </a>
-              <div class="list-content d-flex flex-row mt-2">
-                <p class="list-title d-flex align-content-center">
-                  <strong>{{ list.title }}</strong>
-                </p>
-                <div class="mx-4">
-                  <img
-                    :src="
-                      'http://filmfy-api.ddns.net' + list.user.profile_image
-                    "
-                    :alt="list.user.name"
-                    width="20"
-                    height="20"
-                  />
-                  <small class="comment-user-name mx-2">{{
-                    list.user.name
-                  }}</small>
-                  <span>
-                    <i class="fa-solid fa-film"></i>
-                    {{ list.movies_count }}</span
-                  >
-                </div>
+      </div>
+
+      <div class="row content">
+        <div class="list-comments col-lg-7 col-12">
+          <div class="p-3 py-5">
+            <div class="heading-container d-flex justify-content-between align-items-center experience">
+              <h4 class="p-2">Tus listas recientes</h4>
+            </div>
+
+            <div class="mt-3">
+              <div class="list col d-flex flex-column align-items-center mt-4" v-for="list in userLists.slice(0,3)">
+                <a :href="baseURL + '/lists/' + list.id" style="text-decoration: none">
+                  <div class="image-overlap">
+                  <span class="movie-img" v-for="movie in list.movies.slice(0,5)">
+                    <img :src="'http://filmfy-api.ddns.net' + movie.image" width="95" height="160" :alt="movie.title"/>
+                  </span>
+                  </div>
+                  <div class="list-details d-flex flex-column">
+                    <div class="list-title d-flex flex-row justify-content-start">
+                      <span style="text-align: left"><b>{{ list.title }}</b></span>
+                    </div>
+                    <div class="list-data d-flex flex-row">
+                      <span class="mx-2"><i style="color: orange " class="fa-solid fa-heart me-1"></i> {{ list.list_likes }}</span>
+                      <span><i class="text-quaternary fa-solid fa-film"></i> {{ list.movies_count }}</span>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
+
+            <div class="mt-2" v-if="!contentLists">
+              <p class="text-primary"><b>Aún no has creado ninguna lista</b></p>
+              <a href="/lists"><button type="button" class="btn btn-outline-primary me-2">Ir a listas</button></a>
+            </div>
+
           </div>
-        </section>
+
+          <div class="p-3 py-5">
+            <div class="heading-container d-flex justify-content-between align-items-center comments">
+              <h4 class="p-2">Tus últimos comentarios</h4>
+            </div>
+
+            <ul>
+              <hr>
+              <div v-for="comment in userComments">
+
+                <li class="comment d-flex flex-row" >
+                  <div class="comment-movie-image">
+                    <img :src="'http://filmfy-api.ddns.net' + comment.movie[0].image" width="115" height="170" :alt="comment.m_title"/>
+                  </div>
+                  <div class="comment-details p-3">
+                    <div class="comment-movie-details d-flex">
+                      <span class="comment-movie-title"><strong>{{ comment.movie[0].title }}</strong></span>
+                      <span class="comment-movie-year mx-2">{{ comment.movie[0].release_date.split("-")[0] }}</span>
+                    </div>
+                    <div class="comment-user-details d-flex flex-row mt-2">
+                      <div class="comment-rating mx-2">
+                        <star-rating
+                            v-bind:round-start-rating="false"
+                            v-bind:rating="comment.rating"
+                            v-bind:max-rating="5"
+                            v-bind:increment="0.5"
+                            v-bind:read-only="true"
+                            v-bind:show-rating="false"
+                            active-color="#00c740"
+                            inactive-color="#fff"
+                            v-bind:star-size="20"
+                        /> <!-- Lightgreen: #00c740 -->
+                      </div>
+                    </div>
+                    <div class="comment-content d-flex mt-2">
+                      <p class="comment-text text-start">{{ comment.body }}</p>
+                    </div>
+                    <div class="comment-likes d-flex flex-row">
+                      <span>❤</span>
+                      <span class="mx-1">{{ comment.likes }}</span>
+                    </div>
+                  </div>
+                </li>
+
+                <hr>
+              </div>
+            </ul>
+
+            <div class="mt-2" v-if="!contentComments">
+              <p class="text-primary"><b>Aún no has comentado ninguna película</b></p>
+              <a href="/movies"><button type="button" class="btn btn-outline-primary me-2">Ir a películas</button></a>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="user col-lg-5 col-md-8 col-12 border-right">
+          <div class="p-3 py-5">
+
+            <div class="heading-container d-flex justify-content-center align-items-center">
+              <h4 class="p-2">Datos de usuario</h4>
+            </div>
+
+            <div class="col border-right d-flex justify-content-center">
+              <div class="d-flex flex-column justify-content-center align-items-center text-center p-1 my-2">
+                <img class="rounded-circle mt-5" width="150" :src="'http://filmfy-api.ddns.net' + currentUser.user.profile_image" :alt="currentUser.user.name">
+              </div>
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-md-12"><label class="labels">Nombre</label><input type="text" class="form-control" placeholder="Nombre" :value="currentUser.user.name"></div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="Email" :value="currentUser.user.email"></div>
+              <div class="col-md-12"><label class="labels">Contraseña</label><input type="text" class="form-control" placeholder="Contraseña" value="***********"></div>
+            </div>
+            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" @click="">Guardar cambios</button></div>
+            <div class="mt-3 text-center"><button class="btn btn-error close-session-button" type="button" @click="destroySession">Cerrar sesión</button></div>
+
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
+  </main>
 </template>
+
 <script>
+import { getCookie, getUser } from '@/main'
+import StarRating from 'vue-star-rating'
+
+
 export default {
-  name: 'UserProfile',
+
+  name: "UserProfile2",
+  components: {
+    StarRating
+  },
   data () {
     return {
-      log: '',
-      firstName: '',
-      name: '',
-      email: '',
       baseURL: window.origin,
-      listsMostLiked: [],
-      listsRecent: [],
-      selectedLists: []
-    }
-  },
 
-  methods: {
-    logout () {
-      localStorage.removeItem('token')
-      this.log = false
-      this.$router.push('/')
-    },
-    getUserInfo () {
-      fetch('http://filmfy-api.ddns.net/api/v1/register', {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          'Content-type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Credentials': true
-        }
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          this.firstName.push(`http://filmfy-api.ddns.net/${data.firstName}`)
-          this.name.push(`http://filmfy-api.ddns.net/${data.name}`)
-          this.email.push(`http://filmfy-api.ddns.net/${data.email}`)
-        })
+      currentUser: [],
+
+      userLists: [],
+      userComments: [],
+
+      contentLists: false,
+      contentComments: false,
     }
   },
-  beforeMount () {
-    this.getUserInfo()
-  }
+  methods: {
+    async userListsFetch() {
+      const promise = await fetch('http://filmfy-api.ddns.net/api/user-lists/' + this.currentUser.user.id)
+      this.userLists = await promise.json()
+      if (Object.keys(this.userLists).length > 0 ){
+        this.contentLists = true;
+      }
+    },
+    async userCommentsFetch() {
+      const promise = await fetch('http://filmfy-api.ddns.net/api/comments-user/' + this.currentUser.user.id)
+      this.userComments = await promise.json()
+      if (Object.keys(this.userComments).length > 0 ){
+        this.contentComments = true;
+      }
+    },
+    destroySession() {
+      document.cookie ="auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+      window.location = '/';
+    }
+  },
+  async beforeMount() {
+    this.token = getCookie('auth')
+    if (this.token) {
+      this.currentUser = await getUser(this.token)
+      this.userID = await getUser(this.token)
+      if (this.userID !== 'User expired') {
+        this.log = true
+      }
+    }
+    this.userListsFetch()
+    this.userCommentsFetch()
+  },
 }
 </script>
 
 <style scoped>
-#UsersList {
-  display: flex;
+* {
+  background: black
 }
-#UserInfo {
-  display: flex;
-  justify-content: center;
-}
-.profile-info {
-  margin-top: 0.38461538rem;
-}
-.profile-name {
-  padding-left: 120px;
-}
-.profile-info {
-  margin-top: 0.57692308rem;
-}
-.title-1 {
-  max-width: 450px;
-  color: #445566;
+h1 {
+  font-size: 1.5rem;
 }
 
-.profile-name-wrap {
-  display: flex;
-  margin-right: 1.92307692rem;
-  max-width: 100%;
-  margin-bottom: 0.23076923rem;
-  margin-bottom: 0;
+.heading-container {
+  border-top: 1px solid var(--bs-tertiary);
+  border-bottom: 1px solid var(--bs-tertiary);
 }
 
-.profile-name {
-  display: flex;
-  padding-left: 120px;
-  flex-direction: column;
+main {
+  min-height: 100vh;
 }
 
-.profile-summary {
-  align-items: normal;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 25px;
-  min-height: 100px;
-  position: relative;
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: var(--bs-primary);
 }
 
-#profile-header {
-  display: flex;
-  margin-bottom: 3.07692308rem;
-  overflow: hidden;
-}
-article,
-aside,
-footer,
-header,
-img,
-nav,
-section {
-  display: block;
+.profile-button {
+  background: var(--bs-primary);
+  box-shadow: none;
+  border: none
 }
 
-.content-wrap {
-  margin: 0 auto;
-  width: 950px;
-}
-.site-body {
-  background: #0f0505;
-  padding: 30px 0;
+.profile-button:hover {
+  background: var(--bs-success)
 }
 
-.follow-button-wrapper {
-  margin-top: 3rem;
-  margin-left: -45vh;
+.profile-button:focus {
+  background: var(--bs-success);
+  box-shadow: none
 }
 
-.button.-small {
-  font-size: 0.84615385rem;
-  padding: 7px 10px 6px;
+.profile-button:active {
+  background: var(--bs-success);
+  box-shadow: none
 }
 
-.button {
-  text-align: center;
-  appearance: none;
-  background: #445566;
-  border-radius: 3px;
-
-  color: #fffdfd;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 400;
-  letter-spacing: 0.075em;
-  line-height: 12px;
-  padding: 9px 12px 8px;
-  text-transform: uppercase;
+.close-session-button:hover {
+  background: darkred;
+  box-shadow: none
 }
 
-a {
-  text-decoration: none;
-  border: 0;
-  font-family: inherit;
-  font-size: 100%;
-  font-style: inherit;
-  font-weight: inherit;
-  margin: 0;
-  outline: 0;
-  padding: 0;
-  vertical-align: baseline;
-}
-.profile-avatar {
-  left: 1rem;
-  position: absolute;
-  top: -3vh;
-  height: 14vh;
+.labels {
+  font-size: 11px
 }
 
-.avatar {
-  border-radius: 50px;
-  height: 100px;
-  width: 100px;
-  display: flex;
-  float: none;
-  margin-top: 25vh;
-  margin-right: 0;
-}
-
-img {
-  border-radius: 50px;
-  font-family: 'object-fit: cover;';
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  position: absolute;
-  width: 94%;
-  height: 90%;
-  margin-top: -2vh;
-}
-#avatar-zoom {
+.movie-img img {
+  border-radius: 10px;
+  position: inherit;
+  left: -5px;
+  margin-left: -25px;
   z-index: 1;
 }
-a {
-  color: #445566;
-  text-decoration: none;
-}
-.big-div {
-  padding-top: 20vh;
-  height: 50rem;
-  background-color: #0f0505;
-}
 
-.user-benefits {
-  border-right: 1px solid #fffdfd;
-}
+@media only screen and (max-width: 992px) {
+  .content {
+    display: flex;
+    justify-content: center;
+  }
 
-body {
-  font-family: Ubuntu, sans-serif;
-  font-size: 0.9rem;
-  width: 100vw;
-  margin: 0;
-  color: #fffdfd;
-}
-
-h1 {
-  font-size: 2.5rem;
-  color: #00c740;
-}
-
-h3 {
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  font-weight: 700;
-  color: #fffdfd;
-}
-
-.register-heading > a {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-}
-
-.register-heading > a > img {
-  max-height: 48px;
-}
-
-.register-space input {
-  position: relative;
-  width: 100%;
-  height: 3rem;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  display: flex;
-  color: var(--focus-black);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 385px;
-}
-
-.brand-content p {
-  align-self: center;
-  color: #0f0505;
-  font-size: 25px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 900;
-}
-
-input {
-  position: relative;
-  width: 100%;
-  height: 3rem;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  display: flex;
-  color: #0f0505;
-}
-
-.register-space > div > h3 {
-  font-size: 0.8rem;
-}
-p {
-  font-size: 2vw;
-}
-h3 {
-  font-size: 4vh;
-  color: #00c740;
-}
-h2.title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: nowrap;
-  margin-left: 20vh;
-}
-#logout {
-  margin-left: 2vh;
-
-  background-color: #c50909;
 }
 </style>
