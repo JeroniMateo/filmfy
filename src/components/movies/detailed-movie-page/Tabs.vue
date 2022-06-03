@@ -1,4 +1,5 @@
 <template>
+
   <div class="">
     <div class="">
       <div class="panel">
@@ -11,99 +12,97 @@
         <p id="actors"><span>Reparto : </span></p>
       </div>
       <div class="panel">
-        <p id="runtime">
-          <span>Duracion : </span>{{ this.movie.runtime }} minutos
-        </p>
+        <p id="runtime"><span>Duracion :  </span>{{this.movie.runtime}} minutos</p>
       </div>
       <div class="panel">
         <p id="release_date"><span>Fecha de lanzamiento : </span></p>
       </div>
-      <div
-        class="p-3 d-flex align-items-center justify-content-center"
-        id="categories"
-      ></div>
+      <div class="p-3 d-flex align-items-center justify-content-center" id="categories">
+
+      </div>
     </div>
+
   </div>
 </template>
 
 <script>
+
 export default {
-  name: 'Tabs',
+  name: "Tabs",
 
-  props: ['movie'],
+  props: ["movie"],
 
-  async mounted () {
-    await this.infoOutput()
+  updated() {
+     this.infoOutput()
   },
 
   methods: {
-    infoOutput () {
-      const directors = document.getElementById('directors')
+    infoOutput() {
+
+      let directors = document.getElementById("directors")
       this.movie.directors.forEach((director, index) => {
         if (this.movie.directors.length === 1) {
           directors.innerHTML += director
         } else {
-          if (index + 1 !== this.movie.directors.length) {
-            directors.innerHTML += director + ' · '
+          if ((index + 1) !== this.movie.directors.length) {
+            directors.innerHTML += director + " · "
           } else {
-            directors.innerHTML += director + ''
+            directors.innerHTML += director + ""
           }
         }
       })
 
-      const writters = document.getElementById('writters')
+      let writters = document.getElementById("writters")
       this.movie.writters.forEach((writter, index) => {
         if (this.movie.writters.length === 1) {
           writters.innerHTML += writter
         } else {
-          if (index + 1 !== this.movie.writters.length) {
-            writters.innerHTML += writter + ' · '
+          if ((index + 1) !== this.movie.writters.length) {
+            writters.innerHTML += writter + " · "
           } else {
-            writters.innerHTML += writter + ''
+            writters.innerHTML += writter + ""
           }
         }
       })
 
-      const actors = document.getElementById('actors')
+      let actors = document.getElementById("actors")
       this.movie.actors.forEach((actor, index) => {
         if (this.movie.actors.length === 1) {
           actors.innerHTML += actor
         } else {
-          if (index + 1 !== this.movie.actors.length) {
-            actors.innerHTML += actor + ' · '
+          if ((index + 1) !== this.movie.actors.length) {
+            actors.innerHTML += actor + " · "
           } else {
             actors.innerHTML += actor
           }
         }
       })
 
-      const categories = document.getElementById('categories')
+      let categories = document.getElementById("categories")
       this.movie.categories.forEach((category, index) => {
-        categories.innerHTML += `<p style="border: 1px solid white; border-radius: 20px; padding: 4px 12px 4px 12px; margin-bottom: 0px; margin-right: 10px">${category}</p>`
+          categories.innerHTML += `<p style="border: 1px solid white; border-radius: 20px; padding: 4px 12px 4px 12px; margin-bottom: 0px; margin-right: 10px">${category}</p>`
       })
 
-      const date = new Date(this.movie.release_date)
+      let date = new Date(this.movie.release_date)
 
-      function toMonthName (monthNumber) {
-        const date = new Date()
-        date.setMonth(monthNumber)
+      function toMonthName(monthNumber) {
+        const date = new Date();
+        date.setMonth(monthNumber);
 
         return date.toLocaleString('es-ES', {
-          month: 'long'
-        })
+          month: 'long',
+        });
       }
 
-      const release_date = (document.getElementById(
-        'release_date'
-      ).innerHTML += `${toMonthName(
-        date.getMonth()
-      )} de ${date.getFullYear()} `)
+      let release_date = document.getElementById("release_date").innerHTML += `${toMonthName(date.getMonth())} de ${date.getFullYear()} `
+
     }
   }
 }
 </script>
 
 <style scoped>
+
 p {
   margin: 0;
   padding: 20px;
@@ -113,11 +112,11 @@ p {
 .category {
   padding: 5px;
   border-radius: 10px;
-  border: 1px solid #fffdfd;
+  border: 1px solid white;
 }
 
 .panel {
-  border-bottom: 1px solid #445566;
+  border-bottom: 1px solid #456;
 }
 
 .panel:last-child {
@@ -127,4 +126,6 @@ p {
 span {
   color: #00c740;
 }
+
+
 </style>

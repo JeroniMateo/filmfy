@@ -1,114 +1,79 @@
 <template>
-  <li class="d-flex flex-row row div-container-comments py-3 mx-0">
-    <div class="col-3 col-lg-2">
-      <img
-        v-bind:src="this.icon"
-        width="55"
-        height="55"
-        style="border-radius: 100px"
-        alt=""
-      />
-    </div>
-    <div class="col-9 col-lg-10">
-      <div class="d-flex flex-column align-items-start">
-        <span class="comment-movie-title"
-          ><strong>{{ this.comment.title }}</strong></span
-        >
-        <small class="comment-user-name my-2"
-          >review escrita por {{ this.comment.user }}</small
-        >
+
+    <li class=" d-flex flex-row row div-container-comments py-3 mx-0">
+      <div class="col-3 col-lg-2">
+        <img v-bind:src="this.icon" width="55" height="55" style="border-radius: 100px" alt=""/>
       </div>
-      <div class="col-9 col-lg-10 py-3">
+      <div class=" col-9 col-lg-10 py-3">
+
         <div class="d-flex flex-column align-items-start">
-          <span class="comment-movie-title"
-            ><strong>{{ this.comment.title }}</strong></span
-          >
-          <small class="comment-user-name my-2"
-            >review escrita por {{ this.comment.user }}</small
-          >
+          <span class="comment-movie-title"><strong>{{ this.comment.title }}</strong></span>
+          <small class="comment-user-name my-2">review escrita por {{ this.comment.user }}</small>
         </div>
 
         <div class="comment-user-details d-flex flex-row py-2">
           <star-rating
-            v-bind:rating="comment.rating"
-            v-bind:round-start-rating="false"
-            v-bind:max-rating="5"
-            v-bind:increment="0.5"
-            v-bind:read-only="false"
-            v-bind:show-rating="false"
-            active-color="#00c740"
-            inactive-color="#fffdfd"
-            v-bind:star-size="20"
-          />
-          <!-- Lightgreen: #00c740 -->
+              v-bind:rating="comment.rating"
+              v-bind:round-start-rating="false"
+              v-bind:max-rating="5"
+              v-bind:increment="0.5"
+              v-bind:read-only="true"
+              v-bind:show-rating="false"
+              active-color="#00c740"
+              inactive-color="#fff"
+              v-bind:star-size="20"
+          /> <!-- Lightgreen: #00c740 -->
         </div>
         <div class="comment-content d-flex mt-2">
           <p class="comment-text text-start">{{ this.comment.body }}</p>
         </div>
         <div class="comment-likes d-flex flex-row align-items-center">
-          <i style="color: #e49e06" class="fa-solid fa-heart me-1"></i>
+          <i style="color: orange " class="fa-solid fa-heart me-1"></i>
           <span class="mx-1">{{ this.comment.likes }}</span>
-          <span class="comment-movie-year mx-2">{{
-            this.comment.created_at
-          }}</span>
+          <span class="comment-movie-year mx-2">{{ this.comment.created_at }}</span>
         </div>
       </div>
       <div v-if="token" class="d-flex flex-column align-items-end col-12 pb-3">
-        <span @click="sendLike(this.comment.id)" style="font-size: 13px"
-          >Me gusta</span
-        >
+        <span @click="sendLike(this.comment.id)" style="font-size: 13px">Me gusta</span>
       </div>
-      <div class="comment-likes d-flex flex-row align-items-center">
-        <i style="color: #e49e06" class="fa-solid fa-heart me-1"></i>
-        <span class="mx-1">{{ this.comment.likes }}</span>
-        <span class="comment-movie-year mx-2">{{
-          this.comment.created_at
-        }}</span>
-      </div>
-    </div>
-    <div class="d-flex flex-column align-items-end col-12 py-3">
-      <span @click="sendLike(this.comment.id)" style="font-size: 13px"
-        >Me gusta</span
-      >
-    </div>
-    <hr />
-  </li>
+      <hr>
+    </li>
 </template>
 
 <script>
+
 import StarRating from 'vue-star-rating'
-import { getCookie } from '@/main'
+import {getCookie} from "@/main";
 
 export default {
-  name: 'CommentsMovie',
+  name: "CommentsMovie",
 
-  props: ['comment'],
+  props: ["comment"],
 
-  components: { StarRating },
+  components: {StarRating},
 
-  data () {
+  data() {
     return {
-      icon: '',
-      token: getCookie('auth')
+      icon: "",
+      token: getCookie("auth")
     }
   },
 
-  beforeMount () {
+  beforeMount() {
     this.loadUserIcon()
   },
 
   methods: {
-    async loadUserIcon () {
-      const promise = await fetch('https://randomuser.me/api/')
-      const userIcon = await promise.json()
+    async loadUserIcon() {
+      let promise = await fetch("https://randomuser.me/api/")
+      let userIcon = await promise.json()
 
       this.icon = userIcon.results[0].picture.large
+
     },
 
-    async sendLike (id) {
-      const promise = await fetch(
-        `http://filmfy-api.ddns.net/api/comment-like/${id}`
-      )
+    async sendLike(id) {
+      let promise = await fetch(`http://filmfy-api.ddns.net/api/comment-like/${id}`)
       await location.reload()
     }
   }
@@ -116,8 +81,8 @@ export default {
 </script>
 
 <style scoped>
-.comment-movie-title,
-.list-title {
+
+.comment-movie-title, .list-title {
   font-size: 1.1rem;
 }
 
@@ -125,7 +90,7 @@ export default {
   display: flex;
   align-items: center;
   font-size: 0.8rem;
-  color: #445566;
+  color: lightgrey;
 }
 
 .comment-text {
@@ -133,11 +98,11 @@ export default {
 }
 
 .comment-rating > .stars {
-  color: #2ecc71;
+  color: green;
 }
 
 span:hover {
-  color: #445566;
+  color: #c9c9c9;
   cursor: pointer;
 }
 
@@ -145,9 +110,10 @@ span:hover {
   width: 40rem;
 }
 
-@media (max-width: 650px) {
+@media(max-width: 650px){
   .div-container-comments {
     width: 100%;
   }
 }
+
 </style>

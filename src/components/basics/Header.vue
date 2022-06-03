@@ -72,7 +72,9 @@ export default {
     currentUser: [],
     openHamburger: '',
     closeHamburger: '',
-    log: false
+    log: false,
+    user: [],
+    counter : 0
   }),
 
   async beforeMount() {
@@ -84,6 +86,7 @@ export default {
       if (this.userID !== 'User expired') {
         this.log = true
       }
+      this.counter++
     }
   },
 

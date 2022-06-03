@@ -6,36 +6,16 @@
       </div>
 
       <div class="data-container">
-        <input
-          aria-label="Email"
-          type="text"
-          autofocus=""
-          id="email"
-          name="email"
-          class="text-black"
-          placeholder="E-mail*"
-          v-model="email"
-        />
+        <input aria-label="Email" type="text" autofocus="" id="email" name="email" class="text-black"
+               placeholder="E-mail*" v-model="email"/>
         <p class="text-danger">{{ this.error_email }}</p>
       </div>
 
       <div class="data-container">
-        <input
-          aria-label="Password"
-          type="password"
-          autofocus=""
-          class="text-black"
-          id="password"
-          name="password"
-          placeholder="Contraseña*"
-          v-model="password"
-        />
-        <span id="eye1" class="show-pass-icon eye" style="display: block"
-          ><i class="fas fa-eye"></i
-        ></span>
-        <span id="eye2" class="hide-pass-icon eye" style="display: none"
-          ><i class="fas fa-eye-slash"></i
-        ></span>
+        <input aria-label="Password" type="password" autofocus="" class="text-black" id="password" name="password"
+               placeholder="Contraseña*" v-model="password"/>
+        <span id="eye1" class="show-pass-icon eye" style="display: block"><i class="fas fa-eye"></i></span>
+        <span id="eye2" class="hide-pass-icon eye" style="display: none"><i class="fas fa-eye-slash"></i></span>
         <p class="text-danger">{{ this.error_password }}</p>
       </div>
 
@@ -61,15 +41,16 @@
       </div>
     </div>
   </section>
+
 </template>
 
 <script>
-import { setCookie } from '@/main'
+import {setCookie} from "@/main";
 
 export default {
   name: 'Login',
 
-  data () {
+  data() {
     return {
       email: '',
       password: '',
@@ -97,7 +78,7 @@ export default {
       const promise = await fetch('http://filmfy-api.ddns.net/api/v1/login', {
         method: 'POST',
         headers: {
-          Accept: 'application/json',
+          'Accept': 'application/json',
           'Content-type': 'application/json',
           'Access-Control-Allow-Origin': '*'
         },
@@ -120,7 +101,7 @@ export default {
       }
 
       if (promise.status === 200) {
-        await setCookie('auth', response.token, 30)
+        await setCookie("auth", response.token, 7)
         window.location = window.origin
       }
     },
@@ -337,6 +318,7 @@ h3 {
   border-image: initial;
   color: #c50909;
 }
+
 
 @media only screen and (max-width: 1025px) {
   body {

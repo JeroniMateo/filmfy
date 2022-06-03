@@ -144,6 +144,7 @@
               Registrarse
             </button>
           </div>
+
         </form>
 
         <div class="register-space d-flex flex-column align-items-center">
@@ -175,27 +176,28 @@ import { email, minLength, required, sameAs } from '@vuelidate/validators'
 import { setCookie } from '@/main'
 import Footer from '@/components/basics/Footer'
 
-export function validName (name) {
-  const validNamePattern = new RegExp("^[a-zA-Z]+(?:[-'\\s][a-zA-Z]+)*$")
+export function validName(name) {
+  let validNamePattern = new RegExp("^[a-zA-Z]+(?:[-'\\s][a-zA-Z]+)*$");
   if (validNamePattern.test(name)) {
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
+
 export default {
-  components: { Footer },
-  setup () {
-    return { v$: useVuelidate() }
+  components: {Footer},
+  setup() {
+    return {v$: useVuelidate()}
   },
 
-  data () {
+  data() {
     return {
       form: {
         firstName: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
       }
     }
   },
@@ -204,41 +206,40 @@ export default {
     return {
       form: {
         firstName: {
-          required,
-          name_validation: {
+          required, name_validation: {
             $validator: validName,
-            $message:
-              'Invalid Name. Valid name only contain letters, dashes (-) and spaces'
+            $message: 'Invalid Name. Valid name only contain letters, dashes (-) and spaces'
           }
         },
-        email: { required, email },
-        password: { required, min: minLength(6) },
+        email: {required, email},
+        password: {required, min: minLength(6)},
         confirmPassword: {
           required,
           sameAsPassword: sameAs(this.form.password)
         }
-      }
+      },
     }
   },
 
   methods: {
-    async onSubmit () {
-      const promise = await fetch('http://filmfy-api.ddns.net/api/v1/register', {
-        method: 'POST',
+
+    async onSubmit() {
+      let promise = await fetch("http://filmfy-api.ddns.net/api/v1/register", {
+        method: "POST",
         headers: {
-          'Content-type': 'application/json'
+          'Content-type': 'application/json',
         },
         body: JSON.stringify({
-          name: this.form.firstName,
-          email: this.form.email,
-          password: this.form.password
+          "name": this.form.firstName,
+          "email": this.form.email,
+          "password": this.form.password
         })
       })
 
-      const response = await promise.json()
+      let response = await promise.json()
 
       if (promise.status === 200) {
-        await setCookie('auth', response.token, 30)
+        await setCookie("auth", response.token, 7)
         window.location = window.origin
       }
     }
