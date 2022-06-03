@@ -151,9 +151,9 @@
           <div>
             <h3>¿Ya estás en filmfy? ¡Inicia sesión!</h3>
           </div>
-          <a
+          <router-link
             class="text-decoration-none text-white w-100 p-2 rounded-3"
-            href="/login"
+            :to="{ name: 'login'}"
             id="signUpButton"
             aria-label="Inicia sesión"
           >
@@ -163,7 +163,7 @@
             >
               Iniciar sesion
             </p>
-          </a>
+          </router-link>
         </div>
       </section>
     </div>

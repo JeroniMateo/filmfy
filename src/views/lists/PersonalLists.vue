@@ -26,11 +26,11 @@
           </div>
           <aside class="aside-card d-flex flex-column align-items-start col-12 col-lg-2 rounded-3 p-0">
 
-            <a v-bind:href="baseUrl + '/lists/new'" class="text-decoration-none" style="cursor: pointer">
+            <router-link :to="{ name: 'lists-new' }"  class="text-decoration-none" style="cursor: pointer">
               <div class="m-auto p-3">
                 <span class="text-center text-white">Nueva lista</span>
               </div>
-            </a>
+            </router-link>
 
           </aside>
         </div>

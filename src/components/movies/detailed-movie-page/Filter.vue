@@ -66,7 +66,7 @@ export default {
         const slugEl = this.string_to_slug(el.name)
 
         categoriesFilter.innerHTML += `
-          <li><a style="font-size: 12px" class="dropdown-item" href="${this.baseUrl}/movies/category/${slugEl}">${el.name}</a></li>
+          <li><a style="font-size: 12px" class="dropdown-item" href="/movies/category/${slugEl}">${el.name}</a></li>
         `
       })
     },

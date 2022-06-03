@@ -17,9 +17,9 @@
       @mouseover="displayTitle(this.random_id)"
       v-bind:id="this.movie.id"
     >
-      <a v-bind:href="this.href" class="frame">
+      <router-link :to="{ name: 'movie-content', params: {movie: movie.id } }" class="frame">
         <img v-bind:src="this.url" alt="" class="image" />
-      </a>
+      </router-link>
     </div>
 
     <div
@@ -48,14 +48,12 @@ export default {
   data () {
     return {
       url: '',
-      href: '',
       random_id: this.movie.id + '-' + Math.round(Math.random() * 100)
     }
   },
 
   mounted () {
     this.url = 'http://filmfy-api.ddns.net' + this.movie.image
-    this.href = window.origin + '/movies/' + this.movie.id
   },
 
   methods: {

@@ -6,7 +6,7 @@
         <div class="d-flex flex-column align-items-start">
           <h1><b>Bienvenido a Filmfy, {{ currentUser.name }}</b></h1>
           <p>Accede a tus contenidos, modifica los datos de tu perfil o cierra tu sesión</p>
-          <a href="/my-lists/"><button type="button" class="btn btn-outline-primary me-2" @click="">Ver todo tu contenido</button></a>
+          <router-link :to="{ name: 'my-lists'}"><button type="button" class="btn btn-outline-primary me-2" @click="">Ver todo tu contenido</button></router-link>
           <button type="button" class="btn btn-outline-error me-2 my-2" @click="destroySession">Cerrar Sesión</button>
         </div>
       </div>
@@ -27,7 +27,7 @@
 
             <div class="mt-3">
               <div class="list col d-flex flex-column align-items-center mt-4" v-for="list in userLists.slice(0,3)">
-                <a :href="baseURL + '/lists/' + list.id" style="text-decoration: none">
+                <router-link :to="{ name: 'my-lists-edit', params: {list: list.id } }" style="text-decoration: none">
                   <div class="image-overlap">
                   <span class="movie-img" v-for="movie in list.movies.slice(0,5)">
                     <img :src="'http://filmfy-api.ddns.net' + movie.image" width="95" height="160" :alt="movie.title"/>
@@ -42,13 +42,13 @@
                       <span><i class="text-quaternary fa-solid fa-film"></i> {{ list.movies_count }}</span>
                     </div>
                   </div>
-                </a>
+                </router-link>
               </div>
             </div>
 
             <div class="mt-2" v-if="!contentLists">
               <p class="text-primary"><b>Aún no has creado ninguna lista</b></p>
-              <a href="/lists"><button type="button" class="btn btn-outline-primary me-2">Ir a listas</button></a>
+              <router-link :to="{ name: 'lists' }"><button type="button" class="btn btn-outline-primary me-2">Ir a listas</button></router-link>
             </div>
 
           </div>
@@ -102,7 +102,7 @@
 
             <div class="mt-2" v-if="!contentComments">
               <p class="text-primary"><b>Aún no has comentado ninguna película</b></p>
-              <a href="/movies"><button type="button" class="btn btn-outline-primary me-2">Ir a películas</button></a>
+              <router-link :to="{ name: 'movies'}"><button type="button" class="btn btn-outline-primary me-2">Ir a películas</button></router-link>
             </div>
 
           </div>
