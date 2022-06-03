@@ -66,12 +66,12 @@ Para navegar por Filmfy, esta aplicación se distribuye de la siguiente manera:
 
 - En esta sección podemos ver las películas más populares y las más recientes con los likes que los usuarios les han dado.
 - Si queremos buscar una película, podemos hacerlo por su nombre o por su género y año.
-- Si entramos en una película, obtenemos la ficha técnica de la misma, la descripción de la película, la lista de actores, el director, el género, el año de estreno, la duración, la imagen de la película. Una breve sinopsis, el tráiler de la película y los comentarios de los usuarios, a los que podemos darles Like.
+- Si entramos en una película, obtenemos la ficha técnica de la misma, la descripción de la película, la lista de actores, el director, el género, el año de estreno,   la duración, la imagen de la película. Una breve sinopsis, el tráiler de la película y los comentarios de los usuarios, a los que podemos darles Like.
 - Además, podemos añadir un nuevo comentario, guardar la películas en favoritos en favoritos(Se añadirá automáticamente a la lista que viene por defecto de Favoritos) y añadirlo a una de nuestras listas.
 
 ## 5 Características
 
-- Peliculas: Los usuarios pueden disfrutar de todo el contenido cinematográfico.
+- Peliculas**: Los usuarios pueden disfrutar de todo el contenido cinematográfico.
 - Listas**: Los usuarios pueden crear listas de películas o ver listas de otros usuarios.
 - Comentarios**: La aplicación permite a los usuarios crear comentarios.
 - Añadir películas a listas**: Los usuarios pueden añadir películas a la lista.
@@ -84,38 +84,38 @@ Nuestro proyecto está dividido en las siguientes carpetas:
 
 - Movies: Contiene todos los componentes relacionados con las películas.
 - Detailed Movie: Contiene los componentes para la información detallada de cada una de las películas
-- AsideDitailedMovie.vue: Componente para la información detallada donde podemos darle me gusta a la pelicula, Añadirla a una lista y comentarla.
-- CommentsMovie.vue: Componente para los comentarios de la película.
-- Filter.vue: Componente para buscar películas i/o filtrarlas por categoría o año
-- FormModal.vue & Tabs.vue: Componentes con la ficha técnica de una película.
+  - AsideDitailedMovie.vue: Componente para la información detallada donde podemos darle me gusta a la pelicula, Añadirla a una lista y comentarla.
+  - CommentsMovie.vue: Componente para los comentarios de la película.
+  - Filter.vue: Componente para buscar películas i/o filtrarlas por categoría o año
+  - FormModal.vue & Tabs.vue: Componentes con la ficha técnica de una película.
 
 - Movie-card: Carpeta con los componentes para hacer las tarjetas de las películas.
-- MovieCardGeneral.vue: Componente para las tarjetas de las películas.
-- MovieCardDetailed.vue: Componente para las tarjetas de las películas
+  - MovieCardGeneral.vue: Componente para las tarjetas de las películas.
+  - MovieCardDetailed.vue: Componente para las tarjetas de las películas
 
 - Movies-page: Carpeta compuesta con los componentes:
-- Best-movies.vue: Carpeta con los componentes para las mejores películas.
-- ItemsSerched.vue: Componente para las películas que se han buscado.
-- RecentMovies.vue: Componente para las películas recientes.
-- Sercher: Componente para buscar películas.
+  - Best-movies.vue: Carpeta con los componentes para las mejores películas.
+  - ItemsSerched.vue: Componente para las películas que se han buscado.
+  - RecentMovies.vue: Componente para las películas recientes.
+  - Sercher: Componente para buscar películas.
 
 - #### Views: Carpeta con cada una de las vistas de la app
 
 - Lists: Carpeta con las vistas de las listas.
-- DetailedListPage.vue: Vista con los detalles de las listas
-- MainListsPage.vue: Vista general de las Listas.
+  - DetailedListPage.vue: Vista con los detalles de las listas
+  - MainListsPage.vue: Vista general de las Listas.
 
-- Movies: Carpeta con las vistas de las películas.
-- DetailedMoviePage.vue: Vista con los detalles de las películas.
-- MainMoviesPage.vue: vista general de las películas.
-- MovieCategories.vue: Vista con las categorías de las películas.
-- MovieYears.vue: Vista con los años de las películas.
+ - Movies: Carpeta con las vistas de las películas.
+  - DetailedMoviePage.vue: Vista con los detalles de las películas.
+  - MainMoviesPage.vue: vista general de las películas.
+  - MovieCategories.vue: Vista con las categorías de las películas.
+  - MovieYears.vue: Vista con los años de las películas.
 
 -Users: Carpeta con las vistas de los usuarios.
-- EditProfile.vue: vista para editar el perfil del usuario.
-- Login.vue: vista para iniciar sesión.
-- Register.vue: vista para registrarse.
-- UserProfile.vue: vista para ver el perfil del usuario.
+  - EditProfile.vue: vista para editar el perfil del usuario.
+  - Login.vue: vista para iniciar sesión.
+  - Register.vue: vista para registrarse.
+  - UserProfile.vue: vista para ver el perfil del usuario.
 
 -Home:Visita la página principal de la aplicación.
 -Movies: Vista con las películas.
