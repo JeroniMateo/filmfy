@@ -1,4 +1,4 @@
-  ## Filmfy App
+  # FilmFy App
 
 - URL: http://filmfy-api.ddns.net/
 
