@@ -17,7 +17,7 @@
       <div class="panel">
         <p id="release_date"><span>Fecha de lanzamiento : </span></p>
       </div>
-      <div class="p-3 d-flex align-items-center justify-content-center" id="categories">
+      <div class="p-3 d-flex flex-column flex-lg-row align-items-center" id="categories">
 
       </div>
     </div>
@@ -80,7 +80,7 @@ export default {
 
       let categories = document.getElementById("categories")
       this.movie.categories.forEach((category, index) => {
-          categories.innerHTML += `<p style="border: 1px solid white; border-radius: 20px; padding: 4px 12px 4px 12px; margin-bottom: 0px; margin-right: 10px">${category}</p>`
+          categories.innerHTML += `<p class="mb-3 mb-lg-0" style="border: 1px solid white; border-radius: 20px; padding: 4px 12px 4px 12px; margin-bottom: 0px; margin-right: 10px">${category}</p>`
       })
 
       let date = new Date(this.movie.release_date)

@@ -27,6 +27,21 @@
         <span><strong>{{ title }}</strong></span>
       </div>
     </div>
+    <div v-else-if="category === 'drama'" class="imageDrama">
+      <div class="container text-movie d-flex justify-content-end flex-column ">
+        <span><strong>{{ title }}</strong></span>
+      </div>
+    </div>
+    <div v-else-if="category === 'ciencia ficcion'" class="imageCienciaFiccion">
+      <div class="container text-movie d-flex justify-content-end flex-column ">
+        <span><strong>{{ title }}</strong></span>
+      </div>
+    </div>
+    <div v-else-if="category === 'ciencia ficcion'" class="imageCienciaFiccion">
+      <div class="container text-movie d-flex justify-content-end flex-column ">
+        <span><strong>{{ title }}</strong></span>
+      </div>
+    </div>
     <div v-else class="image">
       <div class="container text-movie d-flex justify-content-end flex-column ">
         <span><strong>{{ title }}</strong></span>

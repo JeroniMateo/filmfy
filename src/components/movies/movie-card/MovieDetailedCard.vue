@@ -11,11 +11,6 @@
       <div class="d-flex align-items-center">
         <i style="color: #e49e06" class="fa-solid fa-heart me-1"></i>
         <span class="text-white m-0 extra-info">{{ this.movie.likes }}</span>
-        <i
-          style="color: #00c740"
-          class="fa-solid fa-plus"
-          @click="addToList"
-        ></i>
       </div>
     </div>
   </div>
