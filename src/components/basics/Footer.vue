@@ -15,10 +15,7 @@
         <i class="fa-brands fa-youtube fa-2x"></i>
       </div>
       <div class="copyright">
-        <small>
-          Encuentra variedad de conentido y crea listas para compartirlas con
-          tus amigos
-        </small>
+        <small>Encuentra variedad de contenido y crea listas para compartirlas con tus amigos</small>
         <pre> © 2022 Copyright: Filmfy</pre>
       </div>
     </div>

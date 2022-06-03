@@ -22,11 +22,14 @@
         <li><a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Usuarios</a></li>
       </ul>
 
-      <div v-if="!log" class="main main-menu col-md-3 text-end">
-        <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
-      </div>
-      <div v-else class="main main-menu col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Mi perfil</button>
+      <div class="login-menu">
+        <div v-if="!log" class="main main-menu col-md-3 text-end">
+          <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
+        </div>
+        <div v-else class="main main-menu text-end d-flex align-items-center">
+          <img class="rounded-circle mx-2" width="40" :src="'http://filmfy-api.ddns.net' + currentUser.user.profile_image" :alt="currentUser.user.name">
+          <button type="button" class="btn btn-outline-primary me-2" @click="toProfile">Mi perfil</button>
+        </div>
       </div>
 
       <div class="hamburger-container">
@@ -48,7 +51,8 @@
             <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
           </div>
           <div v-else class="login-content-hamburger">
-            <button type="button" class="btn btn-outline-primary me-2">Mi perfil</button>
+            <img class="rounded-circle my-2" width="40" :src="'http://filmfy-api.ddns.net' + currentUser.user.profile_image" :alt="currentUser.user.name">
+            <button type="button" class="btn btn-outline-primary me-2" @click="toProfile">Mi perfil</button>
           </div>
         </div>
       </div>
@@ -65,6 +69,7 @@ export default {
   name: 'Header',
   components: {},
   data: () => ({
+    currentUser: [],
     openHamburger: '',
     closeHamburger: '',
     log: false
@@ -73,6 +78,8 @@ export default {
   async beforeMount() {
     this.token = getCookie('auth')
     if (this.token) {
+      this.currentUser = await getUser(this.token)
+      console.log(this.currentUser)
       this.userID = await getUser(this.token)
       if (this.userID !== 'User expired') {
         this.log = true
@@ -81,8 +88,8 @@ export default {
   },
 
   methods: {
-    goMiPerfil() {
-      this.$router.push('/miPerfil')
+    toProfile() {
+      this.$router.push('/profile')
     },
     hamburgerIconHandling() {
       this.openHamburger = document.getElementById('hamburger')
@@ -209,7 +216,7 @@ export default {
 }
 
 .login-content-hamburger > img {
-  height: 20px;
+  height: 2.5rem;
 }
 
 .login-content-hamburger > p {
@@ -220,7 +227,7 @@ export default {
 }
 
 @media only screen and (max-width: 767px) {
-  .main-menu {
+  .main-menu, .login-menu {
     display: none;
   }
   #hamburger {
@@ -231,7 +238,7 @@ export default {
     align-items: flex-start;
   }
   .login-content-hamburger > img {
-    height: 1.5rem;
+    height: 2.5rem;
   }
 }
 

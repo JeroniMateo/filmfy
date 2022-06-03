@@ -60,9 +60,9 @@ export async function getUser(token) {
         if (user.status === "Token is Expired") {
             return "User expired"
         } else {
-            return user.user.id;
+            return user;
         }
-    }else {
+    } else {
         return false
     }
 
