@@ -80,7 +80,7 @@ export default {
 
 
     async postList() {
-      let promise = await fetch("http://127.0.0.1:8000/api/edit-list", {
+      let promise = await fetch("http://filmfy-api.ddns.net/api/edit-list", {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',

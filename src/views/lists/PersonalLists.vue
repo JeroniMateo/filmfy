@@ -85,7 +85,7 @@ export default {
 
   methods: {
     async fetchUserLists() {
-      let promise = await fetch(`http://127.0.0.1:8000/api/user-lists/${this.user.id}`)
+      let promise = await fetch(`http://filmfy-api.ddns.net/api/user-lists/${this.user.id}`)
       this.lists = await promise.json()
       this.loaded = true
     }

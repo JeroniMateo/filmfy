@@ -30,7 +30,7 @@ export default {
 
   methods: {
     async fetchRecentMovies() {
-      const promiseMovies = await fetch(`http://127.0.0.1:8000/api/recent-movies`)
+      const promiseMovies = await fetch(`http://filmfy-api.ddns.net/api/recent-movies`)
       const recentMoviesData = await promiseMovies.json()
       this.limitData(recentMoviesData)
     },

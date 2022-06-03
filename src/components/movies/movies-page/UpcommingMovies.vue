@@ -29,7 +29,7 @@ export default {
 
   methods: {
     async fetchUpcommingMovies() {
-      const promise = await fetch(`http://127.0.0.1:8000/api/upcomming-movies`)
+      const promise = await fetch(`http://filmfy-api.ddns.net/api/upcomming-movies`)
       const response = await promise.json()
       this.limitData(response)
     },
