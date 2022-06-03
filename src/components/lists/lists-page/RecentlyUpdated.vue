@@ -8,7 +8,8 @@
 
     <div>
       <div class="d-flex justify-content-center mt-4" v-for="list in listsRecent.slice(0,5)">
-        <a :href="baseURL + '/lists/' + list.l_id" style="text-decoration: none">
+        <router-link :to="{ name:'list-content', params: {list: list.l_id}}"
+                       style="text-decoration: none">
           <div class="image-overlap">
                   <span class="movie-img" v-for="movie in list.movies.slice(0,5)">
                     <img :src="'http://filmfy-api.ddns.net' + movie.image" width="95" height="160" :alt="movie.title"/>
@@ -26,7 +27,7 @@
             </div>
 
           </div>
-        </a>
+        </router-link>
       </div>
     </div>
 

@@ -6,10 +6,10 @@
         <span><strong>Las listas de Filmfy son la forma perfecta de tener tus películas.</strong></span>
       </div>
       <div v-if="log" class="mt-3">
-        <a href="/lists/new"><button type="button" class="btn btn-primary">Crea tus listas</button></a>
+        <router-link :to="{ name: 'lists-new'}"><button type="button" class="btn btn-primary">Crea tus listas</button></router-link>
       </div>
       <div v-else class="mt-3">
-        <a href="/login"><button type="button" class="btn btn-primary">Unéte para crear listas</button></a>
+        <router-link :to="{ name: 'login'}"><button type="button" class="btn btn-primary">Unéte para crear listas</button></router-link>
       </div>
     </div>
   </div>

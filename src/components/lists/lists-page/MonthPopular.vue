@@ -9,8 +9,8 @@
         class="list col-xxl-4 col-xl-6 col-12 d-flex flex-column align-items-center mt-4"
         v-for="list in listsPopular.slice(0, 3)"
       >
-        <a
-          :href="baseURL + '/lists/' + list.l_id"
+        <router-link
+            :to="{ name:'list-content', params: {list: list.l_id}}"
           style="text-decoration: none"
         >
           <div class="image-overlap">
@@ -47,7 +47,7 @@
               >
             </div>
           </div>
-        </a>
+        </router-link>
       </div>
     </div>
   </section>

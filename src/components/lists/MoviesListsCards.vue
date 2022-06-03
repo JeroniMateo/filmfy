@@ -1,14 +1,14 @@
 <template>
 
   <div class="div-general row align-items-center flex-column flex-lg-row py-4">
-    <a :href="baseURL + '/lists/' + list.id" style="text-decoration: none" class="col-12 col-lg-4">
+    <router-link :to="{ name:'list-content', params: {list: list.id}}" style="text-decoration: none" class="col-12 col-lg-4">
       <div class="image-overlap ">
                   <span class="movie-img" v-for="movie in list.movies.slice(0,5)">
                     <img :src="'http://filmfy-api.ddns.net' + movie.image" v-bind:width="this.width"
                          v-bind:height="this.height" :alt="movie.title"/>
                   </span>
       </div>
-    </a>
+    </router-link>
 
     <div class="list-details d-flex flex-column align-items-center align-items-lg-start justify-content-between col-12 col-lg-4">
       <div class="list-title ">
@@ -17,7 +17,7 @@
       <div class="list-data d-flex flex-row align-items-center" >
         <span class="mx-3">❤ {{ list.list_likes}}</span>
         <span> <i class="fa-solid fa-film"></i> {{ list.movies_count }}</span>
-        <a v-bind:href="baseURL + '/my-lists/'+ list.id +'/edit'"> <i class="fa-solid fa-pencil mx-3"></i></a>
+        <router-link :to="{ name:'my-lists-edit', params: {list: list.id}}"> <i class="fa-solid fa-pencil mx-3"></i></router-link>
         <span @click="deleteList(this.list.id)"><i class="fa-solid fa-trash text-danger" style="cursor: pointer" ></i></span>
       </div>
     </div>

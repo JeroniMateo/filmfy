@@ -24,7 +24,7 @@
 
   <aside v-else class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
 
-    <router-link :to="{ name: 'login'}" class="text-decoration-none" style="cursor: pointer">
+    <router-link :to="{ name: 'login' }" class="text-decoration-none" style="cursor: pointer">
       <div class="m-auto p-3">
         <span class="text-center text-white">Unete a filmfy para poder añadir peliculas a tu listas y darle me gusta</span>
       </div>
