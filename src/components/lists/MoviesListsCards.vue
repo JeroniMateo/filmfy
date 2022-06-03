@@ -15,9 +15,7 @@
         <span class=""><b>{{ list.title }}</b></span>
       </div>
       <div class="list-data d-flex flex-row align-items-center" >
-        <img v-bind:src="'http://filmfy-api.ddns.net' + user.profile_image" width="20" height="20"/>
-        <span class="mx-3">{{  }}</span>
-        <span class="mx-3">❤ {{}}</span>
+        <span class="mx-3">❤ {{ list.list_likes}}</span>
         <span> <i class="fa-solid fa-film"></i> {{ list.movies_count }}</span>
         <a v-bind:href="baseURL + '/my-lists/'+ list.id +'/edit'"> <i class="fa-solid fa-pencil mx-3"></i></a>
         <span @click="deleteList(this.list.id)"><i class="fa-solid fa-trash text-danger" style="cursor: pointer" ></i></span>

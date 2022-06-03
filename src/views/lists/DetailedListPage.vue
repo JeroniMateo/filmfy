@@ -206,7 +206,7 @@ export default {
 
 <style scoped>
 * {
-  background-color: #0f0505;
+  background-color:  var(--bs-bgmain);
 }
 
 h1 {
@@ -224,7 +224,7 @@ ol {
 
 .frame-title {
   border-radius: 5px;
-  background-color: #242424;
+  background-color: var(--bs-bgmain);
   color: #fffdfd;
   padding: 10px;
   font-size: 13px;

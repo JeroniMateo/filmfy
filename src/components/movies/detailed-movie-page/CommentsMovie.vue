@@ -2,7 +2,7 @@
 
     <li class=" d-flex flex-row row div-container-comments py-3 mx-0">
       <div class="col-3 col-lg-2">
-        <img v-bind:src="this.icon" width="55" height="55" style="border-radius: 100px" alt=""/>
+        <img v-bind:src="'http://filmfy-api.ddns.net' + user.profile_image" width="55" height="55" style="border-radius: 100px" alt=""/>
       </div>
       <div class=" col-9 col-lg-10 py-3">
 
@@ -48,7 +48,7 @@ import {getCookie} from "@/main";
 export default {
   name: "CommentsMovie",
 
-  props: ["comment"],
+  props: ["comment", "user"],
 
   components: {StarRating},
 

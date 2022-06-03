@@ -128,9 +128,6 @@ export default {
 </script>
 
 <style scoped>
-#formlogin {
-  background-color: #242424;
-}
 
 .form {
   width: 30rem;
@@ -208,9 +205,9 @@ h3 {
 
 /* Right section */
 .login-space {
+  min-height: 63vh;
   padding-top: 5vh;
-  height: 35rem;
-  background-color: #0f0505;
+  background-color: var(--bs-bgmain);
   display: flex;
   justify-content: center;
 }

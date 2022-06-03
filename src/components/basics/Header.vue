@@ -12,8 +12,8 @@
       <div class="main-menu d-flex col-md-3 mx-3">
         <a href="/" class="d-flex align-items-center mb-md-0 text-dark text-decoration-none">
           <img src="../../assets/img/cameraLogo.png" class="bi me-2" width="30" height="30" role="img" aria-label="Bootstrap" alt="logo"/>
-        </a>
         <span class="brand-name"><strong>Filmfy</strong></span>
+        </a>
       </div>
 
       <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
@@ -48,9 +48,9 @@
           <div v-if="!log" class="login-content-hamburger">
             <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
           </div>
-          <div v-else class="login-content-hamburger">
-
-            <button type="button" class="btn btn-outline-primary me-2">Mi perfil</button>
+          <div v-else class="login-content-hamburger d-flex">
+            <img class="rounded-circle mx-2" :src="'http://filmfy-api.ddns.net' + user.profile_image" :alt="user.name">
+            <a href="/profile"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></a>
           </div>
         </div>
       </div>
@@ -195,7 +195,8 @@ export default {
   align-items: center;
 }
 .login-content-hamburger > img {
-  height: 20px;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 .login-content-hamburger > p {
   color: white;
@@ -203,6 +204,12 @@ export default {
   font-size: 20px;
   margin-left: 5px;
 }
+
+.rounded-circle {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
 @media only screen and (max-width: 767px) {
   .main-menu {
     display: none;
@@ -211,11 +218,12 @@ export default {
     display: inline-block;
   }
   .login-content-hamburger {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
   .login-content-hamburger > img {
-    height: 1.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
   }
 }
 @media only screen and (max-width: 600px) {

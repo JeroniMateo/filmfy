@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 footer > div {
-  background-color: #0f0505;
+  background-color: var(--bs-bgmain);
   color: #fffdfd;
 }
 .brand-size {

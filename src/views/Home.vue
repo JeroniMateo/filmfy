@@ -1,9 +1,10 @@
-<Header />
+<Header/>
 <template>
   <main>
     <section
         id="cover"
-        class="container d-flex align-content-end justify-content-center"
+        class="d-flex align-content-end justify-content-center"
+        v-if="!log"
     >
       <div
           class="d-flex flex-column justify-content-center align-content-end mt-auto mx-auto"
@@ -21,6 +22,23 @@
           <button type="button" class="btn btn-primary" @click="unete">
             Únete
           </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+        id="cover"
+        class="container d-flex align-content-end justify-content-center"
+        v-else
+    >
+      <div
+          class="d-flex flex-column justify-content-center align-content-end mt-auto mx-auto"
+      >
+        <div class="d-flex flex-column">
+          <span class="heading"
+          ><strong>Bienvenido a Filmfy, {{user.name}}</strong></span
+          >
+
         </div>
       </div>
     </section>
@@ -82,10 +100,10 @@
           <div class="comments col-12 col-xxl-7 col-xl-5 d-flex flex-column">
             <span class="section-heading d-flex my-4">Últimos comentarios</span>
             <ul>
-              <hr />
+              <hr/>
               <div v-for="comment in latestComments">
                 <li class="comment d-flex flex-row">
-                  <div class="comment-movie-image">
+                  <div class="comment-movie-image d-flex align-items-center">
                     <img
                         :src="'http://filmfy-api.ddns.net' + comment.m_image"
                         width="115"
@@ -139,14 +157,14 @@
                   </div>
                 </li>
 
-                <hr />
+                <hr/>
               </div>
             </ul>
           </div>
 
           <div class="lists col-12 col-xxl-4 col-xl-4 mx-5 d-flex flex-column">
             <span class="section-heading d-flex my-4">Listas populares</span>
-            <hr />
+            <hr/>
             <div
                 class="d-flex flex-column justify-content-center align-items-center"
             >
@@ -206,12 +224,14 @@
     </section>
   </main>
 </template>
-<Footer />
+<Footer/>
 
 <script>
 import Footer from '../components/basics/Footer.vue'
 import Header from '../components/basics/Header.vue'
 import StarRating from 'vue-star-rating'
+import {getCookie, getUser} from "@/main";
+
 export default {
   name: 'Home',
   components: {
@@ -219,20 +239,24 @@ export default {
     Footer,
     StarRating
   },
-  data () {
+  data() {
     return {
       baseURL: window.origin,
       latestComments: '',
       latestLists: '',
       topMovies: [],
-      topMoviesId: [22, 33, 53, 183, 229, 44]
+      topMoviesId: [345, 128, 226, 6, 229, 191],
+      token: "",
+      user: "",
+      log: false,
+      counter : 0
     }
   },
   methods: {
-    unete () {
+    unete() {
       this.$router.push('/register')
     },
-    getTopMovies () {
+    getTopMovies() {
       this.topMoviesId.forEach((item) => {
         fetch('http://filmfy-api.ddns.net/api/movies/' + item, {
           method: 'GET',
@@ -252,7 +276,7 @@ export default {
             })
       })
     },
-    getLatestComments () {
+    getLatestComments() {
       fetch('http://filmfy-api.ddns.net/api/comments-recent', {
         method: 'GET',
         headers: {
@@ -271,7 +295,7 @@ export default {
             console.log(error)
           })
     },
-    getLatestLists () {
+    getLatestLists() {
       fetch('http://filmfy-api.ddns.net/api/lists-most-liked', {
         method: 'GET',
         headers: {
@@ -291,42 +315,58 @@ export default {
           })
     }
   },
-  beforeMount () {
-    this.getTopMovies()
-    this.getLatestComments()
-    this.getLatestLists()
+  async beforeMount() {
+    this.token = getCookie("auth")
+    if (this.token && this.counter === 0) {
+      this.user = await getUser(this.token)
+      if (this.user !== "User expired") {
+        this.log = true
+      }
+      this.counter++
+    }
+    await this.getTopMovies()
+    await this.getLatestComments()
+    await this.getLatestLists()
   }
 }
 </script>
 
 <style scoped>
 main {
-  background-color: #0f0505;
+  background-color: var(--bs-bgmain);
 }
+
 #cover {
-  width: 100vw;
-  height: 50vh;
-  background-repeat: no-repeat;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 100)),
-  url('../assets/img/home/cover-img2.jpg') center;
+  background-image: linear-gradient(to bottom,
+  rgba(0, 0, 0, 0),
+  rgba(0, 0, 0, 100)), url("../assets/img/home/cover-img.jpg");
+  box-sizing: border-box;
   background-size: cover;
+  background-position: 50% 40%;
+  width: 100%;
+  height: 53vh;
 }
+
 .heading {
   font-size: 1.5rem;
 }
+
 .section-heading {
   font-size: 1.2rem;
 }
+
 .movie > a > img {
   width: 12rem;
   height: 20rem;
   border: 2px solid #2ecc71;
 }
+
 .highlights {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .highlights a.panel {
   box-shadow: inset 0 1px 0 hsl(0deg 0% 100% / 10%);
   box-sizing: border-box;
@@ -335,10 +375,12 @@ main {
   width: 310px;
   height: 6rem;
 }
+
 .promopanel {
   background: #445566;
   padding: 16px 20px 18px;
 }
+
 .panel {
   background: #242424;
   border: 1px solid #445566;
@@ -348,9 +390,11 @@ main {
   padding: 10px;
   position: relative;
 }
+
 a {
   text-decoration: none;
 }
+
 .highlights .icon {
   float: left;
   height: 33px;
@@ -359,63 +403,79 @@ a {
   top: 5px;
   width: 50px;
 }
+
 .icon {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   font-size: 1.5rem;
 }
+
 ul,
 ol {
   list-style: none;
 }
+
 div > svg {
   color: #00c740;
 }
+
 .comment-movie-title,
 .list-title {
   font-size: 1.1rem;
 }
+
 .comment-movie-year {
   display: flex;
   align-items: center;
   font-size: 0.8rem;
   color: #445566;
 }
+
 .comment-text {
   font-size: 0.9rem;
 }
+
 .list-title {
   width: 10rem;
 }
+
 /** **/
 .poster-list.-overlapped.-p70 .poster,
 .poster-list.-overlapped.-p150 .poster {
   box-shadow: 2px 0 7px #0f0505;
   margin-right: -25px;
 }
+
 .poster-list.-overlapped .poster:first-child {
   z-index: 15;
 }
+
 .poster-list.-overlapped .poster:nth-of-type(2) {
   z-index: 14;
 }
+
 .poster-list.-overlapped .poster:nth-of-type(3) {
   z-index: 13;
 }
+
 .poster-list.-overlapped .poster:nth-of-type(4) {
   z-index: 12;
 }
+
 .poster-list.-overlapped .poster:nth-of-type(5) {
   z-index: 11;
 }
+
 .poster-list.-overlapped .poster {
   float: left;
 }
+
 .poster {
   background: #0f0505;
   box-shadow: 0 1px 3px rgb(0 0 0 / 35%);
 }
+
 .poster,
 .poster-container {
   -webkit-background-clip: padding-box;
@@ -424,8 +484,14 @@ div > svg {
   overflow: hidden;
   position: relative;
 }
+
 .poster .image {
   border-radius: 4px;
   display: block;
+}
+
+.comment-movie-image > img {
+  width: 90px;
+  height: 150px;
 }
 </style>

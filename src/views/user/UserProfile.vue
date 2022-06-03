@@ -6,7 +6,7 @@
         <div class="d-flex flex-column align-items-start">
           <h1><b>Bienvenido a Filmfy, {{ currentUser.name }}</b></h1>
           <p>Accede a tus contenidos, modifica los datos de tu perfil o cierra tu sesión</p>
-          <button type="button" class="btn btn-outline-primary me-2" @click="">Ver todo tu contenido</button>
+          <a href="/my-lists/"><button type="button" class="btn btn-outline-primary me-2" @click="">Ver todo tu contenido</button></a>
           <button type="button" class="btn btn-outline-error me-2 my-2" @click="destroySession">Cerrar Sesión</button>
         </div>
       </div>
@@ -175,12 +175,12 @@ export default {
     this.token = await getCookie('auth')
 
     if (this.token) {
-      let user = await getUser(this.token)
-      this.currentUser = user.user;
+      let user = await getUser(this.token);
+      this.currentUser = user;
       this.userName = this.currentUser.name;
       this.userEmail = this.currentUser.email;
       this.userPassword = this.currentUser.password;
-      if (this.userID !== 'User expired') {
+      if (this.currentUser.id !== 'User expired') {
         this.log = true;
       }
     }

@@ -50,7 +50,7 @@
       </div>
     </div>
     <div v-if="this.contentComment" class=" container align-items-center flex-column align-items-lg-start">
-      <CommentsMovie v-for="comment of this.comments" :key="comment" :comment="comment"/>
+      <CommentsMovie v-for="comment of this.comments" :key="comment" :comment="comment" :user="user"/>
     </div>
     <div v-else class="pt-5">
       <p style="font-size: 25px; color: #00c740" class="text-center m-0">Nadie ha comentado todavía esta película, sé tu el
@@ -65,6 +65,7 @@ import MovieDetailedCard from "@/components/movies/movie-card/MovieDetailedCard"
 import Tabs from "@/components/movies/detailed-movie-page/Tabs";
 import AsideDetailedMovie from "@/components/movies/detailed-movie-page/AsideDetailedMovie";
 import CommentsMovie from "@/components/movies/detailed-movie-page/CommentsMovie";
+import {getCookie, getUser} from "@/main";
 
 export default {
   name: "DetailedMoviePage",
@@ -80,11 +81,15 @@ export default {
       writters: "Escritores : ",
       actors: "Actores : ",
       contentComment: true,
+      user: "",
+      token: ""
     }
   },
 
   async beforeMount() {
     await this.fetchMovie()
+    this.token = await getCookie("auth")
+    this.user = await getUser(this.token)
   },
 
   methods: {

@@ -137,7 +137,7 @@
           <div class="my-3" style="width: 100%; cursor: pointer">
             <button
               type="submit"
-              style="width: 100%"
+              style="width: 100%; cursor: pointer"
               class="login-button text-white p-2 rounded-2"
               :disabled="v$.form.$invalid"
             >
@@ -250,8 +250,8 @@ export default {
 <style scoped>
 .big-div {
   padding-top: 10vh;
-  height: 40rem;
-  background-color: #0f0505;
+  height: 63vh;
+  background-color: var(--bs-bgmain);
 }
 
 .user-benefits {
