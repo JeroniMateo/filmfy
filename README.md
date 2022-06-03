@@ -6,18 +6,8 @@
 
 Filmfy es una aplicación web donde puedes disfrutar del mundo del cine, tener a tu alcance tus películas favoritas, crear listas de contenidos, ver las listas de contenidos de otros usuarios. Hazte notar en este arte llamado cine comentando y valorando tanto películas como listas; ya sean propias como de otros usuarios.
 
-- Nuestros usuarios pueden crear listas de películas, añadir películas a la lista, editar la lista, eliminar la lista y compartir la lista con otros usuarios.
-- Los usuarios también pueden crear entradas y comentarios en las entradas.
-- Los usuarios también pueden crear comentarios y votos en la lista.
-- Nuestras Listas pueden ser creadas por los usuarios, y pueden ser compartidas con otros usuarios.
-- Nuestras Listas pueden ser votadas por los usuarios.
-- Nuestras Películas pueden ser calificadas por los usuarios.
-- Nuestros Usuarios pueden crear comentarios y votos sobre las películas.
-
-En nuestra aplicación tenemos una Cartelera donde ver qué películas se han estrenado recientemente.
-- Los usuarios pueden ver las películas que están en el cine.
-- Los usuarios pueden crear listas de películas.
-- Los usuarios pueden crear comentarios y votos sobre las películas.
+- Nuestros usuarios pueden generar listas de películas.
+- Incluso publicar comentarios y votos sobre las películas.
 - Tenemos una lista de películas que tenemos en nuestra base de datos.
 - Una parte de que los usuarios pueden ver las 10 mejores películas.
 - También pueden ver las próximas películas.
@@ -45,13 +35,13 @@ Para navegar por Filmfy, esta aplicación se distribuye de la siguiente manera:
 
 - HOME, donde se recogen las películas más destacadas, que hace Filmfy, los últimos comentarios publicados por los usuarios y las listas más populares. Además de esto, en la home obtenemos una barra de navegación para ver Películas Usuarios y Listas. Por último, la posibilidad de Registrarnos si no lo estamos o iniciarnos sesión si ya lo estamos.
 
-- En todas las páginas de la aplicación veremos una cabecera formada por un menú de navegación y una barra de acción. Dependiendo de si estamos iniciados sesión o no nos dará la posibilidad de Ingresar o Nuestro Perfil.
+- En todas las páginas de la aplicación veremos una cabecera formada por un menú de navegación y una barra de acción. Dependiendo de si estamos logueados o no nos dará la posibilidad de Ingresar o Nuestro Perfil.
 
 - Al final de las páginas un pie de página con una barra de navegación con nuestras redes sociales.
 
 ### Usuarios.
 
-- Registro, El usuario para regesitrarse deberá introducir un correo electrónico, una contraseña, un nombre de usuario y un nombre. Y en un lateral destacamos que el usuario puede disfrutar cuando se registra.
+- Registro, El usuario para registrarse  deberá introducir un correo electrónico, una contraseña, un nombre de usuario y un nombre. Y en un lateral destacamos que el usuario puede disfrutar cuando se registra.
 
 - Login, El que el usuario deberá poner su email y contraseña para poder entrar en su cuenta.
 - Una vez logueado tendrá su propio perfil donde tendrá sus listas de contenidos, y tendrá la posibilidad de modificar sus datos y contenido exclusivo de la aplicación.
@@ -67,7 +57,7 @@ Para navegar por Filmfy, esta aplicación se distribuye de la siguiente manera:
 - En esta sección podemos ver las películas más populares y las más recientes con los likes que los usuarios les han dado.
 - Si queremos buscar una película, podemos hacerlo por su nombre o por su género y año.
 - Si entramos en una película, obtenemos la ficha técnica de la misma, la descripción de la película, la lista de actores, el director, el género, el año de estreno,   la duración, la imagen de la película. Una breve sinopsis, el tráiler de la película y los comentarios de los usuarios, a los que podemos darles Like.
-- Además, podemos añadir un nuevo comentario, guardar la películas en favoritos en favoritos(Se añadirá automáticamente a la lista que viene por defecto de Favoritos) y añadirlo a una de nuestras listas.
+- Además, podemos añadir un nuevo comentario, guardar las películas en favoritos(Se añadirá automáticamente a la lista que viene por defecto de Favoritos) y añadirlo a una de nuestras listas.
 
 ## 5 Características
 
