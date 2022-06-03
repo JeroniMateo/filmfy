@@ -21,6 +21,7 @@ import PersonalLists from '@/views/lists/PersonalLists'
 import EditList from '@/components/lists/EditList'
 
 const router = createRouter({
+  mode: 'history',
   history: createWebHistory(process.env.BASE_URL),
   routes: [
     {
