@@ -17,7 +17,7 @@
       </div>
 
       <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
-        <li><a href="/movies" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Películas</a></li>
+        <li><router-link :to="{ name: 'movies' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Películas</router-link></li>
         <li><a href="/lists" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Listas</a></li>
         <li><a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Usuarios</a></li>
       </ul>

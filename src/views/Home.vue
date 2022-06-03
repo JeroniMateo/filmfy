@@ -342,7 +342,7 @@ main {
   rgba(0, 0, 0, 100)), url("../assets/img/home/cover-img.jpg");
   box-sizing: border-box;
   background-size: cover;
-  background-position: 50% 40%;
+  background-position: 50% 20%;
   width: 100%;
   height: 53vh;
 }
