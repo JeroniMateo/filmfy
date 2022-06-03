@@ -10,24 +10,24 @@
       </div>
 
       <div class="main-menu d-flex col-md-3 mx-3">
-        <a href="/" class="d-flex align-items-center mb-md-0 text-dark text-decoration-none">
+        <router-link :to="{ name: 'home' }" class="d-flex align-items-center mb-md-0 text-dark text-decoration-none">
           <img src="../../assets/img/cameraLogo.png" class="bi me-2" width="30" height="30" role="img" aria-label="Bootstrap" alt="logo"/>
         <span class="brand-name"><strong>Filmfy</strong></span>
-        </a>
+        </router-link>
       </div>
 
       <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
         <li><router-link :to="{ name: 'movies' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Películas</router-link></li>
-        <li><a href="/lists" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Listas</a></li>
-        <li><a href="#" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Usuarios</a></li>
+        <li><router-link :to="{ name: 'lists' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Listas</router-link></li>
+        <li><router-link :to="{ name: 'home' }"  class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Usuarios</router-link></li>
       </ul>
 
       <div v-if="!log" class="main main-menu col-md-3 text-end">
-        <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
+        <router-link :to="{ name: 'login' }"><button type="button" class="btn btn-outline-primary me-2">Accede</button></router-link>
       </div>
       <div v-else class="main main-menu col-md-3 text-end">
         <img class="rounded-circle me-3" width="40" :src="'http://filmfy-api.ddns.net' + user.profile_image" :alt="user.name">
-        <a href="/profile"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></a>
+        <router-link :to="{ name: 'profile' }"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></router-link>
       </div>
 
       <div class="hamburger-container">
@@ -40,17 +40,17 @@
             </div>
           </a>
           <div class="menu-links">
-            <a href="">Películas</a>
-            <a href="">Listas</a>
-            <a href="">Usuarios</a>
+            <router-link :to="{ name: 'movies' }">Películas</router-link>
+            <router-link :to="{ name: 'lists' }">Listas</router-link>
+            <router-link :to="{ name: 'home' }">Usuarios</router-link>
           </div>
 
           <div v-if="!log" class="login-content-hamburger">
-            <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
+            <router-link :to="{ name: 'login' }"><button type="button" class="btn btn-outline-primary me-2">Accede</button></router-link>
           </div>
           <div v-else class="login-content-hamburger d-flex">
             <img class="rounded-circle mx-2" :src="'http://filmfy-api.ddns.net' + user.profile_image" :alt="user.name">
-            <a href="/profile"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></a>
+            <router-link :to="{ name: 'profile' }"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></router-link>
           </div>
         </div>
       </div>

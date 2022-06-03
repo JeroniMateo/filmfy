@@ -49,12 +49,12 @@
             class="movie col-xl-2 col-md-4 col-sm-6 col-12 p-2"
             v-for="movie in topMovies"
         >
-          <a :href="baseURL + '/movies/' + movie.id"
+          <router-link :to="{ name: 'movie-content', params: {movie: movie.id } }"
           ><img
               :src="'http://filmfy-api.ddns.net' + movie.image"
               class="rounded"
               :alt="movie.title"
-          /></a>
+          /></router-link>
         </div>
       </div>
     </section>
@@ -170,9 +170,9 @@
             >
               <div v-for="list in latestLists.slice(0, 5)">
                 <div class="list -overlapped -stacked d-flex flex-column">
-                  <a
+                  <router-link
                       class="list-link"
-                      :href="baseURL + '/lists/' + list.l_id"
+                      :to="{ name: 'list-content', params: {list: list.l_id } }"
                       style="text-decoration: none"
                   >
                     <div class="list-link-stacked clear">
@@ -193,7 +193,7 @@
                         </li>
                       </ul>
                     </div>
-                  </a>
+                  </router-link>
                   <div class="list-content d-flex flex-row mt-2">
                     <p class="list-title d-flex align-content-center">
                       <strong>{{ list.l_title }}</strong>
