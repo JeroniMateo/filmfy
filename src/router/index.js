@@ -16,99 +16,97 @@ import Register from '../views/user/Register.vue'
 import Login from '../views/user/Login.vue'
 
 import UserProfile from '../views/user/UserProfile.vue'
-import FormNewList from "@/components/lists/FormNewList";
-import PersonalLists from "@/views/lists/PersonalLists";
-import EditList from "@/components/lists/EditList";
-
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-
-  {
-    path: '/movies',
-    name: 'movies',
-    component: MainMoviesPage
-  },
-  {
-    path: '/movies/:movie',
-    name: 'movie-content',
-    component: DetailedMoviePage
-  },
-  {
-    path: '/movies/category/:category',
-    name: 'movie-category',
-    component: MovieCategories
-  },
-  {
-    path: '/movies/years/:year',
-    name: 'movie-year',
-    component: MovieYear
-  },
-  {
-    path: '/movieAddToList/:movieId',
-    name: 'movie-add-to-list',
-    component: AddMovieToList
-  },
-  {
-    path: '/createList',
-    name: 'create-list',
-    component: CreateList
-  },
-
-  {
-    path: '/lists',
-    name: 'lists',
-    component: MainListsPage
-  },
-
-  {
-    path: '/lists/new',
-    name: 'lists-new',
-    component: FormNewList
-  },
-
-  {
-    path: '/my-lists/',
-    name: 'my-lists',
-    component: PersonalLists
-  },
-
-  {
-    path: '/my-lists/:list/edit',
-    name: 'my-lists-edit',
-    component: EditList
-  },
-
-  {
-    path: '/lists/:list',
-    name: 'list-content',
-    component: DetailedListPage
-  },
-
-  {
-    path: '/profile',
-    name: 'profile',
-    component: UserProfile
-  },
-
-  {
-    path: '/login',
-    name: 'login',
-    component: Login
-  },
-  {
-    path: '/register',
-    name: 'register',
-    component: Register
-  }
-]
+import FormNewList from '@/components/lists/FormNewList'
+import PersonalLists from '@/views/lists/PersonalLists'
+import EditList from '@/components/lists/EditList'
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home
+    },
+
+    {
+      path: '/movies',
+      name: 'movies',
+      component: MainMoviesPage
+    },
+    {
+      path: '/movies/:movie',
+      name: 'movie-content',
+      component: DetailedMoviePage
+    },
+    {
+      path: '/movies/category/:category',
+      name: 'movie-category',
+      component: MovieCategories
+    },
+    {
+      path: '/movies/years/:year',
+      name: 'movie-year',
+      component: MovieYear
+    },
+    {
+      path: '/movieAddToList/:movieId',
+      name: 'movie-add-to-list',
+      component: AddMovieToList
+    },
+    {
+      path: '/createList',
+      name: 'create-list',
+      component: CreateList
+    },
+
+    {
+      path: '/lists',
+      name: 'lists',
+      component: MainListsPage
+    },
+
+    {
+      path: '/lists/new',
+      name: 'lists-new',
+      component: FormNewList
+    },
+
+    {
+      path: '/my-lists/',
+      name: 'my-lists',
+      component: PersonalLists
+    },
+
+    {
+      path: '/my-lists/:list/edit',
+      name: 'my-lists-edit',
+      component: EditList
+    },
+
+    {
+      path: '/lists/:list',
+      name: 'list-content',
+      component: DetailedListPage
+    },
+
+    {
+      path: '/profile',
+      name: 'profile',
+      component: UserProfile
+    },
+
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    }
+  ]
 })
 
 export default router
