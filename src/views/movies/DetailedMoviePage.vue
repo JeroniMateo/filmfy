@@ -105,7 +105,7 @@ export default {
     }
   },
 
-  async beforeMount() {
+  async beforeMount () {
     await this.fetchMovie()
   },
 

@@ -17,13 +17,11 @@
         </div>
         <div class="profile-name">
           <div class="profile-name-wrap">
-            <h1 class="title-1"> {{ firstName }} </h1>
+            <h1 class="title-1">{{ firstName }}</h1>
           </div>
           <div class="profile-info">
-            <a href="/editarPerfil" class="button ">Editar Perfil</a>
-            <a  id="logout" class="button " @click="logout"
-              >Cerrar Sesion</a
-            >
+            <a href="/editarPerfil" class="button">Editar Perfil</a>
+            <a id="logout" class="button" @click="logout">Cerrar Sesion</a>
           </div>
         </div>
       </section>
@@ -42,7 +40,7 @@
           </div>
           <div>
             <h3>Nombre</h3>
-            <p> {{ firstName }} </p>
+            <p>{{ firstName }}</p>
           </div>
         </div>
         <div class="benefit 3 my-3">
@@ -51,7 +49,7 @@
           </div>
           <div>
             <h3>Email</h3>
-            <p> {{ email}} </p>
+            <p>{{ email }}</p>
           </div>
         </div>
       </section>
@@ -120,7 +118,7 @@
 <script>
 export default {
   name: 'UserProfile',
-  data() {
+  data () {
     return {
       log: '',
       firstName: '',
@@ -134,12 +132,12 @@ export default {
   },
 
   methods: {
-    logout() {
+    logout () {
       localStorage.removeItem('token')
       this.log = false
       this.$router.push('/')
     },
-    getUserInfo() {
+    getUserInfo () {
       fetch('http://filmfy-api.ddns.net/api/v1/register', {
         method: 'GET',
         headers: {
@@ -157,7 +155,7 @@ export default {
         })
     }
   },
-  beforeMount() {
+  beforeMount () {
     this.getUserInfo()
   }
 }
@@ -401,12 +399,9 @@ h2.title {
   flex-wrap: nowrap;
   margin-left: 20vh;
 }
-#logout{
+#logout {
   margin-left: 2vh;
 
-  background-color:#c50909
-}
-.wrap-content{
-
+  background-color: #c50909;
 }
 </style>

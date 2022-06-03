@@ -1,46 +1,52 @@
 <template>
   <div class="container">
-    <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
+    <div
+      class="section-heading mt-5 align-items-center align-items-lg-start flex-column"
+    >
       <span>Películas más añadidas a listas</span>
     </div>
     <div class="container justify-content-between">
       <div class="row">
-        <MovieCardGeneral v-for="movie of this.movies" :key="movie" :movie="movie"/>
+        <MovieCardGeneral
+          v-for="movie of this.movies"
+          :key="movie"
+          :movie="movie"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import MovieCardGeneral from "@/components/movies/movie-card/MovieCardGeneral";
+import MovieCardGeneral from '@/components/movies/movie-card/MovieCardGeneral'
 
 export default {
-  name: "MoviesMoreLists",
-  components: {MovieCardGeneral},
+  name: 'MoviesMoreLists',
+  components: { MovieCardGeneral },
 
-  data() {
+  data () {
     return {
-      movies: [],
+      movies: []
     }
   },
 
-  beforeMount() {
+  beforeMount () {
     this.fetchBestMovies()
   },
 
   methods: {
-    async fetchBestMovies() {
-      const promiseMovies = await fetch(`http://filmfy-api.ddns.net/api/movies-on-more-lists`)
+    async fetchBestMovies () {
+      const promiseMovies = await fetch(
+        'http://filmfy-api.ddns.net/api/movies-on-more-lists'
+      )
       const movies = await promiseMovies.json()
       this.limitData(movies)
     },
 
-    limitData(movieData) {
-      const sliced = Object.fromEntries(
-          Object.entries(movieData).slice(0, 5)
-      )
+    limitData (movieData) {
+      const sliced = Object.fromEntries(Object.entries(movieData).slice(0, 5))
       this.movies = sliced
-    },
+    }
   }
 }
 </script>
@@ -57,7 +63,7 @@ export default {
   font-family: Graphik-Regular-Web, sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  letter-spacing: .075em;
+  letter-spacing: 0.075em;
   margin-bottom: 0.76923077rem;
   margin-top: 0;
   padding-bottom: 5px;
@@ -72,9 +78,5 @@ h2 {
 
 .section-heading a {
   color: #445566;
-}
-
-span {
-
 }
 </style>

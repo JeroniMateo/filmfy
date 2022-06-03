@@ -1,15 +1,9 @@
-<template>
-
-
-
-</template>
+<template></template>
 
 <script>
 export default {
-  name: "ListCreationPage"
+  name: 'ListCreationPage'
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

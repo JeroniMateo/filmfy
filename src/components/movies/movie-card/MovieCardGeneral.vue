@@ -1,67 +1,78 @@
 <template>
-
-  <div class="card-movie d-flex flex-column align-items-center col-12 col-md-6 col-lg-4 cust-col-lg-5 p-0 m-0">
-    <div v-bind:id="random_id" class="d-flex flex-column align-items-center" style="visibility: hidden">
+  <div
+    class="card-movie d-flex flex-column align-items-center col-12 col-md-6 col-lg-4 cust-col-lg-5 p-0 m-0"
+  >
+    <div
+      v-bind:id="random_id"
+      class="d-flex flex-column align-items-center"
+      style="visibility: hidden"
+    >
       <span class="frame-title">{{ movie.title }}</span>
       <span class="frame-title-description"></span>
     </div>
 
-    <div class="movie-card" @mouseout="hideTitle(this.random_id)" @mouseover="displayTitle(this.random_id)"
-         v-bind:id="this.movie.id">
+    <div
+      class="movie-card"
+      @mouseout="hideTitle(this.random_id)"
+      @mouseover="displayTitle(this.random_id)"
+      v-bind:id="this.movie.id"
+    >
       <a v-bind:href="this.href" class="frame">
-        <img v-bind:src="this.url" alt="" class="image">
+        <img v-bind:src="this.url" alt="" class="image" />
       </a>
     </div>
 
-    <div class="d-flex align-items-center mt-2" v-bind:id="this.movie.title + '-' + this.movie.id">
+    <div
+      class="d-flex align-items-center mt-2"
+      v-bind:id="this.movie.title + '-' + this.movie.id"
+    >
       <div class="d-flex align-items-center">
         <i style="color: #e49e06" class="fa-solid fa-heart me-1"></i>
         <span class="text-white m-0 extra-info">{{ this.movie.likes }}</span>
       </div>
       <div v-if="this.movie.times_added" class="d-flex align-items-center mx-2">
         <i style="color: #5bdee6" class="fa-solid fa-list mx-2"></i>
-        <span class="text-white m-0 extra-info">{{ this.movie.times_added }}</span>
+        <span class="text-white m-0 extra-info">{{
+          this.movie.times_added
+        }}</span>
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
 export default {
-  name: "MovieCardGeneral",
-  props: ["movie"],
+  name: 'MovieCardGeneral',
+  props: ['movie'],
 
-  data() {
+  data () {
     return {
-      url: "",
-      href: "",
-      random_id: this.movie.id + "-" + Math.round(Math.random() * 100),
+      url: '',
+      href: '',
+      random_id: this.movie.id + '-' + Math.round(Math.random() * 100)
     }
   },
 
-  mounted() {
-    this.url = "http://filmfy-api.ddns.net" + this.movie.image
-    this.href = window.origin + "/movies/" + this.movie.id
+  mounted () {
+    this.url = 'http://filmfy-api.ddns.net' + this.movie.image
+    this.href = window.origin + '/movies/' + this.movie.id
   },
 
-
   methods: {
-    displayTitle(id) {
-      let element = document.getElementById(id)
-      element.style.visibility = "visible"
+    displayTitle (id) {
+      const element = document.getElementById(id)
+      element.style.visibility = 'visible'
     },
 
-    hideTitle(id) {
-      let element = document.getElementById(id)
-      element.style.visibility = "hidden"
+    hideTitle (id) {
+      const element = document.getElementById(id)
+      element.style.visibility = 'hidden'
     }
   }
 }
 </script>
 
 <style scoped>
-
 .image {
   width: 240px;
   height: 345px;
@@ -100,5 +111,4 @@ export default {
 .extra-info {
   font-size: 12px;
 }
-
 </style>

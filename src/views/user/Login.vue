@@ -69,7 +69,7 @@ import { setCookie } from '@/main'
 export default {
   name: 'Login',
 
-  data() {
+  data () {
     return {
       email: '',
       password: '',
@@ -93,8 +93,8 @@ export default {
       }
     },
 
-    async loginAPI() {
-      let promise = await fetch('http://filmfy-api.ddns.net/api/v1/login', {
+    async loginAPI () {
+      const promise = await fetch('http://filmfy-api.ddns.net/api/v1/login', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -106,7 +106,7 @@ export default {
           password: this.password
         })
       })
-      let response = await promise.json()
+      const response = await promise.json()
 
       if (response.hasOwnProperty('error')) {
         if (response.error.hasOwnProperty('email')) {
@@ -241,7 +241,6 @@ h3 {
   }
 }
 
-
 .data-container {
   position: relative;
   padding: 0.5rem;
@@ -288,8 +287,8 @@ h3 {
 
 .register-button > div > p {
   font-weight: 900;
-
-}.login-button > div > p {
+}
+.login-button > div > p {
   font-weight: 900;
 }
 
@@ -371,11 +370,11 @@ h3 {
     display: none;
   }
 }
-h2{
+h2 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color:#00c740
+  color: #00c740;
 }
 .h2-container {
   margin-bottom: 2rem;

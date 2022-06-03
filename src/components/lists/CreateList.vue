@@ -11,10 +11,8 @@
           <label for="username" class="form-label">Nombre de Usuario</label>
           <input type="text" class="form-control" id="username" required />
         </div>
-        <div class="col-md-6 description" >
-          <label for="description_list" class="form-label"
-            >Descripción</label
-          >
+        <div class="col-md-6 description">
+          <label for="description_list" class="form-label">Descripción</label>
           <textarea
             name="description_list"
             id="description_list"
@@ -93,7 +91,8 @@ h1 {
   font-size: 7vh;
   color: #00c740;
 }
-label,p {
+label,
+p {
   color: #fffdfd;
   font-size: 3vh;
 }
@@ -103,21 +102,21 @@ small {
 }
 
 .row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-0.5 * var(--bs-gutter-x));
-    margin-left: calc(-0.5 * var(--bs-gutter-x));
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-input{
+input {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-textarea{
+textarea {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 </style>

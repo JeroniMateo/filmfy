@@ -78,5 +78,4 @@ h2 {
 .section-heading a {
   color: #445566;
 }
-
 </style>

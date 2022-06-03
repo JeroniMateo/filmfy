@@ -20,9 +20,7 @@
             <i class="far fa-calendar"></i>
           </div>
           <div>
-            <h3 style="color: #00c740">
-              Envia listas a tus amig@s
-            </h3>
+            <h3 style="color: #00c740">Envia listas a tus amig@s</h3>
             <p style="font-size: 15px">
               Comparte tus listas, opiniones y películas con quien quieras,
               cuando sea.
@@ -34,9 +32,7 @@
             <i class="far fa-newspaper"></i>
           </div>
           <div>
-            <h3 style="color: #00c740">
-              Conviértete en un experto en cine
-            </h3>
+            <h3 style="color: #00c740">Conviértete en un experto en cine</h3>
             <p style="font-size: 15px">
               Da likes, guarda listas y organiza tus películas favoritas como
               prefieras.
@@ -179,8 +175,8 @@ import { email, minLength, required, sameAs } from '@vuelidate/validators'
 import { setCookie } from '@/main'
 import Footer from '@/components/basics/Footer'
 
-export function validName(name) {
-  let validNamePattern = new RegExp("^[a-zA-Z]+(?:[-'\\s][a-zA-Z]+)*$")
+export function validName (name) {
+  const validNamePattern = new RegExp("^[a-zA-Z]+(?:[-'\\s][a-zA-Z]+)*$")
   if (validNamePattern.test(name)) {
     return true
   }
@@ -189,11 +185,11 @@ export function validName(name) {
 
 export default {
   components: { Footer },
-  setup() {
+  setup () {
     return { v$: useVuelidate() }
   },
 
-  data() {
+  data () {
     return {
       form: {
         firstName: '',
@@ -204,7 +200,7 @@ export default {
     }
   },
 
-  validations() {
+  validations () {
     return {
       form: {
         firstName: {
@@ -226,8 +222,8 @@ export default {
   },
 
   methods: {
-    async onSubmit() {
-      let promise = await fetch('http://filmfy-api.ddns.net/api/v1/register', {
+    async onSubmit () {
+      const promise = await fetch('http://filmfy-api.ddns.net/api/v1/register', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json'
@@ -239,7 +235,7 @@ export default {
         })
       })
 
-      let response = await promise.json()
+      const response = await promise.json()
 
       if (promise.status === 200) {
         await setCookie('auth', response.token, 30)
@@ -379,7 +375,7 @@ h2 {
   margin-bottom: 1rem;
   border-radius: 5px;
 }
-#IniciarSesion{
+#IniciarSesion {
   background-color: #c50909;
 }
 </style>

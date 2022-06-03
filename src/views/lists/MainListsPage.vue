@@ -1,53 +1,46 @@
 <template>
-
   <main class="bg-bgmain">
-
-    <Heading/>
+    <Heading />
 
     <div class="container-md mt-5">
-      <MonthPopular/>
+      <MonthPopular />
     </div>
 
     <div class="container-md mt-5">
       <div class="row d-flex justify-content-center">
-
-        <RecentlyUpdated/>
-        <FilmfySelection/>
-
+        <RecentlyUpdated />
+        <FilmfySelection />
       </div>
     </div>
-
   </main>
-
 </template>
 
 <script>
-import Header from "@/components/basics/Header";
-import Footer from "@/components/basics/Footer";
-import Heading from "@/components/lists/lists-page/Heading";
-import MonthPopular from "@/components/lists/lists-page/MonthPopular";
-import RecentlyUpdated from "@/components/lists/lists-page/RecentlyUpdated";
-import FilmfySelection from "@/components/lists/lists-page/FilmfySelection";
+import Header from '@/components/basics/Header'
+import Footer from '@/components/basics/Footer'
+import Heading from '@/components/lists/lists-page/Heading'
+import MonthPopular from '@/components/lists/lists-page/MonthPopular'
+import RecentlyUpdated from '@/components/lists/lists-page/RecentlyUpdated'
+import FilmfySelection from '@/components/lists/lists-page/FilmfySelection'
 
 export default {
-  name: "MainListsPage",
+  name: 'MainListsPage',
   components: {
     FilmfySelection,
     RecentlyUpdated,
     MonthPopular,
     Heading,
     Header,
-    Footer,
-  },
+    Footer
+  }
 }
 </script>
 
 <style>
-
 .image-overlap {
-  direction: rtl;  /* This is to get the stack with left on top */
-  text-align: left;  /* Now need to explitly align left */
-  padding-left: 25px;  /* Same value as the negative margin */
+  direction: rtl; /* This is to get the stack with left on top */
+  text-align: left; /* Now need to explitly align left */
+  padding-left: 25px; /* Same value as the negative margin */
 }
 
 .movie-img img {
@@ -58,14 +51,15 @@ export default {
   z-index: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-
 /** **/
 
-.poster-list.-overlapped.-p70 .poster, .poster-list.-overlapped.-p150 .poster {
+.poster-list.-overlapped.-p70 .poster,
+.poster-list.-overlapped.-p150 .poster {
   box-shadow: 2px 0 7px #000;
   margin-right: -25px;
 }
@@ -97,7 +91,8 @@ ol, ul {
   background: #161718;
   box-shadow: 0 1px 3px rgb(0 0 0 / 35%);
 }
-.poster, .poster-container {
+.poster,
+.poster-container {
   -webkit-background-clip: padding-box;
   border-radius: 4px;
   display: inline-block;
@@ -111,7 +106,6 @@ ol, ul {
 }
 
 @media only screen and (max-width: 992px) {
-
   .recently-liked > div > div > div {
     display: flex;
     flex-direction: column;
@@ -120,10 +114,9 @@ ol, ul {
 }
 
 @media only screen and (max-width: 440px) {
-
   .month-popular > div > div > a > div > span > img {
-    width: 75px; height: 145px;
+    width: 75px;
+    height: 145px;
   }
 }
-
 </style>

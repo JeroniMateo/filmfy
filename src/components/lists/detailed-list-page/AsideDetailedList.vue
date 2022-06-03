@@ -49,7 +49,7 @@ export default {
   props: ['list'],
   name: 'AsideDetailedMovie',
   components: {},
-  data() {
+  data () {
     return {
       currentUrl: ''
     }
@@ -58,7 +58,7 @@ export default {
     this.currentUrl = window.location.href
   },
   methods: {
-    async sendLike() {
+    async sendLike () {
       await fetch('http://filmfy-api.ddns.net/api/lists-likes', {
         method: 'POST',
         headers: {
@@ -73,8 +73,8 @@ export default {
       await location.reload()
     },
 
-    displayModalForm() {
-      let formModal = document.getElementById('modal')
+    displayModalForm () {
+      const formModal = document.getElementById('modal')
       formModal.style.display = 'block'
     }
   }

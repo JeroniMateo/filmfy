@@ -44,7 +44,7 @@ export default {
       }
     }
   },
-  beforeMount() {
+  beforeMount () {
     this.getUserProfile()
   },
   methods: {
