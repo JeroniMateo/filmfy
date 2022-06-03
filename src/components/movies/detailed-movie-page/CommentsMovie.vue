@@ -34,7 +34,7 @@
               v-bind:read-only="false"
               v-bind:show-rating="false"
               active-color="#00c740"
-              inactive-color="#fff"
+              inactive-color="#fffdfd"
               v-bind:star-size="20"
           /> <!-- Lightgreen: #00c740 -->
         </div>
@@ -42,7 +42,7 @@
           <p class="comment-text text-start">{{ this.comment.body }}</p>
         </div>
         <div class="comment-likes d-flex flex-row align-items-center">
-          <i style="color: orange " class="fa-solid fa-heart me-1"></i>
+          <i style="color: #e49e06 " class="fa-solid fa-heart me-1"></i>
           <span class="mx-1">{{ this.comment.likes }}</span>
           <span class="comment-movie-year mx-2">{{ this.comment.created_at }}</span>
         </div>
@@ -51,7 +51,7 @@
         <span @click="sendLike(this.comment.id)" style="font-size: 13px">Me gusta</span>
       </div>
       <div class="comment-likes d-flex flex-row align-items-center">
-        <i style="color: orange" class="fa-solid fa-heart me-1"></i>
+        <i style="color: #e49e06" class="fa-solid fa-heart me-1"></i>
         <span class="mx-1">{{ this.comment.likes }}</span>
         <span class="comment-movie-year mx-2">{{
           this.comment.created_at
@@ -116,7 +116,7 @@ export default {
   display: flex;
   align-items: center;
   font-size: 0.8rem;
-  color: lightgrey;
+  color: #445566;
 }
 
 .comment-text {
@@ -124,11 +124,11 @@ export default {
 }
 
 .comment-rating > .stars {
-  color: green;
+  color: #2ecc71;
 }
 
 span:hover {
-  color: #c9c9c9;
+  color: #445566;
   cursor: pointer;
 }
 

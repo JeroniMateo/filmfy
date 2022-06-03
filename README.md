@@ -135,7 +135,7 @@ Nuestro proyecto está dividido en las siguientes carpetas:
 ## 7.Paleta de colores
 
 - Primario:  ![#00c740](https://via.placeholder.com/15/f03c15/000000?text=+) 
-- Secundario:![#fff](https://via.placeholder.com/15/f03c15/000000?text=+)  
+- Secundario:![#fffdfd](https://via.placeholder.com/15/f03c15/000000?text=+)  
 - Fondo: ![#242424](https://via.placeholder.com/15/f03c15/000000?text=+)
 - Icons: ![#e49e06](https://via.placeholder.com/15/f03c15/000000?text=+) 
 - Información ![#0f0505](https://via.placeholder.com/15/f03c15/000000?text=+) 
@@ -143,7 +143,7 @@ Nuestro proyecto está dividido en las siguientes carpetas:
 - Error: ![#c50909](https://via.placeholder.com/15/f03c15/000000?text=+) 
 - Advertencia ![#f1c40f](https://via.placeholder.com/15/f03c15/000000?text=+) 
 - Cian: ![#5bdee6](https://via.placeholder.com/15/f03c15/000000?text=+) 
-- Gris: ![#787b66](https://via.placeholder.com/15/f03c15/000000?text=+) 
+- Gris: ![#445566](https://via.placeholder.com/15/f03c15/000000?text=+) 
 
 
                            Created By Toni Gómez, Toni Garcia & Jeroni Mateo

@@ -72,18 +72,18 @@ export default {
 
 <style scoped>
 #Perfil {
-  background-color: gray;
+  background-color: #445566;
 }
 #tab-profile {
-  background-color: black;
+  background-color: #0f0505;
 }
 #AddMovieToList {
   width: 100%;
   height: 100%;
-  background-color: rgb(25, 23, 23);
+  background-color: #242424;
 }
 .container {
-  background-color: black;
+  background-color: #242424;
   padding: 5%;
   width: 70%;
   height: 70vh;
@@ -98,7 +98,7 @@ h1 {
   color: #00c740;
 }
 label {
-  color: white;
+  color: #fffdfd;
   font-size: 3vh;
 }
 </style>

@@ -62,7 +62,7 @@
                           v-bind:read-only="false"
                           v-bind:show-rating="false"
                           active-color="#00c740"
-                          inactive-color="#fff"
+                          inactive-color="#fffdfd"
                           v-bind:star-size="20"
                         />
                         <!-- Lightgreen: #00c740 -->
@@ -220,7 +220,7 @@ export default {
 <style scoped>
 
 main {
-  background-color: #000;
+  background-color: #0f0505;
 }
 
 #cover {
@@ -245,7 +245,7 @@ main {
 .movie > a > img {
   width: 12rem;
   height: 20rem;
-  border: 2px solid #00c740;
+  border: 2px solid #2ecc71;
 }
 
 .highlights {
@@ -264,15 +264,15 @@ main {
 }
 
 .promopanel {
-  background: #456;
+  background: #445566;
   padding: 16px 20px 18px;
 }
 
 .panel {
-  background: #2c3440;
-  border: 1px solid #456;
+  background: #242424;
+  border: 1px solid #445566;
   border-radius: 3px;
-  color: #fff;
+  color: #fffdfd;
   margin-bottom: 20px;
   padding: 10px;
   position: relative;
@@ -314,7 +314,7 @@ div > svg {
   display: flex;
   align-items: center;
   font-size: 0.8rem;
-  color: lightgrey;
+  color: #445566;
 }
 
 .comment-text {
@@ -329,7 +329,7 @@ div > svg {
 
 
 .poster-list.-overlapped.-p70 .poster, .poster-list.-overlapped.-p150 .poster {
-  box-shadow: 2px 0 7px #000;
+  box-shadow: 2px 0 7px #0f0505;
   margin-right: -25px;
 }
 
@@ -357,7 +357,7 @@ div > svg {
   float: left;
 }
 .poster {
-  background: #161718;
+  background: #0f0505;
   box-shadow: 0 1px 3px rgb(0 0 0 / 35%);
 }
 .poster, .poster-container {

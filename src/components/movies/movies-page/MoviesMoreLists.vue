@@ -52,8 +52,8 @@ export default {
 
 .section-heading {
   display: flex;
-  border-bottom: 1px solid white;
-  color: white;
+  border-bottom: 1px solid #e4e4e4;
+  color: #fffdfd;
   font-family: Graphik-Regular-Web, sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -71,7 +71,7 @@ h2 {
 }
 
 .section-heading a {
-  color: #9ab;
+  color: #445566;
 }
 
 span {

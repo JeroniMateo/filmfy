@@ -14,7 +14,7 @@
           <div class="data d-flex w-100 justify-content-between p-1">
             <span class="text-tertiary d-flex justify-content-start">{{ listUpdated }}</span>
             <div class="d-flex justify-content-end align-items-center">
-              <i style="color: orange" class="mx-2 fa-solid fa-heart me-1"></i> <span class="text-tertiary">{{ list.likes }}</span>
+              <i style="color: #e49e06" class="mx-2 fa-solid fa-heart me-1"></i> <span class="text-tertiary">{{ list.likes }}</span>
               <span class="mx-2">|</span>
               <i class="text-quaternary mx-1 fa-solid fa-film me-1"></i><span class="text-tertiary">{{ list.movies_count }}</span>
             </div>
@@ -146,7 +146,7 @@ export default {
 <style scoped>
 
 * {
-  background-color: black;
+  background-color: #0f0505;
 }
 
 h1 {
@@ -163,22 +163,22 @@ ul, ol {
 
 .frame-title {
   border-radius: 5px;
-  background-color: #283038;
-  color: floralwhite;
+  background-color: #242424;
+  color: #fffdfd;
   padding: 10px;
   font-size: 13px;
   width: max-content;
 }
 
 .frame-title-description {
-  border-top: 10px solid #283038;
+  border-top: 10px solid #242424;
   border-left: 11px solid transparent;
   border-right: 11px solid transparent;
 }
 
 .movie-card :hover {
   border-radius: 5px;
-  border: 2px solid green;
+  border: 2px solid #2ecc71;
 }
 
 .data {

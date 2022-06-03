@@ -66,6 +66,6 @@ export default {
 
 <style scoped>
 .content-movie-year {
-  background-color: black;
+  background-color: #0f0505;
 }
 </style>

@@ -194,7 +194,7 @@ h3 {
 
 /* Left section */
 .user-benefits {
-  border-right: 1px solid #fff;
+  border-right: 1px solid #fffdfd;
 }
 
 .benefit {
@@ -254,7 +254,7 @@ h3 {
   font-size: 1.2rem;
   position: relative;
   z-index: 2;
-  color: var(--focus-black);
+  color: #242424;
 }
 
 .login-space input {
@@ -264,7 +264,7 @@ h3 {
   font-size: 1.1rem;
   line-height: 1.5rem;
   display: flex;
-  color: var(--focus-black);
+  color: #242424;
 }
 
 .login-button,
@@ -273,7 +273,7 @@ h3 {
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #fffdfd;
   background-color: #00c740;
   border: none;
   width: 100%;

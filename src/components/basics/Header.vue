@@ -106,12 +106,12 @@ export default {
 
 <style scoped>
 .all {
-  background-color: black;
+  background-color: #0f0505;
   padding-bottom: 10px;
 }
 .brand-name {
   font-size: 175%;
-  color: #ffff;
+  color: #fffdfd;
 }
 
 .text-large {
@@ -119,12 +119,12 @@ export default {
 }
 
 .link-custom {
-  color: #c9c9c9;
+  color: #fffdfd;
   font-weight: bold;
 }
 .link-custom:hover,
 .link-custom:focus {
-  color: #ffffff;
+  color: #fffdfd;
 }
 
 .bar1,
@@ -132,7 +132,7 @@ export default {
 .bar3 {
   width: 35px;
   height: 5px;
-  background-color: white;
+  background-color: #fffdfd;
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -160,15 +160,15 @@ export default {
   justify-content: start;
   width: 55%;
   height: 100%;
-  background-color: black;
-  border-right: 3px solid green;
+  background-color: #0f0505;
+  border-right: 3px solid #2ecc71;
   padding: 20px;
   text-align: left;
   margin-top: auto;
 }
 
 #hamburgerMenu > a > div > .brand-name {
-  color: white;
+  color: #fffdfd;
   font-size: 25px;
   font-weight: 900;
   margin-top: 8px;
@@ -178,7 +178,7 @@ export default {
 .close-hamburger {
   display: flex;
   font-size: 45px;
-  color: white;
+  color: #fffdfd;
   font-weight: bold;
   margin-left: auto;
 }
@@ -191,7 +191,7 @@ export default {
 }
 
 #hamburgerMenu > div > a {
-  color: white;
+  color: #fffdfd;
   font-size: 20px;
   font-weight: 900;
   text-decoration: none;
@@ -213,7 +213,7 @@ export default {
 }
 
 .login-content-hamburger > p {
-  color: white;
+  color: #fffdfd;
   margin-right: 30px;
   font-size: 20px;
   margin-left: 5px;

@@ -153,14 +153,14 @@ export default {
 }
 
 .description {
-  color: #c9c9c9;
+  color: #445566;
   line-height: 25px;
 }
 
 .section-heading {
   display: flex;
-  border-bottom: 1px solid white;
-  color: white;
+  border-bottom: 1px solid #fffdfd;
+  color: #fffdfd;
   font-family: Graphik-Regular-Web, sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -172,7 +172,7 @@ export default {
 }
 
 .general {
-  background-color: black;
+  background-color: #0f0505;
   padding-top: 4rem;
 }
 

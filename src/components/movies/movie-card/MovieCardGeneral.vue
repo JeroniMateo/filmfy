@@ -15,11 +15,11 @@
 
     <div class="d-flex align-items-center mt-2" v-bind:id="this.movie.title + '-' + this.movie.id">
       <div class="d-flex align-items-center">
-        <i style="color: orange " class="fa-solid fa-heart me-1"></i>
+        <i style="color: #e49e06" class="fa-solid fa-heart me-1"></i>
         <span class="text-white m-0 extra-info">{{ this.movie.likes }}</span>
       </div>
       <div v-if="this.movie.times_added" class="d-flex align-items-center mx-2">
-        <i style="color: #0a53be" class="fa-solid fa-list mx-2"></i>
+        <i style="color: #5bdee6" class="fa-solid fa-list mx-2"></i>
         <span class="text-white m-0 extra-info">{{ this.movie.times_added }}</span>
       </div>
     </div>
@@ -75,7 +75,7 @@ export default {
 
 .movie-card :hover {
   border-radius: 5px;
-  border: 1.5px solid green;
+  border: 1.5px solid #2ecc71;
 }
 
 .card-movie {
@@ -84,15 +84,15 @@ export default {
 
 .frame-title {
   border-radius: 5px;
-  background-color: #283038;
-  color: floralwhite;
+  background-color: #242424;
+  color: #fffdfd;
   padding: 10px;
   font-size: 13px;
   width: max-content;
 }
 
 .frame-title-description {
-  border-top: 10px solid #283038;
+  border-top: 10px solid #242424;
   border-left: 11px solid transparent;
   border-right: 11px solid transparent;
 }

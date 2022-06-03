@@ -39,7 +39,7 @@ span {
 
 .div-movie-searched {
   z-index: 1;
-  background-color: rgb(68, 85, 102);
+  background-color: #445566;
   box-sizing: border-box;
   border-top: 1px solid #242424;
   border-bottom: 1px solid #242424;
@@ -51,12 +51,12 @@ span {
 }
 
 a {
-  color: white;
+  color: #fffdfd;
   text-decoration: none;
 }
 
 a:hover {
-  color: #dcdada;
+  color: #fffdfd;
 }
 
 .content-text-year {

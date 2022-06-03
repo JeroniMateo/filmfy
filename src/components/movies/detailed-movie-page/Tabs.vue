@@ -113,11 +113,11 @@ p {
 .category {
   padding: 5px;
   border-radius: 10px;
-  border: 1px solid white;
+  border: 1px solid #fffdfd;
 }
 
 .panel {
-  border-bottom: 1px solid #456;
+  border-bottom: 1px solid #445566;
 }
 
 .panel:last-child {

@@ -99,18 +99,18 @@ export default {
 
 <style scoped>
 #Perfil {
-  background-color: gray;
+  background-color: #445566;
 }
 #tab-profile {
-  background-color: black;
+  background-color: #0f0505;
 }
 #EditProfile {
   width: 100%;
   height: 100%;
-  background-color: rgb(25, 23, 23);
+  background-color: #0f0505;
 }
 .container {
-  background-color: black;
+  background-color: #0f0505;
   padding: 5%;
   width: 70%;
   height: 70vh;
@@ -129,11 +129,11 @@ h1 {
 }
 label,
 p {
-  color: white;
+  color: #fffdfd;
   font-size: 3vh;
 }
 small {
-  color: white;
+  color: #fffdfd;
   font-size: 2vh;
 }
 @media only screen and (max-width: 993px) {
@@ -146,12 +146,12 @@ small {
   }
   label,
   p {
-    color: white;
+    color: #fffdfd;
     font-size: 2vh;
     width: 50%;
   }
   small {
-    color: white;
+    color: #fffdfd;
     font-size: 1vh;
     width: 50%;
   }

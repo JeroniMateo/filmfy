@@ -3,7 +3,7 @@
   <aside v-if="this.log" class="aside-card d-flex flex-column align-items-start rounded-3 p-0">
     <div id="likes">
       <div v-if="liked" class="m-auto p-3" >
-        <i class="fa-solid fa-heart me-2 fs-3" style="color: orange"></i>
+        <i class="fa-solid fa-heart me-2 fs-3" style="color: #e49e06"></i>
       </div>
       <div v-else  @click="this.sendLike" class="m-auto p-3" >
         <i class="fa-solid fa-heart me-2 heart" ></i>
@@ -143,7 +143,7 @@ export default {
 
 <style scoped>
 .aside-card {
-  background-color: #2c3440;
+  background-color: #242424;
   width: fit-content;
 }
 

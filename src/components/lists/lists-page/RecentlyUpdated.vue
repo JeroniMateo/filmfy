@@ -21,7 +21,7 @@
             <div class="list-data d-flex flex-row">
               <img :src="'http://filmfy-api.ddns.net' + list.user.profile_image" :alt="list.user.name" width="20" height="20"/>
               <span class="mx-2">{{ list.user.name }}</span>
-              <span class="mx-2"><i style="color: orange " class="fa-solid fa-heart me-1"></i> {{ list.l_likes }}</span>
+              <span class="mx-2"><i style="color: #e49e06 " class="fa-solid fa-heart me-1"></i> {{ list.l_likes }}</span>
               <span> <i class="text-quaternary fa-solid fa-film"></i> {{ list.movies_count }}</span>
             </div>
 

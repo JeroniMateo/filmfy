@@ -112,11 +112,11 @@ export default {
 }
 
 .field {
-  background-color: #2c3440;
-  border: 1px solid #303840;
+  background-color: #242424;
+  border: 1px solid #0f0505;
   border-radius: 5px 5px 0px 0px;
   box-sizing: border-box;
-  color: white;
+  color: #fffdfd;
   font-size: 1.07692308rem;
   line-height: 1;
   margin: 0;
@@ -143,7 +143,7 @@ span {
 
 .div-movie-searcher {
   z-index: 1;
-  background-color: rgb(68, 85, 102);
+  background-color: #445566;
 }
 
 .searcher {
@@ -152,12 +152,12 @@ span {
 }
 
 a {
-  color: white;
+  color: #fffdfd;
   text-decoration: none;
 }
 
 a:hover {
-  color: #dcdada;
+  color: #fffdfd;
 }
 
 .content-text-year {

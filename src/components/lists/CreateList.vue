@@ -72,15 +72,15 @@ export default {
 
 <style scoped>
 #tab-profile {
-  background-color: black;
+  background-color: #0f0505;
 }
 #CreateList {
   width: 100%;
   height: 100%;
-  background-color: rgb(25, 23, 23);
+  background-color: #242424;
 }
 .container {
-  background-color: black;
+  background-color: #0f0505;
   width: 70%;
   padding: 2%;
   display: flex;
@@ -94,11 +94,11 @@ h1 {
   color: #00c740;
 }
 label,p {
-  color: white;
+  color: #fffdfd;
   font-size: 3vh;
 }
 small {
-  color: white;
+  color: #fffdfd;
   font-size: 2vh;
 }
 

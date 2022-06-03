@@ -21,7 +21,6 @@
           </div>
           <div class="profile-info">
             <a href="/editarPerfil" class="button ">Editar Perfil</a>
-          
             <a  id="logout" class="button " @click="logout"
               >Cerrar Sesion</a
             >
@@ -183,7 +182,7 @@ export default {
 }
 .title-1 {
   max-width: 450px;
-  color: #c8d4e0;
+  color: #445566;
 }
 
 .profile-name-wrap {
@@ -230,7 +229,7 @@ section {
   width: 950px;
 }
 .site-body {
-  background: #14181c;
+  background: #0f0505;
   padding: 30px 0;
 }
 
@@ -247,10 +246,10 @@ section {
 .button {
   text-align: center;
   appearance: none;
-  background: #567;
+  background: #445566;
   border-radius: 3px;
 
-  color: #c8d4e0;
+  color: #fffdfd;
   cursor: pointer;
   display: inline-block;
   font-weight: 400;
@@ -304,17 +303,17 @@ img {
   z-index: 1;
 }
 a {
-  color: #678;
+  color: #445566;
   text-decoration: none;
 }
 .big-div {
   padding-top: 20vh;
   height: 50rem;
-  background-color: black;
+  background-color: #0f0505;
 }
 
 .user-benefits {
-  border-right: 1px solid white;
+  border-right: 1px solid #fffdfd;
 }
 
 body {
@@ -322,7 +321,7 @@ body {
   font-size: 0.9rem;
   width: 100vw;
   margin: 0;
-  color: var(--p-white);
+  color: #fffdfd;
 }
 
 h1 {
@@ -334,7 +333,7 @@ h3 {
   font-size: 1.1rem;
   line-height: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: #fffdfd;
 }
 
 .register-heading > a {
@@ -367,7 +366,7 @@ form {
 
 .brand-content p {
   align-self: center;
-  color: var(--main-brand-color);
+  color: #0f0505;
   font-size: 25px;
   font-family: 'Poppins', sans-serif;
   font-weight: 900;
@@ -380,7 +379,7 @@ input {
   font-size: 1.1rem;
   line-height: 1.5rem;
   display: flex;
-  color: black;
+  color: #0f0505;
 }
 
 .register-space > div > h3 {

@@ -3,7 +3,7 @@
     <div
       class="d-flex flex-column align-items-center flex-nowrap container-fluid p-3"
     >
-      <hr style="color: white" />
+      <hr style="color: #fffdfd" />
       <div class="">
         <img src="../../assets/img/cameraLogo.png" alt="logo" />
         <span class="brand-size">Filfmy</span>
@@ -33,8 +33,8 @@ export default {
 
 <style scoped>
 footer > div {
-  background-color: #000;
-  color: #ecdbba;
+  background-color: #0f0505;
+  color: #fffdfd;
 }
 .brand-size {
   font-size: 125%;

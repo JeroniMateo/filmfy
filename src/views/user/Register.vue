@@ -8,7 +8,7 @@
             <i class="fas fa-film"></i>
           </div>
           <div class="d">
-            <h3 style="color: green">Guarda tus películas</h3>
+            <h3 style="color: #00c740">Guarda tus películas</h3>
             <p style="font-size: 15px">
               No te pierdas ninguna de las películas que te gustan. ¡Las podrás
               guardar!
@@ -20,7 +20,7 @@
             <i class="far fa-calendar"></i>
           </div>
           <div>
-            <h3 style="color: green">
+            <h3 style="color: #00c740">
               Envia listas a tus amig@s
             </h3>
             <p style="font-size: 15px">
@@ -34,7 +34,7 @@
             <i class="far fa-newspaper"></i>
           </div>
           <div>
-            <h3 style="color: green">
+            <h3 style="color: #00c740">
               Conviértete en un experto en cine
             </h3>
             <p style="font-size: 15px">
@@ -254,11 +254,11 @@ export default {
 .big-div {
   padding-top: 10vh;
   height: 40rem;
-  background-color: black;
+  background-color: #0f0505;
 }
 
 .user-benefits {
-  border-right: 1px solid white;
+  border-right: 1px solid #fffdfd;
 }
 
 body {
@@ -266,7 +266,7 @@ body {
   font-size: 0.9rem;
   width: 100vw;
   margin: 0;
-  color: var(--p-white);
+  color: #fffdfd;
 }
 
 h1 {
@@ -297,7 +297,7 @@ h3 {
   font-size: 1.1rem;
   line-height: 1.5rem;
   display: flex;
-  color: var(--focus-black);
+  color: #0f0505;
 }
 
 form {
@@ -322,7 +322,7 @@ input {
   font-size: 1.1rem;
   line-height: 1.5rem;
   display: flex;
-  color: black;
+  color: #0f0505;
 }
 
 .register-space > div > h3 {
@@ -367,7 +367,7 @@ h2 {
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #fffdfd;
   background-color: #00c740;
   border: none;
   width: 100%;

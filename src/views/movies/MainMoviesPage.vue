@@ -55,7 +55,7 @@ export default {
 }
 
 .all {
-  background-color: black;
+  background-color: #0f0505;
 }
 
 span {

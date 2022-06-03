@@ -21,7 +21,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #ffff;
+  color: #fffdfd;
 }
 
 nav {
@@ -30,20 +30,20 @@ nav {
 
 .card-text {
   font-size: 1.2rem;
-  color: #000;
+  color: #0f0505;
 }
 
 .card-title {
   font-size: 1.5rem;
-  color: #000;
+  color: #fffdfd;
 }
 
 nav a {
   font-weight: bold;
-  color: #0000;
+  color: #0f0505;
 }
 
 nav a.router-link-exact-active {
-  color: #ffff;
+  color: #fffdfd;
 }
 </style>

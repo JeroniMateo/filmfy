@@ -9,9 +9,9 @@
       v-bind:id="this.movie.title + '-' + this.movie.id"
     >
       <div class="d-flex align-items-center">
-        <i style="color: orange" class="fa-solid fa-heart me-1"></i>
+        <i style="color:  #e49e06" class="fa-solid fa-heart me-1"></i>
         <span class="text-white m-0 extra-info">{{ this.movie.likes }}</span>
-        <i style="color: green" class="fa-solid fa-plus" @click="addToList"></i>
+        <i style="color: #00c740" class="fa-solid fa-plus" @click="addToList"></i>
       </div>
     </div>
   </div>

@@ -38,7 +38,7 @@
                 v-bind:read-only="false"
                 v-bind:show-rating="false"
                 active-color="#00c740"
-                inactive-color="#fff"
+                inactive-color="#fffdfd"
                 v-bind:star-size="20"
             /> <!-- Lightgreen: #00c740 -->
 
@@ -116,10 +116,10 @@ export default {
   justify-content: center;
   width: 55vw;
   height: auto;
-  background-color: #2c3440;
+  background-color: #242424;
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid #445566;
   text-align: center;
 }
 
@@ -138,20 +138,20 @@ export default {
 
 .body {
   height: 300px;
-  background-color: rgb(204, 221, 238);
+  background-color: #445566;
 }
 
 .title {
-  background-color: rgb(204, 221, 238);
+  background-color: #445566;
 }
 
 .rating {
-  background-color: rgb(204, 221, 238);
+  background-color: #445566;
 }
 
 .button-send-form {
   background-color: #00c740;
-  color: white;
+  color: #fffdfd;
   border-radius: 5px;
   border: none;
   padding: 7px;
