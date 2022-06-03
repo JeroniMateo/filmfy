@@ -10,8 +10,8 @@
         class="list -overlapped -stacked d-flex flex-column"
         v-for="list in selectedLists"
       >
-        <a
-          :href="baseURL + '/lists/' + list.id"
+        <router-link
+          :to="{ name:'list-content', params: {list: list.id}}"
           class="list-link"
           style="text-decoration: none"
         >
@@ -32,7 +32,7 @@
               </li>
             </ul>
           </div>
-        </a>
+        </router-link>
         <div class="list-content d-flex flex-row mt-2">
           <p class="list-title d-flex align-content-center">
             <strong>{{ list.title }}</strong>
