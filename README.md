@@ -1,4 +1,4 @@
-## Filmfy App
+  ## Filmfy App
 
 - URL: http://filmfy-api.ddns.net/
 
@@ -80,45 +80,45 @@ Para navegar por Filmfy, esta aplicación se distribuye de la siguiente manera:
 
 Nuestro proyecto está dividido en las siguientes carpetas:
 
-- #### Components: Contiene todos los componentes de la aplicación.
+#### Components: Contiene todos los componentes de la aplicación.
 
-- Movies: Contiene todos los componentes relacionados con las películas.
-- Detailed Movie: Contiene los componentes para la información detallada de cada una de las películas
+Movies: Contiene todos los componentes relacionados con las películas.
+  Detailed Movie: Contiene los componentes para la información detallada de cada una de las películas
   - AsideDitailedMovie.vue: Componente para la información detallada donde podemos darle me gusta a la pelicula, Añadirla a una lista y comentarla.
   - CommentsMovie.vue: Componente para los comentarios de la película.
   - Filter.vue: Componente para buscar películas i/o filtrarlas por categoría o año
   - FormModal.vue & Tabs.vue: Componentes con la ficha técnica de una película.
 
-- Movie-card: Carpeta con los componentes para hacer las tarjetas de las películas.
+Movie-card: Carpeta con los componentes para hacer las tarjetas de las películas.
   - MovieCardGeneral.vue: Componente para las tarjetas de las películas.
   - MovieCardDetailed.vue: Componente para las tarjetas de las películas
 
-- Movies-page: Carpeta compuesta con los componentes:
+Movies-page: Carpeta compuesta con los componentes:
   - Best-movies.vue: Carpeta con los componentes para las mejores películas.
   - ItemsSerched.vue: Componente para las películas que se han buscado.
   - RecentMovies.vue: Componente para las películas recientes.
   - Sercher: Componente para buscar películas.
 
-- #### Views: Carpeta con cada una de las vistas de la app
+#### Views: Carpeta con cada una de las vistas de la app
 
-- Lists: Carpeta con las vistas de las listas.
+ Lists: Carpeta con las vistas de las listas.
   - DetailedListPage.vue: Vista con los detalles de las listas
   - MainListsPage.vue: Vista general de las Listas.
 
- - Movies: Carpeta con las vistas de las películas.
+  Movies: Carpeta con las vistas de las películas.
   - DetailedMoviePage.vue: Vista con los detalles de las películas.
   - MainMoviesPage.vue: vista general de las películas.
   - MovieCategories.vue: Vista con las categorías de las películas.
   - MovieYears.vue: Vista con los años de las películas.
 
--Users: Carpeta con las vistas de los usuarios.
+ Users: Carpeta con las vistas de los usuarios.
   - EditProfile.vue: vista para editar el perfil del usuario.
   - Login.vue: vista para iniciar sesión.
   - Register.vue: vista para registrarse.
   - UserProfile.vue: vista para ver el perfil del usuario.
 
--Home:Visita la página principal de la aplicación.
--Movies: Vista con las películas.
+- Home:Visita la página principal de la aplicación.
+- Movies: Vista con las películas.
 
 ## 7. Paleta de colores
 
