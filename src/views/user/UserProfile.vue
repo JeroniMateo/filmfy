@@ -223,7 +223,7 @@ export default {
       }
     },
     async userCommentsFetch() {
-      const promise = await fetch('http://127.0.0.1:8000/api/comments-user/' + this.currentUser.id)
+      const promise = await fetch('http://filmfy-api.ddns.net/api/comments-user/' + this.currentUser.id)
       this.userComments = await promise.json()
       if (Object.keys(this.userLists).length > 0) {
         this.contentComments = true;
