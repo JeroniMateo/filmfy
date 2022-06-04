@@ -3,43 +3,49 @@
     <form @submit.prevent="loginValidation">
       <div class="d-flex flex-column form">
         <div class="h2-container">
-          <h2>Iniciar Sesión</h2>
+          <h2>Iniciar sesión</h2>
         </div>
 
-        <div class="data-container">
-          <input aria-label="Email" type="text" autofocus="" id="email" name="email" class="text-black"
-                 placeholder="E-mail*" v-model="email"/>
-          <p class="text-danger">{{ this.error_email }}</p>
-        </div>
+        <div class="container">
+          <div class="row">
+            <div class="data-container col-12">
+              <input aria-label="Email" type="text" autofocus="" id="email" name="email" class="text-black l-input first"
+                     placeholder="E-mail*" v-model="email"/>
+              <p class="text-danger">{{ this.error_email }}</p>
+            </div>
 
-        <div class="data-container">
-          <input aria-label="Password" type="password" autofocus="" class="text-black" id="password" name="password"
-                 placeholder="Contraseña*" v-model="password"/>
-          <span id="eye1" class="show-pass-icon eye" style="display: block"><i class="fas fa-eye"></i></span>
-          <span id="eye2" class="hide-pass-icon eye" style="display: none"><i class="fas fa-eye-slash"></i></span>
-          <p class="text-danger">{{ this.error_password }}</p>
-        </div>
+            <div class="data-container col-12">
+              <input aria-label="Password" type="password" autofocus="" class="text-black l-input first" id="password" name="password"
+                     placeholder="Contraseña*" v-model="password"/>
+              <p class="text-danger">{{ this.error_password }}</p>
+            </div>
 
-        <button type="submit" class="login-button" id="login-button">
-          <div>
-            <p class="m-0">Iniciar sesión</p>
+            <div class="col-12">
+              <button type="submit" class="login-button l-input" id="login-button">
+                <div>
+                  <p class="m-0">Iniciar sesión</p>
+                </div>
+              </button>
+              <p class="text-danger">{{ this.response }}</p>
+            </div>
+
+
+            <div class="register-space col-12">
+              <div>
+                <h3>¿No estás en filmfy? ¡Regístrate!</h3>
+              </div>
+              <router-link
+                  class="text-decoration-none text-white button register-button p-2 bg-danger rounded-3 l-input"
+                  :to="{ name: 'register'}"
+                  id="signUpButton"
+                  aria-label="Inicia sesión"
+              >
+                <p class="text-decoration-none text-white m-0 fw-bold">Registrarse</p>
+              </router-link>
+            </div>
           </div>
-        </button>
-        <p class="text-danger">{{ this.response }}</p>
-
-        <div class="register-space">
-          <div>
-            <h3>¿No estás en filmfy? ¡Regístrate!</h3>
-          </div>
-          <router-link
-              class="text-decoration-none text-white button w-100 register-button p-2 bg-danger rounded-3"
-              :to="{ name: 'register'}"
-              id="signUpButton"
-              aria-label="Inicia sesión"
-          >
-            <p class="text-decoration-none text-white m-0 fw-bold">Registrarse</p>
-          </router-link>
         </div>
+
       </div>
     </form>
   </section>
@@ -76,7 +82,7 @@ export default {
       }
     },
 
-    async loginAPI () {
+    async loginAPI() {
       const promise = await fetch('http://filmfy-api.ddns.net/api/v1/login', {
         method: 'POST',
         headers: {
@@ -135,6 +141,31 @@ export default {
   width: 30rem;
 }
 
+.l-input {
+  width: inherit;
+}
+
+.first {
+  display: flex;
+  text-align: start;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  min-height: 3rem;
+  padding: 0.1rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 993px) {
+  .form {
+    width: inherit;
+  }
+}
+
 h1 {
   font-size: 2.5rem;
 }
@@ -145,49 +176,6 @@ h3 {
   font-weight: 700;
 }
 
-.login-heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 2rem;
-}
-
-.login-heading > a {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-}
-
-.login-heading > a > img {
-  max-height: 48px;
-}
-
-.login-content {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  margin-top: 0;
-}
-
-/* Left section */
-.user-benefits {
-  border-right: 1px solid #fffdfd;
-}
-
-.benefit {
-  width: 100%;
-  padding: 0.5rem;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-}
-
-.benefit:not(:last-child) {
-  margin-bottom: 1.5rem;
-}
 
 .benefit > div > i {
   display: inline-flex;
@@ -236,18 +224,7 @@ h3 {
   color: #242424;
 }
 
-.login-space input {
-  position: relative;
-  width: 100%;
-  height: 3rem;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  display: flex;
-  color: #242424;
-}
-
-.login-button,
-.register-link {
+.login-button {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -255,7 +232,6 @@ h3 {
   color: #fffdfd;
   background-color: #00c740;
   border: none;
-  width: 100%;
   min-height: 3rem;
   padding: 0.1rem;
   text-decoration: none;
@@ -268,6 +244,7 @@ h3 {
 .register-button > div > p {
   font-weight: 900;
 }
+
 .login-button > div > p {
   font-weight: 900;
 }
@@ -284,38 +261,17 @@ h3 {
   font-size: 0.8rem;
 }
 
-.register-link {
-  text-decoration: none;
-  background-color: var(--p-details);
-  color: var(--p-white);
-  width: 75%;
-  margin-top: 1rem;
-}
 
 .register-link > div > p {
   font-weight: 900;
 }
 
-.login-button:hover,
-.register-link:hover {
+.login-button:hover {
   background-color: #f1c40f;
 }
 
-.error-container {
-  display: none;
-  border-radius: 5px;
-  position: relative;
-  padding: 13px 1rem;
-  min-height: 1.2rem;
-  font-size: 0.875rem;
-  font-weight: 400;
-  letter-spacing: normal;
-  margin-bottom: 1.5rem;
-  border-width: 1px 1px 1px 20px;
-  border-style: solid;
-  border-color: #c50909;
-  border-image: initial;
-  color: #c50909;
+input {
+  width: fit-content;
 }
 
 
@@ -343,22 +299,20 @@ h3 {
     height: 100vh;
   }
 
-  .login-heading {
+  .login-space {
     padding: 0;
   }
-
-  .user-benefits {
-    display: none;
-  }
 }
+
 h2 {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   color: #00c740;
 }
+
 .h2-container {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding: 0.5rem;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid px-5 big-div">
+  <div class="container-fluid px-3 big-div">
     <h2>Registrarse</h2>
     <div class="row align-items-center justify-content-center">
       <section class="user-benefits form col-12 col-lg-4 p-3">
@@ -250,7 +250,7 @@ export default {
 <style scoped>
 .big-div {
   padding-top: 10vh;
-  height: 63vh;
+  height: 74vh;
   background-color: var(--bs-bgmain);
 }
 

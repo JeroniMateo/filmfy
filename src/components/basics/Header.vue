@@ -1,7 +1,7 @@
 <template>
 
   <div class="all">
-    <header @load="hamburgerIconHandling" class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <header class="container-md d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
       <div id="hamburger" @click="hamburgerIconHandling">
         <div class="bar1"></div>
@@ -32,7 +32,7 @@
 
       <div class="hamburger-container">
         <div id="hamburgerMenu">
-          <a href="" style="text-decoration: none;">
+          <a href="/" style="text-decoration: none;">
             <div style="display: flex; align-items: center;">
               <img class="logo" src="../../assets/img/cameraLogo.png" width="30" height="30" alt="logo">
               <p class="brand-name">Filmfy</p>
@@ -40,17 +40,17 @@
             </div>
           </a>
           <div class="menu-links">
-            <router-link :to="{ name: 'movies' }">Películas</router-link>
-            <router-link :to="{ name: 'lists' }">Listas</router-link>
-            <router-link :to="{ name: 'home' }">Usuarios</router-link>
+            <a href="/movies">Películas</a>
+            <a href="lists">Listas</a>
+            <a href="/home">Usuarios</a>
           </div>
 
           <div v-if="!log" class="login-content-hamburger">
-            <router-link :to="{ name: 'login' }"><button type="button" class="btn btn-outline-primary me-2">Accede</button></router-link>
+            <a href="/loging"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
           </div>
           <div v-else class="login-content-hamburger d-flex">
             <img class="rounded-circle mx-2" :src="'http://filmfy-api.ddns.net' + user.profile_image" :alt="user.name">
-            <router-link :to="{ name: 'profile' }"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></router-link>
+            <a href="/profile"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></a>
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@ export default {
   display: none;
   align-items: center;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   width: 100%;

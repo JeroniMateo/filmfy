@@ -6,7 +6,9 @@
         <div class="d-flex flex-column align-items-start">
           <h1><b>Bienvenido a Filmfy, {{ currentUser.name }}</b></h1>
           <p>Accede a tus contenidos, modifica los datos de tu perfil o cierra tu sesión</p>
-          <router-link :to="{ name: 'my-lists'}"><button type="button" class="btn btn-outline-primary me-2" @click="">Ver todo tu contenido</button></router-link>
+          <router-link :to="{ name: 'my-lists'}">
+            <button type="button" class="btn btn-outline-primary me-2" @click="">Ver todo tu contenido</button>
+          </router-link>
           <button type="button" class="btn btn-outline-error me-2 my-2" @click="destroySession">Cerrar Sesión</button>
         </div>
       </div>
@@ -18,14 +20,14 @@
       </div>
 
       <!-- Tab content -->
-      <div v-if="loader" id="London" class="tabcontent">
+      <div id="London" class="tabcontent">
         <div class="list-comments col-lg-7 col-12">
           <div class="p-3 py-5">
             <div class="heading-container d-flex justify-content-between align-items-center experience">
               <h4 class="p-2">Tus listas recientes</h4>
             </div>
 
-            <div class="mt-3">
+            <div v-if="contentLists" class="mt-3">
               <div class="list col d-flex flex-column align-items-center mt-4" v-for="list in userLists.slice(0,3)">
                 <router-link :to="{ name: 'my-lists-edit', params: {list: list.id } }" style="text-decoration: none">
                   <div class="image-overlap">
@@ -38,7 +40,8 @@
                       <span style="text-align: left"><b>{{ list.title }}</b></span>
                     </div>
                     <div class="list-data d-flex flex-row">
-                      <span class="mx-2"><i style="color: orange " class="fa-solid fa-heart me-1"></i> {{ list.list_likes }}</span>
+                      <span class="mx-2"><i style="color: orange "
+                                            class="fa-solid fa-heart me-1"></i> {{ list.list_likes }}</span>
                       <span><i class="text-quaternary fa-solid fa-film"></i> {{ list.movies_count }}</span>
                     </div>
                   </div>
@@ -46,12 +49,15 @@
               </div>
             </div>
 
-            <div class="mt-2" v-if="!contentLists">
+            <div v-else class="mt-2">
               <p class="text-primary"><b>Aún no has creado ninguna lista</b></p>
-              <router-link :to="{ name: 'lists' }"><button type="button" class="btn btn-outline-primary me-2">Ir a listas</button></router-link>
+              <router-link :to="{ name: 'lists' }">
+                <button type="button" class="btn btn-outline-primary me-2">Ir a listas</button>
+              </router-link>
             </div>
 
           </div>
+
 
           <div class="p-3 py-5">
             <div class="heading-container d-flex justify-content-between align-items-center comments">
@@ -60,11 +66,12 @@
 
             <ul>
               <hr>
-              <div v-for="comment in userComments">
+              <div v-if="contentComments" v-for="comment in userComments">
 
-                <li class="comment d-flex flex-row" >
+                <li class="comment d-flex flex-row">
                   <div class="comment-movie-image">
-                    <img :src="'http://filmfy-api.ddns.net' + comment.movie[0].image" width="115" height="170" :alt="comment.m_title"/>
+                    <img :src="'http://filmfy-api.ddns.net' + comment.movie[0].image" width="115" height="170"
+                         :alt="comment.m_title"/>
                   </div>
                   <div class="comment-details p-3">
                     <div class="comment-movie-details d-flex">
@@ -98,20 +105,14 @@
 
                 <hr>
               </div>
+              <div class="mt-2" v-else>
+                <p class="text-primary"><b>Aún no has comentado ninguna película</b></p>
+                <router-link :to="{ name: 'movies'}"><button type="button" class="btn btn-outline-primary me-2">Ir a películas</button></router-link>
+              </div>
             </ul>
-
-            <div class="mt-2" v-if="!contentComments">
-              <p class="text-primary"><b>Aún no has comentado ninguna película</b></p>
-              <router-link :to="{ name: 'movies'}"><button type="button" class="btn btn-outline-primary me-2">Ir a películas</button></router-link>
-            </div>
 
           </div>
 
-        </div>
-      </div>
-      <div v-else>
-        <div id="contenedor">
-          <div class="loader" id="loader">Loading...</div>
         </div>
       </div>
 
@@ -121,19 +122,32 @@
 
             <div class="col border-right d-flex justify-content-center">
               <div class="d-flex flex-column justify-content-center align-items-center text-center p-1 my-2">
-                <img class="rounded-circle" width="150" :src="'http://filmfy-api.ddns.net' + currentUser.profile_image" :alt="currentUser.name">
+                <img class="rounded-circle" width="150" :src="'http://filmfy-api.ddns.net' + currentUser.profile_image"
+                     :alt="currentUser.name">
               </div>
             </div>
 
             <div class="row mt-2">
-              <div class="col-md-12"><label class="labels">Nombre</label><input v-model="userName" type="text" class="form-control" placeholder="Nombre"></div>
+              <div class="col-md-12"><label class="labels">Nombre</label><input v-model="userName" type="text"
+                                                                                class="form-control"
+                                                                                placeholder="Nombre"></div>
             </div>
             <div class="row mt-3">
-              <div class="col-md-12"><label class="labels">Email</label><input v-model="userEmail" type="text" class="form-control" placeholder="Email"></div>
-              <div class="col-md-12"><label class="labels">Contraseña</label><input v-model="userPassword" type="password" class="form-control" placeholder="*************"></div>
+              <div class="col-md-12"><label class="labels">Email</label><input v-model="userEmail" type="text"
+                                                                               class="form-control" placeholder="Email">
+              </div>
+              <div class="col-md-12"><label class="labels">Contraseña</label><input v-model="userPassword"
+                                                                                    type="password" class="form-control"
+                                                                                    placeholder="*************"></div>
             </div>
-            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" @click="updateUserData">Guardar cambios</button></div>
-            <div class="mt-3 text-center"><button class="btn btn-error close-session-button" type="button" @click="destroySession">Cerrar sesión</button></div>
+            <div class="mt-5 text-center">
+              <button class="btn btn-primary profile-button" type="button" @click="updateUserData">Guardar cambios
+              </button>
+            </div>
+            <div class="mt-3 text-center">
+              <button class="btn btn-error close-session-button" type="button" @click="destroySession">Cerrar sesión
+              </button>
+            </div>
 
           </div>
         </div>
@@ -146,7 +160,7 @@
 </template>
 
 <script>
-import { getCookie, getUser } from '@/main'
+import {getCookie, getUser} from '@/main'
 import StarRating from 'vue-star-rating'
 
 
@@ -156,7 +170,7 @@ export default {
   components: {
     StarRating,
   },
-  data () {
+  data() {
     return {
       token: "",
       loader: false,
@@ -177,7 +191,7 @@ export default {
     }
   },
 
-  async beforeMount() {
+  async beforeMount () {
     this.token = await getCookie('auth')
 
     if (this.token) {
@@ -187,7 +201,7 @@ export default {
       this.userEmail = this.currentUser.email;
       this.userPassword = this.currentUser.password;
       if (this.currentUser.id !== 'User expired') {
-        this.log = true;
+        this.log = true
       }
     }
     await this.userListsFetch()
@@ -197,43 +211,41 @@ export default {
 
   methods: {
 
-
     async userListsFetch() {
       const promise = await fetch('http://filmfy-api.ddns.net/api/user-lists/' + this.currentUser.id)
       this.userLists = await promise.json()
-      if (Object.keys(this.userLists).length > 0 ){
+      if (Object.keys(this.userLists).length > 0) {
         this.contentLists = true;
       }
     },
     async userCommentsFetch() {
-      const promise = await fetch('http://filmfy-api.ddns.net/api/comments-user/' + this.currentUser.id)
+      const promise = await fetch('http://127.0.0.1:8000/api/comments-user/' + this.currentUser.id)
       this.userComments = await promise.json()
-      if (Object.keys(this.userComments).length > 0 ){
+      if (Object.keys(this.userLists).length > 0) {
         this.contentComments = true;
       }
-      this.loader = true
     },
 
     async updateUserData() {
       const promise = await fetch('http://filmfy-api.ddns.net/api/v1/edit-user/' + this.currentUser.id, {
-          method: 'PUT',
-          headers: {
-            'Accept': 'application/json',
-            'Content-type': 'application/json',
-            'Authorization': 'Bearer ' + this.token,
-          },
-          body: JSON.stringify({
-            id: this.currentUser.id,
-            name: this.userName,
-            email: this.userEmail,
-            password: this.userPassword,
-          })
+        method: 'PUT',
+        headers: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json',
+          'Authorization': 'Bearer ' + this.token,
+        },
+        body: JSON.stringify({
+          id: this.currentUser.id,
+          name: this.userName,
+          email: this.userEmail,
+          password: this.userPassword,
+        })
       });
       await location.reload()
     },
 
     destroySession() {
-      document.cookie ="auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+      document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
       window.location = '/';
     },
 
@@ -267,6 +279,7 @@ export default {
 * {
   background: black
 }
+
 h1 {
   font-size: 1.5rem;
 }
@@ -364,18 +377,17 @@ main {
 }
 
 
+.content {
+  display: flex;
+  justify-content: center;
+}
 
-  .content {
-    display: flex;
-    justify-content: center;
+@media only screen and (max-width: 500px) {
+
+  .movie-img > img {
+    width: 75px;
+    height: 135px;
   }
-
-  @media only screen and (max-width: 500px) {
-
-    .movie-img > img {
-      width: 75px;
-      height: 135px;
-    }
 
 }
 </style>
