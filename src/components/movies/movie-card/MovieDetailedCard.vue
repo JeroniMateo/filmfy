@@ -42,9 +42,6 @@ export default {
       this.movie = moviesData
       this.url = 'http://filmfy-api.ddns.net' + this.movie.image
     },
-    addToList () {
-      this.$router.push('/movieAddToList/:movieId')
-    }
   }
 }
 </script>

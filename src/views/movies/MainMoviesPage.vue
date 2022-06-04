@@ -57,6 +57,16 @@ export default {
   height: 75vh;
 }
 
+@media only screen and (max-width: 767px) {
+  .image {
+    height: 68vh;
+  }
+
+  .searcher {
+    margin-bottom: 80px;
+  }
+}
+
 .all {
   background-color: black;
 }

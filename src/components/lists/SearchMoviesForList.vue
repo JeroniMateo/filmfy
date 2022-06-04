@@ -101,7 +101,6 @@ export default {
     },
 
     addToList(movie) {
-      console.log(movie)
       this.search = ""
       this.$emit("addToList", movie)
       this.removeElements()

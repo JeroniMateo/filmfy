@@ -4,30 +4,30 @@
     <div class="filters d-flex align-items-center bar-nav">
       <div class="dropdown">
         <label
-          class="button-filter dropdown-toggle"
-          type=""
-          data-bs-toggle="dropdown"
+            class="button-filter dropdown-toggle"
+            type=""
+            data-bs-toggle="dropdown"
         >
           Category
         </label>
         <ul
-          id="categoriesFilter"
-          class="dropdown-menu dropdown-menu-dark"
-          aria-labelledby="dropdownMenuButton2"
+            id="categoriesFilter"
+            class="dropdown-menu dropdown-menu-dark"
+            aria-labelledby="dropdownMenuButton2"
         ></ul>
       </div>
       <div class="dropdown yes">
         <label
-          class="button-filter dropdown-toggle"
-          type=""
-          data-bs-toggle="dropdown"
+            class="button-filter dropdown-toggle"
+            type=""
+            data-bs-toggle="dropdown"
         >
           Year
         </label>
         <ul
-          id="yearsFilter"
-          class="dropdown-menu dropdown-menu-dark"
-          aria-labelledby="dropdownMenuButton2"
+            id="yearsFilter"
+            class="dropdown-menu dropdown-menu-dark"
+            aria-labelledby="dropdownMenuButton2"
         ></ul>
       </div>
     </div>
@@ -38,21 +38,21 @@
 export default {
   name: 'Filter',
   components: {},
-  data () {
+  data() {
     return {
       categories: [],
-      baseUrl: window.origin
+      baseUrl: window.origin,
     }
   },
 
-  beforeMount () {
+  beforeMount() {
     this.fetchCategories()
   },
 
   methods: {
-    async fetchCategories () {
+    async fetchCategories() {
       const categoryPromise = await fetch(
-        'http://filmfy-api.ddns.net/api/categories'
+          'http://filmfy-api.ddns.net/api/categories'
       )
       const categoriesData = await categoryPromise.json()
       this.categories = categoriesData
@@ -60,8 +60,9 @@ export default {
       this.printYears()
     },
 
-    printCategories () {
+    printCategories() {
       const categoriesFilter = document.getElementById('categoriesFilter')
+      categoriesFilter.innerHTML = ""
       this.categories.forEach((el) => {
         const slugEl = this.string_to_slug(el.name)
 
@@ -71,8 +72,9 @@ export default {
       })
     },
 
-    printYears () {
+    printYears() {
       const yearsFilter = document.getElementById('yearsFilter')
+      yearsFilter.innerHTML = ""
       const baseYear = 1950
       const getCurrentYear = new Date().getFullYear()
 
@@ -83,7 +85,7 @@ export default {
       }
     },
 
-    string_to_slug (str) {
+    string_to_slug(str) {
       str = str.replace(/^\s+|\s+$/g, '') // trim
       str = str.toLowerCase()
 
@@ -95,9 +97,9 @@ export default {
       }
 
       str = str
-        .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
-        .replace(/\s+/g, '-') // collapse whitespace and replace by -
-        .replace(/-+/g, '-') // collapse dashes
+          .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+          .replace(/\s+/g, '-') // collapse whitespace and replace by -
+          .replace(/-+/g, '-') // collapse dashes
 
       return str
     }

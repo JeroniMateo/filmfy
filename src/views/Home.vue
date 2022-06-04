@@ -28,7 +28,7 @@
 
     <section
         id="cover"
-        class="container d-flex align-content-end justify-content-center"
+        class="d-flex align-content-end justify-content-center"
         v-else
     >
       <div
@@ -49,12 +49,12 @@
             class="movie col-xl-2 col-md-4 col-sm-6 col-12 p-2"
             v-for="movie in topMovies"
         >
-          <router-link :to="{ name: 'movie-content', params: {movie: movie.id } }"
+          <a :href="baseURL + '/movies/' + movie.id"
           ><img
               :src="'http://filmfy-api.ddns.net' + movie.image"
               class="rounded"
               :alt="movie.title"
-          /></router-link>
+          /></a>
         </div>
       </div>
     </section>
@@ -104,12 +104,12 @@
               <div v-for="comment in latestComments">
                 <li class="comment d-flex flex-row">
                   <div class="comment-movie-image d-flex align-items-center">
-                    <img
+                    <a :href="baseURL + '/movies/' + comment.movies_id" style="cursor: pointer"><img
                         :src="'http://filmfy-api.ddns.net' + comment.m_image"
                         width="115"
                         height="170"
                         :alt="comment.m_title"
-                    />
+                    /></a>
                   </div>
                   <div class="comment-details p-3">
                     <div class="comment-movie-details d-flex">
@@ -120,8 +120,7 @@
                           comment.m_release.split('-')[0]
                         }}</span>
                     </div>
-                    <div class="comment-user-details d-flex flex-row mt-2">
-                      <img
+                    <div class="comment-user-details d-flex flex-row mt-2"><img
                           :src="'http://filmfy-api.ddns.net' + comment.u_image"
                           width="30"
                           height="30"
@@ -138,7 +137,7 @@
                             v-bind:rating="comment.rating"
                             v-bind:max-rating="5"
                             v-bind:increment="0.5"
-                            v-bind:read-only="false"
+                            v-bind:read-only="true"
                             v-bind:show-rating="false"
                             active-color="#00c740"
                             inactive-color="#fffdfd"
@@ -289,7 +288,6 @@ export default {
           .then((response) => response.json())
           .then((data) => {
             this.latestComments = data
-            console.log(this.latestComments)
           })
           .catch((error) => {
             console.log(error)
@@ -308,7 +306,6 @@ export default {
           .then((response) => response.json())
           .then((data) => {
             this.latestLists = data
-            console.log(this.latestLists)
           })
           .catch((error) => {
             console.log(error)
@@ -332,6 +329,7 @@ export default {
 </script>
 
 <style scoped>
+
 main {
   background-color: var(--bs-bgmain);
 }

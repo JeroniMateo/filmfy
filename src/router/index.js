@@ -6,8 +6,6 @@ import DetailedMoviePage from '@/views/movies/DetailedMoviePage'
 import MainMoviesPage from '@/views/movies/MainMoviesPage'
 import MovieCategories from '@/views/movies/MovieCategories'
 import MovieYear from '@/views/movies/MovieYear'
-import AddMovieToList from '@/components/lists/AddMovieToList'
-import CreateList from '@/components/lists/CreateList'
 
 import MainListsPage from '@/views/lists/MainListsPage'
 import DetailedListPage from '@/views/lists/DetailedListPage'
@@ -29,7 +27,6 @@ const router = createRouter({
       name: 'home',
       component: Home
     },
-
     {
       path: '/movies',
       name: 'movies',
@@ -50,17 +47,6 @@ const router = createRouter({
       name: 'movie-year',
       component: MovieYear
     },
-    {
-      path: '/movieAddToList/:movieId',
-      name: 'movie-add-to-list',
-      component: AddMovieToList
-    },
-    {
-      path: '/createList',
-      name: 'create-list',
-      component: CreateList
-    },
-
     {
       path: '/lists',
       name: 'lists',

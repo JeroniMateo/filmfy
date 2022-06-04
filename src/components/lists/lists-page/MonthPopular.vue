@@ -1,5 +1,5 @@
 <template>
-  <section class="month-popular">
+  <section v-if="loaded" class="month-popular">
     <div>
       <span>Populares este mes</span>
       <hr />
@@ -51,6 +51,10 @@
       </div>
     </div>
   </section>
+
+  <div v-else id="contenedor" style="height: 150px">
+    <div class="loader" id="loader">Loading...</div>
+  </div>
 </template>
 
 <script>
@@ -59,7 +63,8 @@ export default {
   data() {
     return {
       baseURL: window.origin,
-      listsPopular: []
+      listsPopular: [],
+      loaded: false
     }
   },
   methods: {
@@ -68,6 +73,7 @@ export default {
         'http://filmfy-api.ddns.net/api/lists-most-liked'
       )
       this.listsPopular = await promise.json()
+      this.loaded = true
     }
   },
   beforeMount() {

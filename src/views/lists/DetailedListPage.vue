@@ -98,13 +98,13 @@
             @mouseover="displayMovieTitle(movie.id)"
           >
             <div class="m-2 movie-card">
-              <router-link :to="{ name: 'movie-content', params: {movie: movie.id } }"
+              <a :href="baseURL + '/movies/' + movie.id"
                 ><img
                   :src="'http://filmfy-api.ddns.net' + movie.image"
                   :alt="movie.title"
                   width="250"
                   height="355"
-              /></router-link>
+              /></a>
             </div>
           </li>
         </div>
@@ -205,6 +205,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 * {
   background-color:  var(--bs-bgmain);
 }

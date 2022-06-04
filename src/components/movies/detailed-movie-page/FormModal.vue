@@ -12,10 +12,10 @@
       </div>
 
       <div class="row">
-        <div class="col-4">
+        <div class="col-12 d-none d-lg-block col-lg-4">
           <img v-bind:src="'http://filmfy-api.ddns.net/' + this.movie.image" alt="" width="200">
         </div>
-        <div class="col-8">
+        <div class="col-12 col-lg-8">
           <form @submit.prevent="this.postComment">
             <div class="mb-3">
               <label for="" class="form-label">Título</label>
@@ -139,6 +139,20 @@ export default {
   overflow: auto; /* Enable scroll if needed */
   backdrop-filter: blur(6px); /* blur effect for the overlay! */
 }
+
+@media only screen and (max-width: 1400px) {
+  .form-sended-content {
+    width: 70vw;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .form-sended-content {
+    width: 93vw;
+  }
+}
+
+
 
 .body {
   height: 300px;

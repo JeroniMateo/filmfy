@@ -1,5 +1,5 @@
 <template>
-  <section class="recently-liked col-xxl-6 col-12">
+  <section v-if="loaded" class="recently-liked col-xxl-6 col-12">
 
     <div class="mt-5">
       <span>Actualizadas recientemente</span>
@@ -32,6 +32,7 @@
     </div>
 
   </section>
+
 </template>
 
 <script>
@@ -41,12 +42,14 @@ export default {
     return {
       baseURL: window.origin,
       listsRecent: [],
+      loaded: false
     }
   },
   methods: {
     async recentLists() {
       const promise = await fetch('http://filmfy-api.ddns.net/api/lists-recent')
       this.listsRecent = await promise.json()
+      this.loaded = true
     }
   },
   beforeMount() {

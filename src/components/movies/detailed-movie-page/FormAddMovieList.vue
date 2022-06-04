@@ -105,7 +105,7 @@ export default {
           })
         })
       }
-      this.$router.push('/movies/' + this.movie.id)
+      await location.reload()
     },
 
     hideForm() {
@@ -164,4 +164,13 @@ export default {
   margin-left: auto;
   width: fit-content;
 }
+
+@media only screen and (max-width: 767px) {
+  .form-sended-content {
+
+    width: 90vw;
+
+  }
+}
+
 </style>

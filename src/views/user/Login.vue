@@ -1,45 +1,47 @@
 <template>
   <section class="login-space">
-    <div class="d-flex flex-column form">
-      <div class="h2-container">
-        <h2>Iniciar Sesión</h2>
-      </div>
-
-      <div class="data-container">
-        <input aria-label="Email" type="text" autofocus="" id="email" name="email" class="text-black"
-               placeholder="E-mail*" v-model="email"/>
-        <p class="text-danger">{{ this.error_email }}</p>
-      </div>
-
-      <div class="data-container">
-        <input aria-label="Password" type="password" autofocus="" class="text-black" id="password" name="password"
-               placeholder="Contraseña*" v-model="password"/>
-        <span id="eye1" class="show-pass-icon eye" style="display: block"><i class="fas fa-eye"></i></span>
-        <span id="eye2" class="hide-pass-icon eye" style="display: none"><i class="fas fa-eye-slash"></i></span>
-        <p class="text-danger">{{ this.error_password }}</p>
-      </div>
-
-      <button @click="loginValidation" class="login-button" id="login-button">
-        <div>
-          <p class="m-0">Iniciar sesión</p>
+    <form @submit.prevent="loginValidation">
+      <div class="d-flex flex-column form">
+        <div class="h2-container">
+          <h2>Iniciar Sesión</h2>
         </div>
-      </button>
-      <p class="text-danger">{{ this.response }}</p>
 
-      <div class="register-space">
-        <div>
-          <h3>¿No estás en filmfy? ¡Regístrate!</h3>
+        <div class="data-container">
+          <input aria-label="Email" type="text" autofocus="" id="email" name="email" class="text-black"
+                 placeholder="E-mail*" v-model="email"/>
+          <p class="text-danger">{{ this.error_email }}</p>
         </div>
-        <router-link
-          class="text-decoration-none text-white button w-100 register-button p-2 bg-danger rounded-3"
-          :to="{ name: 'register'}"
-          id="signUpButton"
-          aria-label="Inicia sesión"
-        >
-          <p class="text-decoration-none text-white m-0 fw-bold">Registrarse</p>
-        </router-link>
+
+        <div class="data-container">
+          <input aria-label="Password" type="password" autofocus="" class="text-black" id="password" name="password"
+                 placeholder="Contraseña*" v-model="password"/>
+          <span id="eye1" class="show-pass-icon eye" style="display: block"><i class="fas fa-eye"></i></span>
+          <span id="eye2" class="hide-pass-icon eye" style="display: none"><i class="fas fa-eye-slash"></i></span>
+          <p class="text-danger">{{ this.error_password }}</p>
+        </div>
+
+        <button type="submit" class="login-button" id="login-button">
+          <div>
+            <p class="m-0">Iniciar sesión</p>
+          </div>
+        </button>
+        <p class="text-danger">{{ this.response }}</p>
+
+        <div class="register-space">
+          <div>
+            <h3>¿No estás en filmfy? ¡Regístrate!</h3>
+          </div>
+          <router-link
+              class="text-decoration-none text-white button w-100 register-button p-2 bg-danger rounded-3"
+              :to="{ name: 'register'}"
+              id="signUpButton"
+              aria-label="Inicia sesión"
+          >
+            <p class="text-decoration-none text-white m-0 fw-bold">Registrarse</p>
+          </router-link>
+        </div>
       </div>
-    </div>
+    </form>
   </section>
 
 </template>

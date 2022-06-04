@@ -32,16 +32,22 @@
         <span><strong>{{ title }}</strong></span>
       </div>
     </div>
-    <div v-else-if="category === 'ciencia ficcion'" class="imageCienciaFiccion">
+    <div v-else-if="category === 'crimen'" class="imageCrimen">
       <div class="container text-movie d-flex justify-content-end flex-column ">
         <span><strong>{{ title }}</strong></span>
       </div>
     </div>
-    <div v-else-if="category === 'ciencia ficcion'" class="imageCienciaFiccion">
+    <div v-else-if="category === 'fantasia'" class="imageFantasia">
       <div class="container text-movie d-flex justify-content-end flex-column ">
         <span><strong>{{ title }}</strong></span>
       </div>
     </div>
+    <div v-else-if="category === 'animacion'" class="imageAnimacion">
+      <div class="container text-movie d-flex justify-content-end flex-column ">
+        <span><strong>{{ title }}</strong></span>
+      </div>
+    </div>
+
     <div v-else class="image">
       <div class="container text-movie d-flex justify-content-end flex-column ">
         <span><strong>{{ title }}</strong></span>
@@ -55,7 +61,7 @@
       </div>
     </div>
 
-    <div class="container justify-content-between" style="margin-top: 110px">
+    <div class="container justify-content-between" style="margin-top: 85px">
       <div class="row">
         <MovieCardGeneral v-for="movie of this.moviesCategory" :key="movie" :movie="movie"/>
       </div>
@@ -193,6 +199,94 @@ export default {
   background-position: 50% 40%;
   width: 100%;
   height: 74vh;
+}
+
+.imageDrama {
+  background-image: linear-gradient(to bottom,
+  rgba(0, 0, 0, 0),
+  rgba(0, 0, 0, 100)),
+  url("../../assets/img/MoviesIMG/american-beauty.webp");
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: 50% 25%;
+  width: 100%;
+  height: 74vh;
+}
+
+.imageCrimen {
+  background-image: linear-gradient(to bottom,
+  rgba(0, 0, 0, 0),
+  rgba(0, 0, 0, 100)),
+  url("../../assets/img/MoviesIMG/eliot-ness.jpg");
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: 50% 40%;
+  width: 100%;
+  height: 74vh;
+}
+
+.imageEpico {
+  background-image: linear-gradient(to bottom,
+  rgba(0, 0, 0, 0),
+  rgba(0, 0, 0, 100)),
+  url("../../assets/img/MoviesIMG/eliot-ness.jpg");
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: 50% 40%;
+  width: 100%;
+  height: 74vh;
+}
+
+.imageFantasia {
+  background-image: linear-gradient(to bottom,
+  rgba(0, 0, 0, 0),
+  rgba(0, 0, 0, 100)),
+  url("../../assets/img/MoviesIMG/señor-anillos.jpg");
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: 50% 40%;
+  width: 100%;
+  height: 74vh;
+}
+
+.imageAnimacion {
+  background-image: linear-gradient(to bottom,
+  rgba(0, 0, 0, 0),
+  rgba(0, 0, 0, 100)),
+  url("../../assets/img/MoviesIMG/toy-story.jpg");
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: 50% 20%;
+  width: 100%;
+  height: 74vh;
+}
+
+@media only screen and (max-width: 767px) {
+  .image, .imageDrama, .imageCrimen, .imageFantasia, .imageAnimacion {
+    height: 68vh;
+  }
+
+  .imageSuspense {
+    height: 68vh;
+  }
+
+  .imageAccion {
+    height: 68vh;
+    background-position: 20% 40%;
+  }
+
+  .imageTerror {
+    height: 68vh;
+  }
+
+  .imageAveentura {
+
+    height: 68vh;
+  }
+
+  .imageCienciaFiccion {
+    height: 68vh;
+  }
 }
 
 </style>

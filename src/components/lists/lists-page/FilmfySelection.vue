@@ -1,5 +1,5 @@
 <template>
-  <section class="recommended col-xxl-4 col-12">
+  <section v-if="loaded" class="recommended col-xxl-4 col-12">
     <div class="mt-5">
       <span>Selección Filmfy</span>
       <hr />
@@ -54,6 +54,9 @@
       </div>
     </div>
   </section>
+  <div v-else id="contenedor" style="height: 100px">
+    <div class="loader" id="loader">Loading...</div>
+  </div>
 </template>
 
 <script>
@@ -62,14 +65,15 @@ export default {
   data () {
     return {
       baseURL: window.origin,
-      selectedLists: []
+      selectedLists: [],
+      loaded: false
     }
   },
   methods: {
     async selectedList (id) {
       const promise = await fetch('http://filmfy-api.ddns.net/api/lists/' + id)
       this.selectedLists.push(await promise.json())
-      console.log(this.selectedLists)
+      this.loaded = true
     }
   },
   beforeMount () {

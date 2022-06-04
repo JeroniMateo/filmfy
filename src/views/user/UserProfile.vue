@@ -18,7 +18,7 @@
       </div>
 
       <!-- Tab content -->
-      <div id="London" class="tabcontent">
+      <div v-if="loader" id="London" class="tabcontent">
         <div class="list-comments col-lg-7 col-12">
           <div class="p-3 py-5">
             <div class="heading-container d-flex justify-content-between align-items-center experience">
@@ -109,6 +109,11 @@
 
         </div>
       </div>
+      <div v-else>
+        <div id="contenedor">
+          <div class="loader" id="loader">Loading...</div>
+        </div>
+      </div>
 
       <div id="Paris" class="tabcontent">
         <div class="user col-lg-5 col-md-8 col-12 border-right">
@@ -154,6 +159,7 @@ export default {
   data () {
     return {
       token: "",
+      loader: false,
 
       baseURL: window.origin,
 
@@ -205,6 +211,7 @@ export default {
       if (Object.keys(this.userComments).length > 0 ){
         this.contentComments = true;
       }
+      this.loader = true
     },
 
     async updateUserData() {
