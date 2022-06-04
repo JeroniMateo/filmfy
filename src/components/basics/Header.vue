@@ -32,25 +32,28 @@
 
       <div class="hamburger-container">
         <div id="hamburgerMenu">
-          <a href="/" style="text-decoration: none;">
-            <div style="display: flex; align-items: center;">
-              <img class="logo" src="../../assets/img/cameraLogo.png" width="30" height="30" alt="logo">
-              <p class="brand-name">Filmfy</p>
-              <span class="close-hamburger">&times;</span>
-            </div>
-          </a>
+          <div style="display: flex; align-items: center;" class="mt-3">
+            <router-link @click="closeHamburgerIcon" to="/" style="text-decoration: none;">
+              <div style="display: flex; align-items: center;">
+                <img class="logo" src="../../assets/img/cameraLogo.png" width="30" height="30" alt="logo">
+                <p class="brand-name mb-0 ms-2" style="">Filmfy</p>
+              </div>
+            </router-link>
+            <span @click="closeHamburgerIcon" class="close-hamburger">x</span>
+          </div>
+
           <div class="menu-links">
-            <a href="/movies">Películas</a>
-            <a href="lists">Listas</a>
-            <a href="/home">Usuarios</a>
+            <router-link @click="closeHamburgerIcon" class="my-2" to="/movies">Películas</router-link>
+            <router-link @click="closeHamburgerIcon" class="my-2" to="lists">Listas</router-link>
+            <router-link @click="closeHamburgerIcon" class="my-2" to="/">Usuarios</router-link>
           </div>
 
           <div v-if="!log" class="login-content-hamburger">
-            <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
+            <router-link @click="closeHamburgerIcon" to="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></router-link>
           </div>
           <div v-else class="login-content-hamburger d-flex">
-            <img class="rounded-circle mx-2" :src="'http://filmfy-api.ddns.net' + user.profile_image" :alt="user.name">
-            <a href="/profile"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></a>
+            <img class="rounded-circle me-2" :src="'http://filmfy-api.ddns.net' + user.profile_image" :alt="user.name">
+            <a href="/profile" @click="closeHamburgerIcon"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></a>
           </div>
         </div>
       </div>
@@ -67,8 +70,6 @@ export default {
   components: {
   },
   data: () => ({
-    openHamburger: '',
-    closeHamburger: '',
     log: false,
     user: [],
     counter : 0
@@ -85,15 +86,10 @@ export default {
   },
   methods: {
     hamburgerIconHandling () {
-      this.openHamburger = document.getElementById('hamburger')
-      document.getElementsByClassName('hamburger-container')[0].style.display =
-          'flex'
-      this.closeHamburger = document.getElementsByClassName('close-hamburger')[0]
-      this.closeHamburger.addEventListener('click', function () {
-        document.getElementsByClassName(
-            'hamburger-container'
-        )[0].style.display = 'none'
-      })
+      document.getElementsByClassName('hamburger-container')[0].style.display =  'flex'
+    },
+    closeHamburgerIcon() {
+      document.getElementsByClassName('hamburger-container')[0].style.display =  'none'
     },
     login () {
       this.$router.push('/login')
@@ -108,8 +104,10 @@ export default {
   padding-bottom: 10px;
 }
 .brand-name {
-  font-size: 175%;
-  color: #ffff;
+  color: white;
+  font-size: 25px;
+  font-weight: 900;
+  margin-left: 5px;
 }
 .text-large {
   font-size: 1rem;
@@ -158,16 +156,9 @@ export default {
   text-align: left;
   margin-top: auto;
 }
-#hamburgerMenu > a > div > .brand-name {
-  color: white;
-  font-size: 25px;
-  font-weight: 900;
-  margin-top: 8px;
-  margin-left: 5px;
-}
 .close-hamburger {
   display: flex;
-  font-size: 45px;
+  font-size: 20px;
   color: white;
   font-weight: bold;
   margin-left: auto;
@@ -183,7 +174,6 @@ export default {
   font-size: 20px;
   font-weight: 900;
   text-decoration: none;
-  padding: 8px 14px 13px;
 }
 .login-content-hamburger {
   display: flex;
@@ -191,7 +181,6 @@ export default {
   margin-top: 30px;
   font-size: medium;
   justify-content: flex-start;
-  margin-left: 10px;
   align-items: center;
 }
 .login-content-hamburger > img {

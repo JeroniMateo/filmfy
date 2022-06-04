@@ -126,24 +126,25 @@
                           height="30"
                           alt=""
                       />
-                      <small
-                          class="comment-user-name mx-2"
-                          style="align-self: center"
-                      >{{ comment.u_name }}</small
-                      >
-                      <div class="comment-rating mx-2">
-                        <star-rating
-                            v-bind:round-start-rating="false"
-                            v-bind:rating="comment.rating"
-                            v-bind:max-rating="5"
-                            v-bind:increment="0.5"
-                            v-bind:read-only="true"
-                            v-bind:show-rating="false"
-                            active-color="#00c740"
-                            inactive-color="#fffdfd"
-                            v-bind:star-size="20"
-                        />
-                        <!-- Lightgreen: #00c740 -->
+                      <div class="d-flex flex-column align-items-center flex-lg-row">
+                        <small
+                            class="comment-user-name mx-2"
+                            style="align-self: center"
+                        >{{ comment.u_name }}</small
+                        >
+                        <div class="comment-rating mx-2">
+                          <star-rating
+                              v-bind:round-start-rating="false"
+                              v-bind:rating="comment.rating"
+                              v-bind:max-rating="5"
+                              v-bind:increment="0.5"
+                              v-bind:read-only="true"
+                              v-bind:show-rating="false"
+                              active-color="#00c740"
+                              inactive-color="#fffdfd"
+                              v-bind:star-size="20"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div class="comment-content d-flex mt-2">
