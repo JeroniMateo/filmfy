@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 footer > div {
   background-color: var(--bs-bgmain);
   color: #fffdfd;

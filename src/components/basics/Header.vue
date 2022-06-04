@@ -27,7 +27,7 @@
       </div>
       <div v-else class="main main-menu col-md-3 text-end">
         <img class="rounded-circle me-3" width="40" :src="'http://filmfy-api.ddns.net' + user.profile_image" :alt="user.name">
-        <router-link :to="{ name: 'profile' }"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></router-link>
+        <a href="/profile"><button type="button" class="btn btn-outline-primary me-2">Mi perfil</button></a>
       </div>
 
       <div class="hamburger-container">
@@ -46,7 +46,7 @@
           </div>
 
           <div v-if="!log" class="login-content-hamburger">
-            <a href="/loging"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
+            <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Accede</button></a>
           </div>
           <div v-else class="login-content-hamburger d-flex">
             <img class="rounded-circle mx-2" :src="'http://filmfy-api.ddns.net' + user.profile_image" :alt="user.name">

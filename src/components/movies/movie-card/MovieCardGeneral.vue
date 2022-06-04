@@ -86,7 +86,7 @@ export default {
 
 .movie-card :hover {
   border-radius: 5px;
-  border: 1.5px solid #2ecc71;
+  border: 2px solid #2ecc71;
 }
 
 .card-movie {

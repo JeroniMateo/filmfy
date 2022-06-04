@@ -7,7 +7,7 @@
           <h1><b>Bienvenido a Filmfy, {{ currentUser.name }}</b></h1>
           <p>Accede a tus contenidos, modifica los datos de tu perfil o cierra tu sesión</p>
           <router-link :to="{ name: 'my-lists'}">
-            <button type="button" class="btn btn-outline-primary me-2" @click="">Ver todo tu contenido</button>
+            <button type="button" class="btn btn-outline-primary me-2" @click="">Ver tus listas</button>
           </router-link>
           <button type="button" class="btn btn-outline-error me-2 my-2" @click="destroySession">Cerrar Sesión</button>
         </div>
@@ -20,7 +20,7 @@
       </div>
 
       <!-- Tab content -->
-      <div id="London" class="tabcontent">
+      <div v-if="loaded" id="London" class="tabcontent">
         <div class="list-comments col-lg-7 col-12">
           <div class="p-3 py-5">
             <div class="heading-container d-flex justify-content-between align-items-center experience">
@@ -115,8 +115,11 @@
 
         </div>
       </div>
+      <div v-else id="contenedor">
+        <div class="loader" id="loader">Loading...</div>
+      </div>
 
-      <div id="Paris" class="tabcontent">
+      <div v-if="loaded" id="Paris" class="tabcontent">
         <div class="user col-lg-5 col-md-8 col-12 border-right">
           <div class="p-3 py-3">
 
@@ -188,6 +191,7 @@ export default {
 
       contentLists: false,
       contentComments: false,
+      loaded: false
     }
   },
 
@@ -224,6 +228,7 @@ export default {
       if (Object.keys(this.userLists).length > 0) {
         this.contentComments = true;
       }
+      this.loaded = true
     },
 
     async updateUserData() {
