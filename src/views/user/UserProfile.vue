@@ -15,145 +15,150 @@
 
       <!-- Tab links -->
       <div class="tab">
-        <button class="tablinks active" @click="openCity(event, 'London')">Último contenido</button>
+        <button class="tablinks active" @click="openCity(event, 'LondonDoaded')">Último contenido</button>
         <button class="tablinks" @click="openCity(event, 'Paris')">Editar perfil</button>
       </div>
 
       <!-- Tab content -->
-      <div v-if="loaded" id="London" class="tabcontent">
-        <div class="list-comments col-lg-7 col-12">
-          <div class="p-3 py-5">
-            <div class="heading-container d-flex justify-content-between align-items-center experience">
-              <h4 class="p-2">Tus listas recientes</h4>
-            </div>
+      <div v-if="loader">
+        <div  id="LondonDoaded" class="tabcontent">
+          <div class="list-comments col-lg-7 col-12">
+            <div class="p-3 py-5">
+              <div class="heading-container d-flex justify-content-between align-items-center experience">
+                <h4 class="p-2">Tus listas recientes</h4>
+              </div>
 
-            <div v-if="contentLists" class="mt-3">
-              <div class="list col d-flex flex-column align-items-center mt-4" v-for="list in userLists.slice(0,3)">
-                <router-link :to="{ name: 'my-lists-edit', params: {list: list.id } }" style="text-decoration: none">
-                  <div class="image-overlap">
+              <div v-if="contentLists" class="mt-3">
+                <div class="list col d-flex flex-column align-items-center mt-4" v-for="list in userLists.slice(0,3)">
+                  <router-link :to="{ name: 'my-lists-edit', params: {list: list.id } }" style="text-decoration: none">
+                    <div class="image-overlap">
                   <span class="movie-img" v-for="movie in list.movies.slice(0,5)">
                     <img :src="'http://filmfy-api.ddns.net' + movie.image" width="95" height="160" :alt="movie.title"/>
                   </span>
-                  </div>
-                  <div class="list-details d-flex flex-column">
-                    <div class="list-title d-flex flex-row justify-content-start">
-                      <span style="text-align: left"><b>{{ list.title }}</b></span>
                     </div>
-                    <div class="list-data d-flex flex-row">
+                    <div class="list-details d-flex flex-column">
+                      <div class="list-title d-flex flex-row justify-content-start">
+                        <span style="text-align: left"><b>{{ list.title }}</b></span>
+                      </div>
+                      <div class="list-data d-flex flex-row">
                       <span class="mx-2"><i style="color: orange "
                                             class="fa-solid fa-heart me-1"></i> {{ list.list_likes }}</span>
-                      <span><i class="text-quaternary fa-solid fa-film"></i> {{ list.movies_count }}</span>
-                    </div>
-                  </div>
-                </router-link>
-              </div>
-            </div>
-
-            <div v-else class="mt-2">
-              <p class="text-primary"><b>Aún no has creado ninguna lista</b></p>
-              <router-link :to="{ name: 'lists' }">
-                <button type="button" class="btn btn-outline-primary me-2">Ir a listas</button>
-              </router-link>
-            </div>
-
-          </div>
-
-
-          <div class="p-3 py-5">
-            <div class="heading-container d-flex justify-content-between align-items-center comments">
-              <h4 class="p-2">Tus últimos comentarios</h4>
-            </div>
-
-            <ul>
-              <hr>
-              <div v-if="contentComments" v-for="comment in userComments">
-
-                <li class="comment d-flex flex-row">
-                  <div class="comment-movie-image">
-                    <img :src="'http://filmfy-api.ddns.net' + comment.movie[0].image" width="115" height="170"
-                         :alt="comment.m_title"/>
-                  </div>
-                  <div class="comment-details p-3">
-                    <div class="comment-movie-details d-flex">
-                      <span class="comment-movie-title"><strong>{{ comment.movie[0].title }}</strong></span>
-                      <span class="comment-movie-year mx-2">{{ comment.movie[0].release_date.split("-")[0] }}</span>
-                    </div>
-                    <div class="comment-user-details d-flex flex-row mt-2">
-                      <div class="comment-rating mx-2">
-                        <star-rating
-                            v-bind:round-start-rating="false"
-                            v-bind:rating="comment.rating"
-                            v-bind:max-rating="5"
-                            v-bind:increment="0.5"
-                            v-bind:read-only="true"
-                            v-bind:show-rating="false"
-                            active-color="#00c740"
-                            inactive-color="#fff"
-                            v-bind:star-size="20"
-                        /> <!-- Lightgreen: #00c740 -->
+                        <span><i class="text-quaternary fa-solid fa-film"></i> {{ list.movies_count }}</span>
                       </div>
                     </div>
-                    <div class="comment-content d-flex mt-2">
-                      <p class="comment-text text-start">{{ comment.body }}</p>
-                    </div>
-                    <div class="comment-likes d-flex flex-row">
-                      <span>❤</span>
-                      <span class="mx-1">{{ comment.likes }}</span>
-                    </div>
-                  </div>
-                </li>
+                  </router-link>
+                </div>
+              </div>
 
+              <div v-else class="mt-2">
+                <p class="text-primary"><b>Aún no has creado ninguna lista</b></p>
+                <router-link :to="{ name: 'lists' }">
+                  <button type="button" class="btn btn-outline-primary me-2">Ir a listas</button>
+                </router-link>
+              </div>
+
+            </div>
+
+
+            <div class="p-3 py-5">
+              <div class="heading-container d-flex justify-content-between align-items-center comments">
+                <h4 class="p-2">Tus últimos comentarios</h4>
+              </div>
+
+              <ul>
                 <hr>
-              </div>
-              <div class="mt-2" v-else>
-                <p class="text-primary"><b>Aún no has comentado ninguna película</b></p>
-                <router-link :to="{ name: 'movies'}"><button type="button" class="btn btn-outline-primary me-2">Ir a películas</button></router-link>
-              </div>
-            </ul>
+                <div v-if="contentComments" v-for="comment in userComments">
+
+                  <li class="comment d-flex flex-row">
+                    <div class="comment-movie-image">
+                      <img :src="'http://filmfy-api.ddns.net' + comment.movie[0].image" width="115" height="170"
+                           :alt="comment.m_title"/>
+                    </div>
+                    <div class="comment-details p-3">
+                      <div class="comment-movie-details d-flex">
+                        <span class="comment-movie-title"><strong>{{ comment.movie[0].title }}</strong></span>
+                        <span class="comment-movie-year mx-2">{{ comment.movie[0].release_date.split("-")[0] }}</span>
+                      </div>
+                      <div class="comment-user-details d-flex flex-row mt-2">
+                        <div class="comment-rating mx-2">
+                          <star-rating
+                              v-bind:round-start-rating="false"
+                              v-bind:rating="comment.rating"
+                              v-bind:max-rating="5"
+                              v-bind:increment="0.5"
+                              v-bind:read-only="true"
+                              v-bind:show-rating="false"
+                              active-color="#00c740"
+                              inactive-color="#fff"
+                              v-bind:star-size="20"
+                          /> <!-- Lightgreen: #00c740 -->
+                        </div>
+                      </div>
+                      <div class="comment-content d-flex mt-2">
+                        <p class="comment-text text-start">{{ comment.body }}</p>
+                      </div>
+                      <div class="comment-likes d-flex flex-row">
+                        <span>❤</span>
+                        <span class="mx-1">{{ comment.likes }}</span>
+                      </div>
+                    </div>
+                  </li>
+
+                  <hr>
+                </div>
+                <div class="mt-2" v-else>
+                  <p class="text-primary"><b>Aún no has comentado ninguna película</b></p>
+                  <router-link :to="{ name: 'movies'}">
+                    <button type="button" class="btn btn-outline-primary me-2">Ir a películas</button>
+                  </router-link>
+                </div>
+              </ul>
+
+            </div>
 
           </div>
+        </div>
 
+        <div id="Paris" class="tabcontent">
+          <div class="user col-lg-5 col-md-8 col-12 border-right">
+            <div class="p-3 py-3">
+
+              <div class="col border-right d-flex justify-content-center">
+                <div class="d-flex flex-column justify-content-center align-items-center text-center p-1 my-2">
+                  <img class="rounded-circle" width="150" :src="'http://filmfy-api.ddns.net' + currentUser.profile_image"
+                       :alt="currentUser.name">
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-md-12"><label class="labels">Nombre</label><input v-model="userName" type="text"
+                                                                                  class="form-control"
+                                                                                  placeholder="Nombre"></div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-12"><label class="labels">Email</label><input v-model="userEmail" type="text"
+                                                                                 class="form-control" placeholder="Email">
+                </div>
+                <div class="col-md-12"><label class="labels">Contraseña</label><input v-model="userPassword"
+                                                                                      type="password" class="form-control"
+                                                                                      placeholder="*************"></div>
+              </div>
+              <div class="mt-5 text-center">
+                <button class="btn btn-primary profile-button" type="button" @click="updateUserData">Guardar cambios
+                </button>
+              </div>
+              <div class="mt-3 text-center">
+                <button class="btn btn-error close-session-button" type="button" @click="destroySession">Cerrar sesión
+                </button>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
+
       <div v-else id="contenedor">
         <div class="loader" id="loader">Loading...</div>
-      </div>
-
-      <div v-if="loaded" id="Paris" class="tabcontent">
-        <div class="user col-lg-5 col-md-8 col-12 border-right">
-          <div class="p-3 py-3">
-
-            <div class="col border-right d-flex justify-content-center">
-              <div class="d-flex flex-column justify-content-center align-items-center text-center p-1 my-2">
-                <img class="rounded-circle" width="150" :src="'http://filmfy-api.ddns.net' + currentUser.profile_image"
-                     :alt="currentUser.name">
-              </div>
-            </div>
-
-            <div class="row mt-2">
-              <div class="col-md-12"><label class="labels">Nombre</label><input v-model="userName" type="text"
-                                                                                class="form-control"
-                                                                                placeholder="Nombre"></div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-md-12"><label class="labels">Email</label><input v-model="userEmail" type="text"
-                                                                               class="form-control" placeholder="Email">
-              </div>
-              <div class="col-md-12"><label class="labels">Contraseña</label><input v-model="userPassword"
-                                                                                    type="password" class="form-control"
-                                                                                    placeholder="*************"></div>
-            </div>
-            <div class="mt-5 text-center">
-              <button class="btn btn-primary profile-button" type="button" @click="updateUserData">Guardar cambios
-              </button>
-            </div>
-            <div class="mt-3 text-center">
-              <button class="btn btn-error close-session-button" type="button" @click="destroySession">Cerrar sesión
-              </button>
-            </div>
-
-          </div>
-        </div>
       </div>
 
     </div>
@@ -191,11 +196,10 @@ export default {
 
       contentLists: false,
       contentComments: false,
-      loaded: false
     }
   },
 
-  async beforeMount () {
+  async beforeMount() {
     this.token = await getCookie('auth')
 
     if (this.token) {
@@ -210,7 +214,6 @@ export default {
     }
     await this.userListsFetch()
     await this.userCommentsFetch()
-    this.openCity(event, 'London')
   },
 
   methods: {
@@ -223,12 +226,15 @@ export default {
       }
     },
     async userCommentsFetch() {
+      this.loader = true
       const promise = await fetch('http://filmfy-api.ddns.net/api/comments-user/' + this.currentUser.id)
+      await this.openCity(event, 'LondonDoaded')
       this.userComments = await promise.json()
+
       if (Object.keys(this.userLists).length > 0) {
         this.contentComments = true;
+        this.loader = true
       }
-      this.loaded = true
     },
 
     async updateUserData() {
@@ -254,7 +260,8 @@ export default {
       window.location = '/';
     },
 
-    openCity(evt, cityName) {
+    async openCity(evt, cityName) {
+      console.log("hi")
       // Declare all variables
       var i, tabcontent, tablinks;
 

@@ -40,7 +40,12 @@ export default {
       )
       const moviesData = await promiseMovies.json()
       this.movie = moviesData
-      this.url = 'http://filmfy-api.ddns.net' + this.movie.image
+      if (this.movie.image.charAt(0) === "/"){
+        this.url = 'http://filmfy-api.ddns.net' + this.movie.image
+      }else {
+        this.url = 'http://filmfy-api.ddns.net/' + this.movie.image
+      }
+
     },
   }
 }
