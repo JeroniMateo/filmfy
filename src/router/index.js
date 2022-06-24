@@ -7,11 +7,12 @@ import MainMoviesPage from '@/views/movies/MainMoviesPage'
 import MovieCategories from '@/views/movies/MovieCategories'
 import MovieYear from '@/views/movies/MovieYear'
 
+import DetailedSeriePage from '@/views/series/DetailedSeriePage'
 import MainSeriesPage from '@/views/series/MainSeriesPage'
+import SerieCategories from '@/views/series/SerieCategories'
+import SerieYear from '@/views/series/SerieYear'
 
 import MainDocumentariesPage from '@/views/documentaries/MainDocumentariesPage'
-
-
 
 import MainListsPage from '@/views/lists/MainListsPage'
 import DetailedListPage from '@/views/lists/DetailedListPage'
@@ -39,16 +40,6 @@ const router = createRouter({
       component: MainMoviesPage
     },
     {
-      path: '/series',
-      name: 'series',
-      component: MainSeriesPage
-    },
-    {
-      path: '/documentaries',
-      name: 'documentaries',
-      component: MainDocumentariesPage
-    },
-    {
       path: '/movies/:movie',
       name: 'movie-content',
       component: DetailedMoviePage
@@ -63,6 +54,35 @@ const router = createRouter({
       name: 'movie-year',
       component: MovieYear
     },
+
+    {
+      path: '/series',
+      name: 'series',
+      component: MainSeriesPage
+    },
+    {
+      path: '/series/:serie',
+      name: 'serie-content',
+      component: DetailedSeriePage
+    },
+    {
+      path: '/series/category/:category',
+      name: 'serie-category',
+      component: SerieCategories
+    },
+
+    {
+      path: '/series/years/:year',
+      name: 'serie-year',
+      component: SerieYear
+    },
+
+    {
+      path: '/documentaries',
+      name: 'documentaries',
+      component: MainDocumentariesPage
+    },
+
     {
       path: '/lists',
       name: 'lists',
