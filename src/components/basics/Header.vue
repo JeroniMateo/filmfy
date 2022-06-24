@@ -235,6 +235,9 @@ export default {
   }
 }
 #dropLI{
-  color:#000
+  color:#fff
+}
+.dropdown-menu{
+  background-color: #000;
 }
 </style>
