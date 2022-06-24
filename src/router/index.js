@@ -7,6 +7,8 @@ import MainMoviesPage from '@/views/movies/MainMoviesPage'
 import MovieCategories from '@/views/movies/MovieCategories'
 import MovieYear from '@/views/movies/MovieYear'
 
+import MainSeriesPage from '@/views/series/MainSeriesPage'
+
 import MainListsPage from '@/views/lists/MainListsPage'
 import DetailedListPage from '@/views/lists/DetailedListPage'
 
@@ -31,6 +33,11 @@ const router = createRouter({
       path: '/movies',
       name: 'movies',
       component: MainMoviesPage
+    },
+    {
+      path: '/series',
+      name: 'series',
+      component: MainSeriesPage
     },
     {
       path: '/movies/:movie',

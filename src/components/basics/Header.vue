@@ -18,6 +18,7 @@
 
       <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
         <li><router-link :to="{ name: 'movies' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Películas</router-link></li>
+        <li><router-link :to="{ name: 'series' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Series</router-link></li>
         <li><router-link :to="{ name: 'lists' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Listas</router-link></li>
         <li><router-link :to="{ name: 'home' }"  class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Usuarios</router-link></li>
       </ul>
