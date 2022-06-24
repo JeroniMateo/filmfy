@@ -9,6 +9,10 @@ import MovieYear from '@/views/movies/MovieYear'
 
 import MainSeriesPage from '@/views/series/MainSeriesPage'
 
+import MainDocumentariesPage from '@/views/documentaries/MainDocumentariesPage'
+
+
+
 import MainListsPage from '@/views/lists/MainListsPage'
 import DetailedListPage from '@/views/lists/DetailedListPage'
 
@@ -38,6 +42,11 @@ const router = createRouter({
       path: '/series',
       name: 'series',
       component: MainSeriesPage
+    },
+    {
+      path: '/documentaries',
+      name: 'documentaries',
+      component: MainDocumentariesPage
     },
     {
       path: '/movies/:movie',

@@ -19,6 +19,7 @@
       <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
         <li><router-link :to="{ name: 'movies' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Películas</router-link></li>
         <li><router-link :to="{ name: 'series' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Series</router-link></li>
+        <li><router-link :to="{ name: 'documentaries' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Documentaries</router-link></li>
         <li><router-link :to="{ name: 'lists' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Listas</router-link></li>
         <li><router-link :to="{ name: 'home' }"  class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Usuarios</router-link></li>
       </ul>
@@ -106,12 +107,12 @@ export default {
 }
 .brand-name {
   color: white;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 900;
   margin-left: 5px;
 }
 .text-large {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .link-custom {
   color: #c9c9c9;
@@ -166,7 +167,7 @@ export default {
 }
 .menu-links {
   display: flex;
-  margin-top: 25px;
+  margin-top: 20px;
   flex-direction: column;
   justify-content: space-between;
 }
