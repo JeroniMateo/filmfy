@@ -12,7 +12,10 @@ import MainSeriesPage from '@/views/series/MainSeriesPage'
 import SerieCategories from '@/views/series/SerieCategories'
 import SerieYear from '@/views/series/SerieYear'
 
+import DetailedDocumentaryPage from '@/views/documentaries/DetailedDocumentaryPage'
 import MainDocumentariesPage from '@/views/documentaries/MainDocumentariesPage'
+import DocumentaryCategories from '@/views/documentaries/DocumentaryCategories'
+import DocumentaryYear from '@/views/documentaries/DocumentaryYear'
 
 import MainListsPage from '@/views/lists/MainListsPage'
 import DetailedListPage from '@/views/lists/DetailedListPage'
@@ -81,6 +84,23 @@ const router = createRouter({
       path: '/documentaries',
       name: 'documentaries',
       component: MainDocumentariesPage
+    },
+
+    {
+      path: '/documentaries/:documentary',
+      name: 'documentary-content',
+      component: DetailedDocumentaryPage
+    },
+
+    {
+      path: '/documentaries/category/:category',
+      name: 'documentary-category',
+      component: DocumentaryCategories
+    },
+    {
+      path: '/documentaries/years/:year',
+      name: 'documentary-year',
+      component: DocumentaryYear
     },
 
     {
