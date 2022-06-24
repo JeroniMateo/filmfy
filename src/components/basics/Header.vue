@@ -17,9 +17,16 @@
       </div>
 
       <ul class="main-menu nav col-12 col-md-auto justify-content-center mb-md-0">
-        <li><router-link :to="{ name: 'movies' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Películas</router-link></li>
-        <li><router-link :to="{ name: 'series' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Series</router-link></li>
-        <li><router-link :to="{ name: 'documentaries' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Documentaries</router-link></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle nav-link px-2 link-custom text-large mx-2 mx-lg-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Contenido
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><router-link :to="{ name: 'movies' }" id="dropLI" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Películas</router-link></li>
+            <li><router-link :to="{ name: 'series' }" id="dropLI" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Series</router-link></li>
+            <li><router-link :to="{ name: 'documentaries' }" id="dropLI" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Documentaries</router-link></li>
+          </ul>
+        </li>
         <li><router-link :to="{ name: 'lists' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Listas</router-link></li>
         <li><router-link :to="{ name: 'home' }"  class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Usuarios</router-link></li>
       </ul>
@@ -112,7 +119,7 @@ export default {
   margin-left: 5px;
 }
 .text-large {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .link-custom {
   color: #c9c9c9;
@@ -226,5 +233,8 @@ export default {
     display: inline-block;
     margin-left: 10px;
   }
+}
+#dropLI{
+  color:#000
 }
 </style>
