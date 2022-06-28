@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="section-heading mt-5 align-items-center align-items-lg-start flex-column">
-      <span class="text-center">Películas más recientes</span>
+      <span class="text-center">Series más recientes</span>
     </div>
   </div>
   <div class="container justify-content-between">
