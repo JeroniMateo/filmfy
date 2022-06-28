@@ -33,8 +33,8 @@
             Usuarios
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><router-link :to="{ name: 'movies' }" id="dropLI" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Noticias</router-link></li>
-            <li><router-link :to="{ name: 'movies' }" id="dropLI" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Foro Debate</router-link></li>
+            <li><router-link :to="{ name: 'news' }" id="dropLI" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Noticias</router-link></li>
+            <li><router-link :to="{ name: 'forum' }" id="dropLI" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Foro Debate</router-link></li>
           </ul>
         </li>
       </ul>

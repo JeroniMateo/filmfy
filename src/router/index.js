@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
 
+import Forum from '../views/forums/Forum.vue'
+import News from '../views/news/News.vue'
+
 import DetailedMoviePage from '@/views/movies/DetailedMoviePage'
 import MainMoviesPage from '@/views/movies/MainMoviesPage'
 import MovieCategories from '@/views/movies/MovieCategories'
@@ -36,6 +39,16 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: News
+    },
+    {
+      path: '/forum',
+      name: 'forum',
+      component: Forum
     },
     {
       path: '/movies',
