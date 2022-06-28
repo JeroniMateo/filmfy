@@ -27,6 +27,7 @@
 import Searcher from '@/components/movies/movies-page/Searcher'
 import RecentDocumentaries from '@/components/documentaries/documentaries-page/RecentDocumentaries.vue'
 import BestDocumentaries from '@/components/documentaries/documentaries-page/BestDocumentaries.vue'
+import Filter from "@/components/documentaries/detailed-documentaries-page/Filter";
 import UpcommingDocumentaries from '@/components/documentaries/documentaries-page/UpcommingDocumentaries.vue'
 import DocumentariesMoreLists from '@/components/documentaries/documentaries-page/DocumentariesMoreLists.vue'
 
@@ -36,6 +37,7 @@ export default {
     Searcher,
     RecentDocumentaries,
     BestDocumentaries,
+    Filter,
     UpcommingDocumentaries,
     DocumentariesMoreLists
   }

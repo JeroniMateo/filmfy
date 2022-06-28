@@ -3,7 +3,7 @@
     <div
       class="section-heading mt-5 align-items-center align-items-lg-start flex-column"
     >
-      <span>Películas mejor valoradas</span>
+      <span>Documentalres mejor valorados</span>
     </div>
     <div class="container justify-content-between">
       <div class="row">
