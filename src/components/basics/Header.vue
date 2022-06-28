@@ -28,7 +28,15 @@
           </ul>
         </li>
         <li><router-link :to="{ name: 'lists' }" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Listas</router-link></li>
-        <li><router-link :to="{ name: 'home' }"  class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Usuarios</router-link></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle nav-link px-2 link-custom text-large mx-2 mx-lg-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Usuarios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><router-link :to="{ name: 'movies' }" id="dropLI" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Noticias</router-link></li>
+            <li><router-link :to="{ name: 'movies' }" id="dropLI" class="nav-link px-2 link-custom text-large mx-2 mx-lg-4">Foro Debate</router-link></li>
+          </ul>
+        </li>
       </ul>
 
       <div v-if="!log" class="main main-menu col-md-3 text-end">
@@ -50,7 +58,6 @@
             </router-link>
             <span @click="closeHamburgerIcon" class="close-hamburger">x</span>
           </div>
-
           <div class="menu-links">
             <router-link @click="closeHamburgerIcon" class="my-2" to="/movies">Películas</router-link>
             <router-link @click="closeHamburgerIcon" class="my-2" to="lists">Listas</router-link>
