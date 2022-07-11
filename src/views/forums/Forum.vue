@@ -1,11 +1,11 @@
 <template>
   <div id="Forum" class="all">
-    <h1>Foros de Debate</h1>
+    <h1><b>Foros de Debate</b></h1>
     <div class="newForum">
+      <button @click="crearDebate" id="crearDebate" type="button">Crear nuevo debate</button>
       <div id="BusquedaDebateComponent">
         <BusquedaDebate />
       </div>
-      <button @click="crearDebate" id="crearDebate" type="button">Crear nuevo debate</button>
     </div>
     <form action="" id="debateForm" style="display: none">
       <div class="container">
