@@ -2,6 +2,9 @@
   <div id="Forum" class="all">
     <h1>Foros de Debate </h1>
     <div class="newForum">
+     <div id="BusquedaDebateComponent">
+       <BusquedaDebate/>
+     </div>
       <button @click="crearDebate" id="crearDebate">Crear nuevo debate</button>
     </div>
     <form action="" id="debateForm" style="display: none">
@@ -62,11 +65,17 @@
 </template>
 
 <script>
+import BusquedaDebate from '../../components/forums/BusquedaDebate.vue'
 export default {
+  name: 'Forum',
+  components: {
+    BusquedaDebate
+  },
   methods: {
     crearDebate() {
       document.getElementById('debateForm').style.display = 'block'
       document.getElementById('crearDebate').style.display = 'none'
+      document.getElementById('BusquedaDebateComponent').style.display = 'none'
     }
   }
 }
