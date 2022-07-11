@@ -7,8 +7,7 @@
     <form action="" id="debateForm" style="display: none">
       <div class="container">
         <div class="mb-3">
-          <label for="tituloDebate" class="form-label">Título Debate</label>
-          <input type="text" class="form-control" id="tituloDebate" />
+          <input type="text" class="form-control" id="tituloDebate" placeholder="Título Debate" />
         </div>
         <div class="row">
           <div class="input-group mb-3 col">
@@ -76,5 +75,15 @@ export default {
 <style>
 .all {
   background-color: black;
+}
+h1{
+  color:#00c740
+}
+button{
+  background-color: #2ecc71;
+}
+label{
+  font-size: 4vh;
+  color:#fff
 }
 </style>
