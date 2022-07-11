@@ -1,16 +1,21 @@
 <template>
   <div id="Forum" class="all">
-    <h1>Foros de Debate </h1>
+    <h1>Foros de Debate</h1>
     <div class="newForum">
-     <div id="BusquedaDebateComponent">
-       <BusquedaDebate/>
-     </div>
-      <button @click="crearDebate" id="crearDebate">Crear nuevo debate</button>
+      <div id="BusquedaDebateComponent">
+        <BusquedaDebate />
+      </div>
+      <button @click="crearDebate" id="crearDebate" type="button">Crear nuevo debate</button>
     </div>
     <form action="" id="debateForm" style="display: none">
       <div class="container">
         <div class="mb-3">
-          <input type="text" class="form-control" id="tituloDebate" placeholder="Título Debate" />
+          <input
+            type="text"
+            class="form-control"
+            id="tituloDebate"
+            placeholder="Título Debate"
+          />
         </div>
         <div class="row">
           <div class="input-group mb-3 col">
@@ -56,11 +61,12 @@
             placeholder="Describe tu Tema de Debate"
           ></textarea>
           <div class="save">
-            <button>Añadir Debate</button>
+            <button @click="añadirDebate" type="button">Añadir Debate</button>
           </div>
         </div>
       </div>
     </form>
+    <div id="DebateDiv"></div>
   </div>
 </template>
 
@@ -76,6 +82,12 @@ export default {
       document.getElementById('debateForm').style.display = 'block'
       document.getElementById('crearDebate').style.display = 'none'
       document.getElementById('BusquedaDebateComponent').style.display = 'none'
+    },
+    añadirDebate() {
+      document.getElementById('debateForm').style.display = 'none'
+      document.getElementById('crearDebate').style.display = 'block'
+      document.getElementById('BusquedaDebateComponent').style.display = 'block'
+      document.getElementById('DebateDiv').innerHTML = ''
     }
   }
 }
@@ -85,14 +97,17 @@ export default {
 .all {
   background-color: black;
 }
-h1{
-  color:#00c740
+h1 {
+  color: #00c740;
 }
-button{
+button {
   background-color: #2ecc71;
 }
-label{
+label {
   font-size: 4vh;
-  color:#fff
+  color: #fff;
+}
+#crearDebate{
+  margin: 1%;
 }
 </style>
