@@ -1,29 +1,32 @@
 <template>
   <Header />
   <router-view />
-  <Footer />
+  <Footer/>
+  <MovieChat/>
 </template>
+
 <script>
 import Header from '../src/components/basics/Header.vue'
 import Footer from '../src/components/basics/Footer.vue'
+import MovieChat from '../src/components/IA/MovieChatBot.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer
+    Footer,
+    MovieChat 
   }
 }
 </script>
-<style>
 
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #fffdfd;
-
 }
 
 nav {
